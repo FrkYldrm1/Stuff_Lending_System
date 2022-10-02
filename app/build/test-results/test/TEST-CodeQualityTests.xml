@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="CodeQualityTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-10-02T19:34:22" hostname="MSI" time="0.139">
+  <properties/>
+  <testcase name="codeQuality()" classname="CodeQualityTests" time="0.139"/>
+  <system-out><![CDATA[0 CheckStyle Issues in C:/Users/popoy/Documents/OOAD with AHmad and Faruk/a2/app/src/main/java/controller/App.java
+0 CheckStyle Issues in C:/Users/popoy/Documents/OOAD with AHmad and Faruk/a2/app/src/main/java/controller/Simple.java
+0 CheckStyle Issues in C:/Users/popoy/Documents/OOAD with AHmad and Faruk/a2/app/src/main/java/model/Simple.java
+0 CheckStyle Issues in C:/Users/popoy/Documents/OOAD with AHmad and Faruk/a2/app/src/main/java/view/Simple.java
+0 FindBugs Issues in controller/App.java
+0 FindBugs Issues in model/Simple.java
+0 FindBugs Issues in view/Simple.java
+0 FindBugs Issues in controller/Simple.java
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

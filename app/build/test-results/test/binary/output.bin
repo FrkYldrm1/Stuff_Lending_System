@@ -1,0 +1,8 @@
+t0 CheckStyle Issues in C:/Users/popoy/Documents/OOAD with AHmad and Faruk/a2/app/src/main/java/controller/App.java
+w0 CheckStyle Issues in C:/Users/popoy/Documents/OOAD with AHmad and Faruk/a2/app/src/main/java/controller/Simple.java
+r0 CheckStyle Issues in C:/Users/popoy/Documents/OOAD with AHmad and Faruk/a2/app/src/main/java/model/Simple.java
+q0 CheckStyle Issues in C:/Users/popoy/Documents/OOAD with AHmad and Faruk/a2/app/src/main/java/view/Simple.java
+*0 FindBugs Issues in controller/App.java
+(0 FindBugs Issues in model/Simple.java
+'0 FindBugs Issues in view/Simple.java
+-0 FindBugs Issues in controller/Simple.java
