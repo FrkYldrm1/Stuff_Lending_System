@@ -6,6 +6,7 @@ public class Member {
   private String email;
   private String phoneNumber;
   private MemberId memberId;
+  private int credits;
 
   public Member(String firstName, String lastName, String email, String phoneNumber) {
     this.firstName = firstName;
@@ -13,6 +14,16 @@ public class Member {
     this.email = email;
     this.phoneNumber = phoneNumber;
     this.memberId = new MemberId();
+    this.credits = 100;
+  }
+
+  public Member(String firstName, String lastName, String email, String phoneNumber, MemberId id) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.email = email;
+    this.phoneNumber = phoneNumber;
+    this.memberId = id;
+    this.credits = 100;
   }
 
   public String getFirstName() {
@@ -35,11 +46,19 @@ public class Member {
     return memberId;
   }
 
-  public class Mutable extends Member {
+  public int getCredits() {
+    return credits;
+  }
 
-    public Mutable(String firstName, String lastName, String email, String phoneNumber, MemberId memberId) {
+  public static class Mutable extends Member {
+
+    public Mutable(String firstName, String lastName, String email, String phoneNumber) {
       super(firstName, lastName, email, phoneNumber);
-      // TODO Auto-generated constructor stub
     }
+
+    Mutable(String firstName, String lastName, String email, String phoneNumber, MemberId id) {
+      super(firstName, lastName, email, phoneNumber, id);
+    }
+
   }
 }
