@@ -17,6 +17,10 @@ public class MemberId {
 		return "hehe";
 	}
 
+	public String getId() {
+		return id;
+	}
+
 	/**
 	 * Creates random ID.
 	 *
