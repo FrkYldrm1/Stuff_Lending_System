@@ -1,12 +1,38 @@
 package model;
 
+import java.util.Random;
+
 public class MemberId {
+	private Random rnd = new Random();
 	private String id;
 	private String dateCreated;
 
-	public MemberId(String id, String dateCreated) {
-		this.id = id;
-		this.dateCreated = dateCreated;
+	// creates random Id and puts in creation date
+	public MemberId() {
+		this.id = createId();
+		this.dateCreated = creationDate();
+	}
+
+	public String creationDate() {
+		return "hehe";
+	}
+
+	/**
+	 * Creates random ID.
+	 *
+	 * @return ID
+	 */
+	public String createId() {
+		// works by generating a random number and taking the character at that position
+		// adding it to the string that will be returned.
+		String returnee = ""; // string to be returned
+		String characters = "0123456789AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz";
+
+		for (int i = 0; i < 6; i++) {
+			int num = rnd.nextInt(characters.length());
+			returnee += String.valueOf(characters.charAt(num));
+		}
+		return returnee;
 	}
 
 }

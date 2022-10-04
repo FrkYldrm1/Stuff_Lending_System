@@ -7,12 +7,12 @@ public class Member {
   private String phoneNumber;
   private MemberId memberId;
 
-  public Member(String firstName, String lastName, String email, String phoneNumber, MemberId memberId) {
+  public Member(String firstName, String lastName, String email, String phoneNumber) {
     this.firstName = firstName;
     this.lastName = lastName;
     this.email = email;
     this.phoneNumber = phoneNumber;
-    this.memberId = memberId;
+    this.memberId = new MemberId();
   }
 
   public String getFirstName() {
@@ -38,7 +38,7 @@ public class Member {
   public class Mutable extends Member {
 
     public Mutable(String firstName, String lastName, String email, String phoneNumber, MemberId memberId) {
-      super(firstName, lastName, email, phoneNumber, memberId);
+      super(firstName, lastName, email, phoneNumber);
       // TODO Auto-generated constructor stub
     }
   }
