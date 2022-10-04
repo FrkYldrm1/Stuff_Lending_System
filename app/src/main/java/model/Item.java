@@ -1,11 +1,10 @@
 package model;
 
-import static com.sun.tools.javac.util.Assert.checkNull;
-
 public class Item {
   private String name;
   private String shortDescription;
   private int costPerDay;
+
 
   public Item(String name, String shortDescription, int costPerDay) {
     setNameProt(name);
