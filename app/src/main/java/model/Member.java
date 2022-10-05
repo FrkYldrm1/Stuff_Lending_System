@@ -15,7 +15,6 @@ public class Member implements TimeAdvancedObserver {
   private Time time = new Time();
   private ArrayList<Item> itemsOwned = new ArrayList<>();
   private ArrayList<Item> itemsLended = new ArrayList<>();
-  private ConsoleUI2 ui = new ConsoleUI2();
   private ArrayList<Item> items = new ArrayList<>();
 
   public Member(String firstName, String lastName, String email, String phoneNumber) {
@@ -104,6 +103,10 @@ public class Member implements TimeAdvancedObserver {
   public void addItemLended(Item leding) {
     itemsOwned.add(leding);
   }
+    // Adding Items to lendigs list.
+    public void addPreparedItemOwned(Item ownedItem) {
+      itemsOwned.add(ownedItem);
+    }
 
   // Getting lending cost for an item.
   public int getLendingCost(Item lendedItem) {
@@ -128,11 +131,9 @@ public class Member implements TimeAdvancedObserver {
     for (Item eachItem : itemsLended) {
       if (eachItem.getContractPeriod() != 0) {
         eachItem.setContractPeriodProt(eachItem.getContractPeriod() - 1);
-        ui.ShowItemUpdateMessage(eachItem);
         if (eachItem.getContractPeriod() == 0){itemsLended.remove(eachItem);}
       }else if (eachItem.getDayOfCreation() == 0) {
         itemsLended.remove(eachItem);
-        ui.ShowDeletedItemMessage(eachItem);
       }
     }
   }

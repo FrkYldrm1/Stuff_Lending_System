@@ -8,6 +8,9 @@ import view.ConsoleUI;
 public class MemberController {
   view.ConsoleUI console;
   model.Registry registry;
+  view.ConsoleUI2 ui;
+  model.Member member;
+
 
   public MemberController(ConsoleUI console, Registry registry) {
     this.console = console;
@@ -17,6 +20,8 @@ public class MemberController {
   public void createNewMember() {
     model.Member newMember = console.createMember();
     registry.addMember(newMember);
+    ui.MemberAddedMessage(newMember);
+
   }
 
   public void showAllMembers() {
@@ -24,4 +29,14 @@ public class MemberController {
       console.showMemberDetails(member);
     }
   }
+
+  public void deleteMember(model.Member member) {
+    registry.removeMember(member);
+    ui.MemberDeletedMessage(member);
+  }
+  public void addItem() {
+    member.addPreparedItemOwned(ui.createItem());
+  }
+
+
 }
