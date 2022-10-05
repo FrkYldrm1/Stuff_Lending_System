@@ -60,11 +60,11 @@ public class Member implements TimeAdvancedObserver {
   }
 
   //Adding Item to member.
-  public Item addItem(String name, String desc, int costPerDay, int dayOfCreation, boolean isOwned) {
-    Item s = new Item(name, desc, costPerDay, dayOfCreation, isOwned);
+  public Item addItem(String name, String shortDescription, int costPerDay, int dayOfCreation, Boolean isLended, int contractPeriod) {
+    Item s = new Item(name, shortDescription, costPerDay, dayOfCreation, isLended, contractPeriod);
     itemsOwned.add(s);
     return s;
-  }
+  }  
 
   //To advance time "value" times.
 
