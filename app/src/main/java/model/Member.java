@@ -11,7 +11,8 @@ public class Member implements TimeAdvancedObserver {
   private int credits;
   private int costTotal;
   private Time time = new Time();
-  private ArrayList<Item> items  = new ArrayList<>();
+  private ArrayList<Item> itemsOwned  = new ArrayList<>();
+  private ArrayList<Item> itemsLended  = new ArrayList<>();
 
   public Member(String firstName, String lastName, String email, String phoneNumber) {
     this.firstName = firstName;
@@ -66,20 +67,33 @@ public class Member implements TimeAdvancedObserver {
   @Override
   public void TimeAdvanced(int value) {
       time.dayChange(value);
-      for(Item item : items) {
+      for(Item item : itemsOwned) {
         item.setDayOfCreationProt(value);
       } 
   }
   //Total cost of items.
   public int costTotal(){
-    for(Item item: items){
+    for(Item item: itemsOwned){
        costTotal =+ item.getCostPerDay() * (item.getCostPerDay() + 1);
     }
     return costTotal;
   }
+<<<<<<< HEAD
+=======
+  
+  //  For creation of items.
+  public Item addItemOwned(String name, String desc, int costPerDay, int dayOfCreation, Boolean isOwned) {
+    Item s = new Item(name, desc, costPerDay, dayOfCreation, isOwned);
+    itemsOwned.add(s);
+    credits += 100;
+    return s;
+  }
+>>>>>>> 265abfc5c2b960aa656a5c43b27cfe2ab26f8599
 
-  public void removeItem(Item s) {
-    items.remove(s);
+
+
+  public void removeItemOwned(Item s) {
+    itemsOwned.remove(s);
   } 
 
 
