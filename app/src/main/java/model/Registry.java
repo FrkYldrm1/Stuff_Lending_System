@@ -8,7 +8,7 @@ public class Registry {
   private ArrayList<Member> members;
   private ConsoleUI2 ui = new ConsoleUI2();
 
-  private ArrayList<Member.Mutable> members;
+  private ArrayList<Member.Mutable> member;
 
   public Registry() {
     members = new ArrayList<>();
@@ -24,7 +24,7 @@ public class Registry {
 
   // returns iterable members
   public Iterable<Member.Mutable> getMembers() {
-    return members;
+    return member;
   }
 
   // adds members without an id
