@@ -4,6 +4,7 @@ public class Item {
   private String name;
   private String shortDescription;
   private int costPerDay;
+  private int itemId;
   private int dayOfCreation;
 
 
@@ -16,6 +17,7 @@ public class Item {
   public Item(Item item) {
     this.name = item.name;
     this.shortDescription = item.shortDescription;
+    this.itemId = 0;
     this.costPerDay = item.costPerDay;
   }
 
@@ -30,9 +32,9 @@ public class Item {
     checkNull(newName, "First Name Cannot be null");
     name = newName;
   }
-  protected void setDayOfCreationProt(int newdayOfCreation) {
+  protected void setDayOfCreationProt(int newDayOfCreation) {
     checkNull(String.valueOf(dayOfCreation), "Day of creation Cannot be null");
-    dayOfCreation = newdayOfCreation;
+    dayOfCreation = newDayOfCreation;
   }
 
   protected void setCostPerDayProt(int newCostPerDay) {
@@ -50,6 +52,10 @@ public class Item {
     return name;
   }
 
+  public int getItemId() {
+    return itemId;
+  }
+
   public String getShortDescription() {
     return shortDescription;
   }
@@ -60,6 +66,10 @@ public class Item {
 
   public int getDayOfCreation() {
     return dayOfCreation;
+  }
+
+  public void setItemId(int itemId) {
+    this.itemId = itemId;
   }
 
   enum category {

@@ -54,6 +54,14 @@ public class Member implements TimeAdvancedObserver {
   public int getCredits() {
     return credits;
   }
+
+  //Adding Item to member.
+  public Item addItem(String name, String desc, int costPerDay, int dayOfCreation) {
+    Item s = new Item(name, desc, costPerDay, dayOfCreation);
+    items.add(s);
+    return s;
+  }
+
   //To advance time "value" times.
   @Override
   public void TimeAdvanced(int value) {
@@ -68,13 +76,6 @@ public class Member implements TimeAdvancedObserver {
        costTotal =+ item.getCostPerDay() * (item.getCostPerDay() + 1);
     }
     return costTotal;
-  }
-  
-  //Adding Item to member.
-  public Item addItem(String name, String desc, int costPerDay, int dayOfCreation) {
-    Item s = new Item(name, desc, costPerDay, dayOfCreation);
-    items.add(s);
-    return s;
   }
 
   public void removeItem(Item s) {

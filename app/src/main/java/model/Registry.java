@@ -12,6 +12,11 @@ public class Registry {
     // hard coded members
     addMember("Bruce", "Lee", "Bruce@gmail.com", "988");
     addMember("Maya", "Hee", "mayahaha@gmail.com", "9843");
+    members.get(0).addItem("Phone", "samsung", 30, 0);
+    for (Member member : members) {
+      String name = member.getFirstName();
+      System.out.println(name);
+    }
   }
 
 
@@ -19,9 +24,7 @@ public class Registry {
     Member x = new Member(firstName, lastName, email, phoneNumber);
     members.add(x);
     return x;
-
   }
-
   public void removeMember(Member s) {
     members.remove(s);
   }
