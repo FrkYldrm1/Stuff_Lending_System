@@ -2,6 +2,8 @@ package model;
 
 import java.util.ArrayList;
 
+import view.ConsoleUI2;
+
 public class Member implements TimeAdvancedObserver {
   private String firstName;
   private String lastName;
@@ -13,6 +15,7 @@ public class Member implements TimeAdvancedObserver {
   private Time time = new Time();
   private ArrayList<Item> itemsOwned = new ArrayList<>();
   private ArrayList<Item> itemsLended = new ArrayList<>();
+  private ConsoleUI2 ui = new ConsoleUI2();
 
   public Member(String firstName, String lastName, String email, String phoneNumber) {
     this.firstName = firstName;
@@ -110,12 +113,14 @@ public class Member implements TimeAdvancedObserver {
   @Override
   public void updateItems() {
     // TODO Auto-generated method stub
-    for (Item eacItem : itemsLended) {
-      if (eacItem.getContractPeriod() != 0) {
-        eacItem.setContractPeriodProt(eacItem.getContractPeriod() - 1);
-      }
-      if (eacItem.getDayOfCreation() == 0) {
-        itemsLended.remove(eacItem);
+    for (Item eachItem : itemsLended) {
+      if (eachItem.getContractPeriod() != 0) {
+        eachItem.setContractPeriodProt(eachItem.getContractPeriod() - 1);
+        ui.ShowItemUpdateMessage(eachItem);
+        if (eachItem.getContractPeriod() == 0){itemsLended.remove(eachItem);}
+      }else if (eachItem.getDayOfCreation() == 0) {
+        itemsLended.remove(eachItem);
+        ui.ShowDeletedItemMessage(eachItem);
       }
     }
   }
