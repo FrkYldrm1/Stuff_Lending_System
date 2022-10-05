@@ -16,6 +16,7 @@ public class Member implements TimeAdvancedObserver {
   private ArrayList<Item> itemsOwned = new ArrayList<>();
   private ArrayList<Item> itemsLended = new ArrayList<>();
   private ConsoleUI2 ui = new ConsoleUI2();
+  private ArrayList<Item> items = new ArrayList<>();
 
   public Member(String firstName, String lastName, String email, String phoneNumber) {
     this.firstName = firstName;
@@ -64,9 +65,11 @@ public class Member implements TimeAdvancedObserver {
     Item s = new Item(name, shortDescription, costPerDay, dayOfCreation, isLended, contractPeriod);
     itemsOwned.add(s);
     return s;
-  }  
+  }
 
   //To advance time "value" times.
+
+  // To advance time "value" times.
 
   // To advance time "value" times.
   @Override
