@@ -3,8 +3,7 @@ package model;
 import java.util.ArrayList;
 
 public class Registry {
-  private ArrayList<Member> members;
-  
+  private ArrayList<Member.Mutable> members;
 
   public Registry() {
     members = new ArrayList<>();
@@ -14,12 +13,21 @@ public class Registry {
     addMember("Maya", "Hee", "mayahaha@gmail.com", "9843");
   }
 
+  public Iterable<Member.Mutable> getMembers() {
+    return members;
+  }
 
   public Member addMember(String firstName, String lastName, String email, String phoneNumber) {
-    Member x = new Member(firstName, lastName, email, phoneNumber);
+    Member.Mutable x = new Member.Mutable(firstName, lastName, email, phoneNumber);
     members.add(x);
     return x;
+  }
 
+  public Member addMember(Member mem) {
+    Member.Mutable x = new Member.Mutable(mem.getFirstName(), mem.getLastName(), mem.getEmail(), mem.getPhoneNumber(),
+        mem.getMemberId());
+    members.add(x);
+    return x;
   }
 
   public void removeMember(Member s) {
@@ -30,6 +38,7 @@ public class Registry {
     for (Member s : members) {
       s.TimeAdvanced(time);
     }
+
   }
 
 }

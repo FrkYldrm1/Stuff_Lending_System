@@ -11,7 +11,7 @@ public class Member implements TimeAdvancedObserver {
   private int credits;
   private int costTotal;
   private Time time = new Time();
-  private ArrayList<Item> items  = new ArrayList<>();
+  private ArrayList<Item> items = new ArrayList<>();
 
   public Member(String firstName, String lastName, String email, String phoneNumber) {
     this.firstName = firstName;
@@ -54,23 +54,25 @@ public class Member implements TimeAdvancedObserver {
   public int getCredits() {
     return credits;
   }
-  //To advance time "value" times.
+
+  // To advance time "value" times.
   @Override
   public void TimeAdvanced(int value) {
-      time.dayChange(value);
-      for(Item item : items) {
-        item.setDayOfCreationProt(value);
-      } 
+    time.dayChange(value);
+    for (Item item : items) {
+      item.setDayOfCreationProt(value);
+    }
   }
-  //Total cost of items.
-  public int costTotal(){
-    for(Item item: items){
-       costTotal =+ item.getCostPerDay() * (item.getCostPerDay() + 1);
+
+  // Total cost of items.
+  public int costTotal() {
+    for (Item item : items) {
+      costTotal = +item.getCostPerDay() * (item.getCostPerDay() + 1);
     }
     return costTotal;
   }
-  
-  //Adding Item to member.
+
+  // Adding Item to member.
   public Item addItem(String name, String desc, int costPerDay, int dayOfCreation) {
     Item s = new Item(name, desc, costPerDay, dayOfCreation);
     items.add(s);
@@ -79,8 +81,7 @@ public class Member implements TimeAdvancedObserver {
 
   public void removeItem(Item s) {
     items.remove(s);
-  } 
-
+  }
 
   public static class Mutable extends Member {
 
