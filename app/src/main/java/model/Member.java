@@ -9,6 +9,7 @@ public class Member implements TimeAdvancedObserver {
   private String phoneNumber;
   private MemberId memberId;
   private int credits;
+  private int costTotal;
   private Time time = new Time();
   private ArrayList<Item> items  = new ArrayList<>();
 
@@ -53,13 +54,25 @@ public class Member implements TimeAdvancedObserver {
   public int getCredits() {
     return credits;
   }
+  //To advance time "value" times.
   @Override
   public void TimeAdvanced(int value) {
-      time.dayChange(value); 
+      time.dayChange(value);
+      for(Item item : items) {
+        item.setDayOfCreationProt(value);
+      } 
   }
-
-  public Item addItem(String name, String desc, int costPerDay) {
-    Item s = new Item(name, desc, costPerDay);
+  //Total cost of items.
+  public int costTotal(){
+    for(Item item: items){
+       costTotal =+ item.getCostPerDay() * (item.getCostPerDay() + 1);
+    }
+    return costTotal;
+  }
+  
+  //Adding Item to member.
+  public Item addItem(String name, String desc, int costPerDay, int dayOfCreation) {
+    Item s = new Item(name, desc, costPerDay, dayOfCreation);
     items.add(s);
     return s;
   }

@@ -4,9 +4,10 @@ public class Item {
   private String name;
   private String shortDescription;
   private int costPerDay;
+  private int dayOfCreation;
 
 
-  public Item(String name, String shortDescription, int costPerDay) {
+  public Item(String name, String shortDescription, int costPerDay, int dayOfCreation) {
     setNameProt(name);
     setShortDescriptionProt(shortDescription);
     setCostPerDayProt(costPerDay);
@@ -28,6 +29,10 @@ public class Item {
   protected void setNameProt(String newName) {
     checkNull(newName, "First Name Cannot be null");
     name = newName;
+  }
+  protected void setDayOfCreationProt(int newdayOfCreation) {
+    checkNull(String.valueOf(dayOfCreation), "Day of creation Cannot be null");
+    dayOfCreation = newdayOfCreation;
   }
 
   protected void setCostPerDayProt(int newCostPerDay) {
@@ -53,6 +58,10 @@ public class Item {
     return costPerDay;
   }
 
+  public int getDayOfCreation() {
+    return dayOfCreation;
+  }
+
   enum category {
     TOOL,
     VEHICLE,
@@ -64,8 +73,8 @@ public class Item {
 
   public static class Mutable extends Item {
 
-    public Mutable(String name, String shortDescription, int costPerDay) {
-      super(name, shortDescription, costPerDay);
+    public Mutable(String name, String shortDescription, int costPerDay, int dayOfCreation) {
+      super(name, shortDescription, costPerDay, dayOfCreation);
     }
 
     public Mutable(Item item) {
