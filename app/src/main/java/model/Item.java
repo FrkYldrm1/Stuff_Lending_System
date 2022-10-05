@@ -5,12 +5,15 @@ public class Item {
   private String shortDescription;
   private int costPerDay;
   private int dayOfCreation;
+  private boolean isOwned;
 
 
-  public Item(String name, String shortDescription, int costPerDay, int dayOfCreation) {
+  public Item(String name, String shortDescription, int costPerDay, int dayOfCreation, Boolean isOwned) {
     setNameProt(name);
     setShortDescriptionProt(shortDescription);
     setCostPerDayProt(costPerDay);
+    setisOwnedProt(isOwned);
+    this.dayOfCreation = 0;
   }
 
   public Item(Item item) {
@@ -24,6 +27,9 @@ public class Item {
   protected void setShortDescriptionProt(String newShortDescription) {
     checkNull(newShortDescription, "Description cannot be null");
     shortDescription = newShortDescription;
+  }
+  protected void setisOwnedProt(Boolean newisOwned) {
+    isOwned = newisOwned;
   }
 
   protected void setNameProt(String newName) {
@@ -73,12 +79,16 @@ public class Item {
 
   public static class Mutable extends Item {
 
-    public Mutable(String name, String shortDescription, int costPerDay, int dayOfCreation) {
-      super(name, shortDescription, costPerDay, dayOfCreation);
+    public Mutable(String name, String shortDescription, int costPerDay, int dayOfCreation, Boolean isOwned) {
+      super(name, shortDescription, costPerDay, dayOfCreation, isOwned);
     }
 
     public Mutable(Item item) {
       super(item);
+    }
+
+    public void setisOwned(Boolean newisOwned) {
+      setisOwnedProt(newisOwned);
     }
 
     public void setName(String newName) {
