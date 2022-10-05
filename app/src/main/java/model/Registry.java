@@ -13,16 +13,19 @@ public class Registry {
     addMember("Maya", "Hee", "mayahaha@gmail.com", "9843");
   }
 
+  // returns iterable members
   public Iterable<Member.Mutable> getMembers() {
     return members;
   }
 
+  // adds members without an id
   public Member addMember(String firstName, String lastName, String email, String phoneNumber) {
     Member.Mutable x = new Member.Mutable(firstName, lastName, email, phoneNumber);
     members.add(x);
     return x;
   }
 
+  // adds members with id already
   public Member addMember(Member mem) {
     Member.Mutable x = new Member.Mutable(mem.getFirstName(), mem.getLastName(), mem.getEmail(), mem.getPhoneNumber(),
         mem.getMemberId());

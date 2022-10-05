@@ -36,6 +36,5 @@ public class ConsoleUI {
 
     // prints information
     System.out.println(toPrint);
-
   }
 }
