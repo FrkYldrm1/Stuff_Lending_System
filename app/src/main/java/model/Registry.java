@@ -2,8 +2,11 @@ package model;
 
 import java.util.ArrayList;
 
+import view.ConsoleUI2;
+
 public class Registry {
   private ArrayList<Member> members;
+  private ConsoleUI2 ui = new ConsoleUI2();
   
 
   public Registry() {
@@ -22,6 +25,7 @@ public class Registry {
   public Member addMember(String firstName, String lastName, String email, String phoneNumber) {
     Member x = new Member(firstName, lastName, email, phoneNumber);
     members.add(x);
+    ui.MemberAddedMessage(x);
     return x;
   }
   public void removeMember(Member s) {
@@ -31,6 +35,7 @@ public class Registry {
   private void notifyMembersTime(int time) {
     for (Member s : members) {
       s.TimeAdvanced(time);
+      s.updateItems();
     }
   }
 

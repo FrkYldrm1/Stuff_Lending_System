@@ -6,14 +6,16 @@ public class Item {
   private int costPerDay;
   private int itemId;
   private int dayOfCreation;
-  private boolean isOwned;
+  private boolean IsLended;
+  private int contractPeriod;
 
 
-  public Item(String name, String shortDescription, int costPerDay, int dayOfCreation, Boolean isOwned) {
+  public Item(String name, String shortDescription, int costPerDay, int dayOfCreation, Boolean isLended, int contractPeriod) {
     setNameProt(name);
     setShortDescriptionProt(shortDescription);
     setCostPerDayProt(costPerDay);
-    setisOwnedProt(isOwned);
+    setisLendedProt(isLended);
+    setContractPeriodProt(contractPeriod);
     this.dayOfCreation = 0;
   }
 
@@ -22,6 +24,8 @@ public class Item {
     this.shortDescription = item.shortDescription;
     this.itemId = 0;
     this.costPerDay = item.costPerDay;
+    this.IsLended = item.IsLended;
+    this.contractPeriod = item.contractPeriod;
   }
 
 
@@ -30,8 +34,8 @@ public class Item {
     checkNull(newShortDescription, "Description cannot be null");
     shortDescription = newShortDescription;
   }
-  protected void setisOwnedProt(Boolean newisOwned) {
-    isOwned = newisOwned;
+  protected void setisLendedProt(Boolean newisOwned) {
+    IsLended = newisOwned;
   }
 
   protected void setNameProt(String newName) {
@@ -46,6 +50,10 @@ public class Item {
   protected void setCostPerDayProt(int newCostPerDay) {
     checkNull(String.valueOf(newCostPerDay), "Cost cannot be null");
     costPerDay = newCostPerDay;
+  }
+  protected void setContractPeriodProt(int newContractPeriod) {
+    checkNull(String.valueOf(contractPeriod), "Cost cannot be null");
+    contractPeriod = newContractPeriod;
   }
 
   private void checkNull(String str, String message) {
@@ -73,6 +81,9 @@ public class Item {
   public int getDayOfCreation() {
     return dayOfCreation;
   }
+  public int getContractPeriod() {
+    return contractPeriod;
+  }
 
   public void setItemId(int itemId) {
     this.itemId = itemId;
@@ -89,16 +100,16 @@ public class Item {
 
   public static class Mutable extends Item {
 
-    public Mutable(String name, String shortDescription, int costPerDay, int dayOfCreation, Boolean isOwned) {
-      super(name, shortDescription, costPerDay, dayOfCreation, isOwned);
+    public Mutable(String name, String shortDescription, int costPerDay, int dayOfCreation, Boolean isLended, int contractPeriod) {
+      super(name, shortDescription, costPerDay, dayOfCreation, isLended, contractPeriod);
     }
 
     public Mutable(Item item) {
       super(item);
     }
 
-    public void setisOwned(Boolean newisOwned) {
-      setisOwnedProt(newisOwned);
+    public void setisOwned(Boolean newisLended) {
+      setisLendedProt(newisLended);
     }
 
     public void setName(String newName) {
