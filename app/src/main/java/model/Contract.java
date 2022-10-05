@@ -24,6 +24,10 @@ public class Contract {
         this.endDate = endDate;
     }
 
+    public void ItemContract(Member x, Member y) {
+        
+
+    }
 
     
 }

@@ -29,6 +29,7 @@ public class Registry {
   private void notifyMembersTime(int time) {
     for (Member s : members) {
       s.TimeAdvanced(time);
+      s.updateItems();
     }
   }
 
