@@ -14,5 +14,6 @@ public class App {
 		controller.MemberController mmc = new MemberController(console, registry);
 		mmc.createNewMember();
 		mmc.showAllMembers();
+
 	}
 }
