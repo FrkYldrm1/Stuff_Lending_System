@@ -53,5 +53,13 @@ public class Registry {
     }
 
   }
+  public void ListMembers() {
+    for (Member member : members) {
+      System.out.println(member.getMemberId() + " " + member.getFirstName() +" " + member.getLastName()
+      + " " + member.getEmail() + " " + member.getPhoneNumber() );
+    }
+  }
+
+
 
 }

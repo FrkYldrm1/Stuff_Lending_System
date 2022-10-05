@@ -46,4 +46,12 @@ public class MemberController {
     member.removeItemLended(i);
   }
 
+  public void showMemberDetails() {
+    member.toString();
+  }
+
+  public void listAllMembers() {
+    registry.ListMembers();
+  }
+
 }
