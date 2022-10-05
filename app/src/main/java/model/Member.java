@@ -87,9 +87,11 @@ public class Member implements TimeAdvancedObserver {
     return s;
   }
 
+
+
   public void removeItemOwned(Item s) {
     itemsOwned.remove(s);
-  } 
+  }
 
 
   public static class Mutable extends Member {
