@@ -3,7 +3,7 @@ package model;
 import java.util.ArrayList;
 
 public class Registry {
-  private ArrayList<Member.Mutable> members;
+  private ArrayList<Member> members;
   
 
   public Registry() {
@@ -16,7 +16,7 @@ public class Registry {
 
 
   public Member addMember(String firstName, String lastName, String email, String phoneNumber) {
-    Member.Mutable x = new Member.Mutable(firstName, lastName, email, phoneNumber);
+    Member x = new Member(firstName, lastName, email, phoneNumber);
     members.add(x);
     return x;
 
