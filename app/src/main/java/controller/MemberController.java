@@ -38,5 +38,12 @@ public class MemberController {
     member.addPreparedItemOwned(ui.createItem());
   }
 
+  public void deleteItemOwned(model.Item i) {
+    member.removeItemOwned(i);
+  }
+
+  public void deleteItemLended(model.Item i) {
+    member.removeItemLended(i);
+  }
 
 }
