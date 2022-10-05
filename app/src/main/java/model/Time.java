@@ -1,27 +1,23 @@
 package model;
 
 public class Time {
-  private String dayOfCreation;
+  private int dayOfCreation;
   private int day;
 
-  public  Time(String dayOfCreation, int day) {
-    this.dayOfCreation = dayOfCreation;
-    this.day = day;
+  public  Time() {
+    this.dayOfCreation = 0;
+    this.day = 0;
   }
 
-  private void dateStart() {
-    day = 0;
+  public void dayChange(int value) {
+    day += value;
   }
 
-  public void dayChange() {
-    day += 1;
-  }
-
-  public String getDayOfCreation() {
+  public int getDayOfCreation() {
     return dayOfCreation;
   }
 
-  public void setDayOfCreation(String dayOfCreation) {
+  public void setDayOfCreation(int dayOfCreation) {
     this.dayOfCreation = dayOfCreation;
   }
 

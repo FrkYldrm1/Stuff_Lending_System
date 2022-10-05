@@ -1,12 +1,13 @@
 package model;
 
-public class Member {
+public class Member implements TimeAdvancedObserver {
   private String firstName;
   private String lastName;
   private String email;
   private String phoneNumber;
   private MemberId memberId;
   private int credits;
+  private Time time = new Time();
 
   public Member(String firstName, String lastName, String email, String phoneNumber) {
     this.firstName = firstName;
@@ -48,6 +49,10 @@ public class Member {
 
   public int getCredits() {
     return credits;
+  }
+  @Override
+  public void TimeAdvanced(int value) {
+      time.dayChange(value);
   }
 
   public static class Mutable extends Member {
