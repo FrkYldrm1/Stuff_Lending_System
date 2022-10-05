@@ -57,9 +57,9 @@ public class Member implements TimeAdvancedObserver {
   }
 
   //Adding Item to member.
-  public Item addItem(String name, String desc, int costPerDay, int dayOfCreation) {
-    Item s = new Item(name, desc, costPerDay, dayOfCreation);
-    items.add(s);
+  public Item addItem(String name, String desc, int costPerDay, int dayOfCreation, boolean isOwned) {
+    Item s = new Item(name, desc, costPerDay, dayOfCreation, isOwned);
+    itemsOwned.add(s);
     return s;
   }
 
@@ -78,8 +78,6 @@ public class Member implements TimeAdvancedObserver {
     }
     return costTotal;
   }
-<<<<<<< HEAD
-=======
   
   //  For creation of items.
   public Item addItemOwned(String name, String desc, int costPerDay, int dayOfCreation, Boolean isOwned) {
@@ -88,9 +86,6 @@ public class Member implements TimeAdvancedObserver {
     credits += 100;
     return s;
   }
->>>>>>> 265abfc5c2b960aa656a5c43b27cfe2ab26f8599
-
-
 
   public void removeItemOwned(Item s) {
     itemsOwned.remove(s);
