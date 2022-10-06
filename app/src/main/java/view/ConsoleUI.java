@@ -136,9 +136,6 @@ public class ConsoleUI {
     int ownedItem = m.getItemsOwned().size();
 
     // printed string
-    String toxPrint = firstName + " " + lastName + " (" + memberId + ") " + email +
-        " Current credit : " + currentCredit + " Owned items : " + ownedItem;
-
     String toPrint = String.format("%s    %s    %s, %s\t%s\tCurrent credits: %s\tNumber of owned items: %s", index,
         memberId, firstName, lastName, email, currentCredit, ownedItem);
 
