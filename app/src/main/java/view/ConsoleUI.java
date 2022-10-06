@@ -24,19 +24,22 @@ public class ConsoleUI {
   }
 
   // prints details of member
-  public void showMemberDetails(model.Member m) {
+  public void showMemberDetails(model.Member.Mutable m) {
 
     // gets infromation
     String firstName = m.getFirstName();
+    String email = m.getEmail();
     String lastName = m.getLastName();
     String memberId = m.getMemberId().getId();
+    int currentCredit = m.getCredits();
+    int ownedItem = m.getItemsOwned().size();
 
     // printed string
-    String toPrint = firstName + " " + lastName + " (" + memberId + ")";
+    String toPrint = firstName + " " + lastName + " (" + memberId + ") " + email +
+        " Current credit : " + currentCredit + " Owned items : " + ownedItem;
 
     // prints information
     System.out.println(toPrint);
   }
-
 
 }

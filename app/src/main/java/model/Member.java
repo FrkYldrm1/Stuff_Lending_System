@@ -59,6 +59,14 @@ public class Member implements TimeAdvancedObserver {
     return credits;
   }
 
+  public ArrayList<Item> getItemsOwned() {
+    ArrayList<Item> copy = new ArrayList<>();
+    for(Item item : itemsOwned) {
+      copy.add(item);
+    }
+    return copy;
+  }
+
   //Adding Item to member.
   public Item addItem(String name, String shortDescription, int costPerDay, int dayOfCreation, Boolean isLended, int contractPeriod) {
     Item s = new Item(name, shortDescription, costPerDay, dayOfCreation, isLended, contractPeriod);
@@ -123,13 +131,6 @@ public class Member implements TimeAdvancedObserver {
   // Removing lended items.
   public void removeItemLended(Item s) {
     itemsLended.remove(s);
-  }
-
-  @Override
-  public String toString() {
-    return "Member [firstName=" + firstName + ", lastName=" + lastName + ", email=" + email + ", phoneNumber="
-        + phoneNumber + ", memberId=" + memberId + ", credits=" + credits + ", time=" + time + ", itemsOwned="
-        + itemsOwned + ", itemsLended=" + itemsLended + "]";
   }
 
   // Updating items contract date and if date is fullfilled removing the item from lendings.

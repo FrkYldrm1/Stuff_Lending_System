@@ -6,7 +6,6 @@ import view.ConsoleUI2;
 
 public class Registry {
   private ArrayList<Member> members;
-  private ConsoleUI2 ui = new ConsoleUI2();
 
   private ArrayList<Member.Mutable> member;
 
@@ -24,7 +23,11 @@ public class Registry {
 
   // returns iterable members
   public Iterable<Member.Mutable> getMembers() {
-    return member;
+    ArrayList<Member.Mutable> copy = new ArrayList<>();
+    for (Member.Mutable mem : member) {
+      copy.add(mem);
+    }
+    return copy;
   }
 
   // adds members without an id
@@ -39,7 +42,6 @@ public class Registry {
     Member.Mutable x = new Member.Mutable(mem.getFirstName(), mem.getLastName(), mem.getEmail(), mem.getPhoneNumber(),
         mem.getMemberId());
     members.add(x);
-    ui.MemberAddedMessage(x);
     return x;
   }
   public void removeMember(Member s) {

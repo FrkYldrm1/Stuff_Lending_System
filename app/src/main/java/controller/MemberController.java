@@ -20,7 +20,7 @@ public class MemberController {
   public void createNewMember() {
     model.Member newMember = console.createMember();
     registry.addMember(newMember);
-    ui.MemberAddedMessage(newMember);
+    //ui.MemberAddedMessage(newMember);
 
   }
 
