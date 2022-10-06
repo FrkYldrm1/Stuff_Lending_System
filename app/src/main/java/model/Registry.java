@@ -5,10 +5,10 @@ import java.util.ArrayList;
 import view.ConsoleUI2;
 
 public class Registry {
-  private ArrayList<Member> members;
+  // Sprivate ArrayList<Member> members;
   private ConsoleUI2 ui = new ConsoleUI2();
 
-  private ArrayList<Member.Mutable> member;
+  private ArrayList<Member.Mutable> members;
 
   public Registry() {
     members = new ArrayList<>();
@@ -16,15 +16,11 @@ public class Registry {
     // hard coded members
     addMember("Bruce", "Lee", "Bruce@gmail.com", "988");
     addMember("Maya", "Hee", "mayahaha@gmail.com", "9843");
-    for (Member member : members) {
-      String name = member.getFirstName();
-      System.out.println(name);
-    }
   }
 
   // returns iterable members
   public Iterable<Member.Mutable> getMembers() {
-    return member;
+    return members;
   }
 
   // adds members without an id
@@ -42,6 +38,7 @@ public class Registry {
     ui.MemberAddedMessage(x);
     return x;
   }
+
   public void removeMember(Member s) {
     members.remove(s);
   }
@@ -53,13 +50,12 @@ public class Registry {
     }
 
   }
+
   public void ListMembers() {
     for (Member member : members) {
-      System.out.println(member.getMemberId() + " " + member.getFirstName() +" " + member.getLastName()
-      + " " + member.getEmail() + " " + member.getPhoneNumber() );
+      System.out.println(member.getMemberId() + " " + member.getFirstName() + " " + member.getLastName()
+          + " " + member.getEmail() + " " + member.getPhoneNumber());
     }
   }
-
-
 
 }
