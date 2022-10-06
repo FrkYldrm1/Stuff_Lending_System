@@ -32,10 +32,7 @@ public class ConsoleUI2 {
         String descrioption = input.nextLine();
         System.out.println("Enter item's cost per day : ");
         int costPerDay = input.nextInt();
-        System.out.println("Enter day of creation");
-        int dayOfCreation = input.nextInt();
 
-        return new model.Item(itemName, descrioption, costPerDay, dayOfCreation, false, 0);
+        return new model.Item(itemName, descrioption, costPerDay, 0, false, 0);
     }
-
 }

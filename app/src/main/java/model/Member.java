@@ -129,7 +129,7 @@ public class Member implements TimeAdvancedObserver {
   public String toString() {
     return "Member [firstName=" + firstName + ", lastName=" + lastName + ", email=" + email + ", phoneNumber="
         + phoneNumber + ", memberId=" + memberId + ", credits=" + credits + ", time=" + time + ", itemsOwned="
-        + itemsOwned + ", itemsLended=" + itemsLended + "]";
+        + itemsOwned.size() + ", itemsLended=" + itemsLended.size() + "]";
   }
 
   // Updating items contract date and if date is fullfilled removing the item from lendings.
