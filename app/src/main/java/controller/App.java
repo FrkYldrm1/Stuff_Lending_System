@@ -2,7 +2,11 @@ package controller;
 
 import java.util.Scanner;
 
+import org.checkerframework.checker.guieffect.qual.UI;
+
 import model.Registry;
+import view.ConsoleUI2;
+
 
 public class App {
 
@@ -14,6 +18,8 @@ public class App {
 		controller.MemberController mmc = new MemberController(console, registry);
 		mmc.createNewMember();
 		mmc.showAllMembers();
+		mmc.addItem();
+		mmc.showOwnedItems();
 
 	}
 }

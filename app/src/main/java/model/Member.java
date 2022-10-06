@@ -88,6 +88,8 @@ public class Member implements TimeAdvancedObserver {
 
   }
 
+  
+
   // Total cost of items.
   public int costTotal() {
     for (Item item : itemsLended) {

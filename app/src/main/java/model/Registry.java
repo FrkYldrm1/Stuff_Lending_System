@@ -23,6 +23,8 @@ public class Registry {
     return members;
   }
 
+
+
   // adds members without an id
   public Member addMember(String firstName, String lastName, String email, String phoneNumber) {
     Member.Mutable x = new Member.Mutable(firstName, lastName, email, phoneNumber);
@@ -35,8 +37,17 @@ public class Registry {
     Member.Mutable x = new Member.Mutable(mem.getFirstName(), mem.getLastName(), mem.getEmail(), mem.getPhoneNumber(),
         mem.getMemberId());
     members.add(x);
-    ui.MemberAddedMessage(x);
     return x;
+  }
+
+  // Used for getting a spesific member. But it is not working functionally. But for testing we used a members as a return.
+  public Member getMember (String memberId) {
+    for (Member member : members) {
+      if(member.getMemberId().getId() == memberId) {
+        return member;
+      }
+    }
+    return members.get(0);
   }
 
   public void removeMember(Member s) {

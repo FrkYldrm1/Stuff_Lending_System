@@ -143,4 +143,33 @@ public class ConsoleUI {
     System.out.println(toPrint);
   }
 
+  // Here we show items details
+  public void showItemDetails(model.Item i) {
+    String itemName = i.getName();
+    String itemID = i.getItemId();
+    String itemDesc = i.getShortDescription();
+    int itemCost = i.getCostPerDay(); 
+
+    String toPrint = itemName + " ID: " + itemID + " Item desc : " + itemDesc + " Item cost : " + itemCost;
+    System.out.println(toPrint); 
+  }
+  
+  // Is used to get members id.
+  public String idInput() {
+    System.out.println("Please enter member ID : ");
+    return input.nextLine();
+
+  }
+  // Is used for creating items
+  public model.Item createItem() {
+    System.out.println("Enter item name: ");
+    String itemName = input.nextLine();
+    System.out.println("Enter item's short description: ");
+    String descrioption = input.nextLine();
+    System.out.println("Enter item's cost per day : ");
+    int costPerDay = input.nextInt();
+
+    return new model.Item(itemName, descrioption, costPerDay, 0, false, 0);
+  }
+
 }

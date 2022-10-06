@@ -25,14 +25,5 @@ public class ConsoleUI2 {
         System.out.println("Member " + x.getFirstName() + " is deleted!");
     }
 
-    public model.Item createItem() {
-        System.out.println("Enter item name: ");
-        String itemName = input.nextLine();
-        System.out.println("Enter item's short description: ");
-        String descrioption = input.nextLine();
-        System.out.println("Enter item's cost per day : ");
-        int costPerDay = input.nextInt();
 
-        return new model.Item(itemName, descrioption, costPerDay, 0, false, 0);
-    }
 }

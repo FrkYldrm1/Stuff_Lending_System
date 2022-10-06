@@ -4,10 +4,11 @@ public class Item {
   private String name;
   private String shortDescription;
   private int costPerDay;
-  private int itemId;
+  private String itemId;
   private int dayOfCreation;
   private boolean IsLended;
   private int contractPeriod;
+  private MemberId id = new MemberId();
 
 
   public Item(String name, String shortDescription, int costPerDay, int dayOfCreation, Boolean isLended, int contractPeriod) {
@@ -17,12 +18,16 @@ public class Item {
     setisLendedProt(isLended);
     setContractPeriodProt(contractPeriod);
     this.dayOfCreation = 0;
+    this.itemId = id.createId();
+  }
+
+  public String getItemId() {
+    return itemId;
   }
 
   public Item(Item item) {
     this.name = item.name;
     this.shortDescription = item.shortDescription;
-    this.itemId = 0;
     this.costPerDay = item.costPerDay;
     this.IsLended = item.IsLended;
     this.contractPeriod = item.contractPeriod;
@@ -66,10 +71,6 @@ public class Item {
     return name;
   }
 
-  public int getItemId() {
-    return itemId;
-  }
-
   public String getShortDescription() {
     return shortDescription;
   }
@@ -83,10 +84,6 @@ public class Item {
   }
   public int getContractPeriod() {
     return contractPeriod;
-  }
-
-  public void setItemId(int itemId) {
-    this.itemId = itemId;
   }
 
   enum category {

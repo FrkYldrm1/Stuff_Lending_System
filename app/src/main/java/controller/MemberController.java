@@ -1,8 +1,12 @@
 package controller;
 
+import org.checkerframework.checker.units.qual.m;
+
+import model.Item;
 import model.Member;
 import model.Registry;
 import view.ConsoleUI;
+import view.ConsoleUI2;
 
 // represents the controller controlling the members
 public class MemberController {
@@ -71,13 +75,29 @@ public class MemberController {
     }
   }
 
+  public void showOwnedItems() {
+
+    for (Item item : registry.getMember(console.idInput()).getItemsOwned()) {
+      console.showItemDetails(item);
+    }
+  }
+
+  public void selectMember() {
+    registry.getMember(console.idInput());
+  }
+
   public void deleteMember(model.Member member) {
     registry.removeMember(member);
     ui.MemberDeletedMessage(member);
   }
 
+
+  // Here we first get a member from registry then we add an item to owned items
+  //We use create item method from console
+  //Id input for selecting member
+  // We have problem with get member
   public void addItem() {
-    member.addPreparedItemOwned(ui.createItem());
+    registry.getMember(console.idInput()).addPreparedItemOwned(console.createItem());
   }
 
   public void deleteItemOwned(model.Item i) {
