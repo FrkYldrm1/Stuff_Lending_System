@@ -59,6 +59,14 @@ public class Member implements TimeAdvancedObserver {
     return credits;
   }
 
+  public ArrayList<Item> getItemsOwned() {
+    ArrayList<Item> copy = new ArrayList<>();
+    for(Item item : itemsOwned) {
+      copy.add(item);
+    }
+    return copy;
+  }
+
   // Adding Item to member.
   public Item addItem(String name, String shortDescription, int costPerDay, int dayOfCreation, Boolean isLended,
       int contractPeriod) {

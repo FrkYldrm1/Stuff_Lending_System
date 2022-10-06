@@ -57,5 +57,4 @@ public class Registry {
           + " " + member.getEmail() + " " + member.getPhoneNumber());
     }
   }
-
 }
