@@ -125,7 +125,7 @@ public class ConsoleUI {
   }
 
   // prints details of member
-  public void showMemberDetails(model.Member.Mutable m) {
+  public void showMemberDetails(model.Member.Mutable m, int index) {
 
     // gets infromation
     String firstName = m.getFirstName();
@@ -136,11 +136,15 @@ public class ConsoleUI {
     int ownedItem = m.getItemsOwned().size();
 
     // printed string
-    String toPrint = firstName + " " + lastName + " (" + memberId + ") " + email +
+    String toxPrint = firstName + " " + lastName + " (" + memberId + ") " + email +
         " Current credit : " + currentCredit + " Owned items : " + ownedItem;
+
+    String toPrint = String.format("%s    %s    %s, %s\t%s\tCurrent credits: %s\tNumber of owned items: %s", index,
+        memberId, firstName, lastName, email, currentCredit, ownedItem);
 
     // prints information
     System.out.println(toPrint);
+
   }
 
   // Here we show items details
@@ -148,18 +152,19 @@ public class ConsoleUI {
     String itemName = i.getName();
     String itemID = i.getItemId();
     String itemDesc = i.getShortDescription();
-    int itemCost = i.getCostPerDay(); 
+    int itemCost = i.getCostPerDay();
 
     String toPrint = itemName + " ID: " + itemID + " Item desc : " + itemDesc + " Item cost : " + itemCost;
-    System.out.println(toPrint); 
+    System.out.println(toPrint);
   }
-  
+
   // Is used to get members id.
   public String idInput() {
     System.out.println("Please enter member ID : ");
     return input.nextLine();
 
   }
+
   // Is used for creating items
   public model.Item createItem() {
     System.out.println("Enter item name: ");

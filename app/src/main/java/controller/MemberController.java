@@ -70,8 +70,10 @@ public class MemberController {
   }
 
   public void showAllMembers() {
+    int index = 0;
     for (Member.Mutable member : registry.getMembers()) {
-      console.showMemberDetails(member);
+      index += 1;
+      console.showMemberDetails(member, index);
     }
   }
 
@@ -91,10 +93,9 @@ public class MemberController {
     ui.MemberDeletedMessage(member);
   }
 
-
   // Here we first get a member from registry then we add an item to owned items
-  //We use create item method from console
-  //Id input for selecting member
+  // We use create item method from console
+  // Id input for selecting member
   // We have problem with get member
   public void addItem() {
     registry.getMember(console.idInput()).addPreparedItemOwned(console.createItem());

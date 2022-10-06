@@ -1,11 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<BugCollection version="4.7.1" sequence="0" timestamp="1664739256002" analysisTimestamp="1664739256124" release="unspecified">
+<BugCollection version="4.7.1" sequence="0" timestamp="1665091784469" analysisTimestamp="1665091784499" release="unspecified">
   <Project projectName="app (spotbugsMain)">
     <Jar>C:\Users\popoy\Documents\OOAD with AHmad and Faruk\a2\app\build\classes\java\main\controller\App.class</Jar>
-    <Jar>C:\Users\popoy\Documents\OOAD with AHmad and Faruk\a2\app\build\classes\java\main\controller\Simple.class</Jar>
-    <Jar>C:\Users\popoy\Documents\OOAD with AHmad and Faruk\a2\app\build\classes\java\main\model\Simple.class</Jar>
-    <Jar>C:\Users\popoy\Documents\OOAD with AHmad and Faruk\a2\app\build\classes\java\main\view\Simple.class</Jar>
+    <Jar>C:\Users\popoy\Documents\OOAD with AHmad and Faruk\a2\app\build\classes\java\main\controller\MemberController.class</Jar>
+    <Jar>C:\Users\popoy\Documents\OOAD with AHmad and Faruk\a2\app\build\classes\java\main\model\Contract.class</Jar>
+    <Jar>C:\Users\popoy\Documents\OOAD with AHmad and Faruk\a2\app\build\classes\java\main\model\Item$category.class</Jar>
+    <Jar>C:\Users\popoy\Documents\OOAD with AHmad and Faruk\a2\app\build\classes\java\main\model\Item$Mutable.class</Jar>
+    <Jar>C:\Users\popoy\Documents\OOAD with AHmad and Faruk\a2\app\build\classes\java\main\model\Item.class</Jar>
+    <Jar>C:\Users\popoy\Documents\OOAD with AHmad and Faruk\a2\app\build\classes\java\main\model\Member$Mutable.class</Jar>
+    <Jar>C:\Users\popoy\Documents\OOAD with AHmad and Faruk\a2\app\build\classes\java\main\model\Member.class</Jar>
+    <Jar>C:\Users\popoy\Documents\OOAD with AHmad and Faruk\a2\app\build\classes\java\main\model\MemberId.class</Jar>
+    <Jar>C:\Users\popoy\Documents\OOAD with AHmad and Faruk\a2\app\build\classes\java\main\model\Registry.class</Jar>
+    <Jar>C:\Users\popoy\Documents\OOAD with AHmad and Faruk\a2\app\build\classes\java\main\model\Time.class</Jar>
+    <Jar>C:\Users\popoy\Documents\OOAD with AHmad and Faruk\a2\app\build\classes\java\main\model\TimeAdvancedObserver.class</Jar>
+    <Jar>C:\Users\popoy\Documents\OOAD with AHmad and Faruk\a2\app\build\classes\java\main\view\ConsoleUI.class</Jar>
+    <Jar>C:\Users\popoy\Documents\OOAD with AHmad and Faruk\a2\app\build\classes\java\main\view\ConsoleUI2.class</Jar>
     <AuxClasspathEntry>C:\Users\popoy\.gradle\caches\modules-2\files-2.1\com.google.guava\guava\30.1.1-jre\87e0fd1df874ea3cbe577702fe6f17068b790fd8\guava-30.1.1-jre.jar</AuxClasspathEntry>
     <AuxClasspathEntry>C:\Users\popoy\.gradle\caches\modules-2\files-2.1\com.google.guava\failureaccess\1.0.1\1dcf1de382a0bf95a3d8b0849546c88bac1292c9\failureaccess-1.0.1.jar</AuxClasspathEntry>
     <AuxClasspathEntry>C:\Users\popoy\.gradle\caches\modules-2\files-2.1\com.google.guava\listenablefuture\9999.0-empty-to-avoid-conflict-with-guava\b421526c5f297295adef1c886e5246c39d4ac629\listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar</AuxClasspathEntry>
@@ -16,33 +26,612 @@
     <SrcDir>C:\Users\popoy\Documents\OOAD with AHmad and Faruk\a2\app\src\main\resources</SrcDir>
     <SrcDir>C:\Users\popoy\Documents\OOAD with AHmad and Faruk\a2\app\src\main\java</SrcDir>
   </Project>
+  <BugInstance type="EI_EXPOSE_REP2" priority="2" rank="18" abbrev="EI2" category="MALICIOUS_CODE" instanceHash="ad5a1e16e11197a3af862f4888e95fad" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="374">
+    <ShortMessage>May expose internal representation by incorporating reference to mutable object</ShortMessage>
+    <LongMessage>new controller.MemberController(ConsoleUI, Registry) may expose internal representation by storing an externally mutable object into MemberController.registry</LongMessage>
+    <Class classname="controller.MemberController" primary="true">
+      <SourceLine classname="controller.MemberController" start="19" end="160" sourcefile="MemberController.java" sourcepath="controller/MemberController.java" relSourcepath="java\controller\MemberController.java">
+        <Message>At MemberController.java:[lines 19-160]</Message>
+      </SourceLine>
+      <Message>In class controller.MemberController</Message>
+    </Class>
+    <Method classname="controller.MemberController" name="&lt;init&gt;" signature="(Lview/ConsoleUI;Lmodel/Registry;)V" isStatic="false" primary="true">
+      <SourceLine classname="controller.MemberController" start="19" end="22" startBytecode="0" endBytecode="88" sourcefile="MemberController.java" sourcepath="controller/MemberController.java" relSourcepath="java\controller\MemberController.java"/>
+      <Message>In method new controller.MemberController(ConsoleUI, Registry)</Message>
+    </Method>
+    <Field classname="controller.MemberController" name="registry" signature="Lmodel/Registry;" isStatic="false" primary="true">
+      <SourceLine classname="controller.MemberController" sourcefile="MemberController.java" sourcepath="controller/MemberController.java" relSourcepath="java\controller\MemberController.java">
+        <Message>In MemberController.java</Message>
+      </SourceLine>
+      <Message>Field controller.MemberController.registry</Message>
+    </Field>
+    <LocalVariable name="registry" register="2" pc="11" role="LOCAL_VARIABLE_NAMED">
+      <Message>Local variable named registry</Message>
+    </LocalVariable>
+    <SourceLine classname="controller.MemberController" primary="true" start="21" end="21" startBytecode="11" endBytecode="11" sourcefile="MemberController.java" sourcepath="controller/MemberController.java" relSourcepath="java\controller\MemberController.java">
+      <Message>At MemberController.java:[line 21]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="NP_UNWRITTEN_FIELD" priority="2" rank="8" abbrev="NP" category="CORRECTNESS" instanceHash="5d7f253b9bf201fbe11c9bb8984b6811" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="476">
+    <ShortMessage>Read of unwritten field</ShortMessage>
+    <LongMessage>Read of unwritten field member in controller.MemberController.deleteItemLended(Item)</LongMessage>
+    <Class classname="controller.MemberController" primary="true">
+      <SourceLine classname="controller.MemberController" start="19" end="160" sourcefile="MemberController.java" sourcepath="controller/MemberController.java" relSourcepath="java\controller\MemberController.java">
+        <Message>At MemberController.java:[lines 19-160]</Message>
+      </SourceLine>
+      <Message>In class controller.MemberController</Message>
+    </Class>
+    <Method classname="controller.MemberController" name="deleteItemLended" signature="(Lmodel/Item;)V" isStatic="false" primary="true">
+      <SourceLine classname="controller.MemberController" start="108" end="109" startBytecode="0" endBytecode="64" sourcefile="MemberController.java" sourcepath="controller/MemberController.java" relSourcepath="java\controller\MemberController.java"/>
+      <Message>In method controller.MemberController.deleteItemLended(Item)</Message>
+    </Method>
+    <Field classname="controller.MemberController" name="member" signature="Lmodel/Member;" isStatic="false" primary="true">
+      <SourceLine classname="controller.MemberController" sourcefile="MemberController.java" sourcepath="controller/MemberController.java" relSourcepath="java\controller\MemberController.java">
+        <Message>In MemberController.java</Message>
+      </SourceLine>
+      <Message>Field controller.MemberController.member</Message>
+    </Field>
+    <SourceLine classname="controller.MemberController" primary="true" start="108" end="108" startBytecode="5" endBytecode="5" sourcefile="MemberController.java" sourcepath="controller/MemberController.java" relSourcepath="java\controller\MemberController.java">
+      <Message>At MemberController.java:[line 108]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="NP_UNWRITTEN_FIELD" priority="2" rank="8" abbrev="NP" category="CORRECTNESS" instanceHash="cfbe1a985dfe251e35da9e7d32e25b1c" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="476">
+    <ShortMessage>Read of unwritten field</ShortMessage>
+    <LongMessage>Read of unwritten field member in controller.MemberController.deleteItemOwned(Item)</LongMessage>
+    <Class classname="controller.MemberController" primary="true">
+      <SourceLine classname="controller.MemberController" start="19" end="160" sourcefile="MemberController.java" sourcepath="controller/MemberController.java" relSourcepath="java\controller\MemberController.java">
+        <Message>At MemberController.java:[lines 19-160]</Message>
+      </SourceLine>
+      <Message>In class controller.MemberController</Message>
+    </Class>
+    <Method classname="controller.MemberController" name="deleteItemOwned" signature="(Lmodel/Item;)V" isStatic="false" primary="true">
+      <SourceLine classname="controller.MemberController" start="104" end="105" startBytecode="0" endBytecode="64" sourcefile="MemberController.java" sourcepath="controller/MemberController.java" relSourcepath="java\controller\MemberController.java"/>
+      <Message>In method controller.MemberController.deleteItemOwned(Item)</Message>
+    </Method>
+    <Field classname="controller.MemberController" name="member" signature="Lmodel/Member;" isStatic="false" primary="true">
+      <SourceLine classname="controller.MemberController" sourcefile="MemberController.java" sourcepath="controller/MemberController.java" relSourcepath="java\controller\MemberController.java">
+        <Message>In MemberController.java</Message>
+      </SourceLine>
+      <Message>Field controller.MemberController.member</Message>
+    </Field>
+    <SourceLine classname="controller.MemberController" primary="true" start="104" end="104" startBytecode="5" endBytecode="5" sourcefile="MemberController.java" sourcepath="controller/MemberController.java" relSourcepath="java\controller\MemberController.java">
+      <Message>At MemberController.java:[line 104]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="NP_UNWRITTEN_FIELD" priority="2" rank="8" abbrev="NP" category="CORRECTNESS" instanceHash="96ff08aa6dce52379795b273e5a02920" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="476">
+    <ShortMessage>Read of unwritten field</ShortMessage>
+    <LongMessage>Read of unwritten field ui in controller.MemberController.deleteMember(Member)</LongMessage>
+    <Class classname="controller.MemberController" primary="true">
+      <SourceLine classname="controller.MemberController" start="19" end="160" sourcefile="MemberController.java" sourcepath="controller/MemberController.java" relSourcepath="java\controller\MemberController.java">
+        <Message>At MemberController.java:[lines 19-160]</Message>
+      </SourceLine>
+      <Message>In class controller.MemberController</Message>
+    </Class>
+    <Method classname="controller.MemberController" name="deleteMember" signature="(Lmodel/Member;)V" isStatic="false" primary="true">
+      <SourceLine classname="controller.MemberController" start="90" end="92" startBytecode="0" endBytecode="76" sourcefile="MemberController.java" sourcepath="controller/MemberController.java" relSourcepath="java\controller\MemberController.java"/>
+      <Message>In method controller.MemberController.deleteMember(Member)</Message>
+    </Method>
+    <Field classname="controller.MemberController" name="ui" signature="Lview/ConsoleUI2;" isStatic="false" primary="true">
+      <SourceLine classname="controller.MemberController" sourcefile="MemberController.java" sourcepath="controller/MemberController.java" relSourcepath="java\controller\MemberController.java">
+        <Message>In MemberController.java</Message>
+      </SourceLine>
+      <Message>Field controller.MemberController.ui</Message>
+    </Field>
+    <SourceLine classname="controller.MemberController" primary="true" start="91" end="91" startBytecode="13" endBytecode="13" sourcefile="MemberController.java" sourcepath="controller/MemberController.java" relSourcepath="java\controller\MemberController.java">
+      <Message>At MemberController.java:[line 91]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="NP_UNWRITTEN_FIELD" priority="2" rank="8" abbrev="NP" category="CORRECTNESS" instanceHash="bd2b3b2a0e8e951b2ecd2d748962600c" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="476">
+    <ShortMessage>Read of unwritten field</ShortMessage>
+    <LongMessage>Read of unwritten field member in controller.MemberController.showMemberDetails()</LongMessage>
+    <Class classname="controller.MemberController" primary="true">
+      <SourceLine classname="controller.MemberController" start="19" end="160" sourcefile="MemberController.java" sourcepath="controller/MemberController.java" relSourcepath="java\controller\MemberController.java">
+        <Message>At MemberController.java:[lines 19-160]</Message>
+      </SourceLine>
+      <Message>In class controller.MemberController</Message>
+    </Class>
+    <Method classname="controller.MemberController" name="showMemberDetails" signature="()V" isStatic="false" primary="true">
+      <SourceLine classname="controller.MemberController" start="112" end="113" startBytecode="0" endBytecode="54" sourcefile="MemberController.java" sourcepath="controller/MemberController.java" relSourcepath="java\controller\MemberController.java"/>
+      <Message>In method controller.MemberController.showMemberDetails()</Message>
+    </Method>
+    <Field classname="controller.MemberController" name="member" signature="Lmodel/Member;" isStatic="false" primary="true">
+      <SourceLine classname="controller.MemberController" sourcefile="MemberController.java" sourcepath="controller/MemberController.java" relSourcepath="java\controller\MemberController.java">
+        <Message>In MemberController.java</Message>
+      </SourceLine>
+      <Message>Field controller.MemberController.member</Message>
+    </Field>
+    <SourceLine classname="controller.MemberController" primary="true" start="112" end="112" startBytecode="4" endBytecode="4" sourcefile="MemberController.java" sourcepath="controller/MemberController.java" relSourcepath="java\controller\MemberController.java">
+      <Message>At MemberController.java:[line 112]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="RCN_REDUNDANT_NULLCHECK_WOULD_HAVE_BEEN_A_NPE" priority="2" rank="11" abbrev="RCN" category="CORRECTNESS" instanceHash="cdec4b2b37813b28929342944bcd0532" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="476">
+    <ShortMessage>Nullcheck of value previously dereferenced</ShortMessage>
+    <LongMessage>Nullcheck of input at line 126 of value previously dereferenced in controller.MemberController.isNull(String)</LongMessage>
+    <Class classname="controller.MemberController" primary="true">
+      <SourceLine classname="controller.MemberController" start="19" end="160" sourcefile="MemberController.java" sourcepath="controller/MemberController.java" relSourcepath="java\controller\MemberController.java">
+        <Message>At MemberController.java:[lines 19-160]</Message>
+      </SourceLine>
+      <Message>In class controller.MemberController</Message>
+    </Class>
+    <Method classname="controller.MemberController" name="isNull" signature="(Ljava/lang/String;)Z" isStatic="false" primary="true">
+      <SourceLine classname="controller.MemberController" start="126" end="129" startBytecode="0" endBytecode="95" sourcefile="MemberController.java" sourcepath="controller/MemberController.java" relSourcepath="java\controller\MemberController.java"/>
+      <Message>In method controller.MemberController.isNull(String)</Message>
+    </Method>
+    <LocalVariable name="input" register="1" pc="18" role="LOCAL_VARIABLE_VALUE_OF">
+      <Message>Value loaded from input</Message>
+    </LocalVariable>
+    <SourceLine classname="controller.MemberController" primary="true" start="126" end="126" startBytecode="3" endBytecode="3" sourcefile="MemberController.java" sourcepath="controller/MemberController.java" relSourcepath="java\controller\MemberController.java">
+      <Message>At MemberController.java:[line 126]</Message>
+    </SourceLine>
+    <SourceLine classname="controller.MemberController" start="126" end="126" startBytecode="19" endBytecode="19" sourcefile="MemberController.java" sourcepath="controller/MemberController.java" relSourcepath="java\controller\MemberController.java" role="SOURCE_REDUNDANT_NULL_CHECK">
+      <Message>Redundant null check at MemberController.java:[line 126]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="RV_RETURN_VALUE_IGNORED_NO_SIDE_EFFECT" priority="2" rank="17" abbrev="RV" category="STYLE" instanceHash="9090cf5cab006a101bd4b6d8f636ab25" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="440">
+    <ShortMessage>Return value of method without side effect is ignored</ShortMessage>
+    <LongMessage>Return value of model.Registry.getMember(String) ignored, but method has no side effect</LongMessage>
+    <Class classname="controller.MemberController" primary="true">
+      <SourceLine classname="controller.MemberController" start="19" end="160" sourcefile="MemberController.java" sourcepath="controller/MemberController.java" relSourcepath="java\controller\MemberController.java">
+        <Message>At MemberController.java:[lines 19-160]</Message>
+      </SourceLine>
+      <Message>In class controller.MemberController</Message>
+    </Class>
+    <Method classname="controller.MemberController" name="selectMember" signature="()V" isStatic="false" primary="true">
+      <SourceLine classname="controller.MemberController" start="86" end="87" startBytecode="0" endBytecode="61" sourcefile="MemberController.java" sourcepath="controller/MemberController.java" relSourcepath="java\controller\MemberController.java"/>
+      <Message>In method controller.MemberController.selectMember()</Message>
+    </Method>
+    <Method classname="model.Registry" name="getMember" signature="(Ljava/lang/String;)Lmodel/Member;" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="model.Registry" start="45" end="50" startBytecode="0" endBytecode="150" sourcefile="Registry.java" sourcepath="model/Registry.java" relSourcepath="java\model\Registry.java"/>
+      <Message>Called method model.Registry.getMember(String)</Message>
+    </Method>
+    <SourceLine classname="controller.MemberController" primary="true" start="86" end="86" startBytecode="11" endBytecode="11" sourcefile="MemberController.java" sourcepath="controller/MemberController.java" relSourcepath="java\controller\MemberController.java">
+      <Message>At MemberController.java:[line 86]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="UWF_UNWRITTEN_FIELD" priority="2" rank="12" abbrev="UwF" category="CORRECTNESS" instanceHash="6d7e80283aa05baee3a1857d134665de" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Unwritten field</ShortMessage>
+    <LongMessage>Unwritten field: controller.MemberController.member</LongMessage>
+    <Class classname="controller.MemberController" primary="true">
+      <SourceLine classname="controller.MemberController" start="19" end="160" sourcefile="MemberController.java" sourcepath="controller/MemberController.java" relSourcepath="java\controller\MemberController.java">
+        <Message>At MemberController.java:[lines 19-160]</Message>
+      </SourceLine>
+      <Message>In class controller.MemberController</Message>
+    </Class>
+    <Field classname="controller.MemberController" name="member" signature="Lmodel/Member;" isStatic="false" primary="true">
+      <SourceLine classname="controller.MemberController" sourcefile="MemberController.java" sourcepath="controller/MemberController.java" relSourcepath="java\controller\MemberController.java">
+        <Message>In MemberController.java</Message>
+      </SourceLine>
+      <Message>Field controller.MemberController.member</Message>
+    </Field>
+    <SourceLine classname="controller.MemberController" primary="true" start="104" end="104" startBytecode="1" endBytecode="1" sourcefile="MemberController.java" sourcepath="controller/MemberController.java" relSourcepath="java\controller\MemberController.java">
+      <Message>At MemberController.java:[line 104]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="UWF_UNWRITTEN_FIELD" priority="2" rank="12" abbrev="UwF" category="CORRECTNESS" instanceHash="56f0da8637917a5fcf0501a80ef0ca8a" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Unwritten field</ShortMessage>
+    <LongMessage>Unwritten field: controller.MemberController.ui</LongMessage>
+    <Class classname="controller.MemberController" primary="true">
+      <SourceLine classname="controller.MemberController" start="19" end="160" sourcefile="MemberController.java" sourcepath="controller/MemberController.java" relSourcepath="java\controller\MemberController.java">
+        <Message>At MemberController.java:[lines 19-160]</Message>
+      </SourceLine>
+      <Message>In class controller.MemberController</Message>
+    </Class>
+    <Field classname="controller.MemberController" name="ui" signature="Lview/ConsoleUI2;" isStatic="false" primary="true">
+      <SourceLine classname="controller.MemberController" sourcefile="MemberController.java" sourcepath="controller/MemberController.java" relSourcepath="java\controller\MemberController.java">
+        <Message>In MemberController.java</Message>
+      </SourceLine>
+      <Message>Field controller.MemberController.ui</Message>
+    </Field>
+    <SourceLine classname="controller.MemberController" primary="true" start="91" end="91" startBytecode="9" endBytecode="9" sourcefile="MemberController.java" sourcepath="controller/MemberController.java" relSourcepath="java\controller\MemberController.java">
+      <Message>At MemberController.java:[line 91]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="NM_METHOD_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE" instanceHash="7273bb6c050e853329c72d3885ff4bb5" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Method names should start with a lower case letter</ShortMessage>
+    <LongMessage>The method name model.Contract.ItemContract(Member, Member, int) doesn&apos;t start with a lower case letter</LongMessage>
+    <Class classname="model.Contract" primary="true">
+      <SourceLine classname="model.Contract" start="9" end="31" sourcefile="Contract.java" sourcepath="model/Contract.java" relSourcepath="java\model\Contract.java">
+        <Message>At Contract.java:[lines 9-31]</Message>
+      </SourceLine>
+      <Message>In class model.Contract</Message>
+    </Class>
+    <Method classname="model.Contract" name="ItemContract" signature="(Lmodel/Member;Lmodel/Member;I)V" isStatic="false" primary="true">
+      <SourceLine classname="model.Contract" start="31" end="31" startBytecode="0" endBytecode="72" sourcefile="Contract.java" sourcepath="model/Contract.java" relSourcepath="java\model\Contract.java"/>
+      <Message>In method model.Contract.ItemContract(Member, Member, int)</Message>
+    </Method>
+    <SourceLine classname="model.Contract" start="31" end="31" startBytecode="0" endBytecode="72" sourcefile="Contract.java" sourcepath="model/Contract.java" relSourcepath="java\model\Contract.java" synthetic="true">
+      <Message>At Contract.java:[line 31]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="NM_METHOD_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE" instanceHash="f1d748798e3fb30c11c28eff0e9d25b9" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Method names should start with a lower case letter</ShortMessage>
+    <LongMessage>The method name model.Member.TimeAdvanced(int) doesn&apos;t start with a lower case letter</LongMessage>
+    <Class classname="model.Member" primary="true">
+      <SourceLine classname="model.Member" start="15" end="158" sourcefile="Member.java" sourcepath="model/Member.java" relSourcepath="java\model\Member.java">
+        <Message>At Member.java:[lines 15-158]</Message>
+      </SourceLine>
+      <Message>In class model.Member</Message>
+    </Class>
+    <Method classname="model.Member" name="TimeAdvanced" signature="(I)V" isStatic="false" primary="true">
+      <SourceLine classname="model.Member" start="81" end="89" startBytecode="0" endBytecode="204" sourcefile="Member.java" sourcepath="model/Member.java" relSourcepath="java\model\Member.java"/>
+      <Message>In method model.Member.TimeAdvanced(int)</Message>
+    </Method>
+    <SourceLine classname="model.Member" start="81" end="89" startBytecode="0" endBytecode="204" sourcefile="Member.java" sourcepath="model/Member.java" relSourcepath="java\model\Member.java" synthetic="true">
+      <Message>At Member.java:[lines 81-89]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="URF_UNREAD_FIELD" priority="2" rank="18" abbrev="UrF" category="PERFORMANCE" instanceHash="6bdaf7195c7cd55781d0b1873dc553ae" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Unread field</ShortMessage>
+    <LongMessage>Unread field: model.MemberId.dateCreated</LongMessage>
+    <Class classname="model.MemberId" primary="true">
+      <SourceLine classname="model.MemberId" start="6" end="39" sourcefile="MemberId.java" sourcepath="model/MemberId.java" relSourcepath="java\model\MemberId.java">
+        <Message>At MemberId.java:[lines 6-39]</Message>
+      </SourceLine>
+      <Message>In class model.MemberId</Message>
+    </Class>
+    <Field classname="model.MemberId" name="dateCreated" signature="Ljava/lang/String;" isStatic="false" primary="true">
+      <SourceLine classname="model.MemberId" sourcefile="MemberId.java" sourcepath="model/MemberId.java" relSourcepath="java\model\MemberId.java">
+        <Message>In MemberId.java</Message>
+      </SourceLine>
+      <Message>Field model.MemberId.dateCreated</Message>
+    </Field>
+    <SourceLine classname="model.MemberId" primary="true" start="13" end="13" startBytecode="28" endBytecode="28" sourcefile="MemberId.java" sourcepath="model/MemberId.java" relSourcepath="java\model\MemberId.java">
+      <Message>At MemberId.java:[line 13]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP" priority="2" rank="18" abbrev="EI" category="MALICIOUS_CODE" instanceHash="5ae4e22fe7a61fff1970e5de9f0d1d5" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="374">
+    <ShortMessage>May expose internal representation by returning reference to mutable object</ShortMessage>
+    <LongMessage>model.Registry.getMembers() may expose internal representation by returning Registry.members</LongMessage>
+    <Class classname="model.Registry" primary="true">
+      <SourceLine classname="model.Registry" start="9" end="70" sourcefile="Registry.java" sourcepath="model/Registry.java" relSourcepath="java\model\Registry.java">
+        <Message>At Registry.java:[lines 9-70]</Message>
+      </SourceLine>
+      <Message>In class model.Registry</Message>
+    </Class>
+    <Method classname="model.Registry" name="getMembers" signature="()Ljava/lang/Iterable;" isStatic="false" primary="true">
+      <SourceLine classname="model.Registry" start="23" end="23" startBytecode="0" endBytecode="46" sourcefile="Registry.java" sourcepath="model/Registry.java" relSourcepath="java\model\Registry.java"/>
+      <Message>In method model.Registry.getMembers()</Message>
+    </Method>
+    <Field classname="model.Registry" name="members" signature="Ljava/util/ArrayList;" isStatic="false" primary="true">
+      <SourceLine classname="model.Registry" sourcefile="Registry.java" sourcepath="model/Registry.java" relSourcepath="java\model\Registry.java">
+        <Message>In Registry.java</Message>
+      </SourceLine>
+      <Message>Field model.Registry.members</Message>
+    </Field>
+    <SourceLine classname="model.Registry" primary="true" start="23" end="23" startBytecode="4" endBytecode="4" sourcefile="Registry.java" sourcepath="model/Registry.java" relSourcepath="java\model\Registry.java">
+      <Message>At Registry.java:[line 23]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="ES_COMPARING_PARAMETER_STRING_WITH_EQ" priority="1" rank="14" abbrev="ES" category="BAD_PRACTICE" instanceHash="79c77e3f1ac61fb30a147f22b6995686" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="597">
+    <ShortMessage>Comparison of String parameter using == or !=</ShortMessage>
+    <LongMessage>Comparison of String parameter using == or != in model.Registry.getMember(String)</LongMessage>
+    <Class classname="model.Registry" primary="true">
+      <SourceLine classname="model.Registry" start="9" end="70" sourcefile="Registry.java" sourcepath="model/Registry.java" relSourcepath="java\model\Registry.java">
+        <Message>At Registry.java:[lines 9-70]</Message>
+      </SourceLine>
+      <Message>In class model.Registry</Message>
+    </Class>
+    <Method classname="model.Registry" name="getMember" signature="(Ljava/lang/String;)Lmodel/Member;" isStatic="false" primary="true">
+      <SourceLine classname="model.Registry" start="45" end="50" startBytecode="0" endBytecode="24" sourcefile="Registry.java" sourcepath="model/Registry.java" relSourcepath="java\model\Registry.java"/>
+      <Message>In method model.Registry.getMember(String)</Message>
+    </Method>
+    <Type descriptor="Ljava/lang/String;" role="TYPE_FOUND">
+      <SourceLine classname="java.lang.String" start="140" end="4652" sourcefile="String.java" sourcepath="java/lang/String.java">
+        <Message>At String.java:[lines 140-4652]</Message>
+      </SourceLine>
+      <Message>Actual type String</Message>
+    </Type>
+    <LocalVariable name="memberId" register="1" pc="34" role="LOCAL_VARIABLE_VALUE_OF">
+      <Message>Value loaded from memberId</Message>
+    </LocalVariable>
+    <Method classname="model.MemberId" name="getId" signature="()Ljava/lang/String;" isStatic="false" role="METHOD_RETURN_VALUE_OF">
+      <SourceLine classname="model.MemberId" start="21" end="21" startBytecode="0" endBytecode="46" sourcefile="MemberId.java" sourcepath="model/MemberId.java" relSourcepath="java\model\MemberId.java"/>
+      <Message>Return value of model.MemberId.getId() of type String</Message>
+    </Method>
+    <SourceLine classname="model.Registry" primary="true" start="46" end="46" startBytecode="35" endBytecode="35" sourcefile="Registry.java" sourcepath="model/Registry.java" relSourcepath="java\model\Registry.java">
+      <Message>At Registry.java:[line 46]</Message>
+    </SourceLine>
+    <Property name="edu.umd.cs.findbugs.detect.RefComparisonWarningProperty.STATIC_AND_PARAMETER_IN_PUBLIC_METHOD" value="true"/>
+  </BugInstance>
+  <BugInstance type="NM_METHOD_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE" instanceHash="68a749eed000514dd38f34280b5ce737" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Method names should start with a lower case letter</ShortMessage>
+    <LongMessage>The method name model.Registry.ListMembers() doesn&apos;t start with a lower case letter</LongMessage>
+    <Class classname="model.Registry" primary="true">
+      <SourceLine classname="model.Registry" start="9" end="70" sourcefile="Registry.java" sourcepath="model/Registry.java" relSourcepath="java\model\Registry.java">
+        <Message>At Registry.java:[lines 9-70]</Message>
+      </SourceLine>
+      <Message>In class model.Registry</Message>
+    </Class>
+    <Method classname="model.Registry" name="ListMembers" signature="()V" isStatic="false" primary="true">
+      <SourceLine classname="model.Registry" start="66" end="70" startBytecode="0" endBytecode="150" sourcefile="Registry.java" sourcepath="model/Registry.java" relSourcepath="java\model\Registry.java"/>
+      <Message>In method model.Registry.ListMembers()</Message>
+    </Method>
+    <SourceLine classname="model.Registry" start="66" end="70" startBytecode="0" endBytecode="150" sourcefile="Registry.java" sourcepath="model/Registry.java" relSourcepath="java\model\Registry.java" synthetic="true">
+      <Message>At Registry.java:[lines 66-70]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="URF_UNREAD_FIELD" priority="2" rank="18" abbrev="UrF" category="PERFORMANCE" instanceHash="5ddfb6095f0abf5f7c16834aa118b084" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Unread field</ShortMessage>
+    <LongMessage>Unread field: model.Registry.ui</LongMessage>
+    <Class classname="model.Registry" primary="true">
+      <SourceLine classname="model.Registry" start="9" end="70" sourcefile="Registry.java" sourcepath="model/Registry.java" relSourcepath="java\model\Registry.java">
+        <Message>At Registry.java:[lines 9-70]</Message>
+      </SourceLine>
+      <Message>In class model.Registry</Message>
+    </Class>
+    <Field classname="model.Registry" name="ui" signature="Lview/ConsoleUI2;" isStatic="false" primary="true">
+      <SourceLine classname="model.Registry" sourcefile="Registry.java" sourcepath="model/Registry.java" relSourcepath="java\model\Registry.java">
+        <Message>In Registry.java</Message>
+      </SourceLine>
+      <Message>Field model.Registry.ui</Message>
+    </Field>
+    <SourceLine classname="model.Registry" primary="true" start="9" end="9" startBytecode="12" endBytecode="12" sourcefile="Registry.java" sourcepath="model/Registry.java" relSourcepath="java\model\Registry.java">
+      <Message>At Registry.java:[line 9]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP2" priority="2" rank="18" abbrev="EI2" category="MALICIOUS_CODE" instanceHash="e643165f9beb1e5b48388d08e23a682a" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="374">
+    <ShortMessage>May expose internal representation by incorporating reference to mutable object</ShortMessage>
+    <LongMessage>new view.ConsoleUI(Scanner) may expose internal representation by storing an externally mutable object into ConsoleUI.input</LongMessage>
+    <Class classname="view.ConsoleUI" primary="true">
+      <SourceLine classname="view.ConsoleUI" start="9" end="172" sourcefile="ConsoleUI.java" sourcepath="view/ConsoleUI.java" relSourcepath="java\view\ConsoleUI.java">
+        <Message>At ConsoleUI.java:[lines 9-172]</Message>
+      </SourceLine>
+      <Message>In class view.ConsoleUI</Message>
+    </Class>
+    <Method classname="view.ConsoleUI" name="&lt;init&gt;" signature="(Ljava/util/Scanner;)V" isStatic="false" primary="true">
+      <SourceLine classname="view.ConsoleUI" start="9" end="11" startBytecode="0" endBytecode="69" sourcefile="ConsoleUI.java" sourcepath="view/ConsoleUI.java" relSourcepath="java\view\ConsoleUI.java"/>
+      <Message>In method new view.ConsoleUI(Scanner)</Message>
+    </Method>
+    <Field classname="view.ConsoleUI" name="input" signature="Ljava/util/Scanner;" isStatic="false" primary="true">
+      <SourceLine classname="view.ConsoleUI" sourcefile="ConsoleUI.java" sourcepath="view/ConsoleUI.java" relSourcepath="java\view\ConsoleUI.java">
+        <Message>In ConsoleUI.java</Message>
+      </SourceLine>
+      <Message>Field view.ConsoleUI.input</Message>
+    </Field>
+    <LocalVariable name="input" register="1" pc="6" role="LOCAL_VARIABLE_NAMED">
+      <Message>Local variable named input</Message>
+    </LocalVariable>
+    <SourceLine classname="view.ConsoleUI" primary="true" start="10" end="10" startBytecode="6" endBytecode="6" sourcefile="ConsoleUI.java" sourcepath="view/ConsoleUI.java" relSourcepath="java\view\ConsoleUI.java">
+      <Message>At ConsoleUI.java:[line 10]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="UUF_UNUSED_FIELD" priority="2" rank="18" abbrev="UuF" category="PERFORMANCE" instanceHash="16ec1b5096ede4d9b5ad33a71cf19fbd" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Unused field</ShortMessage>
+    <LongMessage>Unused field: view.ConsoleUI2.input</LongMessage>
+    <Class classname="view.ConsoleUI2" primary="true">
+      <SourceLine classname="view.ConsoleUI2" start="8" end="26" sourcefile="ConsoleUI2.java" sourcepath="view/ConsoleUI2.java" relSourcepath="java\view\ConsoleUI2.java">
+        <Message>At ConsoleUI2.java:[lines 8-26]</Message>
+      </SourceLine>
+      <Message>In class view.ConsoleUI2</Message>
+    </Class>
+    <Field classname="view.ConsoleUI2" name="input" signature="Ljava/util/Scanner;" isStatic="false" primary="true">
+      <SourceLine classname="view.ConsoleUI2" sourcefile="ConsoleUI2.java" sourcepath="view/ConsoleUI2.java" relSourcepath="java\view\ConsoleUI2.java">
+        <Message>In ConsoleUI2.java</Message>
+      </SourceLine>
+      <Message>Field view.ConsoleUI2.input</Message>
+    </Field>
+    <SourceLine classname="view.ConsoleUI2" sourcefile="ConsoleUI2.java" sourcepath="view/ConsoleUI2.java" relSourcepath="java\view\ConsoleUI2.java" synthetic="true">
+      <Message>In ConsoleUI2.java</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugCategory category="BAD_PRACTICE">
+    <Description>Bad practice</Description>
+  </BugCategory>
+  <BugCategory category="MALICIOUS_CODE">
+    <Description>Malicious code vulnerability</Description>
+  </BugCategory>
+  <BugCategory category="CORRECTNESS">
+    <Description>Correctness</Description>
+  </BugCategory>
+  <BugCategory category="PERFORMANCE">
+    <Description>Performance</Description>
+  </BugCategory>
+  <BugCategory category="STYLE">
+    <Description>Dodgy code</Description>
+  </BugCategory>
+  <BugPattern type="EI_EXPOSE_REP2" abbrev="EI2" category="MALICIOUS_CODE" cweid="374">
+    <ShortDescription>May expose internal representation by incorporating reference to mutable object</ShortDescription>
+    <Details><![CDATA[
+
+  <p> This code stores a reference to an externally mutable object into the
+  internal representation of the object.&nbsp;
+   If instances
+   are accessed by untrusted code, and unchecked changes to
+   the mutable object would compromise security or other
+   important properties, you will need to do something different.
+  Storing a copy of the object is better approach in many situations.</p>
+
+    ]]></Details>
+  </BugPattern>
+  <BugPattern type="RV_RETURN_VALUE_IGNORED_NO_SIDE_EFFECT" abbrev="RV" category="STYLE">
+    <ShortDescription>Return value of method without side effect is ignored</ShortDescription>
+    <Details><![CDATA[
+
+<p>This code calls a method and ignores the return value. However our analysis shows that
+the method (including its implementations in subclasses if any) does not produce any effect
+other than return value. Thus this call can be removed.
+</p>
+<p>We are trying to reduce the false positives as much as possible, but in some cases this warning might be wrong.
+Common false-positive cases include:</p>
+<p>- The method is designed to be overridden and produce a side effect in other projects which are out of the scope of the analysis.</p>
+<p>- The method is called to trigger the class loading which may have a side effect.</p>
+<p>- The method is called just to get some exception.</p>
+<p>If you feel that our assumption is incorrect, you can use a @CheckReturnValue annotation
+to instruct SpotBugs that ignoring the return value of this method is acceptable.
+</p>
+
+    ]]></Details>
+  </BugPattern>
+  <BugPattern type="EI_EXPOSE_REP" abbrev="EI" category="MALICIOUS_CODE" cweid="374">
+    <ShortDescription>May expose internal representation by returning reference to mutable object</ShortDescription>
+    <Details><![CDATA[
+
+  <p> Returning a reference to a mutable object value stored in one of the object's fields
+  exposes the internal representation of the object.&nbsp;
+   If instances
+   are accessed by untrusted code, and unchecked changes to
+   the mutable object would compromise security or other
+   important properties, you will need to do something different.
+  Returning a new copy of the object is better approach in many situations.</p>
+
+    ]]></Details>
+  </BugPattern>
+  <BugPattern type="UWF_UNWRITTEN_FIELD" abbrev="UwF" category="CORRECTNESS">
+    <ShortDescription>Unwritten field</ShortDescription>
+    <Details><![CDATA[
+
+  <p> This field is never written.&nbsp; All reads of it will return the default
+value. Check for errors (should it have been initialized?), or remove it if it is useless.</p>
+
+    ]]></Details>
+  </BugPattern>
+  <BugPattern type="NP_UNWRITTEN_FIELD" abbrev="NP" category="CORRECTNESS">
+    <ShortDescription>Read of unwritten field</ShortDescription>
+    <Details><![CDATA[
+
+  <p> The program is dereferencing a field that does not seem to ever have a non-null value written to it.
+Unless the field is initialized via some mechanism not seen by the analysis,
+dereferencing this value will generate a null pointer exception.
+</p>
+
+    ]]></Details>
+  </BugPattern>
+  <BugPattern type="UUF_UNUSED_FIELD" abbrev="UuF" category="PERFORMANCE">
+    <ShortDescription>Unused field</ShortDescription>
+    <Details><![CDATA[
+
+  <p> This field is never used.&nbsp; Consider removing it from the class.</p>
+
+    ]]></Details>
+  </BugPattern>
+  <BugPattern type="NM_METHOD_NAMING_CONVENTION" abbrev="Nm" category="BAD_PRACTICE">
+    <ShortDescription>Method names should start with a lower case letter</ShortDescription>
+    <Details><![CDATA[
+
+  <p>
+Methods should be verbs, in mixed case with the first letter lowercase, with the first letter of each internal word capitalized.
+</p>
+
+    ]]></Details>
+  </BugPattern>
+  <BugPattern type="URF_UNREAD_FIELD" abbrev="UrF" category="PERFORMANCE">
+    <ShortDescription>Unread field</ShortDescription>
+    <Details><![CDATA[
+
+  <p> This field is never read.&nbsp; Consider removing it from the class.</p>
+
+    ]]></Details>
+  </BugPattern>
+  <BugPattern type="ES_COMPARING_PARAMETER_STRING_WITH_EQ" abbrev="ES" category="BAD_PRACTICE">
+    <ShortDescription>Comparison of String parameter using == or !=</ShortDescription>
+    <Details><![CDATA[
+
+  <p>This code compares a <code>java.lang.String</code> parameter for reference
+equality using the == or != operators. Requiring callers to
+pass only String constants or interned strings to a method is unnecessarily
+fragile, and rarely leads to measurable performance gains. Consider
+using the <code>equals(Object)</code> method instead.</p>
+
+    ]]></Details>
+  </BugPattern>
+  <BugPattern type="RCN_REDUNDANT_NULLCHECK_WOULD_HAVE_BEEN_A_NPE" abbrev="RCN" category="CORRECTNESS">
+    <ShortDescription>Nullcheck of value previously dereferenced</ShortDescription>
+    <Details><![CDATA[
+
+<p> A value is checked here to see whether it is null, but this value cannot
+be null because it was previously dereferenced and if it were null a null pointer
+exception would have occurred at the earlier dereference.
+Essentially, this code and the previous dereference
+disagree as to whether this value is allowed to be null. Either the check is redundant
+or the previous dereference is erroneous.</p>
+
+    ]]></Details>
+  </BugPattern>
+  <BugCode abbrev="NP" cweid="476">
+    <Description>Null pointer dereference</Description>
+  </BugCode>
+  <BugCode abbrev="RV" cweid="440">
+    <Description>Bad use of return value from method</Description>
+  </BugCode>
+  <BugCode abbrev="EI">
+    <Description>Method returning array may expose internal representation</Description>
+  </BugCode>
+  <BugCode abbrev="UwF">
+    <Description>Unwritten field</Description>
+  </BugCode>
+  <BugCode abbrev="UuF">
+    <Description>Unused field</Description>
+  </BugCode>
+  <BugCode abbrev="UrF">
+    <Description>Unread field</Description>
+  </BugCode>
+  <BugCode abbrev="RCN" cweid="476">
+    <Description>Redundant comparison to null</Description>
+  </BugCode>
+  <BugCode abbrev="ES" cweid="597">
+    <Description>Checking String equality using == or !=</Description>
+  </BugCode>
+  <BugCode abbrev="EI2">
+    <Description>Storing reference to mutable object</Description>
+  </BugCode>
+  <BugCode abbrev="Nm">
+    <Description>Confusing method name</Description>
+  </BugCode>
   <Errors errors="0" missingClasses="0"></Errors>
-  <FindBugsSummary timestamp="Sun, 2 Oct 2022 21:34:16 +0200" total_classes="4" referenced_classes="18" total_bugs="0" total_size="26" num_packages="3" java_version="17.0.1" vm_version="17.0.1+12" cpu_seconds="17.31" clock_seconds="4.47" peak_mbytes="119.44" alloc_mbytes="2010.00" gc_seconds="0.03">
-    <FileStats path="controller/App.java" bugCount="0" size="9"/>
-    <FileStats path="controller/Simple.java" bugCount="0" size="6"/>
-    <FileStats path="model/Simple.java" bugCount="0" size="5"/>
-    <FileStats path="view/Simple.java" bugCount="0" size="6"/>
-    <PackageStats package="controller" total_bugs="0" total_types="2" total_size="15">
-      <ClassStats class="controller.App" sourceFile="App.java" interface="false" size="9" bugs="0"/>
-      <ClassStats class="controller.Simple" sourceFile="Simple.java" interface="false" size="6" bugs="0"/>
+  <FindBugsSummary timestamp="Thu, 6 Oct 2022 23:29:44 +0200" total_classes="14" referenced_classes="54" total_bugs="18" total_size="501" num_packages="3" java_version="17.0.1" vm_version="17.0.1+12" cpu_seconds="5.09" clock_seconds="2.11" peak_mbytes="138.05" alloc_mbytes="2010.00" gc_seconds="0.05" priority_2="17" priority_1="1">
+    <FileStats path="controller/App.java" bugCount="0" size="12"/>
+    <FileStats path="controller/MemberController.java" bugCount="9" size="84" bugHash="2e4152eef4d73853b0a2e61f82c13020"/>
+    <FileStats path="model/Contract.java" bugCount="1" size="20" bugHash="06b85be8369a79363108349a1022ca2f"/>
+    <FileStats path="model/Item.java" bugCount="0" size="106"/>
+    <FileStats path="model/Member.java" bugCount="1" size="108" bugHash="1cce5f678e5b1b45c54e21b1b4de9c3f"/>
+    <FileStats path="model/MemberId.java" bugCount="1" size="21" bugHash="2baacfbf794c389f15284f20cb9b6c59"/>
+    <FileStats path="model/Registry.java" bugCount="4" size="42" bugHash="a5bd82860c29b55f5a441f3eb650ba70"/>
+    <FileStats path="model/Time.java" bugCount="0" size="14"/>
+    <FileStats path="model/TimeAdvancedObserver.java" bugCount="0" size="3"/>
+    <FileStats path="view/ConsoleUI.java" bugCount="1" size="75" bugHash="f045354f30863163bc3050859245cdff"/>
+    <FileStats path="view/ConsoleUI2.java" bugCount="1" size="16" bugHash="e7aea53a03aa7dbab426a00348526470"/>
+    <PackageStats package="controller" total_bugs="9" total_types="2" total_size="96" priority_2="9">
+      <ClassStats class="controller.App" sourceFile="App.java" interface="false" size="12" bugs="0"/>
+      <ClassStats class="controller.MemberController" sourceFile="MemberController.java" interface="false" size="84" bugs="9" priority_2="9"/>
     </PackageStats>
-    <PackageStats package="model" total_bugs="0" total_types="1" total_size="5">
-      <ClassStats class="model.Simple" sourceFile="Simple.java" interface="false" size="5" bugs="0"/>
+    <PackageStats package="model" total_bugs="7" total_types="10" total_size="314" priority_2="6" priority_1="1">
+      <ClassStats class="model.Contract" sourceFile="Contract.java" interface="false" size="20" bugs="1" priority_2="1"/>
+      <ClassStats class="model.Item" sourceFile="Item.java" interface="false" size="67" bugs="0"/>
+      <ClassStats class="model.Item$Mutable" sourceFile="Item.java" interface="false" size="19" bugs="0"/>
+      <ClassStats class="model.Item$category" sourceFile="Item.java" interface="false" size="20" bugs="0"/>
+      <ClassStats class="model.Member" sourceFile="Member.java" interface="false" size="101" bugs="1" priority_2="1"/>
+      <ClassStats class="model.Member$Mutable" sourceFile="Member.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="model.MemberId" sourceFile="MemberId.java" interface="false" size="21" bugs="1" priority_2="1"/>
+      <ClassStats class="model.Registry" sourceFile="Registry.java" interface="false" size="42" bugs="4" priority_2="3" priority_1="1"/>
+      <ClassStats class="model.Time" sourceFile="Time.java" interface="false" size="14" bugs="0"/>
+      <ClassStats class="model.TimeAdvancedObserver" sourceFile="TimeAdvancedObserver.java" interface="true" size="3" bugs="0"/>
     </PackageStats>
-    <PackageStats package="view" total_bugs="0" total_types="1" total_size="6">
-      <ClassStats class="view.Simple" sourceFile="Simple.java" interface="false" size="6" bugs="0"/>
+    <PackageStats package="view" total_bugs="2" total_types="2" total_size="91" priority_2="2">
+      <ClassStats class="view.ConsoleUI" sourceFile="ConsoleUI.java" interface="false" size="75" bugs="1" priority_2="1"/>
+      <ClassStats class="view.ConsoleUI2" sourceFile="ConsoleUI2.java" interface="false" size="16" bugs="1" priority_2="1"/>
     </PackageStats>
     <FindBugsProfile>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassInfoAnalysisEngine" totalMilliseconds="1046" invocations="403" avgMicrosecondsPerInvocation="2596" maxMicrosecondsPerInvocation="40587" standardDeviationMicrosecondsPerInvocation="5328"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.FieldItemSummary" totalMilliseconds="203" invocations="18" avgMicrosecondsPerInvocation="11299" maxMicrosecondsPerInvocation="48569" standardDeviationMicrosecondsPerInvocation="15421"/>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.MethodGenFactory" totalMilliseconds="201" invocations="8" avgMicrosecondsPerInvocation="25166" maxMicrosecondsPerInvocation="198240" standardDeviationMicrosecondsPerInvocation="65416"/>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassDataAnalysisEngine" totalMilliseconds="188" invocations="405" avgMicrosecondsPerInvocation="464" maxMicrosecondsPerInvocation="17506" standardDeviationMicrosecondsPerInvocation="1279"/>
-      <ClassProfile name="edu.umd.cs.findbugs.OpcodeStack$JumpInfoFactory" totalMilliseconds="176" invocations="78" avgMicrosecondsPerInvocation="2257" maxMicrosecondsPerInvocation="28868" standardDeviationMicrosecondsPerInvocation="3661"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.FindNoSideEffectMethods" totalMilliseconds="146" invocations="18" avgMicrosecondsPerInvocation="8113" maxMicrosecondsPerInvocation="71590" standardDeviationMicrosecondsPerInvocation="16455"/>
-      <ClassProfile name="edu.umd.cs.findbugs.util.TopologicalSort" totalMilliseconds="108" invocations="371" avgMicrosecondsPerInvocation="291" maxMicrosecondsPerInvocation="11774" standardDeviationMicrosecondsPerInvocation="800"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.NoteDirectlyRelevantTypeQualifiers" totalMilliseconds="107" invocations="18" avgMicrosecondsPerInvocation="5983" maxMicrosecondsPerInvocation="48616" standardDeviationMicrosecondsPerInvocation="11784"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.FunctionsThatMightBeMistakenForProcedures" totalMilliseconds="93" invocations="18" avgMicrosecondsPerInvocation="5181" maxMicrosecondsPerInvocation="34202" standardDeviationMicrosecondsPerInvocation="9608"/>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.JavaClassAnalysisEngine" totalMilliseconds="82" invocations="38" avgMicrosecondsPerInvocation="2182" maxMicrosecondsPerInvocation="40883" standardDeviationMicrosecondsPerInvocation="6731"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassInfoAnalysisEngine" totalMilliseconds="389" invocations="540" avgMicrosecondsPerInvocation="721" maxMicrosecondsPerInvocation="17211" standardDeviationMicrosecondsPerInvocation="1536"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassDataAnalysisEngine" totalMilliseconds="95" invocations="544" avgMicrosecondsPerInvocation="175" maxMicrosecondsPerInvocation="6071" standardDeviationMicrosecondsPerInvocation="297"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FieldItemSummary" totalMilliseconds="92" invocations="54" avgMicrosecondsPerInvocation="1712" maxMicrosecondsPerInvocation="20580" standardDeviationMicrosecondsPerInvocation="3627"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindNoSideEffectMethods" totalMilliseconds="55" invocations="54" avgMicrosecondsPerInvocation="1035" maxMicrosecondsPerInvocation="11285" standardDeviationMicrosecondsPerInvocation="1866"/>
+      <ClassProfile name="edu.umd.cs.findbugs.OpcodeStack$JumpInfoFactory" totalMilliseconds="51" invocations="256" avgMicrosecondsPerInvocation="200" maxMicrosecondsPerInvocation="2614" standardDeviationMicrosecondsPerInvocation="341"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ValueNumberDataflowFactory" totalMilliseconds="49" invocations="114" avgMicrosecondsPerInvocation="436" maxMicrosecondsPerInvocation="8914" standardDeviationMicrosecondsPerInvocation="997"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.MethodGenFactory" totalMilliseconds="41" invocations="109" avgMicrosecondsPerInvocation="380" maxMicrosecondsPerInvocation="32190" standardDeviationMicrosecondsPerInvocation="3062"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.JavaClassAnalysisEngine" totalMilliseconds="41" invocations="90" avgMicrosecondsPerInvocation="460" maxMicrosecondsPerInvocation="18586" standardDeviationMicrosecondsPerInvocation="1983"/>
+      <ClassProfile name="edu.umd.cs.findbugs.ba.npe.NullDerefAndRedundantComparisonFinder" totalMilliseconds="39" invocations="107" avgMicrosecondsPerInvocation="371" maxMicrosecondsPerInvocation="3521" standardDeviationMicrosecondsPerInvocation="455"/>
+      <ClassProfile name="edu.umd.cs.findbugs.util.TopologicalSort" totalMilliseconds="39" invocations="502" avgMicrosecondsPerInvocation="78" maxMicrosecondsPerInvocation="1672" standardDeviationMicrosecondsPerInvocation="156"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.TypeDataflowFactory" totalMilliseconds="38" invocations="107" avgMicrosecondsPerInvocation="359" maxMicrosecondsPerInvocation="7630" standardDeviationMicrosecondsPerInvocation="797"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.IsNullValueDataflowFactory" totalMilliseconds="36" invocations="107" avgMicrosecondsPerInvocation="338" maxMicrosecondsPerInvocation="3400" standardDeviationMicrosecondsPerInvocation="447"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.CFGFactory" totalMilliseconds="32" invocations="107" avgMicrosecondsPerInvocation="308" maxMicrosecondsPerInvocation="9047" standardDeviationMicrosecondsPerInvocation="869"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.UnconditionalValueDerefDataflowFactory" totalMilliseconds="32" invocations="107" avgMicrosecondsPerInvocation="303" maxMicrosecondsPerInvocation="2114" standardDeviationMicrosecondsPerInvocation="390"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.NoteDirectlyRelevantTypeQualifiers" totalMilliseconds="32" invocations="54" avgMicrosecondsPerInvocation="601" maxMicrosecondsPerInvocation="7658" standardDeviationMicrosecondsPerInvocation="1224"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.EqualsOperandShouldHaveClassCompatibleWithThis" totalMilliseconds="26" invocations="54" avgMicrosecondsPerInvocation="498" maxMicrosecondsPerInvocation="18059" standardDeviationMicrosecondsPerInvocation="2435"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FunctionsThatMightBeMistakenForProcedures" totalMilliseconds="23" invocations="54" avgMicrosecondsPerInvocation="431" maxMicrosecondsPerInvocation="3360" standardDeviationMicrosecondsPerInvocation="755"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindPotentialSecurityCheckBasedOnUntrustedSource" totalMilliseconds="19" invocations="14" avgMicrosecondsPerInvocation="1417" maxMicrosecondsPerInvocation="16800" standardDeviationMicrosecondsPerInvocation="4271"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.CalledMethods" totalMilliseconds="19" invocations="54" avgMicrosecondsPerInvocation="367" maxMicrosecondsPerInvocation="2333" standardDeviationMicrosecondsPerInvocation="600"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.OverridingEqualsNotSymmetrical" totalMilliseconds="19" invocations="54" avgMicrosecondsPerInvocation="353" maxMicrosecondsPerInvocation="8317" standardDeviationMicrosecondsPerInvocation="1144"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindRefComparison$SpecialTypeAnalysis" totalMilliseconds="18" invocations="83" avgMicrosecondsPerInvocation="224" maxMicrosecondsPerInvocation="1034" standardDeviationMicrosecondsPerInvocation="240"/>
     </FindBugsProfile>
   </FindBugsSummary>
   <ClassFeatures></ClassFeatures>

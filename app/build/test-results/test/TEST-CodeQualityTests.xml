@@ -1,15 +1,863 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="CodeQualityTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-10-02T19:34:22" hostname="MSI" time="0.139">
+<testsuite name="CodeQualityTests" tests="1" skipped="0" failures="1" errors="0" timestamp="2022-10-06T21:29:49" hostname="MSI" time="0.195">
   <properties/>
-  <testcase name="codeQuality()" classname="CodeQualityTests" time="0.139"/>
-  <system-out><![CDATA[0 CheckStyle Issues in C:/Users/popoy/Documents/OOAD with AHmad and Faruk/a2/app/src/main/java/controller/App.java
-0 CheckStyle Issues in C:/Users/popoy/Documents/OOAD with AHmad and Faruk/a2/app/src/main/java/controller/Simple.java
-0 CheckStyle Issues in C:/Users/popoy/Documents/OOAD with AHmad and Faruk/a2/app/src/main/java/model/Simple.java
-0 CheckStyle Issues in C:/Users/popoy/Documents/OOAD with AHmad and Faruk/a2/app/src/main/java/view/Simple.java
+  <testcase name="codeQuality()" classname="CodeQualityTests" time="0.195">
+    <failure message="org.opentest4j.AssertionFailedError: Max amount (5) of quality issues exceeded:217 ==&gt; expected: &lt;true&gt; but was: &lt;false&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: Max amount (5) of quality issues exceeded:217 ==&gt; expected: &lt;true&gt; but was: &lt;false&gt;
+	at app//org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
+	at app//org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:40)
+	at app//org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:193)
+	at app//CodeQualityTests.codeQuality(CodeQualityTests.java:70)
+	at java.base@17.0.1/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base@17.0.1/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base@17.0.1/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base@17.0.1/java.lang.reflect.Method.invoke(Method.java:568)
+	at app//org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:688)
+	at app//org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at app//org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:149)
+	at app//org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:140)
+	at app//org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:84)
+	at app//org.junit.jupiter.engine.execution.ExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(ExecutableInvoker.java:115)
+	at app//org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at app//org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:104)
+	at app//org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:98)
+	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$6(TestMethodTestDescriptor.java:210)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:206)
+	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:131)
+	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:65)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:129)
+	at app//org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:127)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:126)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:84)
+	at java.base@17.0.1/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at app//org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:143)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:129)
+	at app//org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:127)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:126)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:84)
+	at java.base@17.0.1/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at app//org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:143)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:129)
+	at app//org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:127)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:126)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:84)
+	at app//org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:32)
+	at app//org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at app//org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:51)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:107)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:86)
+	at org.junit.platform.launcher.core.DefaultLauncherSession$DelegatingLauncher.execute(DefaultLauncherSession.java:86)
+	at org.junit.platform.launcher.core.SessionPerRequestLauncher.execute(SessionPerRequestLauncher.java:53)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.processAllTestClasses(JUnitPlatformTestClassProcessor.java:99)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.access$000(JUnitPlatformTestClassProcessor.java:79)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor.stop(JUnitPlatformTestClassProcessor.java:75)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:61)
+	at java.base@17.0.1/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base@17.0.1/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base@17.0.1/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base@17.0.1/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
+	at jdk.proxy1/jdk.proxy1.$Proxy2.stop(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$3.run(TestWorker.java:193)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60)
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71)
+	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+</failure>
+  </testcase>
+  <system-out><![CDATA[24 CheckStyle Issues in C:/Users/popoy/Documents/OOAD with AHmad and Faruk/a2/app/src/main/java/controller/App.java
+text:line: 5 column: column:1 
+Extra separation in import group before 'org.checkerframework.checker.guieffect.qual.UI'
+
+text:line: 7 column: column:1 
+Extra separation in import group before 'model.Registry'
+
+text:line: 7 column: column:1 
+Wrong lexicographical order for 'model.Registry' import. Should be before 
+  'org.checkerframework.checker.guieffect.qual.UI'.
+
+text:line: 11 column: column:1 
+Missing a Javadoc comment.
+
+text:line: 13 column: column:1 
+Line contains a tab character.
+
+text:line: 13 column: column:9 
+'method def modifier' has incorrect indentation level 8, expected level should be 2.
+
+text:line: 13 column: column:9 
+Missing a Javadoc comment.
+
+text:line: 14 column: column:1 
+Line contains a tab character.
+
+text:line: 14 column: column:17 
+'method def' child has incorrect indentation level 16, expected level should be 4.
+
+text:line: 16 column: column:1 
+Line contains a tab character.
+
+text:line: 17 column: column:1 
+Line contains a tab character.
+
+text:line: 17 column: column:17 
+'method def' child has incorrect indentation level 16, expected level should be 4.
+
+text:line: 18 column: column:1 
+Line contains a tab character.
+
+text:line: 18 column: column:17 
+'method def' child has incorrect indentation level 16, expected level should be 4.
+
+text:line: 19 column: column:1 
+Line contains a tab character.
+
+text:line: 19 column: column:17 
+'method def' child has incorrect indentation level 16, expected level should be 4.
+
+text:line: 20 column: column:1 
+Line contains a tab character.
+
+text:line: 20 column: column:17 
+'method def' child has incorrect indentation level 16, expected level should be 4.
+
+text:line: 21 column: column:1 
+Line contains a tab character.
+
+text:line: 21 column: column:17 
+'method def' child has incorrect indentation level 16, expected level should be 4.
+
+text:line: 22 column: column:1 
+Line contains a tab character.
+
+text:line: 22 column: column:17 
+'method def' child has incorrect indentation level 16, expected level should be 4.
+
+text:line: 24 column: column:1 
+Line contains a tab character.
+
+text:line: 24 column: column:9 
+'method def rcurly' has incorrect indentation level 8, expected level should be 2.
+
+12 CheckStyle Issues in C:/Users/popoy/Documents/OOAD with AHmad and Faruk/a2/app/src/main/java/controller/MemberController.java
+text:line: 5 column: column:1 
+Extra separation in import group before 'model.Item'
+
+text:line: 5 column: column:1 
+Wrong lexicographical order for 'model.Item' import. Should be before 
+  'org.checkerframework.checker.units.qual.m'.
+
+text:line: 6 column: column:1 
+Wrong lexicographical order for 'model.Member' import. Should be before 
+  'org.checkerframework.checker.units.qual.m'.
+
+text:line: 7 column: column:1 
+Wrong lexicographical order for 'model.Registry' import. Should be before 
+  'org.checkerframework.checker.units.qual.m'.
+
+text:line: 12 column: column:1 
+Missing a Javadoc comment.
+
+text:line: 25 column: column:3 
+Missing a Javadoc comment.
+
+text:line: 72 column: column:3 
+Missing a Javadoc comment.
+
+text:line: 78 column: column:3 
+Missing a Javadoc comment.
+
+text:line: 119 column: 
+First sentence of Javadoc is missing an ending period.
+
+text:line: 122 column: 
+Javadoc tag '@param' should be preceded with an empty line.
+
+text:line: 136 column: 
+Javadoc tag '@param' should be preceded with an empty line.
+
+text:line: 151 column: 
+Javadoc tag '@param' should be preceded with an empty line.
+
+25 CheckStyle Issues in C:/Users/popoy/Documents/OOAD with AHmad and Faruk/a2/app/src/main/java/model/Contract.java
+text:line: 3 column: column:1 
+Missing a Javadoc comment.
+
+text:line: 4 column: column:5 
+'member def modifier' has incorrect indentation level 4, expected level should be 2.
+
+text:line: 5 column: column:5 
+'member def modifier' has incorrect indentation level 4, expected level should be 2.
+
+text:line: 9 column: column:5 
+'ctor def modifier' has incorrect indentation level 4, expected level should be 2.
+
+text:line: 10 column: column:9 
+'ctor def' child has incorrect indentation level 8, expected level should be 4.
+
+text:line: 11 column: column:9 
+'ctor def' child has incorrect indentation level 8, expected level should be 4.
+
+text:line: 12 column: column:5 
+'ctor def rcurly' has incorrect indentation level 4, expected level should be 2.
+
+text:line: 14 column: column:5 
+'method def modifier' has incorrect indentation level 4, expected level should be 2.
+
+text:line: 15 column: column:9 
+'method def' child has incorrect indentation level 8, expected level should be 4.
+
+text:line: 16 column: column:5 
+'method def rcurly' has incorrect indentation level 4, expected level should be 2.
+
+text:line: 17 column: column:5 
+'METHOD_DEF' should be separated from previous statement.
+
+text:line: 17 column: column:5 
+'method def modifier' has incorrect indentation level 4, expected level should be 2.
+
+text:line: 18 column: column:9 
+'method def' child has incorrect indentation level 8, expected level should be 4.
+
+text:line: 19 column: column:5 
+'method def rcurly' has incorrect indentation level 4, expected level should be 2.
+
+text:line: 20 column: column:5 
+'METHOD_DEF' should be separated from previous statement.
+
+text:line: 20 column: column:5 
+'method def modifier' has incorrect indentation level 4, expected level should be 2.
+
+text:line: 21 column: column:9 
+'method def' child has incorrect indentation level 8, expected level should be 4.
+
+text:line: 22 column: column:5 
+'method def rcurly' has incorrect indentation level 4, expected level should be 2.
+
+text:line: 23 column: column:5 
+'METHOD_DEF' should be separated from previous statement.
+
+text:line: 23 column: column:5 
+'method def modifier' has incorrect indentation level 4, expected level should be 2.
+
+text:line: 24 column: column:9 
+'method def' child has incorrect indentation level 8, expected level should be 4.
+
+text:line: 25 column: column:5 
+'method def rcurly' has incorrect indentation level 4, expected level should be 2.
+
+text:line: 27 column: column:5 
+'method def modifier' has incorrect indentation level 4, expected level should be 2.
+
+text:line: 27 column: column:17 
+Method name 'ItemContract' must match pattern '^[a-z][a-z0-9][a-zA-Z0-9_]*$'.
+
+text:line: 31 column: column:5 
+'method def rcurly' has incorrect indentation level 4, expected level should be 2.
+
+12 CheckStyle Issues in C:/Users/popoy/Documents/OOAD with AHmad and Faruk/a2/app/src/main/java/model/Item.java
+text:line: 3 column: column:1 
+Missing a Javadoc comment.
+
+text:line: 9 column: column:19 
+Member name 'IsLended' must match pattern '^[a-z][a-z0-9][a-zA-Z0-9]*$'.
+
+text:line: 14 column: 
+Line is longer than 120 characters (found 126).
+
+text:line: 14 column: column:3 
+Missing a Javadoc comment.
+
+text:line: 28 column: column:3 
+Missing a Javadoc comment.
+
+text:line: 42 column: column:3 
+'METHOD_DEF' should be separated from previous statement.
+
+text:line: 50 column: column:3 
+'METHOD_DEF' should be separated from previous statement.
+
+text:line: 59 column: column:3 
+'METHOD_DEF' should be separated from previous statement.
+
+text:line: 85 column: column:3 
+'METHOD_DEF' should be separated from previous statement.
+
+text:line: 89 column: column:8 
+Type name 'category' must match pattern '^[A-Z][a-zA-Z0-9]*$'.
+
+text:line: 98 column: column:3 
+Missing a Javadoc comment.
+
+text:line: 100 column: 
+Line is longer than 120 characters (found 131).
+
+11 CheckStyle Issues in C:/Users/popoy/Documents/OOAD with AHmad and Faruk/a2/app/src/main/java/model/Member.java
+text:line: 5 column: column:1 
+Extra separation in import group before 'view.ConsoleUI2'
+
+text:line: 7 column: column:1 
+Missing a Javadoc comment.
+
+text:line: 20 column: column:3 
+Missing a Javadoc comment.
+
+text:line: 29 column: column:3 
+Missing a Javadoc comment.
+
+text:line: 62 column: column:3 
+Missing a Javadoc comment.
+
+text:line: 64 column: column:5 
+'for' is not followed by whitespace.
+
+text:line: 64 column: column:5 
+WhitespaceAround: 'for' is not followed by whitespace. Empty blocks may only be represented as {} 
+  when not part of a multi-block statement (4.1.3)
+
+text:line: 71 column: column:3 
+Missing a Javadoc comment.
+
+text:line: 94 column: column:3 
+Missing a Javadoc comment.
+
+text:line: 102 column: column:3 
+Missing a Javadoc comment.
+
+text:line: 160 column: column:3 
+Missing a Javadoc comment.
+
+53 CheckStyle Issues in C:/Users/popoy/Documents/OOAD with AHmad and Faruk/a2/app/src/main/java/model/MemberId.java
+text:line: 5 column: column:1 
+Missing a Javadoc comment.
+
+text:line: 6 column: column:1 
+Line contains a tab character.
+
+text:line: 6 column: column:9 
+'member def modifier' has incorrect indentation level 8, expected level should be 2.
+
+text:line: 7 column: column:1 
+Line contains a tab character.
+
+text:line: 7 column: column:9 
+'member def modifier' has incorrect indentation level 8, expected level should be 2.
+
+text:line: 8 column: column:1 
+Line contains a tab character.
+
+text:line: 8 column: column:9 
+'member def modifier' has incorrect indentation level 8, expected level should be 2.
+
+text:line: 10 column: column:1 
+Line contains a tab character.
+
+text:line: 11 column: column:1 
+Line contains a tab character.
+
+text:line: 11 column: column:9 
+'ctor def modifier' has incorrect indentation level 8, expected level should be 2.
+
+text:line: 12 column: column:1 
+Line contains a tab character.
+
+text:line: 12 column: column:17 
+'ctor def' child has incorrect indentation level 16, expected level should be 4.
+
+text:line: 13 column: column:1 
+Line contains a tab character.
+
+text:line: 13 column: column:17 
+'ctor def' child has incorrect indentation level 16, expected level should be 4.
+
+text:line: 14 column: column:1 
+Line contains a tab character.
+
+text:line: 14 column: column:9 
+'ctor def rcurly' has incorrect indentation level 8, expected level should be 2.
+
+text:line: 16 column: column:1 
+Line contains a tab character.
+
+text:line: 16 column: column:9 
+'method def modifier' has incorrect indentation level 8, expected level should be 2.
+
+text:line: 17 column: column:1 
+Line contains a tab character.
+
+text:line: 17 column: column:17 
+'method def' child has incorrect indentation level 16, expected level should be 4.
+
+text:line: 18 column: column:1 
+Line contains a tab character.
+
+text:line: 18 column: column:9 
+'method def rcurly' has incorrect indentation level 8, expected level should be 2.
+
+text:line: 20 column: column:1 
+Line contains a tab character.
+
+text:line: 20 column: column:9 
+'method def modifier' has incorrect indentation level 8, expected level should be 2.
+
+text:line: 21 column: column:1 
+Line contains a tab character.
+
+text:line: 21 column: column:17 
+'method def' child has incorrect indentation level 16, expected level should be 4.
+
+text:line: 22 column: column:1 
+Line contains a tab character.
+
+text:line: 22 column: column:9 
+'method def rcurly' has incorrect indentation level 8, expected level should be 2.
+
+text:line: 24 column: column:1 
+Line contains a tab character.
+
+text:line: 25 column: column:1 
+Line contains a tab character.
+
+text:line: 26 column: column:1 
+Line contains a tab character.
+
+text:line: 27 column: column:1 
+Line contains a tab character.
+
+text:line: 28 column: column:1 
+Line contains a tab character.
+
+text:line: 29 column: column:1 
+Line contains a tab character.
+
+text:line: 29 column: column:9 
+'method def modifier' has incorrect indentation level 8, expected level should be 2.
+
+text:line: 30 column: column:1 
+Line contains a tab character.
+
+text:line: 31 column: column:1 
+Line contains a tab character.
+
+text:line: 32 column: column:1 
+Line contains a tab character.
+
+text:line: 32 column: column:17 
+'method def' child has incorrect indentation level 16, expected level should be 4.
+
+text:line: 33 column: column:1 
+Line contains a tab character.
+
+text:line: 33 column: column:17 
+'method def' child has incorrect indentation level 16, expected level should be 4.
+
+text:line: 35 column: column:1 
+Line contains a tab character.
+
+text:line: 35 column: column:17 
+'for' has incorrect indentation level 16, expected level should be 4.
+
+text:line: 36 column: column:1 
+Line contains a tab character.
+
+text:line: 36 column: column:25 
+'for' child has incorrect indentation level 24, expected level should be 6.
+
+text:line: 37 column: column:1 
+Line contains a tab character.
+
+text:line: 37 column: column:25 
+'for' child has incorrect indentation level 24, expected level should be 6.
+
+text:line: 38 column: column:1 
+Line contains a tab character.
+
+text:line: 38 column: column:17 
+'for rcurly' has incorrect indentation level 16, expected level should be 4.
+
+text:line: 39 column: column:1 
+Line contains a tab character.
+
+text:line: 39 column: column:17 
+'method def' child has incorrect indentation level 16, expected level should be 4.
+
+text:line: 40 column: column:1 
+Line contains a tab character.
+
+text:line: 40 column: column:9 
+'method def rcurly' has incorrect indentation level 8, expected level should be 2.
+
+12 CheckStyle Issues in C:/Users/popoy/Documents/OOAD with AHmad and Faruk/a2/app/src/main/java/model/Registry.java
+text:line: 5 column: column:1 
+Extra separation in import group before 'view.ConsoleUI2'
+
+text:line: 7 column: column:1 
+Missing a Javadoc comment.
+
+text:line: 13 column: column:3 
+Missing a Javadoc comment.
+
+text:line: 29 column: column:3 
+Missing a Javadoc comment.
+
+text:line: 36 column: column:3 
+Missing a Javadoc comment.
+
+text:line: 43 column: 
+Line is longer than 120 characters (found 123).
+
+text:line: 44 column: column:3 
+Missing a Javadoc comment.
+
+text:line: 44 column: column:27 
+'(' is preceded with whitespace.
+
+text:line: 46 column: column:7 
+'if' is not followed by whitespace.
+
+text:line: 46 column: column:7 
+WhitespaceAround: 'if' is not followed by whitespace. Empty blocks may only be represented as {} 
+  when not part of a multi-block statement (4.1.3)
+
+text:line: 65 column: column:3 
+Missing a Javadoc comment.
+
+text:line: 65 column: column:15 
+Method name 'ListMembers' must match pattern '^[a-z][a-z0-9][a-zA-Z0-9_]*$'.
+
+1 CheckStyle Issues in C:/Users/popoy/Documents/OOAD with AHmad and Faruk/a2/app/src/main/java/model/Time.java
+text:line: 3 column: column:1 
+Missing a Javadoc comment.
+
+5 CheckStyle Issues in C:/Users/popoy/Documents/OOAD with AHmad and Faruk/a2/app/src/main/java/model/TimeAdvancedObserver.java
+text:line: 3 column: column:1 
+Missing a Javadoc comment.
+
+text:line: 4 column: column:5 
+'method def modifier' has incorrect indentation level 4, expected level should be 2.
+
+text:line: 4 column: column:10 
+Method name 'TimeAdvanced' must match pattern '^[a-z][a-z0-9][a-zA-Z0-9_]*$'.
+
+text:line: 5 column: column:5 
+'METHOD_DEF' should be separated from previous statement.
+
+text:line: 5 column: column:5 
+'method def modifier' has incorrect indentation level 4, expected level should be 2.
+
+23 CheckStyle Issues in C:/Users/popoy/Documents/OOAD with AHmad and Faruk/a2/app/src/main/java/view/ConsoleUI.java
+text:line: 6 column: column:1 
+Missing a Javadoc comment.
+
+text:line: 6 column: column:14 
+Abbreviation in name 'ConsoleUI' must contain no more than '1' consecutive capital letters.
+
+text:line: 14 column: column:3 
+Missing a Javadoc comment.
+
+text:line: 16 column: column:5 
+Distance between variable 'firstName' declaration and its first usage is 4, but allowed 3.  Consider 
+  making that variable final if you still need to store its value in advance (before method calls 
+  that might have side effects on the original value).
+
+text:line: 29 column: 
+Javadoc tag '@return' should be preceded with an empty line.
+
+text:line: 39 column: 
+Javadoc tag '@return' should be preceded with an empty line.
+
+text:line: 49 column: 
+Javadoc tag '@return' should be preceded with an empty line.
+
+text:line: 59 column: 
+Javadoc tag '@return' should be preceded with an empty line.
+
+text:line: 69 column: 
+Javadoc tag '@return' should be preceded with an empty line.
+
+text:line: 76 column: 
+First sentence of Javadoc is missing an ending period.
+
+text:line: 79 column: 
+Javadoc tag '@return' should be preceded with an empty line.
+
+text:line: 90 column: 
+Javadoc tag '@return' should be preceded with an empty line.
+
+text:line: 100 column: 
+Javadoc tag '@return' should be preceded with an empty line.
+
+text:line: 107 column: 
+First sentence of Javadoc is missing an ending period.
+
+text:line: 110 column: 
+Javadoc tag '@return' should be preceded with an empty line.
+
+text:line: 120 column: 
+Javadoc tag '@return' should be preceded with an empty line.
+
+text:line: 128 column: column:3 
+Missing a Javadoc comment.
+
+text:line: 139 column: column:82 
+'+' should be on a new line.
+
+text:line: 147 column: column:3 
+Missing a Javadoc comment.
+
+text:line: 149 column: column:12 
+Abbreviation in name 'itemID' must contain no more than '1' consecutive capital letters.
+
+text:line: 158 column: column:3 
+Missing a Javadoc comment.
+
+text:line: 164 column: column:3 
+'METHOD_DEF' should be separated from previous statement.
+
+text:line: 164 column: column:3 
+Missing a Javadoc comment.
+
+21 CheckStyle Issues in C:/Users/popoy/Documents/OOAD with AHmad and Faruk/a2/app/src/main/java/view/ConsoleUI2.java
+text:line: 5 column: column:1 
+Extra separation in import group before 'model.Item'
+
+text:line: 6 column: column:1 
+Wrong lexicographical order for 'java.util.Scanner' import. Should be before 'model.Item'.
+
+text:line: 8 column: column:1 
+Missing a Javadoc comment.
+
+text:line: 8 column: column:14 
+Abbreviation in name 'ConsoleUI2' must contain no more than '1' consecutive capital letters.
+
+text:line: 10 column: column:5 
+'member def type' has incorrect indentation level 4, expected level should be 2.
+
+text:line: 12 column: column:5 
+'method def modifier' has incorrect indentation level 4, expected level should be 2.
+
+text:line: 12 column: column:17 
+Method name 'ShowDeletedItemMessage' must match pattern '^[a-z][a-z0-9][a-zA-Z0-9_]*$'.
+
+text:line: 13 column: column:9 
+'method def' child has incorrect indentation level 8, expected level should be 4.
+
+text:line: 14 column: column:5 
+'method def rcurly' has incorrect indentation level 4, expected level should be 2.
+
+text:line: 16 column: column:5 
+'method def modifier' has incorrect indentation level 4, expected level should be 2.
+
+text:line: 16 column: column:17 
+Method name 'ShowItemUpdateMessage' must match pattern '^[a-z][a-z0-9][a-zA-Z0-9_]*$'.
+
+text:line: 17 column: column:9 
+'method def' child has incorrect indentation level 8, expected level should be 4.
+
+text:line: 18 column: column:5 
+'method def rcurly' has incorrect indentation level 4, expected level should be 2.
+
+text:line: 20 column: column:5 
+'method def modifier' has incorrect indentation level 4, expected level should be 2.
+
+text:line: 20 column: column:17 
+Method name 'MemberAddedMessage' must match pattern '^[a-z][a-z0-9][a-zA-Z0-9_]*$'.
+
+text:line: 21 column: column:9 
+'method def' child has incorrect indentation level 8, expected level should be 4.
+
+text:line: 22 column: column:5 
+'method def rcurly' has incorrect indentation level 4, expected level should be 2.
+
+text:line: 24 column: column:5 
+'method def modifier' has incorrect indentation level 4, expected level should be 2.
+
+text:line: 24 column: column:17 
+Method name 'MemberDeletedMessage' must match pattern '^[a-z][a-z0-9][a-zA-Z0-9_]*$'.
+
+text:line: 25 column: column:9 
+'method def' child has incorrect indentation level 8, expected level should be 4.
+
+text:line: 26 column: column:5 
+'method def rcurly' has incorrect indentation level 4, expected level should be 2.
+
+0 FindBugs Issues in model/Time.java
+1 FindBugs Issues in model/MemberId.java
+text:lines: 6-39 
+Unread field: dateCreated 
+Unread field 
+This field is never read. Consider removing it from the class.
+
+1 FindBugs Issues in model/Contract.java
+text:lines: 9-31 
+The method name ItemContract(Member, Member, int) doesn't start with a lower case letter 
+Method names should start with a lower case letter 
+Methods should be verbs, in mixed case with the first letter lowercase, with the first letter of 
+  each internal word capitalized.
+
+4 FindBugs Issues in model/Registry.java
+text:lines: 9-70 
+getMembers() may expose internal representation by returning Registry.members 
+May expose internal representation by returning reference to mutable object 
+Returning a reference to a mutable object value stored in one of the object's fields exposes the 
+  internal representation of the object. If instances are accessed by untrusted code, and unchecked 
+  changes to the mutable object would compromise security or other important properties, you will 
+  need to do something different. Returning a new copy of the object is better approach in many 
+  situations.
+
+text:lines: 9-70 
+Comparison of String parameter using == or != in getMember(String) 
+Comparison of String parameter using == or != 
+This code compares a java.lang.String parameter for reference equality using the == or != operators. 
+  Requiring callers to pass only String constants or interned strings to a method is unnecessarily 
+  fragile, and rarely leads to measurable performance gains. Consider using the equals(Object) 
+  method instead.
+
+text:lines: 9-70 
+The method name ListMembers() doesn't start with a lower case letter 
+Method names should start with a lower case letter 
+Methods should be verbs, in mixed case with the first letter lowercase, with the first letter of 
+  each internal word capitalized.
+
+text:lines: 9-70 
+Unread field: ui 
+Unread field 
+This field is never read. Consider removing it from the class.
+
 0 FindBugs Issues in controller/App.java
-0 FindBugs Issues in model/Simple.java
-0 FindBugs Issues in view/Simple.java
-0 FindBugs Issues in controller/Simple.java
+0 FindBugs Issues in model/Item.java
+1 FindBugs Issues in view/ConsoleUI2.java
+text:lines: 8-26 
+Unused field: input 
+Unused field 
+This field is never used. Consider removing it from the class.
+
+0 FindBugs Issues in model/TimeAdvancedObserver.java
+9 FindBugs Issues in controller/MemberController.java
+text:lines: 19-160 
+new controller.MemberController(ConsoleUI, Registry) may expose internal representation by storing 
+  an externally mutable object into MemberController.registry 
+May expose internal representation by incorporating reference to mutable object 
+This code stores a reference to an externally mutable object into the internal representation of the 
+  object. If instances are accessed by untrusted code, and unchecked changes to the mutable object 
+  would compromise security or other important properties, you will need to do something different. 
+  Storing a copy of the object is better approach in many situations.
+
+text:lines: 19-160 
+Read of unwritten field member in deleteItemLended(Item) 
+Read of unwritten field 
+The program is dereferencing a field that does not seem to ever have a non-null value written to it. 
+  Unless the field is initialized via some mechanism not seen by the analysis, dereferencing this 
+  value will generate a null pointer exception.
+
+text:lines: 19-160 
+Read of unwritten field member in deleteItemOwned(Item) 
+Read of unwritten field 
+The program is dereferencing a field that does not seem to ever have a non-null value written to it. 
+  Unless the field is initialized via some mechanism not seen by the analysis, dereferencing this 
+  value will generate a null pointer exception.
+
+text:lines: 19-160 
+Read of unwritten field ui in deleteMember(Member) 
+Read of unwritten field 
+The program is dereferencing a field that does not seem to ever have a non-null value written to it. 
+  Unless the field is initialized via some mechanism not seen by the analysis, dereferencing this 
+  value will generate a null pointer exception.
+
+text:lines: 19-160 
+Read of unwritten field member in showMemberDetails() 
+Read of unwritten field 
+The program is dereferencing a field that does not seem to ever have a non-null value written to it. 
+  Unless the field is initialized via some mechanism not seen by the analysis, dereferencing this 
+  value will generate a null pointer exception.
+
+text:lines: 19-160 
+Nullcheck of input at line 126 of value previously dereferenced in isNull(String) 
+Nullcheck of value previously dereferenced 
+A value is checked here to see whether it is null, but this value cannot be null because it was 
+  previously dereferenced and if it were null a null pointer exception would have occurred at the 
+  earlier dereference. Essentially, this code and the previous dereference disagree as to whether 
+  this value is allowed to be null. Either the check is redundant or the previous dereference is 
+  erroneous.
+
+text:lines: 19-160 
+Return value of model.Registry.getMember(String) ignored, but method has no side effect 
+Return value of method without side effect is ignored 
+This code calls a method and ignores the return value. However our analysis shows that the method 
+  (including its implementations in subclasses if any) does not produce any effect other than return 
+  value. Thus this call can be removed. 
+ 
+We are trying to reduce the false positives as much as possible, but in some cases this warning 
+  might be wrong. Common false-positive cases include: 
+ 
+- The method is designed to be overridden and produce a side effect in other projects which are out 
+  of the scope of the analysis. 
+ 
+- The method is called to trigger the class loading which may have a side effect. 
+ 
+- The method is called just to get some exception. 
+ 
+If you feel that our assumption is incorrect, you can use a @CheckReturnValue annotation to instruct 
+  SpotBugs that ignoring the return value of this method is acceptable.
+
+text:lines: 19-160 
+Unwritten field: member 
+Unwritten field 
+This field is never written. All reads of it will return the default value. Check for errors (should 
+  it have been initialized?), or remove it if it is useless.
+
+text:lines: 19-160 
+Unwritten field: ui 
+Unwritten field 
+This field is never written. All reads of it will return the default value. Check for errors (should 
+  it have been initialized?), or remove it if it is useless.
+
+1 FindBugs Issues in model/Member.java
+text:lines: 15-158 
+The method name TimeAdvanced(int) doesn't start with a lower case letter 
+Method names should start with a lower case letter 
+Methods should be verbs, in mixed case with the first letter lowercase, with the first letter of 
+  each internal word capitalized.
+
+1 FindBugs Issues in view/ConsoleUI.java
+text:lines: 9-172 
+new view.ConsoleUI(Scanner) may expose internal representation by storing an externally mutable 
+  object into ConsoleUI.input 
+May expose internal representation by incorporating reference to mutable object 
+This code stores a reference to an externally mutable object into the internal representation of the 
+  object. If instances are accessed by untrusted code, and unchecked changes to the mutable object 
+  would compromise security or other important properties, you will need to do something different. 
+  Storing a copy of the object is better approach in many situations.
+
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

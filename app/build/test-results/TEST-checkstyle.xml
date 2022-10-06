@@ -1,7 +1,707 @@
 <?xml version="1.0" encoding="utf-8"?>
-<testsuite package="org.checkstyle" time="0" tests="4" errors="0" name="checkstyle">
+<testsuite package="org.checkstyle" time="0" tests="11" errors="199" name="checkstyle">
 <testcase time="0" name="controller/App.java" classname="CheckStyle Issues">
-</testcase><testcase time="0" name="controller/Simple.java" classname="CheckStyle Issues">
-</testcase><testcase time="0" name="model/Simple.java" classname="CheckStyle Issues">
-</testcase><testcase time="0" name="view/Simple.java" classname="CheckStyle Issues">
+<failure message="issues" ><![CDATA[line: 5 column: column:1 
+Extra separation in import group before 
+  'org.checkerframework.checker.guieffect.qual.UI'
+----------------
+line: 7 column: column:1 
+Extra separation in import group before 'model.Registry'
+----------------
+line: 7 column: column:1 
+Wrong lexicographical order for 'model.Registry' import. Should be before 
+  'org.checkerframework.checker.guieffect.qual.UI'.
+----------------
+line: 11 column: column:1 
+Missing a Javadoc comment.
+----------------
+line: 13 column: column:1 
+Line contains a tab character.
+----------------
+line: 13 column: column:9 
+'method def modifier' has incorrect indentation level 8, expected level 
+  should be 2.
+----------------
+line: 13 column: column:9 
+Missing a Javadoc comment.
+----------------
+line: 14 column: column:1 
+Line contains a tab character.
+----------------
+line: 14 column: column:17 
+'method def' child has incorrect indentation level 16, expected level 
+  should be 4.
+----------------
+line: 16 column: column:1 
+Line contains a tab character.
+----------------
+line: 17 column: column:1 
+Line contains a tab character.
+----------------
+line: 17 column: column:17 
+'method def' child has incorrect indentation level 16, expected level 
+  should be 4.
+----------------
+line: 18 column: column:1 
+Line contains a tab character.
+----------------
+line: 18 column: column:17 
+'method def' child has incorrect indentation level 16, expected level 
+  should be 4.
+----------------
+line: 19 column: column:1 
+Line contains a tab character.
+----------------
+line: 19 column: column:17 
+'method def' child has incorrect indentation level 16, expected level 
+  should be 4.
+----------------
+line: 20 column: column:1 
+Line contains a tab character.
+----------------
+line: 20 column: column:17 
+'method def' child has incorrect indentation level 16, expected level 
+  should be 4.
+----------------
+line: 21 column: column:1 
+Line contains a tab character.
+----------------
+line: 21 column: column:17 
+'method def' child has incorrect indentation level 16, expected level 
+  should be 4.
+----------------
+line: 22 column: column:1 
+Line contains a tab character.
+----------------
+line: 22 column: column:17 
+'method def' child has incorrect indentation level 16, expected level 
+  should be 4.
+----------------
+line: 24 column: column:1 
+Line contains a tab character.
+----------------
+line: 24 column: column:9 
+'method def rcurly' has incorrect indentation level 8, expected level 
+  should be 2.
+----------------
+]]></failure>
+</testcase><testcase time="0" name="controller/MemberController.java" classname="CheckStyle Issues">
+<failure message="issues" ><![CDATA[line: 5 column: column:1 
+Extra separation in import group before 'model.Item'
+----------------
+line: 5 column: column:1 
+Wrong lexicographical order for 'model.Item' import. Should be before 
+  'org.checkerframework.checker.units.qual.m'.
+----------------
+line: 6 column: column:1 
+Wrong lexicographical order for 'model.Member' import. Should be before 
+  'org.checkerframework.checker.units.qual.m'.
+----------------
+line: 7 column: column:1 
+Wrong lexicographical order for 'model.Registry' import. Should be before 
+  'org.checkerframework.checker.units.qual.m'.
+----------------
+line: 12 column: column:1 
+Missing a Javadoc comment.
+----------------
+line: 25 column: column:3 
+Missing a Javadoc comment.
+----------------
+line: 72 column: column:3 
+Missing a Javadoc comment.
+----------------
+line: 78 column: column:3 
+Missing a Javadoc comment.
+----------------
+line: 119 column: 
+First sentence of Javadoc is missing an ending period.
+----------------
+line: 122 column: 
+Javadoc tag '@param' should be preceded with an empty line.
+----------------
+line: 136 column: 
+Javadoc tag '@param' should be preceded with an empty line.
+----------------
+line: 151 column: 
+Javadoc tag '@param' should be preceded with an empty line.
+----------------
+]]></failure>
+</testcase><testcase time="0" name="model/Contract.java" classname="CheckStyle Issues">
+<failure message="issues" ><![CDATA[line: 3 column: column:1 
+Missing a Javadoc comment.
+----------------
+line: 4 column: column:5 
+'member def modifier' has incorrect indentation level 4, expected level 
+  should be 2.
+----------------
+line: 5 column: column:5 
+'member def modifier' has incorrect indentation level 4, expected level 
+  should be 2.
+----------------
+line: 9 column: column:5 
+'ctor def modifier' has incorrect indentation level 4, expected level 
+  should be 2.
+----------------
+line: 10 column: column:9 
+'ctor def' child has incorrect indentation level 8, expected level should 
+  be 4.
+----------------
+line: 11 column: column:9 
+'ctor def' child has incorrect indentation level 8, expected level should 
+  be 4.
+----------------
+line: 12 column: column:5 
+'ctor def rcurly' has incorrect indentation level 4, expected level should 
+  be 2.
+----------------
+line: 14 column: column:5 
+'method def modifier' has incorrect indentation level 4, expected level 
+  should be 2.
+----------------
+line: 15 column: column:9 
+'method def' child has incorrect indentation level 8, expected level should 
+  be 4.
+----------------
+line: 16 column: column:5 
+'method def rcurly' has incorrect indentation level 4, expected level 
+  should be 2.
+----------------
+line: 17 column: column:5 
+'METHOD_DEF' should be separated from previous statement.
+----------------
+line: 17 column: column:5 
+'method def modifier' has incorrect indentation level 4, expected level 
+  should be 2.
+----------------
+line: 18 column: column:9 
+'method def' child has incorrect indentation level 8, expected level should 
+  be 4.
+----------------
+line: 19 column: column:5 
+'method def rcurly' has incorrect indentation level 4, expected level 
+  should be 2.
+----------------
+line: 20 column: column:5 
+'METHOD_DEF' should be separated from previous statement.
+----------------
+line: 20 column: column:5 
+'method def modifier' has incorrect indentation level 4, expected level 
+  should be 2.
+----------------
+line: 21 column: column:9 
+'method def' child has incorrect indentation level 8, expected level should 
+  be 4.
+----------------
+line: 22 column: column:5 
+'method def rcurly' has incorrect indentation level 4, expected level 
+  should be 2.
+----------------
+line: 23 column: column:5 
+'METHOD_DEF' should be separated from previous statement.
+----------------
+line: 23 column: column:5 
+'method def modifier' has incorrect indentation level 4, expected level 
+  should be 2.
+----------------
+line: 24 column: column:9 
+'method def' child has incorrect indentation level 8, expected level should 
+  be 4.
+----------------
+line: 25 column: column:5 
+'method def rcurly' has incorrect indentation level 4, expected level 
+  should be 2.
+----------------
+line: 27 column: column:5 
+'method def modifier' has incorrect indentation level 4, expected level 
+  should be 2.
+----------------
+line: 27 column: column:17 
+Method name 'ItemContract' must match pattern 
+  '^[a-z][a-z0-9][a-zA-Z0-9_]*$'.
+----------------
+line: 31 column: column:5 
+'method def rcurly' has incorrect indentation level 4, expected level 
+  should be 2.
+----------------
+]]></failure>
+</testcase><testcase time="0" name="model/Item.java" classname="CheckStyle Issues">
+<failure message="issues" ><![CDATA[line: 3 column: column:1 
+Missing a Javadoc comment.
+----------------
+line: 9 column: column:19 
+Member name 'IsLended' must match pattern '^[a-z][a-z0-9][a-zA-Z0-9]*$'.
+----------------
+line: 14 column: 
+Line is longer than 120 characters (found 126).
+----------------
+line: 14 column: column:3 
+Missing a Javadoc comment.
+----------------
+line: 28 column: column:3 
+Missing a Javadoc comment.
+----------------
+line: 42 column: column:3 
+'METHOD_DEF' should be separated from previous statement.
+----------------
+line: 50 column: column:3 
+'METHOD_DEF' should be separated from previous statement.
+----------------
+line: 59 column: column:3 
+'METHOD_DEF' should be separated from previous statement.
+----------------
+line: 85 column: column:3 
+'METHOD_DEF' should be separated from previous statement.
+----------------
+line: 89 column: column:8 
+Type name 'category' must match pattern '^[A-Z][a-zA-Z0-9]*$'.
+----------------
+line: 98 column: column:3 
+Missing a Javadoc comment.
+----------------
+line: 100 column: 
+Line is longer than 120 characters (found 131).
+----------------
+]]></failure>
+</testcase><testcase time="0" name="model/Member.java" classname="CheckStyle Issues">
+<failure message="issues" ><![CDATA[line: 5 column: column:1 
+Extra separation in import group before 'view.ConsoleUI2'
+----------------
+line: 7 column: column:1 
+Missing a Javadoc comment.
+----------------
+line: 20 column: column:3 
+Missing a Javadoc comment.
+----------------
+line: 29 column: column:3 
+Missing a Javadoc comment.
+----------------
+line: 62 column: column:3 
+Missing a Javadoc comment.
+----------------
+line: 64 column: column:5 
+'for' is not followed by whitespace.
+----------------
+line: 64 column: column:5 
+WhitespaceAround: 'for' is not followed by whitespace. Empty blocks may 
+  only be represented as {} when not part of a multi-block statement 
+  (4.1.3)
+----------------
+line: 71 column: column:3 
+Missing a Javadoc comment.
+----------------
+line: 94 column: column:3 
+Missing a Javadoc comment.
+----------------
+line: 102 column: column:3 
+Missing a Javadoc comment.
+----------------
+line: 160 column: column:3 
+Missing a Javadoc comment.
+----------------
+]]></failure>
+</testcase><testcase time="0" name="model/MemberId.java" classname="CheckStyle Issues">
+<failure message="issues" ><![CDATA[line: 5 column: column:1 
+Missing a Javadoc comment.
+----------------
+line: 6 column: column:1 
+Line contains a tab character.
+----------------
+line: 6 column: column:9 
+'member def modifier' has incorrect indentation level 8, expected level 
+  should be 2.
+----------------
+line: 7 column: column:1 
+Line contains a tab character.
+----------------
+line: 7 column: column:9 
+'member def modifier' has incorrect indentation level 8, expected level 
+  should be 2.
+----------------
+line: 8 column: column:1 
+Line contains a tab character.
+----------------
+line: 8 column: column:9 
+'member def modifier' has incorrect indentation level 8, expected level 
+  should be 2.
+----------------
+line: 10 column: column:1 
+Line contains a tab character.
+----------------
+line: 11 column: column:1 
+Line contains a tab character.
+----------------
+line: 11 column: column:9 
+'ctor def modifier' has incorrect indentation level 8, expected level 
+  should be 2.
+----------------
+line: 12 column: column:1 
+Line contains a tab character.
+----------------
+line: 12 column: column:17 
+'ctor def' child has incorrect indentation level 16, expected level should 
+  be 4.
+----------------
+line: 13 column: column:1 
+Line contains a tab character.
+----------------
+line: 13 column: column:17 
+'ctor def' child has incorrect indentation level 16, expected level should 
+  be 4.
+----------------
+line: 14 column: column:1 
+Line contains a tab character.
+----------------
+line: 14 column: column:9 
+'ctor def rcurly' has incorrect indentation level 8, expected level should 
+  be 2.
+----------------
+line: 16 column: column:1 
+Line contains a tab character.
+----------------
+line: 16 column: column:9 
+'method def modifier' has incorrect indentation level 8, expected level 
+  should be 2.
+----------------
+line: 17 column: column:1 
+Line contains a tab character.
+----------------
+line: 17 column: column:17 
+'method def' child has incorrect indentation level 16, expected level 
+  should be 4.
+----------------
+line: 18 column: column:1 
+Line contains a tab character.
+----------------
+line: 18 column: column:9 
+'method def rcurly' has incorrect indentation level 8, expected level 
+  should be 2.
+----------------
+line: 20 column: column:1 
+Line contains a tab character.
+----------------
+line: 20 column: column:9 
+'method def modifier' has incorrect indentation level 8, expected level 
+  should be 2.
+----------------
+line: 21 column: column:1 
+Line contains a tab character.
+----------------
+line: 21 column: column:17 
+'method def' child has incorrect indentation level 16, expected level 
+  should be 4.
+----------------
+line: 22 column: column:1 
+Line contains a tab character.
+----------------
+line: 22 column: column:9 
+'method def rcurly' has incorrect indentation level 8, expected level 
+  should be 2.
+----------------
+line: 24 column: column:1 
+Line contains a tab character.
+----------------
+line: 25 column: column:1 
+Line contains a tab character.
+----------------
+line: 26 column: column:1 
+Line contains a tab character.
+----------------
+line: 27 column: column:1 
+Line contains a tab character.
+----------------
+line: 28 column: column:1 
+Line contains a tab character.
+----------------
+line: 29 column: column:1 
+Line contains a tab character.
+----------------
+line: 29 column: column:9 
+'method def modifier' has incorrect indentation level 8, expected level 
+  should be 2.
+----------------
+line: 30 column: column:1 
+Line contains a tab character.
+----------------
+line: 31 column: column:1 
+Line contains a tab character.
+----------------
+line: 32 column: column:1 
+Line contains a tab character.
+----------------
+line: 32 column: column:17 
+'method def' child has incorrect indentation level 16, expected level 
+  should be 4.
+----------------
+line: 33 column: column:1 
+Line contains a tab character.
+----------------
+line: 33 column: column:17 
+'method def' child has incorrect indentation level 16, expected level 
+  should be 4.
+----------------
+line: 35 column: column:1 
+Line contains a tab character.
+----------------
+line: 35 column: column:17 
+'for' has incorrect indentation level 16, expected level should be 4.
+----------------
+line: 36 column: column:1 
+Line contains a tab character.
+----------------
+line: 36 column: column:25 
+'for' child has incorrect indentation level 24, expected level should be 6.
+----------------
+line: 37 column: column:1 
+Line contains a tab character.
+----------------
+line: 37 column: column:25 
+'for' child has incorrect indentation level 24, expected level should be 6.
+----------------
+line: 38 column: column:1 
+Line contains a tab character.
+----------------
+line: 38 column: column:17 
+'for rcurly' has incorrect indentation level 16, expected level should be 
+  4.
+----------------
+line: 39 column: column:1 
+Line contains a tab character.
+----------------
+line: 39 column: column:17 
+'method def' child has incorrect indentation level 16, expected level 
+  should be 4.
+----------------
+line: 40 column: column:1 
+Line contains a tab character.
+----------------
+line: 40 column: column:9 
+'method def rcurly' has incorrect indentation level 8, expected level 
+  should be 2.
+----------------
+]]></failure>
+</testcase><testcase time="0" name="model/Registry.java" classname="CheckStyle Issues">
+<failure message="issues" ><![CDATA[line: 5 column: column:1 
+Extra separation in import group before 'view.ConsoleUI2'
+----------------
+line: 7 column: column:1 
+Missing a Javadoc comment.
+----------------
+line: 13 column: column:3 
+Missing a Javadoc comment.
+----------------
+line: 29 column: column:3 
+Missing a Javadoc comment.
+----------------
+line: 36 column: column:3 
+Missing a Javadoc comment.
+----------------
+line: 43 column: 
+Line is longer than 120 characters (found 123).
+----------------
+line: 44 column: column:3 
+Missing a Javadoc comment.
+----------------
+line: 44 column: column:27 
+'(' is preceded with whitespace.
+----------------
+line: 46 column: column:7 
+'if' is not followed by whitespace.
+----------------
+line: 46 column: column:7 
+WhitespaceAround: 'if' is not followed by whitespace. Empty blocks may only 
+  be represented as {} when not part of a multi-block statement (4.1.3)
+----------------
+line: 65 column: column:3 
+Missing a Javadoc comment.
+----------------
+line: 65 column: column:15 
+Method name 'ListMembers' must match pattern 
+  '^[a-z][a-z0-9][a-zA-Z0-9_]*$'.
+----------------
+]]></failure>
+</testcase><testcase time="0" name="model/Time.java" classname="CheckStyle Issues">
+<failure message="issues" ><![CDATA[line: 3 column: column:1 
+Missing a Javadoc comment.
+----------------
+]]></failure>
+</testcase><testcase time="0" name="model/TimeAdvancedObserver.java" classname="CheckStyle Issues">
+<failure message="issues" ><![CDATA[line: 3 column: column:1 
+Missing a Javadoc comment.
+----------------
+line: 4 column: column:5 
+'method def modifier' has incorrect indentation level 4, expected level 
+  should be 2.
+----------------
+line: 4 column: column:10 
+Method name 'TimeAdvanced' must match pattern 
+  '^[a-z][a-z0-9][a-zA-Z0-9_]*$'.
+----------------
+line: 5 column: column:5 
+'METHOD_DEF' should be separated from previous statement.
+----------------
+line: 5 column: column:5 
+'method def modifier' has incorrect indentation level 4, expected level 
+  should be 2.
+----------------
+]]></failure>
+</testcase><testcase time="0" name="view/ConsoleUI.java" classname="CheckStyle Issues">
+<failure message="issues" ><![CDATA[line: 6 column: column:1 
+Missing a Javadoc comment.
+----------------
+line: 6 column: column:14 
+Abbreviation in name 'ConsoleUI' must contain no more than '1' consecutive 
+  capital letters.
+----------------
+line: 14 column: column:3 
+Missing a Javadoc comment.
+----------------
+line: 16 column: column:5 
+Distance between variable 'firstName' declaration and its first usage is 4, 
+  but allowed 3.  Consider making that variable final if you still need to 
+  store its value in advance (before method calls that might have side 
+  effects on the original value).
+----------------
+line: 29 column: 
+Javadoc tag '@return' should be preceded with an empty line.
+----------------
+line: 39 column: 
+Javadoc tag '@return' should be preceded with an empty line.
+----------------
+line: 49 column: 
+Javadoc tag '@return' should be preceded with an empty line.
+----------------
+line: 59 column: 
+Javadoc tag '@return' should be preceded with an empty line.
+----------------
+line: 69 column: 
+Javadoc tag '@return' should be preceded with an empty line.
+----------------
+line: 76 column: 
+First sentence of Javadoc is missing an ending period.
+----------------
+line: 79 column: 
+Javadoc tag '@return' should be preceded with an empty line.
+----------------
+line: 90 column: 
+Javadoc tag '@return' should be preceded with an empty line.
+----------------
+line: 100 column: 
+Javadoc tag '@return' should be preceded with an empty line.
+----------------
+line: 107 column: 
+First sentence of Javadoc is missing an ending period.
+----------------
+line: 110 column: 
+Javadoc tag '@return' should be preceded with an empty line.
+----------------
+line: 120 column: 
+Javadoc tag '@return' should be preceded with an empty line.
+----------------
+line: 128 column: column:3 
+Missing a Javadoc comment.
+----------------
+line: 139 column: column:82 
+'+' should be on a new line.
+----------------
+line: 147 column: column:3 
+Missing a Javadoc comment.
+----------------
+line: 149 column: column:12 
+Abbreviation in name 'itemID' must contain no more than '1' consecutive 
+  capital letters.
+----------------
+line: 158 column: column:3 
+Missing a Javadoc comment.
+----------------
+line: 164 column: column:3 
+'METHOD_DEF' should be separated from previous statement.
+----------------
+line: 164 column: column:3 
+Missing a Javadoc comment.
+----------------
+]]></failure>
+</testcase><testcase time="0" name="view/ConsoleUI2.java" classname="CheckStyle Issues">
+<failure message="issues" ><![CDATA[line: 5 column: column:1 
+Extra separation in import group before 'model.Item'
+----------------
+line: 6 column: column:1 
+Wrong lexicographical order for 'java.util.Scanner' import. Should be 
+  before 'model.Item'.
+----------------
+line: 8 column: column:1 
+Missing a Javadoc comment.
+----------------
+line: 8 column: column:14 
+Abbreviation in name 'ConsoleUI2' must contain no more than '1' consecutive 
+  capital letters.
+----------------
+line: 10 column: column:5 
+'member def type' has incorrect indentation level 4, expected level should 
+  be 2.
+----------------
+line: 12 column: column:5 
+'method def modifier' has incorrect indentation level 4, expected level 
+  should be 2.
+----------------
+line: 12 column: column:17 
+Method name 'ShowDeletedItemMessage' must match pattern 
+  '^[a-z][a-z0-9][a-zA-Z0-9_]*$'.
+----------------
+line: 13 column: column:9 
+'method def' child has incorrect indentation level 8, expected level should 
+  be 4.
+----------------
+line: 14 column: column:5 
+'method def rcurly' has incorrect indentation level 4, expected level 
+  should be 2.
+----------------
+line: 16 column: column:5 
+'method def modifier' has incorrect indentation level 4, expected level 
+  should be 2.
+----------------
+line: 16 column: column:17 
+Method name 'ShowItemUpdateMessage' must match pattern 
+  '^[a-z][a-z0-9][a-zA-Z0-9_]*$'.
+----------------
+line: 17 column: column:9 
+'method def' child has incorrect indentation level 8, expected level should 
+  be 4.
+----------------
+line: 18 column: column:5 
+'method def rcurly' has incorrect indentation level 4, expected level 
+  should be 2.
+----------------
+line: 20 column: column:5 
+'method def modifier' has incorrect indentation level 4, expected level 
+  should be 2.
+----------------
+line: 20 column: column:17 
+Method name 'MemberAddedMessage' must match pattern 
+  '^[a-z][a-z0-9][a-zA-Z0-9_]*$'.
+----------------
+line: 21 column: column:9 
+'method def' child has incorrect indentation level 8, expected level should 
+  be 4.
+----------------
+line: 22 column: column:5 
+'method def rcurly' has incorrect indentation level 4, expected level 
+  should be 2.
+----------------
+line: 24 column: column:5 
+'method def modifier' has incorrect indentation level 4, expected level 
+  should be 2.
+----------------
+line: 24 column: column:17 
+Method name 'MemberDeletedMessage' must match pattern 
+  '^[a-z][a-z0-9][a-zA-Z0-9_]*$'.
+----------------
+line: 25 column: column:9 
+'method def' child has incorrect indentation level 8, expected level should 
+  be 4.
+----------------
+line: 26 column: column:5 
+'method def rcurly' has incorrect indentation level 4, expected level 
+  should be 2.
+----------------
+]]></failure>
 </testcase></testsuite>
