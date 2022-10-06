@@ -15,7 +15,7 @@ public class Member implements TimeAdvancedObserver {
   private Time time = new Time();
   private ArrayList<Item> itemsOwned = new ArrayList<>();
   private ArrayList<Item> itemsLended = new ArrayList<>();
-  private ArrayList<Item> items = new ArrayList<>();
+  // private ArrayList<Item> items = new ArrayList<>(); // to take away?
 
   public Member(String firstName, String lastName, String email, String phoneNumber) {
     this.firstName = firstName;
@@ -59,16 +59,13 @@ public class Member implements TimeAdvancedObserver {
     return credits;
   }
 
-  //Adding Item to member.
-  public Item addItem(String name, String shortDescription, int costPerDay, int dayOfCreation, Boolean isLended, int contractPeriod) {
+  // Adding Item to member.
+  public Item addItem(String name, String shortDescription, int costPerDay, int dayOfCreation, Boolean isLended,
+      int contractPeriod) {
     Item s = new Item(name, shortDescription, costPerDay, dayOfCreation, isLended, contractPeriod);
     itemsOwned.add(s);
     return s;
   }
-
-  //To advance time "value" times.
-
-  // To advance time "value" times.
 
   // To advance time "value" times.
   @Override
@@ -92,22 +89,23 @@ public class Member implements TimeAdvancedObserver {
   }
 
   // For creation of items.
-  public Item addItemOwned(String name, String desc, int costPerDay, int dayOfCreation, Boolean isLended, int contractPeriod) {
+  public Item addItemOwned(String name, String desc, int costPerDay, int dayOfCreation, Boolean isLended,
+      int contractPeriod) {
     Item s = new Item(name, desc, costPerDay, dayOfCreation, isLended, contractPeriod);
     itemsOwned.add(s);
     credits += 100;
     return s;
   }
-  
 
   // Adding Items to lendigs list.
   public void addItemLended(Item leding) {
     itemsOwned.add(leding);
   }
-    // Adding Items to lendigs list.
-    public void addPreparedItemOwned(Item ownedItem) {
-      itemsOwned.add(ownedItem);
-    }
+
+  // Adding Items to lendigs list.
+  public void addPreparedItemOwned(Item ownedItem) {
+    itemsOwned.add(ownedItem);
+  }
 
   // Getting lending cost for an item.
   public int getLendingCost(Item lendedItem) {
@@ -132,15 +130,18 @@ public class Member implements TimeAdvancedObserver {
         + itemsOwned.size() + ", itemsLended=" + itemsLended.size() + "]";
   }
 
-  // Updating items contract date and if date is fullfilled removing the item from lendings.
+  // Updating items contract date and if date is fullfilled removing the item from
+  // lendings.
   @Override
   public void updateItems() {
     // TODO Auto-generated method stub
     for (Item eachItem : itemsLended) {
       if (eachItem.getContractPeriod() != 0) {
         eachItem.setContractPeriodProt(eachItem.getContractPeriod() - 1);
-        if (eachItem.getContractPeriod() == 0){itemsLended.remove(eachItem);}
-      }else if (eachItem.getDayOfCreation() == 0) {
+        if (eachItem.getContractPeriod() == 0) {
+          itemsLended.remove(eachItem);
+        }
+      } else if (eachItem.getDayOfCreation() == 0) {
         itemsLended.remove(eachItem);
       }
     }
