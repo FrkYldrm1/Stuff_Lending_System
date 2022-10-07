@@ -88,6 +88,10 @@ public class MemberController {
     registry.getMember(console.idInput());
   }
 
+  
+  /** 
+   * @param member
+   */
   public void deleteMember(model.Member member) {
     registry.removeMember(member);
     ui.MemberDeletedMessage(member);
@@ -101,10 +105,18 @@ public class MemberController {
     registry.getMember(console.idInput()).addPreparedItemOwned(console.createItem());
   }
 
+  
+  /** 
+   * @param i
+   */
   public void deleteItemOwned(model.Item i) {
     member.removeItemOwned(i);
   }
 
+  
+  /** 
+   * @param i
+   */
   public void deleteItemLended(model.Item i) {
     member.removeItemLended(i);
   }

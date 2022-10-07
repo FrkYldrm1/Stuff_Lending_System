@@ -21,6 +21,10 @@ public class Item {
     this.itemId = id.createId();
   }
 
+  
+  /** 
+   * @return String
+   */
   public String getItemId() {
     return itemId;
   }
@@ -35,53 +39,102 @@ public class Item {
 
 
 
+  
+  /** 
+   * @param newShortDescription
+   */
   protected void setShortDescriptionProt(String newShortDescription) {
     checkNull(newShortDescription, "Description cannot be null");
     shortDescription = newShortDescription;
   }
+  
+  /** 
+   * @param newisOwned
+   */
   protected void setisLendedProt(Boolean newisOwned) {
     IsLended = newisOwned;
   }
 
+  
+  /** 
+   * @param newName
+   */
   protected void setNameProt(String newName) {
     checkNull(newName, "First Name Cannot be null");
     name = newName;
   }
+  
+  /** 
+   * @param newDayOfCreation
+   */
   protected void setDayOfCreationProt(int newDayOfCreation) {
     checkNull(String.valueOf(dayOfCreation), "Day of creation Cannot be null");
     dayOfCreation = newDayOfCreation;
   }
 
+  
+  /** 
+   * @param newCostPerDay
+   */
   protected void setCostPerDayProt(int newCostPerDay) {
     checkNull(String.valueOf(newCostPerDay), "Cost cannot be null");
     costPerDay = newCostPerDay;
   }
+  
+  /** 
+   * @param newContractPeriod
+   */
   protected void setContractPeriodProt(int newContractPeriod) {
     checkNull(String.valueOf(contractPeriod), "Cost cannot be null");
     contractPeriod = newContractPeriod;
   }
 
+  
+  /** 
+   * @param str
+   * @param message
+   */
   private void checkNull(String str, String message) {
     if (str == null) {
       throw new IllegalArgumentException(message);
     }
   }
 
+  
+  /** 
+   * @return String
+   */
   public String getName() {
     return name;
   }
 
+  
+  /** 
+   * @return String
+   */
   public String getShortDescription() {
     return shortDescription;
   }
 
+  
+  /** 
+   * @return int
+   */
   public int getCostPerDay() {
     return costPerDay;
   }
 
+  
+  /** 
+   * @return int
+   */
   public int getDayOfCreation() {
     return dayOfCreation;
   }
+  
+  /** 
+   * @return int
+   */
   public int getContractPeriod() {
     return contractPeriod;
   }
