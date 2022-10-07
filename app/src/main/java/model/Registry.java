@@ -14,6 +14,7 @@ public class Registry {
 
   private ArrayList<Member.Mutable> members;
 
+
   public Registry() {
     members = new ArrayList<>();
 
@@ -24,13 +25,23 @@ public class Registry {
 
   }
 
-  // returns iterable members
+
+  
+  /** 
+   * @return Iterable<Mutable>
+   */
   public Iterable<Member.Mutable> getMembers() {
     return members;
   }
 
-
-
+  
+  /** 
+   * @param firstName
+   * @param lastName
+   * @param email
+   * @param phoneNumber
+   * @return Member
+   */
   // adds members without an id
   public Member addMember(String firstName, String lastName, String email, String phoneNumber) {
     Member.Mutable x = new Member.Mutable(firstName, lastName, email, phoneNumber);
@@ -38,6 +49,11 @@ public class Registry {
     return x;
   }
 
+  
+  /** 
+   * @param mem
+   * @return Member
+   */
   // adds members with id already
   public Member addMember(Member mem) {
     Member.Mutable x = new Member.Mutable(mem.getFirstName(), mem.getLastName(), mem.getEmail(), mem.getPhoneNumber(),
@@ -46,20 +62,34 @@ public class Registry {
     return x;
   }
 
-  // Used for getting a spesific member. But it is not working functionally. But for testing we used a members as a return.
-  public Member getMember (String memberId) {
+  
+  /** 
+   * @param memberId
+   * @return Member
+   */
+  // Used for getting a spesific member. But it is not working functionally. But
+  // for testing we used a members as a return.
+  public Member getMember(String memberId) {
     for (Member member : members) {
-      if(member.getMemberId().getId() == memberId) {
+      if (member.getMemberId().getId() == memberId) {
         return member;
       }
     }
     return members.get(0);
   }
 
+  
+  /** 
+   * @param s
+   */
   public void removeMember(Member s) {
     members.remove(s);
   }
 
+  
+  /** 
+   * @param time
+   */
   private void notifyMembersTime(int time) {
     for (Member s : members) {
       s.TimeAdvanced(time);
