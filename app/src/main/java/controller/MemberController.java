@@ -91,14 +91,21 @@ public class MemberController {
     for (Member.Mutable member : registry.getMembers()) {
       arraylist.add(member);
     }
-    return arraylist.get(input);
+
+    try {
+      Member.Mutable member = arraylist.get(input);
+      return member;
+    } catch (Exception e) {
+      input = console.indexMemberInputRetry();
+      return getMember(input);
+    }
   }
 
   /**
    * Used to show items owned by user.
    */
   public void showOwnedItems() {
-    Member.Mutable member = getMember(console.indexInput());
+    Member.Mutable member = getMember(console.indexMemberInput());
 
     for (Item item : member.getItemsOwned()) {
       console.showItemDetails(item);
