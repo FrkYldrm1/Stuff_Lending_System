@@ -16,9 +16,9 @@ public class App {
 		// below is used to test member creation and printing
 		view.ConsoleUI console = new view.ConsoleUI(new Scanner(System.in, "UTF8"));
 		controller.MemberController mmc = new MemberController(console, registry);
-		mmc.createNewMember();
+		//mmc.createNewMember();
 		mmc.showAllMembers();
-		mmc.addItem();
+		//mmc.addItem();
 		mmc.showOwnedItems();
 
 	}

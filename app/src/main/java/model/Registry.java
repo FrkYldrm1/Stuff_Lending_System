@@ -2,9 +2,13 @@ package model;
 
 import java.util.ArrayList;
 
+import controller.MemberController;
 import view.ConsoleUI2;
 
 public class Registry {
+
+  controller.MemberController controller;
+
   // Sprivate ArrayList<Member> members;
   private ConsoleUI2 ui = new ConsoleUI2();
 
@@ -16,6 +20,8 @@ public class Registry {
     // hard coded members
     addMember("Bruce", "Lee", "Bruce@gmail.com", "988");
     addMember("Maya", "Hee", "mayahaha@gmail.com", "9843");
+    members.get(0).addItem("phone", "black", 45, 3, false, 3);
+
   }
 
   // returns iterable members
