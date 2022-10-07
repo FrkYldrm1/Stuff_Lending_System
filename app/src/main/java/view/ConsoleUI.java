@@ -159,7 +159,11 @@ public class ConsoleUI {
   public String idInput() {
     System.out.println("Please enter member ID : ");
     return input.nextLine();
+  }
 
+  public int indexInput() {
+    System.out.println("Please choose a member with their position in the list: ");
+    return input.nextInt();
   }
 
   // Is used for creating items

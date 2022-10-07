@@ -1,5 +1,7 @@
 package controller;
 
+import java.util.ArrayList;
+
 import org.checkerframework.checker.units.qual.m;
 
 import model.Item;
@@ -77,9 +79,28 @@ public class MemberController {
     }
   }
 
-  public void showOwnedItems() {
+  /**
+   * Gets member based on position in arraylist
+   * 
+   * @param input position in arraylist
+   * @return member
+   */
+  public Member.Mutable getMember(int input) {
+    input -= 1;
+    ArrayList<Member.Mutable> arraylist = new ArrayList<>();
+    for (Member.Mutable member : registry.getMembers()) {
+      arraylist.add(member);
+    }
+    return arraylist.get(input);
+  }
 
-    for (Item item : registry.getMember(console.idInput()).getItemsOwned()) {
+  /**
+   * Used to show items owned by user.
+   */
+  public void showOwnedItems() {
+    Member.Mutable member = getMember(console.indexInput());
+
+    for (Item item : member.getItemsOwned()) {
       console.showItemDetails(item);
     }
   }
@@ -88,8 +109,7 @@ public class MemberController {
     registry.getMember(console.idInput());
   }
 
-  
-  /** 
+  /**
    * @param member
    */
   public void deleteMember(model.Member member) {
@@ -105,16 +125,14 @@ public class MemberController {
     registry.getMember(console.idInput()).addPreparedItemOwned(console.createItem());
   }
 
-  
-  /** 
+  /**
    * @param i
    */
   public void deleteItemOwned(model.Item i) {
     member.removeItemOwned(i);
   }
 
-  
-  /** 
+  /**
    * @param i
    */
   public void deleteItemLended(model.Item i) {

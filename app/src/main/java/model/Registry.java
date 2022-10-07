@@ -14,7 +14,6 @@ public class Registry {
 
   private ArrayList<Member.Mutable> members;
 
-
   public Registry() {
     members = new ArrayList<>();
 
@@ -25,17 +24,14 @@ public class Registry {
 
   }
 
-
-  
-  /** 
+  /**
    * @return Iterable<Mutable>
    */
   public Iterable<Member.Mutable> getMembers() {
     return members;
   }
 
-  
-  /** 
+  /**
    * @param firstName
    * @param lastName
    * @param email
@@ -49,8 +45,7 @@ public class Registry {
     return x;
   }
 
-  
-  /** 
+  /**
    * @param mem
    * @return Member
    */
@@ -62,8 +57,7 @@ public class Registry {
     return x;
   }
 
-  
-  /** 
+  /**
    * @param memberId
    * @return Member
    */
@@ -78,16 +72,14 @@ public class Registry {
     return members.get(0);
   }
 
-  
-  /** 
+  /**
    * @param s
    */
   public void removeMember(Member s) {
     members.remove(s);
   }
 
-  
-  /** 
+  /**
    * @param time
    */
   private void notifyMembersTime(int time) {
