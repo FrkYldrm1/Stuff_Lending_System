@@ -18,6 +18,8 @@ public class App {
 
 		// mmc.createNewMember();
 		mmc.showAllMembers();
+		mmc.changeDay();
+		mmc.showAllMembers();
 		// mmc.addItem();
 		mmc.showOwnedItems();
 

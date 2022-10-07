@@ -138,6 +138,7 @@ public class ConsoleUI {
     // printed string
     String toPrint = String.format("%s    %s    %s, %s\t%s\tCurrent credits: %s\tNumber of owned items: %s", index,
         memberId, firstName, lastName, email, currentCredit, ownedItem);
+        System.out.println("The day is : " + m.getTime());
 
     // prints information
     System.out.println(toPrint);
@@ -153,6 +154,7 @@ public class ConsoleUI {
 
     String toPrint = itemName + " ID: " + itemID + " Item desc : " + itemDesc + " Item cost : " + itemCost;
     System.out.println(toPrint);
+    System.out.println("The day for items : " + i.getDayOfCreation());
   }
 
   // Is used to get members id.
@@ -172,6 +174,11 @@ public class ConsoleUI {
     int costPerDay = input.nextInt();
 
     return new model.Item(itemName, descrioption, costPerDay, 0, false, 0);
+  }
+
+  public int dayInput() {
+    System.out.println("Please enter the day that you want to change :");
+    return input.nextInt();
   }
 
 }

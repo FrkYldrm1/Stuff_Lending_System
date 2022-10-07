@@ -59,6 +59,7 @@ public class Member implements TimeAdvancedObserver {
     return credits;
   }
 
+
   public ArrayList<Item> getItemsOwned() {
     ArrayList<Item> copy = new ArrayList<>();
     for(Item item : itemsOwned) {
@@ -85,10 +86,12 @@ public class Member implements TimeAdvancedObserver {
     for (Item item1 : itemsLended) {
       item1.setDayOfCreationProt(value);
     }
-
+  }
+  public int getTime() {
+    return time.getDay();
   }
 
-  
+
 
   // Total cost of items.
   public int costTotal() {

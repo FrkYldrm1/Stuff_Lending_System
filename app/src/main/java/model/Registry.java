@@ -90,7 +90,7 @@ public class Registry {
   /** 
    * @param time
    */
-  private void notifyMembersTime(int time) {
+  public void notifyMembersTime(int time) {
     for (Member s : members) {
       s.TimeAdvanced(time);
       s.updateItems();

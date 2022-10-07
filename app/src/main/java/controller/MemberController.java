@@ -5,6 +5,7 @@ import org.checkerframework.checker.units.qual.m;
 import model.Item;
 import model.Member;
 import model.Registry;
+import model.Time;
 import view.ConsoleUI;
 import view.ConsoleUI2;
 
@@ -14,6 +15,7 @@ public class MemberController {
   model.Registry registry;
   view.ConsoleUI2 ui;
   model.Member member;
+  model.Time time = new Time();
 
   // constructors for controller
   public MemberController(ConsoleUI console, Registry registry) {
@@ -171,6 +173,11 @@ public class MemberController {
       }
     }
     return true;
+  }
+
+  public void changeDay() {
+    time.dayChange(console.dayInput());
+    registry.notifyMembersTime(time.getDay());
   }
 
 }
