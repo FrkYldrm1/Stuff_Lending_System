@@ -7,7 +7,6 @@ import org.checkerframework.checker.guieffect.qual.UI;
 import model.Registry;
 import view.ConsoleUI2;
 
-
 public class App {
 
 	public static void main(String[] args) {
