@@ -6,12 +6,13 @@ import org.checkerframework.checker.units.qual.m;
 
 import model.Item;
 import model.Member;
+import model.MemberId;
 import model.Registry;
 import model.Time;
 import view.ConsoleUi;
 
 /**
- *Class.
+ * Class.
  */
 public class MemberController {
   view.ConsoleUi console;
@@ -73,7 +74,13 @@ public class MemberController {
       }
     }
 
-    model.Member newMember = new Member(firstName, lastName, email, phoneNumber);
+    model.MemberId id = new MemberId();
+
+    while (isIdTaken(id)) {
+      id = new MemberId();
+    }
+
+    model.Member newMember = new Member(firstName, lastName, email, phoneNumber, id);
     registry.addMember(newMember);
   }
 
@@ -97,6 +104,7 @@ public class MemberController {
       index += 1;
       console.showMemberDetails2(member, index);
     }
+    console.lineBreak();
   }
 
   /**
@@ -129,9 +137,11 @@ public class MemberController {
    */
   public void showOwnedItems() {
     Member.Mutable member = getMember(console.indexMemberInput());
+    int index = 0;
 
     for (Item item : member.getItemsOwned()) {
-      console.showItemDetails(item);
+      index += 1;
+      console.showItemDetails(item, index);
     }
   }
 
@@ -139,14 +149,12 @@ public class MemberController {
     registry.getMember(console.idInput());
   }
 
-  
   /**
    * Method for deleting the member.
    */
   public void deleteMember(model.Member member) {
     registry.removeMember(member);
   }
-
 
   /**
    * Method for adding items.
@@ -155,7 +163,6 @@ public class MemberController {
     registry.getMember(console.idInput()).addPreparedItemOwned(console.createItem());
   }
 
-  
   /**
    * Method for deleting owned items.
    */
@@ -163,7 +170,6 @@ public class MemberController {
     member.removeItemOwned(i);
   }
 
-  
   /**
    * Method for deleting lended items.
    */
@@ -171,6 +177,12 @@ public class MemberController {
     member.removeItemLended(i);
   }
 
+  /**
+   * Method for showing member details.
+   */
+  public void showMemberDetails() {
+    member.toString();
+  }
 
   /**
    * Method for listing the members.
@@ -248,4 +260,19 @@ public class MemberController {
     getMember(index).setPhoneNumber(console.getPhoneNumber());
     System.out.println("Member " + getMember(index).getFirstName() + " has been edited");
   }
+  /**
+   * Checks if member Id is taken or available
+   *
+   * @param id member id
+   * @return true if taken and false if available
+   */
+  public boolean isIdTaken(MemberId id) {
+    for (Member.Mutable member : registry.getMembers()) {
+      if (id.getId().equals(member.getMemberId().getId())) {
+        return true;
+      }
+    }
+    return false;
+  }
+
 }

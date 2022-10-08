@@ -24,7 +24,7 @@ public class MemberId {
   }
 
   public String creationDate() {
-    return "hehe";
+    return (java.time.LocalDate.now().toString());
   }
 
   public String getId() {
