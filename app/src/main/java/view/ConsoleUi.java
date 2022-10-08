@@ -167,15 +167,17 @@ public class ConsoleUi {
    *
    * @param i Item object.
    */
-  public void showItemDetails(model.Item i) {
+  public void showItemDetails(model.Item i, int index) {
     String itemName = i.getName();
     String itemId = i.getItemId();
     String itemDesc = i.getShortDescription();
     int itemCost = i.getCostPerDay();
 
-    String toPrint = itemName + " ID: " + itemId + " Item desc : " + itemDesc + " Item cost : " + itemCost;
+    // String toxPrint = itemName + " ID: " + itemId + " Item desc : " + itemDesc +
+    // " Item cost : " + itemCost;
+    String toPrint = String.format("%s    %s    %s    %s    Day for items: %s", index, itemName, itemCost, itemDesc,
+        i.getDayOfCreation());
     System.out.println(toPrint);
-    System.out.println("The day for items : " + i.getDayOfCreation());
   }
 
   /**
@@ -232,6 +234,13 @@ public class ConsoleUi {
   public int dayInput() {
     System.out.println("Please enter the day that you want to change :");
     return input.nextInt();
+  }
+
+  /**
+   * Prints empty string. Used to make interface look nicer with some line breaks.
+   */
+  public void lineBreak() {
+    System.out.println("");
   }
 
 }

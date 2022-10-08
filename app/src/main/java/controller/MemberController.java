@@ -93,6 +93,7 @@ public class MemberController {
       index += 1;
       console.showMemberDetails(member, index);
     }
+    console.lineBreak();
   }
 
   /**
@@ -125,9 +126,11 @@ public class MemberController {
    */
   public void showOwnedItems() {
     Member.Mutable member = getMember(console.indexMemberInput());
+    int index = 0;
 
     for (Item item : member.getItemsOwned()) {
-      console.showItemDetails(item);
+      index += 1;
+      console.showItemDetails(item, index);
     }
   }
 
