@@ -11,7 +11,6 @@ public class Registry {
   view.ConsoleUi console;
   private ArrayList<Member.Mutable> members;
 
-
   /**
    * Constructor.
    */
@@ -25,8 +24,6 @@ public class Registry {
     members.get(1).addItem("phone", "black", 45, 3, false, 3,  members.get(1).getFirstName(), " No one ");
   }
 
-
-  
   /**
    * Getter method for members.
    *
@@ -36,7 +33,6 @@ public class Registry {
     return members;
   }
 
-  
   /**
    * Method for adding members adds members without an id.
    *
@@ -52,7 +48,6 @@ public class Registry {
     return x;
   }
 
-  
   /**
    * Adds members with id already.
    *
@@ -66,7 +61,6 @@ public class Registry {
     return x;
   }
 
-  
   /**
    * For getting spesific member.
    *
@@ -75,13 +69,12 @@ public class Registry {
    */
   public Member getMember(String memberId) {
     for (Member member : members) {
-      if (member.getMemberId().getId() == memberId) {
+      if (member.getMemberId().getId().equals(memberId) ) {
         return member;
       }
     }
     return members.get(0);
   }
-
 
   /**
    * To remove a member from a list.
@@ -91,7 +84,6 @@ public class Registry {
   public void removeMember(Member s) {
     members.remove(s);
   }
-
 
   /**
    * Method for changing the time.
@@ -119,9 +111,22 @@ public class Registry {
   /**
    * Method for listing a short overview of members.
    */
- public void listMemberSpecific() {
+  public void listMemberSpecific() {
+    int index = 0;
     for (Member member : members) {
-      System.out.println(member.getMemberId() + " " + member.getFirstName() + " " + member.getLastName());
+      index += 1;
+      System.out.println(index + " " + member.getFirstName() + " " + member.getLastName());
     }
- }
+  }
+
+  /**
+   * Selecting the members.
+   *
+   * @param index To get the member by index.
+   * @return Member.
+   */
+  public Member selectMember(int index) {
+    index -= 1;
+    return members.get(index);
+  }
 }

@@ -15,8 +15,6 @@ public class Item {
   private String lenededTo;
   private MemberId id = new MemberId();
 
-
-
   /**
    * Constructor for the item.
    *
@@ -29,39 +27,84 @@ public class Item {
    */
   public Item(String name, String shortDescription, int costPerDay, int dayOfCreation,
       Boolean isLended, int contractPeriod, String owner, String lendedTo) {
-    setNameProt(name);
-    setShortDescriptionProt(shortDescription);
-    setCostPerDayProt(costPerDay);
-    setisLendedProt(isLended);
-    setContractPeriodProt(contractPeriod);
+    if (name == null) {
+      setNameProt("Unknown name!");
+    } else {
+      setNameProt(name);
+    }
+    if (shortDescription == null || shortDescription == "") {
+      setShortDescriptionProt("No description!");
+    } else {
+      setShortDescriptionProt(shortDescription);
+    }
+    if (costPerDay < 0) {
+      setCostPerDayProt(0);
+    } else {
+      setCostPerDayProt(costPerDay);
+    }
+    if (isLended == null) {
+      setisLendedProt(false);
+    } else {
+      setisLendedProt(isLended);
+    }
+    if (contractPeriod < 0) {
+      setContractPeriodProt(0);
+    } else {
+      setContractPeriodProt(contractPeriod);
+    }
+    if(owner.equals(null) || owner.equals("")) {
+      this.owner = "No owner!";
+    }else {
+      this.owner = owner;
+    }
+    if (lendedTo.equals(null) || lendedTo.equals("")) {
+      this.lenededTo = "No lender!";
+    } else {
+      this.lenededTo = lendedTo;
+    }
     this.dayOfCreation = 0;
     this.itemId = id.createId();
-    this.owner = owner;
-    this.lenededTo = lendedTo;
   }
 
-  
+  /**
+   * Setter method for owner.
+   *
+   * @param owner To initilize owner.
+   */
   public void setOwner(String owner) {
+    checkNull(owner, "Owner cannot be null!");
     this.owner = owner;
   }
 
-
+  /**
+   * Setter method for the items lender.
+   *
+   * @param lenededTo To initilize attribute.
+   */
   public void setLenededTo(String lenededTo) {
+    checkNull(lenededTo, "Lender cannot be null!"); 
     this.lenededTo = lenededTo;
   }
 
-
+  /**
+   * Getter method for owner.
+   *
+   * @return String.
+   */
   public String getOwner() {
     return owner;
   }
 
-
+  /**
+   * Getter method for lender.
+   *
+   * @return String.
+   */
   public String getLenededTo() {
     return lenededTo;
   }
 
-
-  /** 
+  /**
    * Getter method for item id.
    *
    * @return String.
@@ -71,7 +114,7 @@ public class Item {
   }
 
   /**
-   *  Constructor.
+   * Constructor.
    *
    * @param item item object.
    */
@@ -83,9 +126,6 @@ public class Item {
     this.contractPeriod = item.contractPeriod;
   }
 
-
-
-  
   /**
    * Setter for short description.
    *
@@ -95,8 +135,8 @@ public class Item {
     checkNull(newShortDescription, "Description cannot be null");
     shortDescription = newShortDescription;
   }
-  
-  /** 
+
+  /**
    * Setter method for is owned attribute.
    *
    * @param newisOwned Boolean.
@@ -105,8 +145,7 @@ public class Item {
     isLended = newisOwned;
   }
 
-  
-  /** 
+  /**
    * Setter method for the name.
    *
    * @param newName string.
@@ -115,7 +154,7 @@ public class Item {
     checkNull(newName, "First Name Cannot be null");
     name = newName;
   }
-  
+
   /**
    * Setter method for day of creation.
    *
@@ -126,7 +165,6 @@ public class Item {
     dayOfCreation = newDayOfCreation;
   }
 
-  
   /**
    * Setter method for cost perday.
    *
@@ -136,7 +174,7 @@ public class Item {
     checkNull(String.valueOf(newCostPerDay), "Cost cannot be null");
     costPerDay = newCostPerDay;
   }
-  
+
   /**
    * Setter method for contract period.
    *
@@ -147,11 +185,10 @@ public class Item {
     contractPeriod = newContractPeriod;
   }
 
-  
   /**
    * Chek method for checking if attribute is null.
    *
-   * @param str String.
+   * @param str     String.
    * @param message String.
    */
   private void checkNull(String str, String message) {
@@ -160,7 +197,6 @@ public class Item {
     }
   }
 
-  
   /**
    * Getter method for name.
    *
@@ -170,7 +206,6 @@ public class Item {
     return name;
   }
 
-  
   /**
    * Getter method for short description.
    *
@@ -180,7 +215,6 @@ public class Item {
     return shortDescription;
   }
 
-  
   /**
    * Getter method for cost perday.
    *
@@ -190,7 +224,6 @@ public class Item {
     return costPerDay;
   }
 
-  
   /**
    * Gettter method for day of creation.
    *
@@ -199,7 +232,7 @@ public class Item {
   public int getDayOfCreation() {
     return dayOfCreation;
   }
-  
+
   /**
    * Getter method for contract period.
    *

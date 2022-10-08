@@ -107,10 +107,10 @@ public class MemberController {
   }
 
   /**
-   * Gets member based on position in arraylist
+   * Gets member based on position in arraylist.
    *
-   * @param input position in arraylist
-   * @return member
+   * @param input position in arraylist.
+   * @return member.
    */
   public Member.Mutable getMember(int input) {
     input -= 1;
@@ -130,8 +130,6 @@ public class MemberController {
 
   /**
    * Used to show items owned by user.
-   */
-  /**
    * Method for showing members owned items.
    */
   public void showOwnedItems() {
@@ -159,7 +157,11 @@ public class MemberController {
    * Method for deleting lended items.
    */
   public void deleteItemLended(model.Item i) {
-    member.removeItemLended(i);
+    if(i != null){
+      member.removeItemLended(i);
+    }else {
+     throw new IllegalArgumentException("Item object cannot be null.");
+    }
   }
 
   /**
@@ -262,8 +264,8 @@ public class MemberController {
   /**
    * Checks if member id is taken or available
    *
-   * @param id member id
-   * @return true if taken and false if available
+   * @param id member id.
+   * @return true if taken and false if available.
    */
   public boolean isIdTaken(MemberId id) {
     for (Member.Mutable member : registry.getMembers()) {

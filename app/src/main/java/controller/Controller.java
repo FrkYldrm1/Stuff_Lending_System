@@ -4,38 +4,45 @@ import java.util.Scanner;
 import model.Registry;
 import view.ConsoleUi;
 
+/**
+ * Contoroller class for UI.
+ */
 public class Controller {
 
   private String input;
   private Scanner scan = new Scanner(System.in);
   private view.ConsoleUi console = new view.ConsoleUi(new Scanner(System.in, "UTF8"));
-  private model.Registry registry = new Registry();;
+  private model.Registry registry = new Registry();
   private controller.MemberController memberController = new controller.MemberController(console, registry);
-
 
   public Controller(ConsoleUi console, Registry registry) {
     this.console = console;
     this.registry = registry;
   }
 
-
+  /**
+   * Method for printing main menu.
+   */
   public void mainMenu() {
     console.mainMenu();
     input = scan.next();
-    switch (input){
-    case ("1"):
-      memMenu();
-      break;
-    case ("2"):
-      itemMenu();
-      break;
-    case ("3"):
-      console.byeBye();
-    default:
-      mainMenu();
+    switch (input) {
+      case ("1"):
+        memMenu();
+        break;
+      case ("2"):
+        itemMenu();
+        break;
+      case ("3"):
+        console.byeBye();
+      default:
+        mainMenu();
     }
   }
 
+  /**
+   * Method for printing member menu.
+   */
   public void memMenu() {
     console.memberMenu();
     input = scan.next();
@@ -45,6 +52,8 @@ public class Controller {
         memMenu();
         break;
       case ("2"):
+        registry.listMemberSpecific();
+        console.showMemberDetails3(registry.selectMember(console.indexMemberInput()));
         memMenu();
         break;
       case ("3"):
@@ -67,9 +76,13 @@ public class Controller {
         break;
       case ("7"):
         mainMenu();
+      default:  
     }
   }
 
+  /**
+   * Method for printing item menu.
+   */
   public void itemMenu() {
     console.itemMenu();
     input = scan.next();

@@ -1,3 +1,4 @@
+/Users/fy/Documents/1DV607/a2/app/build/classes/java/main/controller/Controller.class
 /Users/fy/Documents/1DV607/a2/app/build/classes/java/main/controller/MemberController.class
 /Users/fy/Documents/1DV607/a2/app/build/classes/java/main/controller/App.class
 /Users/fy/Documents/1DV607/a2/app/build/classes/java/main/model/Item$Category.class
@@ -11,4 +12,3 @@
 /Users/fy/Documents/1DV607/a2/app/build/classes/java/main/model/MemberId.class
 /Users/fy/Documents/1DV607/a2/app/build/classes/java/main/model/Member$Mutable.class
 /Users/fy/Documents/1DV607/a2/app/build/classes/java/main/view/ConsoleUi.class
-/Users/fy/Documents/1DV607/a2/app/build/classes/java/main/view/ConsoleUI2.class

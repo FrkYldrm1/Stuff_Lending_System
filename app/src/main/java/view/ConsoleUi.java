@@ -16,7 +16,11 @@ public class ConsoleUi {
   public ConsoleUi(Scanner input) {
     this.input = input;
   }
+  
 
+  /**
+   * Method for main menu ui.
+   */
   public void mainMenu() {
     System.out.println("|-------------------------------------------------------|");
     System.out.println("| Welcome to our amazing lending application!           |");
@@ -29,6 +33,9 @@ public class ConsoleUi {
     System.out.println("|-------------------------------------------------------|");
   }
 
+  /**
+   * Method for the membure menu UI.
+   */
   public void memberMenu() {
     System.out.println("|-------------------------------------------------------|");
     System.out.println("|1) Create a new member                                 |");
@@ -41,6 +48,9 @@ public class ConsoleUi {
     System.out.println("|-------------------------------------------------------|");
   }
 
+  /**
+   * Method for the item menu UI.
+   */
   public void itemMenu() {
     System.out.println("|-------------------------------------------------------|");
     System.out.println("|1) Create item                                         |");
@@ -51,6 +61,9 @@ public class ConsoleUi {
     System.out.println("|-------------------------------------------------------|");
   }
 
+  /**
+   * Method for the closing menu UI.
+   */
   public void byeBye() {
     System.out.println("|-------------------------------------------------------|");
     System.out.println("|           It was fun while it lasted                  |");
@@ -149,6 +162,12 @@ public class ConsoleUi {
     return input.nextLine();
   }
 
+  
+  /** 
+   * Method for getting index.
+   *
+   * @return String.
+   */
   public String selectedMember() {
     System.out.print("Select member to edit (Input number): ");
     return input.nextLine();
@@ -212,7 +231,6 @@ public class ConsoleUi {
     // printed string
     String toPrint = String.format("%s    %s    %s, %s\t%s\tCurrent credits: %s\tNumber of owned items: %s", index,
         memberId, firstName, lastName, email, currentCredit, ownedItem);
-    System.out.println("The day is : " + m.getTime());
 
     // prints information
     System.out.println(toPrint);
@@ -226,7 +244,7 @@ public class ConsoleUi {
    */
   public void showItemDetails(model.Item i, int index) {
     String itemName = i.getName();
-    String itemId = i.getItemId();
+    //String itemId = i.getItemId();
     String itemDesc = i.getShortDescription();
     int itemCost = i.getCostPerDay();
 
@@ -248,9 +266,9 @@ public class ConsoleUi {
   }
 
   /**
-   * Asks the user for a member's position in arraylist
-   * 
-   * @return int
+   * Asks the user for a member's position in arraylist.
+   *
+   * @return int.
    */
   public int indexMemberInput() {
     System.out.print("Select a member (Input a number): ");
@@ -259,7 +277,7 @@ public class ConsoleUi {
 
   /**
    * Validates index input.
-   * 
+   *
    * @return int
    */
   public int indexMemberInputRetry() {
@@ -341,11 +359,43 @@ public class ConsoleUi {
 
   }
 
+
+  /**
+   * Prints details of member.
+   *
+   * @param m     Member object.
+   */
+  public void showMemberDetails3(model.Member m) {
+
+    // gets infromation
+    String firstName = m.getFirstName();
+    String email = m.getEmail();
+    String ownedItemsString = m.getItemsOwnedString();
+
+    // printed string
+    String toPrint = "\n" + "Members name: " + firstName + " E-mail: " + email
+        + ownedItemsString;
+    // prints information
+    System.out.println(toPrint);
+
+  }
+
   /**
    * Prints empty string. Used to make interface look nicer with some line breaks.
    */
   public void lineBreak() {
     System.out.println("");
+  }
+
+
+  
+  /** 
+   * Setter method for input.
+   *
+   * @param input input.
+   */
+  public void setInput(Scanner input) {
+    this.input = input;
   }
 
 }
