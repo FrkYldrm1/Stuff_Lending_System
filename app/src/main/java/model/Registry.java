@@ -21,7 +21,7 @@ public class Registry {
     // hard coded members
     addMember("Bruce", "Lee", "Bruce@gmail.com", "988");
     addMember("Maya", "Hee", "mayahaha@gmail.com", "9843");
-    members.get(0).addItem("phone", "black", 45, 3, false, 3);
+    //members.get(0).addItem("phone", "black", 45, 3, false, 3);
   }
 
 
