@@ -16,7 +16,7 @@ public class App {
 
     // below is used to test member creation and printing
     view.ConsoleUi console = new view.ConsoleUi(new Scanner(System.in, "UTF8"));
-    controller.MemberController mmc = new MemberController(console, registry);
+    // controller.MemberController mmc = new MemberController(console, registry);
     controller.Controller hehe = new Controller(console, registry);
     hehe.mainMenu();
 

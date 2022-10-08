@@ -11,7 +11,6 @@ public class Registry {
   view.ConsoleUi console;
   private ArrayList<Member.Mutable> members;
 
-
   /**
    * Constructor.
    */
@@ -21,11 +20,9 @@ public class Registry {
     // hard coded members
     addMember("Bruce", "Lee", "Bruce@gmail.com", "988");
     addMember("Maya", "Hee", "mayahaha@gmail.com", "9843");
-    members.get(0).addItem("phone", "black", 45, 3, false, 3,members.get(0).getFirstName() ," No one");
+    members.get(0).addItem("phone", "black", 45, 3, false, 3, members.get(0).getFirstName(), " No one");
   }
 
-
-  
   /**
    * Getter method for members.
    *
@@ -35,7 +32,6 @@ public class Registry {
     return members;
   }
 
-  
   /**
    * Method for adding members adds members without an id.
    *
@@ -51,7 +47,6 @@ public class Registry {
     return x;
   }
 
-  
   /**
    * Adds members with id already.
    *
@@ -65,7 +60,6 @@ public class Registry {
     return x;
   }
 
-  
   /**
    * For getting spesific member.
    *
@@ -74,13 +68,12 @@ public class Registry {
    */
   public Member getMember(String memberId) {
     for (Member member : members) {
-      if (member.getMemberId().getId() == memberId) {
+      if (member.getMemberId().getId().equals(memberId) ) {
         return member;
       }
     }
     return members.get(0);
   }
-
 
   /**
    * To remove a member from a list.
@@ -90,7 +83,6 @@ public class Registry {
   public void removeMember(Member s) {
     members.remove(s);
   }
-
 
   /**
    * Method for changing the time.
@@ -118,16 +110,22 @@ public class Registry {
   /**
    * Method for listing a short overview of members.
    */
- public void listMemberSpecific() {
-  int index = 0;
+  public void listMemberSpecific() {
+    int index = 0;
     for (Member member : members) {
       index += 1;
       System.out.println(index + " " + member.getFirstName() + " " + member.getLastName());
     }
- }
- 
- public Member selectMember(int index) {
-  index -= 1;
-   return members.get(index);
- } 
+  }
+
+  /**
+   * Selecting the members.
+   *
+   * @param index To get the member by index.
+   * @return Member.
+   */
+  public Member selectMember(int index) {
+    index -= 1;
+    return members.get(index);
+  }
 }

@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<testsuite package="org.checkstyle" time="0" tests="10" errors="1" name="checkstyle">
-<testcase time="0" name="controller/MemberController.java" classname="CheckStyle Issues">
+<testsuite package="org.checkstyle" time="0" tests="11" errors="5" name="checkstyle">
+<testcase time="0" name="controller/Controller.java" classname="CheckStyle Issues">
+<failure message="issues" ><![CDATA[line: 38 column: column:7 
+Fall through from previous branch of the switch statement.
+----------------
+line: 49 column: column:5 
+switch without "default" clause.
+----------------
+line: 103 column: column:7 
+Fall through from previous branch of the switch statement.
+----------------
+]]></failure>
+</testcase><testcase time="0" name="controller/MemberController.java" classname="CheckStyle Issues">
 </testcase><testcase time="0" name="controller/App.java" classname="CheckStyle Issues">
 </testcase><testcase time="0" name="model/Contract.java" classname="CheckStyle Issues">
 </testcase><testcase time="0" name="model/MemberId.java" classname="CheckStyle Issues">
@@ -10,8 +21,14 @@
 </testcase><testcase time="0" name="model/TimeAdvancedObserver.java" classname="CheckStyle Issues">
 </testcase><testcase time="0" name="model/Item.java" classname="CheckStyle Issues">
 </testcase><testcase time="0" name="view/ConsoleUi.java" classname="CheckStyle Issues">
-<failure message="issues" ><![CDATA[line: 28 column: column:5 
+<failure message="issues" ><![CDATA[line: 82 column: column:5 
 Distance between variable 'firstName' declaration and its first usage is 4, 
+  but allowed 3.  Consider making that variable final if you still need to 
+  store its value in advance (before method calls that might have side 
+  effects on the original value).
+----------------
+line: 283 column: column:5 
+Distance between variable 'itemName' declaration and its first usage is 4, 
   but allowed 3.  Consider making that variable final if you still need to 
   store its value in advance (before method calls that might have side 
   effects on the original value).

@@ -21,10 +21,10 @@ public class Member implements TimeAdvancedObserver {
   /**
    * Member constructor.
    *
-   * @param firstName     to initilize name.
-   * @param lastName      to initilize lastname.
-   * @param email         to       initilize e-mail.
-   * @param phoneNumber   to initilize phone number.
+   * @param firstName   to initilize name.
+   * @param lastName    to initilize lastname.
+   * @param email       to initilize e-mail.
+   * @param phoneNumber to initilize phone number.
    */
   public Member(String firstName, String lastName, String email, String phoneNumber) {
     this.firstName = firstName;
@@ -38,11 +38,11 @@ public class Member implements TimeAdvancedObserver {
   /**
    * Member constructor.
    *
-   * @param firstName     to initilize name.
-   * @param lastName      to initilize lastname.
-   * @param email          to       initilize e-mail.
-   * @param phoneNumber    to initilize phone number.
-   * @param id            initilize id.
+   * @param firstName   to initilize name.
+   * @param lastName    to initilize lastname.
+   * @param email       to initilize e-mail.
+   * @param phoneNumber to initilize phone number.
+   * @param id          initilize id.
    */
   public Member(String firstName, String lastName, String email, String phoneNumber, MemberId id) {
     this.firstName = firstName;
@@ -53,8 +53,7 @@ public class Member implements TimeAdvancedObserver {
     this.credits = 100;
   }
 
-  
-  /** 
+  /**
    * Getter for the first name.
    *
    * @return String.
@@ -63,7 +62,6 @@ public class Member implements TimeAdvancedObserver {
     return firstName;
   }
 
-  
   /**
    * Getter for the last name.
    *
@@ -73,7 +71,6 @@ public class Member implements TimeAdvancedObserver {
     return lastName;
   }
 
-  
   /**
    * Getter for the email.
    *
@@ -83,7 +80,6 @@ public class Member implements TimeAdvancedObserver {
     return email;
   }
 
-  
   /**
    * Getter for the phone number.
    *
@@ -93,8 +89,7 @@ public class Member implements TimeAdvancedObserver {
     return phoneNumber;
   }
 
-  
-  /** 
+  /**
    * Getter for the member id.
    *
    * @return MemberId.
@@ -103,7 +98,6 @@ public class Member implements TimeAdvancedObserver {
     return memberId;
   }
 
-  
   /**
    * Getter for the credits.
    *
@@ -113,8 +107,6 @@ public class Member implements TimeAdvancedObserver {
     return credits;
   }
 
-
-  
   /**
    * Getter for owned items.
    *
@@ -127,7 +119,7 @@ public class Member implements TimeAdvancedObserver {
     }
     return copy;
   }
-  
+
   String itemList = "";
 
   /**
@@ -139,31 +131,31 @@ public class Member implements TimeAdvancedObserver {
     int counter = 0;
     for (Item item : itemsOwned) {
       counter += 1;
-      itemList += "\n" + " Owned items : " + "\n" + counter + ". " + item.getName() + "-> Lended to: "+ item.getLenededTo() + ", Contract period: " +  item.getContractPeriod() + "\n";
+      itemList += "\n" + " Owned items : " + "\n" + counter + ". " + item.getName() + "-> Lended to: "
+          + item.getLenededTo() + ", Contract period: " + item.getContractPeriod() + "\n";
     }
     return itemList;
   }
 
-  
   /**
    * Method for creating items.
    *
-   * @param name    To add name.
-   * @param shortDescription  To add short description.
-   * @param costPerDay To initilize cost per day.
-   * @param dayOfCreation To initilize day of creation.
-   * @param isLended To decide if it is lended.
-   * @param contractPeriod to initilize contract period.
+   * @param name             To add name.
+   * @param shortDescription To add short description.
+   * @param costPerDay       To initilize cost per day.
+   * @param dayOfCreation    To initilize day of creation.
+   * @param isLended         To decide if it is lended.
+   * @param contractPeriod   to initilize contract period.
    * @return Item.
    */
-  public Item addItem(String name, String shortDescription, int costPerDay, int dayOfCreation, Boolean isLended,
-      int contractPeriod,  String owner, String lendedTo) {
-    Item s = new Item(name, shortDescription, costPerDay, dayOfCreation, isLended, contractPeriod, owner, lendedTo);
+  public Item addItem(String name, String shortDescription, int costPerDay, int dayOfCreation,
+      Boolean isLended, int contractPeriod, String owner, String lendedTo) {
+    Item s = new Item(name, shortDescription, costPerDay, dayOfCreation,
+        isLended, contractPeriod, owner, lendedTo);
     itemsOwned.add(s);
     return s;
   }
 
-  
   /**
    * Method for advancing time for the items owned and lended.
    *
@@ -179,7 +171,7 @@ public class Member implements TimeAdvancedObserver {
       item1.setDayOfCreationProt(value);
     }
   }
-  
+
   /**
    * Getter method for time.
    *
@@ -188,7 +180,6 @@ public class Member implements TimeAdvancedObserver {
   public int getTime() {
     return time.getDay();
   }
-
 
   /**
    * Total cost of items.
@@ -202,30 +193,33 @@ public class Member implements TimeAdvancedObserver {
     return costTotal;
   }
 
+  /**
+   * Method for deleting item.
+   *
+   * @param index index of item.
+   */
   public void deleteItem(int index) {
-  itemsOwned.remove(index);
+    itemsOwned.remove(index);
   }
 
-  
   /**
    * Method for creating items.
    *
-   * @param name             To add name.
-   * @param costPerDay       To initilize cost per day.
-   * @param dayOfCreation    To initilize day of creation.
-   * @param isLended         To decide if it is lended.
-   * @param contractPeriod   to initilize contract period.
+   * @param name           To add name.
+   * @param costPerDay     To initilize cost per day.
+   * @param dayOfCreation  To initilize day of creation.
+   * @param isLended       To decide if it is lended.
+   * @param contractPeriod to initilize contract period.
    * @return Item.
    */
   public Item addItemOwned(String name, String desc, int costPerDay, int dayOfCreation, Boolean isLended,
-      int contractPeriod,  String owner, String lendedTo) {
+      int contractPeriod, String owner, String lendedTo) {
     Item s = new Item(name, desc, costPerDay, dayOfCreation, isLended, contractPeriod, owner, lendedTo);
     itemsOwned.add(s);
     credits += 100;
     return s;
   }
 
-  
   /**
    * Method for adding lended items to member object.
    *
@@ -235,7 +229,6 @@ public class Member implements TimeAdvancedObserver {
     itemsOwned.add(leding);
   }
 
-  
   /**
    * Adding Items to ownied items list.
    *
@@ -250,7 +243,6 @@ public class Member implements TimeAdvancedObserver {
 
   }
 
-  
   /**
    * Getting lending cost for an item.
    *
@@ -262,7 +254,6 @@ public class Member implements TimeAdvancedObserver {
     return cost;
   }
 
-  
   /**
    * Removing items from owned items.
    *
@@ -272,7 +263,6 @@ public class Member implements TimeAdvancedObserver {
     itemsOwned.remove(s);
   }
 
-  
   /**
    * Removing lended items.
    *
@@ -281,7 +271,6 @@ public class Member implements TimeAdvancedObserver {
   public void removeItemLended(Item s) {
     itemsLended.remove(s);
   }
-
 
   // Updating items contract date and if date is fullfilled removing the item from
   // lendings.
@@ -300,18 +289,38 @@ public class Member implements TimeAdvancedObserver {
     }
   }
 
+  /**
+   * Setter method for firstname.
+   *
+   * @param firstName first to initilize first name.
+   */
   public void setFirstName(String firstName) {
     this.firstName = firstName;
   }
 
+  /**
+   * Setter method for lastname.
+   *
+   * @param lastName To initilize the lastname.
+   */
   public void setLastName(String lastName) {
     this.lastName = lastName;
   }
 
+  /**
+   * Setter method for email.
+   *
+   * @param email To initilize email.
+   */
   public void setEmail(String email) {
     this.email = email;
   }
 
+  /**
+   * Setter method for phone number.
+   *
+   * @param phoneNumber To initilize the phone number.
+   */
   public void setPhoneNumber(String phoneNumber) {
     this.phoneNumber = phoneNumber;
   }
