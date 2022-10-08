@@ -45,6 +45,8 @@ public class Controller {
         memMenu();
         break;
       case ("2"):
+        registry.listMemberSpecific();
+        console.showMemberDetails3(registry.selectMember(console.indexMemberInput()));
         memMenu();
         break;
       case ("3"):

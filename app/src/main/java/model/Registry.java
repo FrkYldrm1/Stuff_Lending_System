@@ -21,7 +21,7 @@ public class Registry {
     // hard coded members
     addMember("Bruce", "Lee", "Bruce@gmail.com", "988");
     addMember("Maya", "Hee", "mayahaha@gmail.com", "9843");
-    members.get(0).addItem("phone", "black", 45, 3, false, 3);
+    members.get(0).addItem("phone", "black", 45, 3, false, 3,members.get(0).getFirstName() ," No one");
   }
 
 
@@ -119,8 +119,15 @@ public class Registry {
    * Method for listing a short overview of members.
    */
  public void listMemberSpecific() {
+  int index = 0;
     for (Member member : members) {
-      System.out.println(member.getMemberId() + " " + member.getFirstName() + " " + member.getLastName());
+      index += 1;
+      System.out.println(index + " " + member.getFirstName() + " " + member.getLastName());
     }
  }
+ 
+ public Member selectMember(int index) {
+  index -= 1;
+   return members.get(index);
+ } 
 }

@@ -246,6 +246,10 @@ public class Member implements TimeAdvancedObserver {
     itemsOwned.add(ownedItem);
   }
 
+  public void getItemOwned() {
+
+  }
+
   
   /**
    * Getting lending cost for an item.

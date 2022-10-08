@@ -20,13 +20,5 @@ public class App {
     controller.Controller hehe = new Controller(console, registry);
     hehe.mainMenu();
 
-    // mmc.createNewMember();
-    // mmc.showAllMembers();
-    mmc.showAllMembers2();
-    // mmc.changeDay();
-    // mmc.showAllMembers();
-    // mmc.addItem();
-    // mmc.showOwnedItems();
-
   }
 }

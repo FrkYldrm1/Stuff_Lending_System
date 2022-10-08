@@ -201,7 +201,6 @@ public class ConsoleUi {
     // printed string
     String toPrint = String.format("%s    %s    %s, %s\t%s\tCurrent credits: %s\tNumber of owned items: %s", index,
         memberId, firstName, lastName, email, currentCredit, ownedItem);
-    System.out.println("The day is : " + m.getTime());
 
     // prints information
     System.out.println(toPrint);
@@ -292,6 +291,28 @@ public class ConsoleUi {
    * @param index To add index.
    */
   public void showMemberDetails2(model.Member.Mutable m, int index) {
+
+    // gets infromation
+    String firstName = m.getFirstName();
+    String email = m.getEmail();
+    String ownedItemsString = m.getItemsOwnedString();
+
+    // printed string
+    String toPrint = "\n" + "Members name: " + firstName + " E-mail: " + email
+        + ownedItemsString;
+    // prints information
+    System.out.println(toPrint);
+
+  }
+
+
+  /**
+   * Prints details of member.
+   *
+   * @param m     Member object.
+   * @param index To add index.
+   */
+  public void showMemberDetails3(model.Member m) {
 
     // gets infromation
     String firstName = m.getFirstName();
