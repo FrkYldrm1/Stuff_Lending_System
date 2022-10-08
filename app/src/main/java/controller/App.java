@@ -17,13 +17,15 @@ public class App {
     // below is used to test member creation and printing
     view.ConsoleUi console = new view.ConsoleUi(new Scanner(System.in, "UTF8"));
     controller.MemberController mmc = new MemberController(console, registry);
+    controller.Controller hehe = new Controller(console, registry);
+    hehe.mainMenu();
 
     // mmc.createNewMember();
-    mmc.showAllMembers();
-    mmc.changeDay();
-    mmc.showAllMembers();
+   // mmc.showAllMembersSimple();
+   // mmc.changeDay();
+   // mmc.showAllMembersSimple();
     // mmc.addItem();
-    mmc.showOwnedItems();
+   // mmc.showOwnedItems();
 
   }
 }

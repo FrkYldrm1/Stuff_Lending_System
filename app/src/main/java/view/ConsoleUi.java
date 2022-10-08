@@ -17,6 +17,48 @@ public class ConsoleUi {
     this.input = input;
   }
 
+  public void mainMenu() {
+    System.out.println("|-------------------------------------------------------|");
+    System.out.println("| Welcome to our amazing lending application!           |");
+    System.out.println("| Kindly follow the instructions below!                 |");
+    System.out.println("| Choose a numbers and then click enter                 |");
+    System.out.println("|-------------------------------------------------------|");
+    System.out.println("|1) To deal with information about member               |");
+    System.out.println("|2) To deal with information about item                 |");
+    System.out.println("|3) Quit                                                |");
+    System.out.println("|-------------------------------------------------------|");
+  }
+
+  public void memberMenu() {
+    System.out.println("|-------------------------------------------------------|");
+    System.out.println("|1) Create a new member                                 |");
+    System.out.println("|2) Look up a specific member`s information             |");
+    System.out.println("|3) Show a simple over view of all members              |");
+    System.out.println("|4) Show a detailed over view of all members            |");
+    System.out.println("|5) Edit a member                                       |");
+    System.out.println("|6) Delete a member                                     |");
+    System.out.println("|7) Back to menu                                        |");
+    System.out.println("|-------------------------------------------------------|");
+  }
+
+  public void itemMenu() {
+    System.out.println("|-------------------------------------------------------|");
+    System.out.println("|1) Create item                                         |");
+    System.out.println("|2) View an item                                        |");
+    System.out.println("|3) Edit an item                                        |");
+    System.out.println("|4) Delete an item                                      |");
+    System.out.println("|5) Back to menu                                        |");
+    System.out.println("|-------------------------------------------------------|");
+  }
+
+  public void byeBye() {
+    System.out.println("|-------------------------------------------------------|");
+    System.out.println("|           It was fun while it lasted                  |");
+    System.out.println("|                Hope you had fun                       |");
+    System.out.println("|                      Bye bye                          |");
+    System.out.println("|-------------------------------------------------------|");
+  }
+
   /**
    * Method for creating member.
    *
@@ -106,6 +148,11 @@ public class ConsoleUi {
     return input.nextLine();
   }
 
+  public String selectedMember() {
+    System.out.print("Select member to edit (Input number): ");
+    return input.nextLine();
+  }
+
   /**
    * Asks for email.
    *
@@ -142,9 +189,8 @@ public class ConsoleUi {
    * @param m     Member object.
    * @param index To add index.
    */
-  public void showMemberDetails(model.Member.Mutable m, int index) {
+  public void showMemberDetailsSimple(model.Member.Mutable m, int index) {
 
-    // gets infromation
     String firstName = m.getFirstName();
     String email = m.getEmail();
     String lastName = m.getLastName();
@@ -194,7 +240,7 @@ public class ConsoleUi {
    * @return int
    */
   public int indexMemberInput() {
-    System.out.println("Please choose a member with their position in the list: ");
+    System.out.print("Select a member (Input a number): ");
     return input.nextInt();
   }
 

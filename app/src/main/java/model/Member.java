@@ -174,8 +174,6 @@ public class Member implements TimeAdvancedObserver {
   }
 
 
-
-  
   /**
    * Total cost of items.
    *
@@ -186,6 +184,10 @@ public class Member implements TimeAdvancedObserver {
       costTotal = +item.getCostPerDay() * (item.getCostPerDay() + 1);
     }
     return costTotal;
+  }
+
+  public void deleteItem(int index) {
+  itemsOwned.remove(index);
   }
 
   
@@ -276,6 +278,22 @@ public class Member implements TimeAdvancedObserver {
         itemsLended.remove(eachItem);
       }
     }
+  }
+
+  public void setFirstName(String firstName) {
+    this.firstName = firstName;
+  }
+
+  public void setLastName(String lastName) {
+    this.lastName = lastName;
+  }
+
+  public void setEmail(String email) {
+    this.email = email;
+  }
+
+  public void setPhoneNumber(String phoneNumber) {
+    this.phoneNumber = phoneNumber;
   }
 
   /**

@@ -8,7 +8,7 @@ import java.util.ArrayList;
 public class Registry {
 
   controller.MemberController controller;
-  // Sprivate ArrayList<Member> members;
+  view.ConsoleUi console;
   private ArrayList<Member.Mutable> members;
 
 
@@ -22,7 +22,6 @@ public class Registry {
     addMember("Bruce", "Lee", "Bruce@gmail.com", "988");
     addMember("Maya", "Hee", "mayahaha@gmail.com", "9843");
     members.get(0).addItem("phone", "black", 45, 3, false, 3);
-
   }
 
 
@@ -82,7 +81,7 @@ public class Registry {
     return members.get(0);
   }
 
-  
+
   /**
    * To remove a member from a list.
    *
@@ -92,7 +91,7 @@ public class Registry {
     members.remove(s);
   }
 
-  
+
   /**
    * Method for changing the time.
    *
@@ -115,4 +114,13 @@ public class Registry {
           + " " + member.getEmail() + " " + member.getPhoneNumber());
     }
   }
+
+  /**
+   * Method for listing a short overview of members.
+   */
+ public void listMemberSpecific() {
+    for (Member member : members) {
+      System.out.println(member.getMemberId() + " " + member.getFirstName() + " " + member.getLastName());
+    }
+ }
 }

@@ -80,11 +80,11 @@ public class MemberController {
   /**
    * Method for showing the members.
    */
-  public void showAllMembers() {
+  public void showAllMembersSimple() {
     int index = 0;
     for (Member.Mutable member : registry.getMembers()) {
       index += 1;
-      console.showMemberDetails(member, index);
+      console.showMemberDetailsSimple(member, index);
     }
   }
 
@@ -160,13 +160,6 @@ public class MemberController {
     member.removeItemLended(i);
   }
 
-  /**
-   * Method for showing member details.
-   */
-  public void showMemberDetails() {
-    member.toString();
-  }
-
 
   /**
    * Method for listing the members.
@@ -230,4 +223,18 @@ public class MemberController {
     registry.notifyMembersTime(time.getDay());
   }
 
+  /**
+   * Method for editing member.
+   */
+  public void editMember() {
+    String mem = console.selectedMember();
+    int index = Integer.parseInt(mem);
+    System.out.println(index);
+    //index -= 1;
+    getMember(index).setFirstName(console.getFirstName());
+    getMember(index).setLastName(console.getLastName());
+    getMember(index).setEmail(console.getEmail());
+    getMember(index).setPhoneNumber(console.getPhoneNumber());
+    System.out.println("Member " + getMember(index).getFirstName() + " has been edited");
+  }
 }
