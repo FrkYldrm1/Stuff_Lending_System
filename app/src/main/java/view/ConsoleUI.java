@@ -186,7 +186,26 @@ public class ConsoleUi {
   public String idInput() {
     System.out.println("Please enter member ID : ");
     return input.nextLine();
+  }
 
+  /**
+   * Asks the user for a member's position in arraylist
+   * 
+   * @return int
+   */
+  public int indexMemberInput() {
+    System.out.println("Please choose a member with their position in the list: ");
+    return input.nextInt();
+  }
+
+  /**
+   * Validates index input.
+   * 
+   * @return int
+   */
+  public int indexMemberInputRetry() {
+    System.out.println("Not a valid position. Please try again: ");
+    return input.nextInt();
   }
 
   /**

@@ -1,5 +1,9 @@
 package controller;
 
+import java.util.ArrayList;
+
+import org.checkerframework.checker.units.qual.m;
+
 import model.Item;
 import model.Member;
 import model.Registry;
@@ -85,11 +89,37 @@ public class MemberController {
   }
 
   /**
+   * Gets member based on position in arraylist
+   *
+   * @param input position in arraylist
+   * @return member
+   */
+  public Member.Mutable getMember(int input) {
+    input -= 1;
+    ArrayList<Member.Mutable> arraylist = new ArrayList<>();
+    for (Member.Mutable member : registry.getMembers()) {
+      arraylist.add(member);
+    }
+
+    try {
+      Member.Mutable member = arraylist.get(input);
+      return member;
+    } catch (Exception e) {
+      input = console.indexMemberInputRetry();
+      return getMember(input);
+    }
+  }
+
+  /**
+   * Used to show items owned by user.
+   */
+  /**
    * Method for showing members owned items.
    */
   public void showOwnedItems() {
+    Member.Mutable member = getMember(console.indexMemberInput());
 
-    for (Item item : registry.getMember(console.idInput()).getItemsOwned()) {
+    for (Item item : member.getItemsOwned()) {
       console.showItemDetails(item);
     }
   }
