@@ -220,8 +220,10 @@ public class ConsoleUi {
     String descrioption = input.nextLine();
     System.out.println("Enter item's cost per day : ");
     int costPerDay = input.nextInt();
+    System.out.println("Enter owners name: ");
+    String owner = input.nextLine();
 
-    return new model.Item(itemName, descrioption, costPerDay, 0, false, 0);
+    return new model.Item(itemName, descrioption, costPerDay, 0, false, 0, owner, "");
   }
 
   /**
@@ -232,6 +234,28 @@ public class ConsoleUi {
   public int dayInput() {
     System.out.println("Please enter the day that you want to change :");
     return input.nextInt();
+  }
+
+
+  /**
+   * Prints details of member.
+   *
+   * @param m     Member object.
+   * @param index To add index.
+   */
+  public void showMemberDetails2(model.Member.Mutable m, int index) {
+
+    // gets infromation
+    String firstName = m.getFirstName();
+    String email = m.getEmail();
+    String ownedItemsString = m.getItemsOwnedString();
+
+    // printed string
+    String toPrint = "\n" + "Members name: " + firstName + " E-mail: " + email
+        + ownedItemsString;
+    // prints information
+    System.out.println(toPrint);
+
   }
 
 }

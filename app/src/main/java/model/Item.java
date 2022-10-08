@@ -11,7 +11,10 @@ public class Item {
   private int dayOfCreation;
   private boolean isLended;
   private int contractPeriod;
+  private String owner;
+  private String lenededTo;
   private MemberId id = new MemberId();
+
 
 
   /**
@@ -25,7 +28,7 @@ public class Item {
    * @param contractPeriod   To initilize the contract period,
    */
   public Item(String name, String shortDescription, int costPerDay, int dayOfCreation,
-      Boolean isLended, int contractPeriod) {
+      Boolean isLended, int contractPeriod, String owner, String lendedTo) {
     setNameProt(name);
     setShortDescriptionProt(shortDescription);
     setCostPerDayProt(costPerDay);
@@ -33,9 +36,31 @@ public class Item {
     setContractPeriodProt(contractPeriod);
     this.dayOfCreation = 0;
     this.itemId = id.createId();
+    this.owner = owner;
+    this.lenededTo = lendedTo;
   }
 
   
+  public void setOwner(String owner) {
+    this.owner = owner;
+  }
+
+
+  public void setLenededTo(String lenededTo) {
+    this.lenededTo = lenededTo;
+  }
+
+
+  public String getOwner() {
+    return owner;
+  }
+
+
+  public String getLenededTo() {
+    return lenededTo;
+  }
+
+
   /** 
    * Getter method for item id.
    *
@@ -199,8 +224,8 @@ public class Item {
   public static class Mutable extends Item {
 
     public Mutable(String name, String shortDescription, int costPerDay,
-        int dayOfCreation, Boolean isLended, int contractPeriod) {
-      super(name, shortDescription, costPerDay, dayOfCreation, isLended, contractPeriod);
+        int dayOfCreation, Boolean isLended, int contractPeriod, String owner, String lendedTo) {
+      super(name, shortDescription, costPerDay, dayOfCreation, isLended, contractPeriod, owner, lendedTo);
     }
 
     public Mutable(Item item) {

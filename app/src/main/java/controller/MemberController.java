@@ -89,6 +89,17 @@ public class MemberController {
   }
 
   /**
+   * Method for showing the members.
+   */
+  public void showAllMembers2() {
+    int index = 0;
+    for (Member.Mutable member : registry.getMembers()) {
+      index += 1;
+      console.showMemberDetails2(member, index);
+    }
+  }
+
+  /**
    * Gets member based on position in arraylist
    *
    * @param input position in arraylist

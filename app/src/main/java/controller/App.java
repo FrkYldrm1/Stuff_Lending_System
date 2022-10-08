@@ -19,11 +19,12 @@ public class App {
     controller.MemberController mmc = new MemberController(console, registry);
 
     // mmc.createNewMember();
-    mmc.showAllMembers();
-    mmc.changeDay();
-    mmc.showAllMembers();
+    // mmc.showAllMembers();
+    mmc.showAllMembers2();
+    // mmc.changeDay();
+    // mmc.showAllMembers();
     // mmc.addItem();
-    mmc.showOwnedItems();
+    // mmc.showOwnedItems();
 
   }
 }
