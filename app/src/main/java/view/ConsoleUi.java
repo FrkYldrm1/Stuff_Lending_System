@@ -16,7 +16,6 @@ public class ConsoleUi {
   public ConsoleUi(Scanner input) {
     this.input = input;
   }
-  
 
   /**
    * Method for main menu ui.
@@ -162,8 +161,7 @@ public class ConsoleUi {
     return input.nextLine();
   }
 
-  
-  /** 
+  /**
    * Method for getting index.
    *
    * @return String.
@@ -244,7 +242,7 @@ public class ConsoleUi {
    */
   public void showItemDetails(model.Item i, int index) {
     String itemName = i.getName();
-    //String itemId = i.getItemId();
+    // String itemId = i.getItemId();
     String itemDesc = i.getShortDescription();
     int itemCost = i.getCostPerDay();
 
@@ -275,6 +273,11 @@ public class ConsoleUi {
     return input.nextInt();
   }
 
+  public int indexItemInput() {
+    System.out.println("Select an item using position in list: ");
+    return input.nextInt();
+  }
+
   /**
    * Validates index input.
    *
@@ -289,6 +292,7 @@ public class ConsoleUi {
     System.out.println("Not a valid position. Please try again: ");
     return input.nextInt();
   }
+
   /**
    * Is used for creating items.
    *
@@ -337,7 +341,6 @@ public class ConsoleUi {
     return input.nextInt();
   }
 
-
   /**
    * Prints details of member.
    *
@@ -359,11 +362,10 @@ public class ConsoleUi {
 
   }
 
-
   /**
    * Prints details of member.
    *
-   * @param m     Member object.
+   * @param m Member object.
    */
   public void showMemberDetails3(model.Member m) {
 
@@ -387,9 +389,7 @@ public class ConsoleUi {
     System.out.println("");
   }
 
-
-  
-  /** 
+  /**
    * Setter method for input.
    *
    * @param input input.

@@ -2,7 +2,6 @@ package controller;
 
 import java.util.ArrayList;
 
-
 import model.Item;
 import model.Member;
 import model.MemberId;
@@ -128,6 +127,18 @@ public class MemberController {
     }
   }
 
+  public Item getItem(int input, Member.Mutable m) {
+    input -= 1;
+    Item item;
+    try {
+      item = m.getItemsOwned().get(input);
+      return item;
+    } catch (Exception e) {
+      input = console.indexItemInputRetry();
+      return getItem(input, m);
+    }
+  }
+
   /**
    * Used to show items owned by user.
    * Method for showing members owned items.
@@ -157,10 +168,10 @@ public class MemberController {
    * Method for deleting lended items.
    */
   public void deleteItemLended(model.Item i) {
-    if(i != null){
+    if (i != null) {
       member.removeItemLended(i);
-    }else {
-     throw new IllegalArgumentException("Item object cannot be null.");
+    } else {
+      throw new IllegalArgumentException("Item object cannot be null.");
     }
   }
 
@@ -232,15 +243,17 @@ public class MemberController {
     System.out.println("Member " + getMember(index).getFirstName() + " has been edited");
   }
 
-  /**public void editItem() {
-    String item = console.SelectItemDelete();
-    int index = Integer.parseInt(item);
-    getItem(index).setName(console.newItemName());
-    getItem(index).setShortDescription(console.newItemShortDescription());
-    getItem(index).setCostPerDay(console.newItemCostPerDay());
-    getItem(index).setOwner(console.newItemOwnerName());
-    System.out.println("Item " + getItem(index).getName() + " has been edited");
-  }**/
+  /**
+   * public void editItem() {
+   * String item = console.SelectItemDelete();
+   * int index = Integer.parseInt(item);
+   * getItem(index).setName(console.newItemName());
+   * getItem(index).setShortDescription(console.newItemShortDescription());
+   * getItem(index).setCostPerDay(console.newItemCostPerDay());
+   * getItem(index).setOwner(console.newItemOwnerName());
+   * System.out.println("Item " + getItem(index).getName() + " has been edited");
+   * }
+   **/
 
   /**
    * Method for deleting the member.
@@ -254,12 +267,13 @@ public class MemberController {
   /**
    * Method for deleting owned items.
    */
-  /**public void deleteItemOwned() {
-    String item = console.SelectItemDelete();
-    int index = Integer.parseInt(item);
-    member.removeItemOwned(getItem(index));
-  }**/
-
+  /**
+   * public void deleteItemOwned() {
+   * String item = console.SelectItemDelete();
+   * int index = Integer.parseInt(item);
+   * member.removeItemOwned(getItem(index));
+   * }
+   **/
 
   /**
    * Checks if member id is taken or available
