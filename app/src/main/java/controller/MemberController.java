@@ -2,7 +2,6 @@ package controller;
 
 import java.util.ArrayList;
 
-import org.checkerframework.checker.units.qual.m;
 
 import model.Item;
 import model.Member;
@@ -150,13 +149,6 @@ public class MemberController {
   }
 
   /**
-   * Method for deleting the member.
-   */
-  public void deleteMember(model.Member member) {
-    registry.removeMember(member);
-  }
-
-  /**
    * Method for adding items.
    */
   public void addItem() {
@@ -164,31 +156,10 @@ public class MemberController {
   }
 
   /**
-   * Method for deleting owned items.
-   */
-  public void deleteItemOwned(model.Item i) {
-    member.removeItemOwned(i);
-  }
-
-  /**
    * Method for deleting lended items.
    */
   public void deleteItemLended(model.Item i) {
     member.removeItemLended(i);
-  }
-
-  /**
-   * Method for showing member details.
-   */
-  public void showMemberDetails() {
-    member.toString();
-  }
-
-  /**
-   * Method for listing the members.
-   */
-  public void listAllMembers() {
-    registry.listMembers();
   }
 
   /**
@@ -252,16 +223,44 @@ public class MemberController {
   public void editMember() {
     String mem = console.selectedMember();
     int index = Integer.parseInt(mem);
-    System.out.println(index);
-    //index -= 1;
     getMember(index).setFirstName(console.getFirstName());
     getMember(index).setLastName(console.getLastName());
     getMember(index).setEmail(console.getEmail());
     getMember(index).setPhoneNumber(console.getPhoneNumber());
     System.out.println("Member " + getMember(index).getFirstName() + " has been edited");
   }
+
+  /**public void editItem() {
+    String item = console.SelectItemDelete();
+    int index = Integer.parseInt(item);
+    getItem(index).setName(console.newItemName());
+    getItem(index).setShortDescription(console.newItemShortDescription());
+    getItem(index).setCostPerDay(console.newItemCostPerDay());
+    getItem(index).setOwner(console.newItemOwnerName());
+    System.out.println("Item " + getItem(index).getName() + " has been edited");
+  }**/
+
   /**
-   * Checks if member Id is taken or available
+   * Method for deleting the member.
+   */
+  public void deleteMember() {
+    String mem = console.SelectMemberDelete();
+    int index = Integer.parseInt(mem);
+    registry.removeMember(getMember(index));
+  }
+
+  /**
+   * Method for deleting owned items.
+   */
+  /**public void deleteItemOwned() {
+    String item = console.SelectItemDelete();
+    int index = Integer.parseInt(item);
+    member.removeItemOwned(getItem(index));
+  }**/
+
+
+  /**
+   * Checks if member id is taken or available
    *
    * @param id member id
    * @return true if taken and false if available

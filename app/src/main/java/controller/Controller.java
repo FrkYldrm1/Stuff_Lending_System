@@ -52,7 +52,7 @@ public class Controller {
         memMenu();
         break;
       case ("4"):
-        registry.listMemberSpecific();
+        memberController.showAllMembers2();
         memMenu();
         break;
       case ("5"):
@@ -61,6 +61,8 @@ public class Controller {
         memMenu();
         break;
       case ("6"):
+        memberController.showAllMembersSimple();
+        memberController.deleteMember();
         memMenu();
         break;
       case ("7"):

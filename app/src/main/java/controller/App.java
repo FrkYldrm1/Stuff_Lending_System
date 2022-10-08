@@ -13,20 +13,8 @@ public class App {
    */
   public static void main(String[] args) {
     model.Registry registry = new Registry();
-
-    // below is used to test member creation and printing
     view.ConsoleUi console = new view.ConsoleUi(new Scanner(System.in, "UTF8"));
-    controller.MemberController mmc = new MemberController(console, registry);
     controller.Controller hehe = new Controller(console, registry);
     hehe.mainMenu();
-
-    // mmc.createNewMember();
-    // mmc.showAllMembers();
-    mmc.showAllMembers2();
-    // mmc.changeDay();
-    // mmc.showAllMembers();
-    // mmc.addItem();
-    // mmc.showOwnedItems();
-
   }
 }

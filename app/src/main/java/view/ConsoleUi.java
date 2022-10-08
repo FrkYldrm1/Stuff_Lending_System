@@ -57,6 +57,7 @@ public class ConsoleUi {
     System.out.println("|                Hope you had fun                       |");
     System.out.println("|                      Bye bye                          |");
     System.out.println("|-------------------------------------------------------|");
+    System.exit(0);
   }
 
   /**
@@ -150,6 +151,16 @@ public class ConsoleUi {
 
   public String selectedMember() {
     System.out.print("Select member to edit (Input number): ");
+    return input.nextLine();
+  }
+
+  public String SelectMemberDelete() {
+    System.out.println("Select member to delete (Input number): ");
+    return input.nextLine();
+  }
+
+  public String SelectItemDelete() {
+    System.out.println("Select item to delete (Input number): ");
     return input.nextLine();
   }
 
@@ -256,6 +267,10 @@ public class ConsoleUi {
     return input.nextInt();
   }
 
+  public int indexItemInputRetry() {
+    System.out.println("Not a valid position. Please try again: ");
+    return input.nextInt();
+  }
   /**
    * Is used for creating items.
    *
@@ -268,10 +283,30 @@ public class ConsoleUi {
     String descrioption = input.nextLine();
     System.out.println("Enter item's cost per day : ");
     int costPerDay = input.nextInt();
-    System.out.println("Enter owners name: ");
+    System.out.println("Enter owners name: "); // Should get owner by itself
     String owner = input.nextLine();
 
     return new model.Item(itemName, descrioption, costPerDay, 0, false, 0, owner, "");
+  }
+
+  public String newItemName() {
+    System.out.println("Enter item name: ");
+    return input.nextLine();
+  }
+
+  public String newItemShortDescription() {
+    System.out.println("Enter item description: ");
+    return input.nextLine();
+  }
+
+  public int newItemCostPerDay() {
+    System.out.println("Enter item cost: ");
+    return input.nextInt();
+  }
+
+  public String newItemOwnerName() {
+    System.out.println("Enter item owner name: ");
+    return input.nextLine();
   }
 
   /**
@@ -294,12 +329,12 @@ public class ConsoleUi {
   public void showMemberDetails2(model.Member.Mutable m, int index) {
 
     // gets infromation
-    String firstName = m.getFirstName();
+    String fullName = m.getFirstName() + " " + m.getLastName();
     String email = m.getEmail();
     String ownedItemsString = m.getItemsOwnedString();
 
     // printed string
-    String toPrint = "\n" + "Members name: " + firstName + " E-mail: " + email
+    String toPrint = "\n" + "Members name: " + fullName + " E-mail: " + email
         + ownedItemsString;
     // prints information
     System.out.println(toPrint);
