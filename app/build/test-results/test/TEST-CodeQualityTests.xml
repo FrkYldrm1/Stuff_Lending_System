@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="CodeQualityTests" tests="1" skipped="0" failures="1" errors="0" timestamp="2022-10-08T00:40:21" hostname="Faruks-MBP" time="0.217">
+<testsuite name="CodeQualityTests" tests="1" skipped="0" failures="1" errors="0" timestamp="2022-10-08T00:47:16" hostname="Faruks-MBP" time="0.216">
   <properties/>
-  <testcase name="codeQuality()" classname="CodeQualityTests" time="0.217">
+  <testcase name="codeQuality()" classname="CodeQualityTests" time="0.216">
     <failure message="org.opentest4j.AssertionFailedError: Max amount (5) of quality issues exceeded:13 ==&gt; expected: &lt;true&gt; but was: &lt;false&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: Max amount (5) of quality issues exceeded:13 ==&gt; expected: &lt;true&gt; but was: &lt;false&gt;
 	at app//org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
 	at app//org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:40)
@@ -236,5 +236,8 @@ This field is never written. All reads of it will return the default value. Chec
 
 0 FindBugs Issues in model/Member.java
 ]]></system-out>
-  <system-err><![CDATA[]]></system-err>
+  <system-err><![CDATA[Findbugs xml file not found: ./build/reports/spotbugs/spotbugs.xml
+Consider making code change to initiate regeneration of the xml (will try backup)
+Restored xml from backup: ./build/reports/spotbugs/spotbugs_bak.xml
+]]></system-err>
 </testsuite>

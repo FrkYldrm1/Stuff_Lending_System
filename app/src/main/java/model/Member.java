@@ -127,6 +127,22 @@ public class Member implements TimeAdvancedObserver {
     }
     return copy;
   }
+  
+  String itemList = "";
+
+  /**
+   * Getter for owned items.
+   *
+   * @return The list for return.
+   */
+  public String getItemsOwnedString() {
+    int counter = 0;
+    for (Item item : itemsOwned) {
+      counter += 1;
+      itemList += "\n" + " Owned items : " + "\n" + counter + ". " + item.getName() + "-> Lended to: "+ item.getLenededTo() + ", Contract period: " +  item.getContractPeriod() + "\n";
+    }
+    return itemList;
+  }
 
   
   /**
@@ -141,8 +157,8 @@ public class Member implements TimeAdvancedObserver {
    * @return Item.
    */
   public Item addItem(String name, String shortDescription, int costPerDay, int dayOfCreation, Boolean isLended,
-      int contractPeriod) {
-    Item s = new Item(name, shortDescription, costPerDay, dayOfCreation, isLended, contractPeriod);
+      int contractPeriod,  String owner, String lendedTo) {
+    Item s = new Item(name, shortDescription, costPerDay, dayOfCreation, isLended, contractPeriod, owner, lendedTo);
     itemsOwned.add(s);
     return s;
   }
@@ -202,8 +218,8 @@ public class Member implements TimeAdvancedObserver {
    * @return Item.
    */
   public Item addItemOwned(String name, String desc, int costPerDay, int dayOfCreation, Boolean isLended,
-      int contractPeriod) {
-    Item s = new Item(name, desc, costPerDay, dayOfCreation, isLended, contractPeriod);
+      int contractPeriod,  String owner, String lendedTo) {
+    Item s = new Item(name, desc, costPerDay, dayOfCreation, isLended, contractPeriod, owner, lendedTo);
     itemsOwned.add(s);
     credits += 100;
     return s;

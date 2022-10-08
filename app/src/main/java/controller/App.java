@@ -21,11 +21,12 @@ public class App {
     hehe.mainMenu();
 
     // mmc.createNewMember();
-   // mmc.showAllMembersSimple();
-   // mmc.changeDay();
-   // mmc.showAllMembersSimple();
+    // mmc.showAllMembers();
+    mmc.showAllMembers2();
+    // mmc.changeDay();
+    // mmc.showAllMembers();
     // mmc.addItem();
-   // mmc.showOwnedItems();
+    // mmc.showOwnedItems();
 
   }
 }
