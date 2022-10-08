@@ -1,29 +1,31 @@
 package controller;
 
-import org.checkerframework.checker.units.qual.m;
-
 import model.Item;
 import model.Member;
 import model.Registry;
 import model.Time;
-import view.ConsoleUI;
-import view.ConsoleUI2;
+import view.ConsoleUi;
 
-// represents the controller controlling the members
+/**
+ *Class.
+ */
 public class MemberController {
-  view.ConsoleUI console;
+  view.ConsoleUi console;
   model.Registry registry;
-  view.ConsoleUI2 ui;
   model.Member member;
   model.Time time = new Time();
 
-  // constructors for controller
-  public MemberController(ConsoleUI console, Registry registry) {
+  /**
+   * constructors for controller.
+   */
+  public MemberController(ConsoleUi console, Registry registry) {
     this.console = console;
     this.registry = registry;
   }
 
-  // creates new member
+  /**
+   * creates new member.
+   */
   public void createNewMember() {
     // model.Member newMember = console.createMember();
     // registry.addMember(newMember);
@@ -71,6 +73,9 @@ public class MemberController {
     registry.addMember(newMember);
   }
 
+  /**
+   * Method for showing the members.
+   */
   public void showAllMembers() {
     int index = 0;
     for (Member.Mutable member : registry.getMembers()) {
@@ -79,6 +84,9 @@ public class MemberController {
     }
   }
 
+  /**
+   * Method for showing members owned items.
+   */
   public void showOwnedItems() {
 
     for (Item item : registry.getMember(console.idInput()).getItemsOwned()) {
@@ -91,50 +99,57 @@ public class MemberController {
   }
 
   
-  /** 
-   * @param member
+  /**
+   * Method for deleting the member.
    */
   public void deleteMember(model.Member member) {
     registry.removeMember(member);
-    ui.MemberDeletedMessage(member);
   }
 
-  // Here we first get a member from registry then we add an item to owned items
-  // We use create item method from console
-  // Id input for selecting member
-  // We have problem with get member
+
+  /**
+   * Method for adding items.
+   */
   public void addItem() {
     registry.getMember(console.idInput()).addPreparedItemOwned(console.createItem());
   }
 
   
-  /** 
-   * @param i
+  /**
+   * Method for deleting owned items.
    */
   public void deleteItemOwned(model.Item i) {
     member.removeItemOwned(i);
   }
 
   
-  /** 
-   * @param i
+  /**
+   * Method for deleting lended items.
    */
   public void deleteItemLended(model.Item i) {
     member.removeItemLended(i);
   }
 
+  /**
+   * Method for showing member details.
+   */
   public void showMemberDetails() {
     member.toString();
   }
 
+
+  /**
+   * Method for listing the members.
+   */
   public void listAllMembers() {
-    registry.ListMembers();
+    registry.listMembers();
   }
 
   /**
-   * Checks if input is null
-   * 
-   * @param input any string
+   * Checks if input is null.
+   *
+   * @param input any string.
+   *
    * @return true if null and false if not.
    */
   public boolean isNull(String input) {
@@ -147,9 +162,10 @@ public class MemberController {
 
   /**
    * Checks if phone number is already taken.
-   * 
-   * @param phoneNumber input
-   * @return true if taken and false if available
+   *
+   * @param phoneNumber input.
+   *
+   * @return true if taken and false if available.
    */
   public boolean isPhoneNumberAvailable(String phoneNumber) {
     for (Member.Mutable member : registry.getMembers()) {
@@ -162,9 +178,10 @@ public class MemberController {
 
   /**
    * Checks if email is already taken.
-   * 
-   * @param email input
-   * @return true if taken and false if available
+   *
+   * @param email input.
+   *
+   * @return true if taken and false if available.
    */
   public boolean isEmailAvailable(String email) {
     for (Member.Mutable member : registry.getMembers()) {
@@ -175,6 +192,9 @@ public class MemberController {
     return true;
   }
 
+  /**
+   * Method for changing the day for every object.
+   */
   public void changeDay() {
     time.dayChange(console.dayInput());
     registry.notifyMembersTime(time.getDay());

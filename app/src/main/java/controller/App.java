@@ -1,27 +1,29 @@
 package controller;
 
 import java.util.Scanner;
-
-import org.checkerframework.checker.guieffect.qual.UI;
-
 import model.Registry;
-import view.ConsoleUI2;
 
+/**
+ * The app class for running the program.
+ */
 public class App {
 
-	public static void main(String[] args) {
-		model.Registry registry = new Registry();
+  /**
+   * The main method.
+   */
+  public static void main(String[] args) {
+    model.Registry registry = new Registry();
 
-		// below is used to test member creation and printing
-		view.ConsoleUI console = new view.ConsoleUI(new Scanner(System.in, "UTF8"));
-		controller.MemberController mmc = new MemberController(console, registry);
+    // below is used to test member creation and printing
+    view.ConsoleUi console = new view.ConsoleUi(new Scanner(System.in, "UTF8"));
+    controller.MemberController mmc = new MemberController(console, registry);
 
-		// mmc.createNewMember();
-		mmc.showAllMembers();
-		mmc.changeDay();
-		mmc.showAllMembers();
-		// mmc.addItem();
-		mmc.showOwnedItems();
+    // mmc.createNewMember();
+    mmc.showAllMembers();
+    mmc.changeDay();
+    mmc.showAllMembers();
+    // mmc.addItem();
+    mmc.showOwnedItems();
 
-	}
+  }
 }

@@ -2,8 +2,9 @@ package model;
 
 import java.util.ArrayList;
 
-import view.ConsoleUI2;
-
+/**
+ * Member class.
+ */
 public class Member implements TimeAdvancedObserver {
   private String firstName;
   private String lastName;
@@ -17,6 +18,14 @@ public class Member implements TimeAdvancedObserver {
   private ArrayList<Item> itemsLended = new ArrayList<>();
   // private ArrayList<Item> items = new ArrayList<>(); // to take away?
 
+  /**
+   * Member constructor.
+   *
+   * @param firstName     to initilize name.
+   * @param lastName      to initilize lastname.
+   * @param email         to       initilize e-mail.
+   * @param phoneNumber   to initilize phone number.
+   */
   public Member(String firstName, String lastName, String email, String phoneNumber) {
     this.firstName = firstName;
     this.lastName = lastName;
@@ -26,6 +35,15 @@ public class Member implements TimeAdvancedObserver {
     this.credits = 100;
   }
 
+  /**
+   * Member constructor.
+   *
+   * @param firstName     to initilize name.
+   * @param lastName      to initilize lastname.
+   * @param email          to       initilize e-mail.
+   * @param phoneNumber    to initilize phone number.
+   * @param id            initilize id.
+   */
   public Member(String firstName, String lastName, String email, String phoneNumber, MemberId id) {
     this.firstName = firstName;
     this.lastName = lastName;
@@ -35,40 +53,93 @@ public class Member implements TimeAdvancedObserver {
     this.credits = 100;
   }
 
+  
+  /** 
+   * Getter for the first name.
+   *
+   * @return String.
+   */
   public String getFirstName() {
     return firstName;
   }
 
+  
+  /**
+   * Getter for the last name.
+   *
+   * @return String.
+   */
   public String getLastName() {
     return lastName;
   }
 
+  
+  /**
+   * Getter for the email.
+   *
+   * @return String.
+   */
   public String getEmail() {
     return email;
   }
 
+  
+  /**
+   * Getter for the phone number.
+   *
+   * @return String.
+   */
   public String getPhoneNumber() {
     return phoneNumber;
   }
 
+  
+  /** 
+   * Getter for the member id.
+   *
+   * @return MemberId.
+   */
   public MemberId getMemberId() {
     return memberId;
   }
 
+  
+  /**
+   * Getter for the credits.
+   *
+   * @return int.
+   */
   public int getCredits() {
     return credits;
   }
 
 
+  
+  /**
+   * Getter for owned items.
+   *
+   * @return The list for return.
+   */
   public ArrayList<Item> getItemsOwned() {
     ArrayList<Item> copy = new ArrayList<>();
-    for(Item item : itemsOwned) {
+    for (Item item : itemsOwned) {
       copy.add(item);
     }
     return copy;
   }
 
-  // Adding Item to member.
+  
+  /**
+   * Method for creating items.
+   *
+   * @param name    To add name.
+   * @param shortDescription  To add short description.
+   * @param costPerDay To initilize cost per day.
+   * @param dayOfCreation To initilize day of creation.
+   * @param isLended To decide if it is lended.
+   * @param contractPeriod to initilize contract period.
+   * @return Item.
+   */
   public Item addItem(String name, String shortDescription, int costPerDay, int dayOfCreation, Boolean isLended,
       int contractPeriod) {
     Item s = new Item(name, shortDescription, costPerDay, dayOfCreation, isLended, contractPeriod);
@@ -76,9 +147,14 @@ public class Member implements TimeAdvancedObserver {
     return s;
   }
 
-  // To advance time "value" times.
+  
+  /**
+   * Method for advancing time for the items owned and lended.
+   *
+   * @param value number of days for advancing.
+   */
   @Override
-  public void TimeAdvanced(int value) {
+  public void advanceTime(int value) {
     time.dayChange(value);
     for (Item item : itemsOwned) {
       item.setDayOfCreationProt(value);
@@ -87,13 +163,24 @@ public class Member implements TimeAdvancedObserver {
       item1.setDayOfCreationProt(value);
     }
   }
+  
+  /**
+   * Getter method for time.
+   *
+   * @return int.
+   */
   public int getTime() {
     return time.getDay();
   }
 
 
 
-  // Total cost of items.
+  
+  /**
+   * Total cost of items.
+   *
+   * @return int.
+   */
   public int costTotal() {
     for (Item item : itemsLended) {
       costTotal = +item.getCostPerDay() * (item.getCostPerDay() + 1);
@@ -101,7 +188,17 @@ public class Member implements TimeAdvancedObserver {
     return costTotal;
   }
 
-  // For creation of items.
+  
+  /**
+   * Method for creating items.
+   *
+   * @param name             To add name.
+   * @param costPerDay       To initilize cost per day.
+   * @param dayOfCreation    To initilize day of creation.
+   * @param isLended         To decide if it is lended.
+   * @param contractPeriod   to initilize contract period.
+   * @return Item.
+   */
   public Item addItemOwned(String name, String desc, int costPerDay, int dayOfCreation, Boolean isLended,
       int contractPeriod) {
     Item s = new Item(name, desc, costPerDay, dayOfCreation, isLended, contractPeriod);
@@ -110,38 +207,59 @@ public class Member implements TimeAdvancedObserver {
     return s;
   }
 
-  // Adding Items to lendigs list.
+  
+  /**
+   * Method for adding lended items to member object.
+   *
+   * @param leding adding lendings.
+   */
   public void addItemLended(Item leding) {
     itemsOwned.add(leding);
   }
 
-  // Adding Items to lendigs list.
+  
+  /**
+   * Adding Items to ownied items list.
+   *
+   * @param ownedItem adding item.
+   *
+   */
   public void addPreparedItemOwned(Item ownedItem) {
     itemsOwned.add(ownedItem);
   }
 
-  // Getting lending cost for an item.
+  
+  /**
+   * Getting lending cost for an item.
+   *
+   * @param lendedItem adding lended item.
+   * @return int.
+   */
   public int getLendingCost(Item lendedItem) {
     int cost = lendedItem.getCostPerDay() * (lendedItem.getDayOfCreation() + 1);
     return cost;
   }
 
-  // Removing items from owned items.
+  
+  /**
+   * Removing items from owned items.
+   *
+   * @param s Item that will be removed.
+   */
   public void removeItemOwned(Item s) {
     itemsOwned.remove(s);
   }
 
-  // Removing lended items.
+  
+  /**
+   * Removing lended items.
+   *
+   * @param s item that will be removed.
+   */
   public void removeItemLended(Item s) {
     itemsLended.remove(s);
   }
 
-  @Override
-  public String toString() {
-    return "Member [firstName=" + firstName + ", lastName=" + lastName + ", email=" + email + ", phoneNumber="
-        + phoneNumber + ", memberId=" + memberId + ", credits=" + credits + ", time=" + time + ", itemsOwned="
-        + itemsOwned.size() + ", itemsLended=" + itemsLended.size() + "]";
-  }
 
   // Updating items contract date and if date is fullfilled removing the item from
   // lendings.
@@ -160,8 +278,19 @@ public class Member implements TimeAdvancedObserver {
     }
   }
 
+  /**
+   * Mutable class.
+   */
   public static class Mutable extends Member {
 
+    /**
+     * Contructor for mutable members.
+     *
+     * @param firstName   to initilize objects name.
+     * @param lastName    to initilize last name.
+     * @param email       to initilize email.
+     * @param phoneNumber to initilize phone number.
+     */
     public Mutable(String firstName, String lastName, String email, String phoneNumber) {
       super(firstName, lastName, email, phoneNumber);
     }

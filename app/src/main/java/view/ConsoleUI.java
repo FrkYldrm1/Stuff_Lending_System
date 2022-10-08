@@ -1,15 +1,27 @@
 package view;
 
-import java.lang.reflect.Member;
 import java.util.Scanner;
 
-public class ConsoleUI {
+/**
+ * Class for printing console UI elements.
+ */
+public class ConsoleUi {
   Scanner input;
 
-  public ConsoleUI(Scanner input) {
+  /**
+   * Constructor for consoleUI class.
+   *
+   * @param input Scanner input.
+   */
+  public ConsoleUi(Scanner input) {
     this.input = input;
   }
 
+  /**
+   * Method for creating member.
+   *
+   * @return Member.
+   */
   // Method for creating members
   public model.Member createMember() {
     System.out.println("Enter new member's first name: ");
@@ -25,8 +37,8 @@ public class ConsoleUI {
 
   /**
    * Asks for first name input to validate.
-   * 
-   * @return first name to be validated
+   *
+   * @return first name to be validated.
    */
   public String getFirstName() {
     System.out.println("Enter new member's first name: ");
@@ -35,8 +47,8 @@ public class ConsoleUI {
 
   /**
    * Trigers when user inputs a space or two for first name.
-   * 
-   * @return first name again to be validated
+   *
+   * @return first name again to be validated.
    */
   public String newFirstName() {
     System.out.println("Name has to be filled. Please enter first name: ");
@@ -45,8 +57,8 @@ public class ConsoleUI {
 
   /**
    * Asks for last name input to validate.
-   * 
-   * @return last name to be validated
+   *
+   * @return last name to be validated.
    */
   public String getLastName() {
     System.out.println("Enter new member's last name: ");
@@ -55,8 +67,8 @@ public class ConsoleUI {
 
   /**
    * Trigers when user inputs a space or two for last name.
-   * 
-   * @return last name again to be validated
+   *
+   * @return last name again to be validated.
    */
   public String newLastName() {
     System.out.println("Name has to be filled. Please enter last name: ");
@@ -65,8 +77,8 @@ public class ConsoleUI {
 
   /**
    * Asks for phone number.
-   * 
-   * @return phonenumber to be validated
+   *
+   * @return phonenumber to be validated.
    */
   public String getPhoneNumber() {
     System.out.println("Enter new member's phone number: ");
@@ -74,9 +86,9 @@ public class ConsoleUI {
   }
 
   /**
-   * Triggers if empty string is input to phone number
-   * 
-   * @return phone number string
+   * Triggers if empty string is input to phone number.
+   *
+   * @return phone number string.
    */
   public String newPhoneNumber() {
     System.out.println("Phone number has to be filled. Please enter phone number: ");
@@ -86,8 +98,8 @@ public class ConsoleUI {
   /**
    * Triggers if phone number has a duplicate. Asks the user for another phone
    * number.
-   * 
-   * @return phone number as a strign
+   *
+   * @return phone number as a strign.
    */
   public String uniquePhoneNumber() {
     System.out.println("Phone number is taken. Please enter a new phone number: ");
@@ -96,8 +108,8 @@ public class ConsoleUI {
 
   /**
    * Asks for email.
-   * 
-   * @return email to be validated
+   *
+   * @return email to be validated.
    */
   public String getEmail() {
     System.out.println("Enter new member's email: ");
@@ -105,9 +117,9 @@ public class ConsoleUI {
   }
 
   /**
-   * Triggers if empty string is input to email
-   * 
-   * @return email string
+   * Triggers if empty string is input to email.
+   *
+   * @return email string.
    */
   public String newEmail() {
     System.out.println("Email has to be filled. Please enter email: ");
@@ -116,15 +128,20 @@ public class ConsoleUI {
 
   /**
    * Triggers if email has a duplicate. Asks the user for another email.
-   * 
-   * @return email as a strign
+   *
+   * @return email as a strign.
    */
   public String uniqueEmail() {
     System.out.println("Email is taken. Please enter a new email: ");
     return input.nextLine();
   }
 
-  // prints details of member
+  /**
+   * Prints details of member.
+   *
+   * @param m     Member object.
+   * @param index To add index.
+   */
   public void showMemberDetails(model.Member.Mutable m, int index) {
 
     // gets infromation
@@ -138,33 +155,45 @@ public class ConsoleUI {
     // printed string
     String toPrint = String.format("%s    %s    %s, %s\t%s\tCurrent credits: %s\tNumber of owned items: %s", index,
         memberId, firstName, lastName, email, currentCredit, ownedItem);
-        System.out.println("The day is : " + m.getTime());
+    System.out.println("The day is : " + m.getTime());
 
     // prints information
     System.out.println(toPrint);
 
   }
 
-  // Here we show items details
+  /**
+   * Here we show items details.
+   *
+   * @param i Item object.
+   */
   public void showItemDetails(model.Item i) {
     String itemName = i.getName();
-    String itemID = i.getItemId();
+    String itemId = i.getItemId();
     String itemDesc = i.getShortDescription();
     int itemCost = i.getCostPerDay();
 
-    String toPrint = itemName + " ID: " + itemID + " Item desc : " + itemDesc + " Item cost : " + itemCost;
+    String toPrint = itemName + " ID: " + itemId + " Item desc : " + itemDesc + " Item cost : " + itemCost;
     System.out.println(toPrint);
     System.out.println("The day for items : " + i.getDayOfCreation());
   }
 
-  // Is used to get members id.
+  /**
+   * Method for getting id input.
+   *
+   * @return String.
+   */
   public String idInput() {
     System.out.println("Please enter member ID : ");
     return input.nextLine();
 
   }
 
-  // Is used for creating items
+  /**
+   * Is used for creating items.
+   *
+   * @return Item.
+   */
   public model.Item createItem() {
     System.out.println("Enter item name: ");
     String itemName = input.nextLine();
@@ -176,6 +205,11 @@ public class ConsoleUI {
     return new model.Item(itemName, descrioption, costPerDay, 0, false, 0);
   }
 
+  /**
+   * To get day input.
+   *
+   * @return int.
+   */
   public int dayInput() {
     System.out.println("Please enter the day that you want to change :");
     return input.nextInt();

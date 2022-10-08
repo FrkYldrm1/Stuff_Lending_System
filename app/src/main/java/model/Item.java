@@ -1,17 +1,31 @@
 package model;
 
+/**
+ * Item class to create item objects.
+ */
 public class Item {
   private String name;
   private String shortDescription;
   private int costPerDay;
   private String itemId;
   private int dayOfCreation;
-  private boolean IsLended;
+  private boolean isLended;
   private int contractPeriod;
   private MemberId id = new MemberId();
 
 
-  public Item(String name, String shortDescription, int costPerDay, int dayOfCreation, Boolean isLended, int contractPeriod) {
+  /**
+   * Constructor for the item.
+   *
+   * @param name             To initilize the name.
+   * @param shortDescription To initilize the short description.
+   * @param costPerDay       To initilize the cost per day.
+   * @param dayOfCreation    To initilize day of creation.
+   * @param isLended         To select if it is lended.
+   * @param contractPeriod   To initilize the contract period,
+   */
+  public Item(String name, String shortDescription, int costPerDay, int dayOfCreation,
+      Boolean isLended, int contractPeriod) {
     setNameProt(name);
     setShortDescriptionProt(shortDescription);
     setCostPerDayProt(costPerDay);
@@ -23,25 +37,34 @@ public class Item {
 
   
   /** 
-   * @return String
+   * Getter method for item id.
+   *
+   * @return String.
    */
   public String getItemId() {
     return itemId;
   }
 
+  /**
+   *  Constructor.
+   *
+   * @param item item object.
+   */
   public Item(Item item) {
     this.name = item.name;
     this.shortDescription = item.shortDescription;
     this.costPerDay = item.costPerDay;
-    this.IsLended = item.IsLended;
+    this.isLended = item.isLended;
     this.contractPeriod = item.contractPeriod;
   }
 
 
 
   
-  /** 
-   * @param newShortDescription
+  /**
+   * Setter for short description.
+   *
+   * @param newShortDescription SD set attriute.
    */
   protected void setShortDescriptionProt(String newShortDescription) {
     checkNull(newShortDescription, "Description cannot be null");
@@ -49,23 +72,29 @@ public class Item {
   }
   
   /** 
-   * @param newisOwned
+   * Setter method for is owned attribute.
+   *
+   * @param newisOwned Boolean.
    */
   protected void setisLendedProt(Boolean newisOwned) {
-    IsLended = newisOwned;
+    isLended = newisOwned;
   }
 
   
   /** 
-   * @param newName
+   * Setter method for the name.
+   *
+   * @param newName string.
    */
   protected void setNameProt(String newName) {
     checkNull(newName, "First Name Cannot be null");
     name = newName;
   }
   
-  /** 
-   * @param newDayOfCreation
+  /**
+   * Setter method for day of creation.
+   *
+   * @param newDayOfCreation int.
    */
   protected void setDayOfCreationProt(int newDayOfCreation) {
     checkNull(String.valueOf(dayOfCreation), "Day of creation Cannot be null");
@@ -73,16 +102,20 @@ public class Item {
   }
 
   
-  /** 
-   * @param newCostPerDay
+  /**
+   * Setter method for cost perday.
+   *
+   * @param newCostPerDay integer.
    */
   protected void setCostPerDayProt(int newCostPerDay) {
     checkNull(String.valueOf(newCostPerDay), "Cost cannot be null");
     costPerDay = newCostPerDay;
   }
   
-  /** 
-   * @param newContractPeriod
+  /**
+   * Setter method for contract period.
+   *
+   * @param newContractPeriod integer.
    */
   protected void setContractPeriodProt(int newContractPeriod) {
     checkNull(String.valueOf(contractPeriod), "Cost cannot be null");
@@ -90,9 +123,11 @@ public class Item {
   }
 
   
-  /** 
-   * @param str
-   * @param message
+  /**
+   * Chek method for checking if attribute is null.
+   *
+   * @param str String.
+   * @param message String.
    */
   private void checkNull(String str, String message) {
     if (str == null) {
@@ -101,45 +136,55 @@ public class Item {
   }
 
   
-  /** 
-   * @return String
+  /**
+   * Getter method for name.
+   *
+   * @return String.
    */
   public String getName() {
     return name;
   }
 
   
-  /** 
-   * @return String
+  /**
+   * Getter method for short description.
+   *
+   * @return String.
    */
   public String getShortDescription() {
     return shortDescription;
   }
 
   
-  /** 
-   * @return int
+  /**
+   * Getter method for cost perday.
+   *
+   * @return int.
    */
   public int getCostPerDay() {
     return costPerDay;
   }
 
   
-  /** 
-   * @return int
+  /**
+   * Gettter method for day of creation.
+   *
+   * @return int.
    */
   public int getDayOfCreation() {
     return dayOfCreation;
   }
   
-  /** 
-   * @return int
+  /**
+   * Getter method for contract period.
+   *
+   * @return int.
    */
   public int getContractPeriod() {
     return contractPeriod;
   }
 
-  enum category {
+  enum Category {
     TOOL,
     VEHICLE,
     GAMES,
@@ -148,9 +193,13 @@ public class Item {
     OTHER
   }
 
+  /**
+   * Mutable class.
+   */
   public static class Mutable extends Item {
 
-    public Mutable(String name, String shortDescription, int costPerDay, int dayOfCreation, Boolean isLended, int contractPeriod) {
+    public Mutable(String name, String shortDescription, int costPerDay,
+        int dayOfCreation, Boolean isLended, int contractPeriod) {
       super(name, shortDescription, costPerDay, dayOfCreation, isLended, contractPeriod);
     }
 

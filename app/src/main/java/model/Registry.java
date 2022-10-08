@@ -2,19 +2,19 @@ package model;
 
 import java.util.ArrayList;
 
-import controller.MemberController;
-import view.ConsoleUI2;
-
+/**
+ * Registry class for saving data.
+ */
 public class Registry {
 
   controller.MemberController controller;
-
   // Sprivate ArrayList<Member> members;
-  private ConsoleUI2 ui = new ConsoleUI2();
-
   private ArrayList<Member.Mutable> members;
 
 
+  /**
+   * Constructor.
+   */
   public Registry() {
     members = new ArrayList<>();
 
@@ -27,22 +27,25 @@ public class Registry {
 
 
   
-  /** 
-   * @return Iterable<Mutable>
+  /**
+   * Getter method for members.
+   *
+   * @return Iterable Mutable.
    */
   public Iterable<Member.Mutable> getMembers() {
     return members;
   }
 
   
-  /** 
-   * @param firstName
-   * @param lastName
-   * @param email
-   * @param phoneNumber
-   * @return Member
+  /**
+   * Method for adding members adds members without an id.
+   *
+   * @param firstName   To initilize First name.
+   * @param lastName    To initilize Last name.
+   * @param email       To initilize email.
+   * @param phoneNumber To initilize phone number.
+   * @return Member.
    */
-  // adds members without an id
   public Member addMember(String firstName, String lastName, String email, String phoneNumber) {
     Member.Mutable x = new Member.Mutable(firstName, lastName, email, phoneNumber);
     members.add(x);
@@ -50,11 +53,12 @@ public class Registry {
   }
 
   
-  /** 
-   * @param mem
-   * @return Member
+  /**
+   * Adds members with id already.
+   *
+   * @param mem member object to add in the list.
+   * @return Member.
    */
-  // adds members with id already
   public Member addMember(Member mem) {
     Member.Mutable x = new Member.Mutable(mem.getFirstName(), mem.getLastName(), mem.getEmail(), mem.getPhoneNumber(),
         mem.getMemberId());
@@ -63,12 +67,12 @@ public class Registry {
   }
 
   
-  /** 
-   * @param memberId
-   * @return Member
+  /**
+   * For getting spesific member.
+   *
+   * @param memberId Gets the member with member id.
+   * @return Member.
    */
-  // Used for getting a spesific member. But it is not working functionally. But
-  // for testing we used a members as a return.
   public Member getMember(String memberId) {
     for (Member member : members) {
       if (member.getMemberId().getId() == memberId) {
@@ -79,26 +83,33 @@ public class Registry {
   }
 
   
-  /** 
-   * @param s
+  /**
+   * To remove a member from a list.
+   *
+   * @param s member that will be removed.
    */
   public void removeMember(Member s) {
     members.remove(s);
   }
 
   
-  /** 
-   * @param time
+  /**
+   * Method for changing the time.
+   *
+   * @param time day that will be changed.
    */
   public void notifyMembersTime(int time) {
     for (Member s : members) {
-      s.TimeAdvanced(time);
+      s.advanceTime(time);
       s.updateItems();
     }
 
   }
 
-  public void ListMembers() {
+  /**
+   * Listing the members.
+   */
+  public void listMembers() {
     for (Member member : members) {
       System.out.println(member.getMemberId() + " " + member.getFirstName() + " " + member.getLastName()
           + " " + member.getEmail() + " " + member.getPhoneNumber());
