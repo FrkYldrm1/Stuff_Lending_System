@@ -278,11 +278,11 @@ public class MemberController {
    * Method for deleting owned items.
    */
   /**
-   * public void deleteItemOwned() {
-   * String item = console.SelectItemDelete();
-   * int index = Integer.parseInt(item);
-   * member.removeItemOwned(getItem(index));
-   * }
+    public void deleteItemOwned() {
+      String item = console.SelectItemDelete();
+      int index = Integer.parseInt(item);
+      member.removeItemOwned(getItem(index));
+    }
    **/
 
   /**

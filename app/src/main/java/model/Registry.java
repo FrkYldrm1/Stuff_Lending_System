@@ -20,8 +20,19 @@ public class Registry {
     // hard coded members
     addMember("Bruce", "Lee", "Bruce@gmail.com", "988");
     addMember("Maya", "Hee", "mayahaha@gmail.com", "9843");
+    addMember("Ahmad", "Deeb", "ahmad@gmail.com", "123456");
+    addMember("Philip", "Olsson", "philip@gmail.com", "234567");
+    addMember("Faruk", "Yildirim", "faruk@gmail.com", "345678");
+    addMember("Lea", "Le Galo", "lea@gmail.com", "456789");
+    addMember("Gummi", "Andri", "gummi@gmail.com", "567890");
     members.get(0).addItem("phone", "black", 45, 3, false, 3,  members.get(0).getFirstName(), " No one ");
-    members.get(0).addItem("phone", "black", 45, 3, false, 3,  members.get(0).getFirstName(), " No one ");
+    members.get(1).addItem("Phone", "Brown", 15, 1, false, 4,  members.get(1).getFirstName(), " No one ");
+    members.get(2).addItem("scooter", "White", 25, 1, false, 2,  members.get(2).getFirstName(), " No one ");
+    members.get(6).addItem("VacuumCleaner", "Red", 10, 2, false, 5,  members.get(6).getFirstName(), " No one ");
+    members.get(4).addItem("E-vape", "black", 5, 3, false, 7,  members.get(4).getFirstName(), " No one ");
+    members.get(3).addItem("Burgiiiir", "Green", 5, 1, false, 1,  members.get(3).getFirstName(), " No one ");
+    members.get(5).addItem("Bike", "Yellow", 20, 8, false, 9,  members.get(5).getFirstName(), " No one ");
+    members.get(2).addItem("Ipad", "Gray", 50, 2, false, 4,  members.get(2).getFirstName(), " No one ");
   }
 
   /**
