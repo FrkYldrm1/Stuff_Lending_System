@@ -16,8 +16,6 @@ public class MemberController {
   view.ConsoleUi console;
   model.Registry registry;
   model.Member member;
-
-  model.Item.Mutable itemClass = new Item.Mutable();
   model.Time time = new Time();
 
   /**
@@ -266,9 +264,9 @@ public class MemberController {
     int memIndex = console.indexMemberInput();
     int index = console.indexItemInput();
     Item.Mutable item = getItem(index, getMember(memIndex));
+    item.setName(console.newItemName());
+    item.setShortDescription(console.newItemShortDescription());
     item.setCostPerDay(console.newItemCostPerDay());
-    // getItem(index).setOwner(console.newItemOwnerName());
-    // System.out.println("Item " + getItem(index).getName() + " has been edited");
   }
 
   /**
@@ -283,13 +281,12 @@ public class MemberController {
   /**
    * Method for deleting owned items.
    */
-  /**
    public void deleteItemOwned() {
-   String item = console.SelectItemDelete();
-   int index = Integer.parseInt(item);
-   member.removeItemOwned(getItem(index));
+     int memIndex = console.indexMemberInput();
+     int index = console.indexItemInput();
+     member.removeItemOwned(getItem(index, getMember(memIndex)));
+
    }
-   **/
 
 
   /**

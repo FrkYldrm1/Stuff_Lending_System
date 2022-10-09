@@ -312,17 +312,17 @@ public class ConsoleUi {
   }
 
   public String newItemName() {
-    System.out.println("Enter item name: ");
-    return input.nextLine();
+    System.out.print("Enter item name: ");
+    return input.next();
   }
 
   public String newItemShortDescription() {
-    System.out.println("Enter item description: ");
-    return input.nextLine();
+    System.out.print("Enter item description: ");
+    return input.next();
   }
 
   public int newItemCostPerDay() {
-    System.out.println("Enter item cost: ");
+    System.out.print("Enter item cost: ");
     return input.nextInt();
   }
 

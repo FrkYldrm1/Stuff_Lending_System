@@ -103,6 +103,8 @@ public class Controller {
         itemMenu();
         break;
       case ("4"):
+        memberController.showAllMembers2();
+        memberController.deleteItemOwned();
         itemMenu();
         break;
       case ("5"):

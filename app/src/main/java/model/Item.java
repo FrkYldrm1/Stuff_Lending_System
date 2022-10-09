@@ -51,7 +51,7 @@ public class Item {
     if (contractPeriod < 0) {
       setContractPeriodProt(0);
     } else {
-      setContractPeriodProt(contractPeriod);
+      setContractPeriodProt(0);
     }
     if (owner.equals(null) || owner.equals("")) {
       this.owner = "No owner!";
