@@ -171,13 +171,13 @@ public class Member implements TimeAdvancedObserver {
    * @param value number of days for advancing.
    */
   @Override
-  public void advanceTime(int value) {
-    time.dayChange(value);
+  public void advanceTime() {
+    time.dayChange();
     for (Item item : itemsOwned) {
-      item.setDayOfCreationProt(value);
+      item.setDayOfCreationProt(item.getDayOfCreation() + 1);
     }
     for (Item item1 : itemsLended) {
-      item1.setDayOfCreationProt(value);
+      item1.setDayOfCreationProt(item1.getDayOfCreation() + 1);
     }
   }
 

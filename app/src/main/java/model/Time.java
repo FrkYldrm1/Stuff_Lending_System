@@ -12,12 +12,12 @@ public class Time {
 
   
   /**
+   *
    * Method for changing the day.
    *
-   * @param value to change day.
    */
-  public void dayChange(int value) {
-    day += value;
+  public void dayChange() {
+    day += 1;
   }
 
   

@@ -135,11 +135,6 @@ public class ConsoleUi {
     return input.nextLine();
   }
 
-  public int advanceTime() {
-    System.out.print("Select how many days you want to advance: ");
-    return input.nextInt();
-  }
-
   /**
    * Asks for phone number.
    *
@@ -438,6 +433,10 @@ public class ConsoleUi {
 
   public void messageForLending(String mem, String lend, int period) {
     System.out.println("Contract has been created " + mem + " has lended to " + lend + " for " + period + " days");
+  }
+
+  public void advanceDayMessage() {
+    System.out.println("Time has been advanced by one day ;)");
   }
 
 }

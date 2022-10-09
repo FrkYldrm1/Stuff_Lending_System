@@ -5,11 +5,11 @@ package model;
  */
 public interface TimeAdvancedObserver {
   /**
+   *
    * Method for advancing time.
    *
-   * @param value Days that will be advanced.
    */
-  void advanceTime(int value);
+  void advanceTime();
 
   /**
    * Method for items time.

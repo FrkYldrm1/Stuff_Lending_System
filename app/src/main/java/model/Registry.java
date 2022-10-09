@@ -30,6 +30,7 @@ public class Registry {
     addMember("Faruk", "Yildirim", "faruk@gmail.com", "345678");
     addMember("Lea", "Le Galo", "lea@gmail.com", "456789");
     addMember("Gummi", "Andri", "gummi@gmail.com", "567890");
+    addMember("Grace", "Yasine", "grace@gmail.com", "67687587");
     members.get(0).addItem("phone", "black", 45, 3, false, 0, members.get(0).getFirstName(), " No one ");
     members.get(0).addItem("phone", "black", 45, 3, false, 0, members.get(0).getFirstName(), " No one ");
     members.get(1).addItem("Phone", "Brown", 15, 1, false, 0,  members.get(1).getFirstName(), " No one ");
@@ -39,6 +40,8 @@ public class Registry {
     members.get(3).addItem("Burgiiiir", "Green", 5, 1, false, 1,  members.get(3).getFirstName(), " No one ");
     members.get(5).addItem("Bike", "Yellow", 20, 8, false, 9,  members.get(5).getFirstName(), " No one ");
     members.get(2).addItem("Ipad", "Gray", 50, 2, false, 4,  members.get(2).getFirstName(), " No one ");
+    members.get(7).addItem("AirPlane", "Black", 5000, 1, false, 4,  members.get(7).getFirstName(), " No one ");
+
 
   }
 
@@ -104,13 +107,13 @@ public class Registry {
   }
 
   /**
+   *
    * Method for changing the time.
    *
-   * @param time day that will be changed.
    */
-  public void notifyMembersTime(int time) {
+  public void notifyMembersTime() {
     for (Member s : members) {
-      s.advanceTime(time);
+      s.advanceTime();
       s.updateItems();
     }
 
