@@ -281,13 +281,24 @@ public class MemberController {
   /**
    * Method for deleting owned items.
    */
-   public void deleteItemOwned() {
-     int memIndex = console.indexMemberInput();
-     int index = console.indexItemInput();
-     member.removeItemOwned(getItem(index, getMember(memIndex)));
+  public void deleteItemOwned() {
+    showAllMembersSimple();
+    int memIndex = console.indexMemberInput();
+    Member.Mutable member = getMember(memIndex);
+    console.lineBreak();
 
-   }
+    Iterable<Item.Mutable> items = member.getItemsOwned();
+    int index = 0;
+    for (Item.Mutable item : items) {
+      index += 1;
+      console.showItemDetails(item, index);
+    }
+    console.lineBreak();
 
+    index = console.indexItemInput();
+    member.removeItemOwned(getItem(index, member));
+
+  }
 
   /**
    * Checks if member id is taken or available

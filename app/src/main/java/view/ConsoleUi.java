@@ -2,6 +2,8 @@ package view;
 
 import java.util.Scanner;
 
+import model.Member.Mutable;
+
 /**
  * Class for printing console UI elements.
  */
