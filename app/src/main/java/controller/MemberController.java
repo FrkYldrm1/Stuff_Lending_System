@@ -30,23 +30,14 @@ public class MemberController {
    * creates new member.
    */
   public void createNewMember() {
-    // model.Member newMember = console.createMember();
-    // registry.addMember(newMember);
-    // ui.MemberAddedMessage(newMember);
-
-    // for the first name
     String firstName = console.getFirstName();
     while (isNull(firstName)) {
       firstName = console.newFirstName();
     }
-
-    // for the last name
     String lastName = console.getLastName();
     while (isNull(lastName)) {
       lastName = console.newLastName();
     }
-
-    // email
     String email = console.getEmail();
     boolean done = false;
     while (!(done)) {
@@ -58,8 +49,6 @@ public class MemberController {
         done = true;
       }
     }
-
-    // phone number
     String phoneNumber = console.getPhoneNumber();
     done = false;
     while (!(done)) {
@@ -71,13 +60,10 @@ public class MemberController {
         done = true;
       }
     }
-
     model.MemberId id = new MemberId();
-
     while (isIdTaken(id)) {
       id = new MemberId();
     }
-
     model.Member newMember = new Member(firstName, lastName, email, phoneNumber, id);
     registry.addMember(newMember);
   }
@@ -140,7 +126,6 @@ public class MemberController {
     for (Item.Mutable item : m.getItemsOwned()) {
       items.add(item);
     }
-
     input -= 1;
     Item.Mutable item;
     try {
@@ -166,26 +151,11 @@ public class MemberController {
     }
   }
 
-  public void selectMember() {
-    registry.getMember(console.idInput());
-  }
-
   /**
    * Method for adding items.
    */
   public void addItem() {
     registry.getMember(console.idInput()).addPreparedItemOwned(console.createItem());
-  }
-
-  /**
-   * Method for deleting lended items.
-   */
-  public void deleteItemLended(model.Item i) {
-    if (i != null) {
-      member.removeItemLended(i);
-    } else {
-      throw new IllegalArgumentException("Item object cannot be null.");
-    }
   }
 
   /**

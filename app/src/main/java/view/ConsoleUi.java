@@ -78,24 +78,6 @@ public class ConsoleUi {
   }
 
   /**
-   * Method for creating member.
-   *
-   * @return Member.
-   */
-  // Method for creating members
-  public model.Member createMember() {
-    System.out.println("Enter new member's first name: ");
-    String firstName = input.nextLine();
-    System.out.println("Enter new member's last name: ");
-    String lastName = input.nextLine();
-    System.out.println("Enter new member's phone number: ");
-    String phoneNumber = input.nextLine();
-    System.out.println("Enter new member's email: ");
-    String email = input.nextLine();
-    return new model.Member(firstName, lastName, email, phoneNumber);
-  }
-
-  /**
    * Asks for first name input to validate.
    *
    * @return first name to be validated.
@@ -181,11 +163,6 @@ public class ConsoleUi {
     return input.nextLine();
   }
 
-  public String SelectItemDelete() {
-    System.out.println("Select item to delete (Input number): ");
-    return input.nextLine();
-  }
-
   /**
    * Asks for email.
    *
@@ -223,22 +200,15 @@ public class ConsoleUi {
    * @param index To add index.
    */
   public void showMemberDetailsSimple(model.Member.Mutable m, int index) {
-
     String firstName = m.getFirstName();
     String email = m.getEmail();
     String lastName = m.getLastName();
     String memberId = m.getMemberId().getId();
     int currentCredit = m.getCredits();
     int ownedItem = m.sizeOfItemsOwned();
-
-
-    // printed string
     String toPrint = String.format("%s    %s    %s, %s\t%s\tCurrent credits: %s\tNumber of owned items: %s", index,
         memberId, firstName, lastName, email, currentCredit, ownedItem);
-
-    // prints information
     System.out.println(toPrint);
-
   }
 
   /**
@@ -248,12 +218,8 @@ public class ConsoleUi {
    */
   public void showItemDetails(model.Item i, int index) {
     String itemName = i.getName();
-    // String itemId = i.getItemId();
     String itemDesc = i.getShortDescription();
     int itemCost = i.getCostPerDay();
-
-    // String toxPrint = itemName + " ID: " + itemId + " Item desc : " + itemDesc +
-    // " Item cost : " + itemCost;
     String toPrint = String.format("%s    %s    %s    %s    Day for items: %s", index, itemName, itemCost, itemDesc,
         i.getDayOfCreation());
     System.out.println(toPrint);
@@ -332,21 +298,6 @@ public class ConsoleUi {
     return input.nextInt();
   }
 
-  public String newItemOwnerName() {
-    System.out.println("Enter item owner name: ");
-    return input.nextLine();
-  }
-
-  /**
-   * To get day input.
-   *
-   * @return int.
-   */
-  public int dayInput() {
-    System.out.println("Please enter the day that you want to change :");
-    return input.nextInt();
-  }
-
   /**
    * Prints details of member.
    *
@@ -354,19 +305,13 @@ public class ConsoleUi {
    * @param index To add index.
    */
   public void showMemberDetails2(model.Member.Mutable m, int index) {
-
-    // gets infromation
     String fullName = m.getFirstName() + " " + m.getLastName();
     String email = m.getEmail();
     String ownedItemsString = m.getItemsOwnedString();
     String lendedItems = m.getItemsLended();
-
-    // printed string
     String toPrint = "\n" + "Members name: " + fullName + " E-mail: " + email
         + ownedItemsString + "\n" + lendedItems;
-    // prints information
     System.out.println(toPrint);
-
   }
 
   /**
@@ -391,15 +336,6 @@ public class ConsoleUi {
    */
   public void lineBreak() {
     System.out.println("");
-  }
-
-  /**
-   * Setter method for input.
-   *
-   * @param input input.
-   */
-  public void setInput(Scanner input) {
-    this.input = input;
   }
 
   public void notEnoughcredit(){
@@ -438,5 +374,4 @@ public class ConsoleUi {
   public void advanceDayMessage() {
     System.out.println("Time has been advanced by one day ;)");
   }
-
 }

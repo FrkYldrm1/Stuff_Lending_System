@@ -20,23 +20,4 @@ public class Time {
     day += 1;
   }
 
-  
-  /**
-   * Getter for the day.
-   *
-   * @return int.
-   */
-  public int getDay() {
-    return day;
-  }
-
-  
-  /**
-   * Setter for the day.
-   *
-   * @param day Parameter for setting day.
-   */
-  public void setDay(int day) {
-    this.day = day;
-  }
 }

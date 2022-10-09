@@ -116,14 +116,13 @@ public class Member implements TimeAdvancedObserver {
     return itemsOwned;
   }
 
-  String itemList = "";
-
   /**
    * Getter for owned items.
    *
    * @return The list for return.
    */
   public String getItemsOwnedString() {
+    String itemList = "";
     int counter = 0;
     for (Item item : itemsOwned) {
       counter += 1;
@@ -133,14 +132,20 @@ public class Member implements TimeAdvancedObserver {
     return itemList;
   }
 
-  String itemListLended = "";
-
+  /**
+   * Create a string of lended item array.
+   *
+   * @return lended item string.
+   *
+   */
   public String getItemsLended() {
+    String itemListLended = "";
     int counter = 0;
     for (Item item : itemsLended) {
       counter++;
-      itemListLended += "\n" + " Lended items : " + "\n" + counter + ". " + item.getName() + "-> Lended to: "
-          + item.getLenededTo() + ", Contract period: " + item.getContractPeriod() + "\n";
+      itemListLended += "\n" + " Lended items  : " + "\n" + counter + ". " + item.getName() + "-> Lended to: "
+          + item.getLenededTo() + ", Contract period: " +
+              item.getContractPeriod() + " Short description: " + item.getShortDescription() +"\n";
     }
     return itemListLended;
   }
@@ -168,7 +173,6 @@ public class Member implements TimeAdvancedObserver {
   /**
    * Method for advancing time for the items owned and lended.
    *
-   * @param value number of days for advancing.
    */
   @Override
   public void advanceTime() {
@@ -181,38 +185,8 @@ public class Member implements TimeAdvancedObserver {
     }
   }
 
-  /**
-   * Getter method for time.
-   *
-   * @return int.
-   */
-  public int getTime() {
-    return time.getDay();
-  }
-
-  /**
-   * Total cost of items.
-   *
-   * @return int.
-   */
-  public int costTotal() {
-    for (Item item : itemsLended) {
-      costTotal = +item.getCostPerDay() * (item.getCostPerDay() + 1);
-    }
-    return costTotal;
-  }
-
   public int sizeOfItemsOwned() {
     return itemsOwned.size();
-  }
-
-  /**
-   * Method for deleting item.
-   *
-   * @param index index of item.
-   */
-  public void deleteItem(int index) {
-    itemsOwned.remove(index);
   }
 
   /**
@@ -245,17 +219,6 @@ public class Member implements TimeAdvancedObserver {
   }
 
   /**
-   * Getting lending cost for an item.
-   *
-   * @param lendedItem adding lended item.
-   * @return int.
-   */
-  public int getLendingCost(Item lendedItem) {
-    int cost = lendedItem.getCostPerDay() * (lendedItem.getDayOfCreation() + 1);
-    return cost;
-  }
-
-  /**
    * Removing items from owned items.
    *
    * @param s Item that will be removed.
@@ -277,18 +240,28 @@ public class Member implements TimeAdvancedObserver {
   // lendings.
   @Override
   public void updateItems() {
-    // TODO Auto-generated method stub
+    ArrayList<Item> item = new ArrayList<>();
+    item = itemsLended;
+    int index = 0;
     if (!itemsLended.isEmpty()){
       for (Item eachItem : itemsLended) {
+        index++;
         if (eachItem.getContractPeriod() > 0 ) {
           eachItem.setContractPeriodProt(eachItem.getContractPeriod() - 1);
-        }
-        else {
-          itemsLended.remove(eachItem);
+        } else if (eachItem.getContractPeriod() == 0) {
+          eachItem.setShortDescriptionProt(" Item contract has expired!");
+          eachItem.setisLendedProt(false);
+          eachItem.setLenededTo("No one ");
         }
       }
-    }
+      for (Item item1 : itemsOwned) {
+        if (item1.getContractPeriod() == 0) {
+          item1.setLenededTo("No one");
+          item1.setisLendedProt(false);
+        }
+      }
 
+    }
   }
 
   /**

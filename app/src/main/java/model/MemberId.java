@@ -10,19 +10,11 @@ public class MemberId {
   private String id;
   private String dateCreated;
 
-  // creates random Id and puts in creation date
+  // creates random id and puts in creation date
   public MemberId() {
     this.id = createId();
     this.dateCreated = creationDate();
   }
-
-  /**
-   * Getter for creation date.
-   */
-  public String getDateCreated() {
-    return dateCreated;
-  }
-
   public String creationDate() {
     return (java.time.LocalDate.now().toString());
   }

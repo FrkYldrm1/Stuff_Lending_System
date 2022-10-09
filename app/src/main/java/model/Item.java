@@ -63,7 +63,7 @@ public class Item {
     } else {
       this.lenededTo = lendedTo;
     }
-    this.dayOfCreation = 0;
+    this.dayOfCreation = 1;
     this.itemId = id.createId();
   }
 
@@ -71,18 +71,6 @@ public class Item {
   public Item() {
 
   }
-
-
-  /**
-   * Setter method for owner.
-   *
-   * @param owner To initilize owner.
-   */
-  public void setOwner(String owner) {
-    checkNull(owner, "Owner cannot be null!");
-    this.owner = owner;
-  }
-  
 
   public boolean isLended() {
     return isLended;
@@ -99,30 +87,12 @@ public class Item {
   }
 
   /**
-   * Getter method for owner.
-   *
-   * @return String.
-   */
-  public String getOwner() {
-    return owner;
-  }
-
-  /**
    * Getter method for lender.
    *
    * @return String.
    */
   public String getLenededTo() {
     return lenededTo;
-  }
-
-  /**
-   * Getter method for item id.
-   *
-   * @return String.
-   */
-  public String getItemId() {
-    return itemId;
   }
 
   /**

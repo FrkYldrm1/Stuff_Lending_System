@@ -11,8 +11,6 @@ import view.ConsoleUi;
  * Registry class for saving data.
  */
 public class Registry {
-
-  controller.MemberController controller;
   view.ConsoleUi console = new view.ConsoleUi(new Scanner(System.in, "UTF8"));
   private ArrayList<Member.Mutable> members;
 
@@ -41,8 +39,6 @@ public class Registry {
     members.get(5).addItem("Bike", "Yellow", 20, 8, false, 9,  members.get(5).getFirstName(), " No one ");
     members.get(2).addItem("Ipad", "Gray", 50, 2, false, 4,  members.get(2).getFirstName(), " No one ");
     members.get(7).addItem("AirPlane", "Black", 5000, 1, false, 4,  members.get(7).getFirstName(), " No one ");
-
-
   }
 
   /**
@@ -116,19 +112,6 @@ public class Registry {
       s.advanceTime();
       s.updateItems();
     }
-
-  }
-
-  /**
-   * Listing the members.
-   */
-  public void listMembers() {
-    int index = 0;
-    for (Member member : members) {
-      index ++;
-      System.out.println(index + ". " + member.getMemberId() + " " + member.getFirstName() + " " + member.getLastName()
-          + " " + member.getEmail() + " " + member.getPhoneNumber());
-    }
   }
 
   /**
@@ -157,7 +140,7 @@ public class Registry {
     Contract contract = new Contract(owner, lender, contractPeriod, item);
     Item i = new Item();
     i = contract.getOwner().getItemOwned(item);
-    if(contract.getOwner().getItemOwned(item).isLended() == false) {
+    if(!contract.getOwner().getItemOwned(item).isLended()) {
       if(isEligable(i.getCostPerDay(), contractPeriod, lender)){
       i.setContractPeriodProt(contractPeriod);
       i.setLenededTo(lender.getFirstName());
@@ -168,6 +151,7 @@ public class Registry {
       contract.getLentTo().addItemLended(i);
       int cost = i.getCostPerDay() * contractPeriod;
       contract.getLentTo().setCredits(contract.getLentTo().getCredits() - cost);
+      contract.getOwner().setCredits(contract.getOwner().getCredits() + (contractPeriod * i.getCostPerDay()));
       } else {
         console.notEnoughcredit();
       }   
