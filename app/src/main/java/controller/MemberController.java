@@ -239,7 +239,7 @@ public class MemberController {
    * Method for changing the day for every object.
    */
   public void changeDay() {
-    time.dayChange(console.dayInput());
+    time.dayChange(console.advanceTime());
     registry.notifyMembersTime(time.getDay());
   }
 

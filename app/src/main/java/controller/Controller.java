@@ -34,6 +34,9 @@ public class Controller {
         itemMenu();
         break;
       case ("3"):
+        memberController.changeDay();
+        mainMenu();
+      case ("4"):
         console.byeBye();
       default:
         mainMenu();
@@ -111,7 +114,6 @@ public class Controller {
         itemMenu();
         break;
       case ("5"):
-        memberController.contract();
         mainMenu();
       default:
         itemMenu();

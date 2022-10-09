@@ -29,7 +29,8 @@ public class ConsoleUi {
     System.out.println("|-------------------------------------------------------|");
     System.out.println("|1) To deal with information about member               |");
     System.out.println("|2) To deal with information about item                 |");
-    System.out.println("|3) Quit                                                |");
+    System.out.println("|3) Advance time                                        |");
+    System.out.println("|4) Quit                                                |");
     System.out.println("|-------------------------------------------------------|");
   }
 
@@ -130,6 +131,11 @@ public class ConsoleUi {
   public String newLastName() {
     System.out.println("Name has to be filled. Please enter last name: ");
     return input.nextLine();
+  }
+
+  public int advanceTime() {
+    System.out.print("Select how many days you want to advance: ");
+    return input.nextInt();
   }
 
   /**
