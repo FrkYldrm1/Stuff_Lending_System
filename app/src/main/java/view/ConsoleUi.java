@@ -1,5 +1,6 @@
 package view;
 
+import java.nio.IntBuffer;
 import java.util.Scanner;
 
 /**
@@ -43,7 +44,8 @@ public class ConsoleUi {
     System.out.println("|4) Show a detailed over view of all members            |");
     System.out.println("|5) Edit a member                                       |");
     System.out.println("|6) Delete a member                                     |");
-    System.out.println("|7) Back to menu                                        |");
+    System.out.println("|7) Create a contract                                   |");
+    System.out.println("|8) Back to menu                                        |");
     System.out.println("|-------------------------------------------------------|");
   }
 
@@ -353,10 +355,11 @@ public class ConsoleUi {
     String fullName = m.getFirstName() + " " + m.getLastName();
     String email = m.getEmail();
     String ownedItemsString = m.getItemsOwnedString();
+    String lendedItems = m.getItemsLended();
 
     // printed string
     String toPrint = "\n" + "Members name: " + fullName + " E-mail: " + email
-        + ownedItemsString;
+        + ownedItemsString + "\n" + lendedItems;
     // prints information
     System.out.println(toPrint);
 
@@ -367,7 +370,7 @@ public class ConsoleUi {
    *
    * @param m Member object.
    */
-  public void showMemberDetails3(model.Member m) {
+  public void showMemberDetails3(model.Member.Mutable m) {
 
     String firstName = m.getFirstName();
     String email = m.getEmail();
@@ -393,6 +396,39 @@ public class ConsoleUi {
    */
   public void setInput(Scanner input) {
     this.input = input;
+  }
+
+  public void notEnoughcredit(){
+    String toPrint = "Not enough credits";
+    System.out.println(toPrint);
+  }
+  
+  public void alreadyLended() {
+    System.out.println("Item is already lended!");
+  }
+
+  public int selectMember() {
+    System.out.print("Select the owner (Input a number): ");
+    return input.nextInt();
+  }
+
+  public int selectLender() {
+    System.out.println("Select member to lend to (Input a number): ");
+    return input.nextInt();
+  }
+
+  public int selectPeriod() {
+    System.out.println("How long would like to lend the item (Input a number): ");
+    return input.nextInt();
+  }
+
+  public int selectItem() {
+    System.out.println("Select item you wish to lend (Input a number): ");
+    return input.nextInt();
+  }
+
+  public void messageForLending(String mem, String lend, int period) {
+    System.out.println("Contract has been created " + mem + " has lended to " + lend + " for " + period + " days");
   }
 
 }

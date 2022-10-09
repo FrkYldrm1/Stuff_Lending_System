@@ -1,12 +1,15 @@
 package controller;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
+import model.Contract;
 import model.Item;
 import model.Member;
 import model.MemberId;
 import model.Registry;
 import model.Time;
+import model.Member.Mutable;
 import view.ConsoleUi;
 
 /**
@@ -304,4 +307,19 @@ public class MemberController {
     return false;
   }
 
+  /**
+   *
+   * Method for creating a contract.
+   *
+   */
+  public void contract() {
+    showAllMembersSimple();
+    int mem = console.selectMember();
+    int lender = console.selectLender();
+    int period = console.selectPeriod();
+    console.showMemberDetails3(registry.selectMember(mem));
+    int item = console.selectItem();
+    registry.createContract(getMember(mem), getMember(lender), period, item);
+    console.messageForLending(getMember(mem).getFirstName(), getMember(lender).getFirstName(), period);
+  }
 }

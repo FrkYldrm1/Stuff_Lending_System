@@ -16,5 +16,6 @@ public class App {
     view.ConsoleUi console = new view.ConsoleUi(new Scanner(System.in, "UTF8"));
     controller.Controller hehe = new Controller(console, registry);
     hehe.mainMenu();
+
   }
 }

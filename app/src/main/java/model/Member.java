@@ -133,6 +133,18 @@ public class Member implements TimeAdvancedObserver {
     return itemList;
   }
 
+  String itemListLended = "";
+
+  public String getItemsLended() {
+    int counter = 0;
+    for (Item item : itemsLended) {
+      counter++;
+      itemListLended += "\n" + " Lended items : " + "\n" + counter + ". " + item.getName() + "-> Lended to: "
+          + item.getLenededTo() + ", Contract period: " + item.getContractPeriod() + "\n";
+    }
+    return itemListLended;
+  }
+
   /**
    * Method for creating items.
    *
@@ -238,9 +250,15 @@ public class Member implements TimeAdvancedObserver {
   public void addPreparedItemOwned(Item.Mutable ownedItem) {
     itemsOwned.add(ownedItem);
   }
+  
 
-  public void getItemOwned() {
+  public void setCredits(int credits) {
+    this.credits = credits;
+  }
 
+  public Item.Mutable getItemOwned(int index) {
+    index -=1;
+    return itemsOwned.get(index);
   }
 
   /**

@@ -2,6 +2,7 @@ package controller;
 
 import java.util.Scanner;
 import model.Registry;
+import model.Member.Mutable;
 import view.ConsoleUi;
 
 /**
@@ -75,6 +76,9 @@ public class Controller {
         memMenu();
         break;
       case ("7"):
+        memberController.contract();
+        memMenu();
+      case ("8"):
         mainMenu();
       default:
         memMenu();
@@ -108,6 +112,7 @@ public class Controller {
         itemMenu();
         break;
       case ("5"):
+        memberController.contract();
         mainMenu();
       default:
         itemMenu();
