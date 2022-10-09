@@ -133,15 +133,20 @@ public class MemberController {
    * get item.
    *
    * @param input index.
-   * @param m member.
+   * @param m     member.
    * @return item.
    *
    */
-  public Item getItem(int input, Member.Mutable m) {
+  public Item.Mutable getItem(int input, Member.Mutable m) {
+    ArrayList<Item.Mutable> items = new ArrayList<>();
+    for (Item.Mutable item : m.getItemsOwned()) {
+      items.add(item);
+    }
+
     input -= 1;
-    Item item;
+    Item.Mutable item;
     try {
-      item = m.getItemsOwned().get(input);
+      item = items.get(input);
       return item;
     } catch (Exception e) {
       input = console.indexItemInputRetry();
@@ -254,16 +259,17 @@ public class MemberController {
   }
 
   /**
-   * I think it´s not working bec of the list member, maybe we need to make a new show member for this idk
+   * I think it´s not working bec of the list member, maybe we need to make a new
+   * show member for this idk
    */
-    public void editItem() {
-      int memIndex = console.indexMemberInput();
-      int index = console.indexItemInput();
-      getItem(index, getMember(memIndex)).itemClass.setName(console.newItemName());
-      //getItem(index).setCostPerDay(console.newItemCostPerDay());
-      //getItem(index).setOwner(console.newItemOwnerName());
-      //System.out.println("Item " + getItem(index).getName() + " has been edited");
-    }
+  public void editItem() {
+    int memIndex = console.indexMemberInput();
+    int index = console.indexItemInput();
+    Item.Mutable item = getItem(index, getMember(memIndex));
+    item.setCostPerDay(console.newItemCostPerDay());
+    // getItem(index).setOwner(console.newItemOwnerName());
+    // System.out.println("Item " + getItem(index).getName() + " has been edited");
+  }
 
   /**
    * Method for deleting the member.
@@ -278,11 +284,11 @@ public class MemberController {
    * Method for deleting owned items.
    */
   /**
-    public void deleteItemOwned() {
-      String item = console.SelectItemDelete();
-      int index = Integer.parseInt(item);
-      member.removeItemOwned(getItem(index));
-    }
+   * public void deleteItemOwned() {
+   * String item = console.SelectItemDelete();
+   * int index = Integer.parseInt(item);
+   * member.removeItemOwned(getItem(index));
+   * }
    **/
 
   /**

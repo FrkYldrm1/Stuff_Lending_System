@@ -53,9 +53,9 @@ public class Item {
     } else {
       setContractPeriodProt(contractPeriod);
     }
-    if(owner.equals(null) || owner.equals("")) {
+    if (owner.equals(null) || owner.equals("")) {
       this.owner = "No owner!";
-    }else {
+    } else {
       this.owner = owner;
     }
     if (lendedTo.equals(null) || lendedTo.equals("")) {
@@ -87,7 +87,7 @@ public class Item {
    * @param lenededTo To initilize attribute.
    */
   public void setLenededTo(String lenededTo) {
-    checkNull(lenededTo, "Lender cannot be null!"); 
+    checkNull(lenededTo, "Lender cannot be null!");
     this.lenededTo = lenededTo;
   }
 

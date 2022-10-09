@@ -77,7 +77,6 @@ public class Controller {
       case ("7"):
         mainMenu();
       default:
-        memMenu();
     }
   }
 
@@ -95,7 +94,6 @@ public class Controller {
       case ("2"):
         memberController.showAllMembersSimple();
         memberController.showOwnedItems();
-        itemMenu();
         break;
       case ("3"):
         memberController.showAllMembers2();

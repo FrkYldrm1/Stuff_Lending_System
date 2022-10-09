@@ -224,7 +224,7 @@ public class ConsoleUi {
     String lastName = m.getLastName();
     String memberId = m.getMemberId().getId();
     int currentCredit = m.getCredits();
-    int ownedItem = m.getItemsOwned().size();
+    int ownedItem = m.sizeOfItemsOwned();
 
     // printed string
     String toPrint = String.format("%s    %s    %s, %s\t%s\tCurrent credits: %s\tNumber of owned items: %s", index,
@@ -298,7 +298,7 @@ public class ConsoleUi {
    *
    * @return Item.
    */
-  public model.Item createItem() {
+  public model.Item.Mutable createItem() {
     System.out.println("Enter item name: ");
     String itemName = input.nextLine();
     System.out.println("Enter item's short description: ");
@@ -308,7 +308,7 @@ public class ConsoleUi {
     System.out.println("Enter owners name: "); // Should get owner by itself
     String owner = input.nextLine();
 
-    return new model.Item(itemName, descrioption, costPerDay, 0, false, 0, owner, "");
+    return new model.Item.Mutable(itemName, descrioption, costPerDay, 0, false, 0, owner, "");
   }
 
   public String newItemName() {
@@ -374,7 +374,7 @@ public class ConsoleUi {
     String id = m.getMemberId().getId();
     String ownedItemsString = m.getItemsOwnedString();
     String toPrint = "\n" + "Members name: " + firstName + " E-mail: " + email +
-            " Member id: " + id + ownedItemsString;
+        " Member id: " + id + ownedItemsString;
     System.out.println(toPrint);
 
   }
