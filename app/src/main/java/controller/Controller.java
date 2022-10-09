@@ -2,7 +2,6 @@ package controller;
 
 import java.util.Scanner;
 import model.Registry;
-import model.Member.Mutable;
 import view.ConsoleUi;
 
 /**

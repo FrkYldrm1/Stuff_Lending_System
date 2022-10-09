@@ -1,15 +1,12 @@
 package controller;
 
 import java.util.ArrayList;
-import java.util.Scanner;
 
-import model.Contract;
 import model.Item;
 import model.Member;
 import model.MemberId;
 import model.Registry;
 import model.Time;
-import model.Member.Mutable;
 import view.ConsoleUi;
 
 /**

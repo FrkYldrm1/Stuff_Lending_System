@@ -160,6 +160,7 @@ public class Member implements TimeAdvancedObserver {
       Boolean isLended, int contractPeriod, String owner, String lendedTo) {
     Item.Mutable s = new Item.Mutable(name, shortDescription, costPerDay, dayOfCreation,
         isLended, contractPeriod, owner, lendedTo);
+        setCredits(getCredits() + 100);
     itemsOwned.add(s);
     return s;
   }
@@ -212,24 +213,6 @@ public class Member implements TimeAdvancedObserver {
    */
   public void deleteItem(int index) {
     itemsOwned.remove(index);
-  }
-
-  /**
-   * Method for creating items.
-   *
-   * @param name           To add name.
-   * @param costPerDay     To initilize cost per day.
-   * @param dayOfCreation  To initilize day of creation.
-   * @param isLended       To decide if it is lended.
-   * @param contractPeriod to initilize contract period.
-   * @return Item.
-   */
-  public Item.Mutable addItemOwned(String name, String desc, int costPerDay, int dayOfCreation, Boolean isLended,
-      int contractPeriod, String owner, String lendedTo) {
-    Item.Mutable s = new Item.Mutable(name, desc, costPerDay, dayOfCreation, isLended, contractPeriod, owner, lendedTo);
-    itemsOwned.add(s);
-    credits += 100;
-    return s;
   }
 
   /**
