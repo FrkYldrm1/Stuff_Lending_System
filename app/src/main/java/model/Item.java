@@ -4,6 +4,7 @@ package model;
  * Item class to create item objects.
  */
 public class Item {
+  public Mutable itemClass;
   private String name;
   private String shortDescription;
   private int costPerDay;
@@ -64,6 +65,10 @@ public class Item {
     }
     this.dayOfCreation = 0;
     this.itemId = id.createId();
+  }
+
+  public Item() {
+
   }
 
   /**
@@ -263,6 +268,10 @@ public class Item {
 
     public Mutable(Item item) {
       super(item);
+    }
+
+    public Mutable() {
+      super();
     }
 
     public void setisOwned(Boolean newisLended) {

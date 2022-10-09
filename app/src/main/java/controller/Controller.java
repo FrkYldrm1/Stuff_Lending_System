@@ -96,6 +96,8 @@ public class Controller {
         memberController.showOwnedItems();
         break;
       case ("3"):
+        memberController.showAllMembers2();
+        memberController.editItem();
         itemMenu();
         break;
       case ("4"):

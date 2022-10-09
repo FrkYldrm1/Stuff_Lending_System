@@ -369,15 +369,12 @@ public class ConsoleUi {
    */
   public void showMemberDetails3(model.Member m) {
 
-    // gets infromation
     String firstName = m.getFirstName();
     String email = m.getEmail();
+    String id = m.getMemberId().getId();
     String ownedItemsString = m.getItemsOwnedString();
-
-    // printed string
-    String toPrint = "\n" + "Members name: " + firstName + " E-mail: " + email
-        + ownedItemsString;
-    // prints information
+    String toPrint = "\n" + "Members name: " + firstName + " E-mail: " + email +
+            " Member id: " + id + ownedItemsString;
     System.out.println(toPrint);
 
   }

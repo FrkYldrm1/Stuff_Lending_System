@@ -16,6 +16,8 @@ public class MemberController {
   view.ConsoleUi console;
   model.Registry registry;
   model.Member member;
+
+  model.Item.Mutable itemClass = new Item.Mutable();
   model.Time time = new Time();
 
   /**
@@ -127,6 +129,14 @@ public class MemberController {
     }
   }
 
+  /**
+   * get item.
+   *
+   * @param input index.
+   * @param m member.
+   * @return item.
+   *
+   */
   public Item getItem(int input, Member.Mutable m) {
     input -= 1;
     Item item;
@@ -244,16 +254,16 @@ public class MemberController {
   }
 
   /**
-   * public void editItem() {
-   * String item = console.SelectItemDelete();
-   * int index = Integer.parseInt(item);
-   * getItem(index).setName(console.newItemName());
-   * getItem(index).setShortDescription(console.newItemShortDescription());
-   * getItem(index).setCostPerDay(console.newItemCostPerDay());
-   * getItem(index).setOwner(console.newItemOwnerName());
-   * System.out.println("Item " + getItem(index).getName() + " has been edited");
-   * }
-   **/
+   * I think it´s not working bec of the list member, maybe we need to make a new show member for this idk
+   */
+    public void editItem() {
+      int memIndex = console.indexMemberInput();
+      int index = console.indexItemInput();
+      getItem(index, getMember(memIndex)).itemClass.setName(console.newItemName());
+      //getItem(index).setCostPerDay(console.newItemCostPerDay());
+      //getItem(index).setOwner(console.newItemOwnerName());
+      //System.out.println("Item " + getItem(index).getName() + " has been edited");
+    }
 
   /**
    * Method for deleting the member.
