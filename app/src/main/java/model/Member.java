@@ -133,6 +133,18 @@ public class Member implements TimeAdvancedObserver {
     return itemList;
   }
 
+  String itemListLended = "";
+
+  public String getItemsLended() {
+    int counter = 0;
+    for (Item item : itemsLended) {
+      counter++;
+      itemListLended += "\n" + " Lended items : " + "\n" + counter + ". " + item.getName() + "-> Lended to: "
+          + item.getLenededTo() + ", Contract period: " + item.getContractPeriod() + "\n";
+    }
+    return itemListLended;
+  }
+
   /**
    * Method for creating items.
    *
@@ -148,6 +160,7 @@ public class Member implements TimeAdvancedObserver {
       Boolean isLended, int contractPeriod, String owner, String lendedTo) {
     Item.Mutable s = new Item.Mutable(name, shortDescription, costPerDay, dayOfCreation,
         isLended, contractPeriod, owner, lendedTo);
+        setCredits(getCredits() + 100);
     itemsOwned.add(s);
     return s;
   }
@@ -203,24 +216,6 @@ public class Member implements TimeAdvancedObserver {
   }
 
   /**
-   * Method for creating items.
-   *
-   * @param name           To add name.
-   * @param costPerDay     To initilize cost per day.
-   * @param dayOfCreation  To initilize day of creation.
-   * @param isLended       To decide if it is lended.
-   * @param contractPeriod to initilize contract period.
-   * @return Item.
-   */
-  public Item.Mutable addItemOwned(String name, String desc, int costPerDay, int dayOfCreation, Boolean isLended,
-      int contractPeriod, String owner, String lendedTo) {
-    Item.Mutable s = new Item.Mutable(name, desc, costPerDay, dayOfCreation, isLended, contractPeriod, owner, lendedTo);
-    itemsOwned.add(s);
-    credits += 100;
-    return s;
-  }
-
-  /**
    * Method for adding lended items to member object.
    *
    * @param leding adding lendings.
@@ -238,9 +233,15 @@ public class Member implements TimeAdvancedObserver {
   public void addPreparedItemOwned(Item.Mutable ownedItem) {
     itemsOwned.add(ownedItem);
   }
+  
 
-  public void getItemOwned() {
+  public void setCredits(int credits) {
+    this.credits = credits;
+  }
 
+  public Item.Mutable getItemOwned(int index) {
+    index -=1;
+    return itemsOwned.get(index);
   }
 
   /**

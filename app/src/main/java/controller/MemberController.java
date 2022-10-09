@@ -239,7 +239,7 @@ public class MemberController {
    * Method for changing the day for every object.
    */
   public void changeDay() {
-    time.dayChange(console.dayInput());
+    time.dayChange(console.advanceTime());
     registry.notifyMembersTime(time.getDay());
   }
 
@@ -315,4 +315,19 @@ public class MemberController {
     return false;
   }
 
+  /**
+   *
+   * Method for creating a contract.
+   *
+   */
+  public void contract() {
+    showAllMembersSimple();
+    int mem = console.selectMember();
+    int lender = console.selectLender();
+    int period = console.selectPeriod();
+    console.showMemberDetails3(registry.selectMember(mem));
+    int item = console.selectItem();
+    registry.createContract(getMember(mem), getMember(lender), period, item);
+    console.messageForLending(getMember(mem).getFirstName(), getMember(lender).getFirstName(), period);
+  }
 }

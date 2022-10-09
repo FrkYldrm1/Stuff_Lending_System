@@ -1,6 +1,11 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.Scanner;
+
+import javax.lang.model.util.ElementScanner14;
+
+import view.ConsoleUi;
 
 /**
  * Registry class for saving data.
@@ -8,7 +13,7 @@ import java.util.ArrayList;
 public class Registry {
 
   controller.MemberController controller;
-  view.ConsoleUi console;
+  view.ConsoleUi console = new view.ConsoleUi(new Scanner(System.in, "UTF8"));
   private ArrayList<Member.Mutable> members;
 
   /**
@@ -115,8 +120,10 @@ public class Registry {
    * Listing the members.
    */
   public void listMembers() {
+    int index = 0;
     for (Member member : members) {
-      System.out.println(member.getMemberId() + " " + member.getFirstName() + " " + member.getLastName()
+      index ++;
+      System.out.println(index + ". " + member.getMemberId() + " " + member.getFirstName() + " " + member.getLastName()
           + " " + member.getEmail() + " " + member.getPhoneNumber());
     }
   }
@@ -126,7 +133,7 @@ public class Registry {
    */
   public void listMemberSpecific() {
     int index = 0;
-    for (Member member : members) {
+    for (Member.Mutable member : members) {
       index += 1;
       System.out.println(index + " " + member.getFirstName() + " " + member.getLastName());
     }
@@ -138,9 +145,40 @@ public class Registry {
    * @param index To get the member by index.
    * @return Member.
    */
-  public Member selectMember(int index) {
+  public Member.Mutable selectMember(int index) {
     index -= 1;
     return members.get(index);
+  }
+
+  public void createContract(Member owner, Member lender, int contractPeriod, int item) {
+    Contract contract = new Contract(owner, lender, contractPeriod, item);
+    Item i = new Item();
+    i = contract.getOwner().getItemOwned(item);
+    if(contract.getOwner().getItemOwned(item).isLended() == false) {
+      if(isEligable(i.getCostPerDay(), contractPeriod, lender)){
+      i.setContractPeriodProt(contractPeriod);
+      i.setLenededTo(lender.getFirstName());
+      i.setisLendedProt(true);
+      contract.getOwner().getItemOwned(item).setContractPeriod(contractPeriod);
+      contract.getOwner().getItemOwned(item).setLenededTo(lender.getFirstName());
+      contract.getOwner().getItemOwned(item).setisLendedProt(true);
+      contract.getLentTo().addItemLended(i);
+      int cost = i.getCostPerDay() * contractPeriod;
+      contract.getLentTo().setCredits(contract.getLentTo().getCredits() - cost);
+      } else {
+        console.notEnoughcredit();
+      }   
+    }else {
+      console.alreadyLended();
+    }
+  }
+
+  public boolean isEligable(int cost, int contractPeriod, Member member) {
+    int total = cost * contractPeriod;
+    if(total > member.getCredits()) {
+      return false;
+    }
+    return true;
   }
 
 }

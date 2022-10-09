@@ -1,68 +1,47 @@
 package model;
 
+import java.util.List;
+
 /**
  * The contract class for creating contract objects.
  */
 public class Contract {
-  private int startDate;
-  private int endDate;
 
-  /**
-   * Constructor for contract class.
-   *
-   * @param startDate start date of contract.
-   * @param endDate End date of contract.
-   */
-  public Contract(int startDate, int endDate) {
-    this.startDate = startDate;
-    this.endDate = endDate;
+  private Member owner;
+  private Member lentTo;
+  private int contractPeriod;
+  private int item;
+
+
+  public Contract(Member owner, Member lentTo, int contractPeriod, int item) {
+    this.owner = owner;
+    this.lentTo = lentTo;
+    this.contractPeriod = contractPeriod;
+    this.item = item;
+  }
+  public Member getOwner() {
+    return owner;
+  }
+  public void setOwner(Member owner) {
+    this.owner = owner;
+  }
+  public Member getLentTo() {
+    return lentTo;
+  }
+  public void setLentTo(Member lentTo) {
+    this.lentTo = lentTo;
+  }
+  public int getContractPeriod() {
+    return contractPeriod;
+  }
+ 
+  public void setContractPeriod(int contractPeriod) {
+    this.contractPeriod = contractPeriod;
   }
 
-  /**
-   * Getter for start date.
-   *
-   * @return int.
-   */
-  public int getStartDate() {
-    return startDate;
+  public int getItem() {
+    return item;
   }
-
-  /**
-   * Setter for start date.
-   *
-   * @param startDate Start date paramater.
-   */
-  public void setStartDate(int startDate) {
-    this.startDate = startDate;
-  }
-
-  /**
-   * Getter for end date.
-   *
-   * @return  enddate.
-   */
-  public int getEndDate() {
-    return endDate;
-  }
-
-  /**
-   * Setter for end date.
-   *
-   * @param endDate parameter for the method.
-   */
-  public void setEndDate(int endDate) {
-    this.endDate = endDate;
-  }
-
-  /**
-   * Item contract method.
-   *
-   * @param x The contract member 1.
-   * @param y Contract member 2.
-   * @param contractPeriod The contract period.
-   */
-  public void itemContract(Member x, Member y, int contractPeriod) {
-
-  }
-
 }
+
+

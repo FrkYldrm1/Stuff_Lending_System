@@ -67,9 +67,11 @@ public class Item {
     this.itemId = id.createId();
   }
 
+
   public Item() {
 
   }
+
 
   /**
    * Setter method for owner.
@@ -79,6 +81,11 @@ public class Item {
   public void setOwner(String owner) {
     checkNull(owner, "Owner cannot be null!");
     this.owner = owner;
+  }
+  
+
+  public boolean isLended() {
+    return isLended;
   }
 
   /**
@@ -284,6 +291,10 @@ public class Item {
 
     public void setCostPerDay(int newCostPerDay) {
       setCostPerDayProt(newCostPerDay);
+    }
+
+    public void setContractPeriod(int contractPeriod) {
+      setContractPeriodProt(contractPeriod);
     }
 
     public void setShortDescription(String newShortDescription) {
