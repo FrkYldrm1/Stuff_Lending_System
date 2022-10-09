@@ -116,14 +116,13 @@ public class Member implements TimeAdvancedObserver {
     return itemsOwned;
   }
 
-  String itemList = "";
-
   /**
    * Getter for owned items.
    *
    * @return The list for return.
    */
   public String getItemsOwnedString() {
+    String itemList = "";
     int counter = 0;
     for (Item item : itemsOwned) {
       counter += 1;
@@ -133,9 +132,8 @@ public class Member implements TimeAdvancedObserver {
     return itemList;
   }
 
-  String itemListLended = "";
-
   public String getItemsLended() {
+    String itemListLended = "";
     int counter = 0;
     for (Item item : itemsLended) {
       counter++;
@@ -160,7 +158,7 @@ public class Member implements TimeAdvancedObserver {
       Boolean isLended, int contractPeriod, String owner, String lendedTo) {
     Item.Mutable s = new Item.Mutable(name, shortDescription, costPerDay, dayOfCreation,
         isLended, contractPeriod, owner, lendedTo);
-        setCredits(getCredits() + 100);
+    setCredits(getCredits() + 100);
     itemsOwned.add(s);
     return s;
   }
@@ -233,14 +231,13 @@ public class Member implements TimeAdvancedObserver {
   public void addPreparedItemOwned(Item.Mutable ownedItem) {
     itemsOwned.add(ownedItem);
   }
-  
 
   public void setCredits(int credits) {
     this.credits = credits;
   }
 
   public Item.Mutable getItemOwned(int index) {
-    index -=1;
+    index -= 1;
     return itemsOwned.get(index);
   }
 
@@ -278,12 +275,11 @@ public class Member implements TimeAdvancedObserver {
   @Override
   public void updateItems() {
     // TODO Auto-generated method stub
-    if (!itemsLended.isEmpty()){
+    if (!itemsLended.isEmpty()) {
       for (Item eachItem : itemsLended) {
-        if (eachItem.getContractPeriod() > 0 ) {
+        if (eachItem.getContractPeriod() > 0) {
           eachItem.setContractPeriodProt(eachItem.getContractPeriod() - 1);
-        }
-        else {
+        } else {
           itemsLended.remove(eachItem);
         }
       }
