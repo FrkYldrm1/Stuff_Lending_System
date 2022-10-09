@@ -236,6 +236,7 @@ public class ConsoleUi {
     int currentCredit = m.getCredits();
     int ownedItem = m.sizeOfItemsOwned();
 
+
     // printed string
     String toPrint = String.format("%s    %s    %s, %s\t%s\tCurrent credits: %s\tNumber of owned items: %s", index,
         memberId, firstName, lastName, email, currentCredit, ownedItem);

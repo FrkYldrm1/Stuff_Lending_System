@@ -278,16 +278,17 @@ public class Member implements TimeAdvancedObserver {
   @Override
   public void updateItems() {
     // TODO Auto-generated method stub
-    for (Item eachItem : itemsLended) {
-      if (eachItem.getContractPeriod() != 0) {
-        eachItem.setContractPeriodProt(eachItem.getContractPeriod() - 1);
-        if (eachItem.getContractPeriod() == 0) {
+    if (!itemsLended.isEmpty()){
+      for (Item eachItem : itemsLended) {
+        if (eachItem.getContractPeriod() > 0 ) {
+          eachItem.setContractPeriodProt(eachItem.getContractPeriod() - 1);
+        }
+        else {
           itemsLended.remove(eachItem);
         }
-      } else if (eachItem.getDayOfCreation() == 0) {
-        itemsLended.remove(eachItem);
       }
     }
+
   }
 
   /**
