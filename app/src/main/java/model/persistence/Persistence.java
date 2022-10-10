@@ -1,15 +1,12 @@
 package model.persistence;
 
-import model.domain.Member;
-import model.domain.Registry;
-
-import java.util.ArrayList;
 
 public class Persistence {
+  public void get () {
+    // Because I/O is grade 3 we hard coded the objects in registry for now and when continuing with the assignment they will be saved.
+  }
 
-  Registry registry;
 
-  private ArrayList<Member.Mutable> members = new ArrayList<Member.Mutable>();
 
 
 }
