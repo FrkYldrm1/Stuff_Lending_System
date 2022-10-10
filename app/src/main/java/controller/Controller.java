@@ -36,8 +36,10 @@ public class Controller {
       case ("3"):
         memberController.changeDay();
         mainMenu();
+        break;
       case ("4"):
         console.byeBye();
+        break;
       default:
         mainMenu();
     }
@@ -80,8 +82,10 @@ public class Controller {
       case ("7"):
         memberController.contract();
         memMenu();
+        break;
       case ("8"):
         mainMenu();
+        break;
       default:
         memMenu();
     }
@@ -116,6 +120,7 @@ public class Controller {
         break;
       case ("5"):
         mainMenu();
+        break;
       default:
         itemMenu();
     }

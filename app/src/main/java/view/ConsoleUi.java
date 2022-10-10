@@ -1,9 +1,10 @@
 package view;
 
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import java.util.Scanner;
-
 import model.domain.Item;
 import model.domain.Member;
+
 
 /**
  * Class for printing console UI elements.
@@ -158,7 +159,12 @@ public class ConsoleUi {
     return input.nextLine();
   }
 
-  public String SelectMemberDelete() {
+  /**
+   * Method for getting input.
+   *
+   * @return returns input.
+   */
+  public String selectMemberDelete() {
     System.out.println("Select member to delete (Input number): ");
     return input.nextLine();
   }
@@ -220,8 +226,8 @@ public class ConsoleUi {
     String itemName = i.getName();
     String itemDesc = i.getShortDescription();
     int itemCost = i.getCostPerDay();
-    String toPrint = String.format("%s    %s    %s    %s    %s     Day for item: %s", index, itemName, itemCost, itemDesc,
-        i.getCategory(), i.getDayOfCreation());
+    String toPrint = String.format("%s    %s    %s    %s    %s     Day for item: %s",
+        index, itemName, itemCost, itemDesc, i.getCategory(), i.getDayOfCreation());
     System.out.println(toPrint);
   }
 
@@ -271,28 +277,32 @@ public class ConsoleUi {
    * @return Item.
    */
   public Item.Mutable createItem() {
+    String itemName;
     System.out.println("Enter item name: ");
-    String itemName = input.nextLine();
+    itemName = input.nextLine();
     System.out.println("Enter item's short description: ");
-    String descrioption = input.nextLine();
+    String descrioption;
+    descrioption = input.nextLine();
     System.out.println("Enter item's cost per day : ");
-    int costPerDay = input.nextInt();
+    int costPerDay;
+    costPerDay = input.nextInt();
     System.out.println("Enter owners name: "); // Should get owner by itself
-    String owner = input.nextLine();
+    String owner;
+    owner = input.nextLine();
 
-    int categor_int = selectCategory();
+    int categorInt = selectCategory();
     String category = "";
-    if (categor_int == 1) {
+    if (categorInt == 1) {
       category = "Tool";
-    } else if (categor_int == 2) {
+    } else if (categorInt == 2) {
       category = "Vehicle";
-    } else if (categor_int == 3) {
+    } else if (categorInt == 3) {
       category = "Game";
-    } else if (categor_int == 4) {
+    } else if (categorInt == 4) {
       category = "Toy";
-    } else if (categor_int == 5) {
+    } else if (categorInt == 5) {
       category = "Sport";
-    } else if (categor_int == 6) {
+    } else if (categorInt == 6) {
       category = "Other";
     }
     return new Item.Mutable(itemName, descrioption, costPerDay, 0, false, 0, owner, "", category);
@@ -335,13 +345,12 @@ public class ConsoleUi {
    * @param m Member object.
    */
   public void showMemberDetails3(Member.Mutable m) {
-
     String firstName = m.getFirstName();
     String email = m.getEmail();
     String id = m.getMemberId().getId();
     String ownedItemsString = m.getItemsOwnedString();
-    String toPrint = "\n" + "Members name: " + firstName + " E-mail: " + email +
-        " Member id: " + id + ownedItemsString;
+    String toPrint = "\n" + "Members name: " + firstName + " E-mail: " + email
+        + " Member id: " + id + ownedItemsString;
     System.out.println(toPrint);
 
   }
@@ -362,7 +371,7 @@ public class ConsoleUi {
     this.input = input;
   }
 
-  public void notEnoughcredit(){
+  public void notEnoughcredit() {
     String toPrint = "Not enough credits";
     System.out.println(toPrint);
   }
@@ -395,10 +404,18 @@ public class ConsoleUi {
     System.out.println("Contract has been created " + mem + " has lended to " + lend + " for " + period + " days");
   }
 
+  /**
+   * Message for advancig the day.
+   */
   public void advanceDayMessage() {
     System.out.println("Time has been advanced by one day ;)");
   }
 
+  /**
+   * Ui for selecting the category.
+   *
+   * @return input.
+   */
   public int selectCategory() {
     lineBreak();
     System.out.println("Please enter the appropriate category for item using the list below");

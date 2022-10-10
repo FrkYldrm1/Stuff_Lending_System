@@ -15,6 +15,7 @@ public class MemberId {
     this.id = createId();
     this.dateCreated = creationDate();
   }
+  
   public String creationDate() {
     return (java.time.LocalDate.now().toString());
   }

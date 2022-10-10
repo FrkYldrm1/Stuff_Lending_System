@@ -12,15 +12,20 @@ public class Contract {
   private int item;
 
 
+  /**
+   * Constactor for contact class.
+   */
   public Contract(Member owner, Member lentTo, int contractPeriod, int item) {
     this.owner = owner;
     this.lentTo = lentTo;
     this.contractPeriod = contractPeriod;
     this.item = item;
   }
+
   public Member getOwner() {
     return owner;
   }
+  
   public Member getLentTo() {
     return lentTo;
   }

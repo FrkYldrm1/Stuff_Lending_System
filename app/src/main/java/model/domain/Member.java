@@ -1,8 +1,7 @@
 package model.domain;
 
-import model.TimeAdvancedObserver;
-
 import java.util.ArrayList;
+import model.TimeAdvancedObserver;
 
 /**
  * Member class.
@@ -145,9 +144,9 @@ public class Member implements TimeAdvancedObserver {
     int counter = 0;
     for (Item item : itemsLended) {
       counter++;
-      itemListLended += "\n" + " Lended items  : " + "\n" + counter + ". " + item.getName() + "-> Lended to: "
-          + item.getLenededTo() + ", Contract period: " +
-              item.getContractPeriod() + " Short description: " + item.getShortDescription() +"\n";
+      itemListLended += "\n" + " Lended items  : " + "\n" + counter + ". " + item.getName() + "-> Lended to: " 
+        + item.getLenededTo() + ", Contract period: " + item.getContractPeriod() 
+        + " Short description: " + item.getShortDescription() + "\n";
     }
     return itemListLended;
   }
@@ -244,10 +243,10 @@ public class Member implements TimeAdvancedObserver {
     ArrayList<Item> item = new ArrayList<>();
     item = itemsLended;
     int index = 0;
-    if (!itemsLended.isEmpty()){
+    if (!itemsLended.isEmpty()) {
       for (Item eachItem : itemsLended) {
         index++;
-        if (eachItem.getContractPeriod() > 0 ) {
+        if (eachItem.getContractPeriod() > 0) {
           eachItem.setContractPeriodProt(eachItem.getContractPeriod() - 1);
         } else if (eachItem.getContractPeriod() == 0) {
           eachItem.setShortDescriptionProt(" Item contract has expired!");

@@ -1,30 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <checkstyle version="8.38">
 <file name="/Users/fy/Documents/1DV607/a2/app/src/main/java/controller/Controller.java">
-<error line="38" column="7" severity="warning" message="Fall through from previous branch of the switch statement." source="com.puppycrawl.tools.checkstyle.checks.coding.FallThroughCheck"/>
-<error line="49" column="5" severity="warning" message="switch without &quot;default&quot; clause." source="com.puppycrawl.tools.checkstyle.checks.coding.MissingSwitchDefaultCheck"/>
-<error line="103" column="7" severity="warning" message="Fall through from previous branch of the switch statement." source="com.puppycrawl.tools.checkstyle.checks.coding.FallThroughCheck"/>
 </file>
 <file name="/Users/fy/Documents/1DV607/a2/app/src/main/java/controller/MemberController.java">
 </file>
 <file name="/Users/fy/Documents/1DV607/a2/app/src/main/java/controller/App.java">
 </file>
-<file name="/Users/fy/Documents/1DV607/a2/app/src/main/java/model/Contract.java">
+<file name="/Users/fy/Documents/1DV607/a2/app/src/main/java/model/persistence/Persistence.java">
 </file>
-<file name="/Users/fy/Documents/1DV607/a2/app/src/main/java/model/MemberId.java">
+<file name="/Users/fy/Documents/1DV607/a2/app/src/main/java/model/persistence/Imapper.java">
 </file>
-<file name="/Users/fy/Documents/1DV607/a2/app/src/main/java/model/Time.java">
+<file name="/Users/fy/Documents/1DV607/a2/app/src/main/java/model/persistence/SqlMapper.java">
 </file>
-<file name="/Users/fy/Documents/1DV607/a2/app/src/main/java/model/Member.java">
+<file name="/Users/fy/Documents/1DV607/a2/app/src/main/java/model/domain/Contract.java">
 </file>
-<file name="/Users/fy/Documents/1DV607/a2/app/src/main/java/model/Registry.java">
+<file name="/Users/fy/Documents/1DV607/a2/app/src/main/java/model/domain/MemberId.java">
+</file>
+<file name="/Users/fy/Documents/1DV607/a2/app/src/main/java/model/domain/Time.java">
+</file>
+<file name="/Users/fy/Documents/1DV607/a2/app/src/main/java/model/domain/Member.java">
+</file>
+<file name="/Users/fy/Documents/1DV607/a2/app/src/main/java/model/domain/Registry.java">
+</file>
+<file name="/Users/fy/Documents/1DV607/a2/app/src/main/java/model/domain/Item.java">
 </file>
 <file name="/Users/fy/Documents/1DV607/a2/app/src/main/java/model/TimeAdvancedObserver.java">
 </file>
-<file name="/Users/fy/Documents/1DV607/a2/app/src/main/java/model/Item.java">
-</file>
 <file name="/Users/fy/Documents/1DV607/a2/app/src/main/java/view/ConsoleUi.java">
-<error line="82" column="5" severity="warning" message="Distance between variable &apos;firstName&apos; declaration and its first usage is 4, but allowed 3.  Consider making that variable final if you still need to store its value in advance (before method calls that might have side effects on the original value)." source="com.puppycrawl.tools.checkstyle.checks.coding.VariableDeclarationUsageDistanceCheck"/>
-<error line="283" column="5" severity="warning" message="Distance between variable &apos;itemName&apos; declaration and its first usage is 4, but allowed 3.  Consider making that variable final if you still need to store its value in advance (before method calls that might have side effects on the original value)." source="com.puppycrawl.tools.checkstyle.checks.coding.VariableDeclarationUsageDistanceCheck"/>
 </file>
 </checkstyle>

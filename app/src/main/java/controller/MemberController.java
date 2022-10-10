@@ -1,7 +1,6 @@
 package controller;
 
 import java.util.ArrayList;
-
 import model.domain.Item;
 import model.domain.Member;
 import model.domain.MemberId;
@@ -227,8 +226,7 @@ public class MemberController {
   }
 
   /**
-   * I think it´s not working bec of the list member, maybe we need to make a new
-   * show member for this idk
+   * method for editing item.
    */
   public void editItem() {
     int memIndex = console.indexMemberInput();
@@ -243,7 +241,7 @@ public class MemberController {
    * Method for deleting the member.
    */
   public void deleteMember() {
-    String mem = console.SelectMemberDelete();
+    String mem = console.selectMemberDelete();
     int index = Integer.parseInt(mem);
     registry.removeMember(getMember(index));
   }
@@ -271,10 +269,11 @@ public class MemberController {
   }
 
   /**
-   * Checks if member id is taken or available
+   * Checks if member id is taken or available.
    *
    * @param id member id.
    * @return true if taken and false if available.
+   *
    */
   public boolean isIdTaken(MemberId id) {
     for (Member.Mutable member : registry.getMembers()) {
@@ -285,10 +284,9 @@ public class MemberController {
     return false;
   }
 
+
   /**
-   *
    * Method for creating a contract.
-   *
    */
   public void contract() {
     showAllMembersSimple();

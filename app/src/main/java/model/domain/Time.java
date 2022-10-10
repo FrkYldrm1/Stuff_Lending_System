@@ -12,9 +12,7 @@ public class Time {
 
   
   /**
-   *
    * Method for changing the day.
-   *
    */
   public void dayChange() {
     day += 1;
