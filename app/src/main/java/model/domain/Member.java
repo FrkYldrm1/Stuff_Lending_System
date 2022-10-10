@@ -160,10 +160,10 @@ public class Member implements TimeAdvancedObserver {
    *
    * @param name             To add name.
    * @param shortDescription To add short description.
-   * @param costPerDay       To initilize cost per day.
-   * @param dayOfCreation    To initilize day of creation.
+   * @param costPerDay       To initialize cost per day.
+   * @param dayOfCreation    To initialize day of creation.
    * @param isLended         To decide if it is lended.
-   * @param contractPeriod   to initilize contract period.
+   * @param contractPeriod   to initialize contract period.
    * @return Item.
    */
   public Item addItem(String name, String shortDescription, int costPerDay, int dayOfCreation,
@@ -312,10 +312,10 @@ public class Member implements TimeAdvancedObserver {
     /**
      * Contructor for mutable members.
      *
-     * @param firstName   to initilize objects name.
-     * @param lastName    to initilize last name.
-     * @param email       to initilize email.
-     * @param phoneNumber to initilize phone number.
+     * @param firstName   to initialize objects name.
+     * @param lastName    to initialize last name.
+     * @param email       to initialize email.
+     * @param phoneNumber to initialize phone number.
      */
     public Mutable(String firstName, String lastName, String email, String phoneNumber) {
       super(firstName, lastName, email, phoneNumber);

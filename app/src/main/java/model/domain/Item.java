@@ -21,12 +21,12 @@ public class Item {
   /**
    * Constructor for the item.
    *
-   * @param name             To initilize the name.
-   * @param shortDescription To initilize the short description.
-   * @param costPerDay       To initilize the cost per day.
-   * @param dayOfCreation    To initilize day of creation.
+   * @param name             To initialize the name.
+   * @param shortDescription To initialize the short description.
+   * @param costPerDay       To initialize the cost per day.
+   * @param dayOfCreation    To initialize day of creation.
    * @param isLended         To select if it is lended.
-   * @param contractPeriod   To initilize the contract period,
+   * @param contractPeriod   To initialize the contract period,
    */
   @SuppressFBWarnings(value = "EI_EXPOSE_REP", justification = "It is the constructor so we should have it.")
   public Item(String name, String shortDescription, int costPerDay, int dayOfCreation,
