@@ -220,8 +220,8 @@ public class ConsoleUi {
     String itemName = i.getName();
     String itemDesc = i.getShortDescription();
     int itemCost = i.getCostPerDay();
-    String toPrint = String.format("%s    %s    %s    %s    Day for items: %s", index, itemName, itemCost, itemDesc,
-        i.getDayOfCreation());
+    String toPrint = String.format("%s    %s    %s    %s    %s     Day for item: %s", index, itemName, itemCost, itemDesc,
+        i.getCategory(), i.getDayOfCreation());
     System.out.println(toPrint);
   }
 
@@ -280,7 +280,22 @@ public class ConsoleUi {
     System.out.println("Enter owners name: "); // Should get owner by itself
     String owner = input.nextLine();
 
-    return new Item.Mutable(itemName, descrioption, costPerDay, 0, false, 0, owner, "");
+    int categor_int = selectCategory();
+    String category = "";
+    if (categor_int == 1) {
+      category = "Tool";
+    } else if (categor_int == 2) {
+      category = "Vehicle";
+    } else if (categor_int == 3) {
+      category = "Game";
+    } else if (categor_int == 4) {
+      category = "Toy";
+    } else if (categor_int == 5) {
+      category = "Sport";
+    } else if (categor_int == 6) {
+      category = "Other";
+    }
+    return new Item.Mutable(itemName, descrioption, costPerDay, 0, false, 0, owner, "", category);
   }
 
   public String newItemName() {
@@ -338,11 +353,20 @@ public class ConsoleUi {
     System.out.println("");
   }
 
+  /**
+   * Setter method for input.
+   *
+   * @param input input.
+   */
+  public void setInput(Scanner input) {
+    this.input = input;
+  }
+
   public void notEnoughcredit(){
     String toPrint = "Not enough credits";
     System.out.println(toPrint);
   }
-  
+
   public void alreadyLended() {
     System.out.println("Item is already lended!");
   }
@@ -373,5 +397,13 @@ public class ConsoleUi {
 
   public void advanceDayMessage() {
     System.out.println("Time has been advanced by one day ;)");
+  }
+
+  public int selectCategory() {
+    lineBreak();
+    System.out.println("Please enter the appropriate category for item using the list below");
+    System.out.println("1. Tool\n2. Vehicle\n3. Game\n4. Toy\n5. Sport\n6. Other");
+    System.out.println("Enter category which fits the item the most: ");
+    return input.nextInt();
   }
 }

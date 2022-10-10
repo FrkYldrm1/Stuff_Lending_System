@@ -14,6 +14,7 @@ public class Item {
   private int contractPeriod;
   private String owner;
   private String lenededTo;
+  private String category;
   private MemberId id = new MemberId();
 
   /**
@@ -27,7 +28,7 @@ public class Item {
    * @param contractPeriod   To initilize the contract period,
    */
   public Item(String name, String shortDescription, int costPerDay, int dayOfCreation,
-      Boolean isLended, int contractPeriod, String owner, String lendedTo) {
+      Boolean isLended, int contractPeriod, String owner, String lendedTo, String category) {
     if (name == null) {
       setNameProt("Unknown name!");
     } else {
@@ -65,11 +66,21 @@ public class Item {
     }
     this.dayOfCreation = 1;
     this.itemId = id.createId();
+    this.category = category;
   }
-
 
   public Item() {
 
+  }
+
+  /**
+   * Setter method for owner.
+   *
+   * @param owner To initilize owner.
+   */
+  public void setOwner(String owner) {
+    checkNull(owner, "Owner cannot be null!");
+    this.owner = owner;
   }
 
   public boolean isLended() {
@@ -215,6 +226,10 @@ public class Item {
     return dayOfCreation;
   }
 
+  public String getCategory() {
+    return category;
+  }
+
   /**
    * Getter method for contract period.
    *
@@ -224,23 +239,14 @@ public class Item {
     return contractPeriod;
   }
 
-  enum Category {
-    TOOL,
-    VEHICLE,
-    GAMES,
-    TOY,
-    SPORT,
-    OTHER
-  }
-
   /**
    * Mutable class.
    */
   public static class Mutable extends Item {
 
     public Mutable(String name, String shortDescription, int costPerDay,
-        int dayOfCreation, Boolean isLended, int contractPeriod, String owner, String lendedTo) {
-      super(name, shortDescription, costPerDay, dayOfCreation, isLended, contractPeriod, owner, lendedTo);
+        int dayOfCreation, Boolean isLended, int contractPeriod, String owner, String lendedTo, String category) {
+      super(name, shortDescription, costPerDay, dayOfCreation, isLended, contractPeriod, owner, lendedTo, category);
     }
 
     public Mutable(Item item) {

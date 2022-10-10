@@ -164,10 +164,10 @@ public class Member implements TimeAdvancedObserver {
    * @return Item.
    */
   public Item addItem(String name, String shortDescription, int costPerDay, int dayOfCreation,
-      Boolean isLended, int contractPeriod, String owner, String lendedTo) {
+      Boolean isLended, int contractPeriod, String owner, String lendedTo, String category) {
     Item.Mutable s = new Item.Mutable(name, shortDescription, costPerDay, dayOfCreation,
-        isLended, contractPeriod, owner, lendedTo);
-        setCredits(getCredits() + 100);
+        isLended, contractPeriod, owner, lendedTo, category);
+    setCredits(getCredits() + 100);
     itemsOwned.add(s);
     return s;
   }
@@ -209,14 +209,13 @@ public class Member implements TimeAdvancedObserver {
   public void addPreparedItemOwned(Item.Mutable ownedItem) {
     itemsOwned.add(ownedItem);
   }
-  
 
   public void setCredits(int credits) {
     this.credits = credits;
   }
 
   public Item.Mutable getItemOwned(int index) {
-    index -=1;
+    index -= 1;
     return itemsOwned.get(index);
   }
 
