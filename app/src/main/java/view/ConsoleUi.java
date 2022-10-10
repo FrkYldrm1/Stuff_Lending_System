@@ -83,7 +83,7 @@ public class ConsoleUi {
    * @return first name to be validated.
    */
   public String getFirstName() {
-    System.out.println("Enter new member's first name: ");
+    System.out.print("Enter new member's first name: ");
     return input.nextLine();
   }
 
@@ -93,7 +93,7 @@ public class ConsoleUi {
    * @return first name again to be validated.
    */
   public String newFirstName() {
-    System.out.println("Name has to be filled. Please enter first name: ");
+    System.out.print("Name has to be filled. Please enter first name: ");
     return input.nextLine();
   }
 
@@ -103,7 +103,7 @@ public class ConsoleUi {
    * @return last name to be validated.
    */
   public String getLastName() {
-    System.out.println("Enter new member's last name: ");
+    System.out.print("Enter new member's last name: ");
     return input.nextLine();
   }
 
@@ -113,7 +113,7 @@ public class ConsoleUi {
    * @return last name again to be validated.
    */
   public String newLastName() {
-    System.out.println("Name has to be filled. Please enter last name: ");
+    System.out.print("Name has to be filled. Please enter last name: ");
     return input.nextLine();
   }
 
@@ -123,7 +123,7 @@ public class ConsoleUi {
    * @return phonenumber to be validated.
    */
   public String getPhoneNumber() {
-    System.out.println("Enter new member's phone number: ");
+    System.out.print("Enter new member's phone number: ");
     return input.nextLine();
   }
 
@@ -133,7 +133,7 @@ public class ConsoleUi {
    * @return phone number string.
    */
   public String newPhoneNumber() {
-    System.out.println("Phone number has to be filled. Please enter phone number: ");
+    System.out.print("Phone number has to be filled. Please enter phone number: ");
     return input.nextLine();
   }
 
@@ -144,7 +144,7 @@ public class ConsoleUi {
    * @return phone number as a strign.
    */
   public String uniquePhoneNumber() {
-    System.out.println("Phone number is taken. Please enter a new phone number: ");
+    System.out.print("Phone number is taken. Please enter a new phone number: ");
     return input.nextLine();
   }
 
@@ -159,7 +159,7 @@ public class ConsoleUi {
   }
 
   public String SelectMemberDelete() {
-    System.out.println("Select member to delete (Input number): ");
+    System.out.print("Select member to delete (Input number): ");
     return input.nextLine();
   }
 
@@ -169,7 +169,7 @@ public class ConsoleUi {
    * @return email to be validated.
    */
   public String getEmail() {
-    System.out.println("Enter new member's email: ");
+    System.out.print("Enter new member's email: ");
     return input.nextLine();
   }
 
@@ -179,7 +179,7 @@ public class ConsoleUi {
    * @return email string.
    */
   public String newEmail() {
-    System.out.println("Email has to be filled. Please enter email: ");
+    System.out.print("Email has to be filled. Please enter email: ");
     return input.nextLine();
   }
 
@@ -189,7 +189,7 @@ public class ConsoleUi {
    * @return email as a strign.
    */
   public String uniqueEmail() {
-    System.out.println("Email is taken. Please enter a new email: ");
+    System.out.print("Email is taken. Please enter a new email: ");
     return input.nextLine();
   }
 
@@ -206,8 +206,9 @@ public class ConsoleUi {
     String memberId = m.getMemberId().getId();
     int currentCredit = m.getCredits();
     int ownedItem = m.sizeOfItemsOwned();
-    String toPrint = String.format("%s    %s    %s, %s\t%s\tCurrent credits: %s\tNumber of owned items: %s", index,
-        memberId, firstName, lastName, email, currentCredit, ownedItem);
+    int time = m.getTime().getDay();
+    String toPrint = String.format("%s    %s   Current day: %s    %s, %s\t%s\tCurrent credits: %s\tNumber of owned items: %s", index,
+        memberId, time + 1 ,firstName, lastName, email, currentCredit, ownedItem);
     System.out.println(toPrint);
   }
 
@@ -231,7 +232,7 @@ public class ConsoleUi {
    * @return String.
    */
   public String idInput() {
-    System.out.println("Please enter member ID : ");
+    System.out.print("Please enter member ID : ");
     return input.nextLine();
   }
 
@@ -246,7 +247,7 @@ public class ConsoleUi {
   }
 
   public int indexItemInput() {
-    System.out.println("Select an item using position in list: ");
+    System.out.print("Select an item using position in list: ");
     return input.nextInt();
   }
 
@@ -256,7 +257,7 @@ public class ConsoleUi {
    * @return int
    */
   public int indexMemberInputRetry() {
-    System.out.println("Not a valid position. Please try again: ");
+    System.out.print("Not a valid position. Please try again: ");
     return input.nextInt();
   }
 
@@ -271,13 +272,13 @@ public class ConsoleUi {
    * @return Item.
    */
   public Item.Mutable createItem() {
-    System.out.println("Enter item name: ");
+    System.out.print("Enter item name: ");
     String itemName = input.nextLine();
-    System.out.println("Enter item's short description: ");
+    System.out.print("Enter item's short description: ");
     String descrioption = input.nextLine();
-    System.out.println("Enter item's cost per day : ");
+    System.out.print("Enter item's cost per day : ");
     int costPerDay = input.nextInt();
-    System.out.println("Enter owners name: "); // Should get owner by itself
+    System.out.print("Enter owners name: "); // Should get owner by itself
     String owner = input.nextLine();
 
     int categor_int = selectCategory();
@@ -377,17 +378,17 @@ public class ConsoleUi {
   }
 
   public int selectLender() {
-    System.out.println("Select member to lend to (Input a number): ");
+    System.out.print("Select member to lend to (Input a number): ");
     return input.nextInt();
   }
 
   public int selectPeriod() {
-    System.out.println("How long would like to lend the item (Input a number): ");
+    System.out.print("How long would like to lend the item (Input a number): ");
     return input.nextInt();
   }
 
   public int selectItem() {
-    System.out.println("Select item you wish to lend (Input a number): ");
+    System.out.print("Select item you wish to lend (Input a number): ");
     return input.nextInt();
   }
 
@@ -396,7 +397,7 @@ public class ConsoleUi {
   }
 
   public void advanceDayMessage() {
-    System.out.println("Time has been advanced by one day ;)");
+    System.out.print("Time has been advanced by one day ;)");
   }
 
   public int selectCategory() {

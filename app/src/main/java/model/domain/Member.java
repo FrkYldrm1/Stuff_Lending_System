@@ -172,6 +172,10 @@ public class Member implements TimeAdvancedObserver {
     return s;
   }
 
+  public Time getTime() {
+    return time;
+  }
+
   /**
    * Method for advancing time for the items owned and lended.
    *

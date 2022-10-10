@@ -10,7 +10,16 @@ public class Time {
     this.day = 0;
   }
 
-  
+  /**
+   * Get current day.
+   *
+   * @return day.
+   *
+   */
+  public int getDay() {
+    return day;
+  }
+
   /**
    *
    * Method for changing the day.

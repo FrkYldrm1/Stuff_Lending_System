@@ -227,8 +227,7 @@ public class MemberController {
   }
 
   /**
-   * I think it´s not working bec of the list member, maybe we need to make a new
-   * show member for this idk
+   * Method for editing item.
    */
   public void editItem() {
     int memIndex = console.indexMemberInput();
