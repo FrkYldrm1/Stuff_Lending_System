@@ -1,5 +1,6 @@
 package controller;
 
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import java.util.Scanner;
 import model.domain.Registry;
 import view.ConsoleUi;
@@ -10,11 +11,12 @@ import view.ConsoleUi;
 public class Controller {
 
   private String input;
-  private Scanner scan = new Scanner(System.in);
-  private view.ConsoleUi console = new view.ConsoleUi(new Scanner(System.in, "UTF8"));
+  private Scanner scan = new Scanner(System.in, "UTF-8");
+  private view.ConsoleUi console = new view.ConsoleUi(new Scanner(System.in, "UTF-8"));
   private Registry registry = new Registry();
   private controller.MemberController memberController = new controller.MemberController(console, registry);
 
+  @SuppressFBWarnings(value = "EI_EXPOSE_REP", justification = "We need to have a constrctor")
   public Controller(ConsoleUi console, Registry registry) {
     this.console = console;
     this.registry = registry;

@@ -1,5 +1,7 @@
 package model.domain;
 
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
+
 /**
  * Item class to create item objects.
  */
@@ -27,6 +29,7 @@ public class Item {
    * @param isLended         To select if it is lended.
    * @param contractPeriod   To initilize the contract period,
    */
+  @SuppressFBWarnings(value = "EI_EXPOSE_REP", justification = "It is the constructor so we should have it.")
   public Item(String name, String shortDescription, int costPerDay, int dayOfCreation,
       Boolean isLended, int contractPeriod, String owner, String lendedTo, String category) {
     if (name == null) {
@@ -71,6 +74,20 @@ public class Item {
 
   public Item() {
 
+  }
+
+  
+
+  public String getItemId() {
+    return itemId;
+  }
+
+  public String getOwner() {
+    return owner;
+  }
+
+  public Mutable getItemClass() {
+    return itemClass;
   }
 
   /**

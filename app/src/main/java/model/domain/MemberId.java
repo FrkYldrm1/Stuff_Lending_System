@@ -10,6 +10,11 @@ public class MemberId {
   private String id;
   private String dateCreated;
 
+
+  public String getDateCreated() {
+    return dateCreated;
+  }
+
   // creates random id and puts in creation date
   public MemberId() {
     this.id = createId();

@@ -12,97 +12,37 @@
 ^0 CheckStyle Issues in /Users/fy/Documents/1DV607/a2/app/src/main/java/model/domain/Item.java
 g0 CheckStyle Issues in /Users/fy/Documents/1DV607/a2/app/src/main/java/model/TimeAdvancedObserver.java
 [0 CheckStyle Issues in /Users/fy/Documents/1DV607/a2/app/src/main/java/view/ConsoleUi.java
-,5 FindBugs Issues in model/domain/Item.java
-text:lines: 18-239 
+,3 FindBugs Issues in model/domain/Item.java
+text:lines: 20-256 
 enew model.domain.Item(String, String, int, int, Boolean, int, String, String, String) uses the same 
   code for two branches 
 ,Method uses the same code for two branches 
 cThis method uses the same code to implement two branches of a conditional branch. Check to ensure 
 $  that this isn't a coding mistake.
 
-text:lines: 18-239 
+text:lines: 20-256 
 _Call to equals(null) in new model.domain.Item(String, String, int, int, Boolean, int, String, 
   String, String) 
 Call to equals(null) 
 fThis method calls equals(Object), passing a null value as the argument. According to the contract of 
 =  the equals() method, this call should always return false.
 
-text:lines: 18-239 
-Unread field: itemId 
-Unread field 
-?This field is never read. Consider removing it from the class.
+text:lines: 20-256 
+0Unwritten public or protected field: itemClass 
+%Unwritten public or protected field 
+dNo writes were seen to this public/protected field. All reads of it will return the default value. 
+V  Check for errors (should it have been initialized?), or remove it if it is useless.
 
-text:lines: 18-239 
-Unread field: owner 
-Unread field 
-?This field is never read. Consider removing it from the class.
-
-text:lines: 18-239 
--Unused public or protected field: itemClass 
-"Unused public or protected field 
-bThis field is never used. The field is public or protected, so perhaps it is intended to be used 
-^  with classes not seen as part of the analysis. If not, consider removing it from the class.
-
-01 FindBugs Issues in model/domain/MemberId.java
-text:lines: 9-42 
-Unread field: dateCreated 
-Unread field 
-?This field is never read. Consider removing it from the class.
-
-)3 FindBugs Issues in view/ConsoleUi.java
-text:lines: 20-424 
+00 FindBugs Issues in model/domain/MemberId.java
+)1 FindBugs Issues in view/ConsoleUi.java
+text:lines: 21-426 
 PbyeBye() invokes System.exit(...), which shuts down the entire virtual machine 
 !Method invokes System.exit(...) 
 eInvoking System.exit shuts down the entire Java virtual machine. This should only been done when it 
 d  is appropriate. Such calls make it hard or impossible for your code to be invoked by other code. 
 0  Consider throwing a RuntimeException instead.
 
-text:lines: 20-424 
-anew view.ConsoleUi(Scanner) may expose internal representation by storing an externally mutable 
-  object into ConsoleUi.input 
-QMay expose internal representation by incorporating reference to mutable object 
-fThis code stores a reference to an externally mutable object into the internal representation of the 
-d  object. If instances are accessed by untrusted code, and unchecked changes to the mutable object 
-e  would compromise security or other important properties, you will need to do something different. 
-F  Storing a copy of the object is better approach in many situations.
-
-text:lines: 20-424 
-csetInput(Scanner) may expose internal representation by storing an externally mutable object into 
-  ConsoleUi.input 
-QMay expose internal representation by incorporating reference to mutable object 
-fThis code stores a reference to an externally mutable object into the internal representation of the 
-d  object. If instances are accessed by untrusted code, and unchecked changes to the mutable object 
-e  would compromise security or other important properties, you will need to do something different. 
-F  Storing a copy of the object is better approach in many situations.
-
-03 FindBugs Issues in controller/Controller.java
-text:lines: 13-127 
-[Found reliance on default encoding in new controller.Controller(ConsoleUi, Registry): new 
-"  java.util.Scanner(InputStream) 
-Reliance on default encoding 
-bFound a call to a method which will perform a byte to String (or String to byte) conversion, and 
-_  will assume that the default platform encoding is suitable. This will cause the application 
-d  behavior to vary between platforms. Use an alternative API and specify a charset name or Charset 
-  object explicitly.
-
-text:lines: 13-127 
-anew controller.Controller(ConsoleUi, Registry) may expose internal representation by storing an 
-5  externally mutable object into Controller.console 
-QMay expose internal representation by incorporating reference to mutable object 
-fThis code stores a reference to an externally mutable object into the internal representation of the 
-d  object. If instances are accessed by untrusted code, and unchecked changes to the mutable object 
-e  would compromise security or other important properties, you will need to do something different. 
-F  Storing a copy of the object is better approach in many situations.
-
-text:lines: 13-127 
-anew controller.Controller(ConsoleUi, Registry) may expose internal representation by storing an 
-6  externally mutable object into Controller.registry 
-QMay expose internal representation by incorporating reference to mutable object 
-fThis code stores a reference to an externally mutable object into the internal representation of the 
-d  object. If instances are accessed by untrusted code, and unchecked changes to the mutable object 
-e  would compromise security or other important properties, you will need to do something different. 
-F  Storing a copy of the object is better approach in many situations.
-
+00 FindBugs Issues in controller/Controller.java
 63 FindBugs Issues in controller/MemberController.java
 text:lines: 17-300 
 dnew controller.MemberController(ConsoleUi, Registry) may expose internal representation by storing 

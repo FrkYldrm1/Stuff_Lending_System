@@ -17,6 +17,7 @@ public class ConsoleUi {
    *
    * @param input Scanner input.
    */
+  @SuppressFBWarnings(value = "EI_EXPOSE_REP", justification = "We need to have scanner")
   public ConsoleUi(Scanner input) {
     this.input = input;
   }
@@ -367,6 +368,7 @@ public class ConsoleUi {
    *
    * @param input input.
    */
+  @SuppressFBWarnings(value = "EI_EXPOSE_REP", justification = "We need set inout method for scanner")
   public void setInput(Scanner input) {
     this.input = input;
   }
