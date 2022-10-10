@@ -1,4 +1,4 @@
-package model;
+package model.domain;
 
 /**
  * Time class for all the objets time.

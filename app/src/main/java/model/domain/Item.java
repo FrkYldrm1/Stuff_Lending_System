@@ -1,4 +1,4 @@
-package model;
+package model.domain;
 
 /**
  * Item class to create item objects.

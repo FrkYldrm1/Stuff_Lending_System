@@ -1,7 +1,7 @@
 package controller;
 
 import java.util.Scanner;
-import model.Registry;
+import model.domain.Registry;
 import view.ConsoleUi;
 
 /**
@@ -12,7 +12,7 @@ public class Controller {
   private String input;
   private Scanner scan = new Scanner(System.in);
   private view.ConsoleUi console = new view.ConsoleUi(new Scanner(System.in, "UTF8"));
-  private model.Registry registry = new Registry();
+  private Registry registry = new Registry();
   private controller.MemberController memberController = new controller.MemberController(console, registry);
 
   public Controller(ConsoleUi console, Registry registry) {

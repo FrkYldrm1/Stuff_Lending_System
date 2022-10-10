@@ -1,4 +1,6 @@
-package model;
+package model.domain;
+
+import model.TimeAdvancedObserver;
 
 import java.util.ArrayList;
 

@@ -2,11 +2,11 @@ package controller;
 
 import java.util.ArrayList;
 
-import model.Item;
-import model.Member;
-import model.MemberId;
-import model.Registry;
-import model.Time;
+import model.domain.Item;
+import model.domain.Member;
+import model.domain.MemberId;
+import model.domain.Registry;
+import model.domain.Time;
 import view.ConsoleUi;
 
 /**
@@ -14,9 +14,8 @@ import view.ConsoleUi;
  */
 public class MemberController {
   view.ConsoleUi console;
-  model.Registry registry;
-  model.Member member;
-  model.Time time = new Time();
+  Registry registry;
+  Time time = new Time();
 
   /**
    * constructors for controller.
@@ -60,11 +59,11 @@ public class MemberController {
         done = true;
       }
     }
-    model.MemberId id = new MemberId();
+    MemberId id = new MemberId();
     while (isIdTaken(id)) {
       id = new MemberId();
     }
-    model.Member newMember = new Member(firstName, lastName, email, phoneNumber, id);
+    Member newMember = new Member(firstName, lastName, email, phoneNumber, id);
     registry.addMember(newMember);
   }
 

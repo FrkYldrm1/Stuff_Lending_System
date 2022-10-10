@@ -1,11 +1,7 @@
-package model;
+package model.domain;
 
 import java.util.ArrayList;
 import java.util.Scanner;
-
-import javax.lang.model.util.ElementScanner14;
-
-import view.ConsoleUi;
 
 /**
  * Registry class for saving data.

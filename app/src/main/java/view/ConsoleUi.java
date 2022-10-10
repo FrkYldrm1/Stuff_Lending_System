@@ -1,9 +1,9 @@
 package view;
 
-import java.nio.IntBuffer;
 import java.util.Scanner;
 
-import model.Member.Mutable;
+import model.domain.Item;
+import model.domain.Member;
 
 /**
  * Class for printing console UI elements.
@@ -199,7 +199,7 @@ public class ConsoleUi {
    * @param m     Member object.
    * @param index To add index.
    */
-  public void showMemberDetailsSimple(model.Member.Mutable m, int index) {
+  public void showMemberDetailsSimple(Member.Mutable m, int index) {
     String firstName = m.getFirstName();
     String email = m.getEmail();
     String lastName = m.getLastName();
@@ -216,7 +216,7 @@ public class ConsoleUi {
    *
    * @param i Item object.
    */
-  public void showItemDetails(model.Item i, int index) {
+  public void showItemDetails(Item i, int index) {
     String itemName = i.getName();
     String itemDesc = i.getShortDescription();
     int itemCost = i.getCostPerDay();
@@ -270,7 +270,7 @@ public class ConsoleUi {
    *
    * @return Item.
    */
-  public model.Item.Mutable createItem() {
+  public Item.Mutable createItem() {
     System.out.println("Enter item name: ");
     String itemName = input.nextLine();
     System.out.println("Enter item's short description: ");
@@ -280,7 +280,7 @@ public class ConsoleUi {
     System.out.println("Enter owners name: "); // Should get owner by itself
     String owner = input.nextLine();
 
-    return new model.Item.Mutable(itemName, descrioption, costPerDay, 0, false, 0, owner, "");
+    return new Item.Mutable(itemName, descrioption, costPerDay, 0, false, 0, owner, "");
   }
 
   public String newItemName() {
@@ -304,7 +304,7 @@ public class ConsoleUi {
    * @param m     Member object.
    * @param index To add index.
    */
-  public void showMemberDetails2(model.Member.Mutable m, int index) {
+  public void showMemberDetails2(Member.Mutable m, int index) {
     String fullName = m.getFirstName() + " " + m.getLastName();
     String email = m.getEmail();
     String ownedItemsString = m.getItemsOwnedString();
@@ -319,7 +319,7 @@ public class ConsoleUi {
    *
    * @param m Member object.
    */
-  public void showMemberDetails3(model.Member.Mutable m) {
+  public void showMemberDetails3(Member.Mutable m) {
 
     String firstName = m.getFirstName();
     String email = m.getEmail();
