@@ -236,7 +236,6 @@ public class ConsoleUi {
     int currentCredit = m.getCredits();
     int ownedItem = m.sizeOfItemsOwned();
 
-
     // printed string
     String toPrint = String.format("%s    %s    %s, %s\t%s\tCurrent credits: %s\tNumber of owned items: %s", index,
         memberId, firstName, lastName, email, currentCredit, ownedItem);
@@ -259,8 +258,8 @@ public class ConsoleUi {
 
     // String toxPrint = itemName + " ID: " + itemId + " Item desc : " + itemDesc +
     // " Item cost : " + itemCost;
-    String toPrint = String.format("%s    %s    %s    %s    Day for items: %s", index, itemName, itemCost, itemDesc,
-        i.getDayOfCreation());
+    String toPrint = String.format("%s    %s    %s    %s    %s", index, itemName, itemCost, itemDesc,
+        i.getCategory());
     System.out.println(toPrint);
   }
 
@@ -319,7 +318,24 @@ public class ConsoleUi {
     System.out.println("Enter owners name: "); // Should get owner by itself
     String owner = input.nextLine();
 
-    return new model.Item.Mutable(itemName, descrioption, costPerDay, 0, false, 0, owner, "");
+    int categor_int = selectCategory();
+    String category = "";
+    if (categor_int == 1) {
+      category = "Tool";
+    } else if (categor_int == 2) {
+      category = "Vehicle";
+    } else if (categor_int == 3) {
+      category = "Game";
+    } else if (categor_int == 4) {
+      category = "Toy";
+    } else if (categor_int == 5) {
+      category = "Sport";
+    } else if (categor_int == 6) {
+      category = "Other";
+    }
+
+    return new model.Item.Mutable(itemName, descrioption, costPerDay, 0, false, 0, owner, "", category);
+
   }
 
   public String newItemName() {
@@ -407,11 +423,11 @@ public class ConsoleUi {
     this.input = input;
   }
 
-  public void notEnoughcredit(){
+  public void notEnoughcredit() {
     String toPrint = "Not enough credits";
     System.out.println(toPrint);
   }
-  
+
   public void alreadyLended() {
     System.out.println("Item is already lended!");
   }
@@ -438,6 +454,14 @@ public class ConsoleUi {
 
   public void messageForLending(String mem, String lend, int period) {
     System.out.println("Contract has been created " + mem + " has lended to " + lend + " for " + period + " days");
+  }
+
+  public int selectCategory() {
+    lineBreak();
+    System.out.println("Please enter the appropriate category for item using the list below");
+    System.out.println("1. Tool\n2. Vehicle\n3. Game\n4. Toy\n5. Sport\n6. Other");
+    System.out.println("Enter category which fits the item the most: ");
+    return input.nextInt();
   }
 
 }

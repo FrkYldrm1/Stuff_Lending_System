@@ -30,15 +30,15 @@ public class Registry {
     addMember("Faruk", "Yildirim", "faruk@gmail.com", "345678");
     addMember("Lea", "Le Galo", "lea@gmail.com", "456789");
     addMember("Gummi", "Andri", "gummi@gmail.com", "567890");
-    members.get(0).addItem("phone", "black", 45, 3, false, 0, members.get(0).getFirstName(), " No one ");
-    members.get(0).addItem("phone", "black", 45, 3, false, 0, members.get(0).getFirstName(), " No one ");
-    members.get(1).addItem("Phone", "Brown", 15, 1, false, 0,  members.get(1).getFirstName(), " No one ");
-    members.get(2).addItem("scooter", "White", 25, 1, false, 2,  members.get(2).getFirstName(), " No one ");
-    members.get(6).addItem("VacuumCleaner", "Red", 10, 2, false, 5,  members.get(6).getFirstName(), " No one ");
-    members.get(4).addItem("E-vape", "black", 5, 3, false, 7,  members.get(4).getFirstName(), " No one ");
-    members.get(3).addItem("Burgiiiir", "Green", 5, 1, false, 1,  members.get(3).getFirstName(), " No one ");
-    members.get(5).addItem("Bike", "Yellow", 20, 8, false, 9,  members.get(5).getFirstName(), " No one ");
-    members.get(2).addItem("Ipad", "Gray", 50, 2, false, 4,  members.get(2).getFirstName(), " No one ");
+    members.get(0).addItem("phone", "black", 45, 3, false, 0, members.get(0).getFirstName(), " No one ", "Tool");
+    members.get(0).addItem("phone", "black", 45, 3, false, 0, members.get(0).getFirstName(), " No one ", "Tool");
+    members.get(1).addItem("Phone", "Brown", 15, 1, false, 0, members.get(1).getFirstName(), " No one ", "Tool");
+    members.get(2).addItem("scooter", "White", 25, 1, false, 2, members.get(2).getFirstName(), " No one ", "Vehicle");
+    members.get(6).addItem("VacuumCleaner", "Red", 10, 2, false, 5, members.get(6).getFirstName(), " No one ", "Tool");
+    members.get(4).addItem("E-vape", "black", 5, 3, false, 7, members.get(4).getFirstName(), " No one ", "Other");
+    members.get(3).addItem("Burgiiiir", "Green", 5, 1, false, 1, members.get(3).getFirstName(), " No one ", "Other");
+    members.get(5).addItem("Bike", "Yellow", 20, 8, false, 9, members.get(5).getFirstName(), " No one ", "Vehicle");
+    members.get(2).addItem("Ipad", "Gray", 50, 2, false, 4, members.get(2).getFirstName(), " No one ", "Tool");
 
   }
 
@@ -122,7 +122,7 @@ public class Registry {
   public void listMembers() {
     int index = 0;
     for (Member member : members) {
-      index ++;
+      index++;
       System.out.println(index + ". " + member.getMemberId() + " " + member.getFirstName() + " " + member.getLastName()
           + " " + member.getEmail() + " " + member.getPhoneNumber());
     }
@@ -154,28 +154,28 @@ public class Registry {
     Contract contract = new Contract(owner, lender, contractPeriod, item);
     Item i = new Item();
     i = contract.getOwner().getItemOwned(item);
-    if(contract.getOwner().getItemOwned(item).isLended() == false) {
-      if(isEligable(i.getCostPerDay(), contractPeriod, lender)){
-      i.setContractPeriodProt(contractPeriod);
-      i.setLenededTo(lender.getFirstName());
-      i.setisLendedProt(true);
-      contract.getOwner().getItemOwned(item).setContractPeriod(contractPeriod);
-      contract.getOwner().getItemOwned(item).setLenededTo(lender.getFirstName());
-      contract.getOwner().getItemOwned(item).setisLendedProt(true);
-      contract.getLentTo().addItemLended(i);
-      int cost = i.getCostPerDay() * contractPeriod;
-      contract.getLentTo().setCredits(contract.getLentTo().getCredits() - cost);
+    if (contract.getOwner().getItemOwned(item).isLended() == false) {
+      if (isEligable(i.getCostPerDay(), contractPeriod, lender)) {
+        i.setContractPeriodProt(contractPeriod);
+        i.setLenededTo(lender.getFirstName());
+        i.setisLendedProt(true);
+        contract.getOwner().getItemOwned(item).setContractPeriod(contractPeriod);
+        contract.getOwner().getItemOwned(item).setLenededTo(lender.getFirstName());
+        contract.getOwner().getItemOwned(item).setisLendedProt(true);
+        contract.getLentTo().addItemLended(i);
+        int cost = i.getCostPerDay() * contractPeriod;
+        contract.getLentTo().setCredits(contract.getLentTo().getCredits() - cost);
       } else {
         console.notEnoughcredit();
-      }   
-    }else {
+      }
+    } else {
       console.alreadyLended();
     }
   }
 
   public boolean isEligable(int cost, int contractPeriod, Member member) {
     int total = cost * contractPeriod;
-    if(total > member.getCredits()) {
+    if (total > member.getCredits()) {
       return false;
     }
     return true;

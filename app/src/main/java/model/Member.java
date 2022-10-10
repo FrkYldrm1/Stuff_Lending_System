@@ -155,9 +155,9 @@ public class Member implements TimeAdvancedObserver {
    * @return Item.
    */
   public Item addItem(String name, String shortDescription, int costPerDay, int dayOfCreation,
-      Boolean isLended, int contractPeriod, String owner, String lendedTo) {
+      Boolean isLended, int contractPeriod, String owner, String lendedTo, String category) {
     Item.Mutable s = new Item.Mutable(name, shortDescription, costPerDay, dayOfCreation,
-        isLended, contractPeriod, owner, lendedTo);
+        isLended, contractPeriod, owner, lendedTo, category);
     setCredits(getCredits() + 100);
     itemsOwned.add(s);
     return s;

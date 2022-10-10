@@ -97,6 +97,7 @@ public class Controller {
       case ("1"):
         memberController.showAllMembersSimple();
         memberController.addItem();
+        itemMenu();
         break;
       case ("2"):
         memberController.showAllMembersSimple();
