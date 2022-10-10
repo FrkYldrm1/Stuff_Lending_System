@@ -11,7 +11,7 @@ The application uses the model-view-controller (MVC) architectural pattern. The 
 ![Class Diagram](img/class.png)
 
 ### Object Diagram
-![Object Diagram](img/)
+![Object Diagram](img/ood.png)
 
 ### Sequence Diagram
 ![Sequence Diagram](img/sequenceDiagram.png)

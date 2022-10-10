@@ -7,10 +7,10 @@
 m0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/model/domain/MemberId.java
 m0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/model/domain/Registry.java
 i0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/model/domain/Time.java
+y0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/model/domain/TimeAdvancedObserver.java
 q0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/model/persistence/Imapper.java
 u0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/model/persistence/Persistence.java
 s0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/model/persistence/SqlMapper.java
-r0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/model/TimeAdvancedObserver.java
 f0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/view/ConsoleUi.java
 -2 FindBugs Issues in model/domain/Item.java
 text:lines: 19-251 
@@ -37,6 +37,7 @@
 1  Consider throwing a RuntimeException instead.
 
 10 FindBugs Issues in controller/Controller.java
+=0 FindBugs Issues in model/domain/TimeAdvancedObserver.java
 71 FindBugs Issues in controller/MemberController.java
 text:lines: 18-341 
 SNullcheck of input at line 208 of value previously dereferenced in check(String) 
@@ -53,6 +54,5 @@
 /0 FindBugs Issues in model/domain/Member.java
 -0 FindBugs Issues in model/domain/Time.java
 50 FindBugs Issues in model/persistence/Imapper.java
-60 FindBugs Issues in model/TimeAdvancedObserver.java
 70 FindBugs Issues in model/persistence/SqlMapper.java
 90 FindBugs Issues in model/persistence/Persistence.java

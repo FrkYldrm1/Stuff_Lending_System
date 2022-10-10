@@ -9,8 +9,8 @@ C:\Users\ahmed\OneDrive\Skrivbord\oo\a2\app\build\classes\java\main\model\domain
 C:\Users\ahmed\OneDrive\Skrivbord\oo\a2\app\build\classes\java\main\model\domain\MemberId.class
 C:\Users\ahmed\OneDrive\Skrivbord\oo\a2\app\build\classes\java\main\model\domain\Registry.class
 C:\Users\ahmed\OneDrive\Skrivbord\oo\a2\app\build\classes\java\main\model\domain\Time.class
+C:\Users\ahmed\OneDrive\Skrivbord\oo\a2\app\build\classes\java\main\model\domain\TimeAdvancedObserver.class
 C:\Users\ahmed\OneDrive\Skrivbord\oo\a2\app\build\classes\java\main\model\persistence\Imapper.class
 C:\Users\ahmed\OneDrive\Skrivbord\oo\a2\app\build\classes\java\main\model\persistence\Persistence.class
 C:\Users\ahmed\OneDrive\Skrivbord\oo\a2\app\build\classes\java\main\model\persistence\SqlMapper.class
-C:\Users\ahmed\OneDrive\Skrivbord\oo\a2\app\build\classes\java\main\model\TimeAdvancedObserver.class
 C:\Users\ahmed\OneDrive\Skrivbord\oo\a2\app\build\classes\java\main\view\ConsoleUi.class

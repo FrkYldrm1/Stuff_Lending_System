@@ -9,9 +9,9 @@
 </testcase><testcase time="0" name="model/domain/MemberId.java" classname="CheckStyle Issues">
 </testcase><testcase time="0" name="model/domain/Registry.java" classname="CheckStyle Issues">
 </testcase><testcase time="0" name="model/domain/Time.java" classname="CheckStyle Issues">
+</testcase><testcase time="0" name="model/domain/TimeAdvancedObserver.java" classname="CheckStyle Issues">
 </testcase><testcase time="0" name="model/persistence/Imapper.java" classname="CheckStyle Issues">
 </testcase><testcase time="0" name="model/persistence/Persistence.java" classname="CheckStyle Issues">
 </testcase><testcase time="0" name="model/persistence/SqlMapper.java" classname="CheckStyle Issues">
-</testcase><testcase time="0" name="model/TimeAdvancedObserver.java" classname="CheckStyle Issues">
 </testcase><testcase time="0" name="view/ConsoleUi.java" classname="CheckStyle Issues">
 </testcase></testsuite>

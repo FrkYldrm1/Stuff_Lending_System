@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="CodeQualityTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-10-10T20:33:45" hostname="DEEB" time="0.174">
+<testsuite name="CodeQualityTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-10-10T21:46:11" hostname="DEEB" time="0.222">
   <properties/>
-  <testcase name="codeQuality()" classname="CodeQualityTests" time="0.174"/>
+  <testcase name="codeQuality()" classname="CodeQualityTests" time="0.222"/>
   <system-out><![CDATA[0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/controller/App.java
 0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/controller/Controller.java
 0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/controller/MemberController.java
@@ -11,10 +11,10 @@
 0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/model/domain/MemberId.java
 0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/model/domain/Registry.java
 0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/model/domain/Time.java
+0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/model/domain/TimeAdvancedObserver.java
 0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/model/persistence/Imapper.java
 0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/model/persistence/Persistence.java
 0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/model/persistence/SqlMapper.java
-0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/model/TimeAdvancedObserver.java
 0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/view/ConsoleUi.java
 2 FindBugs Issues in model/domain/Item.java
 text:lines: 19-251 
@@ -41,6 +41,7 @@ Invoking System.exit shuts down the entire Java virtual machine. This should onl
   Consider throwing a RuntimeException instead.
 
 0 FindBugs Issues in controller/Controller.java
+0 FindBugs Issues in model/domain/TimeAdvancedObserver.java
 1 FindBugs Issues in controller/MemberController.java
 text:lines: 18-341 
 Nullcheck of input at line 208 of value previously dereferenced in check(String) 
@@ -57,7 +58,6 @@ A value is checked here to see whether it is null, but this value cannot be null
 0 FindBugs Issues in model/domain/Member.java
 0 FindBugs Issues in model/domain/Time.java
 0 FindBugs Issues in model/persistence/Imapper.java
-0 FindBugs Issues in model/TimeAdvancedObserver.java
 0 FindBugs Issues in model/persistence/SqlMapper.java
 0 FindBugs Issues in model/persistence/Persistence.java
 ]]></system-out>

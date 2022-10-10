@@ -30,6 +30,7 @@ Invoking System.exit shuts down the entire Java virtual machine. This
 ----------------
 ]]></failure>
 </testcase><testcase time="0" name="controller/Controller.java" classname="FindBugs Issues">
+</testcase><testcase time="0" name="model/domain/TimeAdvancedObserver.java" classname="FindBugs Issues">
 </testcase><testcase time="0" name="controller/MemberController.java" classname="FindBugs Issues">
 <failure message="issues" ><![CDATA[lines: 18-341 
 Nullcheck of input at line 208 of value previously dereferenced in 
@@ -49,7 +50,6 @@ A value is checked here to see whether it is null, but this value cannot be
 </testcase><testcase time="0" name="model/domain/Member.java" classname="FindBugs Issues">
 </testcase><testcase time="0" name="model/domain/Time.java" classname="FindBugs Issues">
 </testcase><testcase time="0" name="model/persistence/Imapper.java" classname="FindBugs Issues">
-</testcase><testcase time="0" name="model/TimeAdvancedObserver.java" classname="FindBugs Issues">
 </testcase><testcase time="0" name="model/persistence/SqlMapper.java" classname="FindBugs Issues">
 </testcase><testcase time="0" name="model/persistence/Persistence.java" classname="FindBugs Issues">
 </testcase></testsuite>
