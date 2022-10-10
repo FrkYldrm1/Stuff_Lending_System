@@ -4,89 +4,32 @@
 r0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/model/TimeAdvancedObserver.java
 m0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/model/domain/Contract.java
 i0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/model/domain/Item.java
-k6 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/model/domain/Member.java
- text:line: 5 column: column:1 
-QWrong lexicographical order for 'java.util.ArrayList' import. Should be before 
-!  'model.TimeAdvancedObserver'.
-
-text:line: 117 column: 
-1Line is longer than 120 characters (found 122).
-
-$text:line: 117 column: column:122 
-'+' should be on a new line.
-
-text:line: 118 column: 
-1Line is longer than 120 characters (found 129).
-
-#text:line: 250 column: column:32 
-8WhitespaceAround: '{' is not preceded with whitespace.
-
-#text:line: 252 column: column:46 
-"')' is preceded with whitespace.
-
+k0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/model/domain/Member.java
 m0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/model/domain/MemberId.java
-m7 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/model/domain/Registry.java
- text:line: 5 column: column:1 
-?Extra separation in import group before 'java.util.ArrayList'
-
-!text:line: 13 column: column:8 
-CMember name 'i' must match pattern '^[a-z][a-z0-9][a-zA-Z0-9]*$'.
-
-!text:line: 24 column: column:1 
-gBlock comment has incorrect indentation level 0, expected is 4, indentation should be the same level 
-  as line 43.
-
-!text:line: 44 column: column:4 
-dComment has incorrect indentation level 3, expected is 4, indentation should be the same level as 
-  line 43.
-
-text:line: 53 column: 
-1Line is longer than 120 characters (found 122).
-
-#text:line: 53 column: column:122 
-'+' should be on a new line.
-
-text:line: 54 column: 
-1Line is longer than 120 characters (found 129).
-
+m0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/model/domain/Registry.java
 i0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/model/domain/Time.java
 q0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/model/persistence/Imapper.java
 u0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/model/persistence/Persistence.java
 s0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/model/persistence/SqlMapper.java
-f3 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/view/ConsoleUi.java
-text:line: 217 column: 
-1Line is longer than 120 characters (found 133).
-
-#text:line: 218 column: column:28 
-$',' is not followed by whitespace.
-
-#text:line: 218 column: column:28 
-"',' is preceded with whitespace.
-
--3 FindBugs Issues in model/domain/Item.java
-text:lines: 20-256 
+f0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/view/ConsoleUi.java
+-2 FindBugs Issues in model/domain/Item.java
+text:lines: 19-251 
 fnew model.domain.Item(String, String, int, int, Boolean, int, String, String, String) uses the same 
   code for two branches 
 -Method uses the same code for two branches 
 dThis method uses the same code to implement two branches of a conditional branch. Check to ensure 
 %  that this isn't a coding mistake.
 
-text:lines: 20-256 
+text:lines: 19-251 
 `Call to equals(null) in new model.domain.Item(String, String, int, int, Boolean, int, String, 
   String, String) 
 Call to equals(null) 
 gThis method calls equals(Object), passing a null value as the argument. According to the contract of 
 >  the equals() method, this call should always return false.
 
-text:lines: 20-256 
-1Unwritten public or protected field: itemClass 
-&Unwritten public or protected field 
-eNo writes were seen to this public/protected field. All reads of it will return the default value. 
-W  Check for errors (should it have been initialized?), or remove it if it is useless.
-
 10 FindBugs Issues in model/domain/MemberId.java
 *1 FindBugs Issues in view/ConsoleUi.java
-text:lines: 21-427 
+text:lines: 21-507 
 QbyeBye() invokes System.exit(...), which shuts down the entire virtual machine 
 "Method invokes System.exit(...) 
 fInvoking System.exit shuts down the entire Java virtual machine. This should only been done when it 
@@ -95,8 +38,8 @@
 
 10 FindBugs Issues in controller/Controller.java
 71 FindBugs Issues in controller/MemberController.java
-text:lines: 18-302 
-SNullcheck of input at line 169 of value previously dereferenced in check(String) 
+text:lines: 18-341 
+SNullcheck of input at line 208 of value previously dereferenced in check(String) 
 -Nullcheck of value previously dereferenced 
 bA value is checked here to see whether it is null, but this value cannot be null because it was 
 d  previously dereferenced and if it were null a null pointer exception would have occurred at the 

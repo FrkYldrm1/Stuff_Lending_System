@@ -6,7 +6,6 @@ import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
  * Item class to create item objects.
  */
 public class Item {
-  public Mutable itemClass;
   private String name;
   private String shortDescription;
   private int costPerDay;
@@ -84,10 +83,6 @@ public class Item {
 
   public String getOwner() {
     return owner;
-  }
-
-  public Mutable getItemClass() {
-    return itemClass;
   }
 
   /**

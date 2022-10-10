@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<testsuite package="org.checkstyle" time="0" tests="14" errors="16" name="checkstyle">
+<testsuite package="org.checkstyle" time="0" tests="14" errors="0" name="checkstyle">
 <testcase time="0" name="controller/App.java" classname="CheckStyle Issues">
 </testcase><testcase time="0" name="controller/Controller.java" classname="CheckStyle Issues">
 </testcase><testcase time="0" name="controller/MemberController.java" classname="CheckStyle Issues">
@@ -7,65 +7,11 @@
 </testcase><testcase time="0" name="model/domain/Contract.java" classname="CheckStyle Issues">
 </testcase><testcase time="0" name="model/domain/Item.java" classname="CheckStyle Issues">
 </testcase><testcase time="0" name="model/domain/Member.java" classname="CheckStyle Issues">
-<failure message="issues" ><![CDATA[line: 5 column: column:1 
-Wrong lexicographical order for 'java.util.ArrayList' import. Should be 
-  before 'model.TimeAdvancedObserver'.
-----------------
-line: 117 column: 
-Line is longer than 120 characters (found 122).
-----------------
-line: 117 column: column:122 
-'+' should be on a new line.
-----------------
-line: 118 column: 
-Line is longer than 120 characters (found 129).
-----------------
-line: 250 column: column:32 
-WhitespaceAround: '{' is not preceded with whitespace.
-----------------
-line: 252 column: column:46 
-')' is preceded with whitespace.
-----------------
-]]></failure>
 </testcase><testcase time="0" name="model/domain/MemberId.java" classname="CheckStyle Issues">
 </testcase><testcase time="0" name="model/domain/Registry.java" classname="CheckStyle Issues">
-<failure message="issues" ><![CDATA[line: 5 column: column:1 
-Extra separation in import group before 'java.util.ArrayList'
-----------------
-line: 13 column: column:8 
-Member name 'i' must match pattern '^[a-z][a-z0-9][a-zA-Z0-9]*$'.
-----------------
-line: 24 column: column:1 
-Block comment has incorrect indentation level 0, expected is 4, indentation 
-  should be the same level as line 43.
-----------------
-line: 44 column: column:4 
-Comment has incorrect indentation level 3, expected is 4, indentation 
-  should be the same level as line 43.
-----------------
-line: 53 column: 
-Line is longer than 120 characters (found 122).
-----------------
-line: 53 column: column:122 
-'+' should be on a new line.
-----------------
-line: 54 column: 
-Line is longer than 120 characters (found 129).
-----------------
-]]></failure>
 </testcase><testcase time="0" name="model/domain/Time.java" classname="CheckStyle Issues">
 </testcase><testcase time="0" name="model/persistence/Imapper.java" classname="CheckStyle Issues">
 </testcase><testcase time="0" name="model/persistence/Persistence.java" classname="CheckStyle Issues">
 </testcase><testcase time="0" name="model/persistence/SqlMapper.java" classname="CheckStyle Issues">
 </testcase><testcase time="0" name="view/ConsoleUi.java" classname="CheckStyle Issues">
-<failure message="issues" ><![CDATA[line: 217 column: 
-Line is longer than 120 characters (found 133).
-----------------
-line: 218 column: column:28 
-',' is not followed by whitespace.
-----------------
-line: 218 column: column:28 
-',' is preceded with whitespace.
-----------------
-]]></failure>
 </testcase></testsuite>

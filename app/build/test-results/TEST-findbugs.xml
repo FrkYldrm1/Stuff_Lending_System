@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<testsuite package="org.spotbugs" time="0" tests="14" errors="5" name="findbugs">
+<testsuite package="org.spotbugs" time="0" tests="14" errors="4" name="findbugs">
 <testcase time="0" name="model/domain/Item.java" classname="FindBugs Issues">
-<failure message="issues" ><![CDATA[lines: 20-256 
+<failure message="issues" ><![CDATA[lines: 19-251 
 new model.domain.Item(String, String, int, int, Boolean, int, String, 
   String, String) uses the same code for two branches 
 Method uses the same code for two branches 
 This method uses the same code to implement two branches of a conditional 
   branch. Check to ensure that this isn't a coding mistake.
 ----------------
-lines: 20-256 
+lines: 19-251 
 Call to equals(null) in new model.domain.Item(String, String, int, int, 
   Boolean, int, String, String, String) 
 Call to equals(null) 
@@ -16,17 +16,10 @@ This method calls equals(Object), passing a null value as the argument.
   According to the contract of the equals() method, this call should always 
   return false.
 ----------------
-lines: 20-256 
-Unwritten public or protected field: itemClass 
-Unwritten public or protected field 
-No writes were seen to this public/protected field. All reads of it will 
-  return the default value. Check for errors (should it have been 
-  initialized?), or remove it if it is useless.
-----------------
 ]]></failure>
 </testcase><testcase time="0" name="model/domain/MemberId.java" classname="FindBugs Issues">
 </testcase><testcase time="0" name="view/ConsoleUi.java" classname="FindBugs Issues">
-<failure message="issues" ><![CDATA[lines: 21-427 
+<failure message="issues" ><![CDATA[lines: 21-507 
 byeBye() invokes System.exit(...), which shuts down the entire virtual 
   machine 
 Method invokes System.exit(...) 
@@ -38,8 +31,8 @@ Invoking System.exit shuts down the entire Java virtual machine. This
 ]]></failure>
 </testcase><testcase time="0" name="controller/Controller.java" classname="FindBugs Issues">
 </testcase><testcase time="0" name="controller/MemberController.java" classname="FindBugs Issues">
-<failure message="issues" ><![CDATA[lines: 18-302 
-Nullcheck of input at line 169 of value previously dereferenced in 
+<failure message="issues" ><![CDATA[lines: 18-341 
+Nullcheck of input at line 208 of value previously dereferenced in 
   check(String) 
 Nullcheck of value previously dereferenced 
 A value is checked here to see whether it is null, but this value cannot be 

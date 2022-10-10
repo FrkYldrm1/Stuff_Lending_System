@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<BugCollection version="4.7.1" sequence="0" timestamp="1665427536690" analysisTimestamp="1665427536733" release="unspecified">
+<BugCollection version="4.7.1" sequence="0" timestamp="1665428621010" analysisTimestamp="1665428621048" release="unspecified">
   <Project projectName="app (spotbugsMain)">
     <Jar>C:\Users\ahmed\OneDrive\Skrivbord\oo\a2\app\build\classes\java\main\controller\App.class</Jar>
     <Jar>C:\Users\ahmed\OneDrive\Skrivbord\oo\a2\app\build\classes\java\main\controller\Controller.class</Jar>
@@ -31,92 +31,73 @@
   </Project>
   <BugInstance type="RCN_REDUNDANT_NULLCHECK_WOULD_HAVE_BEEN_A_NPE" priority="2" rank="11" abbrev="RCN" category="CORRECTNESS" instanceHash="a8537b89184a6f048a1cb8ec30b83715" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="476">
     <ShortMessage>Nullcheck of value previously dereferenced</ShortMessage>
-    <LongMessage>Nullcheck of input at line 169 of value previously dereferenced in controller.MemberController.check(String)</LongMessage>
+    <LongMessage>Nullcheck of input at line 208 of value previously dereferenced in controller.MemberController.check(String)</LongMessage>
     <Class classname="controller.MemberController" primary="true">
-      <SourceLine classname="controller.MemberController" start="18" end="302" sourcefile="MemberController.java" sourcepath="controller/MemberController.java" relSourcepath="java\controller\MemberController.java">
-        <Message>At MemberController.java:[lines 18-302]</Message>
+      <SourceLine classname="controller.MemberController" start="18" end="341" sourcefile="MemberController.java" sourcepath="controller/MemberController.java" relSourcepath="java\controller\MemberController.java">
+        <Message>At MemberController.java:[lines 18-341]</Message>
       </SourceLine>
       <Message>In class controller.MemberController</Message>
     </Class>
     <Method classname="controller.MemberController" name="check" signature="(Ljava/lang/String;)Z" isStatic="false" primary="true">
-      <SourceLine classname="controller.MemberController" start="169" end="172" startBytecode="0" endBytecode="95" sourcefile="MemberController.java" sourcepath="controller/MemberController.java" relSourcepath="java\controller\MemberController.java"/>
+      <SourceLine classname="controller.MemberController" start="208" end="211" startBytecode="0" endBytecode="95" sourcefile="MemberController.java" sourcepath="controller/MemberController.java" relSourcepath="java\controller\MemberController.java"/>
       <Message>In method controller.MemberController.check(String)</Message>
     </Method>
     <LocalVariable name="input" register="1" pc="18" role="LOCAL_VARIABLE_VALUE_OF">
       <Message>Value loaded from input</Message>
     </LocalVariable>
-    <SourceLine classname="controller.MemberController" primary="true" start="169" end="169" startBytecode="3" endBytecode="3" sourcefile="MemberController.java" sourcepath="controller/MemberController.java" relSourcepath="java\controller\MemberController.java">
-      <Message>At MemberController.java:[line 169]</Message>
+    <SourceLine classname="controller.MemberController" primary="true" start="208" end="208" startBytecode="3" endBytecode="3" sourcefile="MemberController.java" sourcepath="controller/MemberController.java" relSourcepath="java\controller\MemberController.java">
+      <Message>At MemberController.java:[line 208]</Message>
     </SourceLine>
-    <SourceLine classname="controller.MemberController" start="169" end="169" startBytecode="19" endBytecode="19" sourcefile="MemberController.java" sourcepath="controller/MemberController.java" relSourcepath="java\controller\MemberController.java" role="SOURCE_REDUNDANT_NULL_CHECK">
-      <Message>Redundant null check at MemberController.java:[line 169]</Message>
+    <SourceLine classname="controller.MemberController" start="208" end="208" startBytecode="19" endBytecode="19" sourcefile="MemberController.java" sourcepath="controller/MemberController.java" relSourcepath="java\controller\MemberController.java" role="SOURCE_REDUNDANT_NULL_CHECK">
+      <Message>Redundant null check at MemberController.java:[line 208]</Message>
     </SourceLine>
   </BugInstance>
   <BugInstance type="DB_DUPLICATE_BRANCHES" priority="2" rank="17" abbrev="DB" category="STYLE" instanceHash="87ed0881c46be561b529e8d32ee984c" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
     <ShortMessage>Method uses the same code for two branches</ShortMessage>
     <LongMessage>new model.domain.Item(String, String, int, int, Boolean, int, String, String, String) uses the same code for two branches</LongMessage>
     <Class classname="model.domain.Item" primary="true">
-      <SourceLine classname="model.domain.Item" start="20" end="256" sourcefile="Item.java" sourcepath="model/domain/Item.java" relSourcepath="java\model\domain\Item.java">
-        <Message>At Item.java:[lines 20-256]</Message>
+      <SourceLine classname="model.domain.Item" start="19" end="251" sourcefile="Item.java" sourcepath="model/domain/Item.java" relSourcepath="java\model\domain\Item.java">
+        <Message>At Item.java:[lines 19-251]</Message>
       </SourceLine>
       <Message>In class model.domain.Item</Message>
     </Class>
     <Method classname="model.domain.Item" name="&lt;init&gt;" signature="(Ljava/lang/String;Ljava/lang/String;IILjava/lang/Boolean;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)V" isStatic="false" primary="true">
-      <SourceLine classname="model.domain.Item" start="34" end="73" startBytecode="0" endBytecode="495" sourcefile="Item.java" sourcepath="model/domain/Item.java" relSourcepath="java\model\domain\Item.java"/>
+      <SourceLine classname="model.domain.Item" start="33" end="72" startBytecode="0" endBytecode="495" sourcefile="Item.java" sourcepath="model/domain/Item.java" relSourcepath="java\model\domain\Item.java"/>
       <Message>In method new model.domain.Item(String, String, int, int, Boolean, int, String, String, String)</Message>
     </Method>
-    <SourceLine classname="model.domain.Item" primary="true" start="56" end="56" startBytecode="101" endBytecode="106" sourcefile="Item.java" sourcepath="model/domain/Item.java" relSourcepath="java\model\domain\Item.java">
-      <Message>At Item.java:[line 56]</Message>
+    <SourceLine classname="model.domain.Item" primary="true" start="55" end="55" startBytecode="101" endBytecode="106" sourcefile="Item.java" sourcepath="model/domain/Item.java" relSourcepath="java\model\domain\Item.java">
+      <Message>At Item.java:[line 55]</Message>
     </SourceLine>
-    <SourceLine classname="model.domain.Item" start="58" end="58" startBytecode="109" endBytecode="111" sourcefile="Item.java" sourcepath="model/domain/Item.java" relSourcepath="java\model\domain\Item.java">
-      <Message>At Item.java:[line 58]</Message>
+    <SourceLine classname="model.domain.Item" start="57" end="57" startBytecode="109" endBytecode="111" sourcefile="Item.java" sourcepath="model/domain/Item.java" relSourcepath="java\model\domain\Item.java">
+      <Message>At Item.java:[line 57]</Message>
     </SourceLine>
   </BugInstance>
   <BugInstance type="EC_NULL_ARG" priority="2" rank="9" abbrev="EC" category="CORRECTNESS" instanceHash="f7cf38319745184c51bda501389bcf21" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
     <ShortMessage>Call to equals(null)</ShortMessage>
     <LongMessage>Call to equals(null) in new model.domain.Item(String, String, int, int, Boolean, int, String, String, String)</LongMessage>
     <Class classname="model.domain.Item" primary="true">
-      <SourceLine classname="model.domain.Item" start="20" end="256" sourcefile="Item.java" sourcepath="model/domain/Item.java" relSourcepath="java\model\domain\Item.java">
-        <Message>At Item.java:[lines 20-256]</Message>
+      <SourceLine classname="model.domain.Item" start="19" end="251" sourcefile="Item.java" sourcepath="model/domain/Item.java" relSourcepath="java\model\domain\Item.java">
+        <Message>At Item.java:[lines 19-251]</Message>
       </SourceLine>
       <Message>In class model.domain.Item</Message>
     </Class>
     <Method classname="model.domain.Item" name="&lt;init&gt;" signature="(Ljava/lang/String;Ljava/lang/String;IILjava/lang/Boolean;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)V" isStatic="false" primary="true">
-      <SourceLine classname="model.domain.Item" start="34" end="73" startBytecode="0" endBytecode="97" sourcefile="Item.java" sourcepath="model/domain/Item.java" relSourcepath="java\model\domain\Item.java"/>
+      <SourceLine classname="model.domain.Item" start="33" end="72" startBytecode="0" endBytecode="97" sourcefile="Item.java" sourcepath="model/domain/Item.java" relSourcepath="java\model\domain\Item.java"/>
       <Message>In method new model.domain.Item(String, String, int, int, Boolean, int, String, String, String)</Message>
     </Method>
-    <SourceLine classname="model.domain.Item" primary="true" start="60" end="60" startBytecode="117" endBytecode="117" sourcefile="Item.java" sourcepath="model/domain/Item.java" relSourcepath="java\model\domain\Item.java">
-      <Message>At Item.java:[line 60]</Message>
+    <SourceLine classname="model.domain.Item" primary="true" start="59" end="59" startBytecode="117" endBytecode="117" sourcefile="Item.java" sourcepath="model/domain/Item.java" relSourcepath="java\model\domain\Item.java">
+      <Message>At Item.java:[line 59]</Message>
     </SourceLine>
-    <SourceLine classname="model.domain.Item" start="65" end="65" startBytecode="151" endBytecode="151" sourcefile="Item.java" sourcepath="model/domain/Item.java" relSourcepath="java\model\domain\Item.java" role="SOURCE_LINE_ANOTHER_INSTANCE">
-      <Message>Another occurrence at Item.java:[line 65]</Message>
-    </SourceLine>
-  </BugInstance>
-  <BugInstance type="UWF_UNWRITTEN_PUBLIC_OR_PROTECTED_FIELD" priority="2" rank="17" abbrev="UwF" category="STYLE" instanceHash="cdece535be2d30d3dd3217ae8123c987" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
-    <ShortMessage>Unwritten public or protected field</ShortMessage>
-    <LongMessage>Unwritten public or protected field: model.domain.Item.itemClass</LongMessage>
-    <Class classname="model.domain.Item" primary="true">
-      <SourceLine classname="model.domain.Item" start="20" end="256" sourcefile="Item.java" sourcepath="model/domain/Item.java" relSourcepath="java\model\domain\Item.java">
-        <Message>At Item.java:[lines 20-256]</Message>
-      </SourceLine>
-      <Message>In class model.domain.Item</Message>
-    </Class>
-    <Field classname="model.domain.Item" name="itemClass" signature="Lmodel/domain/Item$Mutable;" isStatic="false" primary="true">
-      <SourceLine classname="model.domain.Item" sourcefile="Item.java" sourcepath="model/domain/Item.java" relSourcepath="java\model\domain\Item.java">
-        <Message>In Item.java</Message>
-      </SourceLine>
-      <Message>Field model.domain.Item.itemClass</Message>
-    </Field>
-    <SourceLine classname="model.domain.Item" primary="true" start="90" end="90" startBytecode="1" endBytecode="1" sourcefile="Item.java" sourcepath="model/domain/Item.java" relSourcepath="java\model\domain\Item.java">
-      <Message>At Item.java:[line 90]</Message>
+    <SourceLine classname="model.domain.Item" start="64" end="64" startBytecode="151" endBytecode="151" sourcefile="Item.java" sourcepath="model/domain/Item.java" relSourcepath="java\model\domain\Item.java" role="SOURCE_LINE_ANOTHER_INSTANCE">
+      <Message>Another occurrence at Item.java:[line 64]</Message>
     </SourceLine>
   </BugInstance>
   <BugInstance type="DM_EXIT" priority="2" rank="16" abbrev="Dm" category="BAD_PRACTICE" instanceHash="4a5e9d3dc111d09a7443024af92d35c4" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="382">
     <ShortMessage>Method invokes System.exit(...)</ShortMessage>
     <LongMessage>view.ConsoleUi.byeBye() invokes System.exit(...), which shuts down the entire virtual machine</LongMessage>
     <Class classname="view.ConsoleUi" primary="true">
-      <SourceLine classname="view.ConsoleUi" start="21" end="427" sourcefile="ConsoleUi.java" sourcepath="view/ConsoleUi.java" relSourcepath="java\view\ConsoleUi.java">
-        <Message>At ConsoleUi.java:[lines 21-427]</Message>
+      <SourceLine classname="view.ConsoleUi" start="21" end="507" sourcefile="ConsoleUi.java" sourcepath="view/ConsoleUi.java" relSourcepath="java\view\ConsoleUi.java">
+        <Message>At ConsoleUi.java:[lines 21-507]</Message>
       </SourceLine>
       <Message>In class view.ConsoleUi</Message>
     </Class>
@@ -158,15 +139,6 @@ this call should always return <code>false</code>.</p>
 
     ]]></Details>
   </BugPattern>
-  <BugPattern type="UWF_UNWRITTEN_PUBLIC_OR_PROTECTED_FIELD" abbrev="UwF" category="STYLE">
-    <ShortDescription>Unwritten public or protected field</ShortDescription>
-    <Details><![CDATA[
-
-  <p> No writes were seen to this public/protected field.&nbsp; All reads of it will return the default
-value. Check for errors (should it have been initialized?), or remove it if it is useless.</p>
-
-    ]]></Details>
-  </BugPattern>
   <BugPattern type="DM_EXIT" abbrev="Dm" category="BAD_PRACTICE" cweid="382">
     <ShortDescription>Method invokes System.exit(...)</ShortDescription>
     <Details><![CDATA[
@@ -191,9 +163,6 @@ or the previous dereference is erroneous.</p>
 
     ]]></Details>
   </BugPattern>
-  <BugCode abbrev="UwF">
-    <Description>Unwritten field</Description>
-  </BugCode>
   <BugCode abbrev="Dm">
     <Description>Dubious method used</Description>
   </BugCode>
@@ -207,37 +176,37 @@ or the previous dereference is erroneous.</p>
     <Description>Comparing incompatible types for equality</Description>
   </BugCode>
   <Errors errors="0" missingClasses="0"></Errors>
-  <FindBugsSummary timestamp="Mon, 10 Oct 2022 20:45:36 +0200" total_classes="16" referenced_classes="45" total_bugs="5" total_size="872" num_packages="5" java_version="17.0.2" vm_version="17.0.2+8" cpu_seconds="13.55" clock_seconds="5.51" peak_mbytes="211.82" alloc_mbytes="4068.00" gc_seconds="0.03" priority_2="5">
+  <FindBugsSummary timestamp="Mon, 10 Oct 2022 21:03:41 +0200" total_classes="16" referenced_classes="45" total_bugs="4" total_size="935" num_packages="5" java_version="17.0.2" vm_version="17.0.2+8" cpu_seconds="9.94" clock_seconds="4.18" peak_mbytes="210.74" alloc_mbytes="4068.00" gc_seconds="0.03" priority_2="4">
     <FileStats path="controller/App.java" bugCount="0" size="9"/>
     <FileStats path="controller/Controller.java" bugCount="0" size="86"/>
-    <FileStats path="controller/MemberController.java" bugCount="1" size="161" bugHash="fbf4f411ac326fb29d526afea9d214b9"/>
+    <FileStats path="controller/MemberController.java" bugCount="1" size="187" bugHash="1799c3bd5cacf367e764a3cc3682d643"/>
     <FileStats path="model/TimeAdvancedObserver.java" bugCount="0" size="3"/>
     <FileStats path="model/domain/Contract.java" bugCount="0" size="20"/>
-    <FileStats path="model/domain/Item.java" bugCount="3" size="134" bugHash="1dd9432badbb4f5d664b29edf16cdb9d"/>
+    <FileStats path="model/domain/Item.java" bugCount="2" size="131" bugHash="edca9b16e299cf625345024b0d8054e3"/>
     <FileStats path="model/domain/Member.java" bugCount="0" size="135"/>
     <FileStats path="model/domain/MemberId.java" bugCount="0" size="23"/>
-    <FileStats path="model/domain/Registry.java" bugCount="0" size="71"/>
+    <FileStats path="model/domain/Registry.java" bugCount="0" size="87"/>
     <FileStats path="model/domain/Time.java" bugCount="0" size="11"/>
     <FileStats path="model/persistence/Imapper.java" bugCount="0" size="3"/>
     <FileStats path="model/persistence/Persistence.java" bugCount="0" size="5"/>
     <FileStats path="model/persistence/SqlMapper.java" bugCount="0" size="7"/>
-    <FileStats path="view/ConsoleUi.java" bugCount="1" size="204" bugHash="d6a1edfd14f333a2a8d419cfec9b08bf"/>
-    <PackageStats package="controller" total_bugs="1" total_types="3" total_size="256" priority_2="1">
+    <FileStats path="view/ConsoleUi.java" bugCount="1" size="228" bugHash="d6a1edfd14f333a2a8d419cfec9b08bf"/>
+    <PackageStats package="controller" total_bugs="1" total_types="3" total_size="282" priority_2="1">
       <ClassStats class="controller.App" sourceFile="App.java" interface="false" size="9" bugs="0"/>
       <ClassStats class="controller.Controller" sourceFile="Controller.java" interface="false" size="86" bugs="0"/>
-      <ClassStats class="controller.MemberController" sourceFile="MemberController.java" interface="false" size="161" bugs="1" priority_2="1"/>
+      <ClassStats class="controller.MemberController" sourceFile="MemberController.java" interface="false" size="187" bugs="1" priority_2="1"/>
     </PackageStats>
     <PackageStats package="model" total_bugs="0" total_types="1" total_size="3">
       <ClassStats class="model.TimeAdvancedObserver" sourceFile="TimeAdvancedObserver.java" interface="true" size="3" bugs="0"/>
     </PackageStats>
-    <PackageStats package="model.domain" total_bugs="3" total_types="8" total_size="394" priority_2="3">
+    <PackageStats package="model.domain" total_bugs="2" total_types="8" total_size="407" priority_2="2">
       <ClassStats class="model.domain.Contract" sourceFile="Contract.java" interface="false" size="20" bugs="0"/>
-      <ClassStats class="model.domain.Item" sourceFile="Item.java" interface="false" size="109" bugs="3" priority_2="3"/>
+      <ClassStats class="model.domain.Item" sourceFile="Item.java" interface="false" size="106" bugs="2" priority_2="2"/>
       <ClassStats class="model.domain.Item$Mutable" sourceFile="Item.java" interface="false" size="25" bugs="0"/>
       <ClassStats class="model.domain.Member" sourceFile="Member.java" interface="false" size="128" bugs="0"/>
       <ClassStats class="model.domain.Member$Mutable" sourceFile="Member.java" interface="false" size="7" bugs="0"/>
       <ClassStats class="model.domain.MemberId" sourceFile="MemberId.java" interface="false" size="23" bugs="0"/>
-      <ClassStats class="model.domain.Registry" sourceFile="Registry.java" interface="false" size="71" bugs="0"/>
+      <ClassStats class="model.domain.Registry" sourceFile="Registry.java" interface="false" size="87" bugs="0"/>
       <ClassStats class="model.domain.Time" sourceFile="Time.java" interface="false" size="11" bugs="0"/>
     </PackageStats>
     <PackageStats package="model.persistence" total_bugs="0" total_types="3" total_size="15">
@@ -245,31 +214,29 @@ or the previous dereference is erroneous.</p>
       <ClassStats class="model.persistence.Persistence" sourceFile="Persistence.java" interface="false" size="5" bugs="0"/>
       <ClassStats class="model.persistence.SqlMapper" sourceFile="SqlMapper.java" interface="false" size="7" bugs="0"/>
     </PackageStats>
-    <PackageStats package="view" total_bugs="1" total_types="1" total_size="204" priority_2="1">
-      <ClassStats class="view.ConsoleUi" sourceFile="ConsoleUi.java" interface="false" size="204" bugs="1" priority_2="1"/>
+    <PackageStats package="view" total_bugs="1" total_types="1" total_size="228" priority_2="1">
+      <ClassStats class="view.ConsoleUi" sourceFile="ConsoleUi.java" interface="false" size="228" bugs="1" priority_2="1"/>
     </PackageStats>
     <FindBugsProfile>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassInfoAnalysisEngine" totalMilliseconds="1144" invocations="574" avgMicrosecondsPerInvocation="1993" maxMicrosecondsPerInvocation="88267" standardDeviationMicrosecondsPerInvocation="6256"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.FieldItemSummary" totalMilliseconds="348" invocations="45" avgMicrosecondsPerInvocation="7738" maxMicrosecondsPerInvocation="121077" standardDeviationMicrosecondsPerInvocation="21015"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.FindNoSideEffectMethods" totalMilliseconds="326" invocations="45" avgMicrosecondsPerInvocation="7259" maxMicrosecondsPerInvocation="141076" standardDeviationMicrosecondsPerInvocation="23438"/>
-      <ClassProfile name="edu.umd.cs.findbugs.OpcodeStack$JumpInfoFactory" totalMilliseconds="145" invocations="302" avgMicrosecondsPerInvocation="482" maxMicrosecondsPerInvocation="10309" standardDeviationMicrosecondsPerInvocation="1031"/>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.JavaClassAnalysisEngine" totalMilliseconds="136" invocations="87" avgMicrosecondsPerInvocation="1570" maxMicrosecondsPerInvocation="64069" standardDeviationMicrosecondsPerInvocation="7263"/>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassDataAnalysisEngine" totalMilliseconds="131" invocations="580" avgMicrosecondsPerInvocation="227" maxMicrosecondsPerInvocation="8133" standardDeviationMicrosecondsPerInvocation="519"/>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ValueNumberDataflowFactory" totalMilliseconds="102" invocations="162" avgMicrosecondsPerInvocation="633" maxMicrosecondsPerInvocation="21185" standardDeviationMicrosecondsPerInvocation="1753"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.CalledMethods" totalMilliseconds="98" invocations="45" avgMicrosecondsPerInvocation="2189" maxMicrosecondsPerInvocation="60930" standardDeviationMicrosecondsPerInvocation="8960"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.NoteDirectlyRelevantTypeQualifiers" totalMilliseconds="93" invocations="45" avgMicrosecondsPerInvocation="2069" maxMicrosecondsPerInvocation="31144" standardDeviationMicrosecondsPerInvocation="5032"/>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.IsNullValueDataflowFactory" totalMilliseconds="88" invocations="153" avgMicrosecondsPerInvocation="578" maxMicrosecondsPerInvocation="7594" standardDeviationMicrosecondsPerInvocation="866"/>
-      <ClassProfile name="edu.umd.cs.findbugs.ba.npe.NullDerefAndRedundantComparisonFinder" totalMilliseconds="85" invocations="153" avgMicrosecondsPerInvocation="559" maxMicrosecondsPerInvocation="6863" standardDeviationMicrosecondsPerInvocation="806"/>
-      <ClassProfile name="edu.umd.cs.findbugs.util.TopologicalSort" totalMilliseconds="82" invocations="538" avgMicrosecondsPerInvocation="153" maxMicrosecondsPerInvocation="5740" standardDeviationMicrosecondsPerInvocation="406"/>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.CFGFactory" totalMilliseconds="82" invocations="153" avgMicrosecondsPerInvocation="535" maxMicrosecondsPerInvocation="27160" standardDeviationMicrosecondsPerInvocation="2192"/>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.TypeDataflowFactory" totalMilliseconds="81" invocations="154" avgMicrosecondsPerInvocation="530" maxMicrosecondsPerInvocation="12976" standardDeviationMicrosecondsPerInvocation="1187"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.EqualsOperandShouldHaveClassCompatibleWithThis" totalMilliseconds="81" invocations="45" avgMicrosecondsPerInvocation="1800" maxMicrosecondsPerInvocation="34365" standardDeviationMicrosecondsPerInvocation="6269"/>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.MethodGenFactory" totalMilliseconds="80" invocations="157" avgMicrosecondsPerInvocation="515" maxMicrosecondsPerInvocation="53423" standardDeviationMicrosecondsPerInvocation="4273"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.OverridingEqualsNotSymmetrical" totalMilliseconds="78" invocations="45" avgMicrosecondsPerInvocation="1741" maxMicrosecondsPerInvocation="31697" standardDeviationMicrosecondsPerInvocation="5081"/>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.UnconditionalValueDerefDataflowFactory" totalMilliseconds="68" invocations="153" avgMicrosecondsPerInvocation="447" maxMicrosecondsPerInvocation="5271" standardDeviationMicrosecondsPerInvocation="673"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.FunctionsThatMightBeMistakenForProcedures" totalMilliseconds="64" invocations="45" avgMicrosecondsPerInvocation="1436" maxMicrosecondsPerInvocation="13192" standardDeviationMicrosecondsPerInvocation="2796"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.BuildObligationPolicyDatabase" totalMilliseconds="54" invocations="45" avgMicrosecondsPerInvocation="1205" maxMicrosecondsPerInvocation="18096" standardDeviationMicrosecondsPerInvocation="2833"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.FindRefComparison$SpecialTypeAnalysis" totalMilliseconds="49" invocations="116" avgMicrosecondsPerInvocation="422" maxMicrosecondsPerInvocation="3277" standardDeviationMicrosecondsPerInvocation="554"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassInfoAnalysisEngine" totalMilliseconds="846" invocations="574" avgMicrosecondsPerInvocation="1475" maxMicrosecondsPerInvocation="30240" standardDeviationMicrosecondsPerInvocation="3069"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FieldItemSummary" totalMilliseconds="257" invocations="45" avgMicrosecondsPerInvocation="5729" maxMicrosecondsPerInvocation="71385" standardDeviationMicrosecondsPerInvocation="13504"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassDataAnalysisEngine" totalMilliseconds="173" invocations="580" avgMicrosecondsPerInvocation="298" maxMicrosecondsPerInvocation="18362" standardDeviationMicrosecondsPerInvocation="1096"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.NoteDirectlyRelevantTypeQualifiers" totalMilliseconds="171" invocations="45" avgMicrosecondsPerInvocation="3809" maxMicrosecondsPerInvocation="112812" standardDeviationMicrosecondsPerInvocation="16633"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindNoSideEffectMethods" totalMilliseconds="157" invocations="45" avgMicrosecondsPerInvocation="3496" maxMicrosecondsPerInvocation="33607" standardDeviationMicrosecondsPerInvocation="6555"/>
+      <ClassProfile name="edu.umd.cs.findbugs.OpcodeStack$JumpInfoFactory" totalMilliseconds="119" invocations="310" avgMicrosecondsPerInvocation="386" maxMicrosecondsPerInvocation="9112" standardDeviationMicrosecondsPerInvocation="810"/>
+      <ClassProfile name="edu.umd.cs.findbugs.util.TopologicalSort" totalMilliseconds="94" invocations="538" avgMicrosecondsPerInvocation="176" maxMicrosecondsPerInvocation="7121" standardDeviationMicrosecondsPerInvocation="492"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.JavaClassAnalysisEngine" totalMilliseconds="84" invocations="87" avgMicrosecondsPerInvocation="973" maxMicrosecondsPerInvocation="34985" standardDeviationMicrosecondsPerInvocation="3900"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ValueNumberDataflowFactory" totalMilliseconds="80" invocations="170" avgMicrosecondsPerInvocation="474" maxMicrosecondsPerInvocation="10571" standardDeviationMicrosecondsPerInvocation="973"/>
+      <ClassProfile name="edu.umd.cs.findbugs.ba.npe.NullDerefAndRedundantComparisonFinder" totalMilliseconds="70" invocations="160" avgMicrosecondsPerInvocation="442" maxMicrosecondsPerInvocation="7987" standardDeviationMicrosecondsPerInvocation="799"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.IsNullValueDataflowFactory" totalMilliseconds="68" invocations="160" avgMicrosecondsPerInvocation="429" maxMicrosecondsPerInvocation="6338" standardDeviationMicrosecondsPerInvocation="693"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.TypeDataflowFactory" totalMilliseconds="66" invocations="161" avgMicrosecondsPerInvocation="411" maxMicrosecondsPerInvocation="9802" standardDeviationMicrosecondsPerInvocation="893"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FunctionsThatMightBeMistakenForProcedures" totalMilliseconds="61" invocations="45" avgMicrosecondsPerInvocation="1368" maxMicrosecondsPerInvocation="16584" standardDeviationMicrosecondsPerInvocation="3005"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.CFGFactory" totalMilliseconds="59" invocations="160" avgMicrosecondsPerInvocation="371" maxMicrosecondsPerInvocation="11268" standardDeviationMicrosecondsPerInvocation="920"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.EqualsOperandShouldHaveClassCompatibleWithThis" totalMilliseconds="54" invocations="45" avgMicrosecondsPerInvocation="1222" maxMicrosecondsPerInvocation="31901" standardDeviationMicrosecondsPerInvocation="4900"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.UnconditionalValueDerefDataflowFactory" totalMilliseconds="54" invocations="160" avgMicrosecondsPerInvocation="342" maxMicrosecondsPerInvocation="3366" standardDeviationMicrosecondsPerInvocation="510"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.MethodGenFactory" totalMilliseconds="53" invocations="164" avgMicrosecondsPerInvocation="328" maxMicrosecondsPerInvocation="31091" standardDeviationMicrosecondsPerInvocation="2441"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindRefComparison$SpecialTypeAnalysis" totalMilliseconds="50" invocations="124" avgMicrosecondsPerInvocation="404" maxMicrosecondsPerInvocation="17202" standardDeviationMicrosecondsPerInvocation="1608"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.BuildStringPassthruGraph" totalMilliseconds="49" invocations="45" avgMicrosecondsPerInvocation="1107" maxMicrosecondsPerInvocation="26427" standardDeviationMicrosecondsPerInvocation="3917"/>
     </FindBugsProfile>
   </FindBugsSummary>
   <ClassFeatures></ClassFeatures>

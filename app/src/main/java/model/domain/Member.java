@@ -1,8 +1,8 @@
 package model.domain;
 
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
-import model.TimeAdvancedObserver;
 import java.util.ArrayList;
+import model.TimeAdvancedObserver;
 import model.TimeAdvancedObserver;
 
 /**
@@ -114,8 +114,9 @@ public class Member implements TimeAdvancedObserver {
    *
    * @return The list for return.
    */
-  @SuppressFBWarnings(value = "EI_EXPOSE_REP", justification = "In the program some values are accessed by this method." +
-          " Making dummy and returning to not expose internal representation might cut our access in some parts of the program.")
+  @SuppressFBWarnings(value = "EI_EXPOSE_REP", justification = "In the program some values are accessed by this method."
+          + " Making dummy and returning to not expose internal representation"
+          + " might cut our access in some parts of the program.")
   public Iterable<Item.Mutable> getItemsOwned() {
     return itemsOwned;
   }
@@ -247,9 +248,9 @@ public class Member implements TimeAdvancedObserver {
   // lendings.
   @Override
   public void updateItems() {
-    if (!itemsLended.isEmpty()){
+    if (!itemsLended.isEmpty()) {
       for (Item eachItem : itemsLended) {
-        if (eachItem.getContractPeriod() > 0 ) {
+        if (eachItem.getContractPeriod() > 0) {
           eachItem.setContractPeriodProt(eachItem.getContractPeriod() - 1);
         } else if (eachItem.getContractPeriod() == 0) {
           eachItem.setShortDescriptionProt(" Item contract has expired!");

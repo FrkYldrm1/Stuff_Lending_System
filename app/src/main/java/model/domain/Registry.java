@@ -1,7 +1,6 @@
 package model.domain;
 
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
-
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -10,7 +9,7 @@ import java.util.Scanner;
  */
 public class Registry {
   view.ConsoleUi console = new view.ConsoleUi(new Scanner(System.in, "UTF8"));
-  Item i = new Item();
+  Item item = new Item();
   private ArrayList<Member.Mutable> members;
 
   /**
@@ -19,9 +18,7 @@ public class Registry {
   public Registry() {
     members = new ArrayList<>();
 
-
-    // hard coded members
-/*    addMember("Bruce", "Lee", "Bruce@gmail.com", "988");
+    addMember("Bruce", "Lee", "Bruce@gmail.com", "988");
     addMember("Maya", "Hee", "mayahaha@gmail.com", "9843");
     addMember("Ahmad", "Deeb", "ahmad@gmail.com", "123456");
     addMember("Philip", "Olsson", "philip@gmail.com", "234567");
@@ -37,12 +34,7 @@ public class Registry {
     members.get(4).addItem("E-vape", "black", 5, 3, false, 7, members.get(4).getFirstName(), " No one ", "Other");
     members.get(3).addItem("Burgiiiir", "Green", 5, 1, false, 1, members.get(3).getFirstName(), " No one ", "Other");
     members.get(5).addItem("Bike", "Yellow", 20, 8, false, 9, members.get(5).getFirstName(), " No one ", "Vehicle");
-    members.get(2).addItem("Ipad", "Gray", 50, 2, false, 4, members.get(2).getFirstName(), " No one ", "Tool");*/
-
-
-    addMember("Allan", "test", "allan@enigma.com", "123456");
-   // addMember("Turing", "test", "turing@enigma.com", "123");
-
+    members.get(2).addItem("Ipad", "Gray", 50, 2, false, 4, members.get(2).getFirstName(), " No one ", "Tool");
   }
 
   /**
@@ -50,8 +42,9 @@ public class Registry {
    *
    * @return Iterable Mutable.
    */
-  @SuppressFBWarnings(value = "EI_EXPOSE_REP", justification = "In the program some values are accessed by this method." +
-          " Making dummy and returning to not expose internal representation might cut our access in some parts of the program.")
+  @SuppressFBWarnings(value = "EI_EXPOSE_REP", justification = "In the program some values are accessed by this method."
+          + " Making dummy and returning to not expose internal representation"
+          + " might cut our access in some parts of the program.")
   public Iterable<Member.Mutable> getMembers() {
     return members;
   }
@@ -150,19 +143,19 @@ public class Registry {
    */
   public void createContract(Member owner, Member lender, int contractPeriod, int item) {
     Contract contract = new Contract(owner, lender, contractPeriod, item);
-    i = contract.getOwner().getItemOwned(item);
+    this.item = contract.getOwner().getItemOwned(item);
     if (!contract.getOwner().getItemOwned(item).isLended()) {
-      if (isEligable(i.getCostPerDay(), contractPeriod, lender)) {
-        i.setContractPeriodProt(contractPeriod);
-        i.setLenededTo(lender.getFirstName());
-        i.setisLendedProt(true);
+      if (isEligable(this.item.getCostPerDay(), contractPeriod, lender)) {
+        this.item.setContractPeriodProt(contractPeriod);
+        this.item.setLenededTo(lender.getFirstName());
+        this.item.setisLendedProt(true);
         contract.getOwner().getItemOwned(item).setContractPeriod(contractPeriod);
         contract.getOwner().getItemOwned(item).setLenededTo(lender.getFirstName());
         contract.getOwner().getItemOwned(item).setisLendedProt(true);
-        contract.getLentTo().addItemLended(i);
-        int cost = i.getCostPerDay() * contractPeriod;
+        contract.getLentTo().addItemLended(this.item);
+        int cost = this.item.getCostPerDay() * contractPeriod;
         contract.getLentTo().setCredits(contract.getLentTo().getCredits() - cost);
-        contract.getOwner().setCredits(contract.getOwner().getCredits() + (contractPeriod * i.getCostPerDay()));
+        contract.getOwner().setCredits(contract.getOwner().getCredits() + (contractPeriod * this.item.getCostPerDay()));
       } else {
         console.notEnoughcredit();
       }

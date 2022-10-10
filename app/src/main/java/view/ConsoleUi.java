@@ -429,9 +429,9 @@ public class ConsoleUi {
   }
 
   /**
-   * Asks user for item name
+   * Asks user for item name.
    *
-   * @return item name as a string
+   * @return item name as a string.
    */
   public String createItemName() {
     System.out.println("Enter item name: ");
@@ -439,9 +439,9 @@ public class ConsoleUi {
   }
 
   /**
-   * Asks user to reenter item name
+   * Asks user to reenter item name.
    *
-   * @return item name as a string
+   * @return item name as a string.
    */
   public String createItemName2() {
     System.out.println("Invalid name, enter again: ");
@@ -449,9 +449,9 @@ public class ConsoleUi {
   }
 
   /**
-   * Asks user to enter item description
+   * Asks user to enter item description.
    *
-   * @return description string
+   * @return description string.
    */
   public String createItemDescription() {
     System.out.println("Enter description for item: ");
@@ -459,9 +459,9 @@ public class ConsoleUi {
   }
 
   /**
-   * Asks user to enter description again
+   * Asks user to enter description again.
    *
-   * @return description string
+   * @return description string.
    */
   public String createItemDescription2() {
     System.out.println("Invalid description, enter again: ");
@@ -471,7 +471,7 @@ public class ConsoleUi {
   /**
    * Asks user to enter price.
    *
-   * @return price int
+   * @return price int.
    */
   public int createItemPrice() {
     System.out.println("Enter item price per day: ");
@@ -479,9 +479,9 @@ public class ConsoleUi {
   }
 
   /**
-   * Asks user to reenter price
+   * Asks user to reenter price.
    *
-   * @return price int
+   * @return price int.
    */
   public int createItemPrice2() {
     System.out.println("Invalid price, enter again: ");
@@ -489,18 +489,18 @@ public class ConsoleUi {
   }
 
   /**
-   * Asks user to enter item category
+   * Asks user to enter item category.
    *
-   * @return int which is translated to string
+   * @return int which is translated to string.
    */
   public int createItemCategory() {
     return selectCategory();
   }
 
   /**
-   * Asks user to reenter category
+   * Asks user to reenter category.
    *
-   * @return
+   * @return return category.
    */
   public int createItemCategory2() {
     lineBreak();

@@ -155,7 +155,8 @@ public class MemberController {
    * Method for adding items.
    */
   public void addItem() {
-    Member member = registry.getMember(console.idInput());
+    Member member;
+    member = registry.getMember(console.idInput());
 
     String itemName = console.createItemName();
     while (itemName.equals("")) {
@@ -172,28 +173,28 @@ public class MemberController {
       price = console.createItemPrice2();
     }
 
-    int categor_int = console.createItemCategory();
-    while ((categor_int > 6) || (categor_int < 1)) {
-      categor_int = console.createItemCategory2();
+    int itemCategory = console.createItemCategory();
+    while ((itemCategory > 6) || (itemCategory < 1)) {
+      itemCategory = console.createItemCategory2();
     }
 
     String category = "";
-    if (categor_int == 1) {
+    if (itemCategory == 1) {
       category = "Tool";
-    } else if (categor_int == 2) {
+    } else if (itemCategory == 2) {
       category = "Vehicle";
-    } else if (categor_int == 3) {
+    } else if (itemCategory == 3) {
       category = "Game";
-    } else if (categor_int == 4) {
+    } else if (itemCategory == 4) {
       category = "Toy";
-    } else if (categor_int == 5) {
+    } else if (itemCategory == 5) {
       category = "Sport";
-    } else if (categor_int == 6) {
+    } else if (itemCategory == 6) {
       category = "Other";
     }
 
     member.addPreparedItemOwned(new Item.Mutable(
-        new Item(itemName, description, categor_int, price, null, categor_int, itemName, description, category)));
+        new Item(itemName, description, itemCategory, price, null, itemCategory, itemName, description, category)));
   }
 
   /**
