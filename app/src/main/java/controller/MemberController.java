@@ -2,6 +2,7 @@ package controller;
 
 import java.util.ArrayList;
 
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import model.domain.Item;
 import model.domain.Member;
 import model.domain.MemberId;
@@ -20,6 +21,7 @@ public class MemberController {
   /**
    * constructors for controller.
    */
+  @SuppressFBWarnings(value = "EI_EXPOSE_REP", justification = "It is the constructor so we should have it.")
   public MemberController(ConsoleUi console, Registry registry) {
     this.console = console;
     this.registry = registry;
@@ -30,17 +32,17 @@ public class MemberController {
    */
   public void createNewMember() {
     String firstName = console.getFirstName();
-    while (isNull(firstName)) {
+    while (check(firstName)) {
       firstName = console.newFirstName();
     }
     String lastName = console.getLastName();
-    while (isNull(lastName)) {
+    while (check(lastName)) {
       lastName = console.newLastName();
     }
     String email = console.getEmail();
     boolean done = false;
     while (!(done)) {
-      if (isNull(email)) {
+      if (check(email)) {
         email = console.newEmail();
       } else if (!(isEmailAvailable(email))) {
         email = console.uniqueEmail();
@@ -51,7 +53,7 @@ public class MemberController {
     String phoneNumber = console.getPhoneNumber();
     done = false;
     while (!(done)) {
-      if (isNull(phoneNumber)) {
+      if (check(phoneNumber)) {
         phoneNumber = console.newPhoneNumber();
       } else if (!(isPhoneNumberAvailable(phoneNumber))) {
         phoneNumber = console.uniquePhoneNumber();
@@ -164,7 +166,7 @@ public class MemberController {
    *
    * @return true if null and false if not.
    */
-  public boolean isNull(String input) {
+  public boolean check(String input) {
     if (input.equals("") || input.equals(" ") || input == null) {
       return true;
     } else {

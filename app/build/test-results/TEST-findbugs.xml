@@ -1,66 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<testsuite package="org.spotbugs" time="0" tests="11" errors="18" name="findbugs">
-<testcase time="0" name="model/Time.java" classname="FindBugs Issues">
-</testcase><testcase time="0" name="model/MemberId.java" classname="FindBugs Issues">
-</testcase><testcase time="0" name="model/Contract.java" classname="FindBugs Issues">
-</testcase><testcase time="0" name="model/Registry.java" classname="FindBugs Issues">
-<failure message="issues" ><![CDATA[lines: 17-129 
-getMembers() may expose internal representation by returning 
-  Registry.members 
-May expose internal representation by returning reference to mutable object 
-Returning a reference to a mutable object value stored in one of the 
-  object's fields exposes the internal representation of the object. If 
-  instances are accessed by untrusted code, and unchecked changes to the 
-  mutable object would compromise security or other important properties, 
-  you will need to do something different. Returning a new copy of the 
-  object is better approach in many situations.
+<testsuite package="org.spotbugs" time="0" tests="14" errors="13" name="findbugs">
+<testcase time="0" name="model/domain/Item.java" classname="FindBugs Issues">
+<failure message="issues" ><![CDATA[lines: 18-239 
+new model.domain.Item(String, String, int, int, Boolean, int, String, 
+  String, String) uses the same code for two branches 
+Method uses the same code for two branches 
+This method uses the same code to implement two branches of a conditional 
+  branch. Check to ensure that this isn't a coding mistake.
 ----------------
-lines: 17-129 
-Comparison of String parameter using == or != in getMember(String) 
-Comparison of String parameter using == or != 
-This code compares a java.lang.String parameter for reference equality 
-  using the == or != operators. Requiring callers to pass only String 
-  constants or interned strings to a method is unnecessarily fragile, and 
-  rarely leads to measurable performance gains. Consider using the 
-  equals(Object) method instead.
+lines: 18-239 
+Call to equals(null) in new model.domain.Item(String, String, int, int, 
+  Boolean, int, String, String, String) 
+Call to equals(null) 
+This method calls equals(Object), passing a null value as the argument. 
+  According to the contract of the equals() method, this call should always 
+  return false.
 ----------------
-lines: 17-129 
-Unused field: console 
-Unused field 
-This field is never used. Consider removing it from the class.
+lines: 18-239 
+Unread field: itemId 
+Unread field 
+This field is never read. Consider removing it from the class.
 ----------------
-lines: 17-129 
-Unused field: controller 
-Unused field 
-This field is never used. Consider removing it from the class.
+lines: 18-239 
+Unread field: owner 
+Unread field 
+This field is never read. Consider removing it from the class.
+----------------
+lines: 18-239 
+Unused public or protected field: itemClass 
+Unused public or protected field 
+This field is never used. The field is public or protected, so perhaps it 
+  is intended to be used with classes not seen as part of the analysis. If 
+  not, consider removing it from the class.
 ----------------
 ]]></failure>
-</testcase><testcase time="0" name="controller/App.java" classname="FindBugs Issues">
-<failure message="issues" ><![CDATA[lines: 9-23 
-Dead store to mmc in main(String[]) 
-Dead store to local variable 
-This instruction assigns a value to a local variable, but the value is not 
-  read or used in any subsequent instruction. Often, this indicates an 
-  error, because the value computed is never used. 
- 
-Note that Sun's javac compiler often generates dead stores for final local 
-  variables. Because SpotBugs is a bytecode-based tool, there is no easy 
-  way to eliminate these false positives.
+</testcase><testcase time="0" name="model/domain/MemberId.java" classname="FindBugs Issues">
+<failure message="issues" ><![CDATA[lines: 9-41 
+Unread field: dateCreated 
+Unread field 
+This field is never read. Consider removing it from the class.
 ----------------
 ]]></failure>
 </testcase><testcase time="0" name="view/ConsoleUi.java" classname="FindBugs Issues">
-<failure message="issues" ><![CDATA[lines: 16-352 
-Dead store to itemId in showItemDetails(Item, int) 
-Dead store to local variable 
-This instruction assigns a value to a local variable, but the value is not 
-  read or used in any subsequent instruction. Often, this indicates an 
-  error, because the value computed is never used. 
- 
-Note that Sun's javac compiler often generates dead stores for final local 
-  variables. Because SpotBugs is a bytecode-based tool, there is no easy 
-  way to eliminate these false positives.
+<failure message="issues" ><![CDATA[lines: 19-408 
+byeBye() invokes System.exit(...), which shuts down the entire virtual 
+  machine 
+Method invokes System.exit(...) 
+Invoking System.exit shuts down the entire Java virtual machine. This 
+  should only been done when it is appropriate. Such calls make it hard or 
+  impossible for your code to be invoked by other code. Consider throwing a 
+  RuntimeException instead.
 ----------------
-lines: 16-352 
+lines: 19-408 
 new view.ConsoleUi(Scanner) may expose internal representation by storing 
   an externally mutable object into ConsoleUi.input 
 May expose internal representation by incorporating reference to mutable 
@@ -72,88 +63,47 @@ This code stores a reference to an externally mutable object into the
   something different. Storing a copy of the object is better approach in 
   many situations.
 ----------------
+lines: 19-408 
+setInput(Scanner) may expose internal representation by storing an 
+  externally mutable object into ConsoleUi.input 
+May expose internal representation by incorporating reference to mutable 
+  object 
+This code stores a reference to an externally mutable object into the 
+  internal representation of the object. If instances are accessed by 
+  untrusted code, and unchecked changes to the mutable object would 
+  compromise security or other important properties, you will need to do 
+  something different. Storing a copy of the object is better approach in 
+  many situations.
+----------------
+lines: 19-408 
+The method name SelectMemberDelete() doesn't start with a lower case letter 
+Method names should start with a lower case letter 
+Methods should be verbs, in mixed case with the first letter lowercase, 
+  with the first letter of each internal word capitalized.
+----------------
 ]]></failure>
-</testcase><testcase time="0" name="model/Item.java" classname="FindBugs Issues">
 </testcase><testcase time="0" name="controller/Controller.java" classname="FindBugs Issues">
-<failure message="issues" ><![CDATA[lines: 13-106 
-Found reliance on default encoding in new controller.Controller(ConsoleUi, 
-  Registry): new java.util.Scanner(InputStream) 
-Reliance on default encoding 
-Found a call to a method which will perform a byte to String (or String to 
-  byte) conversion, and will assume that the default platform encoding is 
-  suitable. This will cause the application behavior to vary between 
-  platforms. Use an alternative API and specify a charset name or Charset 
-  object explicitly.
+<failure message="issues" ><![CDATA[lines: 15-125 
+Switch statement found in mainMenu() where one case falls through to the 
+  next case 
+Switch statement found where one case falls through to the next case 
+This method contains a switch statement where one case branch will fall 
+  through to the next case. Usually you need to end this case with a break 
+  or return.
 ----------------
-lines: 13-106 
-new controller.Controller(ConsoleUi, Registry) may expose internal 
-  representation by storing an externally mutable object into 
-  Controller.registry 
-May expose internal representation by incorporating reference to mutable 
-  object 
-This code stores a reference to an externally mutable object into the 
-  internal representation of the object. If instances are accessed by 
-  untrusted code, and unchecked changes to the mutable object would 
-  compromise security or other important properties, you will need to do 
-  something different. Storing a copy of the object is better approach in 
-  many situations.
-----------------
-lines: 13-106 
-Switch statement found in memMenu() where default case is missing 
-Switch statement found where default case is missing 
-   
- 
-   This method contains a switch statement where default case is missing. 
-  Usually you need to provide a default case. 
-  Because the analysis only looks at the generated bytecode, this warning 
-  can be incorrect triggered if 
-the default case is at the end of the switch statement and the switch 
-  statement doesn't contain break statements for other 
-cases.
+lines: 15-125 
+Switch statement found in memMenu() where one case falls through to the 
+  next case 
+Switch statement found where one case falls through to the next case 
+This method contains a switch statement where one case branch will fall 
+  through to the next case. Usually you need to end this case with a break 
+  or return.
 ----------------
 ]]></failure>
-</testcase><testcase time="0" name="model/TimeAdvancedObserver.java" classname="FindBugs Issues">
 </testcase><testcase time="0" name="controller/MemberController.java" classname="FindBugs Issues">
-<failure message="issues" ><![CDATA[lines: 18-271 
-new controller.MemberController(ConsoleUi, Registry) may expose internal 
-  representation by storing an externally mutable object into 
-  MemberController.registry 
-May expose internal representation by incorporating reference to mutable 
-  object 
-This code stores a reference to an externally mutable object into the 
-  internal representation of the object. If instances are accessed by 
-  untrusted code, and unchecked changes to the mutable object would 
-  compromise security or other important properties, you will need to do 
-  something different. Storing a copy of the object is better approach in 
-  many situations.
-----------------
-lines: 18-271 
-Read of unwritten field member in deleteItemLended(Item) 
-Read of unwritten field 
-The program is dereferencing a field that does not seem to ever have a 
-  non-null value written to it. Unless the field is initialized via some 
-  mechanism not seen by the analysis, dereferencing this value will 
-  generate a null pointer exception.
-----------------
-lines: 18-271 
-Read of unwritten field member in deleteItemOwned(Item) 
-Read of unwritten field 
-The program is dereferencing a field that does not seem to ever have a 
-  non-null value written to it. Unless the field is initialized via some 
-  mechanism not seen by the analysis, dereferencing this value will 
-  generate a null pointer exception.
-----------------
-lines: 18-271 
-Read of unwritten field member in showMemberDetails() 
-Read of unwritten field 
-The program is dereferencing a field that does not seem to ever have a 
-  non-null value written to it. Unless the field is initialized via some 
-  mechanism not seen by the analysis, dereferencing this value will 
-  generate a null pointer exception.
-----------------
-lines: 18-271 
-Nullcheck of input at line 197 of value previously dereferenced in 
-  isNull(String) 
+<failure message="issues" ><![CDATA[lines: 19-303 
+Nullcheck of input at line 170 of value previously dereferenced in 
+  check(String) 
 Nullcheck of value previously dereferenced 
 A value is checked here to see whether it is null, but this value cannot be 
   null because it was previously dereferenced and if it were null a null 
@@ -162,62 +112,14 @@ A value is checked here to see whether it is null, but this value cannot be
   whether this value is allowed to be null. Either the check is redundant 
   or the previous dereference is erroneous.
 ----------------
-lines: 18-271 
-Return value of model.Registry.getMember(String) ignored, but method has no 
-  side effect 
-Return value of method without side effect is ignored 
-This code calls a method and ignores the return value. However our analysis 
-  shows that the method (including its implementations in subclasses if 
-  any) does not produce any effect other than return value. Thus this call 
-  can be removed. 
- 
-We are trying to reduce the false positives as much as possible, but in 
-  some cases this warning might be wrong. Common false-positive cases 
-  include: 
- 
-- The method is designed to be overridden and produce a side effect in 
-  other projects which are out of the scope of the analysis. 
- 
-- The method is called to trigger the class loading which may have a side 
-  effect. 
- 
-- The method is called just to get some exception. 
- 
-If you feel that our assumption is incorrect, you can use a 
-  @CheckReturnValue annotation to instruct SpotBugs that ignoring the 
-  return value of this method is acceptable.
-----------------
-lines: 18-271 
-Return value of Object.toString() ignored, but method has no side effect 
-Return value of method without side effect is ignored 
-This code calls a method and ignores the return value. However our analysis 
-  shows that the method (including its implementations in subclasses if 
-  any) does not produce any effect other than return value. Thus this call 
-  can be removed. 
- 
-We are trying to reduce the false positives as much as possible, but in 
-  some cases this warning might be wrong. Common false-positive cases 
-  include: 
- 
-- The method is designed to be overridden and produce a side effect in 
-  other projects which are out of the scope of the analysis. 
- 
-- The method is called to trigger the class loading which may have a side 
-  effect. 
- 
-- The method is called just to get some exception. 
- 
-If you feel that our assumption is incorrect, you can use a 
-  @CheckReturnValue annotation to instruct SpotBugs that ignoring the 
-  return value of this method is acceptable.
-----------------
-lines: 18-271 
-Unwritten field: member 
-Unwritten field 
-This field is never written. All reads of it will return the default value. 
-  Check for errors (should it have been initialized?), or remove it if it 
-  is useless.
-----------------
 ]]></failure>
-</testcase><testcase time="0" name="model/Member.java" classname="FindBugs Issues">
+</testcase><testcase time="0" name="model/domain/Registry.java" classname="FindBugs Issues">
+</testcase><testcase time="0" name="model/persistence/IMapper.java" classname="FindBugs Issues">
+</testcase><testcase time="0" name="controller/App.java" classname="FindBugs Issues">
+</testcase><testcase time="0" name="model/domain/Contract.java" classname="FindBugs Issues">
+</testcase><testcase time="0" name="model/domain/Member.java" classname="FindBugs Issues">
+</testcase><testcase time="0" name="model/domain/Time.java" classname="FindBugs Issues">
+</testcase><testcase time="0" name="model/TimeAdvancedObserver.java" classname="FindBugs Issues">
+</testcase><testcase time="0" name="model/persistence/SqlMapper.java" classname="FindBugs Issues">
+</testcase><testcase time="0" name="model/persistence/Persistence.java" classname="FindBugs Issues">
 </testcase></testsuite>

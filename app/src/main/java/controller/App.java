@@ -13,7 +13,7 @@ public class App {
    */
   public static void main(String[] args) {
     Registry registry = new Registry();
-    view.ConsoleUi console = new view.ConsoleUi(new Scanner(System.in, "UTF8"));
+    view.ConsoleUi console = new view.ConsoleUi(new Scanner(System.in, "UTF-8"));
     controller.Controller hehe = new Controller(console, registry);
     hehe.mainMenu();
 

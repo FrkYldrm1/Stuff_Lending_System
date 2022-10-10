@@ -1,5 +1,7 @@
 package model.domain;
 
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -8,6 +10,7 @@ import java.util.Scanner;
  */
 public class Registry {
   view.ConsoleUi console = new view.ConsoleUi(new Scanner(System.in, "UTF8"));
+  Item i = new Item();
   private ArrayList<Member.Mutable> members;
 
   /**
@@ -15,6 +18,7 @@ public class Registry {
    */
   public Registry() {
     members = new ArrayList<>();
+
 
     // hard coded members
 /*    addMember("Bruce", "Lee", "Bruce@gmail.com", "988");
@@ -46,6 +50,8 @@ public class Registry {
    *
    * @return Iterable Mutable.
    */
+  @SuppressFBWarnings(value = "EI_EXPOSE_REP", justification = "In the program some values are accessed by this method." +
+          " Making dummy and returning to not expose internal representation might cut our access in some parts of the program.")
   public Iterable<Member.Mutable> getMembers() {
     return members;
   }
@@ -136,9 +142,9 @@ public class Registry {
     return members.get(index);
   }
 
+
   public void createContract(Member owner, Member lender, int contractPeriod, int item) {
     Contract contract = new Contract(owner, lender, contractPeriod, item);
-    Item i = new Item();
     i = contract.getOwner().getItemOwned(item);
     if(!contract.getOwner().getItemOwned(item).isLended()) {
       if(isEligable(i.getCostPerDay(), contractPeriod, lender)){

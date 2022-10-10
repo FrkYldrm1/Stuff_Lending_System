@@ -1,37 +1,278 @@
 <?xml version="1.0" encoding="utf-8"?>
-<testsuite package="org.checkstyle" time="0" tests="11" errors="5" name="checkstyle">
-<testcase time="0" name="controller/Controller.java" classname="CheckStyle Issues">
-<failure message="issues" ><![CDATA[line: 38 column: column:7 
+<testsuite package="org.checkstyle" time="0" tests="14" errors="76" name="checkstyle">
+<testcase time="0" name="controller/App.java" classname="CheckStyle Issues">
+</testcase><testcase time="0" name="controller/Controller.java" classname="CheckStyle Issues">
+<failure message="issues" ><![CDATA[line: 5 column: column:1 
+Extra separation in import group before 
+  'edu.umd.cs.findbugs.annotations.SuppressFBWarnings'
+----------------
+line: 5 column: column:1 
+Wrong lexicographical order for 
+  'edu.umd.cs.findbugs.annotations.SuppressFBWarnings' import. Should be 
+  before 'java.util.Scanner'.
+----------------
+line: 42 column: column:7 
 Fall through from previous branch of the switch statement.
 ----------------
-line: 49 column: column:5 
-switch without "default" clause.
+line: 44 column: column:7 
+Fall through from previous branch of the switch statement.
 ----------------
-line: 103 column: column:7 
+line: 86 column: column:7 
+Fall through from previous branch of the switch statement.
+----------------
+line: 88 column: column:7 
+Fall through from previous branch of the switch statement.
+----------------
+line: 122 column: column:7 
 Fall through from previous branch of the switch statement.
 ----------------
 ]]></failure>
 </testcase><testcase time="0" name="controller/MemberController.java" classname="CheckStyle Issues">
-</testcase><testcase time="0" name="controller/App.java" classname="CheckStyle Issues">
-</testcase><testcase time="0" name="model/Contract.java" classname="CheckStyle Issues">
-</testcase><testcase time="0" name="model/MemberId.java" classname="CheckStyle Issues">
-</testcase><testcase time="0" name="model/Time.java" classname="CheckStyle Issues">
-</testcase><testcase time="0" name="model/Member.java" classname="CheckStyle Issues">
-</testcase><testcase time="0" name="model/Registry.java" classname="CheckStyle Issues">
+<failure message="issues" ><![CDATA[line: 5 column: column:1 
+Extra separation in import group before 
+  'edu.umd.cs.findbugs.annotations.SuppressFBWarnings'
+----------------
+line: 5 column: column:1 
+Wrong lexicographical order for 
+  'edu.umd.cs.findbugs.annotations.SuppressFBWarnings' import. Should be 
+  before 'java.util.ArrayList'.
+----------------
+line: 274 column: 
+First sentence of Javadoc is missing an ending period.
+----------------
+line: 290 column: 
+Empty line should be followed by <p> tag on the next line.
+----------------
+]]></failure>
 </testcase><testcase time="0" name="model/TimeAdvancedObserver.java" classname="CheckStyle Issues">
-</testcase><testcase time="0" name="model/Item.java" classname="CheckStyle Issues">
+<failure message="issues" ><![CDATA[line: 8 column: 
+Empty line should be followed by <p> tag on the next line.
+----------------
+]]></failure>
+</testcase><testcase time="0" name="model/domain/Contract.java" classname="CheckStyle Issues">
+<failure message="issues" ><![CDATA[line: 16 column: column:3 
+Missing a Javadoc comment.
+----------------
+line: 23 column: 
+Line is longer than 120 characters (found 122).
+----------------
+line: 23 column: column:3 
+'METHOD_DEF' should be separated from previous statement.
+----------------
+line: 23 column: column:122 
+'+' should be on a new line.
+----------------
+line: 24 column: 
+Line is longer than 120 characters (found 129).
+----------------
+line: 28 column: 
+Line is longer than 120 characters (found 122).
+----------------
+line: 28 column: column:3 
+'METHOD_DEF' should be separated from previous statement.
+----------------
+line: 28 column: column:122 
+'+' should be on a new line.
+----------------
+line: 29 column: 
+Line is longer than 120 characters (found 129).
+----------------
+]]></failure>
+</testcase><testcase time="0" name="model/domain/Item.java" classname="CheckStyle Issues">
+</testcase><testcase time="0" name="model/domain/Member.java" classname="CheckStyle Issues">
+<failure message="issues" ><![CDATA[line: 5 column: column:1 
+Wrong lexicographical order for 'java.util.ArrayList' import. Should be 
+  before 'model.TimeAdvancedObserver'.
+----------------
+line: 116 column: 
+Line is longer than 120 characters (found 122).
+----------------
+line: 116 column: column:122 
+'+' should be on a new line.
+----------------
+line: 117 column: 
+Line is longer than 120 characters (found 129).
+----------------
+line: 150 column: column:57 
+'+' should be on a new line.
+----------------
+line: 151 column: column:94 
+WhitespaceAround: '+' is not followed by whitespace. Empty blocks may only 
+  be represented as {} when not part of a multi-block statement (4.1.3)
+----------------
+line: 249 column: column:32 
+WhitespaceAround: '{' is not preceded with whitespace.
+----------------
+line: 251 column: column:46 
+')' is preceded with whitespace.
+----------------
+]]></failure>
+</testcase><testcase time="0" name="model/domain/MemberId.java" classname="CheckStyle Issues">
+<failure message="issues" ><![CDATA[line: 18 column: column:3 
+'METHOD_DEF' should be separated from previous statement.
+----------------
+]]></failure>
+</testcase><testcase time="0" name="model/domain/Registry.java" classname="CheckStyle Issues">
+<failure message="issues" ><![CDATA[line: 5 column: column:1 
+Extra separation in import group before 'java.util.ArrayList'
+----------------
+line: 13 column: column:8 
+Member name 'i' must match pattern '^[a-z][a-z0-9][a-zA-Z0-9]*$'.
+----------------
+line: 24 column: column:1 
+Block comment has incorrect indentation level 0, expected is 4, indentation 
+  should be the same level as line 43.
+----------------
+line: 44 column: column:4 
+Comment has incorrect indentation level 3, expected is 4, indentation 
+  should be the same level as line 43.
+----------------
+line: 53 column: 
+Line is longer than 120 characters (found 122).
+----------------
+line: 53 column: column:122 
+'+' should be on a new line.
+----------------
+line: 54 column: 
+Line is longer than 120 characters (found 129).
+----------------
+line: 112 column: 
+Empty line should be followed by <p> tag on the next line.
+----------------
+line: 146 column: column:3 
+Missing a Javadoc comment.
+----------------
+line: 149 column: column:5 
+'if' is not followed by whitespace.
+----------------
+line: 149 column: column:5 
+WhitespaceAround: 'if' is not followed by whitespace. Empty blocks may only 
+  be represented as {} when not part of a multi-block statement (4.1.3)
+----------------
+line: 150 column: column:7 
+'if' is not followed by whitespace.
+----------------
+line: 150 column: column:7 
+WhitespaceAround: 'if' is not followed by whitespace. Empty blocks may only 
+  be represented as {} when not part of a multi-block statement (4.1.3)
+----------------
+line: 150 column: column:64 
+WhitespaceAround: '{' is not preceded with whitespace.
+----------------
+line: 151 column: column:7 
+'if' child has incorrect indentation level 6, expected level should be 8.
+----------------
+line: 152 column: column:7 
+'if' child has incorrect indentation level 6, expected level should be 8.
+----------------
+line: 153 column: column:7 
+'if' child has incorrect indentation level 6, expected level should be 8.
+----------------
+line: 154 column: column:7 
+'if' child has incorrect indentation level 6, expected level should be 8.
+----------------
+line: 155 column: column:7 
+'if' child has incorrect indentation level 6, expected level should be 8.
+----------------
+line: 156 column: column:7 
+'if' child has incorrect indentation level 6, expected level should be 8.
+----------------
+line: 157 column: column:7 
+'if' child has incorrect indentation level 6, expected level should be 8.
+----------------
+line: 158 column: column:7 
+'if' child has incorrect indentation level 6, expected level should be 8.
+----------------
+line: 159 column: column:7 
+'if' child has incorrect indentation level 6, expected level should be 8.
+----------------
+line: 160 column: column:7 
+'if' child has incorrect indentation level 6, expected level should be 8.
+----------------
+line: 169 column: column:3 
+Missing a Javadoc comment.
+----------------
+]]></failure>
+</testcase><testcase time="0" name="model/domain/Time.java" classname="CheckStyle Issues">
+<failure message="issues" ><![CDATA[line: 24 column: 
+Empty line should be followed by <p> tag on the next line.
+----------------
+]]></failure>
+</testcase><testcase time="0" name="model/persistence/IMapper.java" classname="CheckStyle Issues">
+<failure message="issues" ><![CDATA[line: 3 column: column:1 
+Missing a Javadoc comment.
+----------------
+line: 3 column: column:18 
+Abbreviation in name 'IMapper' must contain no more than '1' consecutive 
+  capital letters.
+----------------
+line: 6 column: column:3 
+'METHOD_DEF' should be separated from previous statement.
+----------------
+]]></failure>
+</testcase><testcase time="0" name="model/persistence/Persistence.java" classname="CheckStyle Issues">
+<failure message="issues" ><![CDATA[line: 4 column: column:1 
+Missing a Javadoc comment.
+----------------
+line: 5 column: column:19 
+'(' is preceded with whitespace.
+----------------
+line: 6 column: 
+Line is longer than 120 characters (found 135).
+----------------
+]]></failure>
+</testcase><testcase time="0" name="model/persistence/SqlMapper.java" classname="CheckStyle Issues">
+<failure message="issues" ><![CDATA[line: 3 column: column:1 
+Missing a Javadoc comment.
+----------------
+line: 3 column: column:42 
+WhitespaceAround: '{' is not preceded with whitespace.
+----------------
+]]></failure>
 </testcase><testcase time="0" name="view/ConsoleUi.java" classname="CheckStyle Issues">
-<failure message="issues" ><![CDATA[line: 82 column: column:5 
-Distance between variable 'firstName' declaration and its first usage is 4, 
+<failure message="issues" ><![CDATA[line: 5 column: column:1 
+Extra separation in import group before 'model.domain.Item'
+----------------
+line: 161 column: column:17 
+Method name 'SelectMemberDelete' must match pattern 
+  '^[a-z][a-z0-9][a-zA-Z0-9_]*$'.
+----------------
+line: 210 column: 
+Line is longer than 120 characters (found 133).
+----------------
+line: 211 column: column:28 
+',' is not followed by whitespace.
+----------------
+line: 211 column: column:28 
+',' is preceded with whitespace.
+----------------
+line: 224 column: 
+Line is longer than 120 characters (found 122).
+----------------
+line: 276 column: column:5 
+Distance between variable 'itemName' declaration and its first usage is 5, 
   but allowed 3.  Consider making that variable final if you still need to 
   store its value in advance (before method calls that might have side 
   effects on the original value).
 ----------------
-line: 283 column: column:5 
-Distance between variable 'itemName' declaration and its first usage is 4, 
-  but allowed 3.  Consider making that variable final if you still need to 
-  store its value in advance (before method calls that might have side 
+line: 278 column: column:5 
+Distance between variable 'descrioption' declaration and its first usage is 
+  4, but allowed 3.  Consider making that variable final if you still need 
+  to store its value in advance (before method calls that might have side 
   effects on the original value).
+----------------
+line: 284 column: column:9 
+Local variable name 'categor_int' must match pattern 
+  '^[a-z]([a-z0-9][a-zA-Z0-9]*)?$'.
+----------------
+line: 344 column: column:80 
+'+' should be on a new line.
+----------------
+line: 366 column: column:32 
+WhitespaceAround: '{' is not preceded with whitespace.
+----------------
+line: 403 column: column:3 
+Missing a Javadoc comment.
 ----------------
 ]]></failure>
 </testcase></testsuite>

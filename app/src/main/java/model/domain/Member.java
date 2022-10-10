@@ -1,7 +1,7 @@
 package model.domain;
 
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import model.TimeAdvancedObserver;
-
 import java.util.ArrayList;
 
 /**
@@ -14,7 +14,6 @@ public class Member implements TimeAdvancedObserver {
   private String phoneNumber;
   private MemberId memberId;
   private int credits;
-  private int costTotal;
   private Time time = new Time();
   private ArrayList<Item.Mutable> itemsOwned = new ArrayList<>();
   private ArrayList<Item> itemsLended = new ArrayList<>();
@@ -114,6 +113,8 @@ public class Member implements TimeAdvancedObserver {
    *
    * @return The list for return.
    */
+  @SuppressFBWarnings(value = "EI_EXPOSE_REP", justification = "In the program some values are accessed by this method." +
+          " Making dummy and returning to not expose internal representation might cut our access in some parts of the program.")
   public Iterable<Item.Mutable> getItemsOwned() {
     return itemsOwned;
   }
@@ -245,12 +246,8 @@ public class Member implements TimeAdvancedObserver {
   // lendings.
   @Override
   public void updateItems() {
-    ArrayList<Item> item = new ArrayList<>();
-    item = itemsLended;
-    int index = 0;
     if (!itemsLended.isEmpty()){
       for (Item eachItem : itemsLended) {
-        index++;
         if (eachItem.getContractPeriod() > 0 ) {
           eachItem.setContractPeriodProt(eachItem.getContractPeriod() - 1);
         } else if (eachItem.getContractPeriod() == 0) {
