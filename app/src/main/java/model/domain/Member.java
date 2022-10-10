@@ -2,8 +2,6 @@ package model.domain;
 
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import java.util.ArrayList;
-import model.TimeAdvancedObserver;
-import model.TimeAdvancedObserver;
 
 /**
  * Member class.

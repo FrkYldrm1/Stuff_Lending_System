@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="CodeQualityTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-10-10T19:18:04" hostname="DEEB" time="0.14">
+<testsuite name="CodeQualityTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-10-10T20:33:45" hostname="DEEB" time="0.174">
   <properties/>
-  <testcase name="codeQuality()" classname="CodeQualityTests" time="0.14"/>
+  <testcase name="codeQuality()" classname="CodeQualityTests" time="0.174"/>
   <system-out><![CDATA[0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/controller/App.java
 0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/controller/Controller.java
 0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/controller/MemberController.java
