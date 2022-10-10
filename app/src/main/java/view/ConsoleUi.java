@@ -214,8 +214,9 @@ public class ConsoleUi {
     int currentCredit = m.getCredits();
     int ownedItem = m.sizeOfItemsOwned();
     int time = m.getTime().getDay();
-    String toPrint = String.format("%s    %s   Current day: %s    %s, %s\t%s\tCurrent credits: %s\tNumber of owned items: %s", index,
-        memberId, time + 1 ,firstName, lastName, email, currentCredit, ownedItem);
+    String toPrint = String.format(
+        "%s    %s   Current day: %s    %s, %s\t%s\tCurrent credits: %s\tNumber of owned items: %s", index,
+        memberId, time + 1, firstName, lastName, email, currentCredit, ownedItem);
     System.out.println(toPrint);
   }
 
@@ -425,5 +426,84 @@ public class ConsoleUi {
     System.out.println("1. Tool\n2. Vehicle\n3. Game\n4. Toy\n5. Sport\n6. Other");
     System.out.println("Enter category which fits the item the most: ");
     return input.nextInt();
+  }
+
+  /**
+   * Asks user for item name
+   *
+   * @return item name as a string
+   */
+  public String createItemName() {
+    System.out.println("Enter item name: ");
+    return input.nextLine();
+  }
+
+  /**
+   * Asks user to reenter item name
+   *
+   * @return item name as a string
+   */
+  public String createItemName2() {
+    System.out.println("Invalid name, enter again: ");
+    return input.nextLine();
+  }
+
+  /**
+   * Asks user to enter item description
+   *
+   * @return description string
+   */
+  public String createItemDescription() {
+    System.out.println("Enter description for item: ");
+    return input.nextLine();
+  }
+
+  /**
+   * Asks user to enter description again
+   *
+   * @return description string
+   */
+  public String createItemDescription2() {
+    System.out.println("Invalid description, enter again: ");
+    return input.nextLine();
+  }
+
+  /**
+   * Asks user to enter price.
+   *
+   * @return price int
+   */
+  public int createItemPrice() {
+    System.out.println("Enter item price per day: ");
+    return input.nextInt();
+  }
+
+  /**
+   * Asks user to reenter price
+   *
+   * @return price int
+   */
+  public int createItemPrice2() {
+    System.out.println("Invalid price, enter again: ");
+    return input.nextInt();
+  }
+
+  /**
+   * Asks user to enter item category
+   *
+   * @return int which is translated to string
+   */
+  public int createItemCategory() {
+    return selectCategory();
+  }
+
+  /**
+   * Asks user to reenter category
+   *
+   * @return
+   */
+  public int createItemCategory2() {
+    lineBreak();
+    return selectCategory();
   }
 }
