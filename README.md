@@ -3,6 +3,9 @@
 Project for Assignment 2
 
 A project template based on gradle and a gitlab pipeline. You should always build and run the application using gradle regularely.
+Ahmad Zeeb
+Faruk Yildirim
+Philip Olsson
 
 [design.md](design.md) contains the prescribed architectural design of the application.
 ## Stuff lending system:
