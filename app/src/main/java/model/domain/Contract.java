@@ -13,6 +13,9 @@ public class Contract {
   private int contractPeriod;
   private int item;
 
+  /**
+   * Constactor for contact class.
+   */
   @SuppressFBWarnings(value = "EI_EXPOSE_REP", justification = "It is the constructor so we should have it.")
   public Contract(Member owner, Member lentTo, int contractPeriod, int item) {
     this.owner = owner;

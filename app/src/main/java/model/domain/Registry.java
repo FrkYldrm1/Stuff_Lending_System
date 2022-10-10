@@ -109,9 +109,7 @@ public class Registry {
   }
 
   /**
-   *
    * Method for changing the time.
-   *
    */
   public void notifyMembersTime() {
     for (Member s : members) {
@@ -142,22 +140,29 @@ public class Registry {
     return members.get(index);
   }
 
-
+  /**
+   * Method for creating a contract and update objects with contract.
+   *
+   * @param owner          For initilizing owner object.
+   * @param lender         For initilizing lender object.
+   * @param contractPeriod For initilizing contract period.
+   * @param item           For initilizing item object.
+   */
   public void createContract(Member owner, Member lender, int contractPeriod, int item) {
     Contract contract = new Contract(owner, lender, contractPeriod, item);
     i = contract.getOwner().getItemOwned(item);
-    if(!contract.getOwner().getItemOwned(item).isLended()) {
-      if(isEligable(i.getCostPerDay(), contractPeriod, lender)){
-      i.setContractPeriodProt(contractPeriod);
-      i.setLenededTo(lender.getFirstName());
-      i.setisLendedProt(true);
-      contract.getOwner().getItemOwned(item).setContractPeriod(contractPeriod);
-      contract.getOwner().getItemOwned(item).setLenededTo(lender.getFirstName());
-      contract.getOwner().getItemOwned(item).setisLendedProt(true);
-      contract.getLentTo().addItemLended(i);
-      int cost = i.getCostPerDay() * contractPeriod;
-      contract.getLentTo().setCredits(contract.getLentTo().getCredits() - cost);
-      contract.getOwner().setCredits(contract.getOwner().getCredits() + (contractPeriod * i.getCostPerDay()));
+    if (!contract.getOwner().getItemOwned(item).isLended()) {
+      if (isEligable(i.getCostPerDay(), contractPeriod, lender)) {
+        i.setContractPeriodProt(contractPeriod);
+        i.setLenededTo(lender.getFirstName());
+        i.setisLendedProt(true);
+        contract.getOwner().getItemOwned(item).setContractPeriod(contractPeriod);
+        contract.getOwner().getItemOwned(item).setLenededTo(lender.getFirstName());
+        contract.getOwner().getItemOwned(item).setisLendedProt(true);
+        contract.getLentTo().addItemLended(i);
+        int cost = i.getCostPerDay() * contractPeriod;
+        contract.getLentTo().setCredits(contract.getLentTo().getCredits() - cost);
+        contract.getOwner().setCredits(contract.getOwner().getCredits() + (contractPeriod * i.getCostPerDay()));
       } else {
         console.notEnoughcredit();
       }
@@ -166,6 +171,14 @@ public class Registry {
     }
   }
 
+  /**
+   * Method for checking eligibilty of member to lend an item.
+   *
+   * @param cost           Parameters for eligibility.
+   * @param contractPeriod Parameters for eligibility.
+   * @param member         Parameters for eligibility.
+   * @return Returns if member is eligible.
+   */
   public boolean isEligable(int cost, int contractPeriod, Member member) {
     int total = cost * contractPeriod;
     if (total > member.getCredits()) {

@@ -3,6 +3,7 @@ package model.domain;
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import model.TimeAdvancedObserver;
 import java.util.ArrayList;
+import model.TimeAdvancedObserver;
 
 /**
  * Member class.
@@ -147,8 +148,8 @@ public class Member implements TimeAdvancedObserver {
     for (Item item : itemsLended) {
       counter++;
       itemListLended += "\n" + " Lended items  : " + "\n" + counter + ". " + item.getName() + "-> Lended to: "
-          + item.getLenededTo() + ", Contract period: " +
-              item.getContractPeriod() + " Short description: " + item.getShortDescription() +"\n";
+        + item.getLenededTo() + ", Contract period: " + item.getContractPeriod()
+        + " Short description: " + item.getShortDescription() + "\n";
     }
     return itemListLended;
   }

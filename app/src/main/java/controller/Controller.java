@@ -1,8 +1,7 @@
 package controller;
 
-import java.util.Scanner;
-
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
+import java.util.Scanner;
 import model.domain.Registry;
 import view.ConsoleUi;
 
@@ -13,7 +12,7 @@ public class Controller {
 
   private String input;
   private Scanner scan = new Scanner(System.in, "UTF-8");
-  private view.ConsoleUi console = new view.ConsoleUi(new Scanner(System.in, "UTF8"));
+  private view.ConsoleUi console = new view.ConsoleUi(new Scanner(System.in, "UTF-8"));
   private Registry registry = new Registry();
   private controller.MemberController memberController = new controller.MemberController(console, registry);
 
@@ -39,8 +38,10 @@ public class Controller {
       case ("3"):
         memberController.changeDay();
         mainMenu();
+        break;
       case ("4"):
         console.byeBye();
+        break;
       default:
         mainMenu();
     }
@@ -83,8 +84,10 @@ public class Controller {
       case ("7"):
         memberController.contract();
         memMenu();
+        break;
       case ("8"):
         mainMenu();
+        break;
       default:
         memMenu();
     }
@@ -119,6 +122,7 @@ public class Controller {
         break;
       case ("5"):
         mainMenu();
+        break;
       default:
         itemMenu();
     }

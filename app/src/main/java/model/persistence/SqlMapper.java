@@ -1,6 +1,10 @@
 package model.persistence;
 
-public class SqlMapper implements IMapper{
+/**
+ * Will be continued in grade 3.
+ */
+public class SqlMapper implements Imapper {
+
   @Override
   public void get() {
     // These methods will be implemented in the future
@@ -9,6 +13,5 @@ public class SqlMapper implements IMapper{
   @Override
   public void put() {
     // These methods will be implemented in the future
-
   }
 }
