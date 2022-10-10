@@ -1,262 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<BugCollection version="4.7.1" sequence="0" timestamp="1665425222937" analysisTimestamp="1665425222971" release="unspecified">
+<BugCollection version="4.7.1" sequence="0" timestamp="1665427536690" analysisTimestamp="1665427536733" release="unspecified">
   <Project projectName="app (spotbugsMain)">
-    <Jar>/Users/fy/Documents/1DV607/a2/app/build/classes/java/main/controller/Controller.class</Jar>
-    <Jar>/Users/fy/Documents/1DV607/a2/app/build/classes/java/main/controller/MemberController.class</Jar>
-    <Jar>/Users/fy/Documents/1DV607/a2/app/build/classes/java/main/controller/App.class</Jar>
-    <Jar>/Users/fy/Documents/1DV607/a2/app/build/classes/java/main/model/TimeAdvancedObserver.class</Jar>
-    <Jar>/Users/fy/Documents/1DV607/a2/app/build/classes/java/main/model/persistence/Imapper.class</Jar>
-    <Jar>/Users/fy/Documents/1DV607/a2/app/build/classes/java/main/model/persistence/SqlMapper.class</Jar>
-    <Jar>/Users/fy/Documents/1DV607/a2/app/build/classes/java/main/model/persistence/Persistence.class</Jar>
-    <Jar>/Users/fy/Documents/1DV607/a2/app/build/classes/java/main/model/domain/Time.class</Jar>
-    <Jar>/Users/fy/Documents/1DV607/a2/app/build/classes/java/main/model/domain/Item.class</Jar>
-    <Jar>/Users/fy/Documents/1DV607/a2/app/build/classes/java/main/model/domain/Registry.class</Jar>
-    <Jar>/Users/fy/Documents/1DV607/a2/app/build/classes/java/main/model/domain/Member.class</Jar>
-    <Jar>/Users/fy/Documents/1DV607/a2/app/build/classes/java/main/model/domain/Item$Mutable.class</Jar>
-    <Jar>/Users/fy/Documents/1DV607/a2/app/build/classes/java/main/model/domain/Contract.class</Jar>
-    <Jar>/Users/fy/Documents/1DV607/a2/app/build/classes/java/main/model/domain/MemberId.class</Jar>
-    <Jar>/Users/fy/Documents/1DV607/a2/app/build/classes/java/main/model/domain/Member$Mutable.class</Jar>
-    <Jar>/Users/fy/Documents/1DV607/a2/app/build/classes/java/main/view/ConsoleUi.class</Jar>
-    <AuxClasspathEntry>/Users/fy/.gradle/caches/modules-2/files-2.1/com.github.spotbugs/spotbugs-annotations/4.7.2/3546c0a24a083e7fdfdf5986bef76b19c477a264/spotbugs-annotations-4.7.2.jar</AuxClasspathEntry>
-    <AuxClasspathEntry>/Users/fy/.gradle/caches/modules-2/files-2.1/com.google.guava/guava/30.1.1-jre/87e0fd1df874ea3cbe577702fe6f17068b790fd8/guava-30.1.1-jre.jar</AuxClasspathEntry>
-    <AuxClasspathEntry>/Users/fy/.gradle/caches/modules-2/files-2.1/com.google.code.findbugs/jsr305/3.0.2/25ea2e8b0c338a877313bd4672d3fe056ea78f0d/jsr305-3.0.2.jar</AuxClasspathEntry>
-    <AuxClasspathEntry>/Users/fy/.gradle/caches/modules-2/files-2.1/com.google.guava/failureaccess/1.0.1/1dcf1de382a0bf95a3d8b0849546c88bac1292c9/failureaccess-1.0.1.jar</AuxClasspathEntry>
-    <AuxClasspathEntry>/Users/fy/.gradle/caches/modules-2/files-2.1/com.google.guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/b421526c5f297295adef1c886e5246c39d4ac629/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar</AuxClasspathEntry>
-    <AuxClasspathEntry>/Users/fy/.gradle/caches/modules-2/files-2.1/org.checkerframework/checker-qual/3.8.0/6b83e4a33220272c3a08991498ba9dc09519f190/checker-qual-3.8.0.jar</AuxClasspathEntry>
-    <AuxClasspathEntry>/Users/fy/.gradle/caches/modules-2/files-2.1/com.google.errorprone/error_prone_annotations/2.5.1/562d366678b89ce5d6b6b82c1a073880341e3fba/error_prone_annotations-2.5.1.jar</AuxClasspathEntry>
-    <AuxClasspathEntry>/Users/fy/.gradle/caches/modules-2/files-2.1/com.google.j2objc/j2objc-annotations/1.3/ba035118bc8bac37d7eff77700720999acd9986d/j2objc-annotations-1.3.jar</AuxClasspathEntry>
-    <SrcDir>/Users/fy/Documents/1DV607/a2/app/src/main/resources</SrcDir>
-    <SrcDir>/Users/fy/Documents/1DV607/a2/app/src/main/java</SrcDir>
+    <Jar>C:\Users\ahmed\OneDrive\Skrivbord\oo\a2\app\build\classes\java\main\controller\App.class</Jar>
+    <Jar>C:\Users\ahmed\OneDrive\Skrivbord\oo\a2\app\build\classes\java\main\controller\Controller.class</Jar>
+    <Jar>C:\Users\ahmed\OneDrive\Skrivbord\oo\a2\app\build\classes\java\main\controller\MemberController.class</Jar>
+    <Jar>C:\Users\ahmed\OneDrive\Skrivbord\oo\a2\app\build\classes\java\main\model\domain\Contract.class</Jar>
+    <Jar>C:\Users\ahmed\OneDrive\Skrivbord\oo\a2\app\build\classes\java\main\model\domain\Item$Mutable.class</Jar>
+    <Jar>C:\Users\ahmed\OneDrive\Skrivbord\oo\a2\app\build\classes\java\main\model\domain\Item.class</Jar>
+    <Jar>C:\Users\ahmed\OneDrive\Skrivbord\oo\a2\app\build\classes\java\main\model\domain\Member$Mutable.class</Jar>
+    <Jar>C:\Users\ahmed\OneDrive\Skrivbord\oo\a2\app\build\classes\java\main\model\domain\Member.class</Jar>
+    <Jar>C:\Users\ahmed\OneDrive\Skrivbord\oo\a2\app\build\classes\java\main\model\domain\MemberId.class</Jar>
+    <Jar>C:\Users\ahmed\OneDrive\Skrivbord\oo\a2\app\build\classes\java\main\model\domain\Registry.class</Jar>
+    <Jar>C:\Users\ahmed\OneDrive\Skrivbord\oo\a2\app\build\classes\java\main\model\domain\Time.class</Jar>
+    <Jar>C:\Users\ahmed\OneDrive\Skrivbord\oo\a2\app\build\classes\java\main\model\persistence\Imapper.class</Jar>
+    <Jar>C:\Users\ahmed\OneDrive\Skrivbord\oo\a2\app\build\classes\java\main\model\persistence\Persistence.class</Jar>
+    <Jar>C:\Users\ahmed\OneDrive\Skrivbord\oo\a2\app\build\classes\java\main\model\persistence\SqlMapper.class</Jar>
+    <Jar>C:\Users\ahmed\OneDrive\Skrivbord\oo\a2\app\build\classes\java\main\model\TimeAdvancedObserver.class</Jar>
+    <Jar>C:\Users\ahmed\OneDrive\Skrivbord\oo\a2\app\build\classes\java\main\view\ConsoleUi.class</Jar>
+    <AuxClasspathEntry>C:\Users\ahmed\.gradle\caches\modules-2\files-2.1\com.github.spotbugs\spotbugs-annotations\4.7.2\3546c0a24a083e7fdfdf5986bef76b19c477a264\spotbugs-annotations-4.7.2.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\ahmed\.gradle\caches\modules-2\files-2.1\com.google.guava\guava\30.1.1-jre\87e0fd1df874ea3cbe577702fe6f17068b790fd8\guava-30.1.1-jre.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\ahmed\.gradle\caches\modules-2\files-2.1\com.google.code.findbugs\jsr305\3.0.2\25ea2e8b0c338a877313bd4672d3fe056ea78f0d\jsr305-3.0.2.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\ahmed\.gradle\caches\modules-2\files-2.1\com.google.guava\failureaccess\1.0.1\1dcf1de382a0bf95a3d8b0849546c88bac1292c9\failureaccess-1.0.1.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\ahmed\.gradle\caches\modules-2\files-2.1\com.google.guava\listenablefuture\9999.0-empty-to-avoid-conflict-with-guava\b421526c5f297295adef1c886e5246c39d4ac629\listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\ahmed\.gradle\caches\modules-2\files-2.1\org.checkerframework\checker-qual\3.8.0\6b83e4a33220272c3a08991498ba9dc09519f190\checker-qual-3.8.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\ahmed\.gradle\caches\modules-2\files-2.1\com.google.errorprone\error_prone_annotations\2.5.1\562d366678b89ce5d6b6b82c1a073880341e3fba\error_prone_annotations-2.5.1.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\ahmed\.gradle\caches\modules-2\files-2.1\com.google.j2objc\j2objc-annotations\1.3\ba035118bc8bac37d7eff77700720999acd9986d\j2objc-annotations-1.3.jar</AuxClasspathEntry>
+    <SrcDir>C:\Users\ahmed\OneDrive\Skrivbord\oo\a2\app\src\main\resources</SrcDir>
+    <SrcDir>C:\Users\ahmed\OneDrive\Skrivbord\oo\a2\app\src\main\java</SrcDir>
   </Project>
-  <BugInstance type="EI_EXPOSE_REP2" priority="2" rank="18" abbrev="EI2" category="MALICIOUS_CODE" instanceHash="15ec477cc7c869b5468ced98b5f8b8ce" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="374">
-    <ShortMessage>May expose internal representation by incorporating reference to mutable object</ShortMessage>
-    <LongMessage>new controller.MemberController(ConsoleUi, Registry) may expose internal representation by storing an externally mutable object into MemberController.console</LongMessage>
-    <Class classname="controller.MemberController" primary="true">
-      <SourceLine classname="controller.MemberController" start="17" end="300" sourcefile="MemberController.java" sourcepath="controller/MemberController.java" relSourcepath="java/controller/MemberController.java">
-        <Message>At MemberController.java:[lines 17-300]</Message>
-      </SourceLine>
-      <Message>In class controller.MemberController</Message>
-    </Class>
-    <Method classname="controller.MemberController" name="&lt;init&gt;" signature="(Lview/ConsoleUi;Lmodel/domain/Registry;)V" isStatic="false" primary="true">
-      <SourceLine classname="controller.MemberController" start="22" end="25" startBytecode="0" endBytecode="103" sourcefile="MemberController.java" sourcepath="controller/MemberController.java" relSourcepath="java/controller/MemberController.java"/>
-      <Message>In method new controller.MemberController(ConsoleUi, Registry)</Message>
-    </Method>
-    <Field classname="controller.MemberController" name="console" signature="Lview/ConsoleUi;" isStatic="false" primary="true">
-      <SourceLine classname="controller.MemberController" sourcefile="MemberController.java" sourcepath="controller/MemberController.java" relSourcepath="java/controller/MemberController.java">
-        <Message>In MemberController.java</Message>
-      </SourceLine>
-      <Message>Field controller.MemberController.console</Message>
-    </Field>
-    <LocalVariable name="console" register="1" pc="17" role="LOCAL_VARIABLE_NAMED">
-      <Message>Local variable named console</Message>
-    </LocalVariable>
-    <SourceLine classname="controller.MemberController" primary="true" start="23" end="23" startBytecode="17" endBytecode="17" sourcefile="MemberController.java" sourcepath="controller/MemberController.java" relSourcepath="java/controller/MemberController.java">
-      <Message>At MemberController.java:[line 23]</Message>
-    </SourceLine>
-  </BugInstance>
-  <BugInstance type="EI_EXPOSE_REP2" priority="2" rank="18" abbrev="EI2" category="MALICIOUS_CODE" instanceHash="65bd2739829f5f24d8e173336c35a888" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="374">
-    <ShortMessage>May expose internal representation by incorporating reference to mutable object</ShortMessage>
-    <LongMessage>new controller.MemberController(ConsoleUi, Registry) may expose internal representation by storing an externally mutable object into MemberController.registry</LongMessage>
-    <Class classname="controller.MemberController" primary="true">
-      <SourceLine classname="controller.MemberController" start="17" end="300" sourcefile="MemberController.java" sourcepath="controller/MemberController.java" relSourcepath="java/controller/MemberController.java">
-        <Message>At MemberController.java:[lines 17-300]</Message>
-      </SourceLine>
-      <Message>In class controller.MemberController</Message>
-    </Class>
-    <Method classname="controller.MemberController" name="&lt;init&gt;" signature="(Lview/ConsoleUi;Lmodel/domain/Registry;)V" isStatic="false" primary="true">
-      <SourceLine classname="controller.MemberController" start="22" end="25" startBytecode="0" endBytecode="103" sourcefile="MemberController.java" sourcepath="controller/MemberController.java" relSourcepath="java/controller/MemberController.java"/>
-      <Message>In method new controller.MemberController(ConsoleUi, Registry)</Message>
-    </Method>
-    <Field classname="controller.MemberController" name="registry" signature="Lmodel/domain/Registry;" isStatic="false" primary="true">
-      <SourceLine classname="controller.MemberController" sourcefile="MemberController.java" sourcepath="controller/MemberController.java" relSourcepath="java/controller/MemberController.java">
-        <Message>In MemberController.java</Message>
-      </SourceLine>
-      <Message>Field controller.MemberController.registry</Message>
-    </Field>
-    <LocalVariable name="registry" register="2" pc="22" role="LOCAL_VARIABLE_NAMED">
-      <Message>Local variable named registry</Message>
-    </LocalVariable>
-    <SourceLine classname="controller.MemberController" primary="true" start="24" end="24" startBytecode="22" endBytecode="22" sourcefile="MemberController.java" sourcepath="controller/MemberController.java" relSourcepath="java/controller/MemberController.java">
-      <Message>At MemberController.java:[line 24]</Message>
-    </SourceLine>
-  </BugInstance>
-  <BugInstance type="RCN_REDUNDANT_NULLCHECK_WOULD_HAVE_BEEN_A_NPE" priority="2" rank="11" abbrev="RCN" category="CORRECTNESS" instanceHash="cdec4b2b37813b28929342944bcd0532" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="476">
+  <BugInstance type="RCN_REDUNDANT_NULLCHECK_WOULD_HAVE_BEEN_A_NPE" priority="2" rank="11" abbrev="RCN" category="CORRECTNESS" instanceHash="a8537b89184a6f048a1cb8ec30b83715" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="476">
     <ShortMessage>Nullcheck of value previously dereferenced</ShortMessage>
-    <LongMessage>Nullcheck of input at line 167 of value previously dereferenced in controller.MemberController.isNull(String)</LongMessage>
+    <LongMessage>Nullcheck of input at line 169 of value previously dereferenced in controller.MemberController.check(String)</LongMessage>
     <Class classname="controller.MemberController" primary="true">
-      <SourceLine classname="controller.MemberController" start="17" end="300" sourcefile="MemberController.java" sourcepath="controller/MemberController.java" relSourcepath="java/controller/MemberController.java">
-        <Message>At MemberController.java:[lines 17-300]</Message>
+      <SourceLine classname="controller.MemberController" start="18" end="302" sourcefile="MemberController.java" sourcepath="controller/MemberController.java" relSourcepath="java\controller\MemberController.java">
+        <Message>At MemberController.java:[lines 18-302]</Message>
       </SourceLine>
       <Message>In class controller.MemberController</Message>
     </Class>
-    <Method classname="controller.MemberController" name="isNull" signature="(Ljava/lang/String;)Z" isStatic="false" primary="true">
-      <SourceLine classname="controller.MemberController" start="167" end="170" startBytecode="0" endBytecode="95" sourcefile="MemberController.java" sourcepath="controller/MemberController.java" relSourcepath="java/controller/MemberController.java"/>
-      <Message>In method controller.MemberController.isNull(String)</Message>
+    <Method classname="controller.MemberController" name="check" signature="(Ljava/lang/String;)Z" isStatic="false" primary="true">
+      <SourceLine classname="controller.MemberController" start="169" end="172" startBytecode="0" endBytecode="95" sourcefile="MemberController.java" sourcepath="controller/MemberController.java" relSourcepath="java\controller\MemberController.java"/>
+      <Message>In method controller.MemberController.check(String)</Message>
     </Method>
     <LocalVariable name="input" register="1" pc="18" role="LOCAL_VARIABLE_VALUE_OF">
       <Message>Value loaded from input</Message>
     </LocalVariable>
-    <SourceLine classname="controller.MemberController" primary="true" start="167" end="167" startBytecode="3" endBytecode="3" sourcefile="MemberController.java" sourcepath="controller/MemberController.java" relSourcepath="java/controller/MemberController.java">
-      <Message>At MemberController.java:[line 167]</Message>
+    <SourceLine classname="controller.MemberController" primary="true" start="169" end="169" startBytecode="3" endBytecode="3" sourcefile="MemberController.java" sourcepath="controller/MemberController.java" relSourcepath="java\controller\MemberController.java">
+      <Message>At MemberController.java:[line 169]</Message>
     </SourceLine>
-    <SourceLine classname="controller.MemberController" start="167" end="167" startBytecode="19" endBytecode="19" sourcefile="MemberController.java" sourcepath="controller/MemberController.java" relSourcepath="java/controller/MemberController.java" role="SOURCE_REDUNDANT_NULL_CHECK">
-      <Message>Redundant null check at MemberController.java:[line 167]</Message>
-    </SourceLine>
-  </BugInstance>
-  <BugInstance type="EI_EXPOSE_REP" priority="2" rank="18" abbrev="EI" category="MALICIOUS_CODE" instanceHash="428262acdd5742a1590e49f5326498a7" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="374">
-    <ShortMessage>May expose internal representation by returning reference to mutable object</ShortMessage>
-    <LongMessage>model.domain.Contract.getLentTo() may expose internal representation by returning Contract.lentTo</LongMessage>
-    <Class classname="model.domain.Contract" primary="true">
-      <SourceLine classname="model.domain.Contract" start="18" end="30" sourcefile="Contract.java" sourcepath="model/domain/Contract.java" relSourcepath="java/model/domain/Contract.java">
-        <Message>At Contract.java:[lines 18-30]</Message>
-      </SourceLine>
-      <Message>In class model.domain.Contract</Message>
-    </Class>
-    <Method classname="model.domain.Contract" name="getLentTo" signature="()Lmodel/domain/Member;" isStatic="false" primary="true">
-      <SourceLine classname="model.domain.Contract" start="30" end="30" startBytecode="0" endBytecode="46" sourcefile="Contract.java" sourcepath="model/domain/Contract.java" relSourcepath="java/model/domain/Contract.java"/>
-      <Message>In method model.domain.Contract.getLentTo()</Message>
-    </Method>
-    <Field classname="model.domain.Contract" name="lentTo" signature="Lmodel/domain/Member;" isStatic="false" primary="true">
-      <SourceLine classname="model.domain.Contract" sourcefile="Contract.java" sourcepath="model/domain/Contract.java" relSourcepath="java/model/domain/Contract.java">
-        <Message>In Contract.java</Message>
-      </SourceLine>
-      <Message>Field model.domain.Contract.lentTo</Message>
-    </Field>
-    <SourceLine classname="model.domain.Contract" primary="true" start="30" end="30" startBytecode="4" endBytecode="4" sourcefile="Contract.java" sourcepath="model/domain/Contract.java" relSourcepath="java/model/domain/Contract.java">
-      <Message>At Contract.java:[line 30]</Message>
-    </SourceLine>
-  </BugInstance>
-  <BugInstance type="EI_EXPOSE_REP" priority="2" rank="18" abbrev="EI" category="MALICIOUS_CODE" instanceHash="bea6bd2e3610323f548cc35634e34f21" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="374">
-    <ShortMessage>May expose internal representation by returning reference to mutable object</ShortMessage>
-    <LongMessage>model.domain.Contract.getOwner() may expose internal representation by returning Contract.owner</LongMessage>
-    <Class classname="model.domain.Contract" primary="true">
-      <SourceLine classname="model.domain.Contract" start="18" end="30" sourcefile="Contract.java" sourcepath="model/domain/Contract.java" relSourcepath="java/model/domain/Contract.java">
-        <Message>At Contract.java:[lines 18-30]</Message>
-      </SourceLine>
-      <Message>In class model.domain.Contract</Message>
-    </Class>
-    <Method classname="model.domain.Contract" name="getOwner" signature="()Lmodel/domain/Member;" isStatic="false" primary="true">
-      <SourceLine classname="model.domain.Contract" start="26" end="26" startBytecode="0" endBytecode="46" sourcefile="Contract.java" sourcepath="model/domain/Contract.java" relSourcepath="java/model/domain/Contract.java"/>
-      <Message>In method model.domain.Contract.getOwner()</Message>
-    </Method>
-    <Field classname="model.domain.Contract" name="owner" signature="Lmodel/domain/Member;" isStatic="false" primary="true">
-      <SourceLine classname="model.domain.Contract" sourcefile="Contract.java" sourcepath="model/domain/Contract.java" relSourcepath="java/model/domain/Contract.java">
-        <Message>In Contract.java</Message>
-      </SourceLine>
-      <Message>Field model.domain.Contract.owner</Message>
-    </Field>
-    <SourceLine classname="model.domain.Contract" primary="true" start="26" end="26" startBytecode="4" endBytecode="4" sourcefile="Contract.java" sourcepath="model/domain/Contract.java" relSourcepath="java/model/domain/Contract.java">
-      <Message>At Contract.java:[line 26]</Message>
-    </SourceLine>
-  </BugInstance>
-  <BugInstance type="EI_EXPOSE_REP2" priority="2" rank="18" abbrev="EI2" category="MALICIOUS_CODE" instanceHash="1278825f6db5c6d014d555470258049e" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="374">
-    <ShortMessage>May expose internal representation by incorporating reference to mutable object</ShortMessage>
-    <LongMessage>new model.domain.Contract(Member, Member, int, int) may expose internal representation by storing an externally mutable object into Contract.lentTo</LongMessage>
-    <Class classname="model.domain.Contract" primary="true">
-      <SourceLine classname="model.domain.Contract" start="18" end="30" sourcefile="Contract.java" sourcepath="model/domain/Contract.java" relSourcepath="java/model/domain/Contract.java">
-        <Message>At Contract.java:[lines 18-30]</Message>
-      </SourceLine>
-      <Message>In class model.domain.Contract</Message>
-    </Class>
-    <Method classname="model.domain.Contract" name="&lt;init&gt;" signature="(Lmodel/domain/Member;Lmodel/domain/Member;II)V" isStatic="false" primary="true">
-      <SourceLine classname="model.domain.Contract" start="18" end="23" startBytecode="0" endBytecode="127" sourcefile="Contract.java" sourcepath="model/domain/Contract.java" relSourcepath="java/model/domain/Contract.java"/>
-      <Message>In method new model.domain.Contract(Member, Member, int, int)</Message>
-    </Method>
-    <Field classname="model.domain.Contract" name="lentTo" signature="Lmodel/domain/Member;" isStatic="false" primary="true">
-      <SourceLine classname="model.domain.Contract" sourcefile="Contract.java" sourcepath="model/domain/Contract.java" relSourcepath="java/model/domain/Contract.java">
-        <Message>In Contract.java</Message>
-      </SourceLine>
-      <Message>Field model.domain.Contract.lentTo</Message>
-    </Field>
-    <LocalVariable name="lentTo" register="2" pc="11" role="LOCAL_VARIABLE_NAMED">
-      <Message>Local variable named lentTo</Message>
-    </LocalVariable>
-    <SourceLine classname="model.domain.Contract" primary="true" start="20" end="20" startBytecode="11" endBytecode="11" sourcefile="Contract.java" sourcepath="model/domain/Contract.java" relSourcepath="java/model/domain/Contract.java">
-      <Message>At Contract.java:[line 20]</Message>
-    </SourceLine>
-  </BugInstance>
-  <BugInstance type="EI_EXPOSE_REP2" priority="2" rank="18" abbrev="EI2" category="MALICIOUS_CODE" instanceHash="246198d7ebe296342eb18b2e8c1ef012" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="374">
-    <ShortMessage>May expose internal representation by incorporating reference to mutable object</ShortMessage>
-    <LongMessage>new model.domain.Contract(Member, Member, int, int) may expose internal representation by storing an externally mutable object into Contract.owner</LongMessage>
-    <Class classname="model.domain.Contract" primary="true">
-      <SourceLine classname="model.domain.Contract" start="18" end="30" sourcefile="Contract.java" sourcepath="model/domain/Contract.java" relSourcepath="java/model/domain/Contract.java">
-        <Message>At Contract.java:[lines 18-30]</Message>
-      </SourceLine>
-      <Message>In class model.domain.Contract</Message>
-    </Class>
-    <Method classname="model.domain.Contract" name="&lt;init&gt;" signature="(Lmodel/domain/Member;Lmodel/domain/Member;II)V" isStatic="false" primary="true">
-      <SourceLine classname="model.domain.Contract" start="18" end="23" startBytecode="0" endBytecode="127" sourcefile="Contract.java" sourcepath="model/domain/Contract.java" relSourcepath="java/model/domain/Contract.java"/>
-      <Message>In method new model.domain.Contract(Member, Member, int, int)</Message>
-    </Method>
-    <Field classname="model.domain.Contract" name="owner" signature="Lmodel/domain/Member;" isStatic="false" primary="true">
-      <SourceLine classname="model.domain.Contract" sourcefile="Contract.java" sourcepath="model/domain/Contract.java" relSourcepath="java/model/domain/Contract.java">
-        <Message>In Contract.java</Message>
-      </SourceLine>
-      <Message>Field model.domain.Contract.owner</Message>
-    </Field>
-    <LocalVariable name="owner" register="1" pc="6" role="LOCAL_VARIABLE_NAMED">
-      <Message>Local variable named owner</Message>
-    </LocalVariable>
-    <SourceLine classname="model.domain.Contract" primary="true" start="19" end="19" startBytecode="6" endBytecode="6" sourcefile="Contract.java" sourcepath="model/domain/Contract.java" relSourcepath="java/model/domain/Contract.java">
-      <Message>At Contract.java:[line 19]</Message>
-    </SourceLine>
-  </BugInstance>
-  <BugInstance type="URF_UNREAD_FIELD" priority="2" rank="18" abbrev="UrF" category="PERFORMANCE" instanceHash="969767affd521fac1dc6d1f46cfb37de" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
-    <ShortMessage>Unread field</ShortMessage>
-    <LongMessage>Unread field: model.domain.Contract.contractPeriod</LongMessage>
-    <Class classname="model.domain.Contract" primary="true">
-      <SourceLine classname="model.domain.Contract" start="18" end="30" sourcefile="Contract.java" sourcepath="model/domain/Contract.java" relSourcepath="java/model/domain/Contract.java">
-        <Message>At Contract.java:[lines 18-30]</Message>
-      </SourceLine>
-      <Message>In class model.domain.Contract</Message>
-    </Class>
-    <Field classname="model.domain.Contract" name="contractPeriod" signature="I" isStatic="false" primary="true">
-      <SourceLine classname="model.domain.Contract" sourcefile="Contract.java" sourcepath="model/domain/Contract.java" relSourcepath="java/model/domain/Contract.java">
-        <Message>In Contract.java</Message>
-      </SourceLine>
-      <Message>Field model.domain.Contract.contractPeriod</Message>
-    </Field>
-    <SourceLine classname="model.domain.Contract" primary="true" start="21" end="21" startBytecode="16" endBytecode="16" sourcefile="Contract.java" sourcepath="model/domain/Contract.java" relSourcepath="java/model/domain/Contract.java">
-      <Message>At Contract.java:[line 21]</Message>
-    </SourceLine>
-  </BugInstance>
-  <BugInstance type="URF_UNREAD_FIELD" priority="2" rank="18" abbrev="UrF" category="PERFORMANCE" instanceHash="b94d65289440fb93e28a5e16b8b764bd" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
-    <ShortMessage>Unread field</ShortMessage>
-    <LongMessage>Unread field: model.domain.Contract.item</LongMessage>
-    <Class classname="model.domain.Contract" primary="true">
-      <SourceLine classname="model.domain.Contract" start="18" end="30" sourcefile="Contract.java" sourcepath="model/domain/Contract.java" relSourcepath="java/model/domain/Contract.java">
-        <Message>At Contract.java:[lines 18-30]</Message>
-      </SourceLine>
-      <Message>In class model.domain.Contract</Message>
-    </Class>
-    <Field classname="model.domain.Contract" name="item" signature="I" isStatic="false" primary="true">
-      <SourceLine classname="model.domain.Contract" sourcefile="Contract.java" sourcepath="model/domain/Contract.java" relSourcepath="java/model/domain/Contract.java">
-        <Message>In Contract.java</Message>
-      </SourceLine>
-      <Message>Field model.domain.Contract.item</Message>
-    </Field>
-    <SourceLine classname="model.domain.Contract" primary="true" start="22" end="22" startBytecode="22" endBytecode="22" sourcefile="Contract.java" sourcepath="model/domain/Contract.java" relSourcepath="java/model/domain/Contract.java">
-      <Message>At Contract.java:[line 22]</Message>
+    <SourceLine classname="controller.MemberController" start="169" end="169" startBytecode="19" endBytecode="19" sourcefile="MemberController.java" sourcepath="controller/MemberController.java" relSourcepath="java\controller\MemberController.java" role="SOURCE_REDUNDANT_NULL_CHECK">
+      <Message>Redundant null check at MemberController.java:[line 169]</Message>
     </SourceLine>
   </BugInstance>
   <BugInstance type="DB_DUPLICATE_BRANCHES" priority="2" rank="17" abbrev="DB" category="STYLE" instanceHash="87ed0881c46be561b529e8d32ee984c" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
     <ShortMessage>Method uses the same code for two branches</ShortMessage>
     <LongMessage>new model.domain.Item(String, String, int, int, Boolean, int, String, String, String) uses the same code for two branches</LongMessage>
     <Class classname="model.domain.Item" primary="true">
-      <SourceLine classname="model.domain.Item" start="20" end="256" sourcefile="Item.java" sourcepath="model/domain/Item.java" relSourcepath="java/model/domain/Item.java">
+      <SourceLine classname="model.domain.Item" start="20" end="256" sourcefile="Item.java" sourcepath="model/domain/Item.java" relSourcepath="java\model\domain\Item.java">
         <Message>At Item.java:[lines 20-256]</Message>
       </SourceLine>
       <Message>In class model.domain.Item</Message>
     </Class>
     <Method classname="model.domain.Item" name="&lt;init&gt;" signature="(Ljava/lang/String;Ljava/lang/String;IILjava/lang/Boolean;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)V" isStatic="false" primary="true">
-      <SourceLine classname="model.domain.Item" start="34" end="73" startBytecode="0" endBytecode="495" sourcefile="Item.java" sourcepath="model/domain/Item.java" relSourcepath="java/model/domain/Item.java"/>
+      <SourceLine classname="model.domain.Item" start="34" end="73" startBytecode="0" endBytecode="495" sourcefile="Item.java" sourcepath="model/domain/Item.java" relSourcepath="java\model\domain\Item.java"/>
       <Message>In method new model.domain.Item(String, String, int, int, Boolean, int, String, String, String)</Message>
     </Method>
-    <SourceLine classname="model.domain.Item" primary="true" start="56" end="56" startBytecode="101" endBytecode="106" sourcefile="Item.java" sourcepath="model/domain/Item.java" relSourcepath="java/model/domain/Item.java">
+    <SourceLine classname="model.domain.Item" primary="true" start="56" end="56" startBytecode="101" endBytecode="106" sourcefile="Item.java" sourcepath="model/domain/Item.java" relSourcepath="java\model\domain\Item.java">
       <Message>At Item.java:[line 56]</Message>
     </SourceLine>
-    <SourceLine classname="model.domain.Item" start="58" end="58" startBytecode="109" endBytecode="111" sourcefile="Item.java" sourcepath="model/domain/Item.java" relSourcepath="java/model/domain/Item.java">
+    <SourceLine classname="model.domain.Item" start="58" end="58" startBytecode="109" endBytecode="111" sourcefile="Item.java" sourcepath="model/domain/Item.java" relSourcepath="java\model\domain\Item.java">
       <Message>At Item.java:[line 58]</Message>
     </SourceLine>
   </BugInstance>
@@ -264,19 +76,19 @@
     <ShortMessage>Call to equals(null)</ShortMessage>
     <LongMessage>Call to equals(null) in new model.domain.Item(String, String, int, int, Boolean, int, String, String, String)</LongMessage>
     <Class classname="model.domain.Item" primary="true">
-      <SourceLine classname="model.domain.Item" start="20" end="256" sourcefile="Item.java" sourcepath="model/domain/Item.java" relSourcepath="java/model/domain/Item.java">
+      <SourceLine classname="model.domain.Item" start="20" end="256" sourcefile="Item.java" sourcepath="model/domain/Item.java" relSourcepath="java\model\domain\Item.java">
         <Message>At Item.java:[lines 20-256]</Message>
       </SourceLine>
       <Message>In class model.domain.Item</Message>
     </Class>
     <Method classname="model.domain.Item" name="&lt;init&gt;" signature="(Ljava/lang/String;Ljava/lang/String;IILjava/lang/Boolean;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)V" isStatic="false" primary="true">
-      <SourceLine classname="model.domain.Item" start="34" end="73" startBytecode="0" endBytecode="97" sourcefile="Item.java" sourcepath="model/domain/Item.java" relSourcepath="java/model/domain/Item.java"/>
+      <SourceLine classname="model.domain.Item" start="34" end="73" startBytecode="0" endBytecode="97" sourcefile="Item.java" sourcepath="model/domain/Item.java" relSourcepath="java\model\domain\Item.java"/>
       <Message>In method new model.domain.Item(String, String, int, int, Boolean, int, String, String, String)</Message>
     </Method>
-    <SourceLine classname="model.domain.Item" primary="true" start="60" end="60" startBytecode="117" endBytecode="117" sourcefile="Item.java" sourcepath="model/domain/Item.java" relSourcepath="java/model/domain/Item.java">
+    <SourceLine classname="model.domain.Item" primary="true" start="60" end="60" startBytecode="117" endBytecode="117" sourcefile="Item.java" sourcepath="model/domain/Item.java" relSourcepath="java\model\domain\Item.java">
       <Message>At Item.java:[line 60]</Message>
     </SourceLine>
-    <SourceLine classname="model.domain.Item" start="65" end="65" startBytecode="151" endBytecode="151" sourcefile="Item.java" sourcepath="model/domain/Item.java" relSourcepath="java/model/domain/Item.java" role="SOURCE_LINE_ANOTHER_INSTANCE">
+    <SourceLine classname="model.domain.Item" start="65" end="65" startBytecode="151" endBytecode="151" sourcefile="Item.java" sourcepath="model/domain/Item.java" relSourcepath="java\model\domain\Item.java" role="SOURCE_LINE_ANOTHER_INSTANCE">
       <Message>Another occurrence at Item.java:[line 65]</Message>
     </SourceLine>
   </BugInstance>
@@ -284,212 +96,47 @@
     <ShortMessage>Unwritten public or protected field</ShortMessage>
     <LongMessage>Unwritten public or protected field: model.domain.Item.itemClass</LongMessage>
     <Class classname="model.domain.Item" primary="true">
-      <SourceLine classname="model.domain.Item" start="20" end="256" sourcefile="Item.java" sourcepath="model/domain/Item.java" relSourcepath="java/model/domain/Item.java">
+      <SourceLine classname="model.domain.Item" start="20" end="256" sourcefile="Item.java" sourcepath="model/domain/Item.java" relSourcepath="java\model\domain\Item.java">
         <Message>At Item.java:[lines 20-256]</Message>
       </SourceLine>
       <Message>In class model.domain.Item</Message>
     </Class>
     <Field classname="model.domain.Item" name="itemClass" signature="Lmodel/domain/Item$Mutable;" isStatic="false" primary="true">
-      <SourceLine classname="model.domain.Item" sourcefile="Item.java" sourcepath="model/domain/Item.java" relSourcepath="java/model/domain/Item.java">
+      <SourceLine classname="model.domain.Item" sourcefile="Item.java" sourcepath="model/domain/Item.java" relSourcepath="java\model\domain\Item.java">
         <Message>In Item.java</Message>
       </SourceLine>
       <Message>Field model.domain.Item.itemClass</Message>
     </Field>
-    <SourceLine classname="model.domain.Item" primary="true" start="90" end="90" startBytecode="1" endBytecode="1" sourcefile="Item.java" sourcepath="model/domain/Item.java" relSourcepath="java/model/domain/Item.java">
+    <SourceLine classname="model.domain.Item" primary="true" start="90" end="90" startBytecode="1" endBytecode="1" sourcefile="Item.java" sourcepath="model/domain/Item.java" relSourcepath="java\model\domain\Item.java">
       <Message>At Item.java:[line 90]</Message>
-    </SourceLine>
-  </BugInstance>
-  <BugInstance type="DLS_DEAD_LOCAL_STORE" priority="2" rank="17" abbrev="DLS" category="STYLE" instanceHash="18cd3c4d089847b2e863de214107f88" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="563">
-    <ShortMessage>Dead store to local variable</ShortMessage>
-    <LongMessage>Dead store to item in model.domain.Member.updateItems()</LongMessage>
-    <Class classname="model.domain.Member" primary="true">
-      <SourceLine classname="model.domain.Member" start="17" end="301" sourcefile="Member.java" sourcepath="model/domain/Member.java" relSourcepath="java/model/domain/Member.java">
-        <Message>At Member.java:[lines 17-301]</Message>
-      </SourceLine>
-      <Message>In class model.domain.Member</Message>
-    </Class>
-    <Method classname="model.domain.Member" name="updateItems" signature="()V" isStatic="false" primary="true">
-      <SourceLine classname="model.domain.Member" start="243" end="265" startBytecode="0" endBytecode="71" sourcefile="Member.java" sourcepath="model/domain/Member.java" relSourcepath="java/model/domain/Member.java"/>
-      <Message>In method model.domain.Member.updateItems()</Message>
-    </Method>
-    <LocalVariable name="item" register="1" pc="8" role="LOCAL_VARIABLE_NAMED">
-      <Message>Local variable named item</Message>
-    </LocalVariable>
-    <SourceLine classname="model.domain.Member" primary="true" start="243" end="243" startBytecode="7" endBytecode="7" sourcefile="Member.java" sourcepath="model/domain/Member.java" relSourcepath="java/model/domain/Member.java">
-      <Message>At Member.java:[line 243]</Message>
-    </SourceLine>
-    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.DEAD_OBJECT_STORE" value="true"/>
-    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.KILLED_BY_SUBSEQUENT_STORE" value="true"/>
-    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.LOCAL_NAME" value="item"/>
-    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.METHOD_RESULT" value="true"/>
-  </BugInstance>
-  <BugInstance type="EI_EXPOSE_REP" priority="2" rank="18" abbrev="EI" category="MALICIOUS_CODE" instanceHash="7c50919784c18be57d2fa9ceef62bfa6" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="374">
-    <ShortMessage>May expose internal representation by returning reference to mutable object</ShortMessage>
-    <LongMessage>model.domain.Member.getItemsOwned() may expose internal representation by returning Member.itemsOwned</LongMessage>
-    <Class classname="model.domain.Member" primary="true">
-      <SourceLine classname="model.domain.Member" start="17" end="301" sourcefile="Member.java" sourcepath="model/domain/Member.java" relSourcepath="java/model/domain/Member.java">
-        <Message>At Member.java:[lines 17-301]</Message>
-      </SourceLine>
-      <Message>In class model.domain.Member</Message>
-    </Class>
-    <Method classname="model.domain.Member" name="getItemsOwned" signature="()Ljava/lang/Iterable;" isStatic="false" primary="true">
-      <SourceLine classname="model.domain.Member" start="117" end="117" startBytecode="0" endBytecode="46" sourcefile="Member.java" sourcepath="model/domain/Member.java" relSourcepath="java/model/domain/Member.java"/>
-      <Message>In method model.domain.Member.getItemsOwned()</Message>
-    </Method>
-    <Field classname="model.domain.Member" name="itemsOwned" signature="Ljava/util/ArrayList;" isStatic="false" primary="true">
-      <SourceLine classname="model.domain.Member" sourcefile="Member.java" sourcepath="model/domain/Member.java" relSourcepath="java/model/domain/Member.java">
-        <Message>In Member.java</Message>
-      </SourceLine>
-      <Message>Field model.domain.Member.itemsOwned</Message>
-    </Field>
-    <SourceLine classname="model.domain.Member" primary="true" start="117" end="117" startBytecode="4" endBytecode="4" sourcefile="Member.java" sourcepath="model/domain/Member.java" relSourcepath="java/model/domain/Member.java">
-      <Message>At Member.java:[line 117]</Message>
-    </SourceLine>
-  </BugInstance>
-  <BugInstance type="UUF_UNUSED_FIELD" priority="2" rank="18" abbrev="UuF" category="PERFORMANCE" instanceHash="942a07fa2cad0515d7956597b69f9733" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
-    <ShortMessage>Unused field</ShortMessage>
-    <LongMessage>Unused field: model.domain.Member.costTotal</LongMessage>
-    <Class classname="model.domain.Member" primary="true">
-      <SourceLine classname="model.domain.Member" start="17" end="301" sourcefile="Member.java" sourcepath="model/domain/Member.java" relSourcepath="java/model/domain/Member.java">
-        <Message>At Member.java:[lines 17-301]</Message>
-      </SourceLine>
-      <Message>In class model.domain.Member</Message>
-    </Class>
-    <Field classname="model.domain.Member" name="costTotal" signature="I" isStatic="false" primary="true">
-      <SourceLine classname="model.domain.Member" sourcefile="Member.java" sourcepath="model/domain/Member.java" relSourcepath="java/model/domain/Member.java">
-        <Message>In Member.java</Message>
-      </SourceLine>
-      <Message>Field model.domain.Member.costTotal</Message>
-    </Field>
-    <SourceLine classname="model.domain.Member" sourcefile="Member.java" sourcepath="model/domain/Member.java" relSourcepath="java/model/domain/Member.java" synthetic="true">
-      <Message>In Member.java</Message>
-    </SourceLine>
-  </BugInstance>
-  <BugInstance type="DLS_DEAD_LOCAL_STORE" priority="2" rank="17" abbrev="DLS" category="STYLE" instanceHash="72904bea23c71bfb89471124a5c93dc3" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="563">
-    <ShortMessage>Dead store to local variable</ShortMessage>
-    <LongMessage>Dead store to i in model.domain.Registry.createContract(Member, Member, int, int)</LongMessage>
-    <Class classname="model.domain.Registry" primary="true">
-      <SourceLine classname="model.domain.Registry" start="10" end="178" sourcefile="Registry.java" sourcepath="model/domain/Registry.java" relSourcepath="java/model/domain/Registry.java">
-        <Message>At Registry.java:[lines 10-178]</Message>
-      </SourceLine>
-      <Message>In class model.domain.Registry</Message>
-    </Class>
-    <Method classname="model.domain.Registry" name="createContract" signature="(Lmodel/domain/Member;Lmodel/domain/Member;II)V" isStatic="false" primary="true">
-      <SourceLine classname="model.domain.Registry" start="142" end="163" startBytecode="0" endBytecode="97" sourcefile="Registry.java" sourcepath="model/domain/Registry.java" relSourcepath="java/model/domain/Registry.java"/>
-      <Message>In method model.domain.Registry.createContract(Member, Member, int, int)</Message>
-    </Method>
-    <LocalVariable name="i" register="6" pc="23" role="LOCAL_VARIABLE_NAMED">
-      <Message>Local variable named i</Message>
-    </LocalVariable>
-    <SourceLine classname="model.domain.Registry" primary="true" start="143" end="143" startBytecode="21" endBytecode="21" sourcefile="Registry.java" sourcepath="model/domain/Registry.java" relSourcepath="java/model/domain/Registry.java">
-      <Message>At Registry.java:[line 143]</Message>
-    </SourceLine>
-    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.DEAD_OBJECT_STORE" value="true"/>
-    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.KILLED_BY_SUBSEQUENT_STORE" value="true"/>
-    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.LOCAL_NAME" value="i"/>
-    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.METHOD_RESULT" value="true"/>
-  </BugInstance>
-  <BugInstance type="EI_EXPOSE_REP" priority="2" rank="18" abbrev="EI" category="MALICIOUS_CODE" instanceHash="932ff42c258f016476ceecf03f1a776f" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="374">
-    <ShortMessage>May expose internal representation by returning reference to mutable object</ShortMessage>
-    <LongMessage>model.domain.Registry.getMembers() may expose internal representation by returning Registry.members</LongMessage>
-    <Class classname="model.domain.Registry" primary="true">
-      <SourceLine classname="model.domain.Registry" start="10" end="178" sourcefile="Registry.java" sourcepath="model/domain/Registry.java" relSourcepath="java/model/domain/Registry.java">
-        <Message>At Registry.java:[lines 10-178]</Message>
-      </SourceLine>
-      <Message>In class model.domain.Registry</Message>
-    </Class>
-    <Method classname="model.domain.Registry" name="getMembers" signature="()Ljava/lang/Iterable;" isStatic="false" primary="true">
-      <SourceLine classname="model.domain.Registry" start="46" end="46" startBytecode="0" endBytecode="46" sourcefile="Registry.java" sourcepath="model/domain/Registry.java" relSourcepath="java/model/domain/Registry.java"/>
-      <Message>In method model.domain.Registry.getMembers()</Message>
-    </Method>
-    <Field classname="model.domain.Registry" name="members" signature="Ljava/util/ArrayList;" isStatic="false" primary="true">
-      <SourceLine classname="model.domain.Registry" sourcefile="Registry.java" sourcepath="model/domain/Registry.java" relSourcepath="java/model/domain/Registry.java">
-        <Message>In Registry.java</Message>
-      </SourceLine>
-      <Message>Field model.domain.Registry.members</Message>
-    </Field>
-    <SourceLine classname="model.domain.Registry" primary="true" start="46" end="46" startBytecode="4" endBytecode="4" sourcefile="Registry.java" sourcepath="model/domain/Registry.java" relSourcepath="java/model/domain/Registry.java">
-      <Message>At Registry.java:[line 46]</Message>
     </SourceLine>
   </BugInstance>
   <BugInstance type="DM_EXIT" priority="2" rank="16" abbrev="Dm" category="BAD_PRACTICE" instanceHash="4a5e9d3dc111d09a7443024af92d35c4" instanceOccurrenceNum="0" instanceOccurrenceMax="0" cweid="382">
     <ShortMessage>Method invokes System.exit(...)</ShortMessage>
     <LongMessage>view.ConsoleUi.byeBye() invokes System.exit(...), which shuts down the entire virtual machine</LongMessage>
     <Class classname="view.ConsoleUi" primary="true">
-      <SourceLine classname="view.ConsoleUi" start="21" end="426" sourcefile="ConsoleUi.java" sourcepath="view/ConsoleUi.java" relSourcepath="java/view/ConsoleUi.java">
-        <Message>At ConsoleUi.java:[lines 21-426]</Message>
+      <SourceLine classname="view.ConsoleUi" start="21" end="427" sourcefile="ConsoleUi.java" sourcepath="view/ConsoleUi.java" relSourcepath="java\view\ConsoleUi.java">
+        <Message>At ConsoleUi.java:[lines 21-427]</Message>
       </SourceLine>
       <Message>In class view.ConsoleUi</Message>
     </Class>
     <Method classname="view.ConsoleUi" name="byeBye" signature="()V" isStatic="false" primary="true">
-      <SourceLine classname="view.ConsoleUi" start="74" end="80" startBytecode="0" endBytecode="110" sourcefile="ConsoleUi.java" sourcepath="view/ConsoleUi.java" relSourcepath="java/view/ConsoleUi.java"/>
+      <SourceLine classname="view.ConsoleUi" start="74" end="80" startBytecode="0" endBytecode="110" sourcefile="ConsoleUi.java" sourcepath="view/ConsoleUi.java" relSourcepath="java\view\ConsoleUi.java"/>
       <Message>In method view.ConsoleUi.byeBye()</Message>
     </Method>
-    <SourceLine classname="view.ConsoleUi" primary="true" start="79" end="79" startBytecode="41" endBytecode="41" sourcefile="ConsoleUi.java" sourcepath="view/ConsoleUi.java" relSourcepath="java/view/ConsoleUi.java">
+    <SourceLine classname="view.ConsoleUi" primary="true" start="79" end="79" startBytecode="41" endBytecode="41" sourcefile="ConsoleUi.java" sourcepath="view/ConsoleUi.java" relSourcepath="java\view\ConsoleUi.java">
       <Message>At ConsoleUi.java:[line 79]</Message>
     </SourceLine>
   </BugInstance>
   <BugCategory category="BAD_PRACTICE">
     <Description>Bad practice</Description>
   </BugCategory>
-  <BugCategory category="MALICIOUS_CODE">
-    <Description>Malicious code vulnerability</Description>
-  </BugCategory>
   <BugCategory category="CORRECTNESS">
     <Description>Correctness</Description>
-  </BugCategory>
-  <BugCategory category="PERFORMANCE">
-    <Description>Performance</Description>
   </BugCategory>
   <BugCategory category="STYLE">
     <Description>Dodgy code</Description>
   </BugCategory>
-  <BugPattern type="DLS_DEAD_LOCAL_STORE" abbrev="DLS" category="STYLE">
-    <ShortDescription>Dead store to local variable</ShortDescription>
-    <Details><![CDATA[
-
-<p>
-This instruction assigns a value to a local variable,
-but the value is not read or used in any subsequent instruction.
-Often, this indicates an error, because the value computed is never
-used.
-</p>
-<p>
-Note that Sun's javac compiler often generates dead stores for
-final local variables. Because SpotBugs is a bytecode-based tool,
-there is no easy way to eliminate these false positives.
-</p>
-
-    ]]></Details>
-  </BugPattern>
-  <BugPattern type="EI_EXPOSE_REP2" abbrev="EI2" category="MALICIOUS_CODE" cweid="374">
-    <ShortDescription>May expose internal representation by incorporating reference to mutable object</ShortDescription>
-    <Details><![CDATA[
-
-  <p> This code stores a reference to an externally mutable object into the
-  internal representation of the object.&nbsp;
-   If instances
-   are accessed by untrusted code, and unchecked changes to
-   the mutable object would compromise security or other
-   important properties, you will need to do something different.
-  Storing a copy of the object is better approach in many situations.</p>
-
-    ]]></Details>
-  </BugPattern>
-  <BugPattern type="EI_EXPOSE_REP" abbrev="EI" category="MALICIOUS_CODE" cweid="374">
-    <ShortDescription>May expose internal representation by returning reference to mutable object</ShortDescription>
-    <Details><![CDATA[
-
-  <p> Returning a reference to a mutable object value stored in one of the object's fields
-  exposes the internal representation of the object.&nbsp;
-   If instances
-   are accessed by untrusted code, and unchecked changes to
-   the mutable object would compromise security or other
-   important properties, you will need to do something different.
-  Returning a new copy of the object is better approach in many situations.</p>
-
-    ]]></Details>
-  </BugPattern>
   <BugPattern type="DB_DUPLICATE_BRANCHES" abbrev="DB" category="STYLE">
     <ShortDescription>Method uses the same code for two branches</ShortDescription>
     <Details><![CDATA[
@@ -511,28 +158,12 @@ this call should always return <code>false</code>.</p>
 
     ]]></Details>
   </BugPattern>
-  <BugPattern type="UUF_UNUSED_FIELD" abbrev="UuF" category="PERFORMANCE">
-    <ShortDescription>Unused field</ShortDescription>
-    <Details><![CDATA[
-
-  <p> This field is never used.&nbsp; Consider removing it from the class.</p>
-
-    ]]></Details>
-  </BugPattern>
   <BugPattern type="UWF_UNWRITTEN_PUBLIC_OR_PROTECTED_FIELD" abbrev="UwF" category="STYLE">
     <ShortDescription>Unwritten public or protected field</ShortDescription>
     <Details><![CDATA[
 
   <p> No writes were seen to this public/protected field.&nbsp; All reads of it will return the default
 value. Check for errors (should it have been initialized?), or remove it if it is useless.</p>
-
-    ]]></Details>
-  </BugPattern>
-  <BugPattern type="URF_UNREAD_FIELD" abbrev="UrF" category="PERFORMANCE">
-    <ShortDescription>Unread field</ShortDescription>
-    <Details><![CDATA[
-
-  <p> This field is never read.&nbsp; Consider removing it from the class.</p>
 
     ]]></Details>
   </BugPattern>
@@ -560,23 +191,11 @@ or the previous dereference is erroneous.</p>
 
     ]]></Details>
   </BugPattern>
-  <BugCode abbrev="EI">
-    <Description>Method returning array may expose internal representation</Description>
-  </BugCode>
   <BugCode abbrev="UwF">
     <Description>Unwritten field</Description>
   </BugCode>
-  <BugCode abbrev="UuF">
-    <Description>Unused field</Description>
-  </BugCode>
-  <BugCode abbrev="UrF">
-    <Description>Unread field</Description>
-  </BugCode>
   <BugCode abbrev="Dm">
     <Description>Dubious method used</Description>
-  </BugCode>
-  <BugCode abbrev="DLS" cweid="563">
-    <Description>Dead local store</Description>
   </BugCode>
   <BugCode abbrev="RCN" cweid="476">
     <Description>Redundant comparison to null</Description>
@@ -587,75 +206,70 @@ or the previous dereference is erroneous.</p>
   <BugCode abbrev="EC">
     <Description>Comparing incompatible types for equality</Description>
   </BugCode>
-  <BugCode abbrev="EI2">
-    <Description>Storing reference to mutable object</Description>
-  </BugCode>
   <Errors errors="0" missingClasses="0"></Errors>
-  <FindBugsSummary timestamp="Mon, 10 Oct 2022 20:07:02 +0200" total_classes="16" referenced_classes="45" total_bugs="18" total_size="883" num_packages="5" java_version="17.0.4.1" vm_version="17.0.4.1+1" cpu_seconds="9.73" clock_seconds="4.39" peak_mbytes="150.28" alloc_mbytes="2048.00" gc_seconds="0.05" priority_2="18">
+  <FindBugsSummary timestamp="Mon, 10 Oct 2022 20:45:36 +0200" total_classes="16" referenced_classes="45" total_bugs="5" total_size="872" num_packages="5" java_version="17.0.2" vm_version="17.0.2+8" cpu_seconds="13.55" clock_seconds="5.51" peak_mbytes="211.82" alloc_mbytes="4068.00" gc_seconds="0.03" priority_2="5">
     <FileStats path="controller/App.java" bugCount="0" size="9"/>
     <FileStats path="controller/Controller.java" bugCount="0" size="86"/>
-    <FileStats path="controller/MemberController.java" bugCount="3" size="161" bugHash="8e0105a45ac445063e49a4f60efb3ad6"/>
+    <FileStats path="controller/MemberController.java" bugCount="1" size="161" bugHash="fbf4f411ac326fb29d526afea9d214b9"/>
     <FileStats path="model/TimeAdvancedObserver.java" bugCount="0" size="3"/>
-    <FileStats path="model/domain/Contract.java" bugCount="6" size="16" bugHash="f971c42662c685bd3179e73ed4d46b7e"/>
+    <FileStats path="model/domain/Contract.java" bugCount="0" size="20"/>
     <FileStats path="model/domain/Item.java" bugCount="3" size="134" bugHash="1dd9432badbb4f5d664b29edf16cdb9d"/>
-    <FileStats path="model/domain/Member.java" bugCount="3" size="138" bugHash="444abc3d606789c1226611403f915366"/>
+    <FileStats path="model/domain/Member.java" bugCount="0" size="135"/>
     <FileStats path="model/domain/MemberId.java" bugCount="0" size="23"/>
-    <FileStats path="model/domain/Registry.java" bugCount="2" size="86" bugHash="9431bacb971f88527d20e967affd3df3"/>
-    <FileStats path="model/domain/Time.java" bugCount="0" size="9"/>
+    <FileStats path="model/domain/Registry.java" bugCount="0" size="71"/>
+    <FileStats path="model/domain/Time.java" bugCount="0" size="11"/>
     <FileStats path="model/persistence/Imapper.java" bugCount="0" size="3"/>
     <FileStats path="model/persistence/Persistence.java" bugCount="0" size="5"/>
     <FileStats path="model/persistence/SqlMapper.java" bugCount="0" size="7"/>
-    <FileStats path="view/ConsoleUi.java" bugCount="1" size="203" bugHash="d6a1edfd14f333a2a8d419cfec9b08bf"/>
-    <PackageStats package="controller" total_bugs="3" total_types="3" total_size="256" priority_2="3">
+    <FileStats path="view/ConsoleUi.java" bugCount="1" size="204" bugHash="d6a1edfd14f333a2a8d419cfec9b08bf"/>
+    <PackageStats package="controller" total_bugs="1" total_types="3" total_size="256" priority_2="1">
       <ClassStats class="controller.App" sourceFile="App.java" interface="false" size="9" bugs="0"/>
       <ClassStats class="controller.Controller" sourceFile="Controller.java" interface="false" size="86" bugs="0"/>
-      <ClassStats class="controller.MemberController" sourceFile="MemberController.java" interface="false" size="161" bugs="3" priority_2="3"/>
+      <ClassStats class="controller.MemberController" sourceFile="MemberController.java" interface="false" size="161" bugs="1" priority_2="1"/>
     </PackageStats>
     <PackageStats package="model" total_bugs="0" total_types="1" total_size="3">
       <ClassStats class="model.TimeAdvancedObserver" sourceFile="TimeAdvancedObserver.java" interface="true" size="3" bugs="0"/>
     </PackageStats>
-    <PackageStats package="model.domain" total_bugs="14" total_types="8" total_size="406" priority_2="14">
-      <ClassStats class="model.domain.Contract" sourceFile="Contract.java" interface="false" size="16" bugs="6" priority_2="6"/>
+    <PackageStats package="model.domain" total_bugs="3" total_types="8" total_size="394" priority_2="3">
+      <ClassStats class="model.domain.Contract" sourceFile="Contract.java" interface="false" size="20" bugs="0"/>
       <ClassStats class="model.domain.Item" sourceFile="Item.java" interface="false" size="109" bugs="3" priority_2="3"/>
       <ClassStats class="model.domain.Item$Mutable" sourceFile="Item.java" interface="false" size="25" bugs="0"/>
-      <ClassStats class="model.domain.Member" sourceFile="Member.java" interface="false" size="131" bugs="3" priority_2="3"/>
+      <ClassStats class="model.domain.Member" sourceFile="Member.java" interface="false" size="128" bugs="0"/>
       <ClassStats class="model.domain.Member$Mutable" sourceFile="Member.java" interface="false" size="7" bugs="0"/>
       <ClassStats class="model.domain.MemberId" sourceFile="MemberId.java" interface="false" size="23" bugs="0"/>
-      <ClassStats class="model.domain.Registry" sourceFile="Registry.java" interface="false" size="86" bugs="2" priority_2="2"/>
-      <ClassStats class="model.domain.Time" sourceFile="Time.java" interface="false" size="9" bugs="0"/>
+      <ClassStats class="model.domain.Registry" sourceFile="Registry.java" interface="false" size="71" bugs="0"/>
+      <ClassStats class="model.domain.Time" sourceFile="Time.java" interface="false" size="11" bugs="0"/>
     </PackageStats>
     <PackageStats package="model.persistence" total_bugs="0" total_types="3" total_size="15">
       <ClassStats class="model.persistence.Imapper" sourceFile="Imapper.java" interface="true" size="3" bugs="0"/>
       <ClassStats class="model.persistence.Persistence" sourceFile="Persistence.java" interface="false" size="5" bugs="0"/>
       <ClassStats class="model.persistence.SqlMapper" sourceFile="SqlMapper.java" interface="false" size="7" bugs="0"/>
     </PackageStats>
-    <PackageStats package="view" total_bugs="1" total_types="1" total_size="203" priority_2="1">
-      <ClassStats class="view.ConsoleUi" sourceFile="ConsoleUi.java" interface="false" size="203" bugs="1" priority_2="1"/>
+    <PackageStats package="view" total_bugs="1" total_types="1" total_size="204" priority_2="1">
+      <ClassStats class="view.ConsoleUi" sourceFile="ConsoleUi.java" interface="false" size="204" bugs="1" priority_2="1"/>
     </PackageStats>
     <FindBugsProfile>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassInfoAnalysisEngine" totalMilliseconds="693" invocations="574" avgMicrosecondsPerInvocation="1207" maxMicrosecondsPerInvocation="71493" standardDeviationMicrosecondsPerInvocation="4156"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.FieldItemSummary" totalMilliseconds="298" invocations="45" avgMicrosecondsPerInvocation="6644" maxMicrosecondsPerInvocation="69774" standardDeviationMicrosecondsPerInvocation="14410"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.FindNoSideEffectMethods" totalMilliseconds="222" invocations="45" avgMicrosecondsPerInvocation="4936" maxMicrosecondsPerInvocation="75719" standardDeviationMicrosecondsPerInvocation="12069"/>
-      <ClassProfile name="edu.umd.cs.findbugs.OpcodeStack$JumpInfoFactory" totalMilliseconds="195" invocations="298" avgMicrosecondsPerInvocation="654" maxMicrosecondsPerInvocation="18460" standardDeviationMicrosecondsPerInvocation="2044"/>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ValueNumberDataflowFactory" totalMilliseconds="150" invocations="159" avgMicrosecondsPerInvocation="945" maxMicrosecondsPerInvocation="21272" standardDeviationMicrosecondsPerInvocation="2133"/>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.IsNullValueDataflowFactory" totalMilliseconds="130" invocations="149" avgMicrosecondsPerInvocation="872" maxMicrosecondsPerInvocation="11538" standardDeviationMicrosecondsPerInvocation="1480"/>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.TypeDataflowFactory" totalMilliseconds="116" invocations="150" avgMicrosecondsPerInvocation="777" maxMicrosecondsPerInvocation="9472" standardDeviationMicrosecondsPerInvocation="1579"/>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.UnconditionalValueDerefDataflowFactory" totalMilliseconds="102" invocations="149" avgMicrosecondsPerInvocation="686" maxMicrosecondsPerInvocation="8518" standardDeviationMicrosecondsPerInvocation="1242"/>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassDataAnalysisEngine" totalMilliseconds="101" invocations="580" avgMicrosecondsPerInvocation="174" maxMicrosecondsPerInvocation="8601" standardDeviationMicrosecondsPerInvocation="546"/>
-      <ClassProfile name="edu.umd.cs.findbugs.ba.npe.NullDerefAndRedundantComparisonFinder" totalMilliseconds="97" invocations="149" avgMicrosecondsPerInvocation="655" maxMicrosecondsPerInvocation="8430" standardDeviationMicrosecondsPerInvocation="1187"/>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.JavaClassAnalysisEngine" totalMilliseconds="94" invocations="87" avgMicrosecondsPerInvocation="1083" maxMicrosecondsPerInvocation="10261" standardDeviationMicrosecondsPerInvocation="2194"/>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.CFGFactory" totalMilliseconds="83" invocations="149" avgMicrosecondsPerInvocation="563" maxMicrosecondsPerInvocation="4935" standardDeviationMicrosecondsPerInvocation="862"/>
-      <ClassProfile name="edu.umd.cs.findbugs.util.TopologicalSort" totalMilliseconds="78" invocations="538" avgMicrosecondsPerInvocation="146" maxMicrosecondsPerInvocation="6701" standardDeviationMicrosecondsPerInvocation="473"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.UnreadFields" totalMilliseconds="67" invocations="16" avgMicrosecondsPerInvocation="4249" maxMicrosecondsPerInvocation="13893" standardDeviationMicrosecondsPerInvocation="3830"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.NoteDirectlyRelevantTypeQualifiers" totalMilliseconds="61" invocations="45" avgMicrosecondsPerInvocation="1364" maxMicrosecondsPerInvocation="10779" standardDeviationMicrosecondsPerInvocation="2164"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.FunctionsThatMightBeMistakenForProcedures" totalMilliseconds="57" invocations="45" avgMicrosecondsPerInvocation="1275" maxMicrosecondsPerInvocation="17328" standardDeviationMicrosecondsPerInvocation="2978"/>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.MethodGenFactory" totalMilliseconds="51" invocations="153" avgMicrosecondsPerInvocation="338" maxMicrosecondsPerInvocation="16934" standardDeviationMicrosecondsPerInvocation="1410"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.FindReturnRef" totalMilliseconds="48" invocations="16" avgMicrosecondsPerInvocation="3017" maxMicrosecondsPerInvocation="16591" standardDeviationMicrosecondsPerInvocation="5089"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.OverridingEqualsNotSymmetrical" totalMilliseconds="41" invocations="45" avgMicrosecondsPerInvocation="914" maxMicrosecondsPerInvocation="12611" standardDeviationMicrosecondsPerInvocation="2179"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.DumbMethods" totalMilliseconds="40" invocations="16" avgMicrosecondsPerInvocation="2509" maxMicrosecondsPerInvocation="18081" standardDeviationMicrosecondsPerInvocation="4454"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.CheckRelaxingNullnessAnnotation" totalMilliseconds="36" invocations="16" avgMicrosecondsPerInvocation="2307" maxMicrosecondsPerInvocation="11097" standardDeviationMicrosecondsPerInvocation="2998"/>
-      <ClassProfile name="edu.umd.cs.findbugs.ba.npe.TypeQualifierNullnessAnnotationDatabase" totalMilliseconds="35" invocations="2042" avgMicrosecondsPerInvocation="17" maxMicrosecondsPerInvocation="8622" standardDeviationMicrosecondsPerInvocation="225"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.FindRefComparison$SpecialTypeAnalysis" totalMilliseconds="34" invocations="116" avgMicrosecondsPerInvocation="297" maxMicrosecondsPerInvocation="3433" standardDeviationMicrosecondsPerInvocation="544"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassInfoAnalysisEngine" totalMilliseconds="1144" invocations="574" avgMicrosecondsPerInvocation="1993" maxMicrosecondsPerInvocation="88267" standardDeviationMicrosecondsPerInvocation="6256"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FieldItemSummary" totalMilliseconds="348" invocations="45" avgMicrosecondsPerInvocation="7738" maxMicrosecondsPerInvocation="121077" standardDeviationMicrosecondsPerInvocation="21015"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindNoSideEffectMethods" totalMilliseconds="326" invocations="45" avgMicrosecondsPerInvocation="7259" maxMicrosecondsPerInvocation="141076" standardDeviationMicrosecondsPerInvocation="23438"/>
+      <ClassProfile name="edu.umd.cs.findbugs.OpcodeStack$JumpInfoFactory" totalMilliseconds="145" invocations="302" avgMicrosecondsPerInvocation="482" maxMicrosecondsPerInvocation="10309" standardDeviationMicrosecondsPerInvocation="1031"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.JavaClassAnalysisEngine" totalMilliseconds="136" invocations="87" avgMicrosecondsPerInvocation="1570" maxMicrosecondsPerInvocation="64069" standardDeviationMicrosecondsPerInvocation="7263"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassDataAnalysisEngine" totalMilliseconds="131" invocations="580" avgMicrosecondsPerInvocation="227" maxMicrosecondsPerInvocation="8133" standardDeviationMicrosecondsPerInvocation="519"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ValueNumberDataflowFactory" totalMilliseconds="102" invocations="162" avgMicrosecondsPerInvocation="633" maxMicrosecondsPerInvocation="21185" standardDeviationMicrosecondsPerInvocation="1753"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.CalledMethods" totalMilliseconds="98" invocations="45" avgMicrosecondsPerInvocation="2189" maxMicrosecondsPerInvocation="60930" standardDeviationMicrosecondsPerInvocation="8960"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.NoteDirectlyRelevantTypeQualifiers" totalMilliseconds="93" invocations="45" avgMicrosecondsPerInvocation="2069" maxMicrosecondsPerInvocation="31144" standardDeviationMicrosecondsPerInvocation="5032"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.IsNullValueDataflowFactory" totalMilliseconds="88" invocations="153" avgMicrosecondsPerInvocation="578" maxMicrosecondsPerInvocation="7594" standardDeviationMicrosecondsPerInvocation="866"/>
+      <ClassProfile name="edu.umd.cs.findbugs.ba.npe.NullDerefAndRedundantComparisonFinder" totalMilliseconds="85" invocations="153" avgMicrosecondsPerInvocation="559" maxMicrosecondsPerInvocation="6863" standardDeviationMicrosecondsPerInvocation="806"/>
+      <ClassProfile name="edu.umd.cs.findbugs.util.TopologicalSort" totalMilliseconds="82" invocations="538" avgMicrosecondsPerInvocation="153" maxMicrosecondsPerInvocation="5740" standardDeviationMicrosecondsPerInvocation="406"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.CFGFactory" totalMilliseconds="82" invocations="153" avgMicrosecondsPerInvocation="535" maxMicrosecondsPerInvocation="27160" standardDeviationMicrosecondsPerInvocation="2192"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.TypeDataflowFactory" totalMilliseconds="81" invocations="154" avgMicrosecondsPerInvocation="530" maxMicrosecondsPerInvocation="12976" standardDeviationMicrosecondsPerInvocation="1187"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.EqualsOperandShouldHaveClassCompatibleWithThis" totalMilliseconds="81" invocations="45" avgMicrosecondsPerInvocation="1800" maxMicrosecondsPerInvocation="34365" standardDeviationMicrosecondsPerInvocation="6269"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.MethodGenFactory" totalMilliseconds="80" invocations="157" avgMicrosecondsPerInvocation="515" maxMicrosecondsPerInvocation="53423" standardDeviationMicrosecondsPerInvocation="4273"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.OverridingEqualsNotSymmetrical" totalMilliseconds="78" invocations="45" avgMicrosecondsPerInvocation="1741" maxMicrosecondsPerInvocation="31697" standardDeviationMicrosecondsPerInvocation="5081"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.UnconditionalValueDerefDataflowFactory" totalMilliseconds="68" invocations="153" avgMicrosecondsPerInvocation="447" maxMicrosecondsPerInvocation="5271" standardDeviationMicrosecondsPerInvocation="673"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FunctionsThatMightBeMistakenForProcedures" totalMilliseconds="64" invocations="45" avgMicrosecondsPerInvocation="1436" maxMicrosecondsPerInvocation="13192" standardDeviationMicrosecondsPerInvocation="2796"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.BuildObligationPolicyDatabase" totalMilliseconds="54" invocations="45" avgMicrosecondsPerInvocation="1205" maxMicrosecondsPerInvocation="18096" standardDeviationMicrosecondsPerInvocation="2833"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindRefComparison$SpecialTypeAnalysis" totalMilliseconds="49" invocations="116" avgMicrosecondsPerInvocation="422" maxMicrosecondsPerInvocation="3277" standardDeviationMicrosecondsPerInvocation="554"/>
     </FindBugsProfile>
   </FindBugsSummary>
   <ClassFeatures></ClassFeatures>

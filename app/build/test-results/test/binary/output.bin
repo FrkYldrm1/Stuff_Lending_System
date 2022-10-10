@@ -1,169 +1,115 @@
-b0 CheckStyle Issues in /Users/fy/Documents/1DV607/a2/app/src/main/java/controller/Controller.java
-h0 CheckStyle Issues in /Users/fy/Documents/1DV607/a2/app/src/main/java/controller/MemberController.java
-[0 CheckStyle Issues in /Users/fy/Documents/1DV607/a2/app/src/main/java/controller/App.java
-j0 CheckStyle Issues in /Users/fy/Documents/1DV607/a2/app/src/main/java/model/persistence/Persistence.java
-f0 CheckStyle Issues in /Users/fy/Documents/1DV607/a2/app/src/main/java/model/persistence/Imapper.java
-h0 CheckStyle Issues in /Users/fy/Documents/1DV607/a2/app/src/main/java/model/persistence/SqlMapper.java
-b0 CheckStyle Issues in /Users/fy/Documents/1DV607/a2/app/src/main/java/model/domain/Contract.java
-b0 CheckStyle Issues in /Users/fy/Documents/1DV607/a2/app/src/main/java/model/domain/MemberId.java
-^0 CheckStyle Issues in /Users/fy/Documents/1DV607/a2/app/src/main/java/model/domain/Time.java
-`0 CheckStyle Issues in /Users/fy/Documents/1DV607/a2/app/src/main/java/model/domain/Member.java
-b0 CheckStyle Issues in /Users/fy/Documents/1DV607/a2/app/src/main/java/model/domain/Registry.java
-^0 CheckStyle Issues in /Users/fy/Documents/1DV607/a2/app/src/main/java/model/domain/Item.java
-g0 CheckStyle Issues in /Users/fy/Documents/1DV607/a2/app/src/main/java/model/TimeAdvancedObserver.java
-[0 CheckStyle Issues in /Users/fy/Documents/1DV607/a2/app/src/main/java/view/ConsoleUi.java
-,3 FindBugs Issues in model/domain/Item.java
-text:lines: 20-256 
-enew model.domain.Item(String, String, int, int, Boolean, int, String, String, String) uses the same 
-  code for two branches 
-,Method uses the same code for two branches 
-cThis method uses the same code to implement two branches of a conditional branch. Check to ensure 
-$  that this isn't a coding mistake.
-
-text:lines: 20-256 
-_Call to equals(null) in new model.domain.Item(String, String, int, int, Boolean, int, String, 
-  String, String) 
-Call to equals(null) 
-fThis method calls equals(Object), passing a null value as the argument. According to the contract of 
-=  the equals() method, this call should always return false.
-
-text:lines: 20-256 
-0Unwritten public or protected field: itemClass 
-%Unwritten public or protected field 
-dNo writes were seen to this public/protected field. All reads of it will return the default value. 
-V  Check for errors (should it have been initialized?), or remove it if it is useless.
-
-00 FindBugs Issues in model/domain/MemberId.java
-)1 FindBugs Issues in view/ConsoleUi.java
-text:lines: 21-426 
-PbyeBye() invokes System.exit(...), which shuts down the entire virtual machine 
-!Method invokes System.exit(...) 
-eInvoking System.exit shuts down the entire Java virtual machine. This should only been done when it 
-d  is appropriate. Such calls make it hard or impossible for your code to be invoked by other code. 
-0  Consider throwing a RuntimeException instead.
-
-00 FindBugs Issues in controller/Controller.java
-63 FindBugs Issues in controller/MemberController.java
-text:lines: 17-300 
-dnew controller.MemberController(ConsoleUi, Registry) may expose internal representation by storing 
->  an externally mutable object into MemberController.console 
-QMay expose internal representation by incorporating reference to mutable object 
-fThis code stores a reference to an externally mutable object into the internal representation of the 
-d  object. If instances are accessed by untrusted code, and unchecked changes to the mutable object 
-e  would compromise security or other important properties, you will need to do something different. 
-F  Storing a copy of the object is better approach in many situations.
-
-text:lines: 17-300 
-dnew controller.MemberController(ConsoleUi, Registry) may expose internal representation by storing 
-?  an externally mutable object into MemberController.registry 
-QMay expose internal representation by incorporating reference to mutable object 
-fThis code stores a reference to an externally mutable object into the internal representation of the 
-d  object. If instances are accessed by untrusted code, and unchecked changes to the mutable object 
-e  would compromise security or other important properties, you will need to do something different. 
-F  Storing a copy of the object is better approach in many situations.
-
-text:lines: 17-300 
-SNullcheck of input at line 167 of value previously dereferenced in isNull(String) 
-,Nullcheck of value previously dereferenced 
-aA value is checked here to see whether it is null, but this value cannot be null because it was 
-c  previously dereferenced and if it were null a null pointer exception would have occurred at the 
-c  earlier dereference. Essentially, this code and the previous dereference disagree as to whether 
-b  this value is allowed to be null. Either the check is redundant or the previous dereference is 
-  erroneous.
-
-02 FindBugs Issues in model/domain/Registry.java
-text:lines: 10-178 
-=Dead store to i in createContract(Member, Member, int, int) 
-Dead store to local variable 
-`This instruction assigns a value to a local variable, but the value is not read or used in any 
-e  subsequent instruction. Often, this indicates an error, because the value computed is never used. 
- 
-_Note that Sun's javac compiler often generates dead stores for final local variables. Because 
-^  SpotBugs is a bytecode-based tool, there is no easy way to eliminate these false positives.
-
-text:lines: 10-178 
-OgetMembers() may expose internal representation by returning Registry.members 
-MMay expose internal representation by returning reference to mutable object 
-bReturning a reference to a mutable object value stored in one of the object's fields exposes the 
-e  internal representation of the object. If instances are accessed by untrusted code, and unchecked 
-c  changes to the mutable object would compromise security or other important properties, you will 
-a  need to do something different. Returning a new copy of the object is better approach in many 
-  situations.
-
-)0 FindBugs Issues in controller/App.java
-06 FindBugs Issues in model/domain/Contract.java
-text:lines: 18-30 
-MgetLentTo() may expose internal representation by returning Contract.lentTo 
-MMay expose internal representation by returning reference to mutable object 
-bReturning a reference to a mutable object value stored in one of the object's fields exposes the 
-e  internal representation of the object. If instances are accessed by untrusted code, and unchecked 
-c  changes to the mutable object would compromise security or other important properties, you will 
-a  need to do something different. Returning a new copy of the object is better approach in many 
-  situations.
-
-text:lines: 18-30 
-KgetOwner() may expose internal representation by returning Contract.owner 
-MMay expose internal representation by returning reference to mutable object 
-bReturning a reference to a mutable object value stored in one of the object's fields exposes the 
-e  internal representation of the object. If instances are accessed by untrusted code, and unchecked 
-c  changes to the mutable object would compromise security or other important properties, you will 
-a  need to do something different. Returning a new copy of the object is better approach in many 
-  situations.
-
-text:lines: 18-30 
-fnew model.domain.Contract(Member, Member, int, int) may expose internal representation by storing an 
-2  externally mutable object into Contract.lentTo 
-QMay expose internal representation by incorporating reference to mutable object 
-fThis code stores a reference to an externally mutable object into the internal representation of the 
-d  object. If instances are accessed by untrusted code, and unchecked changes to the mutable object 
-e  would compromise security or other important properties, you will need to do something different. 
-F  Storing a copy of the object is better approach in many situations.
-
-text:lines: 18-30 
-fnew model.domain.Contract(Member, Member, int, int) may expose internal representation by storing an 
-1  externally mutable object into Contract.owner 
-QMay expose internal representation by incorporating reference to mutable object 
-fThis code stores a reference to an externally mutable object into the internal representation of the 
-d  object. If instances are accessed by untrusted code, and unchecked changes to the mutable object 
-e  would compromise security or other important properties, you will need to do something different. 
-F  Storing a copy of the object is better approach in many situations.
-
-text:lines: 18-30 
-Unread field: contractPeriod 
-Unread field 
-?This field is never read. Consider removing it from the class.
-
-text:lines: 18-30 
-Unread field: item 
-Unread field 
-?This field is never read. Consider removing it from the class.
-
-.3 FindBugs Issues in model/domain/Member.java
-text:lines: 17-301 
-%Dead store to item in updateItems() 
-Dead store to local variable 
-`This instruction assigns a value to a local variable, but the value is not read or used in any 
-e  subsequent instruction. Often, this indicates an error, because the value computed is never used. 
- 
-_Note that Sun's javac compiler often generates dead stores for final local variables. Because 
-^  SpotBugs is a bytecode-based tool, there is no easy way to eliminate these false positives.
-
-text:lines: 17-301 
-SgetItemsOwned() may expose internal representation by returning Member.itemsOwned 
-MMay expose internal representation by returning reference to mutable object 
-bReturning a reference to a mutable object value stored in one of the object's fields exposes the 
-e  internal representation of the object. If instances are accessed by untrusted code, and unchecked 
-c  changes to the mutable object would compromise security or other important properties, you will 
-a  need to do something different. Returning a new copy of the object is better approach in many 
-  situations.
-
-text:lines: 17-301 
-Unused field: costTotal 
-Unused field 
-?This field is never used. Consider removing it from the class.
-
-,0 FindBugs Issues in model/domain/Time.java
-40 FindBugs Issues in model/persistence/Imapper.java
-50 FindBugs Issues in model/TimeAdvancedObserver.java
-60 FindBugs Issues in model/persistence/SqlMapper.java
-80 FindBugs Issues in model/persistence/Persistence.java
+f0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/controller/App.java
+m0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/controller/Controller.java
+s0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/controller/MemberController.java
+r0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/model/TimeAdvancedObserver.java
+m0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/model/domain/Contract.java
+i0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/model/domain/Item.java
+k6 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/model/domain/Member.java
+ text:line: 5 column: column:1 
+QWrong lexicographical order for 'java.util.ArrayList' import. Should be before 
+!  'model.TimeAdvancedObserver'.
+
+text:line: 117 column: 
+1Line is longer than 120 characters (found 122).
+
+$text:line: 117 column: column:122 
+'+' should be on a new line.
+
+text:line: 118 column: 
+1Line is longer than 120 characters (found 129).
+
+#text:line: 250 column: column:32 
+8WhitespaceAround: '{' is not preceded with whitespace.
+
+#text:line: 252 column: column:46 
+"')' is preceded with whitespace.
+
+m0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/model/domain/MemberId.java
+m7 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/model/domain/Registry.java
+ text:line: 5 column: column:1 
+?Extra separation in import group before 'java.util.ArrayList'
+
+!text:line: 13 column: column:8 
+CMember name 'i' must match pattern '^[a-z][a-z0-9][a-zA-Z0-9]*$'.
+
+!text:line: 24 column: column:1 
+gBlock comment has incorrect indentation level 0, expected is 4, indentation should be the same level 
+  as line 43.
+
+!text:line: 44 column: column:4 
+dComment has incorrect indentation level 3, expected is 4, indentation should be the same level as 
+  line 43.
+
+text:line: 53 column: 
+1Line is longer than 120 characters (found 122).
+
+#text:line: 53 column: column:122 
+'+' should be on a new line.
+
+text:line: 54 column: 
+1Line is longer than 120 characters (found 129).
+
+i0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/model/domain/Time.java
+q0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/model/persistence/Imapper.java
+u0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/model/persistence/Persistence.java
+s0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/model/persistence/SqlMapper.java
+f3 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/view/ConsoleUi.java
+text:line: 217 column: 
+1Line is longer than 120 characters (found 133).
+
+#text:line: 218 column: column:28 
+$',' is not followed by whitespace.
+
+#text:line: 218 column: column:28 
+"',' is preceded with whitespace.
+
+-3 FindBugs Issues in model/domain/Item.java
+text:lines: 20-256 
+fnew model.domain.Item(String, String, int, int, Boolean, int, String, String, String) uses the same 
+  code for two branches 
+-Method uses the same code for two branches 
+dThis method uses the same code to implement two branches of a conditional branch. Check to ensure 
+%  that this isn't a coding mistake.
+
+text:lines: 20-256 
+`Call to equals(null) in new model.domain.Item(String, String, int, int, Boolean, int, String, 
+  String, String) 
+Call to equals(null) 
+gThis method calls equals(Object), passing a null value as the argument. According to the contract of 
+>  the equals() method, this call should always return false.
+
+text:lines: 20-256 
+1Unwritten public or protected field: itemClass 
+&Unwritten public or protected field 
+eNo writes were seen to this public/protected field. All reads of it will return the default value. 
+W  Check for errors (should it have been initialized?), or remove it if it is useless.
+
+10 FindBugs Issues in model/domain/MemberId.java
+*1 FindBugs Issues in view/ConsoleUi.java
+text:lines: 21-427 
+QbyeBye() invokes System.exit(...), which shuts down the entire virtual machine 
+"Method invokes System.exit(...) 
+fInvoking System.exit shuts down the entire Java virtual machine. This should only been done when it 
+e  is appropriate. Such calls make it hard or impossible for your code to be invoked by other code. 
+1  Consider throwing a RuntimeException instead.
+
+10 FindBugs Issues in controller/Controller.java
+71 FindBugs Issues in controller/MemberController.java
+text:lines: 18-302 
+SNullcheck of input at line 169 of value previously dereferenced in check(String) 
+-Nullcheck of value previously dereferenced 
+bA value is checked here to see whether it is null, but this value cannot be null because it was 
+d  previously dereferenced and if it were null a null pointer exception would have occurred at the 
+d  earlier dereference. Essentially, this code and the previous dereference disagree as to whether 
+c  this value is allowed to be null. Either the check is redundant or the previous dereference is 
+  erroneous.
+
+10 FindBugs Issues in model/domain/Registry.java
+*0 FindBugs Issues in controller/App.java
+10 FindBugs Issues in model/domain/Contract.java
+/0 FindBugs Issues in model/domain/Member.java
+-0 FindBugs Issues in model/domain/Time.java
+50 FindBugs Issues in model/persistence/Imapper.java
+60 FindBugs Issues in model/TimeAdvancedObserver.java
+70 FindBugs Issues in model/persistence/SqlMapper.java
+90 FindBugs Issues in model/persistence/Persistence.java

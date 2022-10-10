@@ -411,7 +411,7 @@ public class ConsoleUi {
    * Message for advancig the day.
    */
   public void advanceDayMessage() {
-    System.out.print("Time has been advanced by one day ;)");
+    System.out.println("Time has been advanced by one day ;)");
   }
 
   /**

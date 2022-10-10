@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="CodeQualityTests" tests="1" skipped="0" failures="1" errors="0" timestamp="2022-10-10T18:07:08" hostname="Faruks-MacBook-Pro.local" time="0.239">
+<testsuite name="CodeQualityTests" tests="1" skipped="0" failures="1" errors="0" timestamp="2022-10-10T18:45:43" hostname="DEEB" time="0.187">
   <properties/>
-  <testcase name="codeQuality()" classname="CodeQualityTests" time="0.239">
-    <failure message="org.opentest4j.AssertionFailedError: Max amount (5) of quality issues exceeded:18 ==&gt; expected: &lt;true&gt; but was: &lt;false&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: Max amount (5) of quality issues exceeded:18 ==&gt; expected: &lt;true&gt; but was: &lt;false&gt;
+  <testcase name="codeQuality()" classname="CodeQualityTests" time="0.187">
+    <failure message="org.opentest4j.AssertionFailedError: Max amount (5) of quality issues exceeded:21 ==&gt; expected: &lt;true&gt; but was: &lt;false&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: Max amount (5) of quality issues exceeded:21 ==&gt; expected: &lt;true&gt; but was: &lt;false&gt;
 	at app//org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
 	at app//org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:40)
 	at app//org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:193)
 	at app//CodeQualityTests.codeQuality(CodeQualityTests.java:70)
-	at java.base@17.0.4.1/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base@17.0.4.1/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base@17.0.4.1/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base@17.0.4.1/java.lang.reflect.Method.invoke(Method.java:568)
+	at java.base@17.0.2/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base@17.0.2/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base@17.0.2/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base@17.0.2/java.lang.reflect.Method.invoke(Method.java:568)
 	at app//org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:688)
 	at app//org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
 	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
@@ -38,7 +38,7 @@
 	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
 	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:126)
 	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:84)
-	at java.base@17.0.4.1/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base@17.0.2/java.util.ArrayList.forEach(ArrayList.java:1511)
 	at app//org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
 	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:143)
 	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
@@ -48,7 +48,7 @@
 	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
 	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:126)
 	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:84)
-	at java.base@17.0.4.1/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base@17.0.2/java.util.ArrayList.forEach(ArrayList.java:1511)
 	at app//org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
 	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:143)
 	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
@@ -61,23 +61,21 @@
 	at app//org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:32)
 	at app//org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
 	at app//org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:51)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:107)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:108)
 	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
 	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
 	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
 	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
-	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114)
-	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:86)
-	at org.junit.platform.launcher.core.DefaultLauncherSession$DelegatingLauncher.execute(DefaultLauncherSession.java:86)
-	at org.junit.platform.launcher.core.SessionPerRequestLauncher.execute(SessionPerRequestLauncher.java:53)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:96)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:75)
 	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.processAllTestClasses(JUnitPlatformTestClassProcessor.java:99)
 	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.access$000(JUnitPlatformTestClassProcessor.java:79)
 	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor.stop(JUnitPlatformTestClassProcessor.java:75)
 	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:61)
-	at java.base@17.0.4.1/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base@17.0.4.1/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base@17.0.4.1/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base@17.0.4.1/java.lang.reflect.Method.invoke(Method.java:568)
+	at java.base@17.0.2/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base@17.0.2/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base@17.0.2/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base@17.0.2/java.lang.reflect.Method.invoke(Method.java:568)
 	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
 	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
 	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
@@ -94,20 +92,71 @@
 	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <system-out><![CDATA[0 CheckStyle Issues in /Users/fy/Documents/1DV607/a2/app/src/main/java/controller/Controller.java
-0 CheckStyle Issues in /Users/fy/Documents/1DV607/a2/app/src/main/java/controller/MemberController.java
-0 CheckStyle Issues in /Users/fy/Documents/1DV607/a2/app/src/main/java/controller/App.java
-0 CheckStyle Issues in /Users/fy/Documents/1DV607/a2/app/src/main/java/model/persistence/Persistence.java
-0 CheckStyle Issues in /Users/fy/Documents/1DV607/a2/app/src/main/java/model/persistence/Imapper.java
-0 CheckStyle Issues in /Users/fy/Documents/1DV607/a2/app/src/main/java/model/persistence/SqlMapper.java
-0 CheckStyle Issues in /Users/fy/Documents/1DV607/a2/app/src/main/java/model/domain/Contract.java
-0 CheckStyle Issues in /Users/fy/Documents/1DV607/a2/app/src/main/java/model/domain/MemberId.java
-0 CheckStyle Issues in /Users/fy/Documents/1DV607/a2/app/src/main/java/model/domain/Time.java
-0 CheckStyle Issues in /Users/fy/Documents/1DV607/a2/app/src/main/java/model/domain/Member.java
-0 CheckStyle Issues in /Users/fy/Documents/1DV607/a2/app/src/main/java/model/domain/Registry.java
-0 CheckStyle Issues in /Users/fy/Documents/1DV607/a2/app/src/main/java/model/domain/Item.java
-0 CheckStyle Issues in /Users/fy/Documents/1DV607/a2/app/src/main/java/model/TimeAdvancedObserver.java
-0 CheckStyle Issues in /Users/fy/Documents/1DV607/a2/app/src/main/java/view/ConsoleUi.java
+  <system-out><![CDATA[0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/controller/App.java
+0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/controller/Controller.java
+0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/controller/MemberController.java
+0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/model/TimeAdvancedObserver.java
+0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/model/domain/Contract.java
+0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/model/domain/Item.java
+6 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/model/domain/Member.java
+text:line: 5 column: column:1 
+Wrong lexicographical order for 'java.util.ArrayList' import. Should be before 
+  'model.TimeAdvancedObserver'.
+
+text:line: 117 column: 
+Line is longer than 120 characters (found 122).
+
+text:line: 117 column: column:122 
+'+' should be on a new line.
+
+text:line: 118 column: 
+Line is longer than 120 characters (found 129).
+
+text:line: 250 column: column:32 
+WhitespaceAround: '{' is not preceded with whitespace.
+
+text:line: 252 column: column:46 
+')' is preceded with whitespace.
+
+0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/model/domain/MemberId.java
+7 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/model/domain/Registry.java
+text:line: 5 column: column:1 
+Extra separation in import group before 'java.util.ArrayList'
+
+text:line: 13 column: column:8 
+Member name 'i' must match pattern '^[a-z][a-z0-9][a-zA-Z0-9]*$'.
+
+text:line: 24 column: column:1 
+Block comment has incorrect indentation level 0, expected is 4, indentation should be the same level 
+  as line 43.
+
+text:line: 44 column: column:4 
+Comment has incorrect indentation level 3, expected is 4, indentation should be the same level as 
+  line 43.
+
+text:line: 53 column: 
+Line is longer than 120 characters (found 122).
+
+text:line: 53 column: column:122 
+'+' should be on a new line.
+
+text:line: 54 column: 
+Line is longer than 120 characters (found 129).
+
+0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/model/domain/Time.java
+0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/model/persistence/Imapper.java
+0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/model/persistence/Persistence.java
+0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/model/persistence/SqlMapper.java
+3 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/view/ConsoleUi.java
+text:line: 217 column: 
+Line is longer than 120 characters (found 133).
+
+text:line: 218 column: column:28 
+',' is not followed by whitespace.
+
+text:line: 218 column: column:28 
+',' is preceded with whitespace.
+
 3 FindBugs Issues in model/domain/Item.java
 text:lines: 20-256 
 new model.domain.Item(String, String, int, int, Boolean, int, String, String, String) uses the same 
@@ -131,7 +180,7 @@ No writes were seen to this public/protected field. All reads of it will return 
 
 0 FindBugs Issues in model/domain/MemberId.java
 1 FindBugs Issues in view/ConsoleUi.java
-text:lines: 21-426 
+text:lines: 21-427 
 byeBye() invokes System.exit(...), which shuts down the entire virtual machine 
 Method invokes System.exit(...) 
 Invoking System.exit shuts down the entire Java virtual machine. This should only been done when it 
@@ -139,27 +188,9 @@ Invoking System.exit shuts down the entire Java virtual machine. This should onl
   Consider throwing a RuntimeException instead.
 
 0 FindBugs Issues in controller/Controller.java
-3 FindBugs Issues in controller/MemberController.java
-text:lines: 17-300 
-new controller.MemberController(ConsoleUi, Registry) may expose internal representation by storing 
-  an externally mutable object into MemberController.console 
-May expose internal representation by incorporating reference to mutable object 
-This code stores a reference to an externally mutable object into the internal representation of the 
-  object. If instances are accessed by untrusted code, and unchecked changes to the mutable object 
-  would compromise security or other important properties, you will need to do something different. 
-  Storing a copy of the object is better approach in many situations.
-
-text:lines: 17-300 
-new controller.MemberController(ConsoleUi, Registry) may expose internal representation by storing 
-  an externally mutable object into MemberController.registry 
-May expose internal representation by incorporating reference to mutable object 
-This code stores a reference to an externally mutable object into the internal representation of the 
-  object. If instances are accessed by untrusted code, and unchecked changes to the mutable object 
-  would compromise security or other important properties, you will need to do something different. 
-  Storing a copy of the object is better approach in many situations.
-
-text:lines: 17-300 
-Nullcheck of input at line 167 of value previously dereferenced in isNull(String) 
+1 FindBugs Issues in controller/MemberController.java
+text:lines: 18-302 
+Nullcheck of input at line 169 of value previously dereferenced in check(String) 
 Nullcheck of value previously dereferenced 
 A value is checked here to see whether it is null, but this value cannot be null because it was 
   previously dereferenced and if it were null a null pointer exception would have occurred at the 
@@ -167,97 +198,10 @@ A value is checked here to see whether it is null, but this value cannot be null
   this value is allowed to be null. Either the check is redundant or the previous dereference is 
   erroneous.
 
-2 FindBugs Issues in model/domain/Registry.java
-text:lines: 10-178 
-Dead store to i in createContract(Member, Member, int, int) 
-Dead store to local variable 
-This instruction assigns a value to a local variable, but the value is not read or used in any 
-  subsequent instruction. Often, this indicates an error, because the value computed is never used. 
- 
-Note that Sun's javac compiler often generates dead stores for final local variables. Because 
-  SpotBugs is a bytecode-based tool, there is no easy way to eliminate these false positives.
-
-text:lines: 10-178 
-getMembers() may expose internal representation by returning Registry.members 
-May expose internal representation by returning reference to mutable object 
-Returning a reference to a mutable object value stored in one of the object's fields exposes the 
-  internal representation of the object. If instances are accessed by untrusted code, and unchecked 
-  changes to the mutable object would compromise security or other important properties, you will 
-  need to do something different. Returning a new copy of the object is better approach in many 
-  situations.
-
+0 FindBugs Issues in model/domain/Registry.java
 0 FindBugs Issues in controller/App.java
-6 FindBugs Issues in model/domain/Contract.java
-text:lines: 18-30 
-getLentTo() may expose internal representation by returning Contract.lentTo 
-May expose internal representation by returning reference to mutable object 
-Returning a reference to a mutable object value stored in one of the object's fields exposes the 
-  internal representation of the object. If instances are accessed by untrusted code, and unchecked 
-  changes to the mutable object would compromise security or other important properties, you will 
-  need to do something different. Returning a new copy of the object is better approach in many 
-  situations.
-
-text:lines: 18-30 
-getOwner() may expose internal representation by returning Contract.owner 
-May expose internal representation by returning reference to mutable object 
-Returning a reference to a mutable object value stored in one of the object's fields exposes the 
-  internal representation of the object. If instances are accessed by untrusted code, and unchecked 
-  changes to the mutable object would compromise security or other important properties, you will 
-  need to do something different. Returning a new copy of the object is better approach in many 
-  situations.
-
-text:lines: 18-30 
-new model.domain.Contract(Member, Member, int, int) may expose internal representation by storing an 
-  externally mutable object into Contract.lentTo 
-May expose internal representation by incorporating reference to mutable object 
-This code stores a reference to an externally mutable object into the internal representation of the 
-  object. If instances are accessed by untrusted code, and unchecked changes to the mutable object 
-  would compromise security or other important properties, you will need to do something different. 
-  Storing a copy of the object is better approach in many situations.
-
-text:lines: 18-30 
-new model.domain.Contract(Member, Member, int, int) may expose internal representation by storing an 
-  externally mutable object into Contract.owner 
-May expose internal representation by incorporating reference to mutable object 
-This code stores a reference to an externally mutable object into the internal representation of the 
-  object. If instances are accessed by untrusted code, and unchecked changes to the mutable object 
-  would compromise security or other important properties, you will need to do something different. 
-  Storing a copy of the object is better approach in many situations.
-
-text:lines: 18-30 
-Unread field: contractPeriod 
-Unread field 
-This field is never read. Consider removing it from the class.
-
-text:lines: 18-30 
-Unread field: item 
-Unread field 
-This field is never read. Consider removing it from the class.
-
-3 FindBugs Issues in model/domain/Member.java
-text:lines: 17-301 
-Dead store to item in updateItems() 
-Dead store to local variable 
-This instruction assigns a value to a local variable, but the value is not read or used in any 
-  subsequent instruction. Often, this indicates an error, because the value computed is never used. 
- 
-Note that Sun's javac compiler often generates dead stores for final local variables. Because 
-  SpotBugs is a bytecode-based tool, there is no easy way to eliminate these false positives.
-
-text:lines: 17-301 
-getItemsOwned() may expose internal representation by returning Member.itemsOwned 
-May expose internal representation by returning reference to mutable object 
-Returning a reference to a mutable object value stored in one of the object's fields exposes the 
-  internal representation of the object. If instances are accessed by untrusted code, and unchecked 
-  changes to the mutable object would compromise security or other important properties, you will 
-  need to do something different. Returning a new copy of the object is better approach in many 
-  situations.
-
-text:lines: 17-301 
-Unused field: costTotal 
-Unused field 
-This field is never used. Consider removing it from the class.
-
+0 FindBugs Issues in model/domain/Contract.java
+0 FindBugs Issues in model/domain/Member.java
 0 FindBugs Issues in model/domain/Time.java
 0 FindBugs Issues in model/persistence/Imapper.java
 0 FindBugs Issues in model/TimeAdvancedObserver.java

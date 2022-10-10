@@ -23,13 +23,17 @@ public class Contract {
     this.contractPeriod = contractPeriod;
     this.item = item;
   }
-  @SuppressFBWarnings(value = "EI_EXPOSE_REP", justification = "In the program some values are accessed by this method." +
-          " Making dummy and returning to not expose internal representation might cut our access in some parts of the program.")
+
+  @SuppressFBWarnings(value = "EI_EXPOSE_REP", justification = "In the program some values are accessed by this method."
+          + " Making dummy and returning to not expose internal "
+          + "representation might cut our access in some parts of the program.")
   public Member getOwner() {
     return owner;
   }
-  @SuppressFBWarnings(value = "EI_EXPOSE_REP", justification = "In the program some values are accessed by this method." +
-          " Making dummy and returning to not expose internal representation might cut our access in some parts of the program.")
+
+  @SuppressFBWarnings(value = "EI_EXPOSE_REP", justification = "In the program some values are accessed by this method."
+          + " Making dummy and returning to not expose internal representation might"
+          + " cut our access in some parts of the program.")
   public Member getLentTo() {
     return lentTo;
   }
