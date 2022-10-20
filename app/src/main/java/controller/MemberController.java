@@ -263,7 +263,7 @@ public class MemberController {
     getMember(index).setLastName(console.getLastName());
     getMember(index).setEmail(console.getEmail());
     getMember(index).setPhoneNumber(console.getPhoneNumber());
-    System.out.println("Member " + getMember(index).getFirstName() + " has been edited");
+    System.out.println("Member " + getMember(index).getFirstName() + " has been edited"); // view
   }
 
   /**
@@ -324,7 +324,6 @@ public class MemberController {
     }
     return false;
   }
-
 
   /**
    * Method for creating a contract.

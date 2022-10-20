@@ -43,8 +43,8 @@ public class Registry {
    * @return Iterable Mutable.
    */
   @SuppressFBWarnings(value = "EI_EXPOSE_REP", justification = "In the program some values are accessed by this method."
-          + " Making dummy and returning to not expose internal representation"
-          + " might cut our access in some parts of the program.")
+      + " Making dummy and returning to not expose internal representation"
+      + " might cut our access in some parts of the program.")
   public Iterable<Member.Mutable> getMembers() {
     return members;
   }
@@ -180,4 +180,33 @@ public class Registry {
     return true;
   }
 
+  /**
+   * Checks if the email is alreaady taken or not
+   * 
+   * @param email as input
+   * @return true if email is still available and false if not
+   */
+  public boolean isEmailAvailable(String email) {
+    for (Member.Mutable member : members) {
+      if (member.getEmail().equals(email)) {
+        return false;
+      }
+    }
+    return true;
+  }
+
+  /**
+   * Checks if the phonenumber is already taken or not
+   * 
+   * @param phoneNumber as input
+   * @return true if phone number is available and false if not
+   */
+  public boolean isPhoneNumberAvailable(String phoneNumber) {
+    for (Member.Mutable member : members) {
+      if (member.getPhoneNumber().equals(phoneNumber)) {
+        return false;
+      }
+    }
+    return true;
+  }
 }
