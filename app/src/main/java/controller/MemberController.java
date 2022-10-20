@@ -43,7 +43,7 @@ public class MemberController {
     while (!(done)) {
       if (check(email)) {
         email = console.newEmail();
-      } else if (!(isEmailAvailable(email))) {
+      } else if (!(registry.isEmailAvailable(email))) {
         email = console.uniqueEmail();
       } else {
         done = true;
@@ -54,7 +54,7 @@ public class MemberController {
     while (!(done)) {
       if (check(phoneNumber)) {
         phoneNumber = console.newPhoneNumber();
-      } else if (!(isPhoneNumberAvailable(phoneNumber))) {
+      } else if (!(registry.isPhoneNumberAvailable(phoneNumber))) {
         phoneNumber = console.uniquePhoneNumber();
       } else {
         done = true;
@@ -210,38 +210,6 @@ public class MemberController {
     } else {
       return false;
     }
-  }
-
-  /**
-   * Checks if phone number is already taken.
-   *
-   * @param phoneNumber input.
-   *
-   * @return true if taken and false if available.
-   */
-  public boolean isPhoneNumberAvailable(String phoneNumber) {
-    for (Member.Mutable member : registry.getMembers()) {
-      if (member.getPhoneNumber().equals(phoneNumber)) {
-        return false;
-      }
-    }
-    return true;
-  }
-
-  /**
-   * Checks if email is already taken.
-   *
-   * @param email input.
-   *
-   * @return true if taken and false if available.
-   */
-  public boolean isEmailAvailable(String email) {
-    for (Member.Mutable member : registry.getMembers()) {
-      if (member.getEmail().equals(email)) {
-        return false;
-      }
-    }
-    return true;
   }
 
   /**
