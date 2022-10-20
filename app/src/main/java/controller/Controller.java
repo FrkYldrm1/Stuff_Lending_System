@@ -60,7 +60,10 @@ public class Controller {
         break;
       case ("2"):
         registry.listMemberSpecific();
-        console.showMemberDetails3(registry.selectMember(console.indexMemberInput()));
+        console.showMemberDetails3(registry.selectMember(console.indexMemberInput()).getFirstName(),
+            registry.selectMember(console.indexMemberInput()).getEmail(),
+            registry.selectMember(console.indexMemberInput()).getMemberId().getId(),
+            registry.selectMember(console.indexMemberInput()).getItemsOwnedString());
         memMenu();
         break;
       case ("3"):
