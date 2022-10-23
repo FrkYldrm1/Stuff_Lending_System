@@ -2,9 +2,6 @@ package view;
 
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import java.util.Scanner;
-import model.domain.Item;
-import model.domain.Member;
-
 
 /**
  * Class for printing console UI elements.
@@ -206,14 +203,8 @@ public class ConsoleUi {
    * @param m     Member object.
    * @param index To add index.
    */
-  public void showMemberDetailsSimple(Member.Mutable m, int index) {
-    String firstName = m.getFirstName();
-    String email = m.getEmail();
-    String lastName = m.getLastName();
-    String memberId = m.getMemberId().getId();
-    int currentCredit = m.getCredits();
-    int ownedItem = m.sizeOfItemsOwned();
-    int time = m.getTime().getDay();
+  public void showMemberDetailsSimple(String firstName, String email, String lastName, String memberId,
+      int currentCredit, int ownedItem, int time, int index) {
     String toPrint = String.format(
         "%s    %s   Current day: %s    %s, %s\t%s\tCurrent credits: %s\tNumber of owned items: %s", index,
         memberId, time + 1, firstName, lastName, email, currentCredit, ownedItem);
@@ -225,12 +216,10 @@ public class ConsoleUi {
    *
    * @param i Item object.
    */
-  public void showItemDetails(Item i, int index) {
-    String itemName = i.getName();
-    String itemDesc = i.getShortDescription();
-    int itemCost = i.getCostPerDay();
+  public void showItemDetails(String itemName, String itemDesc, int itemCost, String category, int dayOfCreation,
+      int index) {
     String toPrint = String.format("%s    %s    %s    %s    %s     Day for item: %s",
-        index, itemName, itemCost, itemDesc, i.getCategory(), i.getDayOfCreation());
+        index, itemName, itemCost, itemDesc, category, dayOfCreation);
     System.out.println(toPrint);
   }
 
@@ -274,43 +263,6 @@ public class ConsoleUi {
     return input.nextInt();
   }
 
-  /**
-   * Is used for creating items.
-   *
-   * @return Item.
-   */
-  public Item.Mutable createItem() {
-    String itemName;
-    System.out.print("Enter item name: ");
-    itemName = input.nextLine();
-    System.out.print("Enter item's short description: ");
-    String descrioption;
-    descrioption = input.nextLine();
-    System.out.print("Enter item's cost per day : ");
-    int costPerDay;
-    costPerDay = input.nextInt();
-    System.out.print("Enter owners name: "); // Should get owner by itself
-    String owner;
-    owner = input.nextLine();
-
-    int categorInt = selectCategory();
-    String category = "";
-    if (categorInt == 1) {
-      category = "Tool";
-    } else if (categorInt == 2) {
-      category = "Vehicle";
-    } else if (categorInt == 3) {
-      category = "Game";
-    } else if (categorInt == 4) {
-      category = "Toy";
-    } else if (categorInt == 5) {
-      category = "Sport";
-    } else if (categorInt == 6) {
-      category = "Other";
-    }
-    return new Item.Mutable(itemName, descrioption, costPerDay, 0, false, 0, owner, "", category);
-  }
-
   public String newItemName() {
     System.out.print("Enter item name: ");
     return input.next();
@@ -332,13 +284,10 @@ public class ConsoleUi {
    * @param m     Member object.
    * @param index To add index.
    */
-  public void showMemberDetails2(Member.Mutable m, int index) {
-    String fullName = m.getFirstName() + " " + m.getLastName();
-    String email = m.getEmail();
-    String ownedItemsString = m.getItemsOwnedString();
-    String lendedItems = m.getItemsLended();
-    String toPrint = "\n" + "Members name: " + fullName + " E-mail: " + email
-        + ownedItemsString + "\n" + lendedItems;
+  public void showMemberDetails2(String firstName, String lastName, String email, String ownedItem,
+      String lendedItemString) {
+    String toPrint = "\n" + "Members name: " + firstName + " " + lastName + " E-mail: " + email
+        + ownedItem + "\n" + lendedItemString;
     System.out.println(toPrint);
   }
 
@@ -347,13 +296,9 @@ public class ConsoleUi {
    *
    * @param m Member object.
    */
-  public void showMemberDetails3(Member.Mutable m) {
-    String firstName = m.getFirstName();
-    String email = m.getEmail();
-    String id = m.getMemberId().getId();
-    String ownedItemsString = m.getItemsOwnedString();
+  public void showMemberDetails3(String firstName, String email, String id, String ownedItems) {
     String toPrint = "\n" + "Members name: " + firstName + " E-mail: " + email
-        + " Member id: " + id + ownedItemsString;
+        + " Member id: " + id + ownedItems;
     System.out.println(toPrint);
 
   }

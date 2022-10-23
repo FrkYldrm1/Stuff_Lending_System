@@ -2,6 +2,8 @@ package controller;
 
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import java.util.Scanner;
+
+import model.domain.Member;
 import model.domain.Registry;
 import view.ConsoleUi;
 
@@ -60,7 +62,8 @@ public class Controller {
         break;
       case ("2"):
         registry.listMemberSpecific();
-        console.showMemberDetails3(registry.selectMember(console.indexMemberInput()));
+        Member.Mutable member = registry.selectMember(console.indexMemberInput());
+        console.showMemberDetails3(member.getFirstName(), member.getEmail(), member.getMemberId().getId(), member.getItemsOwnedString());
         memMenu();
         break;
       case ("3"):

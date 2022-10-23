@@ -75,7 +75,9 @@ public class MemberController {
     int index = 0;
     for (Member.Mutable member : registry.getMembers()) {
       index += 1;
-      console.showMemberDetailsSimple(member, index);
+      console.showMemberDetailsSimple(member.getFirstName(), member.getEmail(), member.getLastName(),
+          member.getMemberId().getId(), member.getCredits(), member.sizeOfItemsOwned(), member.getTime().getDay(),
+          index);
     }
   }
 
@@ -86,7 +88,8 @@ public class MemberController {
     int index = 0;
     for (Member.Mutable member : registry.getMembers()) {
       index += 1;
-      console.showMemberDetails2(member, index);
+      console.showMemberDetails2(member.getFirstName(), member.getLastName(), member.getEmail(),
+          member.getItemsOwnedString(), member.getItemsLended());
     }
     console.lineBreak();
   }
@@ -147,7 +150,8 @@ public class MemberController {
 
     for (Item item : member.getItemsOwned()) {
       index += 1;
-      console.showItemDetails(item, index);
+      console.showItemDetails(item.getName(), item.getShortDescription(), item.getCostPerDay(), item.getCategory(),
+          item.getDayOfCreation(), index);
     }
   }
 
@@ -268,7 +272,8 @@ public class MemberController {
     int index = 0;
     for (Item.Mutable item : items) {
       index += 1;
-      console.showItemDetails(item, index);
+      console.showItemDetails(item.getName(), item.getShortDescription(), item.getCostPerDay(), item.getCategory(),
+          item.getDayOfCreation(), index);
     }
     console.lineBreak();
 
@@ -301,7 +306,8 @@ public class MemberController {
     int mem = console.selectMember();
     int lender = console.selectLender();
     int period = console.selectPeriod();
-    console.showMemberDetails3(registry.selectMember(mem));
+    console.showMemberDetails3(registry.selectMember(mem).getFirstName(), registry.selectMember(mem).getEmail(),
+        registry.selectMember(mem).getMemberId().getId(), registry.selectMember(mem).getItemsOwnedString());
     int item = console.selectItem();
     registry.createContract(getMember(mem), getMember(lender), period, item);
     console.messageForLending(getMember(mem).getFirstName(), getMember(lender).getFirstName(), period);
