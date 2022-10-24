@@ -6,11 +6,9 @@ import java.util.Scanner;
 import model.domain.Member;
 import model.domain.Registry;
 import view.ConsoleUi;
-import view.EnumChoices;
-import view.InterfaceView;
 
 /**
- * Contoroller class for UI.
+ * Controller class for UI.
  */
 public class Controller {
 
@@ -18,20 +16,24 @@ public class Controller {
   private Scanner scan = new Scanner(System.in, "UTF-8");
   private view.ConsoleUi console = new view.ConsoleUi(new Scanner(System.in, "UTF-8"));
   private Registry registry = new Registry();
-  private InterfaceView inter;
   private controller.MemberController memberController = new controller.MemberController(console, registry);
 
   @SuppressFBWarnings(value = "EI_EXPOSE_REP", justification = "It is the constructor so we should have it.")
-  public Controller(ConsoleUi console, Registry registry, InterfaceView inter) {
+  public Controller(ConsoleUi console, Registry registry) {
     this.console = console;
     this.registry = registry;
-    this.inter = inter;
   }
 
+  /**
+   * method for starting the program.
+   */
   public void startGame() {
     viewMenu();
   }
 
+  /**
+   * method for showing main menu.
+   */
   public void viewMenu() {
     view.EnumChoices choice = console.mainMenu();
 
@@ -40,7 +42,7 @@ public class Controller {
         viewMemberMenu();
         break;
       case ITEM_MENU:
-        itemMenu();
+        viewItem();
         break;
       case CHANGE_DAY:
         memberController.changeDay();
@@ -53,6 +55,9 @@ public class Controller {
     }
   }
 
+  /**
+   * Method for showing member menu.
+   */
   public void viewMemberMenu() {
     view.MemberEnum choice = console.memberMenu();
 
@@ -97,40 +102,38 @@ public class Controller {
     }
   }
 
-
   /**
    * Method for printing item menu.
-   */
-  public void itemMenu() {
-    console.itemMenu();
-    input = scan.next();
-    switch (input) {
-      case ("1"):
+   **/
+  public void viewItem() {
+    view.ItemEnum choice = console.itemMenu();
+
+    switch (choice) {
+      case CREATEITEM:
         memberController.showAllMembersSimple();
         memberController.addItem();
-        itemMenu();
+        viewItem();
         break;
-      case ("2"):
+      case VIEWITEM:
         memberController.showAllMembersSimple();
         memberController.showOwnedItems();
-        itemMenu();
+        viewItem();
         break;
-      case ("3"):
+      case EDITITEM:
         memberController.showAllMembers2();
         memberController.editItem();
-        itemMenu();
+        viewItem();
         break;
-      case ("4"):
+      case DELETEITEM:
         memberController.showAllMembers2();
         memberController.deleteItemOwned();
-        itemMenu();
+        viewItem();
         break;
-      case ("5"):
+      case BACK:
         startGame();
         break;
       default:
-        itemMenu();
+        viewItem();
     }
   }
-
 }

@@ -6,7 +6,7 @@ import java.util.Scanner;
 /**
  * Class for printing console UI elements.
  */
-public class ConsoleUi implements InterfaceView{
+public class ConsoleUi{
   Scanner input;
   private String in;
 
@@ -93,7 +93,7 @@ public class ConsoleUi implements InterfaceView{
   /**
    * Method for the item menu UI.
    */
-  public void itemMenu() {
+  public ItemEnum itemMenu() {
     System.out.println("|-------------------------------------------------------|");
     System.out.println("|1) Create item                                         |");
     System.out.println("|2) View an item                                        |");
@@ -101,6 +101,22 @@ public class ConsoleUi implements InterfaceView{
     System.out.println("|4) Delete an item                                      |");
     System.out.println("|5) Back to menu                                        |");
     System.out.println("|-------------------------------------------------------|");
+
+    in = input.next();
+    switch (in) {
+      case ("1"):
+        return ItemEnum.CREATEITEM;
+      case ("2"):
+        return ItemEnum.VIEWITEM;
+      case ("3"):
+        return ItemEnum.EDITITEM;
+      case ("4"):
+        return ItemEnum.DELETEITEM;
+      case ("5"):
+        return ItemEnum.BACK;
+      default:
+        return itemMenu();
+    }
   }
 
   /**
