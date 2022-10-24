@@ -15,7 +15,7 @@ public class Item {
   private int contractPeriod;
   private String owner;
   private String lenededTo;
-  private String category;
+  public CategoryEnum category;
   private MemberId id = new MemberId();
 
   /**
@@ -30,7 +30,7 @@ public class Item {
    */
   @SuppressFBWarnings(value = "EI_EXPOSE_REP", justification = "It is the constructor so we should have it.")
   public Item(String name, String shortDescription, int costPerDay, int dayOfCreation,
-      Boolean isLended, int contractPeriod, String owner, String lendedTo, String category) {
+      Boolean isLended, int contractPeriod, String owner, String lendedTo, CategoryEnum category) {
     if (name == null) {
       setNameProt("Unknown name!");
     } else {
@@ -75,7 +75,16 @@ public class Item {
 
   }
 
-  
+  public enum CategoryEnum {
+    TOOL,
+    VEHICLE,
+    GAME,
+    TOY,
+    SPORT,
+    OTHER;
+  }
+
+
 
   public String getItemId() {
     return itemId;
@@ -238,10 +247,6 @@ public class Item {
     return dayOfCreation;
   }
 
-  public String getCategory() {
-    return category;
-  }
-
   /**
    * Getter method for contract period.
    *
@@ -249,6 +254,10 @@ public class Item {
    */
   public int getContractPeriod() {
     return contractPeriod;
+  }
+
+  public CategoryEnum getCategory() {
+    return category.TOOL;
   }
 
   /**

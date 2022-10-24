@@ -150,7 +150,7 @@ public class MemberController {
 
     for (Item item : member.getItemsOwned()) {
       index += 1;
-      console.showItemDetails(item.getName(), item.getShortDescription(), item.getCostPerDay(), item.getCategory(),
+      console.showItemDetails(item.getName(), item.getShortDescription(), item.getCostPerDay(), String.valueOf(item.getCategory()),
           item.getDayOfCreation(), index);
     }
   }
@@ -198,7 +198,7 @@ public class MemberController {
     }
 
     member.addPreparedItemOwned(new Item.Mutable(
-        new Item(itemName, description, itemCategory, price, null, itemCategory, itemName, description, category)));
+        new Item(itemName, description, itemCategory, price, null, itemCategory, itemName, description, Item.)));
   }
 
   /**
@@ -272,7 +272,7 @@ public class MemberController {
     int index = 0;
     for (Item.Mutable item : items) {
       index += 1;
-      console.showItemDetails(item.getName(), item.getShortDescription(), item.getCostPerDay(), item.getCategory(),
+      console.showItemDetails(item.getName(), item.getShortDescription(), item.getCostPerDay(), String.valueOf(item.getCategory()),
           item.getDayOfCreation(), index);
     }
     console.lineBreak();
