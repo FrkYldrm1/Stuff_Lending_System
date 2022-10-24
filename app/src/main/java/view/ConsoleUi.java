@@ -6,8 +6,9 @@ import java.util.Scanner;
 /**
  * Class for printing console UI elements.
  */
-public class ConsoleUi {
+public class ConsoleUi implements InterfaceView{
   Scanner input;
+  private String in;
 
   /**
    * Constructor for consoleUI class.
@@ -22,7 +23,7 @@ public class ConsoleUi {
   /**
    * Method for main menu ui.
    */
-  public void mainMenu() {
+  public EnumChoices mainMenu() {
     System.out.println("|-------------------------------------------------------|");
     System.out.println("| Welcome to our amazing lending application!           |");
     System.out.println("| Kindly follow the instructions below!                 |");
@@ -33,7 +34,23 @@ public class ConsoleUi {
     System.out.println("|3) Advance time                                        |");
     System.out.println("|4) Quit                                                |");
     System.out.println("|-------------------------------------------------------|");
+
+    in = input.next();
+    switch (in) {
+      case ("1"):
+        return EnumChoices.MEMBER_MENU;
+      case ("2"):
+        return EnumChoices.ITEM_MENU;
+      case ("3"):
+        return EnumChoices.CHANGE_DAY;
+      case ("4"):
+        return EnumChoices.EXIT;
+      default:
+        return mainMenu();
+    }
   }
+
+
 
   /**
    * Method for the membure menu UI.
@@ -200,7 +217,6 @@ public class ConsoleUi {
   /**
    * Prints details of member.
    *
-   * @param m     Member object.
    * @param index To add index.
    */
   public void showMemberDetailsSimple(String firstName, String email, String lastName, String memberId,
@@ -213,8 +229,6 @@ public class ConsoleUi {
 
   /**
    * Here we show items details.
-   *
-   * @param i Item object.
    */
   public void showItemDetails(String itemName, String itemDesc, int itemCost, String category, int dayOfCreation,
       int index) {
@@ -280,9 +294,6 @@ public class ConsoleUi {
 
   /**
    * Prints details of member.
-   *
-   * @param m     Member object.
-   * @param index To add index.
    */
   public void showMemberDetails2(String firstName, String lastName, String email, String ownedItem,
       String lendedItemString) {
@@ -293,8 +304,6 @@ public class ConsoleUi {
 
   /**
    * Prints details of member.
-   *
-   * @param m Member object.
    */
   public void showMemberDetails3(String firstName, String email, String id, String ownedItems) {
     String toPrint = "\n" + "Members name: " + firstName + " E-mail: " + email

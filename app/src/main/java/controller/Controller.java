@@ -6,6 +6,8 @@ import java.util.Scanner;
 import model.domain.Member;
 import model.domain.Registry;
 import view.ConsoleUi;
+import view.EnumChoices;
+import view.InterfaceView;
 
 /**
  * Contoroller class for UI.
@@ -16,36 +18,39 @@ public class Controller {
   private Scanner scan = new Scanner(System.in, "UTF-8");
   private view.ConsoleUi console = new view.ConsoleUi(new Scanner(System.in, "UTF-8"));
   private Registry registry = new Registry();
+  private InterfaceView inter;
   private controller.MemberController memberController = new controller.MemberController(console, registry);
 
   @SuppressFBWarnings(value = "EI_EXPOSE_REP", justification = "It is the constructor so we should have it.")
-  public Controller(ConsoleUi console, Registry registry) {
+  public Controller(ConsoleUi console, Registry registry, InterfaceView inter) {
     this.console = console;
     this.registry = registry;
+    this.inter = inter;
   }
 
-  /**
-   * Method for printing main menu.
-   */
-  public void mainMenu() {
-    console.mainMenu();
-    input = scan.next();
-    switch (input) {
-      case ("1"):
+  public void startGame() {
+    //inter.mainMenu();
+    viewMenu();
+  }
+
+  public void viewMenu() {
+    view.EnumChoices choice = console.mainMenu();
+
+    switch (choice) {
+      case MEMBER_MENU:
         memMenu();
         break;
-      case ("2"):
+      case ITEM_MENU:
         itemMenu();
         break;
-      case ("3"):
+      case CHANGE_DAY:
         memberController.changeDay();
-        mainMenu();
+        startGame();
         break;
-      case ("4"):
+      case EXIT:
         console.byeBye();
-        break;
       default:
-        mainMenu();
+        viewMenu();
     }
   }
 
@@ -89,7 +94,7 @@ public class Controller {
         memMenu();
         break;
       case ("8"):
-        mainMenu();
+        startGame();
         break;
       default:
         memMenu();
@@ -124,7 +129,7 @@ public class Controller {
         itemMenu();
         break;
       case ("5"):
-        mainMenu();
+        startGame();
         break;
       default:
         itemMenu();
