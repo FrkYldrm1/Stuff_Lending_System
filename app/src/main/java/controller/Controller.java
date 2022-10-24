@@ -29,7 +29,6 @@ public class Controller {
   }
 
   public void startGame() {
-    //inter.mainMenu();
     viewMenu();
   }
 
@@ -38,7 +37,7 @@ public class Controller {
 
     switch (choice) {
       case MEMBER_MENU:
-        memMenu();
+        viewMemberMenu();
         break;
       case ITEM_MENU:
         itemMenu();
@@ -54,52 +53,50 @@ public class Controller {
     }
   }
 
-  /**
-   * Method for printing member menu.
-   */
-  public void memMenu() {
-    console.memberMenu();
-    input = scan.next();
-    switch (input) {
-      case ("1"):
+  public void viewMemberMenu() {
+    view.MemberEnum choice = console.memberMenu();
+
+    switch (choice) {
+      case CREATEMEMBER:
         memberController.createNewMember();
-        memMenu();
+        viewMemberMenu();
         break;
-      case ("2"):
+      case SPECIFICMEMBER:
         registry.listMemberSpecific();
         Member.Mutable member = registry.selectMember(console.indexMemberInput());
         console.showMemberDetails3(member.getFirstName(), member.getEmail(), member.getMemberId().getId(), member.getItemsOwnedString());
-        memMenu();
+        viewMemberMenu();
         break;
-      case ("3"):
+      case SHOWSIMPLE:
         memberController.showAllMembersSimple();
-        memMenu();
+        viewMemberMenu();
         break;
-      case ("4"):
+      case SHOWDETAILED:
         memberController.showAllMembers2();
-        memMenu();
+        viewMemberMenu();
         break;
-      case ("5"):
+      case EDITMEMBER:
         memberController.showAllMembersSimple();
         memberController.editMember();
-        memMenu();
+        viewMemberMenu();
         break;
-      case ("6"):
+      case DELETEMEMBER:
         memberController.showAllMembersSimple();
         memberController.deleteMember();
-        memMenu();
+        viewMemberMenu();
         break;
-      case ("7"):
+      case CREATECONTRACT:
         memberController.contract();
-        memMenu();
+        viewMemberMenu();
         break;
-      case ("8"):
+      case BACKMENU:
         startGame();
         break;
       default:
-        memMenu();
+        viewMemberMenu();
     }
   }
+
 
   /**
    * Method for printing item menu.

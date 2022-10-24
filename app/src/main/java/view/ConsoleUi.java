@@ -53,9 +53,9 @@ public class ConsoleUi implements InterfaceView{
 
 
   /**
-   * Method for the membure menu UI.
+   * Method for the member menu UI.
    */
-  public void memberMenu() {
+  public MemberEnum memberMenu() {
     System.out.println("|-------------------------------------------------------|");
     System.out.println("|1) Create a new member                                 |");
     System.out.println("|2) Look up a specific member`s information             |");
@@ -66,6 +66,28 @@ public class ConsoleUi implements InterfaceView{
     System.out.println("|7) Create a contract                                   |");
     System.out.println("|8) Back to menu                                        |");
     System.out.println("|-------------------------------------------------------|");
+
+    in = input.next();
+    switch (in) {
+      case ("1"):
+        return MemberEnum.CREATEMEMBER;
+      case ("2"):
+        return MemberEnum.SPECIFICMEMBER;
+      case ("3"):
+        return MemberEnum.SHOWSIMPLE;
+      case ("4"):
+        return MemberEnum.SHOWDETAILED;
+      case ("5"):
+        return MemberEnum.EDITMEMBER;
+      case ("6"):
+        return MemberEnum.DELETEMEMBER;
+      case ("7"):
+        return MemberEnum.CREATECONTRACT;
+      case ("8"):
+        return MemberEnum.BACKMENU;
+      default:
+        return memberMenu();
+    }
   }
 
   /**
