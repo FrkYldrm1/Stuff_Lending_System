@@ -418,6 +418,23 @@ public class ConsoleUi{
     System.out.println("1. Tool\n2. Vehicle\n3. Game\n4. Toy\n5. Sport\n6. Other");
     System.out.println("Enter category which fits the item the most: ");
     return input.nextInt();
+
+   /** switch (in) {
+      case ("1"):
+        return CategoryEnum.TOOL;
+      case ("2"):
+        return CategoryEnum.VEHICLE;
+      case ("3"):
+        return CategoryEnum.GAME;
+      case ("4"):
+        return CategoryEnum.TOY;
+      case ("5"):
+        return CategoryEnum.SPORT;
+      case ("6"):
+        return CategoryEnum.OTHER;
+      default:
+        return selectCategory();
+    }**/
   }
 
   /**
