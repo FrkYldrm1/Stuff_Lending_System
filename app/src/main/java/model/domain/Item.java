@@ -1,7 +1,6 @@
 package model.domain;
 
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
-import view.CategoryEnum;
 
 /**
  * Item class to create item objects.
@@ -258,7 +257,7 @@ public class Item {
   }
 
   public CategoryEnum getCategory() {
-    return category.TOOL;
+    return category;
   }
 
   /**

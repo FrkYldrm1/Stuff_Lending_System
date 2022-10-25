@@ -177,28 +177,35 @@ public class MemberController {
       price = console.createItemPrice2();
     }
 
-    int itemCategory = console.createItemCategory();
-    while ((itemCategory > 6) || (itemCategory < 1)) {
-      itemCategory = console.createItemCategory2();
+    String input = console.createItemCategory();
+    Item.CategoryEnum category = Item.CategoryEnum.TOOL;
+
+    switch (input) {
+      case ("1"):
+        category = Item.CategoryEnum.TOOL;
+        break;
+      case ("2"):
+        category = Item.CategoryEnum.VEHICLE;
+        break;
+      case ("3"):
+        category = Item.CategoryEnum.GAME;
+        break;
+      case ("4"):
+        category = Item.CategoryEnum.TOY;
+        break;
+      case ("5"):
+        category = Item.CategoryEnum.SPORT;
+        break;
+      case ("6"):
+        category = Item.CategoryEnum.OTHER;
+        break;
+      default:
+        // addItem();
+        System.out.println("hit ahmad´s pinky toe");
     }
 
-    String category = "";
-    if (itemCategory == 1) {
-      category = "Tool";
-    } else if (itemCategory == 2) {
-      category = "Vehicle";
-    } else if (itemCategory == 3) {
-      category = "Game";
-    } else if (itemCategory == 4) {
-      category = "Toy";
-    } else if (itemCategory == 5) {
-      category = "Sport";
-    } else if (itemCategory == 6) {
-      category = "Other";
-    }
+    member.addItem(itemName, description, price, 1, null, 1, "", "", category);
 
-    member.addPreparedItemOwned(new Item.Mutable(
-        new Item(itemName, description, itemCategory, price, null, itemCategory, itemName, description, Item.CategoryEnum.valueOf(category))));
   }
 
   /**

@@ -23,8 +23,8 @@ public class Registry {
     addMember("Ahmad", "Deeb", "ahmad@gmail.com", "123456");
     addMember("Philip", "Olsson", "philip@gmail.com", "234567");
     addMember("Faruk", "Yildirim", "faruk@gmail.com", "345678");
-    addMember("Lea", "Le Galo", "lea@gmail.com", "456789");
-    addMember("Gummi", "Andri", "gummi@gmail.com", "567890");
+    addMember("Lea", "Le Gallo", "lea@gmail.com", "456789");
+    addMember("Gummi", "Andrgutrmungdgi", "gummi@gmail.com", "567890");
     addMember("Grace", "Yasine", "grace@gmail.com", "67687587");
     members.get(0).addItem("phone", "black", 45, 3, false, 0, members.get(0).getFirstName(), " No one ", Item.CategoryEnum.TOOL);
     members.get(0).addItem("phone", "black", 45, 3, false, 0, members.get(0).getFirstName(), " No one ", Item.CategoryEnum.TOOL);

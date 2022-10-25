@@ -1,10 +1,10 @@
 package view;
 
-public enum CategoryEnum {
+/**public enum CategoryEnum {
   TOOL,
   VEHICLE,
   GAME,
   TOY,
   SPORT,
   OTHER;
-}
+}**/

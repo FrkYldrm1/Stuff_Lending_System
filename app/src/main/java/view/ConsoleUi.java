@@ -1,6 +1,8 @@
 package view;
 
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
+import model.domain.Item;
+
 import java.util.Scanner;
 
 /**
@@ -412,29 +414,12 @@ public class ConsoleUi{
    *
    * @return input.
    */
-  public int selectCategory() {
+  public String selectCategory() {
     lineBreak();
     System.out.println("Please enter the appropriate category for item using the list below");
     System.out.println("1. Tool\n2. Vehicle\n3. Game\n4. Toy\n5. Sport\n6. Other");
     System.out.println("Enter category which fits the item the most: ");
-    return input.nextInt();
-
-   /** switch (in) {
-      case ("1"):
-        return CategoryEnum.TOOL;
-      case ("2"):
-        return CategoryEnum.VEHICLE;
-      case ("3"):
-        return CategoryEnum.GAME;
-      case ("4"):
-        return CategoryEnum.TOY;
-      case ("5"):
-        return CategoryEnum.SPORT;
-      case ("6"):
-        return CategoryEnum.OTHER;
-      default:
-        return selectCategory();
-    }**/
+    return input.next();
   }
 
   /**
@@ -502,7 +487,7 @@ public class ConsoleUi{
    *
    * @return int which is translated to string.
    */
-  public int createItemCategory() {
+  public String createItemCategory() {
     return selectCategory();
   }
 
@@ -511,8 +496,8 @@ public class ConsoleUi{
    *
    * @return return category.
    */
-  public int createItemCategory2() {
+  /**public int createItemCategory2() {
     lineBreak();
     return selectCategory();
-  }
+  }**/
 }

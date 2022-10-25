@@ -1,7 +1,6 @@
 package model.domain;
 
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
-import view.CategoryEnum;
 
 import java.util.ArrayList;
 
