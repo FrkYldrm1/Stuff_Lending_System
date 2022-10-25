@@ -1,6 +1,7 @@
 package model.domain;
 
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
+import view.CategoryEnum;
 
 /**
  * Item class to create item objects.
@@ -266,7 +267,7 @@ public class Item {
   public static class Mutable extends Item {
 
     public Mutable(String name, String shortDescription, int costPerDay,
-        int dayOfCreation, Boolean isLended, int contractPeriod, String owner, String lendedTo, String category) {
+        int dayOfCreation, Boolean isLended, int contractPeriod, String owner, String lendedTo, CategoryEnum category) {
       super(name, shortDescription, costPerDay, dayOfCreation, isLended, contractPeriod, owner, lendedTo, category);
     }
 

@@ -1,6 +1,8 @@
 package model.domain;
 
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
+import view.CategoryEnum;
+
 import java.util.ArrayList;
 
 /**
@@ -165,7 +167,7 @@ public class Member implements TimeAdvancedObserver {
    * @return Item.
    */
   public Item addItem(String name, String shortDescription, int costPerDay, int dayOfCreation,
-      Boolean isLended, int contractPeriod, String owner, String lendedTo, String category) {
+      Boolean isLended, int contractPeriod, String owner, String lendedTo, Item.CategoryEnum category) {
     Item.Mutable s = new Item.Mutable(name, shortDescription, costPerDay, dayOfCreation,
         isLended, contractPeriod, owner, lendedTo, category);
     setCredits(getCredits() + 100);

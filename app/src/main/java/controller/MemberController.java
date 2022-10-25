@@ -198,11 +198,11 @@ public class MemberController {
     }
 
     member.addPreparedItemOwned(new Item.Mutable(
-        new Item(itemName, description, itemCategory, price, null, itemCategory, itemName, description, Item.)));
+        new Item(itemName, description, itemCategory, price, null, itemCategory, itemName, description, Item.CategoryEnum.valueOf(category))));
   }
 
   /**
-   * Checks if input is null.
+   * Checks if input is null.1
    *
    * @param input any string.
    *
