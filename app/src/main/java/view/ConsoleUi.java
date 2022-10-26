@@ -1,14 +1,12 @@
 package view;
 
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
-import model.domain.Item;
-
 import java.util.Scanner;
 
 /**
  * Class for printing console UI elements.
  */
-public class ConsoleUi{
+public class ConsoleUi {
   Scanner input;
   private String in;
 
@@ -283,7 +281,7 @@ public class ConsoleUi{
    * @return String.
    */
   public String idInput() {
-    System.out.print("Please enter member ID : ");
+    System.out.print("Select a member using position in list (Input a number): ");
     return input.nextLine();
   }
 
@@ -313,7 +311,7 @@ public class ConsoleUi{
   }
 
   public int indexItemInputRetry() {
-    System.out.println("Not a valid position. Please try again: ");
+    System.out.print("Not a valid position. Please try again: ");
     return input.nextInt();
   }
 
@@ -369,7 +367,7 @@ public class ConsoleUi{
     this.input = input;
   }
 
-  public void notEnoughcredit() {
+  public void notEnoughCredit() {
     String toPrint = "Not enough credits";
     System.out.println(toPrint);
   }
@@ -418,7 +416,7 @@ public class ConsoleUi{
     lineBreak();
     System.out.println("Please enter the appropriate category for item using the list below");
     System.out.println("1. Tool\n2. Vehicle\n3. Game\n4. Toy\n5. Sport\n6. Other");
-    System.out.println("Enter category which fits the item the most: ");
+    System.out.print("Enter category which fits the item the most: ");
     return input.next();
   }
 
@@ -428,7 +426,7 @@ public class ConsoleUi{
    * @return item name as a string.
    */
   public String createItemName() {
-    System.out.println("Enter item name: ");
+    System.out.print("Enter item name: ");
     return input.nextLine();
   }
 
@@ -438,7 +436,7 @@ public class ConsoleUi{
    * @return item name as a string.
    */
   public String createItemName2() {
-    System.out.println("Invalid name, enter again: ");
+    System.out.print("Invalid name, enter again: ");
     return input.nextLine();
   }
 
@@ -448,7 +446,7 @@ public class ConsoleUi{
    * @return description string.
    */
   public String createItemDescription() {
-    System.out.println("Enter description for item: ");
+    System.out.print("Enter description for item: ");
     return input.nextLine();
   }
 
@@ -458,7 +456,7 @@ public class ConsoleUi{
    * @return description string.
    */
   public String createItemDescription2() {
-    System.out.println("Invalid description, enter again: ");
+    System.out.print("Invalid description, enter again: ");
     return input.nextLine();
   }
 
@@ -468,7 +466,7 @@ public class ConsoleUi{
    * @return price int.
    */
   public int createItemPrice() {
-    System.out.println("Enter item price per day: ");
+    System.out.print("Enter item price per day: ");
     return input.nextInt();
   }
 
@@ -478,7 +476,7 @@ public class ConsoleUi{
    * @return price int.
    */
   public int createItemPrice2() {
-    System.out.println("Invalid price, enter again: ");
+    System.out.print("Invalid price, enter again: ");
     return input.nextInt();
   }
 
@@ -491,13 +489,4 @@ public class ConsoleUi{
     return selectCategory();
   }
 
-  /**
-   * Asks user to reenter category.
-   *
-   * @return return category.
-   */
-  /**public int createItemCategory2() {
-    lineBreak();
-    return selectCategory();
-  }**/
 }

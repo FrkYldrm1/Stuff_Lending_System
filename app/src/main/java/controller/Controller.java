@@ -2,7 +2,6 @@ package controller;
 
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import java.util.Scanner;
-
 import model.domain.Member;
 import model.domain.Registry;
 import view.ConsoleUi;
@@ -11,9 +10,6 @@ import view.ConsoleUi;
  * Controller class for UI.
  */
 public class Controller {
-
-  private String input;
-  private Scanner scan = new Scanner(System.in, "UTF-8");
   private view.ConsoleUi console = new view.ConsoleUi(new Scanner(System.in, "UTF-8"));
   private Registry registry = new Registry();
   private controller.MemberController memberController = new controller.MemberController(console, registry);
@@ -27,7 +23,7 @@ public class Controller {
   /**
    * method for starting the program.
    */
-  public void startGame() {
+  public void startApp() {
     viewMenu();
   }
 
@@ -46,10 +42,11 @@ public class Controller {
         break;
       case CHANGE_DAY:
         memberController.changeDay();
-        startGame();
+        startApp();
         break;
       case EXIT:
         console.byeBye();
+        break;
       default:
         viewMenu();
     }
@@ -69,7 +66,8 @@ public class Controller {
       case SPECIFICMEMBER:
         registry.listMemberSpecific();
         Member.Mutable member = registry.selectMember(console.indexMemberInput());
-        console.showMemberDetails3(member.getFirstName(), member.getEmail(), member.getMemberId().getId(), member.getItemsOwnedString());
+        console.showMemberDetails3(member.getFirstName(), member.getEmail(),
+                member.getMemberId().getId(), member.getItemsOwnedString());
         viewMemberMenu();
         break;
       case SHOWSIMPLE:
@@ -95,7 +93,7 @@ public class Controller {
         viewMemberMenu();
         break;
       case BACKMENU:
-        startGame();
+        startApp();
         break;
       default:
         viewMemberMenu();
@@ -130,7 +128,7 @@ public class Controller {
         viewItem();
         break;
       case BACK:
-        startGame();
+        startApp();
         break;
       default:
         viewItem();

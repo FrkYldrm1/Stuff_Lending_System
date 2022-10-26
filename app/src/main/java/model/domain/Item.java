@@ -75,6 +75,9 @@ public class Item {
 
   }
 
+  /**
+   * Category enum.
+   */
   public enum CategoryEnum {
     TOOL,
     VEHICLE,

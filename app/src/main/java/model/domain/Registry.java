@@ -26,15 +26,24 @@ public class Registry {
     addMember("Lea", "Le Gallo", "lea@gmail.com", "456789");
     addMember("Gummi", "Andrgutrmungdgi", "gummi@gmail.com", "567890");
     addMember("Grace", "Yasine", "grace@gmail.com", "67687587");
-    members.get(0).addItem("phone", "black", 45, 3, false, 0, members.get(0).getFirstName(), " No one ", Item.CategoryEnum.TOOL);
-    members.get(0).addItem("phone", "black", 45, 3, false, 0, members.get(0).getFirstName(), " No one ", Item.CategoryEnum.TOOL);
-    members.get(1).addItem("Phone", "Brown", 15, 1, false, 0, members.get(1).getFirstName(), " No one ", Item.CategoryEnum.TOOL);
-    members.get(2).addItem("scooter", "White", 25, 1, false, 2, members.get(2).getFirstName(), " No one ", Item.CategoryEnum.VEHICLE);
-    members.get(6).addItem("VacuumCleaner", "Red", 10, 2, false, 5, members.get(6).getFirstName(), " No one ", Item.CategoryEnum.TOOL);
-    members.get(4).addItem("E-vape", "black", 5, 3, false, 7, members.get(4).getFirstName(), " No one ", Item.CategoryEnum.OTHER);
-    members.get(3).addItem("Burgiiiir", "Green", 5, 1, false, 1, members.get(3).getFirstName(), " No one ", Item.CategoryEnum.OTHER);
-    members.get(5).addItem("Bike", "Yellow", 20, 8, false, 9, members.get(5).getFirstName(), " No one ", Item.CategoryEnum.VEHICLE);
-    members.get(2).addItem("Ipad", "Gray", 50, 2, false, 4, members.get(2).getFirstName(), " No one ", Item.CategoryEnum.TOOL);
+    members.get(0).addItem("phone", "black", 45, 3, false, 0,
+            members.get(0).getFirstName(), " No one ", Item.CategoryEnum.TOOL);
+    members.get(0).addItem("phone", "black", 45, 3, false, 0,
+            members.get(0).getFirstName(), " No one ", Item.CategoryEnum.TOOL);
+    members.get(1).addItem("Phone", "Brown", 15, 1, false, 0,
+            members.get(1).getFirstName(), " No one ", Item.CategoryEnum.TOOL);
+    members.get(2).addItem("scooter", "White", 25, 1, false, 2,
+            members.get(2).getFirstName(), " No one ", Item.CategoryEnum.VEHICLE);
+    members.get(6).addItem("VacuumCleaner", "Red", 10, 2, false, 5,
+            members.get(6).getFirstName(), " No one ", Item.CategoryEnum.TOOL);
+    members.get(4).addItem("E-vape", "black", 5, 3, false, 7,
+            members.get(4).getFirstName(), " No one ", Item.CategoryEnum.OTHER);
+    members.get(3).addItem("Burgiiiir", "Green", 5, 1, false, 1,
+            members.get(3).getFirstName(), " No one ", Item.CategoryEnum.OTHER);
+    members.get(5).addItem("Bike", "Yellow", 20, 8, false, 9,
+            members.get(5).getFirstName(), " No one ", Item.CategoryEnum.VEHICLE);
+    members.get(2).addItem("Ipad", "Gray", 50, 2, false, 4,
+            members.get(2).getFirstName(), " No one ", Item.CategoryEnum.TOOL);
   }
 
   /**
@@ -157,7 +166,7 @@ public class Registry {
         contract.getLentTo().setCredits(contract.getLentTo().getCredits() - cost);
         contract.getOwner().setCredits(contract.getOwner().getCredits() + (contractPeriod * this.item.getCostPerDay()));
       } else {
-        console.notEnoughcredit();
+        console.notEnoughCredit();
       }
     } else {
       console.alreadyLended();
@@ -171,6 +180,7 @@ public class Registry {
    * @param contractPeriod Parameters for eligibility.
    * @param member         Parameters for eligibility.
    * @return Returns if member is eligible.
+   *
    */
   public boolean isEligable(int cost, int contractPeriod, Member member) {
     int total = cost * contractPeriod;
@@ -181,10 +191,11 @@ public class Registry {
   }
 
   /**
-   * Checks if the email is alreaady taken or not
-   * 
-   * @param email as input
-   * @return true if email is still available and false if not
+   * Checks if the email is already taken or not.
+   *
+   * @param email as input.
+   * @return true if email is still available and false if not.
+   *
    */
   public boolean isEmailAvailable(String email) {
     for (Member.Mutable member : members) {
@@ -196,10 +207,11 @@ public class Registry {
   }
 
   /**
-   * Checks if the phonenumber is already taken or not
-   * 
-   * @param phoneNumber as input
-   * @return true if phone number is available and false if not
+   * Checks if the phonenumber is already taken or not.
+   *
+   * @param phoneNumber as input.
+   * @return true if phone number is available and false if not.
+   *
    */
   public boolean isPhoneNumberAvailable(String phoneNumber) {
     for (Member.Mutable member : members) {

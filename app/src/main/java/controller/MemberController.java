@@ -150,7 +150,8 @@ public class MemberController {
 
     for (Item item : member.getItemsOwned()) {
       index += 1;
-      console.showItemDetails(item.getName(), item.getShortDescription(), item.getCostPerDay(), String.valueOf(item.getCategory()),
+      console.showItemDetails(item.getName(), item.getShortDescription(),
+              item.getCostPerDay(), String.valueOf(item.getCategory()),
           item.getDayOfCreation(), index);
     }
   }
@@ -200,16 +201,16 @@ public class MemberController {
         category = Item.CategoryEnum.OTHER;
         break;
       default:
-        // addItem();
-        System.out.println("hit ahmad´s pinky toe");
+        addItem();
     }
 
-    member.addItem(itemName, description, price, 1, null, 1, "", "", category);
+    member.addItem(itemName, description, price, 1, false, 0,
+            member.getFirstName() + member.getLastName(), "", category);
 
   }
 
   /**
-   * Checks if input is null.1
+   * Checks if input is null.
    *
    * @param input any string.
    *
@@ -279,7 +280,8 @@ public class MemberController {
     int index = 0;
     for (Item.Mutable item : items) {
       index += 1;
-      console.showItemDetails(item.getName(), item.getShortDescription(), item.getCostPerDay(), String.valueOf(item.getCategory()),
+      console.showItemDetails(item.getName(), item.getShortDescription(),
+              item.getCostPerDay(), String.valueOf(item.getCategory()),
           item.getDayOfCreation(), index);
     }
     console.lineBreak();

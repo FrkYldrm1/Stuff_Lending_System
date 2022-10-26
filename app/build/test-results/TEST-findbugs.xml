@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<testsuite package="org.spotbugs" time="0" tests="14" errors="4" name="findbugs">
+<testsuite package="org.spotbugs" time="0" tests="17" errors="4" name="findbugs">
 <testcase time="0" name="model/domain/Item.java" classname="FindBugs Issues">
-<failure message="issues" ><![CDATA[lines: 19-251 
+<failure message="issues" ><![CDATA[lines: 19-263 
 new model.domain.Item(String, String, int, int, Boolean, int, String, 
-  String, String) uses the same code for two branches 
+  String, Item$CategoryEnum) uses the same code for two branches 
 Method uses the same code for two branches 
 This method uses the same code to implement two branches of a conditional 
   branch. Check to ensure that this isn't a coding mistake.
 ----------------
-lines: 19-251 
+lines: 19-263 
 Call to equals(null) in new model.domain.Item(String, String, int, int, 
-  Boolean, int, String, String, String) 
+  Boolean, int, String, String, Item$CategoryEnum) 
 Call to equals(null) 
 This method calls equals(Object), passing a null value as the argument. 
   According to the contract of the equals() method, this call should always 
@@ -18,8 +18,9 @@ This method calls equals(Object), passing a null value as the argument.
 ----------------
 ]]></failure>
 </testcase><testcase time="0" name="model/domain/MemberId.java" classname="FindBugs Issues">
+</testcase><testcase time="0" name="view/EnumChoices.java" classname="FindBugs Issues">
 </testcase><testcase time="0" name="view/ConsoleUi.java" classname="FindBugs Issues">
-<failure message="issues" ><![CDATA[lines: 21-507 
+<failure message="issues" ><![CDATA[lines: 19-489 
 byeBye() invokes System.exit(...), which shuts down the entire virtual 
   machine 
 Method invokes System.exit(...) 
@@ -31,9 +32,10 @@ Invoking System.exit shuts down the entire Java virtual machine. This
 ]]></failure>
 </testcase><testcase time="0" name="controller/Controller.java" classname="FindBugs Issues">
 </testcase><testcase time="0" name="model/domain/TimeAdvancedObserver.java" classname="FindBugs Issues">
+</testcase><testcase time="0" name="view/MemberEnum.java" classname="FindBugs Issues">
 </testcase><testcase time="0" name="controller/MemberController.java" classname="FindBugs Issues">
-<failure message="issues" ><![CDATA[lines: 18-341 
-Nullcheck of input at line 208 of value previously dereferenced in 
+<failure message="issues" ><![CDATA[lines: 18-323 
+Nullcheck of input at line 220 of value previously dereferenced in 
   check(String) 
 Nullcheck of value previously dereferenced 
 A value is checked here to see whether it is null, but this value cannot be 
@@ -51,5 +53,6 @@ A value is checked here to see whether it is null, but this value cannot be
 </testcase><testcase time="0" name="model/domain/Time.java" classname="FindBugs Issues">
 </testcase><testcase time="0" name="model/persistence/Imapper.java" classname="FindBugs Issues">
 </testcase><testcase time="0" name="model/persistence/SqlMapper.java" classname="FindBugs Issues">
+</testcase><testcase time="0" name="view/ItemEnum.java" classname="FindBugs Issues">
 </testcase><testcase time="0" name="model/persistence/Persistence.java" classname="FindBugs Issues">
 </testcase></testsuite>

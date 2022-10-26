@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<testsuite package="org.checkstyle" time="0" tests="14" errors="0" name="checkstyle">
+<testsuite package="org.checkstyle" time="0" tests="17" errors="0" name="checkstyle">
 <testcase time="0" name="controller/App.java" classname="CheckStyle Issues">
 </testcase><testcase time="0" name="controller/Controller.java" classname="CheckStyle Issues">
 </testcase><testcase time="0" name="controller/MemberController.java" classname="CheckStyle Issues">
@@ -14,4 +14,7 @@
 </testcase><testcase time="0" name="model/persistence/Persistence.java" classname="CheckStyle Issues">
 </testcase><testcase time="0" name="model/persistence/SqlMapper.java" classname="CheckStyle Issues">
 </testcase><testcase time="0" name="view/ConsoleUi.java" classname="CheckStyle Issues">
+</testcase><testcase time="0" name="view/EnumChoices.java" classname="CheckStyle Issues">
+</testcase><testcase time="0" name="view/ItemEnum.java" classname="CheckStyle Issues">
+</testcase><testcase time="0" name="view/MemberEnum.java" classname="CheckStyle Issues">
 </testcase></testsuite>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="CodeQualityTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-10-10T21:46:11" hostname="DEEB" time="0.222">
+<testsuite name="CodeQualityTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-10-26T13:33:38" hostname="DEEB" time="0.135">
   <properties/>
-  <testcase name="codeQuality()" classname="CodeQualityTests" time="0.222"/>
+  <testcase name="codeQuality()" classname="CodeQualityTests" time="0.135"/>
   <system-out><![CDATA[0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/controller/App.java
 0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/controller/Controller.java
 0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/controller/MemberController.java
@@ -16,24 +16,28 @@
 0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/model/persistence/Persistence.java
 0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/model/persistence/SqlMapper.java
 0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/view/ConsoleUi.java
+0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/view/EnumChoices.java
+0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/view/ItemEnum.java
+0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/view/MemberEnum.java
 2 FindBugs Issues in model/domain/Item.java
-text:lines: 19-251 
-new model.domain.Item(String, String, int, int, Boolean, int, String, String, String) uses the same 
-  code for two branches 
+text:lines: 19-263 
+new model.domain.Item(String, String, int, int, Boolean, int, String, String, Item$CategoryEnum) 
+  uses the same code for two branches 
 Method uses the same code for two branches 
 This method uses the same code to implement two branches of a conditional branch. Check to ensure 
   that this isn't a coding mistake.
 
-text:lines: 19-251 
+text:lines: 19-263 
 Call to equals(null) in new model.domain.Item(String, String, int, int, Boolean, int, String, 
-  String, String) 
+  String, Item$CategoryEnum) 
 Call to equals(null) 
 This method calls equals(Object), passing a null value as the argument. According to the contract of 
   the equals() method, this call should always return false.
 
 0 FindBugs Issues in model/domain/MemberId.java
+0 FindBugs Issues in view/EnumChoices.java
 1 FindBugs Issues in view/ConsoleUi.java
-text:lines: 21-507 
+text:lines: 19-489 
 byeBye() invokes System.exit(...), which shuts down the entire virtual machine 
 Method invokes System.exit(...) 
 Invoking System.exit shuts down the entire Java virtual machine. This should only been done when it 
@@ -42,9 +46,10 @@ Invoking System.exit shuts down the entire Java virtual machine. This should onl
 
 0 FindBugs Issues in controller/Controller.java
 0 FindBugs Issues in model/domain/TimeAdvancedObserver.java
+0 FindBugs Issues in view/MemberEnum.java
 1 FindBugs Issues in controller/MemberController.java
-text:lines: 18-341 
-Nullcheck of input at line 208 of value previously dereferenced in check(String) 
+text:lines: 18-323 
+Nullcheck of input at line 220 of value previously dereferenced in check(String) 
 Nullcheck of value previously dereferenced 
 A value is checked here to see whether it is null, but this value cannot be null because it was 
   previously dereferenced and if it were null a null pointer exception would have occurred at the 
@@ -59,6 +64,7 @@ A value is checked here to see whether it is null, but this value cannot be null
 0 FindBugs Issues in model/domain/Time.java
 0 FindBugs Issues in model/persistence/Imapper.java
 0 FindBugs Issues in model/persistence/SqlMapper.java
+0 FindBugs Issues in view/ItemEnum.java
 0 FindBugs Issues in model/persistence/Persistence.java
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
