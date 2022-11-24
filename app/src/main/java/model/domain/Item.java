@@ -16,7 +16,6 @@ public class Item {
   private String owner;
   private String lenededTo;
   public CategoryEnum category;
-  private MemberId id = new MemberId();
 
   /**
    * Constructor for the item.
@@ -67,7 +66,6 @@ public class Item {
       this.lenededTo = lendedTo;
     }
     this.dayOfCreation = 1;
-    this.itemId = id.createId();
     this.category = category;
   }
 

@@ -11,13 +11,13 @@ public class Contract {
   private Member owner;
   private Member lentTo;
   private int contractPeriod;
-  private int item;
+  private Item item;
 
   /**
    * Constactor for contact class.
    */
   @SuppressFBWarnings(value = "EI_EXPOSE_REP", justification = "It is the constructor so we should have it.")
-  public Contract(Member owner, Member lentTo, int contractPeriod, int item) {
+  public Contract(Member owner, Member lentTo, int contractPeriod, Item item) {
     this.owner = owner;
     this.lentTo = lentTo;
     this.contractPeriod = contractPeriod;
@@ -48,7 +48,7 @@ public class Contract {
   /**
    * Getter method for  item.
    */
-  public int getItem() {
+  public Item getItem() {
     return item;
   }
 }

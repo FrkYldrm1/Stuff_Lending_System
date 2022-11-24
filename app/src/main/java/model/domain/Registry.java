@@ -9,7 +9,6 @@ import java.util.Scanner;
  */
 public class Registry {
   view.ConsoleUi console = new view.ConsoleUi(new Scanner(System.in, "UTF8"));
-  Item item;
   private ArrayList<Member.Mutable> members;
 
   /**
@@ -139,21 +138,21 @@ public class Registry {
    * @param contractPeriod For initilizing contract period.
    * @param item           For initilizing item object.
    */
-  public void createContract(Member owner, Member lender, int contractPeriod, int item) {
+  public void createContract(Member owner, Member lender, int contractPeriod, int itemIndex) {
+    Item.Mutable item = owner.getItemOwned(itemIndex);
     Contract contract = new Contract(owner, lender, contractPeriod, item);
-    this.item = contract.getOwner().getItemOwned(item);
-    if (!contract.getOwner().getItemOwned(item).isLended()) {
-      if (isEligable(this.item.getCostPerDay(), contractPeriod, lender)) {
-        this.item.setContractPeriodProt(contractPeriod);
-        this.item.setLenededTo(lender.getFirstName());
-        this.item.setisLendedProt(true);
-        contract.getOwner().getItemOwned(item).setContractPeriod(contractPeriod);
-        contract.getOwner().getItemOwned(item).setLenededTo(lender.getFirstName());
-        contract.getOwner().getItemOwned(item).setisLendedProt(true);
-        contract.getLentTo().addItemLended(this.item);
-        int cost = this.item.getCostPerDay() * contractPeriod;
+    if (!item.isLended()) {
+      if (isEligable(item.getCostPerDay(), contractPeriod, lender)) {
+        item.setContractPeriodProt(contractPeriod);
+        item.setLenededTo(lender.getFirstName());
+        item.setisLendedProt(true);
+        item.setContractPeriod(contractPeriod);
+        item.setLenededTo(lender.getFirstName());
+        item.setisLendedProt(true);
+        lender.addItemLended(item);
+        int cost = item.getCostPerDay() * contractPeriod;
         contract.getLentTo().setCredits(contract.getLentTo().getCredits() - cost);
-        contract.getOwner().setCredits(contract.getOwner().getCredits() + (contractPeriod * this.item.getCostPerDay()));
+        contract.getOwner().setCredits(contract.getOwner().getCredits() + (contractPeriod * item.getCostPerDay()));
       } else {
         console.notEnoughCredit();
       }
