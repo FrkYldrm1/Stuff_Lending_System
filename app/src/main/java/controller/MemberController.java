@@ -14,7 +14,7 @@ import view.ConsoleUi;
  */
 public class MemberController {
   private view.ConsoleUi console;
-  private Registry registry;
+  private Registry registry = new Registry();
   private Time time = new Time();
 
   /**

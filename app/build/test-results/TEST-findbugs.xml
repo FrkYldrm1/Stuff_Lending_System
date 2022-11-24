@@ -20,7 +20,7 @@ This method calls equals(Object), passing a null value as the argument.
 </testcase><testcase time="0" name="model/domain/MemberId.java" classname="FindBugs Issues">
 </testcase><testcase time="0" name="view/EnumChoices.java" classname="FindBugs Issues">
 </testcase><testcase time="0" name="view/ConsoleUi.java" classname="FindBugs Issues">
-<failure message="issues" ><![CDATA[lines: 19-489 
+<failure message="issues" ><![CDATA[lines: 19-501 
 byeBye() invokes System.exit(...), which shuts down the entire virtual 
   machine 
 Method invokes System.exit(...) 
@@ -34,8 +34,8 @@ Invoking System.exit shuts down the entire Java virtual machine. This
 </testcase><testcase time="0" name="model/domain/TimeAdvancedObserver.java" classname="FindBugs Issues">
 </testcase><testcase time="0" name="view/MemberEnum.java" classname="FindBugs Issues">
 </testcase><testcase time="0" name="controller/MemberController.java" classname="FindBugs Issues">
-<failure message="issues" ><![CDATA[lines: 18-322 
-Nullcheck of input at line 219 of value previously dereferenced in 
+<failure message="issues" ><![CDATA[lines: 17-336 
+Nullcheck of input at line 218 of value previously dereferenced in 
   check(String) 
 Nullcheck of value previously dereferenced 
 A value is checked here to see whether it is null, but this value cannot be 

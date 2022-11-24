@@ -33,7 +33,7 @@
 10 FindBugs Issues in model/domain/MemberId.java
 ,0 FindBugs Issues in view/EnumChoices.java
 *1 FindBugs Issues in view/ConsoleUi.java
-text:lines: 19-489 
+text:lines: 19-501 
 QbyeBye() invokes System.exit(...), which shuts down the entire virtual machine 
 "Method invokes System.exit(...) 
 fInvoking System.exit shuts down the entire Java virtual machine. This should only been done when it 
@@ -44,8 +44,8 @@
 =0 FindBugs Issues in model/domain/TimeAdvancedObserver.java
 +0 FindBugs Issues in view/MemberEnum.java
 71 FindBugs Issues in controller/MemberController.java
-text:lines: 18-322 
-SNullcheck of input at line 219 of value previously dereferenced in check(String) 
+text:lines: 17-336 
+SNullcheck of input at line 218 of value previously dereferenced in check(String) 
 -Nullcheck of value previously dereferenced 
 bA value is checked here to see whether it is null, but this value cannot be null because it was 
 d  previously dereferenced and if it were null a null pointer exception would have occurred at the 

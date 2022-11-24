@@ -489,8 +489,15 @@ public class ConsoleUi {
     return selectCategory();
   }
 
-public void showMemberSpceific(int index, String firstName, String lastName) {
-  System.out.println(index + "\t" + firstName + " " + lastName);
-}
+  /**
+   * Prints member in a simple way to then look at their details.
+   *
+   * @param index index.
+   * @param firstName member's first name.
+   * @param lastName member's last name.
+   */
+  public void showMemberSpceific(int index, String firstName, String lastName) {
+    System.out.println(index + "\t" + firstName + " " + lastName);
+  }
 
 }
