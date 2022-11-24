@@ -85,9 +85,7 @@ public class MemberController {
    * Method for showing the members.
    */
   public void showAllMembers2() {
-    int index = 0;
     for (Member.Mutable member : registry.getMembers()) {
-      index += 1;
       console.showMemberDetails2(member.getFirstName(), member.getLastName(), member.getEmail(),
           member.getItemsOwnedString(), member.getItemsLended());
     }
@@ -160,8 +158,8 @@ public class MemberController {
    * Method for adding items.
    */
   public void addItem() {
-    Member member;
-    member = registry.getMember(console.idInput());
+    int memIndex = console.indexMemberInput();
+    Member member = getMember(memIndex);
 
     String itemName = console.createItemName();
     while (itemName.equals("")) {

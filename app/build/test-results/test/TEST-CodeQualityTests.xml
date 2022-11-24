@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="CodeQualityTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-10-26T13:33:38" hostname="DEEB" time="0.135">
+<testsuite name="CodeQualityTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-11-24T09:41:34" hostname="MSI" time="0.091">
   <properties/>
-  <testcase name="codeQuality()" classname="CodeQualityTests" time="0.135"/>
-  <system-out><![CDATA[0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/controller/App.java
-0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/controller/Controller.java
-0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/controller/MemberController.java
-0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/model/domain/Contract.java
-0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/model/domain/Item.java
-0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/model/domain/Member.java
-0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/model/domain/MemberId.java
-0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/model/domain/Registry.java
-0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/model/domain/Time.java
-0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/model/domain/TimeAdvancedObserver.java
-0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/model/persistence/Imapper.java
-0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/model/persistence/Persistence.java
-0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/model/persistence/SqlMapper.java
-0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/view/ConsoleUi.java
-0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/view/EnumChoices.java
-0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/view/ItemEnum.java
-0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/view/MemberEnum.java
+  <testcase name="codeQuality()" classname="CodeQualityTests" time="0.091"/>
+  <system-out><![CDATA[0 CheckStyle Issues in C:/Users/popoy/Documents/OOAD with AHmad and Faruk/a2/app/src/main/java/controller/App.java
+0 CheckStyle Issues in C:/Users/popoy/Documents/OOAD with AHmad and Faruk/a2/app/src/main/java/controller/Controller.java
+0 CheckStyle Issues in C:/Users/popoy/Documents/OOAD with AHmad and Faruk/a2/app/src/main/java/controller/MemberController.java
+0 CheckStyle Issues in C:/Users/popoy/Documents/OOAD with AHmad and Faruk/a2/app/src/main/java/model/domain/Contract.java
+0 CheckStyle Issues in C:/Users/popoy/Documents/OOAD with AHmad and Faruk/a2/app/src/main/java/model/domain/Item.java
+0 CheckStyle Issues in C:/Users/popoy/Documents/OOAD with AHmad and Faruk/a2/app/src/main/java/model/domain/Member.java
+0 CheckStyle Issues in C:/Users/popoy/Documents/OOAD with AHmad and Faruk/a2/app/src/main/java/model/domain/MemberId.java
+0 CheckStyle Issues in C:/Users/popoy/Documents/OOAD with AHmad and Faruk/a2/app/src/main/java/model/domain/Registry.java
+0 CheckStyle Issues in C:/Users/popoy/Documents/OOAD with AHmad and Faruk/a2/app/src/main/java/model/domain/Time.java
+0 CheckStyle Issues in C:/Users/popoy/Documents/OOAD with AHmad and Faruk/a2/app/src/main/java/model/domain/TimeAdvancedObserver.java
+0 CheckStyle Issues in C:/Users/popoy/Documents/OOAD with AHmad and Faruk/a2/app/src/main/java/model/persistence/Imapper.java
+0 CheckStyle Issues in C:/Users/popoy/Documents/OOAD with AHmad and Faruk/a2/app/src/main/java/model/persistence/Persistence.java
+0 CheckStyle Issues in C:/Users/popoy/Documents/OOAD with AHmad and Faruk/a2/app/src/main/java/model/persistence/SqlMapper.java
+0 CheckStyle Issues in C:/Users/popoy/Documents/OOAD with AHmad and Faruk/a2/app/src/main/java/view/ConsoleUi.java
+0 CheckStyle Issues in C:/Users/popoy/Documents/OOAD with AHmad and Faruk/a2/app/src/main/java/view/EnumChoices.java
+0 CheckStyle Issues in C:/Users/popoy/Documents/OOAD with AHmad and Faruk/a2/app/src/main/java/view/ItemEnum.java
+0 CheckStyle Issues in C:/Users/popoy/Documents/OOAD with AHmad and Faruk/a2/app/src/main/java/view/MemberEnum.java
 2 FindBugs Issues in model/domain/Item.java
 text:lines: 19-263 
 new model.domain.Item(String, String, int, int, Boolean, int, String, String, Item$CategoryEnum) 

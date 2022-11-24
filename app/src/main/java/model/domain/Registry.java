@@ -9,7 +9,7 @@ import java.util.Scanner;
  */
 public class Registry {
   view.ConsoleUi console = new view.ConsoleUi(new Scanner(System.in, "UTF8"));
-  Item item = new Item();
+  Item item;
   private ArrayList<Member.Mutable> members;
 
   /**

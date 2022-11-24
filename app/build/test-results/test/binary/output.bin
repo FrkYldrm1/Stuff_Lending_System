@@ -1,20 +1,20 @@
-f0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/controller/App.java
-m0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/controller/Controller.java
-s0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/controller/MemberController.java
-m0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/model/domain/Contract.java
-i0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/model/domain/Item.java
-k0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/model/domain/Member.java
-m0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/model/domain/MemberId.java
-m0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/model/domain/Registry.java
-i0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/model/domain/Time.java
-y0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/model/domain/TimeAdvancedObserver.java
-q0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/model/persistence/Imapper.java
-u0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/model/persistence/Persistence.java
-s0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/model/persistence/SqlMapper.java
-f0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/view/ConsoleUi.java
-h0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/view/EnumChoices.java
-e0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/view/ItemEnum.java
-g0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/view/MemberEnum.java
+t0 CheckStyle Issues in C:/Users/popoy/Documents/OOAD with AHmad and Faruk/a2/app/src/main/java/controller/App.java
+{0 CheckStyle Issues in C:/Users/popoy/Documents/OOAD with AHmad and Faruk/a2/app/src/main/java/controller/Controller.java
+Å0 CheckStyle Issues in C:/Users/popoy/Documents/OOAD with AHmad and Faruk/a2/app/src/main/java/controller/MemberController.java
+{0 CheckStyle Issues in C:/Users/popoy/Documents/OOAD with AHmad and Faruk/a2/app/src/main/java/model/domain/Contract.java
+w0 CheckStyle Issues in C:/Users/popoy/Documents/OOAD with AHmad and Faruk/a2/app/src/main/java/model/domain/Item.java
+y0 CheckStyle Issues in C:/Users/popoy/Documents/OOAD with AHmad and Faruk/a2/app/src/main/java/model/domain/Member.java
+{0 CheckStyle Issues in C:/Users/popoy/Documents/OOAD with AHmad and Faruk/a2/app/src/main/java/model/domain/MemberId.java
+{0 CheckStyle Issues in C:/Users/popoy/Documents/OOAD with AHmad and Faruk/a2/app/src/main/java/model/domain/Registry.java
+w0 CheckStyle Issues in C:/Users/popoy/Documents/OOAD with AHmad and Faruk/a2/app/src/main/java/model/domain/Time.java
+á0 CheckStyle Issues in C:/Users/popoy/Documents/OOAD with AHmad and Faruk/a2/app/src/main/java/model/domain/TimeAdvancedObserver.java
+0 CheckStyle Issues in C:/Users/popoy/Documents/OOAD with AHmad and Faruk/a2/app/src/main/java/model/persistence/Imapper.java
+É0 CheckStyle Issues in C:/Users/popoy/Documents/OOAD with AHmad and Faruk/a2/app/src/main/java/model/persistence/Persistence.java
+Å0 CheckStyle Issues in C:/Users/popoy/Documents/OOAD with AHmad and Faruk/a2/app/src/main/java/model/persistence/SqlMapper.java
+t0 CheckStyle Issues in C:/Users/popoy/Documents/OOAD with AHmad and Faruk/a2/app/src/main/java/view/ConsoleUi.java
+v0 CheckStyle Issues in C:/Users/popoy/Documents/OOAD with AHmad and Faruk/a2/app/src/main/java/view/EnumChoices.java
+s0 CheckStyle Issues in C:/Users/popoy/Documents/OOAD with AHmad and Faruk/a2/app/src/main/java/view/ItemEnum.java
+u0 CheckStyle Issues in C:/Users/popoy/Documents/OOAD with AHmad and Faruk/a2/app/src/main/java/view/MemberEnum.java
 -2 FindBugs Issues in model/domain/Item.java
 text:lines: 19-263 
 cnew model.domain.Item(String, String, int, int, Boolean, int, String, String, Item$CategoryEnum) 
