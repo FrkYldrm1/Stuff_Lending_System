@@ -13,17 +13,16 @@ import view.ConsoleUi;
  * Class.
  */
 public class MemberController {
-  view.ConsoleUi console;
-  Registry registry;
-  Time time = new Time();
+  private view.ConsoleUi console;
+  private Registry registry;
+  private Time time = new Time();
 
   /**
    * constructors for controller.
    */
   @SuppressFBWarnings(value = "EI_EXPOSE_REP", justification = "It is the constructor so we should have it.")
-  public MemberController(ConsoleUi console, Registry registry) {
+  public MemberController(ConsoleUi console) {
     this.console = console;
-    this.registry = registry;
   }
 
   /**
@@ -158,8 +157,9 @@ public class MemberController {
    * Method for adding items.
    */
   public void addItem() {
+    Member member;
     int memIndex = console.indexMemberInput();
-    Member member = getMember(memIndex);
+    member = getMember(memIndex);
 
     String itemName = console.createItemName();
     while (itemName.equals("")) {
@@ -318,5 +318,20 @@ public class MemberController {
     int item = console.selectItem();
     registry.createContract(getMember(mem), getMember(lender), period, item);
     console.messageForLending(getMember(mem).getFirstName(), getMember(lender).getFirstName(), period);
+  }
+
+  /**
+   * Prints members with their names then proceed to print details about member.
+   */
+  public void printMemberSpecific() {
+    int index = 0;
+    for (Member.Mutable member : registry.getMembers()) {
+      index += 1;
+      console.showMemberSpceific(index, member.getFirstName(), member.getLastName());
+    }
+
+    Member.Mutable member = getMember(console.indexMemberInput());
+    console.showMemberDetails3(member.getFirstName(), member.getEmail(),
+            member.getMemberId().getId(), member.getItemsOwnedString());
   }
 }

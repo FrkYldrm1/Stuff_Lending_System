@@ -489,4 +489,8 @@ public class ConsoleUi {
     return selectCategory();
   }
 
+public void showMemberSpceific(int index, String firstName, String lastName) {
+  System.out.println(index + "\t" + firstName + " " + lastName);
+}
+
 }

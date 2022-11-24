@@ -121,17 +121,6 @@ public class Registry {
   }
 
   /**
-   * Method for listing a short overview of members.
-   */
-  public void listMemberSpecific() {
-    int index = 0;
-    for (Member.Mutable member : members) {
-      index += 1;
-      System.out.println(index + " " + member.getFirstName() + " " + member.getLastName());
-    }
-  }
-
-  /**
    * Selecting the members.
    *
    * @param index To get the member by index.

@@ -1,24 +1,13 @@
 package controller;
 
-import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import java.util.Scanner;
-import model.domain.Member;
-import model.domain.Registry;
-import view.ConsoleUi;
 
 /**
  * Controller class for UI.
  */
 public class Controller {
   private view.ConsoleUi console = new view.ConsoleUi(new Scanner(System.in, "UTF-8"));
-  private Registry registry = new Registry();
-  private controller.MemberController memberController = new controller.MemberController(console, registry);
-
-  @SuppressFBWarnings(value = "EI_EXPOSE_REP", justification = "It is the constructor so we should have it.")
-  public Controller(ConsoleUi console, Registry registry) {
-    this.console = console;
-    this.registry = registry;
-  }
+  private controller.MemberController memberController = new controller.MemberController(console);
 
   /**
    * method for starting the program.
@@ -64,10 +53,7 @@ public class Controller {
         viewMemberMenu();
         break;
       case SPECIFICMEMBER:
-        registry.listMemberSpecific();
-        Member.Mutable member = registry.selectMember(console.indexMemberInput());
-        console.showMemberDetails3(member.getFirstName(), member.getEmail(),
-                member.getMemberId().getId(), member.getItemsOwnedString());
+        memberController.printMemberSpecific();
         viewMemberMenu();
         break;
       case SHOWSIMPLE:

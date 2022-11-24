@@ -44,8 +44,8 @@
 =0 FindBugs Issues in model/domain/TimeAdvancedObserver.java
 +0 FindBugs Issues in view/MemberEnum.java
 71 FindBugs Issues in controller/MemberController.java
-text:lines: 18-323 
-SNullcheck of input at line 220 of value previously dereferenced in check(String) 
+text:lines: 18-322 
+SNullcheck of input at line 219 of value previously dereferenced in check(String) 
 -Nullcheck of value previously dereferenced 
 bA value is checked here to see whether it is null, but this value cannot be null because it was 
 d  previously dereferenced and if it were null a null pointer exception would have occurred at the 

@@ -34,8 +34,8 @@ Invoking System.exit shuts down the entire Java virtual machine. This
 </testcase><testcase time="0" name="model/domain/TimeAdvancedObserver.java" classname="FindBugs Issues">
 </testcase><testcase time="0" name="view/MemberEnum.java" classname="FindBugs Issues">
 </testcase><testcase time="0" name="controller/MemberController.java" classname="FindBugs Issues">
-<failure message="issues" ><![CDATA[lines: 18-323 
-Nullcheck of input at line 220 of value previously dereferenced in 
+<failure message="issues" ><![CDATA[lines: 18-322 
+Nullcheck of input at line 219 of value previously dereferenced in 
   check(String) 
 Nullcheck of value previously dereferenced 
 A value is checked here to see whether it is null, but this value cannot be 
