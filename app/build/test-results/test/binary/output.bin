@@ -1,6 +1,9 @@
 t0 CheckStyle Issues in C:/Users/popoy/Documents/OOAD with AHmad and Faruk/a2/app/src/main/java/controller/App.java
 {0 CheckStyle Issues in C:/Users/popoy/Documents/OOAD with AHmad and Faruk/a2/app/src/main/java/controller/Controller.java
-0 CheckStyle Issues in C:/Users/popoy/Documents/OOAD with AHmad and Faruk/a2/app/src/main/java/controller/MemberController.java
+1 CheckStyle Issues in C:/Users/popoy/Documents/OOAD with AHmad and Faruk/a2/app/src/main/java/controller/MemberController.java
+"text:line: 321 column: column:5 
+ 'if' construct must use '{}'s.
+
 {0 CheckStyle Issues in C:/Users/popoy/Documents/OOAD with AHmad and Faruk/a2/app/src/main/java/model/domain/Contract.java
 w0 CheckStyle Issues in C:/Users/popoy/Documents/OOAD with AHmad and Faruk/a2/app/src/main/java/model/domain/Item.java
 y0 CheckStyle Issues in C:/Users/popoy/Documents/OOAD with AHmad and Faruk/a2/app/src/main/java/model/domain/Member.java
@@ -15,21 +18,7 @@
 v0 CheckStyle Issues in C:/Users/popoy/Documents/OOAD with AHmad and Faruk/a2/app/src/main/java/view/EnumChoices.java
 s0 CheckStyle Issues in C:/Users/popoy/Documents/OOAD with AHmad and Faruk/a2/app/src/main/java/view/ItemEnum.java
 u0 CheckStyle Issues in C:/Users/popoy/Documents/OOAD with AHmad and Faruk/a2/app/src/main/java/view/MemberEnum.java
--2 FindBugs Issues in model/domain/Item.java
-text:lines: 19-263 
-cnew model.domain.Item(String, String, int, int, Boolean, int, String, String, Item$CategoryEnum) 
-(  uses the same code for two branches 
--Method uses the same code for two branches 
-dThis method uses the same code to implement two branches of a conditional branch. Check to ensure 
-%  that this isn't a coding mistake.
-
-text:lines: 19-263 
-`Call to equals(null) in new model.domain.Item(String, String, int, int, Boolean, int, String, 
-  String, Item$CategoryEnum) 
-Call to equals(null) 
-gThis method calls equals(Object), passing a null value as the argument. According to the contract of 
->  the equals() method, this call should always return false.
-
+-0 FindBugs Issues in model/domain/Item.java
 10 FindBugs Issues in model/domain/MemberId.java
 ,0 FindBugs Issues in view/EnumChoices.java
 *1 FindBugs Issues in view/ConsoleUi.java
@@ -44,7 +33,7 @@
 =0 FindBugs Issues in model/domain/TimeAdvancedObserver.java
 +0 FindBugs Issues in view/MemberEnum.java
 71 FindBugs Issues in controller/MemberController.java
-text:lines: 17-336 
+text:lines: 17-343 
 SNullcheck of input at line 218 of value previously dereferenced in check(String) 
 -Nullcheck of value previously dereferenced 
 bA value is checked here to see whether it is null, but this value cannot be null because it was 
@@ -55,7 +44,16 @@
 
 10 FindBugs Issues in model/domain/Registry.java
 *0 FindBugs Issues in controller/App.java
-10 FindBugs Issues in model/domain/Contract.java
+11 FindBugs Issues in model/domain/Contract.java
+text:lines: 20-52 
+JgetItem() may expose internal representation by returning Contract.item 
+NMay expose internal representation by returning reference to mutable object 
+cReturning a reference to a mutable object value stored in one of the object's fields exposes the 
+f  internal representation of the object. If instances are accessed by untrusted code, and unchecked 
+d  changes to the mutable object would compromise security or other important properties, you will 
+b  need to do something different. Returning a new copy of the object is better approach in many 
+  situations.
+
 /0 FindBugs Issues in model/domain/Member.java
 -0 FindBugs Issues in model/domain/Time.java
 50 FindBugs Issues in model/persistence/Imapper.java

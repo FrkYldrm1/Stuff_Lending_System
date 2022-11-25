@@ -315,9 +315,16 @@ public class MemberController {
     int period = console.selectPeriod();
     console.showMemberDetails3(registry.selectMember(mem).getFirstName(), registry.selectMember(mem).getEmail(),
         registry.selectMember(mem).getMemberId().getId(), registry.selectMember(mem).getItemsOwnedString());
-    int item = console.selectItem();
-    registry.createContract(getMember(mem), getMember(lender), period, item);
-    console.messageForLending(getMember(mem).getFirstName(), getMember(lender).getFirstName(), period);
+    int itemIndex = console.selectItem();
+    registry.createContract(getMember(mem), getMember(lender), period, itemIndex);
+    Boolean isContractEligble = registry.getIsEligable();
+    if (isContractEligble == null)
+      console.alreadyLended();
+    else if (!(isContractEligble)) {
+      console.notEnoughCredit();
+    } else {
+      console.messageForLending(getMember(mem).getFirstName(), getMember(lender).getFirstName(), period);
+    }
   }
 
   /**

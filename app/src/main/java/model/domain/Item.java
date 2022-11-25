@@ -9,7 +9,6 @@ public class Item {
   private String name;
   private String shortDescription;
   private int costPerDay;
-  private String itemId;
   private int dayOfCreation;
   private boolean isLended;
   private int contractPeriod;
@@ -52,15 +51,13 @@ public class Item {
     }
     if (contractPeriod < 0) {
       setContractPeriodProt(0);
-    } else {
-      setContractPeriodProt(0);
     }
-    if (owner.equals(null) || owner.equals("")) {
+    if (owner == null || owner.equals("")) {
       this.owner = "No owner!";
     } else {
       this.owner = owner;
     }
-    if (lendedTo.equals(null) || lendedTo.equals("")) {
+    if (lendedTo == null || lendedTo.equals("")) {
       this.lenededTo = "No lender!";
     } else {
       this.lenededTo = lendedTo;
@@ -83,12 +80,6 @@ public class Item {
     TOY,
     SPORT,
     OTHER;
-  }
-
-
-
-  public String getItemId() {
-    return itemId;
   }
 
   public String getOwner() {

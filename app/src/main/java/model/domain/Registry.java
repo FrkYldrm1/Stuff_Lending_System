@@ -2,14 +2,13 @@ package model.domain;
 
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import java.util.ArrayList;
-import java.util.Scanner;
 
 /**
  * Registry class for saving data.
  */
 public class Registry {
-  view.ConsoleUi console = new view.ConsoleUi(new Scanner(System.in, "UTF8"));
   private ArrayList<Member.Mutable> members;
+  private Boolean isEligable;
 
   /**
    * Constructor.
@@ -136,13 +135,14 @@ public class Registry {
    * @param owner          For initilizing owner object.
    * @param lender         For initilizing lender object.
    * @param contractPeriod For initilizing contract period.
-   * @param item           For initilizing item object.
+   * @param itemIndex           For initilizing item object.
    */
   public void createContract(Member owner, Member lender, int contractPeriod, int itemIndex) {
     Item.Mutable item = owner.getItemOwned(itemIndex);
     Contract contract = new Contract(owner, lender, contractPeriod, item);
+    isEligable(item.getCostPerDay(), contractPeriod, lender);
     if (!item.isLended()) {
-      if (isEligable(item.getCostPerDay(), contractPeriod, lender)) {
+      if (isEligable) {
         item.setContractPeriodProt(contractPeriod);
         item.setLenededTo(lender.getFirstName());
         item.setisLendedProt(true);
@@ -153,11 +153,9 @@ public class Registry {
         int cost = item.getCostPerDay() * contractPeriod;
         contract.getLentTo().setCredits(contract.getLentTo().getCredits() - cost);
         contract.getOwner().setCredits(contract.getOwner().getCredits() + (contractPeriod * item.getCostPerDay()));
-      } else {
-        console.notEnoughCredit();
       }
     } else {
-      console.alreadyLended();
+      isEligable = null;
     }
   }
 
@@ -167,15 +165,15 @@ public class Registry {
    * @param cost           Parameters for eligibility.
    * @param contractPeriod Parameters for eligibility.
    * @param member         Parameters for eligibility.
-   * @return Returns if member is eligible.
+   *
    *
    */
-  public boolean isEligable(int cost, int contractPeriod, Member member) {
+  public void isEligable(int cost, int contractPeriod, Member member) {
     int total = cost * contractPeriod;
     if (total > member.getCredits()) {
-      return false;
+      isEligable = false;
     }
-    return true;
+    isEligable = true;
   }
 
   /**
@@ -208,5 +206,9 @@ public class Registry {
       }
     }
     return true;
+  }
+
+  public Boolean getIsEligable() {
+    return isEligable;
   }
 }

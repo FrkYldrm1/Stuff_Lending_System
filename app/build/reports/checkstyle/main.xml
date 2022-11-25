@@ -5,6 +5,7 @@
 <file name="C:\Users\popoy\Documents\OOAD with AHmad and Faruk\a2\app\src\main\java\controller\Controller.java">
 </file>
 <file name="C:\Users\popoy\Documents\OOAD with AHmad and Faruk\a2\app\src\main\java\controller\MemberController.java">
+<error line="321" column="5" severity="warning" message="&apos;if&apos; construct must use &apos;{}&apos;s." source="com.puppycrawl.tools.checkstyle.checks.blocks.NeedBracesCheck"/>
 </file>
 <file name="C:\Users\popoy\Documents\OOAD with AHmad and Faruk\a2\app\src\main\java\model\domain\Contract.java">
 </file>
