@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="8.38">
+<file name="C:\Users\popoy\Documents\OOAD with AHmad and Faruk\a2\app\src\main\java\controller\App.java">
+</file>
+<file name="C:\Users\popoy\Documents\OOAD with AHmad and Faruk\a2\app\src\main\java\controller\Controller.java">
+</file>
+<file name="C:\Users\popoy\Documents\OOAD with AHmad and Faruk\a2\app\src\main\java\controller\MemberController.java">
+<error line="321" column="5" severity="warning" message="&apos;if&apos; construct must use &apos;{}&apos;s." source="com.puppycrawl.tools.checkstyle.checks.blocks.NeedBracesCheck"/>
+</file>
+<file name="C:\Users\popoy\Documents\OOAD with AHmad and Faruk\a2\app\src\main\java\model\domain\Contract.java">
+</file>
+<file name="C:\Users\popoy\Documents\OOAD with AHmad and Faruk\a2\app\src\main\java\model\domain\Item.java">
+</file>
+<file name="C:\Users\popoy\Documents\OOAD with AHmad and Faruk\a2\app\src\main\java\model\domain\Member.java">
+</file>
+<file name="C:\Users\popoy\Documents\OOAD with AHmad and Faruk\a2\app\src\main\java\model\domain\MemberId.java">
+</file>
+<file name="C:\Users\popoy\Documents\OOAD with AHmad and Faruk\a2\app\src\main\java\model\domain\Registry.java">
+</file>
+<file name="C:\Users\popoy\Documents\OOAD with AHmad and Faruk\a2\app\src\main\java\model\domain\Time.java">
+</file>
+<file name="C:\Users\popoy\Documents\OOAD with AHmad and Faruk\a2\app\src\main\java\model\domain\TimeAdvancedObserver.java">
+</file>
+<file name="C:\Users\popoy\Documents\OOAD with AHmad and Faruk\a2\app\src\main\java\model\persistence\Imapper.java">
+</file>
+<file name="C:\Users\popoy\Documents\OOAD with AHmad and Faruk\a2\app\src\main\java\model\persistence\Persistence.java">
+</file>
+<file name="C:\Users\popoy\Documents\OOAD with AHmad and Faruk\a2\app\src\main\java\model\persistence\SqlMapper.java">
+</file>
+<file name="C:\Users\popoy\Documents\OOAD with AHmad and Faruk\a2\app\src\main\java\view\ConsoleUi.java">
+</file>
+<file name="C:\Users\popoy\Documents\OOAD with AHmad and Faruk\a2\app\src\main\java\view\EnumChoices.java">
+</file>
+<file name="C:\Users\popoy\Documents\OOAD with AHmad and Faruk\a2\app\src\main\java\view\ItemEnum.java">
+</file>
+<file name="C:\Users\popoy\Documents\OOAD with AHmad and Faruk\a2\app\src\main\java\view\MemberEnum.java">
+</file>
+</checkstyle>

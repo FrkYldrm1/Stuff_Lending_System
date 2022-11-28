@@ -1,20 +1,15 @@
 package controller;
 
 /**
- * Responsible for staring the application.
+ * The app class for running the program.
  */
 public class App {
-  /**
-   * Application starting point.
 
-   * @param args command line arguments.
+  /**
+   * The main method.
    */
   public static void main(String[] args) {
-    // adapt to start the application in your way
-    model.Simple m = new model.Simple();
-    Simple c = new Simple();
-    view.Simple v = new view.Simple();
-
-    c.doSomethingSimple(m, v);
+    controller.Controller hehe = new Controller();
+    hehe.startApp();
   }
 }
