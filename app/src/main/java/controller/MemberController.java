@@ -241,7 +241,7 @@ public class MemberController {
     getMember(index).setLastName(console.getLastName());
     getMember(index).setEmail(console.getEmail());
     getMember(index).setPhoneNumber(console.getPhoneNumber());
-    System.out.println("Member " + getMember(index).getFirstName() + " has been edited"); // view
+    System.out.println("Member " + getMember(index).getFirstName() + " has been edited"); // fix this
   }
 
   /**
