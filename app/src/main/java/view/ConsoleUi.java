@@ -32,7 +32,8 @@ public class ConsoleUi implements Language {
     System.out.println("|1) To deal with information about member               |");
     System.out.println("|2) To deal with information about item                 |");
     System.out.println("|3) Advance time                                        |");
-    System.out.println("|4) Quit                                                |");
+    System.out.println("|4) Change language                                     |");
+    System.out.println("|5) Quit                                                |");
     System.out.println("|-------------------------------------------------------|");
 
     in = input.next();
@@ -44,6 +45,8 @@ public class ConsoleUi implements Language {
       case ("3"):
         return EnumChoices.CHANGE_DAY;
       case ("4"):
+        return EnumChoices.CHANGE_LAN;
+      case ("5"):
         return EnumChoices.EXIT;
       default:
         return mainMenu();
@@ -495,11 +498,6 @@ public class ConsoleUi implements Language {
   public int createItemPrice2() {
     System.out.print("Invalid price, enter again: ");
     return input.nextInt();
-  }
-
-  @Override
-  public String createItemCategory() { ////////
-    return null;
   }
 
   /**

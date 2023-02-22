@@ -10,8 +10,11 @@ import view.SwedishUI;
  * Controller class for UI.
  */
 public class Controller {
-  private Language console = new view.ConsoleUi(new Scanner(System.in, "UTF-8"));
-  //private Language console = new view.SwedishUI(new Scanner(System.in, "UTF-8"));
+
+  private SwedishUI swedish = new SwedishUI(new Scanner(System.in, "UTF-8"));
+  private ConsoleUi console = new view.ConsoleUi(new Scanner(System.in, "UTF-8"));
+
+  private Boolean isEnglish = true; // true for english, false for sweidsh iasndioawe
   private controller.MemberController memberController = new controller.MemberController(console);
 
   /**
@@ -37,6 +40,9 @@ public class Controller {
       case CHANGE_DAY:
         memberController.changeDay();
         startApp();
+        break;
+      case CHANGE_LAN:
+        swedish.swedishMainMenu();
         break;
       case EXIT:
         console.byeBye();

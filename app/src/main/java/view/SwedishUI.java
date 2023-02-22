@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 
-public class SwedishUI  implements Language  {
+public class SwedishUI implements Language {
 
     Scanner input;
     private String in;
@@ -22,7 +22,7 @@ public class SwedishUI  implements Language  {
     /**
      * Method for main menu ui.
      */
-    public EnumChoices mainMenu() {
+    public EnumChoices swedishMainMenu() {
         System.out.println("|-------------------------------------------------------|");
         System.out.println("| Välkommen till vår fantastiska låneansökan!           |");
         System.out.println("| Vänligen följ instruktionerna nedan!                  |");
@@ -31,7 +31,8 @@ public class SwedishUI  implements Language  {
         System.out.println("|1) För att hantera information om medlem               |");
         System.out.println("|2) För att hantera information om objekt               |");
         System.out.println("|3) Förskottstid                                        |");
-        System.out.println("|4) Sluta                                               |");
+        System.out.println("|4) Byta språk                                          |");
+        System.out.println("|5) Sluta                                               |");
         System.out.println("|-------------------------------------------------------|");
 
         in = input.next();
@@ -43,13 +44,16 @@ public class SwedishUI  implements Language  {
             case ("3"):
                 return EnumChoices.CHANGE_DAY;
             case ("4"):
+                return EnumChoices.CHANGE_LAN;
+            case ("5"):
                 return EnumChoices.EXIT;
             default:
-                return mainMenu();
+                return swedishMainMenu();
         }
     }
 
-    /**
+
+  /**
      * Method for the member menu UI.
      */
     public MemberEnum memberMenu() {
@@ -61,7 +65,7 @@ public class SwedishUI  implements Language  {
         System.out.println("|5) Redigera en medlem                                  |");
         System.out.println("|6) Ta bort en medlem                                   |");
         System.out.println("|7) Skapa ett kontrakt                                  |");
-        System.out.println("|8) Tillbaka till menyn                                 |");
+        System.out.println("|8) Tillbaka till meny                                 |");
         System.out.println("|-------------------------------------------------------|");
 
         in = input.next();
@@ -477,10 +481,6 @@ public class SwedishUI  implements Language  {
         return input.nextInt();
     }
 
-  @Override
-  public String createItemCategory() {
-    return null;
-  }
 
   /**
      * Prints member in a simple way to then look at their details.

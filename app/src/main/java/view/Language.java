@@ -4,7 +4,6 @@ import java.util.Scanner;
 import java.util.zip.ZipEntry;
 
 public interface Language {
-    public EnumChoices mainMenu();
 
     public MemberEnum memberMenu();
 
@@ -27,7 +26,7 @@ public interface Language {
     public String uniquePhoneNumber();
 
     public String selectedMember();
-    
+
     public String selectMemberDelete();
 
     public String getEmail();
@@ -40,14 +39,14 @@ public interface Language {
       int currentCredit, int ownedItem, int time, int index);
 
     public void showItemDetails(String itemName, String itemDesc, int itemCost, String category, int dayOfCreation,
-      int index);   
+      int index);
 
     public String idInput();
-    
+
     public int indexMemberInput();
 
     public int indexItemInput();
-    
+
     public int indexMemberInputRetry();
 
     public int indexItemInputRetry();
@@ -86,12 +85,6 @@ public interface Language {
    * Message for advancig the day.
    */
   public void advanceDayMessage();
-  /**
-   * Ui for selecting the category.
-   *
-   * @return input.
-   */
-  public CategoryEnum selectCategory();
 
   /**
    * Asks user for item name.
@@ -135,14 +128,8 @@ public interface Language {
    */
   public int createItemPrice2();
 
-  public String createItemCategory();
-
   public void showMemberSpceific(int index, String firstName, String lastName);
 
 
-
-
-
-
-    
+  CategoryEnum selectCategory();
 }
