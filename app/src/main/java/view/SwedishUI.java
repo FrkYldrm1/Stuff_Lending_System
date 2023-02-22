@@ -409,12 +409,12 @@ public class SwedishUI  implements Language  {
      *
      * @return input.
      */
-    public String selectCategory() {
+    public CategoryEnum selectCategory() {
         lineBreak();
         System.out.println("Vänligen ange lämplig kategori för objektet med hjälp av listan nedan");
         System.out.println("1. Verktyg\n2. Fordon\n3. Spel\n4. Leksak\n5. Sport\n6. Övrig");
         System.out.print("Ange den kategori som passar varan bäst: ");
-        return input.next();
+        return null;
     }
 
     /**
@@ -477,16 +477,12 @@ public class SwedishUI  implements Language  {
         return input.nextInt();
     }
 
-    /**
-     * Asks user to enter item category.
-     *
-     * @return int which is translated to string.
-     */
-    public String createItemCategory() {
-        return selectCategory();
-    }
+  @Override
+  public String createItemCategory() {
+    return null;
+  }
 
-    /**
+  /**
      * Prints member in a simple way to then look at their details.
      *
      * @param index     index.

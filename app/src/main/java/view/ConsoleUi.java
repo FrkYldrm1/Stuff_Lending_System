@@ -497,13 +497,9 @@ public class ConsoleUi implements Language {
     return input.nextInt();
   }
 
-  /**
-   * Asks user to enter item category.
-   *
-   * @return int which is translated to string.
-   */
-  public CategoryEnum createItemCategory() {
-    return selectCategory();
+  @Override
+  public String createItemCategory() { ////////
+    return null;
   }
 
   /**

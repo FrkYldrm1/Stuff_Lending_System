@@ -91,7 +91,7 @@ public interface Language {
    *
    * @return input.
    */
-  public String selectCategory();
+  public CategoryEnum selectCategory();
 
   /**
    * Asks user for item name.
