@@ -7,6 +7,7 @@ import model.domain.Member;
 import model.domain.MemberId;
 import model.domain.Registry;
 import model.domain.Time;
+import view.CategoryEnum;
 import view.ConsoleUi;
 
 /**
@@ -148,7 +149,7 @@ public class MemberController {
     for (Item item : member.getItemsOwned()) {
       index += 1;
       console.showItemDetails(item.getName(), item.getShortDescription(),
-              item.getCostPerDay(), String.valueOf(item.getCategory()),
+          item.getCostPerDay(), String.valueOf(item.getCategory()),
           item.getDayOfCreation(), index);
     }
   }
@@ -176,34 +177,34 @@ public class MemberController {
       price = console.createItemPrice2();
     }
 
-    String input = console.createItemCategory();
-    Item.CategoryEnum category = Item.CategoryEnum.TOOL;
+    CategoryEnum input = console.selectCategory();
+    CategoryEnum category = CategoryEnum.TOOL;
 
     switch (input) {
-      case ("1"):
-        category = Item.CategoryEnum.TOOL;
+      case TOOL:
+        category = CategoryEnum.TOOL;
         break;
-      case ("2"):
-        category = Item.CategoryEnum.VEHICLE;
+      case VEHICLE:
+        category = CategoryEnum.VEHICLE;
         break;
-      case ("3"):
-        category = Item.CategoryEnum.GAME;
+      case GAME:
+        category = CategoryEnum.GAME;
         break;
-      case ("4"):
-        category = Item.CategoryEnum.TOY;
+      case TOY:
+        category = CategoryEnum.TOY;
         break;
-      case ("5"):
-        category = Item.CategoryEnum.SPORT;
+      case SPORT:
+        category = CategoryEnum.SPORT;
         break;
-      case ("6"):
-        category = Item.CategoryEnum.OTHER;
+      case OTHER:
+        category = CategoryEnum.OTHER;
         break;
       default:
         addItem();
     }
 
     member.addItem(itemName, description, price, 1, false, 0,
-            member.getFirstName() + member.getLastName(), "", category);
+        member.getFirstName() + member.getLastName(), "", category);
 
   }
 
@@ -279,7 +280,7 @@ public class MemberController {
     for (Item.Mutable item : items) {
       index += 1;
       console.showItemDetails(item.getName(), item.getShortDescription(),
-              item.getCostPerDay(), String.valueOf(item.getCategory()),
+          item.getCostPerDay(), String.valueOf(item.getCategory()),
           item.getDayOfCreation(), index);
     }
     console.lineBreak();
@@ -339,6 +340,6 @@ public class MemberController {
 
     Member.Mutable member = getMember(console.indexMemberInput());
     console.showMemberDetails3(member.getFirstName(), member.getEmail(),
-            member.getMemberId().getId(), member.getItemsOwnedString());
+        member.getMemberId().getId(), member.getItemsOwnedString());
   }
 }

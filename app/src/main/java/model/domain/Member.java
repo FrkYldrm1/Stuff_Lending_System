@@ -1,6 +1,8 @@
 package model.domain;
 
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
+import view.CategoryEnum;
+
 import java.util.ArrayList;
 
 /**
@@ -113,8 +115,8 @@ public class Member implements TimeAdvancedObserver {
    * @return The list for return.
    */
   @SuppressFBWarnings(value = "EI_EXPOSE_REP", justification = "In the program some values are accessed by this method."
-          + " Making dummy and returning to not expose internal representation"
-          + " might cut our access in some parts of the program.")
+      + " Making dummy and returning to not expose internal representation"
+      + " might cut our access in some parts of the program.")
   public Iterable<Item.Mutable> getItemsOwned() {
     return itemsOwned;
   }
@@ -147,8 +149,8 @@ public class Member implements TimeAdvancedObserver {
     for (Item item : itemsLended) {
       counter++;
       itemListLended += "\n" + " Lended items  : " + "\n" + counter + ". " + item.getName() + "-> Lended to: "
-        + item.getLenededTo() + ", Contract period: " + item.getContractPeriod()
-        + " Short description: " + item.getShortDescription() + "\n";
+          + item.getLenededTo() + ", Contract period: " + item.getContractPeriod()
+          + " Short description: " + item.getShortDescription() + "\n";
     }
     return itemListLended;
   }
@@ -165,7 +167,7 @@ public class Member implements TimeAdvancedObserver {
    * @return Item.
    */
   public Item addItem(String name, String shortDescription, int costPerDay, int dayOfCreation,
-      Boolean isLended, int contractPeriod, String owner, String lendedTo, Item.CategoryEnum category) {
+      Boolean isLended, int contractPeriod, String owner, String lendedTo, CategoryEnum category) {
     Item.Mutable s = new Item.Mutable(name, shortDescription, costPerDay, dayOfCreation,
         isLended, contractPeriod, owner, lendedTo, category);
     setCredits(getCredits() + 100);
@@ -322,6 +324,6 @@ public class Member implements TimeAdvancedObserver {
     Mutable(String firstName, String lastName, String email, String phoneNumber, MemberId id) {
       super(firstName, lastName, email, phoneNumber, id);
     }
-
   }
+
 }
