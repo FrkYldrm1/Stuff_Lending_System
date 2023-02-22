@@ -2,6 +2,7 @@ package controller;
 
 import java.util.Scanner;
 
+import model.domain.Registry;
 import view.ConsoleUi;
 import view.Language;
 import view.SwedishUI;
@@ -11,10 +12,8 @@ import view.SwedishUI;
  */
 public class Controller {
 
-  private SwedishUI swedish = new SwedishUI(new Scanner(System.in, "UTF-8"));
-  private ConsoleUi console = new view.ConsoleUi(new Scanner(System.in, "UTF-8"));
-
-  private Boolean isEnglish = true; // true for english, false for sweidsh iasndioawe
+  private SwedishUI console = new SwedishUI(new Scanner(System.in, "UTF-8"));
+  //private ConsoleUi console = new view.ConsoleUi(new Scanner(System.in, "UTF-8"));
   private controller.MemberController memberController = new controller.MemberController(console);
 
   /**
@@ -41,9 +40,6 @@ public class Controller {
         memberController.changeDay();
         startApp();
         break;
-      case CHANGE_LAN:
-        swedish.swedishMainMenu();
-        break;
       case EXIT:
         console.byeBye();
         break;
@@ -60,7 +56,7 @@ public class Controller {
 
     switch (choice) {
       case CREATEMEMBER:
-        memberController.createNewMember();
+        memberController.createMember();
         viewMemberMenu();
         break;
       case SPECIFICMEMBER:

@@ -18,7 +18,7 @@ public class Member implements TimeAdvancedObserver {
   private Time time = new Time();
   private ArrayList<Item.Mutable> itemsOwned = new ArrayList<>();
   private ArrayList<Item> itemsLended = new ArrayList<>();
-  // private ArrayList<Item> items = new ArrayList<>(); // to take away?
+
 
   /**
    * Member constructor.

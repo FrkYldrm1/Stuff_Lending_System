@@ -22,7 +22,7 @@ public class SwedishUI implements Language {
     /**
      * Method for main menu ui.
      */
-    public EnumChoices swedishMainMenu() {
+    public EnumChoices mainMenu() {
         System.out.println("|-------------------------------------------------------|");
         System.out.println("| Välkommen till vår fantastiska låneansökan!           |");
         System.out.println("| Vänligen följ instruktionerna nedan!                  |");
@@ -31,8 +31,7 @@ public class SwedishUI implements Language {
         System.out.println("|1) För att hantera information om medlem               |");
         System.out.println("|2) För att hantera information om objekt               |");
         System.out.println("|3) Förskottstid                                        |");
-        System.out.println("|4) Byta språk                                          |");
-        System.out.println("|5) Sluta                                               |");
+        System.out.println("|4) Sluta                                               |");
         System.out.println("|-------------------------------------------------------|");
 
         in = input.next();
@@ -44,11 +43,9 @@ public class SwedishUI implements Language {
             case ("3"):
                 return EnumChoices.CHANGE_DAY;
             case ("4"):
-                return EnumChoices.CHANGE_LAN;
-            case ("5"):
                 return EnumChoices.EXIT;
             default:
-                return swedishMainMenu();
+                return mainMenu();
         }
     }
 
@@ -65,7 +62,7 @@ public class SwedishUI implements Language {
         System.out.println("|5) Redigera en medlem                                  |");
         System.out.println("|6) Ta bort en medlem                                   |");
         System.out.println("|7) Skapa ett kontrakt                                  |");
-        System.out.println("|8) Tillbaka till meny                                 |");
+        System.out.println("|8) Tillbaka till meny                                  |");
         System.out.println("|-------------------------------------------------------|");
 
         in = input.next();
@@ -492,5 +489,20 @@ public class SwedishUI implements Language {
     public void showMemberSpceific(int index, String firstName, String lastName) {
         System.out.println(index + "\t" + firstName + " " + lastName);
     }
+
+  /**
+   * Checks if input is null.
+   *
+   * @param input any string.
+   *
+   * @return true if null and false if not.
+   */
+  public boolean check(String input) {
+    if (input.equals("") || input.equals(" ") || input == null) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 
 }

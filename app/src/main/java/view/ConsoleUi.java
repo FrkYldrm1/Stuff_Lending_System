@@ -32,8 +32,7 @@ public class ConsoleUi implements Language {
     System.out.println("|1) To deal with information about member               |");
     System.out.println("|2) To deal with information about item                 |");
     System.out.println("|3) Advance time                                        |");
-    System.out.println("|4) Change language                                     |");
-    System.out.println("|5) Quit                                                |");
+    System.out.println("|4) Quit                                                |");
     System.out.println("|-------------------------------------------------------|");
 
     in = input.next();
@@ -45,8 +44,6 @@ public class ConsoleUi implements Language {
       case ("3"):
         return EnumChoices.CHANGE_DAY;
       case ("4"):
-        return EnumChoices.CHANGE_LAN;
-      case ("5"):
         return EnumChoices.EXIT;
       default:
         return mainMenu();
@@ -509,6 +506,21 @@ public class ConsoleUi implements Language {
    */
   public void showMemberSpceific(int index, String firstName, String lastName) {
     System.out.println(index + "\t" + firstName + " " + lastName);
+  }
+
+  /**
+   * Checks if input is null.
+   *
+   * @param input any string.
+   *
+   * @return true if null and false if not.
+   */
+  public boolean check(String input) {
+    if (input.equals("") || input.equals(" ") || input == null) {
+      return true;
+    } else {
+      return false;
+    }
   }
 
 }

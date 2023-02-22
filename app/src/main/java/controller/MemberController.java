@@ -25,31 +25,19 @@ public class MemberController {
   private Registry registry = new Registry();
   private Time time = new Time();
 
-  
-  /**
-   * constructors for controller.
-   */
-  @SuppressFBWarnings(value = "EI_EXPOSE_REP", justification = "It is the constructor so we should have it.")
-  public MemberController(Language console) {
-    this.console = console;
-  }
-
-  /**
-   * creates new member.
-   */
-  public void createNewMember() {
+  public void createMember() {
     String firstName = console.getFirstName();
-    while (check(firstName)) {
+    while (console.check(firstName)) {
       firstName = console.newFirstName();
     }
     String lastName = console.getLastName();
-    while (check(lastName)) {
+    while (console.check(lastName)) {
       lastName = console.newLastName();
     }
     String email = console.getEmail();
     boolean done = false;
     while (!(done)) {
-      if (check(email)) {
+      if (console.check(email)) {
         email = console.newEmail();
       } else if (!(registry.isEmailAvailable(email))) {
         email = console.uniqueEmail();
@@ -60,7 +48,7 @@ public class MemberController {
     String phoneNumber = console.getPhoneNumber();
     done = false;
     while (!(done)) {
-      if (check(phoneNumber)) {
+      if (console.check(phoneNumber)) {
         phoneNumber = console.newPhoneNumber();
       } else if (!(registry.isPhoneNumberAvailable(phoneNumber))) {
         phoneNumber = console.uniquePhoneNumber();
@@ -69,12 +57,21 @@ public class MemberController {
       }
     }
     MemberId id = new MemberId();
-    while (isIdTaken(id)) {
+    while (registry.isIdTaken(id)) {
       id = new MemberId();
     }
-    Member newMember = new Member(firstName, lastName, email, phoneNumber, id);
-    registry.addMember(newMember);
+    registry.createNewMember(firstName, lastName, email, phoneNumber, id);
   }
+
+  /**
+   * constructors for controller.
+   */
+  @SuppressFBWarnings(value = "EI_EXPOSE_REP", justification = "It is the constructor so we should have it.")
+  public MemberController(Language console) {
+    this.console = console;
+  }
+
+
 
   /**
    * Method for showing the members.
@@ -165,7 +162,7 @@ public class MemberController {
   /**
    * Method for adding items.
    */
-  public void addItem() {
+  public void addItem() { //////////////////////////////////////////////////////////
     Member member;
     int memIndex = console.indexMemberInput();
     member = getMember(memIndex);
@@ -216,20 +213,7 @@ public class MemberController {
 
   }
 
-  /**
-   * Checks if input is null.
-   *
-   * @param input any string.
-   *
-   * @return true if null and false if not.
-   */
-  public boolean check(String input) {
-    if (input.equals("") || input.equals(" ") || input == null) {
-      return true;
-    } else {
-      return false;
-    }
-  }
+
 
   /**
    * Method for changing the day for every object.
@@ -243,7 +227,7 @@ public class MemberController {
   /**
    * Method for editing member.
    */
-  public void editMember() {
+  public void editMember() { //////////////////////////////////////////////////////7
     String mem = console.selectedMember();
     int index = Integer.parseInt(mem);
     getMember(index).setFirstName(console.getFirstName());
@@ -256,7 +240,7 @@ public class MemberController {
   /**
    * Method for editing item.
    */
-  public void editItem() {
+  public void editItem() { /////////////////////////////////////////////
     int memIndex = console.indexMemberInput();
     int index = console.indexItemInput();
     Item.Mutable item = getItem(index, getMember(memIndex));
@@ -268,7 +252,7 @@ public class MemberController {
   /**
    * Method for deleting the member.
    */
-  public void deleteMember() {
+  public void deleteMember() { ////////////////////////////////////////////
     String mem = console.selectMemberDelete();
     int index = Integer.parseInt(mem);
     registry.removeMember(getMember(index));
@@ -277,7 +261,7 @@ public class MemberController {
   /**
    * Method for deleting owned items.
    */
-  public void deleteItemOwned() {
+  public void deleteItemOwned() { ///////////////////////////////////////////7
     showAllMembersSimple();
     int memIndex = console.indexMemberInput();
     Member.Mutable member = getMember(memIndex);
@@ -298,21 +282,7 @@ public class MemberController {
 
   }
 
-  /**
-   * Checks if member id is taken or available.
-   *
-   * @param id member id.
-   * @return true if taken and false if available.
-   *
-   */
-  public boolean isIdTaken(MemberId id) {
-    for (Member.Mutable member : registry.getMembers()) {
-      if (id.getId().equals(member.getMemberId().getId())) {
-        return true;
-      }
-    }
-    return false;
-  }
+
 
   /**
    * Method for creating a contract.

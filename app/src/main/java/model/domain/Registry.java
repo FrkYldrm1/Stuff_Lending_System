@@ -2,6 +2,7 @@ package model.domain;
 
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import view.CategoryEnum;
+import view.Language;
 
 import java.util.ArrayList;
 
@@ -44,6 +45,15 @@ public class Registry {
             members.get(5).getFirstName(), " No one ", CategoryEnum.VEHICLE);
     members.get(2).addItem("Ipad", "Gray", 50, 2, false, 4,
             members.get(2).getFirstName(), " No one ", null);
+  }
+
+  /**
+   * creates new member.
+   */
+  public void createNewMember(String firstName, String lastName, String email, String phoneNumber, MemberId id) {
+
+    Member newMember = new Member(firstName, lastName, email, phoneNumber, id);
+    addMember(newMember);
   }
 
   /**
@@ -208,6 +218,22 @@ public class Registry {
       }
     }
     return true;
+  }
+
+  /**
+   * Checks if member id is taken or available.
+   *
+   * @param id member id.
+   * @return true if taken and false if available.
+   *
+   */
+  public boolean isIdTaken(MemberId id) {
+    for (Member.Mutable member : getMembers()) {
+      if (id.getId().equals(member.getMemberId().getId())) {
+        return true;
+      }
+    }
+    return false;
   }
 
   public Boolean getIsEligable() {

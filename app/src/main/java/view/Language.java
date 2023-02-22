@@ -4,6 +4,7 @@ import java.util.Scanner;
 import java.util.zip.ZipEntry;
 
 public interface Language {
+  public EnumChoices mainMenu();
 
     public MemberEnum memberMenu();
 
@@ -12,6 +13,8 @@ public interface Language {
     public void byeBye();
 
     public String getFirstName();
+
+    public boolean check(String input);
 
     public String newFirstName();
 
