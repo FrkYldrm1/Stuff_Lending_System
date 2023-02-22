@@ -453,7 +453,7 @@ public class ConsoleUi implements Language {
    * @return item name as a string.
    */
   public String createItemName2() {
-    System.out.print("Invalid name, enter again: ");
+    System.out.print("Invalid name or item already exist, enter again: ");
     return input.nextLine();
   }
 
