@@ -2,26 +2,34 @@ package controller;
 
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import java.util.ArrayList;
+import java.util.Scanner;
+
+import javax.swing.text.View;
+
 import model.domain.Item;
 import model.domain.Member;
 import model.domain.MemberId;
 import model.domain.Registry;
 import model.domain.Time;
 import view.ConsoleUi;
+import view.Language;
+import view.SwedishUI;
 
 /**
  * Class.
  */
 public class MemberController {
-  private view.ConsoleUi console;
+  private Language console = new ConsoleUi(new Scanner(System.in, "UTF-8"));
+  
   private Registry registry = new Registry();
   private Time time = new Time();
 
+  
   /**
    * constructors for controller.
    */
   @SuppressFBWarnings(value = "EI_EXPOSE_REP", justification = "It is the constructor so we should have it.")
-  public MemberController(ConsoleUi console) {
+  public MemberController(Language console) {
     this.console = console;
   }
 

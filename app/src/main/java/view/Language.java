@@ -1,5 +1,6 @@
 package view;
 
+import java.util.Scanner;
 import java.util.zip.ZipEntry;
 
 public interface Language {
@@ -63,6 +64,80 @@ public interface Language {
     public void showMemberDetails3(String firstName, String email, String id, String ownedItems);
 
     public void lineBreak();
+
+    public void setInput(Scanner input);
+
+
+    public void notEnoughCredit();
+
+  public void alreadyLended();
+
+  public int selectMember();
+
+  public int selectLender();
+
+  public int selectPeriod();
+
+  public int selectItem();
+
+  public void messageForLending(String mem, String lend, int period);
+
+  /**
+   * Message for advancig the day.
+   */
+  public void advanceDayMessage();
+  /**
+   * Ui for selecting the category.
+   *
+   * @return input.
+   */
+  public String selectCategory();
+
+  /**
+   * Asks user for item name.
+   *
+   * @return item name as a string.
+   */
+  public String createItemName();
+
+  /**
+   * Asks user to reenter item name.
+   *
+   * @return item name as a string.
+   */
+  public String createItemName2();
+
+  /**
+   * Asks user to enter item description.
+   *
+   * @return description string.
+   */
+  public String createItemDescription();
+
+  /**
+   * Asks user to enter description again.
+   *
+   * @return description string.
+   */
+  public String createItemDescription2();
+
+  /**
+   * Asks user to enter price.
+   *
+   * @return price int.
+   */
+  public int createItemPrice();
+
+  /**
+   * Asks user to reenter price.
+   *
+   * @return price int.
+   */
+  public int createItemPrice2();
+
+  public String createItemCategory();
+
+  public void showMemberSpceific(int index, String firstName, String lastName);
 
 
 

@@ -6,7 +6,7 @@ import java.util.Scanner;
 /**
  * Class for printing console UI elements.
  */
-public class ConsoleUi {
+public class ConsoleUi implements Language {
   Scanner input;
   private String in;
 

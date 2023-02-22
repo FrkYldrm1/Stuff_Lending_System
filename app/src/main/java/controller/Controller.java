@@ -2,11 +2,16 @@ package controller;
 
 import java.util.Scanner;
 
+import view.ConsoleUi;
+import view.Language;
+import view.SwedishUI;
+
 /**
  * Controller class for UI.
  */
 public class Controller {
-  private view.ConsoleUi console = new view.ConsoleUi(new Scanner(System.in, "UTF-8"));
+  private Language console = new view.ConsoleUi(new Scanner(System.in, "UTF-8"));
+  //private Language console = new view.SwedishUI(new Scanner(System.in, "UTF-8"));
   private controller.MemberController memberController = new controller.MemberController(console);
 
   /**
