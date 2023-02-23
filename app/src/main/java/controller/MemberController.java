@@ -162,7 +162,7 @@ public class MemberController {
   /**
    * Method for adding items.
    */
-  public void addItem() { //////////////////////////////////////////////////////////
+  public void addItem() {
     Member member;
     int memIndex = console.indexMemberInput();
     member = getMember(memIndex);
@@ -227,20 +227,20 @@ public class MemberController {
   /**
    * Method for editing member.
    */
-  public void editMember() { //////////////////////////////////////////////////////7
+  public void editMember() {
     String mem = console.selectedMember();
     int index = Integer.parseInt(mem);
     getMember(index).setFirstName(console.getFirstName());
     getMember(index).setLastName(console.getLastName());
     getMember(index).setEmail(console.getEmail());
     getMember(index).setPhoneNumber(console.getPhoneNumber());
-    System.out.println("Member " + getMember(index).getFirstName() + " has been edited"); // fix this
+    System.out.println("Member " + getMember(index).getFirstName() + " has been edited"); // fix this////////////////////////
   }
 
   /**
    * Method for editing item.
    */
-  public void editItem() { /////////////////////////////////////////////
+  public void editItem() {
     int memIndex = console.indexMemberInput();
     int index = console.indexItemInput();
     Item.Mutable item = getItem(index, getMember(memIndex));
