@@ -255,7 +255,7 @@ public class SwedishUI implements Language {
      * @param index To add index.
      */
     public void showMemberDetailsSimple(String firstName, String email, String lastName, String memberId,
-            int currentCredit, int ownedItem, int time, int index) {
+            int currentCredit, int ownedItem, int time, String index) {
         String toPrint = String.format(
                 "%s    %s  Nuvarande dag: %s    %s, %s\t%s\tAktuella krediter: %s\tAntal ägda föremål: %s", index,
                 memberId, time + 1, firstName, lastName, email, currentCredit, ownedItem);
@@ -266,7 +266,7 @@ public class SwedishUI implements Language {
      * Here we show items details.
      */
     public void showItemDetails(String itemName, String itemDesc, int itemCost, String category, int dayOfCreation,
-            int index) {
+            String index) {
         String toPrint = String.format("%s    %s    %s    %s    %s     Dag för föremål: %s",
                 index, itemName, itemCost, itemDesc, category, dayOfCreation);
         System.out.println(toPrint);
@@ -371,9 +371,9 @@ public class SwedishUI implements Language {
         System.out.println("Varan är redan utlånad!");
     }
 
-    public int selectMember() {
+    public String selectMember() {
         System.out.print("Välj ägare (Ange ett nummer): ");
-        return input.nextInt();
+        return input.nextLine();
     }
 
     public int selectLender() {
@@ -498,7 +498,7 @@ public class SwedishUI implements Language {
      * @param firstName member's first name.
      * @param lastName  member's last name.
      */
-    public void showMemberSpceific(int index, String firstName, String lastName) {
+    public void showMemberSpceific(String index, String firstName, String lastName) {
         System.out.println(index + "\t" + firstName + " " + lastName);
     }
 
@@ -527,14 +527,13 @@ public class SwedishUI implements Language {
         System.out.println("Mga hiniram na bagay: ");
     }
 
-    @Override
-    public void showItemDetails2(int index, String itemName, String lendedTo, int contractPeriod) {
-        System.out.println(index + ". " + itemName + " -> Lånat av: " + lendedTo + ", Avtalsperiod: " + contractPeriod);
-    }
+@Override
+public void showItemDetails2(String character, String itemName, String lendedTo, int contractPeriod) {
+    System.out.println(character + ". " + itemName + " -> Lånat av: " + lendedTo + ", Avtalsperiod: " + contractPeriod);
+}
 
-    @Override
-    public void showItemDetails3(int index, String itemName, String owner, int contractPeriod) {
-        System.out.println(index + ". " + itemName + " -> Ägare: " + owner + ", Avtalsperiod: " + contractPeriod);
-    }
-
+@Override
+public void showItemDetails3(String character, String itemName, String owner, int contractPeriod) {
+  System.out.println(character + ". " + itemName + " -> Ägare: " + owner + ", Avtalsperiod: " + contractPeriod);
+}
 }
