@@ -210,7 +210,7 @@ public class SwedishUI implements Language {
         if (check(in)) {
             return selectedMember();
         }
-        return input.nextLine();
+        return in;
     }
 
     /**
