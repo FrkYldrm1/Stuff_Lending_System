@@ -1,62 +1,1096 @@
-t0 CheckStyle Issues in C:/Users/popoy/Documents/OOAD with AHmad and Faruk/a2/app/src/main/java/controller/App.java
-{0 CheckStyle Issues in C:/Users/popoy/Documents/OOAD with AHmad and Faruk/a2/app/src/main/java/controller/Controller.java
-Å1 CheckStyle Issues in C:/Users/popoy/Documents/OOAD with AHmad and Faruk/a2/app/src/main/java/controller/MemberController.java
-"text:line: 321 column: column:5 
- 'if' construct must use '{}'s.
-
-{0 CheckStyle Issues in C:/Users/popoy/Documents/OOAD with AHmad and Faruk/a2/app/src/main/java/model/domain/Contract.java
-w0 CheckStyle Issues in C:/Users/popoy/Documents/OOAD with AHmad and Faruk/a2/app/src/main/java/model/domain/Item.java
-y0 CheckStyle Issues in C:/Users/popoy/Documents/OOAD with AHmad and Faruk/a2/app/src/main/java/model/domain/Member.java
-{0 CheckStyle Issues in C:/Users/popoy/Documents/OOAD with AHmad and Faruk/a2/app/src/main/java/model/domain/MemberId.java
-{0 CheckStyle Issues in C:/Users/popoy/Documents/OOAD with AHmad and Faruk/a2/app/src/main/java/model/domain/Registry.java
-w0 CheckStyle Issues in C:/Users/popoy/Documents/OOAD with AHmad and Faruk/a2/app/src/main/java/model/domain/Time.java
-á0 CheckStyle Issues in C:/Users/popoy/Documents/OOAD with AHmad and Faruk/a2/app/src/main/java/model/domain/TimeAdvancedObserver.java
-0 CheckStyle Issues in C:/Users/popoy/Documents/OOAD with AHmad and Faruk/a2/app/src/main/java/model/persistence/Imapper.java
-É0 CheckStyle Issues in C:/Users/popoy/Documents/OOAD with AHmad and Faruk/a2/app/src/main/java/model/persistence/Persistence.java
-Å0 CheckStyle Issues in C:/Users/popoy/Documents/OOAD with AHmad and Faruk/a2/app/src/main/java/model/persistence/SqlMapper.java
-t0 CheckStyle Issues in C:/Users/popoy/Documents/OOAD with AHmad and Faruk/a2/app/src/main/java/view/ConsoleUi.java
-v0 CheckStyle Issues in C:/Users/popoy/Documents/OOAD with AHmad and Faruk/a2/app/src/main/java/view/EnumChoices.java
-s0 CheckStyle Issues in C:/Users/popoy/Documents/OOAD with AHmad and Faruk/a2/app/src/main/java/view/ItemEnum.java
-u0 CheckStyle Issues in C:/Users/popoy/Documents/OOAD with AHmad and Faruk/a2/app/src/main/java/view/MemberEnum.java
--0 FindBugs Issues in model/domain/Item.java
-10 FindBugs Issues in model/domain/MemberId.java
-,0 FindBugs Issues in view/EnumChoices.java
-*1 FindBugs Issues in view/ConsoleUi.java
-text:lines: 19-501 
-QbyeBye() invokes System.exit(...), which shuts down the entire virtual machine 
-"Method invokes System.exit(...) 
-fInvoking System.exit shuts down the entire Java virtual machine. This should only been done when it 
-e  is appropriate. Such calls make it hard or impossible for your code to be invoked by other code. 
-1  Consider throwing a RuntimeException instead.
-
-10 FindBugs Issues in controller/Controller.java
-=0 FindBugs Issues in model/domain/TimeAdvancedObserver.java
-+0 FindBugs Issues in view/MemberEnum.java
-71 FindBugs Issues in controller/MemberController.java
-text:lines: 17-343 
-SNullcheck of input at line 218 of value previously dereferenced in check(String) 
--Nullcheck of value previously dereferenced 
-bA value is checked here to see whether it is null, but this value cannot be null because it was 
-d  previously dereferenced and if it were null a null pointer exception would have occurred at the 
-d  earlier dereference. Essentially, this code and the previous dereference disagree as to whether 
-c  this value is allowed to be null. Either the check is redundant or the previous dereference is 
-  erroneous.
-
-10 FindBugs Issues in model/domain/Registry.java
-*0 FindBugs Issues in controller/App.java
-11 FindBugs Issues in model/domain/Contract.java
-text:lines: 20-52 
-JgetItem() may expose internal representation by returning Contract.item 
-NMay expose internal representation by returning reference to mutable object 
-cReturning a reference to a mutable object value stored in one of the object's fields exposes the 
-f  internal representation of the object. If instances are accessed by untrusted code, and unchecked 
-d  changes to the mutable object would compromise security or other important properties, you will 
-b  need to do something different. Returning a new copy of the object is better approach in many 
-  situations.
-
-/0 FindBugs Issues in model/domain/Member.java
--0 FindBugs Issues in model/domain/Time.java
-50 FindBugs Issues in model/persistence/Imapper.java
-70 FindBugs Issues in model/persistence/SqlMapper.java
-)0 FindBugs Issues in view/ItemEnum.java
-90 FindBugs Issues in model/persistence/Persistence.java
+b1 CheckStyle Issues in /Users/fy/Documents/1DV607/a2/app/src/main/java/controller/Controller.java
+text:line: 5 column: column:1 
+@Extra separation in import group before 'model.domain.Registry'
+
+i11 CheckStyle Issues in /Users/fy/Documents/1DV607/a2/app/src/main/java/controller/MemberController.java
+text:line: 7 column: column:1 
+@Extra separation in import group before 'javax.swing.text.View'
+
+text:line: 9 column: column:1 
+<Extra separation in import group before 'model.domain.Item'
+
+ text:line: 28 column: column:3 
+Missing a Javadoc comment.
+
+"text:line: 109 column: column:15 
+F'for' has incorrect indentation level 14, expected level should be 8.
+
+"text:line: 110 column: column:17 
+M'for' child has incorrect indentation level 16, expected level should be 10.
+
+"text:line: 111 column: column:17 
+M'for' child has incorrect indentation level 16, expected level should be 10.
+
+"text:line: 113 column: column:15 
+M'for rcurly' has incorrect indentation level 14, expected level should be 8.
+
+text:line: 264 column: 
+0Line is longer than 120 characters (found 125).
+
+!text:line: 320 column: column:5 
+cDistance between variable 'lender' declaration and its first usage is 4, but allowed 3.  Consider 
+c  making that variable final if you still need to store its value in advance (before method calls 
+7  that might have side effects on the original value).
+
+!text:line: 321 column: column:5 
+cDistance between variable 'period' declaration and its first usage is 4, but allowed 3.  Consider 
+c  making that variable final if you still need to store its value in advance (before method calls 
+7  that might have side effects on the original value).
+
+!text:line: 336 column: column:5 
+'if' construct must use '{}'s.
+
+[0 CheckStyle Issues in /Users/fy/Documents/1DV607/a2/app/src/main/java/controller/App.java
+j0 CheckStyle Issues in /Users/fy/Documents/1DV607/a2/app/src/main/java/model/persistence/Persistence.java
+f0 CheckStyle Issues in /Users/fy/Documents/1DV607/a2/app/src/main/java/model/persistence/Imapper.java
+h0 CheckStyle Issues in /Users/fy/Documents/1DV607/a2/app/src/main/java/model/persistence/SqlMapper.java
+b0 CheckStyle Issues in /Users/fy/Documents/1DV607/a2/app/src/main/java/model/domain/Contract.java
+b0 CheckStyle Issues in /Users/fy/Documents/1DV607/a2/app/src/main/java/model/domain/MemberId.java
+^0 CheckStyle Issues in /Users/fy/Documents/1DV607/a2/app/src/main/java/model/domain/Time.java
+`4 CheckStyle Issues in /Users/fy/Documents/1DV607/a2/app/src/main/java/model/domain/Member.java
+text:line: 6 column: column:1 
+>Extra separation in import group before 'java.util.ArrayList'
+
+text:line: 6 column: column:1 
+dWrong lexicographical order for 'java.util.ArrayList' import. Should be before 'view.CategoryEnum'.
+
+text:line: 139 column: 
+=Javadoc tag '@return' should be preceded with an empty line.
+
+!text:line: 165 column: column:3 
+Missing a Javadoc comment.
+
+b2 CheckStyle Issues in /Users/fy/Documents/1DV607/a2/app/src/main/java/model/domain/Registry.java
+text:line: 7 column: column:1 
+>Extra separation in import group before 'java.util.ArrayList'
+
+text:line: 7 column: column:1 
+`Wrong lexicographical order for 'java.util.ArrayList' import. Should be before 'view.Language'.
+
+n0 CheckStyle Issues in /Users/fy/Documents/1DV607/a2/app/src/main/java/model/domain/TimeAdvancedObserver.java
+^0 CheckStyle Issues in /Users/fy/Documents/1DV607/a2/app/src/main/java/model/domain/Item.java
+]0 CheckStyle Issues in /Users/fy/Documents/1DV607/a2/app/src/main/java/view/EnumChoices.java
+\0 CheckStyle Issues in /Users/fy/Documents/1DV607/a2/app/src/main/java/view/MemberEnum.java
+]273 CheckStyle Issues in /Users/fy/Documents/1DV607/a2/app/src/main/java/view/SwedishUI.java
+text:line: 5 column: column:1 
+]Extra separation in import group before 'edu.umd.cs.findbugs.annotations.SuppressFBWarnings'
+
+text:line: 5 column: column:1 
+eWrong lexicographical order for 'edu.umd.cs.findbugs.annotations.SuppressFBWarnings' import. Should 
+!  be before 'java.util.Scanner'.
+
+text:line: 7 column: column:1 
+Missing a Javadoc comment.
+
+ text:line: 7 column: column:14 
+\Abbreviation in name 'SwedishUI' must contain no more than '1' consecutive capital letters.
+
+text:line: 9 column: column:5 
+Q'member def type' has incorrect indentation level 4, expected level should be 2.
+
+ text:line: 10 column: column:5 
+U'member def modifier' has incorrect indentation level 4, expected level should be 2.
+
+ text:line: 25 column: column:5 
+U'method def modifier' has incorrect indentation level 4, expected level should be 2.
+
+ text:line: 26 column: column:9 
+R'method def' child has incorrect indentation level 8, expected level should be 4.
+
+ text:line: 27 column: column:9 
+R'method def' child has incorrect indentation level 8, expected level should be 4.
+
+ text:line: 28 column: column:9 
+R'method def' child has incorrect indentation level 8, expected level should be 4.
+
+ text:line: 29 column: column:9 
+R'method def' child has incorrect indentation level 8, expected level should be 4.
+
+ text:line: 30 column: column:9 
+R'method def' child has incorrect indentation level 8, expected level should be 4.
+
+ text:line: 31 column: column:9 
+R'method def' child has incorrect indentation level 8, expected level should be 4.
+
+ text:line: 32 column: column:9 
+R'method def' child has incorrect indentation level 8, expected level should be 4.
+
+ text:line: 33 column: column:9 
+R'method def' child has incorrect indentation level 8, expected level should be 4.
+
+ text:line: 34 column: column:9 
+R'method def' child has incorrect indentation level 8, expected level should be 4.
+
+ text:line: 35 column: column:9 
+R'method def' child has incorrect indentation level 8, expected level should be 4.
+
+ text:line: 37 column: column:9 
+R'method def' child has incorrect indentation level 8, expected level should be 4.
+
+ text:line: 38 column: column:9 
+H'switch' has incorrect indentation level 8, expected level should be 4.
+
+!text:line: 39 column: column:13 
+M'case' child has incorrect indentation level 12, expected level should be 6.
+
+!text:line: 40 column: column:17 
+N'block' child has incorrect indentation level 16, expected level should be 8.
+
+!text:line: 41 column: column:13 
+M'case' child has incorrect indentation level 12, expected level should be 6.
+
+!text:line: 42 column: column:17 
+N'block' child has incorrect indentation level 16, expected level should be 8.
+
+!text:line: 43 column: column:13 
+M'case' child has incorrect indentation level 12, expected level should be 6.
+
+!text:line: 44 column: column:17 
+N'block' child has incorrect indentation level 16, expected level should be 8.
+
+!text:line: 45 column: column:13 
+M'case' child has incorrect indentation level 12, expected level should be 6.
+
+!text:line: 46 column: column:17 
+N'block' child has incorrect indentation level 16, expected level should be 8.
+
+!text:line: 47 column: column:13 
+M'case' child has incorrect indentation level 12, expected level should be 6.
+
+!text:line: 48 column: column:17 
+N'block' child has incorrect indentation level 16, expected level should be 8.
+
+ text:line: 49 column: column:9 
+O'switch rcurly' has incorrect indentation level 8, expected level should be 4.
+
+ text:line: 50 column: column:5 
+S'method def rcurly' has incorrect indentation level 4, expected level should be 2.
+
+ text:line: 53 column: column:3 
+fBlock comment has incorrect indentation level 2, expected is 4, indentation should be the same level 
+  as line 56.
+
+ text:line: 56 column: column:5 
+U'method def modifier' has incorrect indentation level 4, expected level should be 2.
+
+ text:line: 57 column: column:9 
+R'method def' child has incorrect indentation level 8, expected level should be 4.
+
+ text:line: 58 column: column:9 
+R'method def' child has incorrect indentation level 8, expected level should be 4.
+
+ text:line: 59 column: column:9 
+R'method def' child has incorrect indentation level 8, expected level should be 4.
+
+ text:line: 60 column: column:9 
+R'method def' child has incorrect indentation level 8, expected level should be 4.
+
+ text:line: 61 column: column:9 
+R'method def' child has incorrect indentation level 8, expected level should be 4.
+
+ text:line: 62 column: column:9 
+R'method def' child has incorrect indentation level 8, expected level should be 4.
+
+ text:line: 63 column: column:9 
+R'method def' child has incorrect indentation level 8, expected level should be 4.
+
+ text:line: 64 column: column:9 
+R'method def' child has incorrect indentation level 8, expected level should be 4.
+
+ text:line: 65 column: column:9 
+R'method def' child has incorrect indentation level 8, expected level should be 4.
+
+ text:line: 66 column: column:9 
+R'method def' child has incorrect indentation level 8, expected level should be 4.
+
+ text:line: 68 column: column:9 
+R'method def' child has incorrect indentation level 8, expected level should be 4.
+
+ text:line: 69 column: column:9 
+H'switch' has incorrect indentation level 8, expected level should be 4.
+
+!text:line: 70 column: column:13 
+M'case' child has incorrect indentation level 12, expected level should be 6.
+
+!text:line: 71 column: column:17 
+N'block' child has incorrect indentation level 16, expected level should be 8.
+
+!text:line: 72 column: column:13 
+M'case' child has incorrect indentation level 12, expected level should be 6.
+
+!text:line: 73 column: column:17 
+N'block' child has incorrect indentation level 16, expected level should be 8.
+
+!text:line: 74 column: column:13 
+M'case' child has incorrect indentation level 12, expected level should be 6.
+
+!text:line: 75 column: column:17 
+N'block' child has incorrect indentation level 16, expected level should be 8.
+
+!text:line: 76 column: column:13 
+M'case' child has incorrect indentation level 12, expected level should be 6.
+
+!text:line: 77 column: column:17 
+N'block' child has incorrect indentation level 16, expected level should be 8.
+
+!text:line: 78 column: column:13 
+M'case' child has incorrect indentation level 12, expected level should be 6.
+
+!text:line: 79 column: column:17 
+N'block' child has incorrect indentation level 16, expected level should be 8.
+
+!text:line: 80 column: column:13 
+M'case' child has incorrect indentation level 12, expected level should be 6.
+
+!text:line: 81 column: column:17 
+N'block' child has incorrect indentation level 16, expected level should be 8.
+
+!text:line: 82 column: column:13 
+M'case' child has incorrect indentation level 12, expected level should be 6.
+
+!text:line: 83 column: column:17 
+N'block' child has incorrect indentation level 16, expected level should be 8.
+
+!text:line: 84 column: column:13 
+M'case' child has incorrect indentation level 12, expected level should be 6.
+
+!text:line: 85 column: column:17 
+N'block' child has incorrect indentation level 16, expected level should be 8.
+
+!text:line: 86 column: column:13 
+M'case' child has incorrect indentation level 12, expected level should be 6.
+
+!text:line: 87 column: column:17 
+N'block' child has incorrect indentation level 16, expected level should be 8.
+
+ text:line: 88 column: column:9 
+O'switch rcurly' has incorrect indentation level 8, expected level should be 4.
+
+ text:line: 89 column: column:5 
+S'method def rcurly' has incorrect indentation level 4, expected level should be 2.
+
+ text:line: 94 column: column:5 
+U'method def modifier' has incorrect indentation level 4, expected level should be 2.
+
+ text:line: 95 column: column:9 
+R'method def' child has incorrect indentation level 8, expected level should be 4.
+
+ text:line: 96 column: column:9 
+R'method def' child has incorrect indentation level 8, expected level should be 4.
+
+ text:line: 97 column: column:9 
+R'method def' child has incorrect indentation level 8, expected level should be 4.
+
+ text:line: 98 column: column:9 
+R'method def' child has incorrect indentation level 8, expected level should be 4.
+
+ text:line: 99 column: column:9 
+R'method def' child has incorrect indentation level 8, expected level should be 4.
+
+!text:line: 100 column: column:9 
+R'method def' child has incorrect indentation level 8, expected level should be 4.
+
+!text:line: 101 column: column:9 
+R'method def' child has incorrect indentation level 8, expected level should be 4.
+
+!text:line: 103 column: column:9 
+R'method def' child has incorrect indentation level 8, expected level should be 4.
+
+!text:line: 104 column: column:9 
+H'switch' has incorrect indentation level 8, expected level should be 4.
+
+"text:line: 105 column: column:13 
+M'case' child has incorrect indentation level 12, expected level should be 6.
+
+"text:line: 106 column: column:17 
+N'block' child has incorrect indentation level 16, expected level should be 8.
+
+"text:line: 107 column: column:13 
+M'case' child has incorrect indentation level 12, expected level should be 6.
+
+"text:line: 108 column: column:17 
+N'block' child has incorrect indentation level 16, expected level should be 8.
+
+"text:line: 109 column: column:13 
+M'case' child has incorrect indentation level 12, expected level should be 6.
+
+"text:line: 110 column: column:17 
+N'block' child has incorrect indentation level 16, expected level should be 8.
+
+"text:line: 111 column: column:13 
+M'case' child has incorrect indentation level 12, expected level should be 6.
+
+"text:line: 112 column: column:17 
+N'block' child has incorrect indentation level 16, expected level should be 8.
+
+"text:line: 113 column: column:13 
+M'case' child has incorrect indentation level 12, expected level should be 6.
+
+"text:line: 114 column: column:17 
+N'block' child has incorrect indentation level 16, expected level should be 8.
+
+"text:line: 115 column: column:13 
+M'case' child has incorrect indentation level 12, expected level should be 6.
+
+"text:line: 116 column: column:17 
+N'block' child has incorrect indentation level 16, expected level should be 8.
+
+!text:line: 117 column: column:9 
+O'switch rcurly' has incorrect indentation level 8, expected level should be 4.
+
+!text:line: 118 column: column:5 
+S'method def rcurly' has incorrect indentation level 4, expected level should be 2.
+
+!text:line: 123 column: column:5 
+U'method def modifier' has incorrect indentation level 4, expected level should be 2.
+
+!text:line: 124 column: column:9 
+R'method def' child has incorrect indentation level 8, expected level should be 4.
+
+!text:line: 125 column: column:9 
+R'method def' child has incorrect indentation level 8, expected level should be 4.
+
+!text:line: 126 column: column:9 
+R'method def' child has incorrect indentation level 8, expected level should be 4.
+
+!text:line: 127 column: column:9 
+R'method def' child has incorrect indentation level 8, expected level should be 4.
+
+!text:line: 128 column: column:9 
+R'method def' child has incorrect indentation level 8, expected level should be 4.
+
+!text:line: 129 column: column:9 
+R'method def' child has incorrect indentation level 8, expected level should be 4.
+
+!text:line: 130 column: column:5 
+S'method def rcurly' has incorrect indentation level 4, expected level should be 2.
+
+!text:line: 137 column: column:5 
+U'method def modifier' has incorrect indentation level 4, expected level should be 2.
+
+!text:line: 138 column: column:9 
+R'method def' child has incorrect indentation level 8, expected level should be 4.
+
+!text:line: 139 column: column:9 
+R'method def' child has incorrect indentation level 8, expected level should be 4.
+
+!text:line: 140 column: column:5 
+S'method def rcurly' has incorrect indentation level 4, expected level should be 2.
+
+!text:line: 147 column: column:5 
+U'method def modifier' has incorrect indentation level 4, expected level should be 2.
+
+!text:line: 148 column: column:9 
+R'method def' child has incorrect indentation level 8, expected level should be 4.
+
+!text:line: 149 column: column:9 
+R'method def' child has incorrect indentation level 8, expected level should be 4.
+
+!text:line: 150 column: column:5 
+S'method def rcurly' has incorrect indentation level 4, expected level should be 2.
+
+!text:line: 157 column: column:5 
+U'method def modifier' has incorrect indentation level 4, expected level should be 2.
+
+!text:line: 158 column: column:9 
+R'method def' child has incorrect indentation level 8, expected level should be 4.
+
+!text:line: 159 column: column:9 
+R'method def' child has incorrect indentation level 8, expected level should be 4.
+
+!text:line: 160 column: column:5 
+S'method def rcurly' has incorrect indentation level 4, expected level should be 2.
+
+!text:line: 167 column: column:5 
+U'method def modifier' has incorrect indentation level 4, expected level should be 2.
+
+!text:line: 168 column: column:9 
+R'method def' child has incorrect indentation level 8, expected level should be 4.
+
+!text:line: 169 column: column:9 
+R'method def' child has incorrect indentation level 8, expected level should be 4.
+
+!text:line: 170 column: column:5 
+S'method def rcurly' has incorrect indentation level 4, expected level should be 2.
+
+!text:line: 177 column: column:5 
+U'method def modifier' has incorrect indentation level 4, expected level should be 2.
+
+!text:line: 178 column: column:9 
+R'method def' child has incorrect indentation level 8, expected level should be 4.
+
+!text:line: 179 column: column:9 
+R'method def' child has incorrect indentation level 8, expected level should be 4.
+
+!text:line: 180 column: column:5 
+S'method def rcurly' has incorrect indentation level 4, expected level should be 2.
+
+!text:line: 187 column: column:5 
+U'method def modifier' has incorrect indentation level 4, expected level should be 2.
+
+!text:line: 188 column: column:9 
+R'method def' child has incorrect indentation level 8, expected level should be 4.
+
+!text:line: 189 column: column:9 
+R'method def' child has incorrect indentation level 8, expected level should be 4.
+
+!text:line: 190 column: column:5 
+S'method def rcurly' has incorrect indentation level 4, expected level should be 2.
+
+!text:line: 198 column: column:5 
+U'method def modifier' has incorrect indentation level 4, expected level should be 2.
+
+!text:line: 199 column: column:9 
+R'method def' child has incorrect indentation level 8, expected level should be 4.
+
+!text:line: 200 column: column:9 
+R'method def' child has incorrect indentation level 8, expected level should be 4.
+
+!text:line: 201 column: column:5 
+S'method def rcurly' has incorrect indentation level 4, expected level should be 2.
+
+!text:line: 208 column: column:5 
+U'method def modifier' has incorrect indentation level 4, expected level should be 2.
+
+!text:line: 209 column: column:9 
+R'method def' child has incorrect indentation level 8, expected level should be 4.
+
+!text:line: 210 column: column:9 
+R'method def' child has incorrect indentation level 8, expected level should be 4.
+
+!text:line: 211 column: column:5 
+S'method def rcurly' has incorrect indentation level 4, expected level should be 2.
+
+!text:line: 218 column: column:5 
+U'method def modifier' has incorrect indentation level 4, expected level should be 2.
+
+!text:line: 219 column: column:9 
+R'method def' child has incorrect indentation level 8, expected level should be 4.
+
+!text:line: 220 column: column:9 
+R'method def' child has incorrect indentation level 8, expected level should be 4.
+
+!text:line: 221 column: column:5 
+S'method def rcurly' has incorrect indentation level 4, expected level should be 2.
+
+!text:line: 228 column: column:5 
+U'method def modifier' has incorrect indentation level 4, expected level should be 2.
+
+!text:line: 229 column: column:9 
+R'method def' child has incorrect indentation level 8, expected level should be 4.
+
+!text:line: 230 column: column:9 
+R'method def' child has incorrect indentation level 8, expected level should be 4.
+
+!text:line: 231 column: column:5 
+S'method def rcurly' has incorrect indentation level 4, expected level should be 2.
+
+!text:line: 238 column: column:5 
+U'method def modifier' has incorrect indentation level 4, expected level should be 2.
+
+!text:line: 239 column: column:9 
+R'method def' child has incorrect indentation level 8, expected level should be 4.
+
+!text:line: 240 column: column:9 
+R'method def' child has incorrect indentation level 8, expected level should be 4.
+
+!text:line: 241 column: column:5 
+S'method def rcurly' has incorrect indentation level 4, expected level should be 2.
+
+!text:line: 248 column: column:5 
+U'method def modifier' has incorrect indentation level 4, expected level should be 2.
+
+!text:line: 249 column: column:9 
+R'method def' child has incorrect indentation level 8, expected level should be 4.
+
+!text:line: 250 column: column:9 
+R'method def' child has incorrect indentation level 8, expected level should be 4.
+
+!text:line: 251 column: column:5 
+S'method def rcurly' has incorrect indentation level 4, expected level should be 2.
+
+!text:line: 258 column: column:5 
+U'method def modifier' has incorrect indentation level 4, expected level should be 2.
+
+!text:line: 260 column: column:9 
+R'method def' child has incorrect indentation level 8, expected level should be 4.
+
+!text:line: 263 column: column:9 
+R'method def' child has incorrect indentation level 8, expected level should be 4.
+
+!text:line: 264 column: column:5 
+S'method def rcurly' has incorrect indentation level 4, expected level should be 2.
+
+!text:line: 269 column: column:5 
+U'method def modifier' has incorrect indentation level 4, expected level should be 2.
+
+!text:line: 271 column: column:9 
+R'method def' child has incorrect indentation level 8, expected level should be 4.
+
+!text:line: 273 column: column:9 
+R'method def' child has incorrect indentation level 8, expected level should be 4.
+
+!text:line: 274 column: column:5 
+S'method def rcurly' has incorrect indentation level 4, expected level should be 2.
+
+!text:line: 281 column: column:5 
+U'method def modifier' has incorrect indentation level 4, expected level should be 2.
+
+!text:line: 282 column: column:9 
+R'method def' child has incorrect indentation level 8, expected level should be 4.
+
+!text:line: 283 column: column:9 
+R'method def' child has incorrect indentation level 8, expected level should be 4.
+
+!text:line: 284 column: column:5 
+S'method def rcurly' has incorrect indentation level 4, expected level should be 2.
+
+!text:line: 291 column: column:5 
+U'method def modifier' has incorrect indentation level 4, expected level should be 2.
+
+!text:line: 292 column: column:9 
+R'method def' child has incorrect indentation level 8, expected level should be 4.
+
+!text:line: 293 column: column:9 
+R'method def' child has incorrect indentation level 8, expected level should be 4.
+
+!text:line: 294 column: column:5 
+S'method def rcurly' has incorrect indentation level 4, expected level should be 2.
+
+!text:line: 296 column: column:5 
+U'method def modifier' has incorrect indentation level 4, expected level should be 2.
+
+!text:line: 297 column: column:9 
+R'method def' child has incorrect indentation level 8, expected level should be 4.
+
+!text:line: 298 column: column:9 
+R'method def' child has incorrect indentation level 8, expected level should be 4.
+
+!text:line: 299 column: column:5 
+S'method def rcurly' has incorrect indentation level 4, expected level should be 2.
+
+!text:line: 306 column: column:5 
+U'method def modifier' has incorrect indentation level 4, expected level should be 2.
+
+!text:line: 307 column: column:9 
+R'method def' child has incorrect indentation level 8, expected level should be 4.
+
+!text:line: 308 column: column:9 
+R'method def' child has incorrect indentation level 8, expected level should be 4.
+
+!text:line: 309 column: column:5 
+S'method def rcurly' has incorrect indentation level 4, expected level should be 2.
+
+!text:line: 311 column: column:5 
+U'method def modifier' has incorrect indentation level 4, expected level should be 2.
+
+!text:line: 312 column: column:9 
+R'method def' child has incorrect indentation level 8, expected level should be 4.
+
+!text:line: 313 column: column:9 
+R'method def' child has incorrect indentation level 8, expected level should be 4.
+
+!text:line: 314 column: column:5 
+S'method def rcurly' has incorrect indentation level 4, expected level should be 2.
+
+!text:line: 316 column: column:5 
+U'method def modifier' has incorrect indentation level 4, expected level should be 2.
+
+!text:line: 317 column: column:9 
+R'method def' child has incorrect indentation level 8, expected level should be 4.
+
+!text:line: 318 column: column:9 
+R'method def' child has incorrect indentation level 8, expected level should be 4.
+
+!text:line: 319 column: column:5 
+S'method def rcurly' has incorrect indentation level 4, expected level should be 2.
+
+!text:line: 321 column: column:5 
+U'method def modifier' has incorrect indentation level 4, expected level should be 2.
+
+!text:line: 322 column: column:9 
+R'method def' child has incorrect indentation level 8, expected level should be 4.
+
+!text:line: 323 column: column:9 
+R'method def' child has incorrect indentation level 8, expected level should be 4.
+
+!text:line: 324 column: column:5 
+S'method def rcurly' has incorrect indentation level 4, expected level should be 2.
+
+!text:line: 326 column: column:5 
+U'method def modifier' has incorrect indentation level 4, expected level should be 2.
+
+!text:line: 327 column: column:9 
+R'method def' child has incorrect indentation level 8, expected level should be 4.
+
+!text:line: 328 column: column:9 
+R'method def' child has incorrect indentation level 8, expected level should be 4.
+
+!text:line: 329 column: column:5 
+S'method def rcurly' has incorrect indentation level 4, expected level should be 2.
+
+!text:line: 334 column: column:5 
+U'method def modifier' has incorrect indentation level 4, expected level should be 2.
+
+!text:line: 335 column: column:9 
+R'method def' child has incorrect indentation level 8, expected level should be 4.
+
+!text:line: 336 column: column:9 
+R'method def' child has incorrect indentation level 8, expected level should be 4.
+
+!text:line: 337 column: column:5 
+S'method def rcurly' has incorrect indentation level 4, expected level should be 2.
+
+!text:line: 342 column: column:5 
+U'method def modifier' has incorrect indentation level 4, expected level should be 2.
+
+!text:line: 343 column: column:9 
+R'method def' child has incorrect indentation level 8, expected level should be 4.
+
+!text:line: 345 column: column:9 
+R'method def' child has incorrect indentation level 8, expected level should be 4.
+
+!text:line: 347 column: column:5 
+S'method def rcurly' has incorrect indentation level 4, expected level should be 2.
+
+!text:line: 352 column: column:5 
+U'method def modifier' has incorrect indentation level 4, expected level should be 2.
+
+!text:line: 353 column: column:9 
+R'method def' child has incorrect indentation level 8, expected level should be 4.
+
+!text:line: 354 column: column:5 
+S'method def rcurly' has incorrect indentation level 4, expected level should be 2.
+
+!text:line: 361 column: column:5 
+U'method def modifier' has incorrect indentation level 4, expected level should be 2.
+
+!text:line: 363 column: column:9 
+R'method def' child has incorrect indentation level 8, expected level should be 4.
+
+!text:line: 364 column: column:5 
+S'method def rcurly' has incorrect indentation level 4, expected level should be 2.
+
+!text:line: 366 column: column:5 
+U'method def modifier' has incorrect indentation level 4, expected level should be 2.
+
+!text:line: 367 column: column:9 
+R'method def' child has incorrect indentation level 8, expected level should be 4.
+
+!text:line: 368 column: column:9 
+R'method def' child has incorrect indentation level 8, expected level should be 4.
+
+!text:line: 369 column: column:5 
+S'method def rcurly' has incorrect indentation level 4, expected level should be 2.
+
+!text:line: 371 column: column:5 
+U'method def modifier' has incorrect indentation level 4, expected level should be 2.
+
+!text:line: 372 column: column:9 
+R'method def' child has incorrect indentation level 8, expected level should be 4.
+
+!text:line: 373 column: column:5 
+S'method def rcurly' has incorrect indentation level 4, expected level should be 2.
+
+!text:line: 375 column: column:5 
+U'method def modifier' has incorrect indentation level 4, expected level should be 2.
+
+!text:line: 376 column: column:9 
+R'method def' child has incorrect indentation level 8, expected level should be 4.
+
+!text:line: 377 column: column:9 
+R'method def' child has incorrect indentation level 8, expected level should be 4.
+
+!text:line: 378 column: column:5 
+S'method def rcurly' has incorrect indentation level 4, expected level should be 2.
+
+!text:line: 380 column: column:5 
+U'method def modifier' has incorrect indentation level 4, expected level should be 2.
+
+!text:line: 381 column: column:9 
+R'method def' child has incorrect indentation level 8, expected level should be 4.
+
+!text:line: 382 column: column:9 
+R'method def' child has incorrect indentation level 8, expected level should be 4.
+
+!text:line: 383 column: column:5 
+S'method def rcurly' has incorrect indentation level 4, expected level should be 2.
+
+!text:line: 385 column: column:5 
+U'method def modifier' has incorrect indentation level 4, expected level should be 2.
+
+!text:line: 386 column: column:9 
+R'method def' child has incorrect indentation level 8, expected level should be 4.
+
+!text:line: 387 column: column:9 
+R'method def' child has incorrect indentation level 8, expected level should be 4.
+
+!text:line: 388 column: column:5 
+S'method def rcurly' has incorrect indentation level 4, expected level should be 2.
+
+!text:line: 390 column: column:5 
+U'method def modifier' has incorrect indentation level 4, expected level should be 2.
+
+!text:line: 391 column: column:9 
+R'method def' child has incorrect indentation level 8, expected level should be 4.
+
+!text:line: 392 column: column:9 
+R'method def' child has incorrect indentation level 8, expected level should be 4.
+
+!text:line: 393 column: column:5 
+S'method def rcurly' has incorrect indentation level 4, expected level should be 2.
+
+!text:line: 395 column: column:5 
+U'method def modifier' has incorrect indentation level 4, expected level should be 2.
+
+!text:line: 396 column: column:9 
+R'method def' child has incorrect indentation level 8, expected level should be 4.
+
+!text:line: 397 column: column:5 
+S'method def rcurly' has incorrect indentation level 4, expected level should be 2.
+
+!text:line: 402 column: column:5 
+U'method def modifier' has incorrect indentation level 4, expected level should be 2.
+
+!text:line: 403 column: column:9 
+R'method def' child has incorrect indentation level 8, expected level should be 4.
+
+!text:line: 404 column: column:5 
+S'method def rcurly' has incorrect indentation level 4, expected level should be 2.
+
+!text:line: 411 column: column:5 
+U'method def modifier' has incorrect indentation level 4, expected level should be 2.
+
+!text:line: 412 column: column:9 
+R'method def' child has incorrect indentation level 8, expected level should be 4.
+
+!text:line: 413 column: column:9 
+R'method def' child has incorrect indentation level 8, expected level should be 4.
+
+!text:line: 414 column: column:9 
+R'method def' child has incorrect indentation level 8, expected level should be 4.
+
+!text:line: 415 column: column:9 
+R'method def' child has incorrect indentation level 8, expected level should be 4.
+
+!text:line: 416 column: column:9 
+R'method def' child has incorrect indentation level 8, expected level should be 4.
+
+!text:line: 417 column: column:5 
+S'method def rcurly' has incorrect indentation level 4, expected level should be 2.
+
+!text:line: 424 column: column:5 
+U'method def modifier' has incorrect indentation level 4, expected level should be 2.
+
+!text:line: 425 column: column:9 
+R'method def' child has incorrect indentation level 8, expected level should be 4.
+
+!text:line: 426 column: column:9 
+R'method def' child has incorrect indentation level 8, expected level should be 4.
+
+!text:line: 427 column: column:5 
+S'method def rcurly' has incorrect indentation level 4, expected level should be 2.
+
+!text:line: 434 column: column:5 
+U'method def modifier' has incorrect indentation level 4, expected level should be 2.
+
+!text:line: 435 column: column:9 
+R'method def' child has incorrect indentation level 8, expected level should be 4.
+
+!text:line: 436 column: column:9 
+R'method def' child has incorrect indentation level 8, expected level should be 4.
+
+!text:line: 437 column: column:5 
+S'method def rcurly' has incorrect indentation level 4, expected level should be 2.
+
+!text:line: 444 column: column:5 
+U'method def modifier' has incorrect indentation level 4, expected level should be 2.
+
+!text:line: 445 column: column:9 
+R'method def' child has incorrect indentation level 8, expected level should be 4.
+
+!text:line: 446 column: column:9 
+R'method def' child has incorrect indentation level 8, expected level should be 4.
+
+!text:line: 447 column: column:5 
+S'method def rcurly' has incorrect indentation level 4, expected level should be 2.
+
+!text:line: 454 column: column:5 
+U'method def modifier' has incorrect indentation level 4, expected level should be 2.
+
+!text:line: 455 column: column:9 
+R'method def' child has incorrect indentation level 8, expected level should be 4.
+
+!text:line: 456 column: column:9 
+R'method def' child has incorrect indentation level 8, expected level should be 4.
+
+!text:line: 457 column: column:5 
+S'method def rcurly' has incorrect indentation level 4, expected level should be 2.
+
+!text:line: 464 column: column:5 
+U'method def modifier' has incorrect indentation level 4, expected level should be 2.
+
+!text:line: 465 column: column:9 
+R'method def' child has incorrect indentation level 8, expected level should be 4.
+
+!text:line: 466 column: column:9 
+R'method def' child has incorrect indentation level 8, expected level should be 4.
+
+!text:line: 467 column: column:5 
+S'method def rcurly' has incorrect indentation level 4, expected level should be 2.
+
+!text:line: 474 column: column:5 
+U'method def modifier' has incorrect indentation level 4, expected level should be 2.
+
+!text:line: 475 column: column:9 
+R'method def' child has incorrect indentation level 8, expected level should be 4.
+
+!text:line: 476 column: column:9 
+R'method def' child has incorrect indentation level 8, expected level should be 4.
+
+!text:line: 477 column: column:5 
+S'method def rcurly' has incorrect indentation level 4, expected level should be 2.
+
+!text:line: 480 column: column:3 
+fBlock comment has incorrect indentation level 2, expected is 4, indentation should be the same level 
+  as line 487.
+
+!text:line: 487 column: column:5 
+U'method def modifier' has incorrect indentation level 4, expected level should be 2.
+
+!text:line: 488 column: column:9 
+R'method def' child has incorrect indentation level 8, expected level should be 4.
+
+!text:line: 489 column: column:5 
+S'method def rcurly' has incorrect indentation level 4, expected level should be 2.
+
+!text:line: 507 column: column:1 
+U'method def modifier' has incorrect indentation level 0, expected level should be 2.
+
+!text:line: 510 column: column:1 
+S'method def rcurly' has incorrect indentation level 0, expected level should be 2.
+
+!text:line: 512 column: column:1 
+U'method def modifier' has incorrect indentation level 0, expected level should be 2.
+
+!text:line: 515 column: column:1 
+S'method def rcurly' has incorrect indentation level 0, expected level should be 2.
+
+!text:line: 517 column: column:1 
+U'method def modifier' has incorrect indentation level 0, expected level should be 2.
+
+!text:line: 519 column: column:3 
+R'method def' child has incorrect indentation level 2, expected level should be 4.
+
+!text:line: 520 column: column:1 
+S'method def rcurly' has incorrect indentation level 0, expected level should be 2.
+
+!text:line: 522 column: column:1 
+U'method def modifier' has incorrect indentation level 0, expected level should be 2.
+
+!text:line: 524 column: column:3 
+R'method def' child has incorrect indentation level 2, expected level should be 4.
+
+!text:line: 525 column: column:1 
+S'method def rcurly' has incorrect indentation level 0, expected level should be 2.
+
+Z0 CheckStyle Issues in /Users/fy/Documents/1DV607/a2/app/src/main/java/view/ItemEnum.java
+[0 CheckStyle Issues in /Users/fy/Documents/1DV607/a2/app/src/main/java/view/ConsoleUi.java
+[38 CheckStyle Issues in /Users/fy/Documents/1DV607/a2/app/src/main/java/view/Language.java
+text:line: 6 column: column:1 
+Missing a Javadoc comment.
+
+text:line: 9 column: column:5 
+U'method def modifier' has incorrect indentation level 4, expected level should be 2.
+
+ text:line: 11 column: column:5 
+U'method def modifier' has incorrect indentation level 4, expected level should be 2.
+
+ text:line: 13 column: column:5 
+U'method def modifier' has incorrect indentation level 4, expected level should be 2.
+
+ text:line: 15 column: column:5 
+U'method def modifier' has incorrect indentation level 4, expected level should be 2.
+
+ text:line: 17 column: column:5 
+U'method def modifier' has incorrect indentation level 4, expected level should be 2.
+
+ text:line: 19 column: column:5 
+U'method def modifier' has incorrect indentation level 4, expected level should be 2.
+
+ text:line: 21 column: column:5 
+U'method def modifier' has incorrect indentation level 4, expected level should be 2.
+
+ text:line: 23 column: column:5 
+U'method def modifier' has incorrect indentation level 4, expected level should be 2.
+
+ text:line: 25 column: column:5 
+U'method def modifier' has incorrect indentation level 4, expected level should be 2.
+
+ text:line: 27 column: column:5 
+U'method def modifier' has incorrect indentation level 4, expected level should be 2.
+
+ text:line: 29 column: column:5 
+U'method def modifier' has incorrect indentation level 4, expected level should be 2.
+
+ text:line: 31 column: column:5 
+U'method def modifier' has incorrect indentation level 4, expected level should be 2.
+
+ text:line: 33 column: column:5 
+U'method def modifier' has incorrect indentation level 4, expected level should be 2.
+
+ text:line: 35 column: column:5 
+U'method def modifier' has incorrect indentation level 4, expected level should be 2.
+
+ text:line: 37 column: column:5 
+U'method def modifier' has incorrect indentation level 4, expected level should be 2.
+
+ text:line: 39 column: column:5 
+U'method def modifier' has incorrect indentation level 4, expected level should be 2.
+
+ text:line: 41 column: column:5 
+U'method def modifier' has incorrect indentation level 4, expected level should be 2.
+
+ text:line: 42 column: column:7 
+E'int' has incorrect indentation level 6, expected level should be 8.
+
+ text:line: 44 column: column:5 
+U'method def modifier' has incorrect indentation level 4, expected level should be 2.
+
+ text:line: 45 column: column:7 
+E'int' has incorrect indentation level 6, expected level should be 8.
+
+ text:line: 47 column: column:5 
+U'method def modifier' has incorrect indentation level 4, expected level should be 2.
+
+ text:line: 49 column: column:5 
+U'method def modifier' has incorrect indentation level 4, expected level should be 2.
+
+ text:line: 51 column: column:5 
+U'method def modifier' has incorrect indentation level 4, expected level should be 2.
+
+ text:line: 53 column: column:5 
+U'method def modifier' has incorrect indentation level 4, expected level should be 2.
+
+ text:line: 55 column: column:5 
+U'method def modifier' has incorrect indentation level 4, expected level should be 2.
+
+ text:line: 57 column: column:5 
+U'method def modifier' has incorrect indentation level 4, expected level should be 2.
+
+ text:line: 59 column: column:5 
+U'method def modifier' has incorrect indentation level 4, expected level should be 2.
+
+ text:line: 61 column: column:5 
+U'method def modifier' has incorrect indentation level 4, expected level should be 2.
+
+ text:line: 63 column: column:5 
+U'method def modifier' has incorrect indentation level 4, expected level should be 2.
+
+ text:line: 65 column: column:5 
+U'method def modifier' has incorrect indentation level 4, expected level should be 2.
+
+ text:line: 67 column: column:5 
+U'method def modifier' has incorrect indentation level 4, expected level should be 2.
+
+ text:line: 69 column: column:5 
+U'method def modifier' has incorrect indentation level 4, expected level should be 2.
+
+ text:line: 71 column: column:5 
+U'method def modifier' has incorrect indentation level 4, expected level should be 2.
+
+ text:line: 73 column: column:5 
+U'method def modifier' has incorrect indentation level 4, expected level should be 2.
+
+ text:line: 75 column: column:5 
+U'method def modifier' has incorrect indentation level 4, expected level should be 2.
+
+ text:line: 77 column: column:5 
+U'method def modifier' has incorrect indentation level 4, expected level should be 2.
+
+ text:line: 80 column: column:5 
+U'method def modifier' has incorrect indentation level 4, expected level should be 2.
+
+^1 CheckStyle Issues in /Users/fy/Documents/1DV607/a2/app/src/main/java/view/CategoryEnum.java
+text:line: 3 column: column:1 
+Missing a Javadoc comment.
+
+)2 FindBugs Issues in view/SwedishUI.java
+text:lines: 18-525 
+PbyeBye() invokes System.exit(...), which shuts down the entire virtual machine 
+!Method invokes System.exit(...) 
+eInvoking System.exit shuts down the entire Java virtual machine. This should only been done when it 
+d  is appropriate. Such calls make it hard or impossible for your code to be invoked by other code. 
+0  Consider throwing a RuntimeException instead.
+
+text:lines: 18-525 
+RNullcheck of input at line 500 of value previously dereferenced in check(String) 
+,Nullcheck of value previously dereferenced 
+aA value is checked here to see whether it is null, but this value cannot be null because it was 
+c  previously dereferenced and if it were null a null pointer exception would have occurred at the 
+c  earlier dereference. Essentially, this code and the previous dereference disagree as to whether 
+b  this value is allowed to be null. Either the check is redundant or the previous dereference is 
+  erroneous.
+
+,0 FindBugs Issues in model/domain/Item.java
+02 FindBugs Issues in model/domain/MemberId.java
+text:lines: 9-52 
+;Random object created and used only once in createId(int) 
+*Random object created and used only once 
+^This code creates a java.util.Random object, uses it to generate one random number, and then 
+d  discards the Random object. This produces mediocre quality random numbers and is inefficient. If 
+c  possible, rewrite the code so that the Random object is created once and saved, and each time a 
+]  new random number is required invoke a method on the existing Random object to obtain it. 
+ 
+bIf it is important that the generated Random numbers not be guessable, you must not create a new 
+d  Random for each random number; the values are too easily guessable. You should strongly consider 
+`  using a java.security.SecureRandom instead (and avoid allocating a new SecureRandom for each 
+  random number needed).
+
+text:lines: 9-52 
+Unread field: rnd 
+Unread field 
+?This field is never read. Consider removing it from the class.
+
++0 FindBugs Issues in view/EnumChoices.java
+)2 FindBugs Issues in view/ConsoleUi.java
+text:lines: 19-540 
+PbyeBye() invokes System.exit(...), which shuts down the entire virtual machine 
+!Method invokes System.exit(...) 
+eInvoking System.exit shuts down the entire Java virtual machine. This should only been done when it 
+d  is appropriate. Such calls make it hard or impossible for your code to be invoked by other code. 
+0  Consider throwing a RuntimeException instead.
+
+text:lines: 19-540 
+RNullcheck of input at line 537 of value previously dereferenced in check(String) 
+,Nullcheck of value previously dereferenced 
+aA value is checked here to see whether it is null, but this value cannot be null because it was 
+c  previously dereferenced and if it were null a null pointer exception would have occurred at the 
+c  earlier dereference. Essentially, this code and the previous dereference disagree as to whether 
+b  this value is allowed to be null. Either the check is redundant or the previous dereference is 
+  erroneous.
+
+,0 FindBugs Issues in view/CategoryEnum.java
+00 FindBugs Issues in controller/Controller.java
+<0 FindBugs Issues in model/domain/TimeAdvancedObserver.java
+(0 FindBugs Issues in view/Language.java
+*0 FindBugs Issues in view/MemberEnum.java
+60 FindBugs Issues in controller/MemberController.java
+00 FindBugs Issues in model/domain/Registry.java
+)0 FindBugs Issues in controller/App.java
+01 FindBugs Issues in model/domain/Contract.java
+text:lines: 20-52 
+IgetItem() may expose internal representation by returning Contract.item 
+MMay expose internal representation by returning reference to mutable object 
+bReturning a reference to a mutable object value stored in one of the object's fields exposes the 
+e  internal representation of the object. If instances are accessed by untrusted code, and unchecked 
+c  changes to the mutable object would compromise security or other important properties, you will 
+a  need to do something different. Returning a new copy of the object is better approach in many 
+  situations.
+
+.0 FindBugs Issues in model/domain/Member.java
+,0 FindBugs Issues in model/domain/Time.java
+40 FindBugs Issues in model/persistence/Imapper.java
+60 FindBugs Issues in model/persistence/SqlMapper.java
+(0 FindBugs Issues in view/ItemEnum.java
+80 FindBugs Issues in model/persistence/Persistence.java

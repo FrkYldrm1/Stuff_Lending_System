@@ -5,6 +5,8 @@ import view.CategoryEnum;
 import view.Language;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 /**
  * Registry class for saving data.
@@ -12,6 +14,7 @@ import java.util.ArrayList;
 public class Registry {
   private ArrayList<Member.Mutable> members;
   private Boolean isEligable;
+
 
   /**
    * Constructor.
@@ -56,6 +59,8 @@ public class Registry {
     addMember(newMember);
   }
 
+
+
   /**
    * Getter method for members.
    *
@@ -64,7 +69,7 @@ public class Registry {
   @SuppressFBWarnings(value = "EI_EXPOSE_REP", justification = "In the program some values are accessed by this method."
       + " Making dummy and returning to not expose internal representation"
       + " might cut our access in some parts of the program.")
-  public Iterable<Member.Mutable> getMembers() {
+  public ArrayList<Member.Mutable> getMembers() {
     return members;
   }
 
@@ -171,6 +176,8 @@ public class Registry {
     }
   }
 
+   
+
   /**
    * Method for checking eligibilty of member to lend an item.
    *
@@ -238,5 +245,25 @@ public class Registry {
 
   public Boolean getIsEligable() {
     return isEligable;
+  }
+
+  public void sortByName() {
+    Comparator<Member.Mutable> comparator = new Comparator<Member.Mutable>() {
+      public int compare(Member.Mutable person1, Member.Mutable person2) {
+        return person1.getFirstName().compareTo(person2.getFirstName());
+      }
+    };
+    Collections.sort(members, comparator);
+
+  }
+
+  public void sortById() {
+    Comparator<Member.Mutable> compare = new Comparator<Member.Mutable>() {
+      public int compare(Member.Mutable person1, Member.Mutable person2) {
+        return person1.getMemberId().getId().compareTo(person2.getMemberId().getId());
+      }
+    };
+    Collections.sort(members, compare);
+
   }
 }

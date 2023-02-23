@@ -46,7 +46,7 @@ public interface Language {
 
     public String idInput();
 
-    public int indexMemberInput();
+    public String indexMemberInput();
 
     public int indexItemInput();
 
@@ -129,14 +129,14 @@ public interface Language {
    *
    * @return price int.
    */
-  public int createItemPrice();
+  public String createItemPrice();
 
   /**
    * Asks user to reenter price.
    *
    * @return price int.
    */
-  public int createItemPrice2();
+  public String createItemPrice2();
 
   public void showMemberSpceific(int index, String firstName, String lastName);
 

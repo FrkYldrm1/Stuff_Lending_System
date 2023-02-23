@@ -9,15 +9,15 @@ public class SwedishUI implements Language {
     Scanner input;
     private String in;
 
-  /**
-   * Constructor for consoleUI class.
-   *
-   * @param input Scanner input.
-   */
-  @SuppressFBWarnings(value = "EI_EXPOSE_REP", justification = "We need to have scanner")
-  public SwedishUI(Scanner input) {
-    this.input = input;
-  }
+    /**
+     * Constructor for consoleUI class.
+     *
+     * @param input Scanner input.
+     */
+    @SuppressFBWarnings(value = "EI_EXPOSE_REP", justification = "We need to have scanner")
+    public SwedishUI(Scanner input) {
+        this.input = input;
+    }
 
     /**
      * Method for main menu ui.
@@ -49,8 +49,7 @@ public class SwedishUI implements Language {
         }
     }
 
-
-  /**
+    /**
      * Method for the member menu UI.
      */
     public MemberEnum memberMenu() {
@@ -288,9 +287,9 @@ public class SwedishUI implements Language {
      *
      * @return int.
      */
-    public int indexMemberInput() {
+    public String indexMemberInput() {
         System.out.print("Välj en medlem (Ange ett nummer): ");
-        return input.nextInt();
+        return input.nextLine();
     }
 
     public int indexItemInput() {
@@ -413,24 +412,23 @@ public class SwedishUI implements Language {
         System.out.println("Vänligen ange lämplig kategori för objektet med hjälp av listan nedan");
         System.out.println("1. Verktyg\n2. Fordon\n3. Spel\n4. Leksak\n5. Sport\n6. Övrig");
         System.out.print("Ange den kategori som passar varan bäst: ");
-
-      in = input.next();
-      switch (in) {
-        case ("1"):
-          return CategoryEnum.TOOL;
-        case ("2"):
-          return CategoryEnum.VEHICLE;
-        case ("3"):
-          return CategoryEnum.GAME;
-        case ("4"):
-          return CategoryEnum.TOY;
-        case ("5"):
-          return CategoryEnum.SPORT;
-        case ("6"):
-          return CategoryEnum.OTHER;
-        default:
-          return selectCategory();
-      }
+        in = input.next();
+        switch (in) {
+            case ("1"):
+                return CategoryEnum.TOOL;
+            case ("2"):
+                return CategoryEnum.VEHICLE;
+            case ("3"):
+                return CategoryEnum.GAME;
+            case ("4"):
+                return CategoryEnum.TOY;
+            case ("5"):
+                return CategoryEnum.SPORT;
+            case ("6"):
+                return CategoryEnum.OTHER;
+            default:
+                return selectCategory();
+        }
     }
 
     /**
@@ -439,7 +437,7 @@ public class SwedishUI implements Language {
      * @return item name as a string.
      */
     public String createItemName() {
-        System.out.print("Ange objektets namn: ");
+        System.out.print("Ange objektets namn som en String: ");
         return input.nextLine();
     }
 
@@ -478,9 +476,9 @@ public class SwedishUI implements Language {
      *
      * @return price int.
      */
-    public int createItemPrice() {
+    public String createItemPrice() {
         System.out.print("Ange artikelpris per dag:");
-        return input.nextInt();
+        return input.nextLine();
     }
 
     /**
@@ -488,13 +486,12 @@ public class SwedishUI implements Language {
      *
      * @return price int.
      */
-    public int createItemPrice2() {
+    public String createItemPrice2() {
         System.out.print("Ogiltigt pris, ange igen:");
-        return input.nextInt();
+        return input.nextLine();
     }
 
-
-  /**
+    /**
      * Prints member in a simple way to then look at their details.
      *
      * @param index     index.
@@ -505,40 +502,39 @@ public class SwedishUI implements Language {
         System.out.println(index + "\t" + firstName + " " + lastName);
     }
 
-
-  /**
-   * Checks if input is null.
-   *
-   * @param input any string.
-   *
-   * @return true if null and false if not.
-   */
-  public boolean check(String input) {
-    if (input.equals("") || input.equals(" ") || input == null) {
-      return true;
-    } else {
-      return false;
+    /**
+     * Checks if input is null.
+     *
+     * @param input any string.
+     *
+     * @return true if null and false if not.
+     */
+    public boolean check(String input) {
+        if (input.equals("") || input.equals(" ") || input == null) {
+            return true;
+        } else {
+            return false;
+        }
     }
-  }
 
-@Override
-public void showOwnedItemIntro() {
-    System.out.println("Mga ari-arian: ");
-}
+    @Override
+    public void showOwnedItemIntro() {
+        System.out.println("Mga ari-arian: ");
+    }
 
-@Override
-public void showLendedItemIntro() {
-    System.out.println("Mga hiniram na bagay: ");
-}
+    @Override
+    public void showLendedItemIntro() {
+        System.out.println("Mga hiniram na bagay: ");
+    }
 
-@Override
-public void showItemDetails2(int index, String itemName, String lendedTo, int contractPeriod) {
-  System.out.println(index + ". " + itemName + " -> Lånat av: " + lendedTo + ", Avtalsperiod: " + contractPeriod);
-}
+    @Override
+    public void showItemDetails2(int index, String itemName, String lendedTo, int contractPeriod) {
+        System.out.println(index + ". " + itemName + " -> Lånat av: " + lendedTo + ", Avtalsperiod: " + contractPeriod);
+    }
 
-@Override
-public void showItemDetails3(int index, String itemName, String owner, int contractPeriod) {
-  System.out.println(index + ". " + itemName + " -> Ägare: " + owner + ", Avtalsperiod: " + contractPeriod);
-}
+    @Override
+    public void showItemDetails3(int index, String itemName, String owner, int contractPeriod) {
+        System.out.println(index + ". " + itemName + " -> Ägare: " + owner + ", Avtalsperiod: " + contractPeriod);
+    }
 
 }

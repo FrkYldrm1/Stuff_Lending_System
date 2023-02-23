@@ -12,8 +12,8 @@ import view.SwedishUI;
  */
 public class Controller {
 
-  //private SwedishUI console = new SwedishUI(new Scanner(System.in, "UTF-8"));
-  private ConsoleUi console = new view.ConsoleUi(new Scanner(System.in, "UTF-8"));
+  private SwedishUI console = new SwedishUI(new Scanner(System.in, "UTF-8"));
+  //private ConsoleUi console = new view.ConsoleUi(new Scanner(System.in, "UTF-8"));
   private controller.MemberController memberController = new controller.MemberController(console);
 
   /**
@@ -24,7 +24,7 @@ public class Controller {
   }
 
   /**
-   * method for showing main menu.
+   * method for showing main menu.2
    */
   public void viewMenu() {
     view.EnumChoices choice = console.mainMenu();

@@ -290,9 +290,9 @@ public class ConsoleUi implements Language {
    *
    * @return int.
    */
-  public int indexMemberInput() {
+  public String indexMemberInput() {
     System.out.print("Select a member (Input a number): ");
-    return input.nextInt();
+    return input.nextLine();
   }
 
   public int indexItemInput() {
@@ -441,7 +441,7 @@ public class ConsoleUi implements Language {
    * @return item name as a string.
    */
   public String createItemName() {
-    System.out.print("Enter item name: ");
+    System.out.print("Enter item name as an String: ");
     return input.nextLine();
   }
 
@@ -480,9 +480,9 @@ public class ConsoleUi implements Language {
    *
    * @return price int.
    */
-  public int createItemPrice() {
+  public String createItemPrice() {
     System.out.print("Enter item price per day: ");
-    return input.nextInt();
+    return input.nextLine();
   }
 
   /**
@@ -490,9 +490,9 @@ public class ConsoleUi implements Language {
    *
    * @return price int.
    */
-  public int createItemPrice2() {
+  public String createItemPrice2() {
     System.out.print("Invalid price, enter again: ");
-    return input.nextInt();
+    return input.nextLine();
   }
 
   /**

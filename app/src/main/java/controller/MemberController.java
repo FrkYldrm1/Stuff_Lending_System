@@ -2,6 +2,8 @@ package controller;
 
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Scanner;
 
 import javax.swing.text.View;
@@ -21,7 +23,7 @@ import view.SwedishUI;
  */
 public class MemberController {
   private Language console;
-  
+
   private Registry registry = new Registry();
   private Time time = new Time();
 
@@ -69,15 +71,23 @@ public class MemberController {
   @SuppressFBWarnings(value = "EI_EXPOSE_REP", justification = "It is the constructor so we should have it.")
   public MemberController(Language console) {
     this.console = console;
+
   }
 
-
+  public void languageCheck() {
+    if (console instanceof SwedishUI) {
+      registry.sortById();
+    } else {
+      registry.sortByName();
+    }
+  }
 
   /**
    * Method for showing the members.
    */
   public void showAllMembersSimple() {
     int index = 0;
+    languageCheck();
     for (Member.Mutable member : registry.getMembers()) {
       index += 1;
       console.showMemberDetailsSimple(member.getFirstName(), member.getEmail(), member.getLastName(),
@@ -90,6 +100,7 @@ public class MemberController {
    * Method for showing the members.
    */
   public void showAllMembers2() {
+    languageCheck();
     for (Member.Mutable member : registry.getMembers()) {
       console.showMemberDetails2(member.getFirstName(), member.getLastName(), member.getEmail());
 
@@ -106,11 +117,11 @@ public class MemberController {
       index = 0;
       if (member.getSizeOfItemsLended() > 0) {
         console.showLendedItemIntro();
-              for (Item item : member.getItemsLended()) {
-                index += 1;
-                console.showItemDetails3(index, item.getName(), item.getOwner(), item.getContractPeriod());
-              
-              }
+        for (Item item : member.getItemsLended()) {
+          index += 1;
+          console.showItemDetails3(index, item.getName(), item.getOwner(), item.getContractPeriod());
+
+        }
       }
     }
     console.lineBreak();
@@ -167,7 +178,7 @@ public class MemberController {
    * Method for showing members owned items.
    */
   public void showOwnedItems() {
-    Member.Mutable member = getMember(console.indexMemberInput());
+    Member.Mutable member = getMember(Integer.parseInt(console.indexMemberInput()));
     int index = 0;
 
     for (Item item : member.getItemsOwned()) {
@@ -183,9 +194,18 @@ public class MemberController {
    */
   public void addItem() {
     Member member;
-    int memIndex = console.indexMemberInput();
+    int memIndex;
+    String s = console.indexMemberInput();
+    while (!(s = console.indexMemberInput().trim()).matches("\\d+")) {
+      s = console.indexMemberInput();
+    }
+    memIndex = Integer.parseInt(s);
     member = getMember(memIndex);
     String itemName = console.createItemName();
+    while(itemName.matches(".*\\d+.*")) {
+      itemName = console.createItemName();
+    }
+
     while (itemName.equals("")) {
       itemName = console.createItemName2();
     }
@@ -196,9 +216,15 @@ public class MemberController {
     while (description.equals("")) {
       description = console.createItemDescription2();
     }
-    int price = console.createItemPrice();
-    while ((price < 1)) {
-      price = console.createItemPrice2();
+
+    s = null;
+    while (!(s = console.createItemPrice().trim()).matches("\\d+")) {
+      s = console.createItemPrice();
+    }
+    int price = Integer.parseInt(s);
+
+    while ((Integer.parseInt(s) < 1)) {
+      price = Integer.parseInt(console.createItemPrice2());
     }
     CategoryEnum input = console.selectCategory();
     CategoryEnum category = CategoryEnum.TOOL;
@@ -231,8 +257,6 @@ public class MemberController {
 
   }
 
-
-
   /**
    * Method for changing the day for every object.
    */
@@ -252,14 +276,15 @@ public class MemberController {
     getMember(index).setLastName(console.getLastName());
     getMember(index).setEmail(console.getEmail());
     getMember(index).setPhoneNumber(console.getPhoneNumber());
-    System.out.println("Member " + getMember(index).getFirstName() + " has been edited"); // fix this////////////////////////
+    System.out.println("Member " + getMember(index).getFirstName() + " has been edited"); // fix
+                                                                                          // this////////////////////////
   }
 
   /**
    * Method for editing item.
    */
   public void editItem() {
-    int memIndex = console.indexMemberInput();
+    int memIndex = Integer.parseInt(console.indexMemberInput());
     int index = console.indexItemInput();
     Item.Mutable item = getItem(index, getMember(memIndex));
     item.setName(console.newItemName());
@@ -281,7 +306,7 @@ public class MemberController {
    */
   public void deleteItemOwned() {
     showAllMembersSimple();
-    int memIndex = console.indexMemberInput();
+    int memIndex = Integer.parseInt(console.indexMemberInput());
     Member.Mutable member = getMember(memIndex);
     console.lineBreak();
 
@@ -299,8 +324,6 @@ public class MemberController {
     member.removeItemOwned(getItem(index, member));
 
   }
-
-
 
   /**
    * Method for creating a contract.
@@ -320,7 +343,6 @@ public class MemberController {
       console.showItemDetails2(index, item.getName(), item.getLenededTo(), item.getContractPeriod());
     }
 
-
     int itemIndex = console.selectItem();
     registry.createContract(getMember(mem), getMember(lender), period, itemIndex);
     Boolean isContractEligble = registry.getIsEligable();
@@ -337,13 +359,14 @@ public class MemberController {
    * Prints members with their names then proceed to print details about member.
    */
   public void printMemberSpecific() {
+    languageCheck();
     int index = 0;
     for (Member.Mutable member : registry.getMembers()) {
       index += 1;
       console.showMemberSpceific(index, member.getFirstName(), member.getLastName());
     }
 
-    Member.Mutable member = getMember(console.indexMemberInput());
+    Member.Mutable member = getMember(Integer.parseInt(console.indexMemberInput()));
     console.showMemberDetails3(member.getFirstName(), member.getEmail(), member.getMemberId().getId());
     console.showOwnedItemIntro();
 

@@ -6,7 +6,6 @@ import java.util.Random;
  * Class for member id.
  */
 public class MemberId {
-  private Random rnd = new Random();
   private String id;
   private String dateCreated;
 
@@ -50,5 +49,9 @@ public class MemberId {
     }
 
     return sb.toString();
+  }
+
+  public int compareTo(MemberId memberId) {
+    return 0;
   }
 }
