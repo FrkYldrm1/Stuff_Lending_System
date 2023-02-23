@@ -23,7 +23,7 @@ import view.SwedishUI;
  */
 public class MemberController {
   private Language console;
-  
+
   private Registry registry = new Registry();
   private Time time = new Time();
 
@@ -71,7 +71,7 @@ public class MemberController {
   @SuppressFBWarnings(value = "EI_EXPOSE_REP", justification = "It is the constructor so we should have it.")
   public MemberController(Language console) {
     this.console = console;
-    
+
   }
 
   public void languageCheck() {
@@ -81,8 +81,6 @@ public class MemberController {
       registry.sortByName();
     }
   }
-
-
 
   /**
    * Method for showing the members.
@@ -119,11 +117,11 @@ public class MemberController {
       index = 0;
       if (member.getSizeOfItemsLended() > 0) {
         console.showLendedItemIntro();
-              for (Item item : member.getItemsLended()) {
-                index += 1;
-                console.showItemDetails3(index, item.getName(), item.getOwner(), item.getContractPeriod());
-              
-              }
+        for (Item item : member.getItemsLended()) {
+          index += 1;
+          console.showItemDetails3(index, item.getName(), item.getOwner(), item.getContractPeriod());
+
+        }
       }
     }
     console.lineBreak();
@@ -180,7 +178,7 @@ public class MemberController {
    * Method for showing members owned items.
    */
   public void showOwnedItems() {
-    Member.Mutable member = getMember(console.indexMemberInput());
+    Member.Mutable member = getMember(Integer.parseInt(console.indexMemberInput()));
     int index = 0;
 
     for (Item item : member.getItemsOwned()) {
@@ -196,12 +194,18 @@ public class MemberController {
    */
   public void addItem() {
     Member member;
-    int memIndex = console.indexMemberInput();
+    int memIndex;
+    String s = console.indexMemberInput();
+    while (!(s = console.indexMemberInput().trim()).matches("\\d+")) {
+      s = console.indexMemberInput();
+    }
+    memIndex = Integer.parseInt(s);
     member = getMember(memIndex);
 
     String itemName = console.createItemName();
-  
-
+    while(itemName.matches(".*\\d+.*")) {
+      itemName = console.createItemName();
+    }
 
     while (itemName.equals("")) {
       itemName = console.createItemName2();
@@ -211,15 +215,19 @@ public class MemberController {
       itemName = console.createItemName2();
     }
 
-
     String description = console.createItemDescription();
     while (description.equals("")) {
       description = console.createItemDescription2();
     }
 
-    int price = console.createItemPrice();
-    while ((price < 1)) {
-      price = console.createItemPrice2();
+    s = null;
+    while (!(s = console.createItemPrice().trim()).matches("\\d+")) {
+      s = console.createItemPrice();
+    }
+    int price = Integer.parseInt(s);
+
+    while ((Integer.parseInt(s) < 1)) {
+      price = Integer.parseInt(console.createItemPrice2());
     }
 
     CategoryEnum input = console.selectCategory();
@@ -253,8 +261,6 @@ public class MemberController {
 
   }
 
-
-
   /**
    * Method for changing the day for every object.
    */
@@ -274,14 +280,15 @@ public class MemberController {
     getMember(index).setLastName(console.getLastName());
     getMember(index).setEmail(console.getEmail());
     getMember(index).setPhoneNumber(console.getPhoneNumber());
-    System.out.println("Member " + getMember(index).getFirstName() + " has been edited"); // fix this////////////////////////
+    System.out.println("Member " + getMember(index).getFirstName() + " has been edited"); // fix
+                                                                                          // this////////////////////////
   }
 
   /**
    * Method for editing item.
    */
   public void editItem() {
-    int memIndex = console.indexMemberInput();
+    int memIndex = Integer.parseInt(console.indexMemberInput());
     int index = console.indexItemInput();
     Item.Mutable item = getItem(index, getMember(memIndex));
     item.setName(console.newItemName());
@@ -301,9 +308,9 @@ public class MemberController {
   /**
    * Method for deleting owned items.
    */
-  public void deleteItemOwned() { ///////////////////////////////////////////7
+  public void deleteItemOwned() { /////////////////////////////////////////// 7
     showAllMembersSimple();
-    int memIndex = console.indexMemberInput();
+    int memIndex = Integer.parseInt(console.indexMemberInput());
     Member.Mutable member = getMember(memIndex);
     console.lineBreak();
 
@@ -322,8 +329,6 @@ public class MemberController {
 
   }
 
-
-
   /**
    * Method for creating a contract.
    */
@@ -341,7 +346,6 @@ public class MemberController {
       index += 1;
       console.showItemDetails2(index, item.getName(), item.getLenededTo(), item.getContractPeriod());
     }
-
 
     int itemIndex = console.selectItem();
     registry.createContract(getMember(mem), getMember(lender), period, itemIndex);
@@ -366,7 +370,7 @@ public class MemberController {
       console.showMemberSpceific(index, member.getFirstName(), member.getLastName());
     }
 
-    Member.Mutable member = getMember(console.indexMemberInput());
+    Member.Mutable member = getMember(Integer.parseInt(console.indexMemberInput()));
     console.showMemberDetails3(member.getFirstName(), member.getEmail(), member.getMemberId().getId());
     console.showOwnedItemIntro();
 
