@@ -122,37 +122,24 @@ public class Member implements TimeAdvancedObserver {
   }
 
   /**
-   * Getter for owned items.
+   * Getter for lended items.
    *
    * @return The list for return.
    */
-  public String getItemsOwnedString() {
-    String itemList = "";
-    int counter = 0;
-    for (Item item : itemsOwned) {
-      counter += 1;
-      itemList += "\n" + " Owned items : " + "\n" + counter + ". " + item.getName() + "-> Lended to: "
-          + item.getLenededTo() + ", Contract period: " + item.getContractPeriod() + "\n";
-    }
-    return itemList;
+  @SuppressFBWarnings(value = "EI_EXPOSE_REP", justification = "In the program some values are accessed by this method."
+      + " Making dummy and returning to not expose internal representation"
+      + " might cut our access in some parts of the program.")
+  public Iterable<Item> getItemsLended() {
+    return itemsLended;
   }
 
   /**
-   * Create a string of lended item array.
-   *
-   * @return lended item string.
-   *
+   * Returns size of items lended.
+   * 
+   * @return size of items lended.
    */
-  public String getItemsLended() {
-    String itemListLended = "";
-    int counter = 0;
-    for (Item item : itemsLended) {
-      counter++;
-      itemListLended += "\n" + " Lended items  : " + "\n" + counter + ". " + item.getName() + "-> Lended to: "
-          + item.getLenededTo() + ", Contract period: " + item.getContractPeriod()
-          + " Short description: " + item.getShortDescription() + "\n";
-    }
-    return itemListLended;
+  public int getSizeOfItemsLended() {
+    return itemsLended.size();
   }
 
   /**

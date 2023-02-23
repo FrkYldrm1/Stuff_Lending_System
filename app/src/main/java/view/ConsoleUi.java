@@ -333,19 +333,17 @@ public class ConsoleUi implements Language {
   /**
    * Prints details of member.
    */
-  public void showMemberDetails2(String firstName, String lastName, String email, String ownedItem,
-      String lendedItemString) {
-    String toPrint = "\n" + "Members name: " + firstName + " " + lastName + " E-mail: " + email
-        + ownedItem + "\n" + lendedItemString;
+  public void showMemberDetails2(String firstName, String lastName, String email) {
+    String toPrint = "\n" + "Members name: " + firstName + " " + lastName + " E-mail: " + email;
     System.out.println(toPrint);
   }
 
   /**
    * Prints details of member.
    */
-  public void showMemberDetails3(String firstName, String email, String id, String ownedItems) {
+  public void showMemberDetails3(String firstName, String email, String id) {
     String toPrint = "\n" + "Members name: " + firstName + " E-mail: " + email
-        + " Member id: " + id + ownedItems;
+        + " Member id: " + id;
     System.out.println(toPrint);
 
   }
@@ -506,6 +504,26 @@ public class ConsoleUi implements Language {
    */
   public void showMemberSpceific(int index, String firstName, String lastName) {
     System.out.println(index + "\t" + firstName + " " + lastName);
+  }
+
+  @Override
+  public void showOwnedItemIntro() {
+    System.out.println("Items owned:");
+  }
+
+  @Override
+  public void showLendedItemIntro() {
+    System.out.println("Items lended:");
+  }
+
+  @Override
+  public void showItemDetails2(int index, String itemName, String lendedTo, int contractPeriod) {
+    System.out.println(index + ". " + itemName + " -> Lended to: " + lendedTo + ", Contract Period: " + contractPeriod);
+  }
+
+  @Override
+  public void showItemDetails3(int index, String itemName, String owner, int contractPeriod) {
+    System.out.println(index + ". " + itemName + " -> Owner: " + owner + ", Contract Period: " + contractPeriod);
   }
 
   /**

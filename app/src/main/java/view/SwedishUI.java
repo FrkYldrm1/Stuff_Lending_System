@@ -331,19 +331,17 @@ public class SwedishUI implements Language {
     /**
      * Prints details of member.
      */
-    public void showMemberDetails2(String firstName, String lastName, String email, String ownedItem,
-            String lendedItemString) {
-        String toPrint = "\n" + "Medlemmarnas namn: " + firstName + " " + lastName + " E-post: " + email
-                + ownedItem + "\n" + lendedItemString;
+    public void showMemberDetails2(String firstName, String lastName, String email) {
+        String toPrint = "\n" + "Medlemmarnas namn: " + firstName + " " + lastName + " E-post: " + email;
         System.out.println(toPrint);
     }
 
     /**
      * Prints details of member.
      */
-    public void showMemberDetails3(String firstName, String email, String id, String ownedItems) {
+    public void showMemberDetails3(String firstName, String email, String id) {
         String toPrint = "\n" + "Medlemmarnas namn: " + firstName + " E-post: " + email
-                + " Medlems-id: " + id + ownedItems;
+                + " Medlems-id: " + id;
         System.out.println(toPrint);
 
     }
@@ -490,6 +488,7 @@ public class SwedishUI implements Language {
         System.out.println(index + "\t" + firstName + " " + lastName);
     }
 
+
   /**
    * Checks if input is null.
    *
@@ -504,5 +503,25 @@ public class SwedishUI implements Language {
       return false;
     }
   }
+
+@Override
+public void showOwnedItemIntro() {
+    System.out.println("Mga ari-arian: ");
+}
+
+@Override
+public void showLendedItemIntro() {
+    System.out.println("Mga hiniram na bagay: ");
+}
+
+@Override
+public void showItemDetails2(int index, String itemName, String lendedTo, int contractPeriod) {
+  System.out.println(index + ". " + itemName + " -> Lånat av: " + lendedTo + ", Avtalsperiod: " + contractPeriod);
+}
+
+@Override
+public void showItemDetails3(int index, String itemName, String owner, int contractPeriod) {
+  System.out.println(index + ". " + itemName + " -> Ägare: " + owner + ", Avtalsperiod: " + contractPeriod);
+}
 
 }

@@ -60,10 +60,17 @@ public interface Language {
 
     public int newItemCostPerDay();
 
-    public void showMemberDetails2(String firstName, String lastName, String email, String ownedItem,
-      String lendedItemString);
+    public void showMemberDetails2(String firstName, String lastName, String email);
 
-    public void showMemberDetails3(String firstName, String email, String id, String ownedItems);
+    public void showOwnedItemIntro();
+
+    public void showLendedItemIntro();
+
+    public void showItemDetails2(int index, String itemName, String lendedTo, int contractPeriod);
+
+    public void showItemDetails3(int index, String itemName, String owner, int contractPeriod);
+
+    public void showMemberDetails3(String firstName, String email, String id);
 
     public void lineBreak();
 
