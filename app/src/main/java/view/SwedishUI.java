@@ -206,6 +206,10 @@ public class SwedishUI implements Language {
      */
     public String selectedMember() {
         System.out.print("Välj medlem att redigera (Inmatningsnummer): ");
+        String in = input.nextLine();
+        if (check(in)) {
+            return selectedMember();
+        }
         return input.nextLine();
     }
 
@@ -216,7 +220,11 @@ public class SwedishUI implements Language {
      */
     public String selectMemberDelete() {
         System.out.print("Välj medlem att radera (Inmatningsnummer): ");
-        return input.nextLine();
+        String in = input.nextLine();
+        if (in.isBlank()) {
+            return selectMemberDelete();
+        }
+        return in;
     }
 
     /**
@@ -373,6 +381,10 @@ public class SwedishUI implements Language {
 
     public String selectMember() {
         System.out.print("Välj ägare (Ange ett nummer): ");
+        String in = input.nextLine();
+        if (check(in)) {
+            return selectMember();
+        }
         return input.nextLine();
     }
 

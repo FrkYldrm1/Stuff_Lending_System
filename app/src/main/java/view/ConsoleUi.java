@@ -209,7 +209,11 @@ public class ConsoleUi implements Language {
    */
   public String selectedMember() {
     System.out.print("Select member to edit (Input number): ");
-    return input.nextLine();
+    String in = input.nextLine();
+    if (in.isBlank()) {
+      return selectedMember();
+    }
+    return in;
   }
 
   /**
@@ -219,7 +223,11 @@ public class ConsoleUi implements Language {
    */
   public String selectMemberDelete() {
     System.out.print("Select member to delete (Input number): ");
-    return input.nextLine();
+    String in = input.nextLine();
+    if (in.isBlank()) {
+      return selectMemberDelete();
+    }
+    return in;
   }
 
   /**
@@ -378,7 +386,7 @@ public class ConsoleUi implements Language {
     System.out.print("Select the owner (Input a number): ");
     String in = input.nextLine();
     if (check(in)) {
-      return selectedMember();
+      return selectMember();
     }
     return input.nextLine();
   }

@@ -12,15 +12,25 @@ import view.SwedishUI;
  */
 public class Controller {
 
-  private SwedishUI console = new SwedishUI(new Scanner(System.in, "UTF-8"));
-  //private ConsoleUi console = new view.ConsoleUi(new Scanner(System.in, "UTF-8"));
-  private controller.MemberController memberController = new controller.MemberController(console);
+  int languageBinary = 0; // 1 for english, 0 for swedish;
+  private Language console;
+  private controller.MemberController memberController;
 
   /**
    * method for starting the program.
    */
   public void startApp() {
+    init();
     viewMenu();
+  }
+
+  public void init() {
+    if (languageBinary == 1) {
+      console = new view.ConsoleUi(new Scanner(System.in, "UTF-8"));
+    } else if (languageBinary == 0) {
+      console = new SwedishUI(new Scanner(System.in, "UTF-8"));
+    }
+    memberController = new controller.MemberController(console);
   }
 
   /**

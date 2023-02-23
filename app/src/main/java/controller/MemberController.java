@@ -295,6 +295,7 @@ public class MemberController {
   public void editMember() {
     String mem = console.selectedMember();
     int index = Integer.parseInt(mem);
+
     getMember(index).setFirstName(console.getFirstName());
     getMember(index).setLastName(console.getLastName());
     getMember(index).setEmail(console.getEmail());
