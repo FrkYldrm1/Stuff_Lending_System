@@ -24,7 +24,7 @@ public class Controller {
   }
 
   /**
-   * method for showing main menu.
+   * method for showing main menu.2
    */
   public void viewMenu() {
     view.EnumChoices choice = console.mainMenu();

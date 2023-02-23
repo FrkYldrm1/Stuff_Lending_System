@@ -2,6 +2,8 @@ package controller;
 
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Scanner;
 
 import javax.swing.text.View;
@@ -20,7 +22,7 @@ import view.SwedishUI;
  * Class.
  */
 public class MemberController {
-  private Language console = new ConsoleUi(new Scanner(System.in, "UTF-8"));
+  private Language console;
   
   private Registry registry = new Registry();
   private Time time = new Time();
@@ -69,6 +71,15 @@ public class MemberController {
   @SuppressFBWarnings(value = "EI_EXPOSE_REP", justification = "It is the constructor so we should have it.")
   public MemberController(Language console) {
     this.console = console;
+    
+  }
+
+  public void languageCheck() {
+    if (console instanceof SwedishUI) {
+      registry.sortById();
+    } else {
+      registry.sortByName();
+    }
   }
 
 
@@ -78,6 +89,7 @@ public class MemberController {
    */
   public void showAllMembersSimple() {
     int index = 0;
+    languageCheck();
     for (Member.Mutable member : registry.getMembers()) {
       index += 1;
       console.showMemberDetailsSimple(member.getFirstName(), member.getEmail(), member.getLastName(),
@@ -90,6 +102,7 @@ public class MemberController {
    * Method for showing the members.
    */
   public void showAllMembers2() {
+    languageCheck();
     for (Member.Mutable member : registry.getMembers()) {
       console.showMemberDetails2(member.getFirstName(), member.getLastName(), member.getEmail());
 
@@ -346,6 +359,7 @@ public class MemberController {
    * Prints members with their names then proceed to print details about member.
    */
   public void printMemberSpecific() {
+    languageCheck();
     int index = 0;
     for (Member.Mutable member : registry.getMembers()) {
       index += 1;
