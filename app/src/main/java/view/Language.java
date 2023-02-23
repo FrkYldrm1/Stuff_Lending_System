@@ -68,7 +68,7 @@ public interface Language {
 
     public void showItemDetails3(int index, String itemName, String owner, int contractPeriod);
 
-    public void showMemberDetails3(String firstName, String email, String id, String ownedItems);
+    public void showMemberDetails3(String firstName, String email, String id);
 
     public void lineBreak();
 

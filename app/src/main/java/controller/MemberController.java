@@ -99,9 +99,11 @@ public class MemberController {
       // need to show items owned and lended
       console.showOwnedItemIntro();
       int index = 0;
-      for (Item item : member.getItemsOwned()) {
-        index += 1;
-        console.showItemDetails2(index, item.getName(), item.getLenededTo(), item.getContractPeriod());
+      if (member.sizeOfItemsOwned() > 0) {
+        for (Item item : member.getItemsOwned()) {
+          index += 1;
+          console.showItemDetails2(index, item.getName(), item.getLenededTo(), item.getContractPeriod());
+        }
       }
 
       index = 0;
@@ -339,8 +341,17 @@ public class MemberController {
     int mem = console.selectMember();
     int lender = console.selectLender();
     int period = console.selectPeriod();
+
     console.showMemberDetails3(registry.selectMember(mem).getFirstName(), registry.selectMember(mem).getEmail(),
-        registry.selectMember(mem).getMemberId().getId(), registry.selectMember(mem).getItemsOwnedString());
+        registry.selectMember(mem).getMemberId().getId());
+    console.showOwnedItemIntro();
+    int index = 0;
+    for (Item item : registry.selectMember(mem).getItemsOwned()) {
+      index += 1;
+      console.showItemDetails2(index, item.getName(), item.getLenededTo(), item.getContractPeriod());
+    }
+
+
     int itemIndex = console.selectItem();
     registry.createContract(getMember(mem), getMember(lender), period, itemIndex);
     Boolean isContractEligble = registry.getIsEligable();
@@ -364,7 +375,13 @@ public class MemberController {
     }
 
     Member.Mutable member = getMember(console.indexMemberInput());
-    console.showMemberDetails3(member.getFirstName(), member.getEmail(),
-        member.getMemberId().getId(), member.getItemsOwnedString());
+    console.showMemberDetails3(member.getFirstName(), member.getEmail(), member.getMemberId().getId());
+    console.showOwnedItemIntro();
+
+    index = 0;
+    for (Item item : member.getItemsOwned()) {
+      index += 1;
+      console.showItemDetails2(index, item.getName(), item.getLenededTo(), item.getContractPeriod());
+    }
   }
 }

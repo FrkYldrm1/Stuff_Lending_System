@@ -143,40 +143,6 @@ public class Member implements TimeAdvancedObserver {
   }
 
   /**
-   * Getter for owned items.
-   *
-   * @return The list for return.
-   */
-  public String getItemsOwnedString() {
-    String itemList = "";
-    int counter = 0;
-    for (Item item : itemsOwned) {
-      counter += 1;
-      itemList += "\n" + " Owned items : " + "\n" + counter + ". " + item.getName() + "-> Lended to: "
-          + item.getLenededTo() + ", Contract period: " + item.getContractPeriod() + "\n";
-    }
-    return itemList;
-  }
-
-  // /**
-  //  * Create a string of lended item array.
-  //  *
-  //  * @return lended item string.
-  //  *
-  //  */
-  // public String getItemsLended() {
-  //   String itemListLended = "";
-  //   int counter = 0;
-  //   for (Item item : itemsLended) {
-  //     counter++;
-  //     itemListLended += "\n" + " Lended items  : " + "\n" + counter + ". " + item.getName() + "-> Lended to: "
-  //         + item.getLenededTo() + ", Contract period: " + item.getContractPeriod()
-  //         + " Short description: " + item.getShortDescription() + "\n";
-  //   }
-  //   return itemListLended;
-  // }
-
-  /**
    * Method for creating items.
    *
    * @param name             To add name.

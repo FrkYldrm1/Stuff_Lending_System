@@ -341,9 +341,9 @@ public class ConsoleUi implements Language {
   /**
    * Prints details of member.
    */
-  public void showMemberDetails3(String firstName, String email, String id, String ownedItems) {
+  public void showMemberDetails3(String firstName, String email, String id) {
     String toPrint = "\n" + "Members name: " + firstName + " E-mail: " + email
-        + " Member id: " + id + ownedItems;
+        + " Member id: " + id;
     System.out.println(toPrint);
 
   }

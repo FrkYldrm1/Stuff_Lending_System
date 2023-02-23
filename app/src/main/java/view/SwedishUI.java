@@ -338,9 +338,9 @@ public class SwedishUI  implements Language  {
     /**
      * Prints details of member.
      */
-    public void showMemberDetails3(String firstName, String email, String id, String ownedItems) {
+    public void showMemberDetails3(String firstName, String email, String id) {
         String toPrint = "\n" + "Medlemmarnas namn: " + firstName + " E-post: " + email
-                + " Medlems-id: " + id + ownedItems;
+                + " Medlems-id: " + id;
         System.out.println(toPrint);
 
     }
