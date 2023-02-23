@@ -122,6 +122,27 @@ public class Member implements TimeAdvancedObserver {
   }
 
   /**
+   * Getter for lended items.
+   *
+   * @return The list for return.
+   */
+  @SuppressFBWarnings(value = "EI_EXPOSE_REP", justification = "In the program some values are accessed by this method."
+      + " Making dummy and returning to not expose internal representation"
+      + " might cut our access in some parts of the program.")
+  public Iterable<Item> getItemsLended() {
+    return itemsLended;
+  }
+
+  /**
+   * Returns size of items lended.
+   * 
+   * @return size of items lended.
+   */
+  public int getSizeOfItemsLended() {
+    return itemsLended.size();
+  }
+
+  /**
    * Getter for owned items.
    *
    * @return The list for return.
@@ -137,23 +158,23 @@ public class Member implements TimeAdvancedObserver {
     return itemList;
   }
 
-  /**
-   * Create a string of lended item array.
-   *
-   * @return lended item string.
-   *
-   */
-  public String getItemsLended() {
-    String itemListLended = "";
-    int counter = 0;
-    for (Item item : itemsLended) {
-      counter++;
-      itemListLended += "\n" + " Lended items  : " + "\n" + counter + ". " + item.getName() + "-> Lended to: "
-          + item.getLenededTo() + ", Contract period: " + item.getContractPeriod()
-          + " Short description: " + item.getShortDescription() + "\n";
-    }
-    return itemListLended;
-  }
+  // /**
+  //  * Create a string of lended item array.
+  //  *
+  //  * @return lended item string.
+  //  *
+  //  */
+  // public String getItemsLended() {
+  //   String itemListLended = "";
+  //   int counter = 0;
+  //   for (Item item : itemsLended) {
+  //     counter++;
+  //     itemListLended += "\n" + " Lended items  : " + "\n" + counter + ". " + item.getName() + "-> Lended to: "
+  //         + item.getLenededTo() + ", Contract period: " + item.getContractPeriod()
+  //         + " Short description: " + item.getShortDescription() + "\n";
+  //   }
+  //   return itemListLended;
+  // }
 
   /**
    * Method for creating items.

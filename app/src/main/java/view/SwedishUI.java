@@ -330,10 +330,8 @@ public class SwedishUI  implements Language  {
     /**
      * Prints details of member.
      */
-    public void showMemberDetails2(String firstName, String lastName, String email, String ownedItem,
-            String lendedItemString) {
-        String toPrint = "\n" + "Medlemmarnas namn: " + firstName + " " + lastName + " E-post: " + email
-                + ownedItem + "\n" + lendedItemString;
+    public void showMemberDetails2(String firstName, String lastName, String email) {
+        String toPrint = "\n" + "Medlemmarnas namn: " + firstName + " " + lastName + " E-post: " + email;
         System.out.println(toPrint);
     }
 
@@ -477,11 +475,6 @@ public class SwedishUI  implements Language  {
         return input.nextInt();
     }
 
-  @Override
-  public String createItemCategory() {
-    return null;
-  }
-
   /**
      * Prints member in a simple way to then look at their details.
      *
@@ -492,5 +485,26 @@ public class SwedishUI  implements Language  {
     public void showMemberSpceific(int index, String firstName, String lastName) {
         System.out.println(index + "\t" + firstName + " " + lastName);
     }
+
+@Override
+public void showOwnedItemIntro() {
+    System.out.println("Mga ari-arian: ");
+}
+
+@Override
+public void showLendedItemIntro() {
+    System.out.println("Mga hiniram na bagay: ");
+}
+
+@Override
+public void showItemDetails2(int index, String itemName, String lendedTo, int contractPeriod) {
+  System.out.println(index + ". " + itemName + " -> Lånat av: " + lendedTo + ", Avtalsperiod: " + contractPeriod);
+}
+
+@Override
+public void showItemDetails3(int index, String itemName, String owner, int contractPeriod) {
+  System.out.println(index + ". " + itemName + " -> Ägare: " + owner + ", Avtalsperiod: " + contractPeriod);
+}
+
 
 }

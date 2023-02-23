@@ -94,8 +94,25 @@ public class MemberController {
    */
   public void showAllMembers2() {
     for (Member.Mutable member : registry.getMembers()) {
-      console.showMemberDetails2(member.getFirstName(), member.getLastName(), member.getEmail(),
-          member.getItemsOwnedString(), member.getItemsLended());
+      console.showMemberDetails2(member.getFirstName(), member.getLastName(), member.getEmail());
+
+      // need to show items owned and lended
+      console.showOwnedItemIntro();
+      int index = 0;
+      for (Item item : member.getItemsOwned()) {
+        index += 1;
+        console.showItemDetails2(index, item.getName(), item.getLenededTo(), item.getContractPeriod());
+      }
+
+      index = 0;
+      if (member.getSizeOfItemsLended() > 0) {
+        console.showLendedItemIntro();
+              for (Item item : member.getItemsLended()) {
+                index += 1;
+                console.showItemDetails3(index, item.getName(), item.getOwner(), item.getContractPeriod());
+              
+              }
+      }
     }
     console.lineBreak();
   }
