@@ -168,9 +168,17 @@ public class MemberController {
     member = getMember(memIndex);
 
     String itemName = console.createItemName();
+  
+
+
     while (itemName.equals("")) {
       itemName = console.createItemName2();
     }
+
+    while (member.isUniqueItem(itemName) || itemName.equals("")) {
+      itemName = console.createItemName2();
+    }
+
 
     String description = console.createItemDescription();
     while (description.equals("")) {

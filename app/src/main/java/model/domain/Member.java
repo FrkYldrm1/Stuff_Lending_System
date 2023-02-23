@@ -175,6 +175,15 @@ public class Member implements TimeAdvancedObserver {
     return s;
   }
 
+  public boolean isUniqueItem(String itemName) {
+    for (Item.Mutable item : itemsOwned) {
+      if (item.getName().trim().toLowerCase().equals(itemName.trim().toLowerCase())) {
+        return true;
+      }
+    }
+    return false;
+  }
+
   public Time getTime() {
     return time;
   }
