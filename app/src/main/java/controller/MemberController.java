@@ -80,9 +80,15 @@ public class MemberController {
     int index = 0;
     for (Member.Mutable member : registry.getMembers()) {
       index += 1;
+      String value;
+      if (console instanceof ConsoleUi) {
+        value = String.valueOf(index);
+      } else {
+        value = String.valueOf(switchInputFromNumToAlph(index));
+      }
       console.showMemberDetailsSimple(member.getFirstName(), member.getEmail(), member.getLastName(),
           member.getMemberId().getId(), member.getCredits(), member.sizeOfItemsOwned(), member.getTime().getDay(),
-          index);
+          value);
     }
   }
 
@@ -96,10 +102,16 @@ public class MemberController {
       // need to show items owned and lended
       console.showOwnedItemIntro();
       int index = 0;
+      String value;
       if (member.sizeOfItemsOwned() > 0) {
         for (Item item : member.getItemsOwned()) {
           index += 1;
-          console.showItemDetails2(index, item.getName(), item.getLenededTo(), item.getContractPeriod());
+          if (console instanceof ConsoleUi) {
+            value = String.valueOf(index);
+          } else {
+            value = String.valueOf(switchInputFromNumToAlph(index));
+          }
+          console.showItemDetails2(value, item.getName(), item.getLenededTo(), item.getContractPeriod());
         }
       }
 
@@ -108,7 +120,12 @@ public class MemberController {
         console.showLendedItemIntro();
               for (Item item : member.getItemsLended()) {
                 index += 1;
-                console.showItemDetails3(index, item.getName(), item.getOwner(), item.getContractPeriod());
+                if (console instanceof ConsoleUi) {
+                  value = String.valueOf(index);
+                } else {
+                  value = String.valueOf(switchInputFromNumToAlph(index));
+                }
+                console.showItemDetails3(value, item.getName(), item.getOwner(), item.getContractPeriod());
               
               }
       }
@@ -172,9 +189,15 @@ public class MemberController {
 
     for (Item item : member.getItemsOwned()) {
       index += 1;
+      String value;
+      if (console instanceof ConsoleUi) {
+        value = String.valueOf(index);
+      } else {
+        value = String.valueOf(switchInputFromNumToAlph(index));
+      }
       console.showItemDetails(item.getName(), item.getShortDescription(),
           item.getCostPerDay(), String.valueOf(item.getCategory()),
-          item.getDayOfCreation(), index);
+          item.getDayOfCreation(), value);
     }
   }
 
@@ -261,7 +284,6 @@ public class MemberController {
     getMember(index).setLastName(console.getLastName());
     getMember(index).setEmail(console.getEmail());
     getMember(index).setPhoneNumber(console.getPhoneNumber());
-    System.out.println("Member " + getMember(index).getFirstName() + " has been edited"); // fix this////////////////////////
   }
 
   /**
@@ -298,9 +320,15 @@ public class MemberController {
     int index = 0;
     for (Item.Mutable item : items) {
       index += 1;
+      String value;
+      if (console instanceof ConsoleUi) {
+        value = String.valueOf(index);
+      } else {
+        value = String.valueOf(switchInputFromNumToAlph(index));
+      }
       console.showItemDetails(item.getName(), item.getShortDescription(),
           item.getCostPerDay(), String.valueOf(item.getCategory()),
-          item.getDayOfCreation(), index);
+          item.getDayOfCreation(), value);
     }
     console.lineBreak();
 
@@ -316,7 +344,8 @@ public class MemberController {
    */
   public void contract() {
     showAllMembersSimple();
-    int mem = console.selectMember();
+    String in = console.selectMember();
+    int mem = Integer.parseInt(in);
     int lender = console.selectLender();
     int period = console.selectPeriod();
 
@@ -324,9 +353,15 @@ public class MemberController {
         registry.selectMember(mem).getMemberId().getId());
     console.showOwnedItemIntro();
     int index = 0;
+    String value;
     for (Item item : registry.selectMember(mem).getItemsOwned()) {
       index += 1;
-      console.showItemDetails2(index, item.getName(), item.getLenededTo(), item.getContractPeriod());
+      if (console instanceof ConsoleUi) {
+        value = String.valueOf(index);
+      } else {
+        value = String.valueOf(switchInputFromNumToAlph(index));
+      }
+      console.showItemDetails2(value, item.getName(), item.getLenededTo(), item.getContractPeriod());
     }
 
 
@@ -349,7 +384,13 @@ public class MemberController {
     int index = 0;
     for (Member.Mutable member : registry.getMembers()) {
       index += 1;
-      console.showMemberSpceific(index, member.getFirstName(), member.getLastName());
+      String value;
+      if (console instanceof ConsoleUi) {
+        value = String.valueOf(index);
+      } else {
+        value = String.valueOf(switchInputFromNumToAlph(index));
+      }
+      console.showMemberSpceific(value, member.getFirstName(), member.getLastName());
     }
 
     Member.Mutable member = getMember(console.indexMemberInput());
@@ -359,7 +400,18 @@ public class MemberController {
     index = 0;
     for (Item item : member.getItemsOwned()) {
       index += 1;
-      console.showItemDetails2(index, item.getName(), item.getLenededTo(), item.getContractPeriod());
+      String value;
+      if (console instanceof ConsoleUi) {
+        value = String.valueOf(index);
+      } else {
+        value = String.valueOf(switchInputFromNumToAlph(index));
+      }
+      console.showItemDetails2(value, item.getName(), item.getLenededTo(), item.getContractPeriod());
     }
+  }
+
+  public char switchInputFromNumToAlph(int number) {
+    String alphabetPool = "abcdefghijklmnopqrstuvwxyz";
+    return alphabetPool.charAt(number - 1);
   }
 }

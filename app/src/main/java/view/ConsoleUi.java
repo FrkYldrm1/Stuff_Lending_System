@@ -258,7 +258,7 @@ public class ConsoleUi implements Language {
    * @param index To add index.
    */
   public void showMemberDetailsSimple(String firstName, String email, String lastName, String memberId,
-      int currentCredit, int ownedItem, int time, int index) {
+      int currentCredit, int ownedItem, int time, String index) {
     String toPrint = String.format(
         "%s    %s   Current day: %s    %s, %s\t%s\tCurrent credits: %s\tNumber of owned items: %s", index,
         memberId, time + 1, firstName, lastName, email, currentCredit, ownedItem);
@@ -269,7 +269,7 @@ public class ConsoleUi implements Language {
    * Here we show items details.
    */
   public void showItemDetails(String itemName, String itemDesc, int itemCost, String category, int dayOfCreation,
-      int index) {
+      String index) {
     String toPrint = String.format("%s    %s    %s    %s    %s     Day for item: %s",
         index, itemName, itemCost, itemDesc, category, dayOfCreation);
     System.out.println(toPrint);
@@ -374,9 +374,13 @@ public class ConsoleUi implements Language {
     System.out.println("Item is already lended!");
   }
 
-  public int selectMember() {
+  public String selectMember() {
     System.out.print("Select the owner (Input a number): ");
-    return input.nextInt();
+    String in = input.nextLine();
+    if (check(in)) {
+      return selectedMember();
+    }
+    return input.nextLine();
   }
 
   public int selectLender() {
@@ -502,7 +506,7 @@ public class ConsoleUi implements Language {
    * @param firstName member's first name.
    * @param lastName member's last name.
    */
-  public void showMemberSpceific(int index, String firstName, String lastName) {
+  public void showMemberSpceific(String index, String firstName, String lastName) {
     System.out.println(index + "\t" + firstName + " " + lastName);
   }
 
@@ -517,12 +521,12 @@ public class ConsoleUi implements Language {
   }
 
   @Override
-  public void showItemDetails2(int index, String itemName, String lendedTo, int contractPeriod) {
+  public void showItemDetails2(String index, String itemName, String lendedTo, int contractPeriod) {
     System.out.println(index + ". " + itemName + " -> Lended to: " + lendedTo + ", Contract Period: " + contractPeriod);
   }
 
   @Override
-  public void showItemDetails3(int index, String itemName, String owner, int contractPeriod) {
+  public void showItemDetails3(String index, String itemName, String owner, int contractPeriod) {
     System.out.println(index + ". " + itemName + " -> Owner: " + owner + ", Contract Period: " + contractPeriod);
   }
 

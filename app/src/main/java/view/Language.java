@@ -1,7 +1,6 @@
 package view;
 
 import java.util.Scanner;
-import java.util.zip.ZipEntry;
 
 public interface Language {
   public EnumChoices mainMenu();
@@ -39,10 +38,10 @@ public interface Language {
     public String uniqueEmail();
 
     public void showMemberDetailsSimple(String firstName, String email, String lastName, String memberId,
-      int currentCredit, int ownedItem, int time, int index);
+      int currentCredit, int ownedItem, int time, String index);
 
     public void showItemDetails(String itemName, String itemDesc, int itemCost, String category, int dayOfCreation,
-      int index);
+      String index);
 
     public String idInput();
 
@@ -66,9 +65,9 @@ public interface Language {
 
     public void showLendedItemIntro();
 
-    public void showItemDetails2(int index, String itemName, String lendedTo, int contractPeriod);
+    public void showItemDetails2(String index, String itemName, String lendedTo, int contractPeriod);
 
-    public void showItemDetails3(int index, String itemName, String owner, int contractPeriod);
+    public void showItemDetails3(String index, String itemName, String owner, int contractPeriod);
 
     public void showMemberDetails3(String firstName, String email, String id);
 
@@ -81,7 +80,7 @@ public interface Language {
 
   public void alreadyLended();
 
-  public int selectMember();
+  public String selectMember();
 
   public int selectLender();
 
@@ -138,7 +137,7 @@ public interface Language {
    */
   public int createItemPrice2();
 
-  public void showMemberSpceific(int index, String firstName, String lastName);
+  public void showMemberSpceific(String index, String firstName, String lastName);
 
 
   CategoryEnum selectCategory();
