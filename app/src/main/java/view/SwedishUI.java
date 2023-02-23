@@ -28,21 +28,21 @@ public class SwedishUI implements Language {
         System.out.println("| Vänligen följ instruktionerna nedan!                  |");
         System.out.println("| Välj ett nummer och klicka sedan på enter             |");
         System.out.println("|-------------------------------------------------------|");
-        System.out.println("|1) För att hantera information om medlem               |");
-        System.out.println("|2) För att hantera information om objekt               |");
-        System.out.println("|3) Förskottstid                                        |");
-        System.out.println("|4) Sluta                                               |");
+        System.out.println("|A) Sluta                                              |");
+        System.out.println("|B) Förskottstid                                        |");
+        System.out.println("|C) För att hantera information om objekt               |");
+        System.out.println("|D) För att hantera information om medlem               |");
         System.out.println("|-------------------------------------------------------|");
 
         in = input.next();
-        switch (in) {
-            case ("1"):
+        switch (in.trim().toLowerCase()) {
+            case ("d"):
                 return EnumChoices.MEMBER_MENU;
-            case ("2"):
+            case ("c"):
                 return EnumChoices.ITEM_MENU;
-            case ("3"):
+            case ("b"):
                 return EnumChoices.CHANGE_DAY;
-            case ("4"):
+            case ("a"):
                 return EnumChoices.EXIT;
             default:
                 return mainMenu();
@@ -55,33 +55,33 @@ public class SwedishUI implements Language {
      */
     public MemberEnum memberMenu() {
         System.out.println("|-------------------------------------------------------|");
-        System.out.println("|1) Skapa en ny medlem                                  |");
-        System.out.println("|2) Slå upp en specifik medlems information             |");
-        System.out.println("|3) Visa en enkel översikt över alla medlemmar          |");
-        System.out.println("|4) Visa en detaljerad översikt över alla medlemmar     |");
-        System.out.println("|5) Redigera en medlem                                  |");
-        System.out.println("|6) Ta bort en medlem                                   |");
-        System.out.println("|7) Skapa ett kontrakt                                  |");
-        System.out.println("|8) Tillbaka till meny                                  |");
+        System.out.println("|A) Tillbaka till meny                                  |");
+        System.out.println("|B) Skapa ett kontrakt                                  |");
+        System.out.println("|C) Ta bort en medlem                                   |");
+        System.out.println("|D) Redigera en medlem                                  |");
+        System.out.println("|E) Visa en detaljerad översikt över alla medlemmar     |");
+        System.out.println("|F) Visa en enkel översikt över alla medlemmar          |");
+        System.out.println("|G) Slå upp en specifik medlems information             |");
+        System.out.println("|H) Skapa en ny medlem                                  |");
         System.out.println("|-------------------------------------------------------|");
 
         in = input.next();
-        switch (in) {
-            case ("1"):
+        switch (in.trim().toLowerCase()) {
+            case ("h"):
                 return MemberEnum.CREATEMEMBER;
-            case ("2"):
+            case ("g"):
                 return MemberEnum.SPECIFICMEMBER;
-            case ("3"):
+            case ("f"):
                 return MemberEnum.SHOWSIMPLE;
-            case ("4"):
+            case ("e"):
                 return MemberEnum.SHOWDETAILED;
-            case ("5"):
+            case ("d"):
                 return MemberEnum.EDITMEMBER;
-            case ("6"):
+            case ("c"):
                 return MemberEnum.DELETEMEMBER;
-            case ("7"):
+            case ("b"):
                 return MemberEnum.CREATECONTRACT;
-            case ("8"):
+            case ("a"):
                 return MemberEnum.BACKMENU;
             default:
                 return memberMenu();
@@ -93,24 +93,24 @@ public class SwedishUI implements Language {
      */
     public ItemEnum itemMenu() {
         System.out.println("|-------------------------------------------------------|");
-        System.out.println("|1) Skapa objekt                                        |");
-        System.out.println("|2) Visa ett objek                                      |");
-        System.out.println("|3) Redigera ett objekt                                 |");
-        System.out.println("|4) Ta bort ett objekt                                  |");
-        System.out.println("|5) Tillbaka till meny                                  |");
+        System.out.println("|A) Tillbaka till meny                                  |");
+        System.out.println("|B) Ta bort ett objekt                                  |");
+        System.out.println("|C) Redigera ett objekt                                 |");
+        System.out.println("|D) Visa ett objek                                      |");
+        System.out.println("|E) Skapa objekt                                        |");
         System.out.println("|-------------------------------------------------------|");
 
         in = input.next();
-        switch (in) {
-            case ("1"):
+        switch (in.trim().toLowerCase()) {
+            case ("e"):
                 return ItemEnum.CREATEITEM;
-            case ("2"):
+            case ("d"):
                 return ItemEnum.VIEWITEM;
-            case ("3"):
+            case ("c"):
                 return ItemEnum.EDITITEM;
-            case ("4"):
+            case ("b"):
                 return ItemEnum.DELETEITEM;
-            case ("5"):
+            case ("a"):
                 return ItemEnum.BACK;
             default:
                 return itemMenu();
@@ -413,7 +413,24 @@ public class SwedishUI implements Language {
         System.out.println("Vänligen ange lämplig kategori för objektet med hjälp av listan nedan");
         System.out.println("1. Verktyg\n2. Fordon\n3. Spel\n4. Leksak\n5. Sport\n6. Övrig");
         System.out.print("Ange den kategori som passar varan bäst: ");
-        return null;
+
+      in = input.next();
+      switch (in) {
+        case ("1"):
+          return CategoryEnum.TOOL;
+        case ("2"):
+          return CategoryEnum.VEHICLE;
+        case ("3"):
+          return CategoryEnum.GAME;
+        case ("4"):
+          return CategoryEnum.TOY;
+        case ("5"):
+          return CategoryEnum.SPORT;
+        case ("6"):
+          return CategoryEnum.OTHER;
+        default:
+          return selectCategory();
+      }
     }
 
     /**

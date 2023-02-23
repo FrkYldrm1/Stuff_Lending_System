@@ -20,7 +20,7 @@ import view.SwedishUI;
  * Class.
  */
 public class MemberController {
-  private Language console = new ConsoleUi(new Scanner(System.in, "UTF-8"));
+  private Language console;
   
   private Registry registry = new Registry();
   private Time time = new Time();
@@ -185,30 +185,21 @@ public class MemberController {
     Member member;
     int memIndex = console.indexMemberInput();
     member = getMember(memIndex);
-
     String itemName = console.createItemName();
-  
-
-
     while (itemName.equals("")) {
       itemName = console.createItemName2();
     }
-
     while (member.isUniqueItem(itemName) || itemName.equals("")) {
       itemName = console.createItemName2();
     }
-
-
     String description = console.createItemDescription();
     while (description.equals("")) {
       description = console.createItemDescription2();
     }
-
     int price = console.createItemPrice();
     while ((price < 1)) {
       price = console.createItemPrice2();
     }
-
     CategoryEnum input = console.selectCategory();
     CategoryEnum category = CategoryEnum.TOOL;
 
@@ -279,7 +270,7 @@ public class MemberController {
   /**
    * Method for deleting the member.
    */
-  public void deleteMember() { ////////////////////////////////////////////
+  public void deleteMember() {
     String mem = console.selectMemberDelete();
     int index = Integer.parseInt(mem);
     registry.removeMember(getMember(index));
@@ -288,7 +279,7 @@ public class MemberController {
   /**
    * Method for deleting owned items.
    */
-  public void deleteItemOwned() { ///////////////////////////////////////////7
+  public void deleteItemOwned() {
     showAllMembersSimple();
     int memIndex = console.indexMemberInput();
     Member.Mutable member = getMember(memIndex);
