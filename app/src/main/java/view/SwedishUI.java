@@ -318,9 +318,9 @@ public class SwedishUI implements Language {
      *
      * @return int
      */
-    public int indexMemberInputRetry() {
+    public String indexMemberInputRetry() {
         System.out.print("Inte en giltig position. Var god försök igen: ");
-        return input.nextInt();
+        return input.nextLine();
     }
 
     public int indexItemInputRetry() {

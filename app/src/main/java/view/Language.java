@@ -49,7 +49,7 @@ public interface Language {
 
     public String indexItemInput();
 
-    public int indexMemberInputRetry();
+    public String indexMemberInputRetry();
 
     public int indexItemInputRetry();
 

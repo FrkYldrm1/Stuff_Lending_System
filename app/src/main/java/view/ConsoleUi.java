@@ -321,9 +321,9 @@ public class ConsoleUi implements Language {
    *
    * @return int
    */
-  public int indexMemberInputRetry() {
+  public String indexMemberInputRetry() {
     System.out.print("Not a valid position. Please try again: ");
-    return input.nextInt();
+    return input.nextLine();
   }
 
   public int indexItemInputRetry() {
