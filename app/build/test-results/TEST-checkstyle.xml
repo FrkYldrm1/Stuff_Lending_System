@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<testsuite package="org.checkstyle" time="0" tests="17" errors="1" name="checkstyle">
+<testsuite package="org.checkstyle" time="0" tests="20" errors="0" name="checkstyle">
 <testcase time="0" name="controller/App.java" classname="CheckStyle Issues">
 </testcase><testcase time="0" name="controller/Controller.java" classname="CheckStyle Issues">
 </testcase><testcase time="0" name="controller/MemberController.java" classname="CheckStyle Issues">
-<failure message="issues" ><![CDATA[line: 321 column: column:5 
-'if' construct must use '{}'s.
-----------------
-]]></failure>
 </testcase><testcase time="0" name="model/domain/Contract.java" classname="CheckStyle Issues">
 </testcase><testcase time="0" name="model/domain/Item.java" classname="CheckStyle Issues">
 </testcase><testcase time="0" name="model/domain/Member.java" classname="CheckStyle Issues">
@@ -17,8 +13,11 @@
 </testcase><testcase time="0" name="model/persistence/Imapper.java" classname="CheckStyle Issues">
 </testcase><testcase time="0" name="model/persistence/Persistence.java" classname="CheckStyle Issues">
 </testcase><testcase time="0" name="model/persistence/SqlMapper.java" classname="CheckStyle Issues">
+</testcase><testcase time="0" name="view/CategoryEnum.java" classname="CheckStyle Issues">
 </testcase><testcase time="0" name="view/ConsoleUi.java" classname="CheckStyle Issues">
 </testcase><testcase time="0" name="view/EnumChoices.java" classname="CheckStyle Issues">
 </testcase><testcase time="0" name="view/ItemEnum.java" classname="CheckStyle Issues">
+</testcase><testcase time="0" name="view/Language.java" classname="CheckStyle Issues">
 </testcase><testcase time="0" name="view/MemberEnum.java" classname="CheckStyle Issues">
+</testcase><testcase time="0" name="view/SwedishUi.java" classname="CheckStyle Issues">
 </testcase></testsuite>

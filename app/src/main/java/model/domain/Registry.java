@@ -2,6 +2,10 @@ package model.domain;
 
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import view.CategoryEnum;
+
 
 /**
  * Registry class for saving data.
@@ -9,6 +13,7 @@ import java.util.ArrayList;
 public class Registry {
   private ArrayList<Member.Mutable> members;
   private Boolean isEligable;
+
 
   /**
    * Constructor.
@@ -25,24 +30,35 @@ public class Registry {
     addMember("Gummi", "Andrgutrmungdgi", "gummi@gmail.com", "567890");
     addMember("Grace", "Yasine", "grace@gmail.com", "67687587");
     members.get(0).addItem("phone", "black", 45, 3, false, 0,
-            members.get(0).getFirstName(), " No one ", Item.CategoryEnum.TOOL);
+            members.get(0).getFirstName(), " No one ", CategoryEnum.TOOL);
     members.get(0).addItem("phone", "black", 45, 3, false, 0,
-            members.get(0).getFirstName(), " No one ", Item.CategoryEnum.TOOL);
+            members.get(0).getFirstName(), " No one ", CategoryEnum.TOOL);
     members.get(1).addItem("Phone", "Brown", 15, 1, false, 0,
-            members.get(1).getFirstName(), " No one ", Item.CategoryEnum.TOOL);
+            members.get(1).getFirstName(), " No one ", CategoryEnum.TOOL);
     members.get(2).addItem("scooter", "White", 25, 1, false, 2,
-            members.get(2).getFirstName(), " No one ", Item.CategoryEnum.VEHICLE);
+            members.get(2).getFirstName(), " No one ", CategoryEnum.VEHICLE);
     members.get(6).addItem("VacuumCleaner", "Red", 10, 2, false, 5,
-            members.get(6).getFirstName(), " No one ", Item.CategoryEnum.TOOL);
+            members.get(6).getFirstName(), " No one ", CategoryEnum.TOOL);
     members.get(4).addItem("E-vape", "black", 5, 3, false, 7,
-            members.get(4).getFirstName(), " No one ", Item.CategoryEnum.OTHER);
+            members.get(4).getFirstName(), " No one ", CategoryEnum.OTHER);
     members.get(3).addItem("Burgiiiir", "Green", 5, 1, false, 1,
-            members.get(3).getFirstName(), " No one ", Item.CategoryEnum.OTHER);
+            members.get(3).getFirstName(), " No one ", CategoryEnum.OTHER);
     members.get(5).addItem("Bike", "Yellow", 20, 8, false, 9,
-            members.get(5).getFirstName(), " No one ", Item.CategoryEnum.VEHICLE);
+            members.get(5).getFirstName(), " No one ", CategoryEnum.VEHICLE);
     members.get(2).addItem("Ipad", "Gray", 50, 2, false, 4,
-            members.get(2).getFirstName(), " No one ", Item.CategoryEnum.TOOL);
+            members.get(2).getFirstName(), " No one ", null);
   }
+
+  /**
+   * creates new member.
+   */
+  public void createNewMember(String firstName, String lastName, String email, String phoneNumber, MemberId id) {
+
+    Member newMember = new Member(firstName, lastName, email, phoneNumber, id);
+    addMember(newMember);
+  }
+
+
 
   /**
    * Getter method for members.
@@ -52,7 +68,7 @@ public class Registry {
   @SuppressFBWarnings(value = "EI_EXPOSE_REP", justification = "In the program some values are accessed by this method."
       + " Making dummy and returning to not expose internal representation"
       + " might cut our access in some parts of the program.")
-  public Iterable<Member.Mutable> getMembers() {
+  public ArrayList<Member.Mutable> getMembers() {
     return members;
   }
 
@@ -159,6 +175,8 @@ public class Registry {
     }
   }
 
+   
+
   /**
    * Method for checking eligibilty of member to lend an item.
    *
@@ -208,7 +226,49 @@ public class Registry {
     return true;
   }
 
+  /**
+   * Checks if member id is taken or available.
+   *
+   * @param id member id.
+   * @return true if taken and false if available.
+   *
+   */
+  public boolean isIdTaken(MemberId id) {
+    for (Member.Mutable member : getMembers()) {
+      if (id.getId().equals(member.getMemberId().getId())) {
+        return true;
+      }
+    }
+    return false;
+  }
+
   public Boolean getIsEligable() {
     return isEligable;
+  }
+
+  /**
+   * method for sorting by name.
+   */
+  public void sortByName() {
+    Comparator<Member.Mutable> comparator = new Comparator<Member.Mutable>() {
+      public int compare(Member.Mutable person1, Member.Mutable person2) {
+        return person1.getFirstName().compareTo(person2.getFirstName());
+      }
+    };
+    Collections.sort(members, comparator);
+
+  }
+
+  /**
+   * method for sorting by id.
+   */
+  public void sortById() {
+    Comparator<Member.Mutable> compare = new Comparator<Member.Mutable>() {
+      public int compare(Member.Mutable person1, Member.Mutable person2) {
+        return person1.getMemberId().getId().compareTo(person2.getMemberId().getId());
+      }
+    };
+    Collections.sort(members, compare);
+
   }
 }

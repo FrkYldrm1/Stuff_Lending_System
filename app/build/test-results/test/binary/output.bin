@@ -1,40 +1,36 @@
-t0 CheckStyle Issues in C:/Users/popoy/Documents/OOAD with AHmad and Faruk/a2/app/src/main/java/controller/App.java
-{0 CheckStyle Issues in C:/Users/popoy/Documents/OOAD with AHmad and Faruk/a2/app/src/main/java/controller/Controller.java
-Å1 CheckStyle Issues in C:/Users/popoy/Documents/OOAD with AHmad and Faruk/a2/app/src/main/java/controller/MemberController.java
-"text:line: 321 column: column:5 
- 'if' construct must use '{}'s.
-
-{0 CheckStyle Issues in C:/Users/popoy/Documents/OOAD with AHmad and Faruk/a2/app/src/main/java/model/domain/Contract.java
-w0 CheckStyle Issues in C:/Users/popoy/Documents/OOAD with AHmad and Faruk/a2/app/src/main/java/model/domain/Item.java
-y0 CheckStyle Issues in C:/Users/popoy/Documents/OOAD with AHmad and Faruk/a2/app/src/main/java/model/domain/Member.java
-{0 CheckStyle Issues in C:/Users/popoy/Documents/OOAD with AHmad and Faruk/a2/app/src/main/java/model/domain/MemberId.java
-{0 CheckStyle Issues in C:/Users/popoy/Documents/OOAD with AHmad and Faruk/a2/app/src/main/java/model/domain/Registry.java
-w0 CheckStyle Issues in C:/Users/popoy/Documents/OOAD with AHmad and Faruk/a2/app/src/main/java/model/domain/Time.java
-á0 CheckStyle Issues in C:/Users/popoy/Documents/OOAD with AHmad and Faruk/a2/app/src/main/java/model/domain/TimeAdvancedObserver.java
-0 CheckStyle Issues in C:/Users/popoy/Documents/OOAD with AHmad and Faruk/a2/app/src/main/java/model/persistence/Imapper.java
-É0 CheckStyle Issues in C:/Users/popoy/Documents/OOAD with AHmad and Faruk/a2/app/src/main/java/model/persistence/Persistence.java
-Å0 CheckStyle Issues in C:/Users/popoy/Documents/OOAD with AHmad and Faruk/a2/app/src/main/java/model/persistence/SqlMapper.java
-t0 CheckStyle Issues in C:/Users/popoy/Documents/OOAD with AHmad and Faruk/a2/app/src/main/java/view/ConsoleUi.java
-v0 CheckStyle Issues in C:/Users/popoy/Documents/OOAD with AHmad and Faruk/a2/app/src/main/java/view/EnumChoices.java
-s0 CheckStyle Issues in C:/Users/popoy/Documents/OOAD with AHmad and Faruk/a2/app/src/main/java/view/ItemEnum.java
-u0 CheckStyle Issues in C:/Users/popoy/Documents/OOAD with AHmad and Faruk/a2/app/src/main/java/view/MemberEnum.java
+f0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/controller/App.java
+m0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/controller/Controller.java
+s0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/controller/MemberController.java
+m0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/model/domain/Contract.java
+i0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/model/domain/Item.java
+k0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/model/domain/Member.java
+m0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/model/domain/MemberId.java
+m0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/model/domain/Registry.java
+i0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/model/domain/Time.java
+y0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/model/domain/TimeAdvancedObserver.java
+q0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/model/persistence/Imapper.java
+u0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/model/persistence/Persistence.java
+s0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/model/persistence/SqlMapper.java
+i0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/view/CategoryEnum.java
+f0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/view/ConsoleUi.java
+h0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/view/EnumChoices.java
+e0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/view/ItemEnum.java
+e0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/view/Language.java
+g0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/view/MemberEnum.java
+f0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/view/SwedishUi.java
 -0 FindBugs Issues in model/domain/Item.java
 10 FindBugs Issues in model/domain/MemberId.java
 ,0 FindBugs Issues in view/EnumChoices.java
-*1 FindBugs Issues in view/ConsoleUi.java
-text:lines: 19-501 
+*2 FindBugs Issues in view/ConsoleUi.java
+text:lines: 19-595 
 QbyeBye() invokes System.exit(...), which shuts down the entire virtual machine 
 "Method invokes System.exit(...) 
 fInvoking System.exit shuts down the entire Java virtual machine. This should only been done when it 
 e  is appropriate. Such calls make it hard or impossible for your code to be invoked by other code. 
 1  Consider throwing a RuntimeException instead.
 
-10 FindBugs Issues in controller/Controller.java
-=0 FindBugs Issues in model/domain/TimeAdvancedObserver.java
-+0 FindBugs Issues in view/MemberEnum.java
-71 FindBugs Issues in controller/MemberController.java
-text:lines: 17-343 
-SNullcheck of input at line 218 of value previously dereferenced in check(String) 
+text:lines: 19-595 
+SNullcheck of input at line 592 of value previously dereferenced in check(String) 
 -Nullcheck of value previously dereferenced 
 bA value is checked here to see whether it is null, but this value cannot be null because it was 
 d  previously dereferenced and if it were null a null pointer exception would have occurred at the 
@@ -42,18 +38,32 @@
 c  this value is allowed to be null. Either the check is redundant or the previous dereference is 
   erroneous.
 
+-0 FindBugs Issues in view/CategoryEnum.java
+10 FindBugs Issues in controller/Controller.java
+=0 FindBugs Issues in model/domain/TimeAdvancedObserver.java
+)0 FindBugs Issues in view/Language.java
++0 FindBugs Issues in view/MemberEnum.java
+*2 FindBugs Issues in view/SwedishUi.java
+text:lines: 20-599 
+QbyeBye() invokes System.exit(...), which shuts down the entire virtual machine 
+"Method invokes System.exit(...) 
+fInvoking System.exit shuts down the entire Java virtual machine. This should only been done when it 
+e  is appropriate. Such calls make it hard or impossible for your code to be invoked by other code. 
+1  Consider throwing a RuntimeException instead.
+
+text:lines: 20-599 
+SNullcheck of input at line 574 of value previously dereferenced in check(String) 
+-Nullcheck of value previously dereferenced 
+bA value is checked here to see whether it is null, but this value cannot be null because it was 
+d  previously dereferenced and if it were null a null pointer exception would have occurred at the 
+d  earlier dereference. Essentially, this code and the previous dereference disagree as to whether 
+c  this value is allowed to be null. Either the check is redundant or the previous dereference is 
+  erroneous.
+
+70 FindBugs Issues in controller/MemberController.java
 10 FindBugs Issues in model/domain/Registry.java
 *0 FindBugs Issues in controller/App.java
-11 FindBugs Issues in model/domain/Contract.java
-text:lines: 20-52 
-JgetItem() may expose internal representation by returning Contract.item 
-NMay expose internal representation by returning reference to mutable object 
-cReturning a reference to a mutable object value stored in one of the object's fields exposes the 
-f  internal representation of the object. If instances are accessed by untrusted code, and unchecked 
-d  changes to the mutable object would compromise security or other important properties, you will 
-b  need to do something different. Returning a new copy of the object is better approach in many 
-  situations.
-
+10 FindBugs Issues in model/domain/Contract.java
 /0 FindBugs Issues in model/domain/Member.java
 -0 FindBugs Issues in model/domain/Time.java
 50 FindBugs Issues in model/persistence/Imapper.java

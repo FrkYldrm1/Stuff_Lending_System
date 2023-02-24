@@ -71,7 +71,7 @@ The build must pass by running console command:
 Note that you should get a report over the quality like:
 ```
 CodeQualityTests > codeQuality() STANDARD_OUT
-    0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/controller/App.java
+     0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/controller/App.java
     0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/controller/Controller.java
     0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/controller/MemberController.java
     0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/model/domain/Contract.java
@@ -80,39 +80,30 @@ CodeQualityTests > codeQuality() STANDARD_OUT
     0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/model/domain/MemberId.java
     0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/model/domain/Registry.java
     0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/model/domain/Time.java
+    0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/model/domain/TimeAdvancedObserver.java
     0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/model/persistence/Imapper.java
     0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/model/persistence/Persistence.java
     0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/model/persistence/SqlMapper.java
-    0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/model/TimeAdvancedObserver.java
+    0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/view/CategoryEnum.java
     0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/view/ConsoleUi.java
-    2 FindBugs Issues in model/domain/Item.java
-    text:lines: 19-251
-    new model.domain.Item(String, String, int, int, Boolean, int, String, String, String) uses the same
-      code for two branches
-    Method uses the same code for two branches
-    This method uses the same code to implement two branches of a conditional branch. Check to ensure
-      that this isn't a coding mistake.
-
-    text:lines: 19-251
-    Call to equals(null) in new model.domain.Item(String, String, int, int, Boolean, int, String,
-      String, String)
-    Call to equals(null)
-    This method calls equals(Object), passing a null value as the argument. According to the contract of
-      the equals() method, this call should always return false.
-
+    0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/view/EnumChoices.java
+    0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/view/ItemEnum.java
+    0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/view/Language.java
+    0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/view/MemberEnum.java
+    0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/view/SwedishUi.java
+    0 FindBugs Issues in model/domain/Item.java
     0 FindBugs Issues in model/domain/MemberId.java
-    1 FindBugs Issues in view/ConsoleUi.java
-    text:lines: 21-507
+    0 FindBugs Issues in view/EnumChoices.java
+    2 FindBugs Issues in view/ConsoleUi.java
+    text:lines: 19-595
     byeBye() invokes System.exit(...), which shuts down the entire virtual machine
     Method invokes System.exit(...)
     Invoking System.exit shuts down the entire Java virtual machine. This should only been done when it
       is appropriate. Such calls make it hard or impossible for your code to be invoked by other code.
       Consider throwing a RuntimeException instead.
 
-    0 FindBugs Issues in controller/Controller.java
-    1 FindBugs Issues in controller/MemberController.java
-    text:lines: 18-341
-    Nullcheck of input at line 208 of value previously dereferenced in check(String)
+    text:lines: 19-595
+    Nullcheck of input at line 592 of value previously dereferenced in check(String)
     Nullcheck of value previously dereferenced
     A value is checked here to see whether it is null, but this value cannot be null because it was
       previously dereferenced and if it were null a null pointer exception would have occurred at the
@@ -120,18 +111,39 @@ CodeQualityTests > codeQuality() STANDARD_OUT
       this value is allowed to be null. Either the check is redundant or the previous dereference is
       erroneous.
 
+    0 FindBugs Issues in view/CategoryEnum.java
+    0 FindBugs Issues in controller/Controller.java
+    0 FindBugs Issues in model/domain/TimeAdvancedObserver.java
+    0 FindBugs Issues in view/Language.java
+    0 FindBugs Issues in view/MemberEnum.java
+    2 FindBugs Issues in view/SwedishUi.java
+    text:lines: 20-599
+    byeBye() invokes System.exit(...), which shuts down the entire virtual machine
+    Method invokes System.exit(...)
+    Invoking System.exit shuts down the entire Java virtual machine. This should only been done when it
+      is appropriate. Such calls make it hard or impossible for your code to be invoked by other code.
+      Consider throwing a RuntimeException instead.
+
+    text:lines: 20-599
+    Nullcheck of input at line 574 of value previously dereferenced in check(String)
+    Nullcheck of value previously dereferenced
+    A value is checked here to see whether it is null, but this value cannot be null because it was
+      previously dereferenced and if it were null a null pointer exception would have occurred at the
+      earlier dereference. Essentially, this code and the previous dereference disagree as to whether
+      this value is allowed to be null. Either the check is redundant or the previous dereference is
+      erroneous.
+
+    0 FindBugs Issues in controller/MemberController.java
     0 FindBugs Issues in model/domain/Registry.java
     0 FindBugs Issues in controller/App.java
     0 FindBugs Issues in model/domain/Contract.java
     0 FindBugs Issues in model/domain/Member.java
     0 FindBugs Issues in model/domain/Time.java
     0 FindBugs Issues in model/persistence/Imapper.java
-    0 FindBugs Issues in model/TimeAdvancedObserver.java
     0 FindBugs Issues in model/persistence/SqlMapper.java
+    0 FindBugs Issues in view/ItemEnum.java
     0 FindBugs Issues in model/persistence/Persistence.java
 ```
-
-Removing or manipulating the code quality checks results in an immediate assignment **Fail**.
 
 ## Running
 The application should start by running console command:  
@@ -149,6 +161,10 @@ The application should start by running console command:
 |-------------------------------------------------------|
 ```
 # Updates and fixes
+
+## Added a new language
+As asked we added a new language (Swedish) now the program can be run with both languages. In controller you will find int languageBinary = 1; just change to 0 if you want to use 
+Swedish. The swedish Ui has a different order and uses strings for index instead of int.
 
 ## Model responsibility in view/controller
 

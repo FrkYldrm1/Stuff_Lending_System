@@ -1,23 +1,40 @@
 package controller;
 
 import java.util.Scanner;
+import view.Language;
+import view.SwedishUi;
 
 /**
  * Controller class for UI.
  */
 public class Controller {
-  private view.ConsoleUi console = new view.ConsoleUi(new Scanner(System.in, "UTF-8"));
-  private controller.MemberController memberController = new controller.MemberController(console);
+
+  int languageBinary = 1; // 1 for english, 0 for swedish;
+  private Language console;
+  private controller.MemberController memberController;
 
   /**
    * method for starting the program.
    */
   public void startApp() {
+    init();
     viewMenu();
   }
 
   /**
-   * method for showing main menu.
+   * method for changing language.
+   */
+  public void init() {
+    if (languageBinary == 1) {
+      console = new view.ConsoleUi(new Scanner(System.in, "UTF-8"));
+    } else if (languageBinary == 0) {
+      console = new SwedishUi(new Scanner(System.in, "UTF-8"));
+    }
+    memberController = new controller.MemberController(console);
+  }
+
+  /**
+   * method for showing main menu.2
    */
   public void viewMenu() {
     view.EnumChoices choice = console.mainMenu();
@@ -49,7 +66,7 @@ public class Controller {
 
     switch (choice) {
       case CREATEMEMBER:
-        memberController.createNewMember();
+        memberController.createMember();
         viewMemberMenu();
         break;
       case SPECIFICMEMBER:

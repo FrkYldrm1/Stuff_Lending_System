@@ -1,6 +1,7 @@
 package model.domain;
 
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
+import view.CategoryEnum;
 
 /**
  * Item class to create item objects.
@@ -70,17 +71,7 @@ public class Item {
 
   }
 
-  /**
-   * Category enum.
-   */
-  public enum CategoryEnum {
-    TOOL,
-    VEHICLE,
-    GAME,
-    TOY,
-    SPORT,
-    OTHER;
-  }
+
 
   public String getOwner() {
     return owner;
