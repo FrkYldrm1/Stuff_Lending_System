@@ -219,7 +219,7 @@ public class MemberController {
     Member member;
     int memIndex;
     String s = console.indexMemberInput();
-    while (!(s = console.indexMemberInput().trim()).matches("\\d+")) {
+    while (!(s.matches("\\d+"))) {
       s = console.indexMemberInput();
     }
     memIndex = Integer.parseInt(s);
@@ -293,8 +293,7 @@ public class MemberController {
    * Method for editing member.
    */
   public void editMember() {
-    String mem = console.selectedMember();
-    int index = Integer.parseInt(mem);
+    int index = Integer.parseInt(console.selectedMember());
 
     getMember(index).setFirstName(console.getFirstName());
     getMember(index).setLastName(console.getLastName());
@@ -308,8 +307,9 @@ public class MemberController {
    * Method for editing item.
    */
   public void editItem() {
+    showAllMembersSimple();
     int memIndex = Integer.parseInt(console.indexMemberInput());
-    int index = console.indexItemInput();
+    int index = Integer.parseInt(console.indexItemInput());
     Item.Mutable item = getItem(index, getMember(memIndex));
     item.setName(console.newItemName());
     item.setShortDescription(console.newItemShortDescription());
@@ -320,8 +320,7 @@ public class MemberController {
    * Method for deleting the member.
    */
   public void deleteMember() {
-    String mem = console.selectMemberDelete();
-    int index = Integer.parseInt(mem);
+    int index = Integer.parseInt(console.selectMemberDelete());
     registry.removeMember(getMember(index));
   }
 
@@ -349,8 +348,7 @@ public class MemberController {
           item.getDayOfCreation(), value);
     }
     console.lineBreak();
-
-    index = console.indexItemInput();
+    index = Integer.parseInt(console.indexItemInput());
     member.removeItemOwned(getItem(index, member));
 
   }
@@ -360,9 +358,8 @@ public class MemberController {
    */
   public void contract() {
     showAllMembersSimple();
-    String in = console.selectMember();
-    int mem = Integer.parseInt(in);
-    int lender = console.selectLender();
+    int mem = Integer.parseInt(console.selectMember());
+    int lender = console.selectLender(); /////////////////////////
     int period = console.selectPeriod();
 
     console.showMemberDetails3(registry.selectMember(mem).getFirstName(), registry.selectMember(mem).getEmail(),

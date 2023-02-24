@@ -300,12 +300,20 @@ public class ConsoleUi implements Language {
    */
   public String indexMemberInput() {
     System.out.print("Select a member (Input a number): ");
-    return input.nextLine();
+    String in = input.nextLine();
+    if (in.isBlank()) {
+      return indexItemInput();
+    }
+    return in;
   }
 
-  public int indexItemInput() {
+  public String indexItemInput() {
     System.out.print("Select an item using position in list: ");
-    return input.nextInt();
+    String in = input.nextLine();
+    if (in.isBlank()) {
+      return indexItemInput();
+    }
+    return in;
   }
 
   /**
@@ -391,7 +399,7 @@ public class ConsoleUi implements Language {
     return input.nextLine();
   }
 
-  public int selectLender() {
+  public int selectLender() {///////////////////////////////////////////
     System.out.print("Select member to lend to (Input a number): ");
     return input.nextInt();
   }

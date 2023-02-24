@@ -297,12 +297,20 @@ public class SwedishUI implements Language {
      */
     public String indexMemberInput() {
         System.out.print("Välj en medlem (Ange ett nummer): ");
-        return input.nextLine();
+        String in = input.nextLine();
+        if (in.isBlank()) {
+            return indexMemberInput();
+        }
+        return in;
     }
 
-    public int indexItemInput() {
+    public String indexItemInput() {
         System.out.print("Välj ett objekt med hjälp av position i listan: ");
-        return input.nextInt();
+        String in = input.nextLine();
+        if (in.isBlank()) {
+            return indexItemInput();
+        }
+        return in;
     }
 
     /**
@@ -388,7 +396,7 @@ public class SwedishUI implements Language {
         return input.nextLine();
     }
 
-    public int selectLender() {
+    public int selectLender() { ///////////////////////////////
         System.out.print("Välj medlem att låna ut till (Ange ett nummer): ");
         return input.nextInt();
     }
