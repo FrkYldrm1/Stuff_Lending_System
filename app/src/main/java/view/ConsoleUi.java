@@ -300,12 +300,12 @@ public class ConsoleUi implements Language {
    */
   public String indexMemberInput() {
     System.out.print("Select a member (Input a number): ");
-    return input.nextLine();
+    return input.next();
   }
 
-  public int indexItemInput() {
+  public String indexItemInput() {
     System.out.print("Select an item using position in list: ");
-    return input.nextInt();
+    return input.next();
   }
 
   /**
@@ -313,9 +313,9 @@ public class ConsoleUi implements Language {
    *
    * @return int
    */
-  public int indexMemberInputRetry() {
+  public String indexMemberInputRetry() {
     System.out.print("Not a valid position. Please try again: ");
-    return input.nextInt();
+    return input.nextLine();
   }
 
   public int indexItemInputRetry() {

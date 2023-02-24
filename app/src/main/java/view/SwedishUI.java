@@ -296,13 +296,13 @@ public class SwedishUI implements Language {
      * @return int.
      */
     public String indexMemberInput() {
-        System.out.print("Välj en medlem (Ange ett nummer): ");
-        return input.nextLine();
+        System.out.print("Välj en medlem (Ange ett bokstav): ");
+        return input.next();
     }
 
-    public int indexItemInput() {
+    public String indexItemInput() {
         System.out.print("Välj ett objekt med hjälp av position i listan: ");
-        return input.nextInt();
+        return input.next();
     }
 
     /**
@@ -310,9 +310,9 @@ public class SwedishUI implements Language {
      *
      * @return int
      */
-    public int indexMemberInputRetry() {
+    public String indexMemberInputRetry() {
         System.out.print("Inte en giltig position. Var god försök igen: ");
-        return input.nextInt();
+        return input.nextLine();
     }
 
     public int indexItemInputRetry() {

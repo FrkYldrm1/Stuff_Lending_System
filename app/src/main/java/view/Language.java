@@ -47,9 +47,9 @@ public interface Language {
 
     public String indexMemberInput();
 
-    public int indexItemInput();
+    public String indexItemInput();
 
-    public int indexMemberInputRetry();
+    public String indexMemberInputRetry();
 
     public int indexItemInputRetry();
 
