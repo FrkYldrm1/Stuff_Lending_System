@@ -2,12 +2,6 @@ package controller;
 
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.Scanner;
-
-import javax.swing.text.View;
-
 import model.domain.Item;
 import model.domain.Member;
 import model.domain.MemberId;
@@ -16,17 +10,20 @@ import model.domain.Time;
 import view.CategoryEnum;
 import view.ConsoleUi;
 import view.Language;
-import view.SwedishUI;
+import view.SwedishUi;
 
 /**
  * Class.
  */
 public class MemberController {
-  private Language console;
+  private final Language console;
 
-  private Registry registry = new Registry();
-  private Time time = new Time();
+  private final Registry registry = new Registry();
+  private final Time time = new Time();
 
+  /**
+   * method for creating member.
+   */
   public void createMember() {
     String firstName = console.getFirstName();
     while (console.check(firstName)) {
@@ -74,8 +71,11 @@ public class MemberController {
 
   }
 
+  /**
+   * method that checks current language.
+   */
   public void languageCheck() {
-    if (console instanceof SwedishUI) {
+    if (console instanceof SwedishUi) {
       registry.sortById();
     } else {
       registry.sortByName();
@@ -129,16 +129,15 @@ public class MemberController {
       index = 0;
       if (member.getSizeOfItemsLended() > 0) {
         console.showLendedItemIntro();
-              for (Item item : member.getItemsLended()) {
-                index += 1;
-                if (console instanceof ConsoleUi) {
-                  value = String.valueOf(index);
-                } else {
-                  value = String.valueOf(convertNumToAlph(index));
-                }
-                console.showItemDetails3(value, item.getName(), item.getOwner(), item.getContractPeriod());
-              
-              }
+        for (Item item : member.getItemsLended()) {
+          index += 1;
+          if (console instanceof ConsoleUi) {
+            value = String.valueOf(index);
+          } else {
+            value = String.valueOf(convertNumToAlph(index));
+          }
+          console.showItemDetails3(value, item.getName(), item.getOwner(), item.getContractPeriod());
+        }
       }
     }
     console.lineBreak();
@@ -151,23 +150,17 @@ public class MemberController {
    * @return member.
    */
   public Member.Mutable getMember(int input) {
-    ArrayList<Member.Mutable> arraylist = new ArrayList<>();
-    for (Member.Mutable member : registry.getMembers()) {
-      arraylist.add(member);
-    }
+    ArrayList<Member.Mutable> arraylist = new ArrayList<>(registry.getMembers());
 
     try {
-      Member.Mutable member = arraylist.get(input -= 1);
-      return member;
+      return arraylist.get(input - 1);
     } catch (Exception e) {
 
       String in = console.indexMemberInputRetry();
-      if (console instanceof SwedishUI) {
+      if (console instanceof SwedishUi) {
         input = converAlphToNum(in.charAt(0));
-        System.out.println(input);
       } else {
         input = Integer.parseInt(in);
-        System.out.println(input);
       }
       return getMember(input);
     }
@@ -202,9 +195,9 @@ public class MemberController {
    * Method for showing members owned items.
    */
   public void showOwnedItems() {
-    int input = 0;
+    int input;
     String in = console.indexMemberInput();
-    if (console instanceof SwedishUI) {
+    if (console instanceof SwedishUi) {
       input = converAlphToNum(in.charAt(0));
     } else {
       input = Integer.parseInt(in);
@@ -234,18 +227,24 @@ public class MemberController {
     int memIndex = 0;
     String s = console.indexMemberInput();
 
-    if (console instanceof SwedishUI) {
-      memIndex = converAlphToNum(s.charAt(0));
-    } else {
-      while (!(s = console.indexMemberInput().trim()).matches("\\d+")) {
+    Boolean status = true;
+    while (status) {
+      try {
+        if (console instanceof SwedishUi) {
+          memIndex = converAlphToNum(s.charAt(0));
+        } else {
+          memIndex = Integer.parseInt(s);
+        }
+        status = false;
+      } catch (Exception e) {
         s = console.indexMemberInput();
-        memIndex = Integer.parseInt(s);
       }
     }
 
+
     member = getMember(memIndex);
     String itemName = console.createItemName();
-    while(itemName.matches(".*\\d+.*")) {
+    while (itemName.matches(".*\\d+.*")) {
       itemName = console.createItemName();
     }
 
@@ -260,8 +259,7 @@ public class MemberController {
       description = console.createItemDescription2();
     }
 
-    s = null;
-    while (!(s = console.createItemPrice().trim()).matches("\\d+")) {
+    while (!(s.trim()).matches("\\d+")) {
       s = console.createItemPrice();
     }
     int price = Integer.parseInt(s);
@@ -270,29 +268,16 @@ public class MemberController {
       price = Integer.parseInt(console.createItemPrice2());
     }
     CategoryEnum input = console.selectCategory();
-    CategoryEnum category = CategoryEnum.TOOL;
+    CategoryEnum category = null;
 
     switch (input) {
-      case TOOL:
-        category = CategoryEnum.TOOL;
-        break;
-      case VEHICLE:
-        category = CategoryEnum.VEHICLE;
-        break;
-      case GAME:
-        category = CategoryEnum.GAME;
-        break;
-      case TOY:
-        category = CategoryEnum.TOY;
-        break;
-      case SPORT:
-        category = CategoryEnum.SPORT;
-        break;
-      case OTHER:
-        category = CategoryEnum.OTHER;
-        break;
-      default:
-        addItem();
+      case TOOL -> category = CategoryEnum.TOOL;
+      case VEHICLE -> category = CategoryEnum.VEHICLE;
+      case GAME -> category = CategoryEnum.GAME;
+      case TOY -> category = CategoryEnum.TOY;
+      case SPORT -> category = CategoryEnum.SPORT;
+      case OTHER -> category = CategoryEnum.OTHER;
+      default -> addItem();
     }
 
     member.addItem(itemName, description, price, 1, false, 0,
@@ -313,32 +298,38 @@ public class MemberController {
    * Method for editing member.
    */
   public void editMember() {
-    int index = Integer.parseInt(console.selectedMember());
-
-    getMember(index).setFirstName(console.getFirstName());
-    getMember(index).setLastName(console.getLastName());
-    getMember(index).setEmail(console.getEmail());
-    getMember(index).setPhoneNumber(console.getPhoneNumber());
-    System.out.println("Member " + getMember(index).getFirstName() + " has been edited"); // fix
-                                                                                          // this////////////////////////
+    String index = console.selectedMember();
+    int inputMem;
+    if (console instanceof SwedishUi && !(index.trim().matches("\\d+"))) {
+      inputMem = converAlphToNum(index.charAt(0));
+    } else {
+      inputMem = Integer.parseInt(index);
+    }
+    getMember(inputMem).setFirstName(console.getFirstName());
+    getMember(inputMem).setLastName(console.getLastName());
+    getMember(inputMem).setEmail(console.getEmail());
+    getMember(inputMem).setPhoneNumber(console.getPhoneNumber());
+    System.out.println("Member " + getMember(inputMem).getFirstName() + " has been edited");
   }
+
 
   /**
    * Method for editing item.
    */
   public void editItem() {
     showAllMembersSimple();
-    int inputMem = 0;
+
+    int inputMem;
     String inMem = console.indexMemberInput();
-    if (console instanceof SwedishUI) {
+    if (console instanceof SwedishUi) {
       inputMem = converAlphToNum(inMem.charAt(0));
     } else {
       inputMem = Integer.parseInt(inMem);
     }
 
-    int inputItem = 0;
+    int inputItem;
     String indItem = console.indexItemInput();
-    if (console instanceof SwedishUI) {
+    if (console instanceof SwedishUi) {
       inputItem = converAlphToNum(indItem.charAt(0));
     } else {
       inputItem = Integer.parseInt(indItem);
@@ -354,8 +345,18 @@ public class MemberController {
    * Method for deleting the member.
    */
   public void deleteMember() {
-    int index = Integer.parseInt(console.selectMemberDelete());
-    registry.removeMember(getMember(index));
+    String index = console.selectMemberDelete();
+    int inputMem;
+    try {
+      if (console instanceof SwedishUi) {
+        inputMem = converAlphToNum(index.charAt(0));
+      } else {
+        inputMem = Integer.parseInt(index);
+      }
+      registry.removeMember(getMember(inputMem));
+    } catch (Exception e) {
+      deleteMember();
+    }
   }
 
   /**
@@ -364,9 +365,9 @@ public class MemberController {
   public void deleteItemOwned() {
     showAllMembersSimple();
 
-    int inputMem = 0;
+    int inputMem;
     String inMem = console.indexMemberInput();
-    if (console instanceof SwedishUI) {
+    if (console instanceof SwedishUi) {
       inputMem = converAlphToNum(inMem.charAt(0));
     } else {
       inputMem = Integer.parseInt(inMem);
@@ -391,9 +392,9 @@ public class MemberController {
     }
     console.lineBreak();
 
-    int inputItem = 0;
+    int inputItem;
     String indItem = console.indexItemInput();
-    if (console instanceof SwedishUI) {
+    if (console instanceof SwedishUi) {
       inputItem = converAlphToNum(indItem.charAt(0));
     } else {
       inputItem = Integer.parseInt(indItem);
@@ -408,13 +409,20 @@ public class MemberController {
    */
   public void contract() {
     showAllMembersSimple();
-    int mem = Integer.parseInt(console.selectMember());
-    int lender = console.selectLender(); /////////////////////////
-    int period = console.selectPeriod();
+
+    String inMem = console.selectMember();
+    int mem;
+    if (console instanceof SwedishUi) {
+      mem = converAlphToNum(inMem.charAt(0));
+    } else {
+      mem = Integer.parseInt(inMem);
+    }
 
     console.showMemberDetails3(registry.selectMember(mem).getFirstName(), registry.selectMember(mem).getEmail(),
-        registry.selectMember(mem).getMemberId().getId());
+            registry.selectMember(mem).getMemberId().getId());
+
     console.showOwnedItemIntro();
+
     int index = 0;
     String value;
     for (Item item : registry.selectMember(mem).getItemsOwned()) {
@@ -427,15 +435,32 @@ public class MemberController {
       console.showItemDetails2(value, item.getName(), item.getLenededTo(), item.getContractPeriod());
     }
 
-    int itemIndex = console.selectItem();
-    registry.createContract(getMember(mem), getMember(lender), period, itemIndex);
+    String itemIndex = console.selectItem();
+    int item;
+    if (console instanceof SwedishUi) {
+      item = converAlphToNum(itemIndex.charAt(0));
+    } else {
+      item = Integer.parseInt(itemIndex);
+    }
+
+    String lender = console.selectLender();
+
+    int len;
+    if (console instanceof SwedishUi) {
+      len = converAlphToNum(lender.charAt(0));
+    } else {
+      len = Integer.parseInt(lender);
+    }
+    int period = console.selectPeriod();
+
+    registry.createContract(getMember(mem), getMember(len), period, item);
     Boolean isContractEligble = registry.getIsEligable();
-    if (isContractEligble == null)
+    if (isContractEligble == null) {
       console.alreadyLended();
-    else if (!(isContractEligble)) {
+    } else if (!(isContractEligble)) {
       console.notEnoughCredit();
     } else {
-      console.messageForLending(getMember(mem).getFirstName(), getMember(lender).getFirstName(), period);
+      console.messageForLending(getMember(mem).getFirstName(), getMember(len).getFirstName(), period);
     }
   }
 
@@ -456,9 +481,9 @@ public class MemberController {
       console.showMemberSpceific(value, member.getFirstName(), member.getLastName());
     }
 
-    int inputMem = 0;
+    int inputMem;
     String inMem = console.indexMemberInput();
-    if (console instanceof SwedishUI) {
+    if (console instanceof SwedishUi) {
       inputMem = converAlphToNum(inMem.charAt(0));
     } else {
       inputMem = Integer.parseInt(inMem);
@@ -482,6 +507,13 @@ public class MemberController {
     }
   }
 
+  /**
+   * method for converting int to string.
+   *
+   * @param number int input.
+   * @return string.
+   *
+   */
   public char convertNumToAlph(int number) {
     int asciiStart = 96;
     asciiStart += number;

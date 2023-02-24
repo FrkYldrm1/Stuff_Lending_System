@@ -1,9 +1,9 @@
 package model.domain;
 
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
+import java.util.ArrayList;
 import view.CategoryEnum;
 
-import java.util.ArrayList;
 
 /**
  * Member class.
@@ -135,8 +135,9 @@ public class Member implements TimeAdvancedObserver {
 
   /**
    * Returns size of items lended.
-   * 
+   *
    * @return size of items lended.
+   *
    */
   public int getSizeOfItemsLended() {
     return itemsLended.size();
@@ -162,6 +163,13 @@ public class Member implements TimeAdvancedObserver {
     return s;
   }
 
+  /**
+   * method for checking if item is unique.
+   *
+   * @param itemName item name.
+   * @return boolean.
+   *
+   */
   public boolean isUniqueItem(String itemName) {
     for (Item.Mutable item : itemsOwned) {
       if (item.getName().trim().toLowerCase().equals(itemName.trim().toLowerCase())) {

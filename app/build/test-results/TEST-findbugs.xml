@@ -1,54 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<testsuite package="org.spotbugs" time="0" tests="20" errors="7" name="findbugs">
-<testcase time="0" name="view/SwedishUI.java" classname="FindBugs Issues">
-<failure message="issues" ><![CDATA[lines: 18-525 
-byeBye() invokes System.exit(...), which shuts down the entire virtual 
-  machine 
-Method invokes System.exit(...) 
-Invoking System.exit shuts down the entire Java virtual machine. This 
-  should only been done when it is appropriate. Such calls make it hard or 
-  impossible for your code to be invoked by other code. Consider throwing a 
-  RuntimeException instead.
-----------------
-lines: 18-525 
-Nullcheck of input at line 500 of value previously dereferenced in 
-  check(String) 
-Nullcheck of value previously dereferenced 
-A value is checked here to see whether it is null, but this value cannot be 
-  null because it was previously dereferenced and if it were null a null 
-  pointer exception would have occurred at the earlier dereference. 
-  Essentially, this code and the previous dereference disagree as to 
-  whether this value is allowed to be null. Either the check is redundant 
-  or the previous dereference is erroneous.
-----------------
-]]></failure>
-</testcase><testcase time="0" name="model/domain/Item.java" classname="FindBugs Issues">
+<testsuite package="org.spotbugs" time="0" tests="20" errors="4" name="findbugs">
+<testcase time="0" name="model/domain/Item.java" classname="FindBugs Issues">
 </testcase><testcase time="0" name="model/domain/MemberId.java" classname="FindBugs Issues">
-<failure message="issues" ><![CDATA[lines: 9-52 
-Random object created and used only once in createId(int) 
-Random object created and used only once 
-This code creates a java.util.Random object, uses it to generate one random 
-  number, and then discards the Random object. This produces mediocre 
-  quality random numbers and is inefficient. If possible, rewrite the code 
-  so that the Random object is created once and saved, and each time a new 
-  random number is required invoke a method on the existing Random object 
-  to obtain it. 
- 
-If it is important that the generated Random numbers not be guessable, you 
-  must not create a new Random for each random number; the values are too 
-  easily guessable. You should strongly consider using a 
-  java.security.SecureRandom instead (and avoid allocating a new 
-  SecureRandom for each random number needed).
-----------------
-lines: 9-52 
-Unread field: rnd 
-Unread field 
-This field is never read. Consider removing it from the class.
-----------------
-]]></failure>
 </testcase><testcase time="0" name="view/EnumChoices.java" classname="FindBugs Issues">
 </testcase><testcase time="0" name="view/ConsoleUi.java" classname="FindBugs Issues">
-<failure message="issues" ><![CDATA[lines: 19-540 
+<failure message="issues" ><![CDATA[lines: 19-595 
 byeBye() invokes System.exit(...), which shuts down the entire virtual 
   machine 
 Method invokes System.exit(...) 
@@ -57,8 +13,8 @@ Invoking System.exit shuts down the entire Java virtual machine. This
   impossible for your code to be invoked by other code. Consider throwing a 
   RuntimeException instead.
 ----------------
-lines: 19-540 
-Nullcheck of input at line 537 of value previously dereferenced in 
+lines: 19-595 
+Nullcheck of input at line 592 of value previously dereferenced in 
   check(String) 
 Nullcheck of value previously dereferenced 
 A value is checked here to see whether it is null, but this value cannot be 
@@ -74,21 +30,32 @@ A value is checked here to see whether it is null, but this value cannot be
 </testcase><testcase time="0" name="model/domain/TimeAdvancedObserver.java" classname="FindBugs Issues">
 </testcase><testcase time="0" name="view/Language.java" classname="FindBugs Issues">
 </testcase><testcase time="0" name="view/MemberEnum.java" classname="FindBugs Issues">
+</testcase><testcase time="0" name="view/SwedishUi.java" classname="FindBugs Issues">
+<failure message="issues" ><![CDATA[lines: 20-599 
+byeBye() invokes System.exit(...), which shuts down the entire virtual 
+  machine 
+Method invokes System.exit(...) 
+Invoking System.exit shuts down the entire Java virtual machine. This 
+  should only been done when it is appropriate. Such calls make it hard or 
+  impossible for your code to be invoked by other code. Consider throwing a 
+  RuntimeException instead.
+----------------
+lines: 20-599 
+Nullcheck of input at line 574 of value previously dereferenced in 
+  check(String) 
+Nullcheck of value previously dereferenced 
+A value is checked here to see whether it is null, but this value cannot be 
+  null because it was previously dereferenced and if it were null a null 
+  pointer exception would have occurred at the earlier dereference. 
+  Essentially, this code and the previous dereference disagree as to 
+  whether this value is allowed to be null. Either the check is redundant 
+  or the previous dereference is erroneous.
+----------------
+]]></failure>
 </testcase><testcase time="0" name="controller/MemberController.java" classname="FindBugs Issues">
 </testcase><testcase time="0" name="model/domain/Registry.java" classname="FindBugs Issues">
 </testcase><testcase time="0" name="controller/App.java" classname="FindBugs Issues">
 </testcase><testcase time="0" name="model/domain/Contract.java" classname="FindBugs Issues">
-<failure message="issues" ><![CDATA[lines: 20-52 
-getItem() may expose internal representation by returning Contract.item 
-May expose internal representation by returning reference to mutable object 
-Returning a reference to a mutable object value stored in one of the 
-  object's fields exposes the internal representation of the object. If 
-  instances are accessed by untrusted code, and unchecked changes to the 
-  mutable object would compromise security or other important properties, 
-  you will need to do something different. Returning a new copy of the 
-  object is better approach in many situations.
-----------------
-]]></failure>
 </testcase><testcase time="0" name="model/domain/Member.java" classname="FindBugs Issues">
 </testcase><testcase time="0" name="model/domain/Time.java" classname="FindBugs Issues">
 </testcase><testcase time="0" name="model/persistence/Imapper.java" classname="FindBugs Issues">

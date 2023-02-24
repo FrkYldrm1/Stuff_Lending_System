@@ -2,91 +2,94 @@ package view;
 
 import java.util.Scanner;
 
+/**
+ * interface.
+ */
 public interface Language {
   public EnumChoices mainMenu();
 
-    public MemberEnum memberMenu();
+  public MemberEnum memberMenu();
 
-    public ItemEnum itemMenu();
+  public ItemEnum itemMenu();
 
-    public void byeBye();
+  public void byeBye();
 
-    public String getFirstName();
+  public String getFirstName();
 
-    public boolean check(String input);
+  public boolean check(String input);
 
-    public String newFirstName();
+  public String newFirstName();
 
-    public String getLastName();
+  public String getLastName();
 
-    public String newLastName();
+  public String newLastName();
 
-    public String getPhoneNumber();
+  public String getPhoneNumber();
 
-    public String newPhoneNumber();
+  public String newPhoneNumber();
 
-    public String uniquePhoneNumber();
+  public String uniquePhoneNumber();
 
-    public String selectedMember();
+  public String selectedMember();
 
-    public String selectMemberDelete();
+  public String selectMemberDelete();
 
-    public String getEmail();
+  public String getEmail();
 
-    public String newEmail();
+  public String newEmail();
 
-    public String uniqueEmail();
+  public String uniqueEmail();
 
-    public void showMemberDetailsSimple(String firstName, String email, String lastName, String memberId,
-      int currentCredit, int ownedItem, int time, String index);
+  public void showMemberDetailsSimple(String firstName, String email, String lastName,
+                                      String memberId, int currentCredit, int ownedItem, int time, String index);
 
-    public void showItemDetails(String itemName, String itemDesc, int itemCost, String category, int dayOfCreation,
-      String index);
+  public void showItemDetails(String itemName, String itemDesc, int itemCost,
+                              String category, int dayOfCreation, String index);
 
-    public String idInput();
+  public String idInput();
 
-    public String indexMemberInput();
+  public String indexMemberInput();
 
-    public String indexItemInput();
+  public String indexItemInput();
 
-    public String indexMemberInputRetry();
+  public String indexMemberInputRetry();
 
-    public int indexItemInputRetry();
+  public int indexItemInputRetry();
 
-    public String newItemName();
+  public String newItemName();
 
-    public String newItemShortDescription();
+  public String newItemShortDescription();
 
-    public int newItemCostPerDay();
+  public int newItemCostPerDay();
 
-    public void showMemberDetails2(String firstName, String lastName, String email);
+  public void showMemberDetails2(String firstName, String lastName, String email);
 
-    public void showOwnedItemIntro();
+  public void showOwnedItemIntro();
 
-    public void showLendedItemIntro();
+  public void showLendedItemIntro();
 
-    public void showItemDetails2(String index, String itemName, String lendedTo, int contractPeriod);
+  public void showItemDetails2(String index, String itemName, String lendedTo, int contractPeriod);
 
-    public void showItemDetails3(String index, String itemName, String owner, int contractPeriod);
+  public void showItemDetails3(String index, String itemName, String owner, int contractPeriod);
 
-    public void showMemberDetails3(String firstName, String email, String id);
+  public void showMemberDetails3(String firstName, String email, String id);
 
-    public void lineBreak();
+  public void lineBreak();
 
-    public void setInput(Scanner input);
+  public void setInput(Scanner input);
 
 
-    public void notEnoughCredit();
+  public void notEnoughCredit();
 
   public void alreadyLended();
 
   public String selectMember();
 
-  public int selectLender();
+  public String selectLender();
 
   public int selectPeriod();
 
-  public int selectItem();
+  public String selectItem();
 
   public void messageForLending(String mem, String lend, int period);
 

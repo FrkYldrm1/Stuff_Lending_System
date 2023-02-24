@@ -1,12 +1,11 @@
 package model.domain;
 
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
-import view.CategoryEnum;
-import view.Language;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import view.CategoryEnum;
+
 
 /**
  * Registry class for saving data.
@@ -247,6 +246,9 @@ public class Registry {
     return isEligable;
   }
 
+  /**
+   * method for sorting by name.
+   */
   public void sortByName() {
     Comparator<Member.Mutable> comparator = new Comparator<Member.Mutable>() {
       public int compare(Member.Mutable person1, Member.Mutable person2) {
@@ -257,6 +259,9 @@ public class Registry {
 
   }
 
+  /**
+   * method for sorting by id.
+   */
   public void sortById() {
     Comparator<Member.Mutable> compare = new Comparator<Member.Mutable>() {
       public int compare(Member.Mutable person1, Member.Mutable person2) {

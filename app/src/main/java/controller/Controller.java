@@ -1,11 +1,8 @@
 package controller;
 
 import java.util.Scanner;
-
-import model.domain.Registry;
-import view.ConsoleUi;
 import view.Language;
-import view.SwedishUI;
+import view.SwedishUi;
 
 /**
  * Controller class for UI.
@@ -24,11 +21,14 @@ public class Controller {
     viewMenu();
   }
 
+  /**
+   * method for changing language.
+   */
   public void init() {
     if (languageBinary == 1) {
       console = new view.ConsoleUi(new Scanner(System.in, "UTF-8"));
     } else if (languageBinary == 0) {
-      console = new SwedishUI(new Scanner(System.in, "UTF-8"));
+      console = new SwedishUi(new Scanner(System.in, "UTF-8"));
     }
     memberController = new controller.MemberController(console);
   }

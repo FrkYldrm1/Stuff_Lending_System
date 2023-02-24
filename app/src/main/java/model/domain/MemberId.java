@@ -1,5 +1,6 @@
 package model.domain;
 
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import java.util.Random;
 
 /**
@@ -8,13 +9,9 @@ import java.util.Random;
 public class MemberId {
   private String id;
   private String dateCreated;
+  Random rand = new Random();
 
 
-  public String getDateCreated() {
-    return dateCreated;
-  }
-
-  // creates random id and puts in creation date
   public MemberId() {
     this.id = createId(6);
     this.dateCreated = creationDate();
@@ -28,14 +25,19 @@ public class MemberId {
     return id;
   }
 
+  public String getDateCreated() {
+    return dateCreated;
+  }
+
   /**
    * Creates random ID.
    *
    * @return ID.
+   *
    */
   private String createId(int length) {
     StringBuilder sb = new StringBuilder();
-    Random rand = new Random();
+
     int asciiStart = 48;
     int asciiEnd = 122;
 
@@ -47,11 +49,6 @@ public class MemberId {
         i--;
       }
     }
-
     return sb.toString();
-  }
-
-  public int compareTo(MemberId memberId) {
-    return 0;
   }
 }

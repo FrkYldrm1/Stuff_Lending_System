@@ -4,9 +4,10 @@ import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import java.util.Scanner;
 
 /**
- * Class for printing console UI elements.
+ * Swedish Ui.
  */
-public class ConsoleUi implements Language {
+public class SwedishUi implements Language {
+
   Scanner input;
   private String in;
 
@@ -16,7 +17,7 @@ public class ConsoleUi implements Language {
    * @param input Scanner input.
    */
   @SuppressFBWarnings(value = "EI_EXPOSE_REP", justification = "We need to have scanner")
-  public ConsoleUi(Scanner input) {
+  public SwedishUi(Scanner input) {
     this.input = input;
   }
 
@@ -25,65 +26,63 @@ public class ConsoleUi implements Language {
    */
   public EnumChoices mainMenu() {
     System.out.println("|-------------------------------------------------------|");
-    System.out.println("| Welcome to our amazing lending application!           |");
-    System.out.println("| Kindly follow the instructions below!                 |");
-    System.out.println("| Choose a numbers and then click enter                 |");
+    System.out.println("| Välkommen till vår fantastiska låneansökan!           |");
+    System.out.println("| Vänligen följ instruktionerna nedan!                  |");
+    System.out.println("| Välj ett nummer och klicka sedan på enter             |");
     System.out.println("|-------------------------------------------------------|");
-    System.out.println("|1) To deal with information about member               |");
-    System.out.println("|2) To deal with information about item                 |");
-    System.out.println("|3) Advance time                                        |");
-    System.out.println("|4) Quit                                                |");
+    System.out.println("|A) Sluta                                              |");
+    System.out.println("|B) Förskottstid                                        |");
+    System.out.println("|C) För att hantera information om objekt               |");
+    System.out.println("|D) För att hantera information om medlem               |");
     System.out.println("|-------------------------------------------------------|");
 
     in = input.next();
-    switch (in) {
-      case ("1"):
+    switch (in.trim().toLowerCase()) {
+      case ("d"):
         return EnumChoices.MEMBER_MENU;
-      case ("2"):
+      case ("c"):
         return EnumChoices.ITEM_MENU;
-      case ("3"):
+      case ("b"):
         return EnumChoices.CHANGE_DAY;
-      case ("4"):
+      case ("a"):
         return EnumChoices.EXIT;
       default:
         return mainMenu();
     }
   }
 
-
-
   /**
    * Method for the member menu UI.
    */
   public MemberEnum memberMenu() {
     System.out.println("|-------------------------------------------------------|");
-    System.out.println("|1) Create a new member                                 |");
-    System.out.println("|2) Look up a specific member`s information             |");
-    System.out.println("|3) Show a simple over view of all members              |");
-    System.out.println("|4) Show a detailed over view of all members            |");
-    System.out.println("|5) Edit a member                                       |");
-    System.out.println("|6) Delete a member                                     |");
-    System.out.println("|7) Create a contract                                   |");
-    System.out.println("|8) Back to menu                                        |");
+    System.out.println("|A) Tillbaka till meny                                  |");
+    System.out.println("|B) Skapa ett kontrakt                                  |");
+    System.out.println("|C) Ta bort en medlem                                   |");
+    System.out.println("|D) Redigera en medlem                                  |");
+    System.out.println("|E) Visa en detaljerad översikt över alla medlemmar     |");
+    System.out.println("|F) Visa en enkel översikt över alla medlemmar          |");
+    System.out.println("|G) Slå upp en specifik medlems information             |");
+    System.out.println("|H) Skapa en ny medlem                                  |");
     System.out.println("|-------------------------------------------------------|");
 
     in = input.next();
-    switch (in) {
-      case ("1"):
+    switch (in.trim().toLowerCase()) {
+      case ("h"):
         return MemberEnum.CREATEMEMBER;
-      case ("2"):
+      case ("g"):
         return MemberEnum.SPECIFICMEMBER;
-      case ("3"):
+      case ("f"):
         return MemberEnum.SHOWSIMPLE;
-      case ("4"):
+      case ("e"):
         return MemberEnum.SHOWDETAILED;
-      case ("5"):
+      case ("d"):
         return MemberEnum.EDITMEMBER;
-      case ("6"):
+      case ("c"):
         return MemberEnum.DELETEMEMBER;
-      case ("7"):
+      case ("b"):
         return MemberEnum.CREATECONTRACT;
-      case ("8"):
+      case ("a"):
         return MemberEnum.BACKMENU;
       default:
         return memberMenu();
@@ -95,24 +94,24 @@ public class ConsoleUi implements Language {
    */
   public ItemEnum itemMenu() {
     System.out.println("|-------------------------------------------------------|");
-    System.out.println("|1) Create item                                         |");
-    System.out.println("|2) View an item                                        |");
-    System.out.println("|3) Edit an item                                        |");
-    System.out.println("|4) Delete an item                                      |");
-    System.out.println("|5) Back to menu                                        |");
+    System.out.println("|A) Tillbaka till meny                                  |");
+    System.out.println("|B) Ta bort ett objekt                                  |");
+    System.out.println("|C) Redigera ett objekt                                 |");
+    System.out.println("|D) Visa ett objek                                      |");
+    System.out.println("|E) Skapa objekt                                        |");
     System.out.println("|-------------------------------------------------------|");
 
     in = input.next();
-    switch (in) {
-      case ("1"):
+    switch (in.trim().toLowerCase()) {
+      case ("e"):
         return ItemEnum.CREATEITEM;
-      case ("2"):
+      case ("d"):
         return ItemEnum.VIEWITEM;
-      case ("3"):
+      case ("c"):
         return ItemEnum.EDITITEM;
-      case ("4"):
+      case ("b"):
         return ItemEnum.DELETEITEM;
-      case ("5"):
+      case ("a"):
         return ItemEnum.BACK;
       default:
         return itemMenu();
@@ -124,8 +123,8 @@ public class ConsoleUi implements Language {
    */
   public void byeBye() {
     System.out.println("|-------------------------------------------------------|");
-    System.out.println("|           It was fun while it lasted                  |");
-    System.out.println("|                Hope you had fun                       |");
+    System.out.println("|           Det var kul så länge det varade             |");
+    System.out.println("|                Hoppas du hade roligt                  |");
     System.out.println("|                      Bye bye                          |");
     System.out.println("|-------------------------------------------------------|");
     System.exit(0);
@@ -137,7 +136,7 @@ public class ConsoleUi implements Language {
    * @return first name to be validated.
    */
   public String getFirstName() {
-    System.out.print("Enter new member's first name: ");
+    System.out.print("Ange den nya medlemmens förnamn: ");
     return input.next();
   }
 
@@ -147,7 +146,7 @@ public class ConsoleUi implements Language {
    * @return first name again to be validated.
    */
   public String newFirstName() {
-    System.out.print("Name has to be filled. Please enter first name: ");
+    System.out.print("Namn måste fyllas i. Vänligen ange förnamn: ");
     return input.nextLine();
   }
 
@@ -157,7 +156,7 @@ public class ConsoleUi implements Language {
    * @return last name to be validated.
    */
   public String getLastName() {
-    System.out.print("Enter new member's last name: ");
+    System.out.print("Ange nya medlemmars efternamn: ");
     return input.next();
   }
 
@@ -167,7 +166,7 @@ public class ConsoleUi implements Language {
    * @return last name again to be validated.
    */
   public String newLastName() {
-    System.out.print("Name has to be filled. Please enter last name: ");
+    System.out.print("Namn måste fyllas i. Vänligen ange efternamn: ");
     return input.nextLine();
   }
 
@@ -187,7 +186,7 @@ public class ConsoleUi implements Language {
    * @return phone number string.
    */
   public String newPhoneNumber() {
-    System.out.print("Phone number has to be filled. Please enter phone number: ");
+    System.out.print("Telefonnummer måste fyllas i. Vänligen ange telefonnummer: ");
     return input.nextLine();
   }
 
@@ -198,7 +197,7 @@ public class ConsoleUi implements Language {
    * @return phone number as a strign.
    */
   public String uniquePhoneNumber() {
-    System.out.print("Phone number is taken. Please enter a new phone number: ");
+    System.out.print("Telefonnummer tas. Vänligen ange ett nytt telefonnummer: ");
     return input.nextLine();
   }
 
@@ -208,9 +207,9 @@ public class ConsoleUi implements Language {
    * @return String.
    */
   public String selectedMember() {
-    System.out.print("Select member to edit (Input number): ");
+    System.out.print("Välj medlem att redigera (Inmatningsnummer): ");
     String in = input.next();
-    if (in.isBlank()) {
+    if (check(in)) {
       return selectedMember();
     }
     return in;
@@ -222,9 +221,10 @@ public class ConsoleUi implements Language {
    * @return returns input.
    */
   public String selectMemberDelete() {
-    System.out.print("Select member to delete (Input number): ");
+    System.out.print("Välj medlem att radera (Inmatningsnummer): ");
     String in = input.next();
-    if (in.isBlank()) {
+    if (check(in)) {
+      System.out.println("Välj medlem att radera (Inmatningsnummer): ");
       return selectMemberDelete();
     }
     return in;
@@ -236,7 +236,7 @@ public class ConsoleUi implements Language {
    * @return email to be validated.
    */
   public String getEmail() {
-    System.out.print("Enter new member's email: ");
+    System.out.print("Ange nya medlemmars e-postadress: ");
     return input.next();
   }
 
@@ -246,7 +246,7 @@ public class ConsoleUi implements Language {
    * @return email string.
    */
   public String newEmail() {
-    System.out.print("Email has to be filled. Please enter email: ");
+    System.out.print("E-post måste fyllas i. Vänligen ange e-post: ");
     return input.nextLine();
   }
 
@@ -256,7 +256,7 @@ public class ConsoleUi implements Language {
    * @return email as a strign.
    */
   public String uniqueEmail() {
-    System.out.print("Email is taken. Please enter a new email: ");
+    System.out.print("E-post tas. Vänligen ange en ny e-postadress: ");
     return input.nextLine();
   }
 
@@ -266,10 +266,10 @@ public class ConsoleUi implements Language {
    * @param index To add index.
    */
   public void showMemberDetailsSimple(String firstName, String email, String lastName, String memberId,
-      int currentCredit, int ownedItem, int time, String index) {
+                                      int currentCredit, int ownedItem, int time, String index) {
     String toPrint = String.format(
-        "%s    %s   Current day: %s    %s, %s\t%s\tCurrent credits: %s\tNumber of owned items: %s", index,
-        memberId, time + 1, firstName, lastName, email, currentCredit, ownedItem);
+            "%s    %s  Nuvarande dag: %s    %s, %s\t%s\tAktuella krediter: %s\tAntal ägda föremål: %s", index,
+            memberId, time + 1, firstName, lastName, email, currentCredit, ownedItem);
     System.out.println(toPrint);
   }
 
@@ -277,9 +277,9 @@ public class ConsoleUi implements Language {
    * Here we show items details.
    */
   public void showItemDetails(String itemName, String itemDesc, int itemCost, String category, int dayOfCreation,
-      String index) {
-    String toPrint = String.format("%s    %s    %s    %s    %s     Day for item: %s",
-        index, itemName, itemCost, itemDesc, category, dayOfCreation);
+                              String index) {
+    String toPrint = String.format("%s    %s    %s    %s    %s     Dag för föremål: %s",
+            index, itemName, itemCost, itemDesc, category, dayOfCreation);
     System.out.println(toPrint);
   }
 
@@ -289,7 +289,7 @@ public class ConsoleUi implements Language {
    * @return String.
    */
   public String idInput() {
-    System.out.print("Select a member using position in list (Input a number): ");
+    System.out.print("Välj en medlem med position i listan (Ange ett nummer): ");
     return input.nextLine();
   }
 
@@ -299,22 +299,22 @@ public class ConsoleUi implements Language {
    * @return int.
    */
   public String indexMemberInput() {
-    System.out.print("Select a member (Input a number): ");
+    System.out.print("Välj en medlem (Ange ett bokstav): ");
     String in = input.next();
     if (in.isBlank()) {
-      return indexItemInput();
+      return indexMemberInput();
     }
     return in;
   }
 
   /**
-   * input for item index.
+   * method for returning index.
    *
-   * @return index.
+   * @return index of the item.
    *
    */
   public String indexItemInput() {
-    System.out.print("Select an item using position in list: ");
+    System.out.print("Välj ett objekt med hjälp av position i listan: ");
     String in = input.next();
     if (in.isBlank()) {
       return indexItemInput();
@@ -328,27 +328,27 @@ public class ConsoleUi implements Language {
    * @return int
    */
   public String indexMemberInputRetry() {
-    System.out.print("Not a valid position. Please try again: ");
+    System.out.print("Inte en giltig position. Var god försök igen: ");
     return input.nextLine();
   }
 
   public int indexItemInputRetry() {
-    System.out.print("Not a valid position. Please try again: ");
+    System.out.print("Inte en giltig position. Var god försök igen: ");
     return input.nextInt();
   }
 
   public String newItemName() {
-    System.out.print("Enter item name: ");
+    System.out.print("Ange objektets namn:");
     return input.next();
   }
 
   public String newItemShortDescription() {
-    System.out.print("Enter item description: ");
+    System.out.print("Ange artikelbeskrivning: ");
     return input.next();
   }
 
   public int newItemCostPerDay() {
-    System.out.print("Enter item cost: ");
+    System.out.print("Ange artikelkostnad:");
     return input.nextInt();
   }
 
@@ -356,7 +356,7 @@ public class ConsoleUi implements Language {
    * Prints details of member.
    */
   public void showMemberDetails2(String firstName, String lastName, String email) {
-    String toPrint = "\n" + "Members name: " + firstName + " " + lastName + " E-mail: " + email;
+    String toPrint = "\n" + "Medlemmarnas namn: " + firstName + " " + lastName + " E-post: " + email;
     System.out.println(toPrint);
   }
 
@@ -364,8 +364,8 @@ public class ConsoleUi implements Language {
    * Prints details of member.
    */
   public void showMemberDetails3(String firstName, String email, String id) {
-    String toPrint = "\n" + "Members name: " + firstName + " E-mail: " + email
-        + " Member id: " + id;
+    String toPrint = "\n" + "Medlemmarnas namn: " + firstName + " E-post: " + email
+            + " Medlems-id: " + id;
     System.out.println(toPrint);
 
   }
@@ -388,40 +388,43 @@ public class ConsoleUi implements Language {
   }
 
   /**
-   * error print.
+   * print for no credit.
    */
   public void notEnoughCredit() {
-    String toPrint = "Not enough credits";
+    String toPrint = "Inte tillräckligt med krediter";
     System.out.println(toPrint);
   }
 
+  /**
+   * print.
+   */
   public void alreadyLended() {
-    System.out.println("Item is already lended!");
+    System.out.println("Varan är redan utlånad!");
   }
 
   /**
-   * input for index.
+   * input for member.
    *
-   * @return index.
+   * @return member index.
    *
    */
   public String selectMember() {
-    System.out.print("Select the owner (Input a number): ");
+    System.out.print("Välj ägare (Ange ett nummer): ");
     String in = input.next();
-    if (check(in)) {
+    if (in.isBlank()) {
       return selectMember();
     }
     return in;
   }
 
   /**
-   *input for index.
+   * input for lender.
    *
-   * @return index.
+   * @return selected lender.
    *
    */
   public String selectLender() {
-    System.out.print("Select member to lend to (Input a number): ");
+    System.out.print("Välj medlem att låna ut till (Ange ett bokstav): ");
     String in = input.next();
     if (in.isBlank()) {
       return selectLender();
@@ -430,18 +433,18 @@ public class ConsoleUi implements Language {
   }
 
   public int selectPeriod() {
-    System.out.print("How long would like to lend the item (Input a number): ");
+    System.out.print("Hur länge vill du låna ut objektet (Ange ett nummer): ");
     return input.nextInt();
   }
 
   /**
-   * input for index.
+   * input for selecting item.
    *
-   * @return index.
+   * @return selected item.
    *
    */
   public String selectItem() {
-    System.out.print("Select item you wish to lend (Input a number): ");
+    System.out.print("Välj objekt du vill låna ut (Ange ett bokstav): ");
     String in = input.next();
     if (in.isBlank()) {
       return selectItem();
@@ -450,14 +453,14 @@ public class ConsoleUi implements Language {
   }
 
   public void messageForLending(String mem, String lend, int period) {
-    System.out.println("Contract has been created " + mem + " has lended to " + lend + " for " + period + " days");
+    System.out.println("Kontrakt har skapats " + mem + " har lånat ut till " + lend + " för " + period + " dags");
   }
 
   /**
    * Message for advancig the day.
    */
   public void advanceDayMessage() {
-    System.out.println("Time has been advanced by one day ;)");
+    System.out.println("Tiden har flyttats fram med en dag;)");
   }
 
   /**
@@ -467,10 +470,9 @@ public class ConsoleUi implements Language {
    */
   public CategoryEnum selectCategory() {
     lineBreak();
-    System.out.println("Please enter the appropriate category for item using the list below");
-    System.out.println("1. Tool\n2. Vehicle\n3. Game\n4. Toy\n5. Sport\n6. Other");
-    System.out.print("Enter category which fits the item the most: ");
-
+    System.out.println("Vänligen ange lämplig kategori för objektet med hjälp av listan nedan");
+    System.out.println("1. Verktyg\n2. Fordon\n3. Spel\n4. Leksak\n5. Sport\n6. Övrig");
+    System.out.print("Ange den kategori som passar varan bäst: ");
     in = input.next();
     switch (in) {
       case ("1"):
@@ -496,7 +498,7 @@ public class ConsoleUi implements Language {
    * @return item name as a string.
    */
   public String createItemName() {
-    System.out.print("Enter item name as an String: ");
+    System.out.print("Ange objektets namn som en String: ");
     return input.next();
   }
 
@@ -506,7 +508,7 @@ public class ConsoleUi implements Language {
    * @return item name as a string.
    */
   public String createItemName2() {
-    System.out.print("Invalid name or item already exist, enter again: ");
+    System.out.print("Ogiltigt namn, ange igen:");
     return input.nextLine();
   }
 
@@ -516,7 +518,7 @@ public class ConsoleUi implements Language {
    * @return description string.
    */
   public String createItemDescription() {
-    System.out.print("Enter description for item: ");
+    System.out.print("Ange beskrivning för artikeln: ");
     return input.next();
   }
 
@@ -526,7 +528,7 @@ public class ConsoleUi implements Language {
    * @return description string.
    */
   public String createItemDescription2() {
-    System.out.print("Invalid description, enter again: ");
+    System.out.print("Ogiltig beskrivning, ange igen: ");
     return input.nextLine();
   }
 
@@ -536,7 +538,7 @@ public class ConsoleUi implements Language {
    * @return price int.
    */
   public String createItemPrice() {
-    System.out.print("Enter item price per day: ");
+    System.out.print("Ange artikelpris per dag:");
     return input.next();
   }
 
@@ -546,39 +548,19 @@ public class ConsoleUi implements Language {
    * @return price int.
    */
   public String createItemPrice2() {
-    System.out.print("Invalid price, enter again: ");
+    System.out.print("Ogiltigt pris, ange igen:");
     return input.nextLine();
   }
 
   /**
    * Prints member in a simple way to then look at their details.
    *
-   * @param index index.
+   * @param index     index.
    * @param firstName member's first name.
-   * @param lastName member's last name.
+   * @param lastName  member's last name.
    */
   public void showMemberSpceific(String index, String firstName, String lastName) {
     System.out.println(index + "\t" + firstName + " " + lastName);
-  }
-
-  @Override
-  public void showOwnedItemIntro() {
-    System.out.println("Items owned:");
-  }
-
-  @Override
-  public void showLendedItemIntro() {
-    System.out.println("Items lended:");
-  }
-
-  @Override
-  public void showItemDetails2(String index, String itemName, String lendedTo, int contractPeriod) {
-    System.out.println(index + ". " + itemName + " -> Lended to: " + lendedTo + ", Contract Period: " + contractPeriod);
-  }
-
-  @Override
-  public void showItemDetails3(String index, String itemName, String owner, int contractPeriod) {
-    System.out.println(index + ". " + itemName + " -> Owner: " + owner + ", Contract Period: " + contractPeriod);
   }
 
   /**
@@ -596,4 +578,23 @@ public class ConsoleUi implements Language {
     }
   }
 
+  @Override
+  public void showOwnedItemIntro() {
+    System.out.println("Mga ari-arian: ");
+  }
+
+  @Override
+  public void showLendedItemIntro() {
+    System.out.println("Mga hiniram na bagay: ");
+  }
+
+  @Override
+  public void showItemDetails2(String character, String itemName, String lendedTo, int contractPeriod) {
+    System.out.println(character + ". " + itemName + " -> Lånat av: " + lendedTo + ", Avtalsperiod: " + contractPeriod);
+  }
+
+  @Override
+  public void showItemDetails3(String character, String itemName, String owner, int contractPeriod) {
+    System.out.println(character + ". " + itemName + " -> Ägare: " + owner + ", Avtalsperiod: " + contractPeriod);
+  }
 }
