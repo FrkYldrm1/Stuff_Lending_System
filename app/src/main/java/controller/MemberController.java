@@ -71,24 +71,26 @@ public class MemberController {
 
   }
 
-  /**
-   * method that checks current language.
-   */
-  public void languageCheck() {
-    if (console instanceof SwedishUi) {
-      registry.sortById();
-    } else {
-      registry.sortByName();
-    }
-  }
+  // /**
+  //  * method that checks current language.
+  //  */
+  // public void languageCheck() {
+  //   if (console instanceof SwedishUi) {
+  //     registry.sortById();
+  //   } else {
+  //     registry.sortByName();
+  //   }
+  // }
 
   /**
    * Method for showing the members.
    */
   public void showAllMembersSimple() {
     int index = 0;
-    languageCheck();
-    for (Member.Mutable member : registry.getMembers()) {
+    
+    ArrayList<Member.Mutable> members = console.sortMembers(registry);
+
+    for (Member.Mutable member : members) {
       index += 1;
       String value;
       if (console instanceof ConsoleUi) {
@@ -106,8 +108,10 @@ public class MemberController {
    * Method for showing the members.
    */
   public void showAllMembers2() {
-    languageCheck();
-    for (Member.Mutable member : registry.getMembers()) {
+
+    ArrayList<Member.Mutable> members = console.sortMembers(registry);
+
+    for (Member.Mutable member : members) {
       console.showMemberDetails2(member.getFirstName(), member.getLastName(), member.getEmail());
 
       // need to show items owned and lended
@@ -468,9 +472,11 @@ public class MemberController {
    * Prints members with their names then proceed to print details about member.
    */
   public void printMemberSpecific() {
-    languageCheck();
+    
+    ArrayList<Member.Mutable> members = console.sortMembers(registry);
+
     int index = 0;
-    for (Member.Mutable member : registry.getMembers()) {
+    for (Member.Mutable member : members) {
       index += 1;
       String value;
       if (console instanceof ConsoleUi) {

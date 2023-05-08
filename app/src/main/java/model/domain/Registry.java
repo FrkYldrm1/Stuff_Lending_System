@@ -246,29 +246,29 @@ public class Registry {
     return isEligable;
   }
 
-  /**
-   * method for sorting by name.
-   */
-  public void sortByName() {
-    Comparator<Member.Mutable> comparator = new Comparator<Member.Mutable>() {
-      public int compare(Member.Mutable person1, Member.Mutable person2) {
-        return person1.getFirstName().compareTo(person2.getFirstName());
-      }
-    };
-    Collections.sort(members, comparator);
+  // /**
+  //  * method for sorting by name.
+  //  */
+  // public void sortByName() {
+  //   Comparator<Member.Mutable> comparator = new Comparator<Member.Mutable>() {
+  //     public int compare(Member.Mutable person1, Member.Mutable person2) {
+  //       return person1.getFirstName().compareTo(person2.getFirstName());
+  //     }
+  //   };
+  //   Collections.sort(members, comparator);
 
-  }
+  // }
 
-  /**
-   * method for sorting by id.
-   */
-  public void sortById() {
-    Comparator<Member.Mutable> compare = new Comparator<Member.Mutable>() {
-      public int compare(Member.Mutable person1, Member.Mutable person2) {
-        return person1.getMemberId().getId().compareTo(person2.getMemberId().getId());
-      }
-    };
-    Collections.sort(members, compare);
+  // /**
+  //  * method for sorting by id.
+  //  */
+  // public void sortById() {
+  //   Comparator<Member.Mutable> compare = new Comparator<Member.Mutable>() {
+  //     public int compare(Member.Mutable person1, Member.Mutable person2) {
+  //       return person1.getMemberId().getId().compareTo(person2.getMemberId().getId());
+  //     }
+  //   };
+  //   Collections.sort(members, compare);
 
-  }
+  // }
 }

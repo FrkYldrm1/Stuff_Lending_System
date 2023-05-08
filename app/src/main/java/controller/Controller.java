@@ -9,7 +9,7 @@ import view.SwedishUi;
  */
 public class Controller {
 
-  int languageBinary = 1; // 1 for english, 0 for swedish;
+  int languageBinary = 0; // 1 for english, 0 for swedish;
   private Language console;
   private controller.MemberController memberController;
 
@@ -22,7 +22,7 @@ public class Controller {
   }
 
   /**
-   * method for changing language.
+   * method for initialising with language.
    */
   public void init() {
     if (languageBinary == 1) {

@@ -1,6 +1,10 @@
 package view;
 
+import java.util.ArrayList;
 import java.util.Scanner;
+
+import model.domain.Member;
+import model.domain.Registry;
 
 /**
  * interface.
@@ -144,5 +148,7 @@ public interface Language {
 
 
   CategoryEnum selectCategory();
+
+  public ArrayList<Member.Mutable> sortMembers(Registry registry);
 }
 

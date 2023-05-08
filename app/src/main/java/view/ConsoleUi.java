@@ -1,6 +1,12 @@
 package view;
 
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
+import model.domain.Member;
+import model.domain.Registry;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Scanner;
 
 /**
@@ -594,6 +600,18 @@ public class ConsoleUi implements Language {
     } else {
       return false;
     }
+  }
+
+  // sorts members by name and returns arraylist of members
+  public ArrayList<Member.Mutable> sortMembers(Registry registry) {
+    ArrayList<Member.Mutable> members = registry.getMembers();
+    Comparator<Member.Mutable> comparator = new Comparator<Member.Mutable>() {
+      public int compare(Member.Mutable person1, Member.Mutable person2) {
+        return person1.getFirstName().compareTo(person2.getFirstName());
+      }
+    };
+    Collections.sort(members, comparator);
+    return members;
   }
 
 }
