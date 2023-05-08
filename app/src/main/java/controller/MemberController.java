@@ -18,8 +18,6 @@ public class MemberController {
 
   private final Registry registry = new Registry();
   private final Time time = new Time();
-  
-  private int conversionType = 0; // used for determining how to handle inputs
 
   /**
    * method for creating member.
@@ -66,9 +64,8 @@ public class MemberController {
    * constructors for controller.
    */
   @SuppressFBWarnings(value = "EI_EXPOSE_REP", justification = "It is the constructor so we should have it.")
-  public MemberController(Language console, int conversionType) {
+  public MemberController(Language console) {
     this.console = console;
-    this.conversionType = conversionType;
 
   }
 
@@ -82,7 +79,7 @@ public class MemberController {
 
     for (Member.Mutable member : members) {
       index += 1;
-      String value = fixIndexThing(index);
+      String value = String.valueOf(index);
 
       console.showMemberDetailsSimple(member.getFirstName(), member.getEmail(), member.getLastName(),
           member.getMemberId().getId(), member.getCredits(), member.sizeOfItemsOwned(), member.getTime().getDay(),
@@ -107,7 +104,7 @@ public class MemberController {
       if (member.sizeOfItemsOwned() > 0) {
         for (Item item : member.getItemsOwned()) {
           index += 1;
-          value = fixIndexThing(index);
+          value = String.valueOf(index);
           console.showItemDetails2(value, item.getName(), item.getLenededTo(), item.getContractPeriod());
         }
       }
@@ -117,7 +114,7 @@ public class MemberController {
         console.showLendedItemIntro();
         for (Item item : member.getItemsLended()) {
           index += 1;
-          value = fixIndexThing(index);
+          value = String.valueOf(index);
           console.showItemDetails3(value, item.getName(), item.getOwner(), item.getContractPeriod());
         }
       }
@@ -139,7 +136,7 @@ public class MemberController {
     } catch (Exception e) {
 
       String in = console.indexMemberInputRetry();
-      input = fixInputThing(in);
+      input = Integer.parseInt(in);
       return getMember(input);
     }
   }
@@ -174,13 +171,13 @@ public class MemberController {
    */
   public void showOwnedItems() {
     String in = console.indexMemberInput();
-    int input = fixInputThing(in);
+    int input = Integer.parseInt(in);
     Member.Mutable member = getMember(input);
     int index = 0;
 
     for (Item item : member.getItemsOwned()) {
       index += 1;
-      String value = fixIndexThing(index);
+      String value = String.valueOf(index);
       console.showItemDetails(item.getName(), item.getShortDescription(),
           item.getCostPerDay(), String.valueOf(item.getCategory()),
           item.getDayOfCreation(), value);
@@ -198,7 +195,7 @@ public class MemberController {
     Boolean status = true;
     while (status) {
       try {
-        memIndex = fixInputThing(s);
+        memIndex = Integer.parseInt(s);
         status = false;
       } catch (Exception e) {
         s = console.indexMemberInput();
@@ -263,7 +260,7 @@ public class MemberController {
    */
   public void editMember() {
     String index = console.selectedMember();
-    int inputMem = fixInputThing(index);
+    int inputMem = Integer.parseInt(index);
     Member member = getMember(inputMem);
     member.setFirstName(console.getFirstName());
     member.setLastName(console.getLastName());
@@ -279,10 +276,10 @@ public class MemberController {
     showAllMembersSimple();
 
     String inMem = console.indexMemberInput();
-    int inputMem = fixInputThing(inMem);
+    int inputMem = Integer.parseInt(inMem);
 
     String indItem = console.indexItemInput();
-    int inputItem = fixInputThing(indItem);
+    int inputItem = Integer.parseInt(indItem);
 
     Item.Mutable item = getItem(inputItem, getMember(inputMem));
     item.setName(console.newItemName());
@@ -297,7 +294,7 @@ public class MemberController {
     String index = console.selectMemberDelete();
     int inputMem;
     try {
-      inputMem = fixInputThing(index);
+      inputMem = Integer.parseInt(index);
       registry.removeMember(getMember(inputMem));
     } catch (Exception e) {
       deleteMember();
@@ -311,7 +308,7 @@ public class MemberController {
     showAllMembersSimple();
 
     String inMem = console.indexMemberInput();
-    int inputMem = fixInputThing(inMem);
+    int inputMem = Integer.parseInt(inMem);
 
     Member.Mutable member = getMember(inputMem);
     console.lineBreak();
@@ -320,7 +317,7 @@ public class MemberController {
     int index = 0;
     for (Item.Mutable item : items) {
       index += 1;
-      String value = fixIndexThing(index);
+      String value = String.valueOf(index);
       console.showItemDetails(item.getName(), item.getShortDescription(),
           item.getCostPerDay(), String.valueOf(item.getCategory()),
           item.getDayOfCreation(), value);
@@ -328,7 +325,7 @@ public class MemberController {
     console.lineBreak();
 
     String indItem = console.indexItemInput();
-    int inputItem = fixInputThing(indItem);
+    int inputItem = Integer.parseInt(indItem);
 
 
     member.removeItemOwned(getItem(inputItem, member));
@@ -342,7 +339,7 @@ public class MemberController {
     showAllMembersSimple();
 
     String inMem = console.selectMember();
-    int mem = fixInputThing(inMem);
+    int mem = Integer.parseInt(inMem);
 
     console.showMemberDetails3(registry.selectMember(mem).getFirstName(), registry.selectMember(mem).getEmail(),
             registry.selectMember(mem).getMemberId().getId());
@@ -353,16 +350,16 @@ public class MemberController {
     String value;
     for (Item item : registry.selectMember(mem).getItemsOwned()) {
       index += 1;
-      value = fixIndexThing(index);
+      value = String.valueOf(index);
       console.showItemDetails2(value, item.getName(), item.getLenededTo(), item.getContractPeriod());
     }
 
     String itemIndex = console.selectItem();
-    int item = fixInputThing(itemIndex);
+    int item = Integer.parseInt(itemIndex);
 
     String lender = console.selectLender();
 
-    int len = fixInputThing(lender);
+    int len = Integer.parseInt(lender);
     int period = console.selectPeriod();
 
     registry.createContract(getMember(mem), getMember(len), period, item);
@@ -386,12 +383,12 @@ public class MemberController {
     int index = 0;
     for (Member.Mutable member : members) {
       index += 1;
-      String value = fixIndexThing(index);
+      String value = String.valueOf(index);
       console.showMemberSpceific(value, member.getFirstName(), member.getLastName());
     }
 
     String inMem = console.indexMemberInput();
-    int inputMem = fixInputThing(inMem);
+    int inputMem = Integer.parseInt(inMem);
     
 
     Member member = getMember(inputMem);
@@ -402,7 +399,7 @@ public class MemberController {
     index = 0;
     for (Item item : member.getItemsOwned()) {
       index += 1;
-      String value = fixIndexThing(index);
+      String value = String.valueOf(inputMem);
       console.showItemDetails2(value, item.getName(), item.getLenededTo(), item.getContractPeriod());
     }
   }
@@ -426,37 +423,4 @@ public class MemberController {
     return (((int) character) - asciiStart);
   }
 
-
-  /**
-   * fix indexes in printing.
-   *
-   * @param index input.
-   * @return
-   *
-   */
-  public String fixIndexThing(int index) {
-    if (conversionType == 0) { // swedish
-      return String.valueOf(convertNumToAlph(index));
-    } else { // english
-      return String.valueOf(index);
-    }
-  }
-
-
-  /**
-   * fix inputs recieved from view.
-   *
-   * @param input Input.
-   * @return
-   *
-   */
-  public int fixInputThing(String input) {
-    int newInputThing = 0;
-    if (conversionType == 0) { // swedish
-      newInputThing = converAlphToNum(input.charAt(0));
-    } else { // english
-      newInputThing = Integer.parseInt(input);
-    }
-    return newInputThing;
-  }
 }
