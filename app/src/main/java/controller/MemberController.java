@@ -8,9 +8,7 @@ import model.domain.MemberId;
 import model.domain.Registry;
 import model.domain.Time;
 import view.CategoryEnum;
-import view.ConsoleUi;
 import view.Language;
-import view.SwedishUi;
 
 /**
  * Class.
@@ -20,6 +18,8 @@ public class MemberController {
 
   private final Registry registry = new Registry();
   private final Time time = new Time();
+  
+  private int conversionType = 0; // used for determining how to handle inputs
 
   /**
    * method for creating member.
@@ -66,8 +66,9 @@ public class MemberController {
    * constructors for controller.
    */
   @SuppressFBWarnings(value = "EI_EXPOSE_REP", justification = "It is the constructor so we should have it.")
-  public MemberController(Language console) {
+  public MemberController(Language console, int conversionType) {
     this.console = console;
+    this.conversionType = conversionType;
 
   }
 
@@ -92,12 +93,8 @@ public class MemberController {
 
     for (Member.Mutable member : members) {
       index += 1;
-      String value;
-      if (console instanceof ConsoleUi) {
-        value = String.valueOf(index);
-      } else {
-        value = String.valueOf(convertNumToAlph(index));
-      }
+      String value = fixIndexThing(index);
+
       console.showMemberDetailsSimple(member.getFirstName(), member.getEmail(), member.getLastName(),
           member.getMemberId().getId(), member.getCredits(), member.sizeOfItemsOwned(), member.getTime().getDay(),
           value);
@@ -121,11 +118,7 @@ public class MemberController {
       if (member.sizeOfItemsOwned() > 0) {
         for (Item item : member.getItemsOwned()) {
           index += 1;
-          if (console instanceof ConsoleUi) {
-            value = String.valueOf(index);
-          } else {
-            value = String.valueOf(convertNumToAlph(index));
-          }
+          value = fixIndexThing(index);
           console.showItemDetails2(value, item.getName(), item.getLenededTo(), item.getContractPeriod());
         }
       }
@@ -135,11 +128,7 @@ public class MemberController {
         console.showLendedItemIntro();
         for (Item item : member.getItemsLended()) {
           index += 1;
-          if (console instanceof ConsoleUi) {
-            value = String.valueOf(index);
-          } else {
-            value = String.valueOf(convertNumToAlph(index));
-          }
+          value = fixIndexThing(index);
           console.showItemDetails3(value, item.getName(), item.getOwner(), item.getContractPeriod());
         }
       }
@@ -161,11 +150,7 @@ public class MemberController {
     } catch (Exception e) {
 
       String in = console.indexMemberInputRetry();
-      if (console instanceof SwedishUi) {
-        input = converAlphToNum(in.charAt(0));
-      } else {
-        input = Integer.parseInt(in);
-      }
+      input = fixInputThing(in);
       return getMember(input);
     }
   }
@@ -199,24 +184,14 @@ public class MemberController {
    * Method for showing members owned items.
    */
   public void showOwnedItems() {
-    int input;
     String in = console.indexMemberInput();
-    if (console instanceof SwedishUi) {
-      input = converAlphToNum(in.charAt(0));
-    } else {
-      input = Integer.parseInt(in);
-    }
+    int input = fixInputThing(in);
     Member.Mutable member = getMember(input);
     int index = 0;
 
     for (Item item : member.getItemsOwned()) {
       index += 1;
-      String value;
-      if (console instanceof ConsoleUi) {
-        value = String.valueOf(index);
-      } else {
-        value = String.valueOf(convertNumToAlph(index));
-      }
+      String value = fixIndexThing(index);
       console.showItemDetails(item.getName(), item.getShortDescription(),
           item.getCostPerDay(), String.valueOf(item.getCategory()),
           item.getDayOfCreation(), value);
@@ -234,11 +209,7 @@ public class MemberController {
     Boolean status = true;
     while (status) {
       try {
-        if (console instanceof SwedishUi) {
-          memIndex = converAlphToNum(s.charAt(0));
-        } else {
-          memIndex = Integer.parseInt(s);
-        }
+        memIndex = fixInputThing(s);
         status = false;
       } catch (Exception e) {
         s = console.indexMemberInput();
@@ -303,17 +274,11 @@ public class MemberController {
    */
   public void editMember() {
     String index = console.selectedMember();
-    int inputMem;
-    if (console instanceof SwedishUi && !(index.trim().matches("\\d+"))) {
-      inputMem = converAlphToNum(index.charAt(0));
-    } else {
-      inputMem = Integer.parseInt(index);
-    }
+    int inputMem = fixInputThing(index);
     getMember(inputMem).setFirstName(console.getFirstName());
     getMember(inputMem).setLastName(console.getLastName());
     getMember(inputMem).setEmail(console.getEmail());
     getMember(inputMem).setPhoneNumber(console.getPhoneNumber());
-    System.out.println("Member " + getMember(inputMem).getFirstName() + " has been edited");
   }
 
 
@@ -323,21 +288,11 @@ public class MemberController {
   public void editItem() {
     showAllMembersSimple();
 
-    int inputMem;
     String inMem = console.indexMemberInput();
-    if (console instanceof SwedishUi) {
-      inputMem = converAlphToNum(inMem.charAt(0));
-    } else {
-      inputMem = Integer.parseInt(inMem);
-    }
+    int inputMem = fixInputThing(inMem);
 
-    int inputItem;
     String indItem = console.indexItemInput();
-    if (console instanceof SwedishUi) {
-      inputItem = converAlphToNum(indItem.charAt(0));
-    } else {
-      inputItem = Integer.parseInt(indItem);
-    }
+    int inputItem = fixInputThing(indItem);
 
     Item.Mutable item = getItem(inputItem, getMember(inputMem));
     item.setName(console.newItemName());
@@ -352,11 +307,7 @@ public class MemberController {
     String index = console.selectMemberDelete();
     int inputMem;
     try {
-      if (console instanceof SwedishUi) {
-        inputMem = converAlphToNum(index.charAt(0));
-      } else {
-        inputMem = Integer.parseInt(index);
-      }
+      inputMem = fixInputThing(index);
       registry.removeMember(getMember(inputMem));
     } catch (Exception e) {
       deleteMember();
@@ -369,13 +320,8 @@ public class MemberController {
   public void deleteItemOwned() {
     showAllMembersSimple();
 
-    int inputMem;
     String inMem = console.indexMemberInput();
-    if (console instanceof SwedishUi) {
-      inputMem = converAlphToNum(inMem.charAt(0));
-    } else {
-      inputMem = Integer.parseInt(inMem);
-    }
+    int inputMem = fixInputThing(inMem);
 
     Member.Mutable member = getMember(inputMem);
     console.lineBreak();
@@ -384,25 +330,16 @@ public class MemberController {
     int index = 0;
     for (Item.Mutable item : items) {
       index += 1;
-      String value;
-      if (console instanceof ConsoleUi) {
-        value = String.valueOf(index);
-      } else {
-        value = String.valueOf(convertNumToAlph(index));
-      }
+      String value = fixIndexThing(index);
       console.showItemDetails(item.getName(), item.getShortDescription(),
           item.getCostPerDay(), String.valueOf(item.getCategory()),
           item.getDayOfCreation(), value);
     }
     console.lineBreak();
 
-    int inputItem;
     String indItem = console.indexItemInput();
-    if (console instanceof SwedishUi) {
-      inputItem = converAlphToNum(indItem.charAt(0));
-    } else {
-      inputItem = Integer.parseInt(indItem);
-    }
+    int inputItem = fixInputThing(indItem);
+
 
     member.removeItemOwned(getItem(inputItem, member));
 
@@ -415,12 +352,7 @@ public class MemberController {
     showAllMembersSimple();
 
     String inMem = console.selectMember();
-    int mem;
-    if (console instanceof SwedishUi) {
-      mem = converAlphToNum(inMem.charAt(0));
-    } else {
-      mem = Integer.parseInt(inMem);
-    }
+    int mem = fixInputThing(inMem);
 
     console.showMemberDetails3(registry.selectMember(mem).getFirstName(), registry.selectMember(mem).getEmail(),
             registry.selectMember(mem).getMemberId().getId());
@@ -431,30 +363,16 @@ public class MemberController {
     String value;
     for (Item item : registry.selectMember(mem).getItemsOwned()) {
       index += 1;
-      if (console instanceof ConsoleUi) {
-        value = String.valueOf(index);
-      } else {
-        value = String.valueOf(convertNumToAlph(index));
-      }
+      value = fixIndexThing(index);
       console.showItemDetails2(value, item.getName(), item.getLenededTo(), item.getContractPeriod());
     }
 
     String itemIndex = console.selectItem();
-    int item;
-    if (console instanceof SwedishUi) {
-      item = converAlphToNum(itemIndex.charAt(0));
-    } else {
-      item = Integer.parseInt(itemIndex);
-    }
+    int item = fixInputThing(itemIndex);
 
     String lender = console.selectLender();
 
-    int len;
-    if (console instanceof SwedishUi) {
-      len = converAlphToNum(lender.charAt(0));
-    } else {
-      len = Integer.parseInt(lender);
-    }
+    int len = fixInputThing(lender);
     int period = console.selectPeriod();
 
     registry.createContract(getMember(mem), getMember(len), period, item);
@@ -478,22 +396,13 @@ public class MemberController {
     int index = 0;
     for (Member.Mutable member : members) {
       index += 1;
-      String value;
-      if (console instanceof ConsoleUi) {
-        value = String.valueOf(index);
-      } else {
-        value = String.valueOf(convertNumToAlph(index));
-      }
+      String value = fixIndexThing(index);
       console.showMemberSpceific(value, member.getFirstName(), member.getLastName());
     }
 
-    int inputMem;
     String inMem = console.indexMemberInput();
-    if (console instanceof SwedishUi) {
-      inputMem = converAlphToNum(inMem.charAt(0));
-    } else {
-      inputMem = Integer.parseInt(inMem);
-    }
+    int inputMem = fixInputThing(inMem);
+    
 
     Member member = getMember(inputMem);
 
@@ -503,12 +412,7 @@ public class MemberController {
     index = 0;
     for (Item item : member.getItemsOwned()) {
       index += 1;
-      String value;
-      if (console instanceof ConsoleUi) {
-        value = String.valueOf(index);
-      } else {
-        value = String.valueOf(convertNumToAlph(index));
-      }
+      String value = fixIndexThing(index);
       console.showItemDetails2(value, item.getName(), item.getLenededTo(), item.getContractPeriod());
     }
   }
@@ -530,5 +434,25 @@ public class MemberController {
   public int converAlphToNum(char character) {
     int asciiStart = 96;
     return (((int) character) - asciiStart);
+  }
+
+  // fix indexes in printing
+  public String fixIndexThing(int index) {
+    if (conversionType == 0) { // swedish
+      return String.valueOf(convertNumToAlph(index));
+    } else { // english
+      return String.valueOf(index);
+    }
+  }
+
+  // fix inputs recieved from view
+  public int fixInputThing(String input) {
+    int newInputThing = 0;
+    if (conversionType == 0) { // swedish
+      newInputThing = converAlphToNum(input.charAt(0));
+    } else { // english
+      newInputThing = Integer.parseInt(input);
+    }
+    return newInputThing;
   }
 }

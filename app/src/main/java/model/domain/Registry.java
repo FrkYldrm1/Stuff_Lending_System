@@ -69,8 +69,16 @@ public class Registry {
       + " Making dummy and returning to not expose internal representation"
       + " might cut our access in some parts of the program.")
   public ArrayList<Member.Mutable> getMembers() {
+    ArrayList<Member.Mutable> copy = new ArrayList<>();
+    for (Member.Mutable b : members) {
+    copy.add(b);
+    }
     return members;
   }
+
+  public void setMembers(ArrayList<Member.Mutable> memberArraylist) {
+    members = memberArraylist;
+  } 
 
   /**
    * Method for adding members adds members without an id.
@@ -114,6 +122,8 @@ public class Registry {
     }
     return members.get(0);
   }
+
+
 
   /**
    * To remove a member from a list.
@@ -242,33 +252,13 @@ public class Registry {
     return false;
   }
 
+  /**
+   * Returns is eligible boolean.
+   *
+   * @return is eligable.
+   *
+   */
   public Boolean getIsEligable() {
     return isEligable;
   }
-
-  // /**
-  //  * method for sorting by name.
-  //  */
-  // public void sortByName() {
-  //   Comparator<Member.Mutable> comparator = new Comparator<Member.Mutable>() {
-  //     public int compare(Member.Mutable person1, Member.Mutable person2) {
-  //       return person1.getFirstName().compareTo(person2.getFirstName());
-  //     }
-  //   };
-  //   Collections.sort(members, comparator);
-
-  // }
-
-  // /**
-  //  * method for sorting by id.
-  //  */
-  // public void sortById() {
-  //   Comparator<Member.Mutable> compare = new Comparator<Member.Mutable>() {
-  //     public int compare(Member.Mutable person1, Member.Mutable person2) {
-  //       return person1.getMemberId().getId().compareTo(person2.getMemberId().getId());
-  //     }
-  //   };
-  //   Collections.sort(members, compare);
-
-  // }
 }
