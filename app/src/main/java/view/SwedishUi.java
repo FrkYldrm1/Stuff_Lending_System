@@ -1,6 +1,12 @@
 package view;
 
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
+import model.domain.Member;
+import model.domain.Registry;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Scanner;
 
 /**
@@ -596,5 +602,17 @@ public class SwedishUi implements Language {
   @Override
   public void showItemDetails3(String character, String itemName, String owner, int contractPeriod) {
     System.out.println(character + ". " + itemName + " -> Ägare: " + owner + ", Avtalsperiod: " + contractPeriod);
+  }
+
+  public ArrayList<Member.Mutable> sortMembers(Registry registry) {
+    ArrayList<Member.Mutable> members = registry.getMembers();
+    Comparator<Member.Mutable> compare = new Comparator<Member.Mutable>() {
+      public int compare(Member.Mutable person1, Member.Mutable person2) {
+        return person1.getMemberId().getId().compareTo(person2.getMemberId().getId());
+      }
+    };
+    Collections.sort(members, compare);
+    return members;
+
   }
 }
