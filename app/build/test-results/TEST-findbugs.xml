@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<testsuite package="org.spotbugs" time="0" tests="20" errors="5" name="findbugs">
+<testsuite package="org.spotbugs" time="0" tests="20" errors="3" name="findbugs">
 <testcase time="0" name="model/domain/Item.java" classname="FindBugs Issues">
 </testcase><testcase time="0" name="model/domain/MemberId.java" classname="FindBugs Issues">
 </testcase><testcase time="0" name="view/EnumChoices.java" classname="FindBugs Issues">
 </testcase><testcase time="0" name="view/ConsoleUi.java" classname="FindBugs Issues">
-<failure message="issues" ><![CDATA[lines: 25-616 
+<failure message="issues" ><![CDATA[lines: 24-616 
 byeBye() invokes System.exit(...), which shuts down the entire virtual 
   machine 
 Method invokes System.exit(...) 
@@ -12,17 +12,6 @@ Invoking System.exit shuts down the entire Java virtual machine. This
   should only been done when it is appropriate. Such calls make it hard or 
   impossible for your code to be invoked by other code. Consider throwing a 
   RuntimeException instead.
-----------------
-lines: 25-616 
-Nullcheck of input at line 598 of value previously dereferenced in 
-  check(String) 
-Nullcheck of value previously dereferenced 
-A value is checked here to see whether it is null, but this value cannot be 
-  null because it was previously dereferenced and if it were null a null 
-  pointer exception would have occurred at the earlier dereference. 
-  Essentially, this code and the previous dereference disagree as to 
-  whether this value is allowed to be null. Either the check is redundant 
-  or the previous dereference is erroneous.
 ----------------
 ]]></failure>
 </testcase><testcase time="0" name="view/CategoryEnum.java" classname="FindBugs Issues">
@@ -31,7 +20,7 @@ A value is checked here to see whether it is null, but this value cannot be
 </testcase><testcase time="0" name="view/Language.java" classname="FindBugs Issues">
 </testcase><testcase time="0" name="view/MemberEnum.java" classname="FindBugs Issues">
 </testcase><testcase time="0" name="view/SwedishUi.java" classname="FindBugs Issues">
-<failure message="issues" ><![CDATA[lines: 26-615 
+<failure message="issues" ><![CDATA[lines: 25-617 
 byeBye() invokes System.exit(...), which shuts down the entire virtual 
   machine 
 Method invokes System.exit(...) 
@@ -39,17 +28,6 @@ Invoking System.exit shuts down the entire Java virtual machine. This
   should only been done when it is appropriate. Such calls make it hard or 
   impossible for your code to be invoked by other code. Consider throwing a 
   RuntimeException instead.
-----------------
-lines: 26-615 
-Nullcheck of input at line 580 of value previously dereferenced in 
-  check(String) 
-Nullcheck of value previously dereferenced 
-A value is checked here to see whether it is null, but this value cannot be 
-  null because it was previously dereferenced and if it were null a null 
-  pointer exception would have occurred at the earlier dereference. 
-  Essentially, this code and the previous dereference disagree as to 
-  whether this value is allowed to be null. Either the check is redundant 
-  or the previous dereference is erroneous.
 ----------------
 ]]></failure>
 </testcase><testcase time="0" name="controller/MemberController.java" classname="FindBugs Issues">

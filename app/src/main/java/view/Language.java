@@ -2,7 +2,6 @@ package view;
 
 import java.util.ArrayList;
 import java.util.Scanner;
-
 import model.domain.Member;
 import model.domain.Registry;
 

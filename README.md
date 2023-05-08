@@ -71,7 +71,7 @@ The build must pass by running console command:
 Note that you should get a report over the quality like:
 ```
 CodeQualityTests > codeQuality() STANDARD_OUT
-     0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/controller/App.java
+    0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/controller/App.java
     0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/controller/Controller.java
     0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/controller/MemberController.java
     0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/model/domain/Contract.java
@@ -91,50 +91,48 @@ CodeQualityTests > codeQuality() STANDARD_OUT
     0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/view/Language.java
     0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/view/MemberEnum.java
     0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/view/SwedishUi.java
+
+CodeQualityTests > codeQuality() STANDARD_ERROR
+    Findbugs xml file not found: .\build\reports\spotbugs\spotbugs.xml
+    Consider making code change to initiate regeneration of the xml (will try backup)
+    Restored xml from backup: .\build\reports\spotbugs\spotbugs_bak.xml
+
+CodeQualityTests > codeQuality() STANDARD_OUT
     0 FindBugs Issues in model/domain/Item.java
     0 FindBugs Issues in model/domain/MemberId.java
     0 FindBugs Issues in view/EnumChoices.java
-    2 FindBugs Issues in view/ConsoleUi.java
-    text:lines: 19-595
+    1 FindBugs Issues in view/ConsoleUi.java
+    text:lines: 24-616
     byeBye() invokes System.exit(...), which shuts down the entire virtual machine
     Method invokes System.exit(...)
     Invoking System.exit shuts down the entire Java virtual machine. This should only been done when it
       is appropriate. Such calls make it hard or impossible for your code to be invoked by other code.
       Consider throwing a RuntimeException instead.
-
-    text:lines: 19-595
-    Nullcheck of input at line 592 of value previously dereferenced in check(String)
-    Nullcheck of value previously dereferenced
-    A value is checked here to see whether it is null, but this value cannot be null because it was
-      previously dereferenced and if it were null a null pointer exception would have occurred at the
-      earlier dereference. Essentially, this code and the previous dereference disagree as to whether
-      this value is allowed to be null. Either the check is redundant or the previous dereference is
-      erroneous.
 
     0 FindBugs Issues in view/CategoryEnum.java
     0 FindBugs Issues in controller/Controller.java
     0 FindBugs Issues in model/domain/TimeAdvancedObserver.java
     0 FindBugs Issues in view/Language.java
     0 FindBugs Issues in view/MemberEnum.java
-    2 FindBugs Issues in view/SwedishUi.java
-    text:lines: 20-599
+    1 FindBugs Issues in view/SwedishUi.java
+    text:lines: 25-617
     byeBye() invokes System.exit(...), which shuts down the entire virtual machine
     Method invokes System.exit(...)
     Invoking System.exit shuts down the entire Java virtual machine. This should only been done when it
       is appropriate. Such calls make it hard or impossible for your code to be invoked by other code.
       Consider throwing a RuntimeException instead.
 
-    text:lines: 20-599
-    Nullcheck of input at line 574 of value previously dereferenced in check(String)
-    Nullcheck of value previously dereferenced
-    A value is checked here to see whether it is null, but this value cannot be null because it was
-      previously dereferenced and if it were null a null pointer exception would have occurred at the
-      earlier dereference. Essentially, this code and the previous dereference disagree as to whether
-      this value is allowed to be null. Either the check is redundant or the previous dereference is
-      erroneous.
-
     0 FindBugs Issues in controller/MemberController.java
-    0 FindBugs Issues in model/domain/Registry.java
+    1 FindBugs Issues in model/domain/Registry.java
+    text:lines: 19-260
+    setMembers(ArrayList) may expose internal representation by storing an externally mutable object
+      into Registry.members
+    May expose internal representation by incorporating reference to mutable object
+    This code stores a reference to an externally mutable object into the internal representation of the
+      object. If instances are accessed by untrusted code, and unchecked changes to the mutable object
+      would compromise security or other important properties, you will need to do something different.
+      Storing a copy of the object is better approach in many situations.
+
     0 FindBugs Issues in controller/App.java
     0 FindBugs Issues in model/domain/Contract.java
     0 FindBugs Issues in model/domain/Member.java
@@ -143,6 +141,7 @@ CodeQualityTests > codeQuality() STANDARD_OUT
     0 FindBugs Issues in model/persistence/SqlMapper.java
     0 FindBugs Issues in view/ItemEnum.java
     0 FindBugs Issues in model/persistence/Persistence.java
+
 ```
 
 ## Running

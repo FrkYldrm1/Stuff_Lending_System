@@ -69,7 +69,7 @@ public class Registry {
   public ArrayList<Member.Mutable> getMembers() {
     ArrayList<Member.Mutable> copy = new ArrayList<>();
     for (Member.Mutable b : members) {
-    copy.add(b);
+      copy.add(b);
     }
     return copy;
   }

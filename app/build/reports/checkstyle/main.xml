@@ -5,8 +5,6 @@
 <file name="C:\Users\ahmed\OneDrive\Skrivbord\oo\a2\app\src\main\java\controller\Controller.java">
 </file>
 <file name="C:\Users\ahmed\OneDrive\Skrivbord\oo\a2\app\src\main\java\controller\MemberController.java">
-<error line="430" column="3" severity="warning" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
-<error line="439" column="3" severity="warning" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
 </file>
 <file name="C:\Users\ahmed\OneDrive\Skrivbord\oo\a2\app\src\main\java\model\domain\Contract.java">
 </file>
@@ -17,7 +15,6 @@
 <file name="C:\Users\ahmed\OneDrive\Skrivbord\oo\a2\app\src\main\java\model\domain\MemberId.java">
 </file>
 <file name="C:\Users\ahmed\OneDrive\Skrivbord\oo\a2\app\src\main\java\model\domain\Registry.java">
-<error line="72" column="5" severity="warning" message="&apos;for&apos; child has incorrect indentation level 4, expected level should be 6." source="com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheck"/>
 </file>
 <file name="C:\Users\ahmed\OneDrive\Skrivbord\oo\a2\app\src\main\java\model\domain\Time.java">
 </file>
@@ -32,28 +29,15 @@
 <file name="C:\Users\ahmed\OneDrive\Skrivbord\oo\a2\app\src\main\java\view\CategoryEnum.java">
 </file>
 <file name="C:\Users\ahmed\OneDrive\Skrivbord\oo\a2\app\src\main\java\view\ConsoleUi.java">
-<error line="7" column="1" severity="warning" message="Extra separation in import group before &apos;java.util.ArrayList&apos;" source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
-<error line="7" column="1" severity="warning" message="Wrong lexicographical order for &apos;java.util.ArrayList&apos; import. Should be before &apos;model.domain.Registry&apos;." source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
-<error line="8" column="1" severity="warning" message="Wrong lexicographical order for &apos;java.util.Collections&apos; import. Should be before &apos;model.domain.Registry&apos;." source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
-<error line="9" column="1" severity="warning" message="Wrong lexicographical order for &apos;java.util.Comparator&apos; import. Should be before &apos;model.domain.Registry&apos;." source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
-<error line="10" column="1" severity="warning" message="Wrong lexicographical order for &apos;java.util.Scanner&apos; import. Should be before &apos;model.domain.Registry&apos;." source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
-<error line="606" column="3" severity="warning" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
 </file>
 <file name="C:\Users\ahmed\OneDrive\Skrivbord\oo\a2\app\src\main\java\view\EnumChoices.java">
 </file>
 <file name="C:\Users\ahmed\OneDrive\Skrivbord\oo\a2\app\src\main\java\view\ItemEnum.java">
 </file>
 <file name="C:\Users\ahmed\OneDrive\Skrivbord\oo\a2\app\src\main\java\view\Language.java">
-<error line="6" column="1" severity="warning" message="Extra separation in import group before &apos;model.domain.Member&apos;" source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
 </file>
 <file name="C:\Users\ahmed\OneDrive\Skrivbord\oo\a2\app\src\main\java\view\MemberEnum.java">
 </file>
 <file name="C:\Users\ahmed\OneDrive\Skrivbord\oo\a2\app\src\main\java\view\SwedishUi.java">
-<error line="7" column="1" severity="warning" message="Extra separation in import group before &apos;java.util.ArrayList&apos;" source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
-<error line="7" column="1" severity="warning" message="Wrong lexicographical order for &apos;java.util.ArrayList&apos; import. Should be before &apos;model.domain.Registry&apos;." source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
-<error line="8" column="1" severity="warning" message="Wrong lexicographical order for &apos;java.util.Collections&apos; import. Should be before &apos;model.domain.Registry&apos;." source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
-<error line="9" column="1" severity="warning" message="Wrong lexicographical order for &apos;java.util.Comparator&apos; import. Should be before &apos;model.domain.Registry&apos;." source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
-<error line="10" column="1" severity="warning" message="Wrong lexicographical order for &apos;java.util.Scanner&apos; import. Should be before &apos;model.domain.Registry&apos;." source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
-<error line="607" column="3" severity="warning" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
 </file>
 </checkstyle>

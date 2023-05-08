@@ -1,13 +1,12 @@
 package view;
 
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
-import model.domain.Member;
-import model.domain.Registry;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.Scanner;
+import model.domain.Member;
+import model.domain.Registry;
 
 /**
  * Swedish Ui.
@@ -272,10 +271,10 @@ public class SwedishUi implements Language {
    * @param index To add index.
    */
   public void showMemberDetailsSimple(String firstName, String email, String lastName, String memberId,
-                                      int currentCredit, int ownedItem, int time, String index) {
+      int currentCredit, int ownedItem, int time, String index) {
     String toPrint = String.format(
-            "%s    %s  Nuvarande dag: %s    %s, %s\t%s\tAktuella krediter: %s\tAntal ägda föremål: %s", index,
-            memberId, time + 1, firstName, lastName, email, currentCredit, ownedItem);
+        "%s    %s  Nuvarande dag: %s    %s, %s\t%s\tAktuella krediter: %s\tAntal ägda föremål: %s", index,
+        memberId, time + 1, firstName, lastName, email, currentCredit, ownedItem);
     System.out.println(toPrint);
   }
 
@@ -283,9 +282,9 @@ public class SwedishUi implements Language {
    * Here we show items details.
    */
   public void showItemDetails(String itemName, String itemDesc, int itemCost, String category, int dayOfCreation,
-                              String index) {
+      String index) {
     String toPrint = String.format("%s    %s    %s    %s    %s     Dag för föremål: %s",
-            index, itemName, itemCost, itemDesc, category, dayOfCreation);
+        index, itemName, itemCost, itemDesc, category, dayOfCreation);
     System.out.println(toPrint);
   }
 
@@ -371,7 +370,7 @@ public class SwedishUi implements Language {
    */
   public void showMemberDetails3(String firstName, String email, String id) {
     String toPrint = "\n" + "Medlemmarnas namn: " + firstName + " E-post: " + email
-            + " Medlems-id: " + id;
+        + " Medlems-id: " + id;
     System.out.println(toPrint);
 
   }
@@ -573,11 +572,11 @@ public class SwedishUi implements Language {
    * Checks if input is null.
    *
    * @param input any string.
-   *
    * @return true if null and false if not.
+   *
    */
   public boolean check(String input) {
-    if (input.equals("") || input.equals(" ") || input == null) {
+    if (input.equals("") || input.equals(" ")) {
       return true;
     } else {
       return false;
@@ -604,6 +603,9 @@ public class SwedishUi implements Language {
     System.out.println(character + ". " + itemName + " -> Ägare: " + owner + ", Avtalsperiod: " + contractPeriod);
   }
 
+  /**
+   * Sort members.
+   */
   public ArrayList<Member.Mutable> sortMembers(Registry registry) {
     ArrayList<Member.Mutable> members = registry.getMembers();
     Comparator<Member.Mutable> compare = new Comparator<Member.Mutable>() {

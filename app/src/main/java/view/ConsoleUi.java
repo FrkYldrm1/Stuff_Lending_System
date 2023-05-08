@@ -1,13 +1,12 @@
 package view;
 
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
-import model.domain.Member;
-import model.domain.Registry;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.Scanner;
+import model.domain.Member;
+import model.domain.Registry;
 
 /**
  * Class for printing console UI elements.
@@ -55,8 +54,6 @@ public class ConsoleUi implements Language {
         return mainMenu();
     }
   }
-
-
 
   /**
    * Method for the member menu UI.
@@ -128,6 +125,7 @@ public class ConsoleUi implements Language {
   /**
    * Method for the closing menu UI.
    */
+  @SuppressFBWarnings(value = "EI_EXPOSE_REP", justification = "We need system.exit for stopping the programm.")
   public void byeBye() {
     System.out.println("|-------------------------------------------------------|");
     System.out.println("|           It was fun while it lasted                  |");
@@ -421,7 +419,7 @@ public class ConsoleUi implements Language {
   }
 
   /**
-   *input for index.
+   * input for index.
    *
    * @return index.
    *
@@ -559,9 +557,9 @@ public class ConsoleUi implements Language {
   /**
    * Prints member in a simple way to then look at their details.
    *
-   * @param index index.
+   * @param index     index.
    * @param firstName member's first name.
-   * @param lastName member's last name.
+   * @param lastName  member's last name.
    */
   public void showMemberSpceific(String index, String firstName, String lastName) {
     System.out.println(index + "\t" + firstName + " " + lastName);
@@ -595,14 +593,16 @@ public class ConsoleUi implements Language {
    * @return true if null and false if not.
    */
   public boolean check(String input) {
-    if (input.equals("") || input.equals(" ") || input == null) {
+    if (input.equals("") || input.equals(" ")) {
       return true;
     } else {
       return false;
     }
   }
 
-  // sorts members by name and returns arraylist of members
+  /**
+   * Sort members.
+   */
   public ArrayList<Member.Mutable> sortMembers(Registry registry) {
     ArrayList<Member.Mutable> members = registry.getMembers();
     Comparator<Member.Mutable> comparator = new Comparator<Member.Mutable>() {
