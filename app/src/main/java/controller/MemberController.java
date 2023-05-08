@@ -72,17 +72,6 @@ public class MemberController {
 
   }
 
-  // /**
-  //  * method that checks current language.
-  //  */
-  // public void languageCheck() {
-  //   if (console instanceof SwedishUi) {
-  //     registry.sortById();
-  //   } else {
-  //     registry.sortByName();
-  //   }
-  // }
-
   /**
    * Method for showing the members.
    */
@@ -437,7 +426,14 @@ public class MemberController {
     return (((int) character) - asciiStart);
   }
 
-  // fix indexes in printing
+
+  /**
+   * fix indexes in printing.
+   *
+   * @param index input.
+   * @return
+   *
+   */
   public String fixIndexThing(int index) {
     if (conversionType == 0) { // swedish
       return String.valueOf(convertNumToAlph(index));
@@ -446,7 +442,14 @@ public class MemberController {
     }
   }
 
-  // fix inputs recieved from view
+
+  /**
+   * fix inputs recieved from view.
+   *
+   * @param input Input.
+   * @return
+   *
+   */
   public int fixInputThing(String input) {
     int newInputThing = 0;
     if (conversionType == 0) { // swedish

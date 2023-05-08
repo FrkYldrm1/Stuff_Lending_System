@@ -1,13 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<testsuite package="org.checkstyle" time="0" tests="20" errors="0" name="checkstyle">
+<testsuite package="org.checkstyle" time="0" tests="20" errors="16" name="checkstyle">
 <testcase time="0" name="controller/App.java" classname="CheckStyle Issues">
 </testcase><testcase time="0" name="controller/Controller.java" classname="CheckStyle Issues">
 </testcase><testcase time="0" name="controller/MemberController.java" classname="CheckStyle Issues">
+<failure message="issues" ><![CDATA[line: 430 column: column:3 
+Missing a Javadoc comment.
+----------------
+line: 439 column: column:3 
+Missing a Javadoc comment.
+----------------
+]]></failure>
 </testcase><testcase time="0" name="model/domain/Contract.java" classname="CheckStyle Issues">
 </testcase><testcase time="0" name="model/domain/Item.java" classname="CheckStyle Issues">
 </testcase><testcase time="0" name="model/domain/Member.java" classname="CheckStyle Issues">
 </testcase><testcase time="0" name="model/domain/MemberId.java" classname="CheckStyle Issues">
 </testcase><testcase time="0" name="model/domain/Registry.java" classname="CheckStyle Issues">
+<failure message="issues" ><![CDATA[line: 72 column: column:5 
+'for' child has incorrect indentation level 4, expected level should be 6.
+----------------
+]]></failure>
 </testcase><testcase time="0" name="model/domain/Time.java" classname="CheckStyle Issues">
 </testcase><testcase time="0" name="model/domain/TimeAdvancedObserver.java" classname="CheckStyle Issues">
 </testcase><testcase time="0" name="model/persistence/Imapper.java" classname="CheckStyle Issues">
@@ -15,9 +26,59 @@
 </testcase><testcase time="0" name="model/persistence/SqlMapper.java" classname="CheckStyle Issues">
 </testcase><testcase time="0" name="view/CategoryEnum.java" classname="CheckStyle Issues">
 </testcase><testcase time="0" name="view/ConsoleUi.java" classname="CheckStyle Issues">
+<failure message="issues" ><![CDATA[line: 7 column: column:1 
+Extra separation in import group before 'java.util.ArrayList'
+----------------
+line: 7 column: column:1 
+Wrong lexicographical order for 'java.util.ArrayList' import. Should be 
+  before 'model.domain.Registry'.
+----------------
+line: 8 column: column:1 
+Wrong lexicographical order for 'java.util.Collections' import. Should be 
+  before 'model.domain.Registry'.
+----------------
+line: 9 column: column:1 
+Wrong lexicographical order for 'java.util.Comparator' import. Should be 
+  before 'model.domain.Registry'.
+----------------
+line: 10 column: column:1 
+Wrong lexicographical order for 'java.util.Scanner' import. Should be 
+  before 'model.domain.Registry'.
+----------------
+line: 606 column: column:3 
+Missing a Javadoc comment.
+----------------
+]]></failure>
 </testcase><testcase time="0" name="view/EnumChoices.java" classname="CheckStyle Issues">
 </testcase><testcase time="0" name="view/ItemEnum.java" classname="CheckStyle Issues">
 </testcase><testcase time="0" name="view/Language.java" classname="CheckStyle Issues">
+<failure message="issues" ><![CDATA[line: 6 column: column:1 
+Extra separation in import group before 'model.domain.Member'
+----------------
+]]></failure>
 </testcase><testcase time="0" name="view/MemberEnum.java" classname="CheckStyle Issues">
 </testcase><testcase time="0" name="view/SwedishUi.java" classname="CheckStyle Issues">
+<failure message="issues" ><![CDATA[line: 7 column: column:1 
+Extra separation in import group before 'java.util.ArrayList'
+----------------
+line: 7 column: column:1 
+Wrong lexicographical order for 'java.util.ArrayList' import. Should be 
+  before 'model.domain.Registry'.
+----------------
+line: 8 column: column:1 
+Wrong lexicographical order for 'java.util.Collections' import. Should be 
+  before 'model.domain.Registry'.
+----------------
+line: 9 column: column:1 
+Wrong lexicographical order for 'java.util.Comparator' import. Should be 
+  before 'model.domain.Registry'.
+----------------
+line: 10 column: column:1 
+Wrong lexicographical order for 'java.util.Scanner' import. Should be 
+  before 'model.domain.Registry'.
+----------------
+line: 607 column: column:3 
+Missing a Javadoc comment.
+----------------
+]]></failure>
 </testcase></testsuite>

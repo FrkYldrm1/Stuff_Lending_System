@@ -9,8 +9,6 @@ C:\Users\ahmed\OneDrive\Skrivbord\oo\a2\app\build\classes\java\main\model\domain
 C:\Users\ahmed\OneDrive\Skrivbord\oo\a2\app\build\classes\java\main\model\domain\Member$Mutable.class
 C:\Users\ahmed\OneDrive\Skrivbord\oo\a2\app\build\classes\java\main\model\domain\Member.class
 C:\Users\ahmed\OneDrive\Skrivbord\oo\a2\app\build\classes\java\main\model\domain\MemberId.class
-C:\Users\ahmed\OneDrive\Skrivbord\oo\a2\app\build\classes\java\main\model\domain\Registry$1.class
-C:\Users\ahmed\OneDrive\Skrivbord\oo\a2\app\build\classes\java\main\model\domain\Registry$2.class
 C:\Users\ahmed\OneDrive\Skrivbord\oo\a2\app\build\classes\java\main\model\domain\Registry.class
 C:\Users\ahmed\OneDrive\Skrivbord\oo\a2\app\build\classes\java\main\model\domain\Time.class
 C:\Users\ahmed\OneDrive\Skrivbord\oo\a2\app\build\classes\java\main\model\domain\TimeAdvancedObserver.class
@@ -18,9 +16,11 @@ C:\Users\ahmed\OneDrive\Skrivbord\oo\a2\app\build\classes\java\main\model\persis
 C:\Users\ahmed\OneDrive\Skrivbord\oo\a2\app\build\classes\java\main\model\persistence\Persistence.class
 C:\Users\ahmed\OneDrive\Skrivbord\oo\a2\app\build\classes\java\main\model\persistence\SqlMapper.class
 C:\Users\ahmed\OneDrive\Skrivbord\oo\a2\app\build\classes\java\main\view\CategoryEnum.class
+C:\Users\ahmed\OneDrive\Skrivbord\oo\a2\app\build\classes\java\main\view\ConsoleUi$1.class
 C:\Users\ahmed\OneDrive\Skrivbord\oo\a2\app\build\classes\java\main\view\ConsoleUi.class
 C:\Users\ahmed\OneDrive\Skrivbord\oo\a2\app\build\classes\java\main\view\EnumChoices.class
 C:\Users\ahmed\OneDrive\Skrivbord\oo\a2\app\build\classes\java\main\view\ItemEnum.class
 C:\Users\ahmed\OneDrive\Skrivbord\oo\a2\app\build\classes\java\main\view\Language.class
 C:\Users\ahmed\OneDrive\Skrivbord\oo\a2\app\build\classes\java\main\view\MemberEnum.class
+C:\Users\ahmed\OneDrive\Skrivbord\oo\a2\app\build\classes\java\main\view\SwedishUi$1.class
 C:\Users\ahmed\OneDrive\Skrivbord\oo\a2\app\build\classes\java\main\view\SwedishUi.class

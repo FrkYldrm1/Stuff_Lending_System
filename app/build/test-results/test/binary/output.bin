@@ -1,36 +1,92 @@
 f0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/controller/App.java
 m0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/controller/Controller.java
-s0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/controller/MemberController.java
+s2 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/controller/MemberController.java
+"text:line: 430 column: column:3 
+Missing a Javadoc comment.
+
+"text:line: 439 column: column:3 
+Missing a Javadoc comment.
+
 m0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/model/domain/Contract.java
 i0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/model/domain/Item.java
 k0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/model/domain/Member.java
 m0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/model/domain/MemberId.java
-m0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/model/domain/Registry.java
+m1 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/model/domain/Registry.java
+!text:line: 72 column: column:5 
+L'for' child has incorrect indentation level 4, expected level should be 6.
+
 i0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/model/domain/Time.java
 y0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/model/domain/TimeAdvancedObserver.java
 q0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/model/persistence/Imapper.java
 u0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/model/persistence/Persistence.java
 s0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/model/persistence/SqlMapper.java
 i0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/view/CategoryEnum.java
-f0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/view/ConsoleUi.java
+f6 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/view/ConsoleUi.java
+ text:line: 7 column: column:1 
+?Extra separation in import group before 'java.util.ArrayList'
+
+ text:line: 7 column: column:1 
+QWrong lexicographical order for 'java.util.ArrayList' import. Should be before 
+  'model.domain.Registry'.
+
+ text:line: 8 column: column:1 
+SWrong lexicographical order for 'java.util.Collections' import. Should be before 
+  'model.domain.Registry'.
+
+ text:line: 9 column: column:1 
+RWrong lexicographical order for 'java.util.Comparator' import. Should be before 
+  'model.domain.Registry'.
+
+!text:line: 10 column: column:1 
+OWrong lexicographical order for 'java.util.Scanner' import. Should be before 
+  'model.domain.Registry'.
+
+"text:line: 606 column: column:3 
+Missing a Javadoc comment.
+
 h0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/view/EnumChoices.java
 e0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/view/ItemEnum.java
-e0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/view/Language.java
+e1 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/view/Language.java
+ text:line: 6 column: column:1 
+?Extra separation in import group before 'model.domain.Member'
+
 g0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/view/MemberEnum.java
-f0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/view/SwedishUi.java
+f6 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/view/SwedishUi.java
+ text:line: 7 column: column:1 
+?Extra separation in import group before 'java.util.ArrayList'
+
+ text:line: 7 column: column:1 
+QWrong lexicographical order for 'java.util.ArrayList' import. Should be before 
+  'model.domain.Registry'.
+
+ text:line: 8 column: column:1 
+SWrong lexicographical order for 'java.util.Collections' import. Should be before 
+  'model.domain.Registry'.
+
+ text:line: 9 column: column:1 
+RWrong lexicographical order for 'java.util.Comparator' import. Should be before 
+  'model.domain.Registry'.
+
+!text:line: 10 column: column:1 
+OWrong lexicographical order for 'java.util.Scanner' import. Should be before 
+  'model.domain.Registry'.
+
+"text:line: 607 column: column:3 
+Missing a Javadoc comment.
+
 -0 FindBugs Issues in model/domain/Item.java
 10 FindBugs Issues in model/domain/MemberId.java
 ,0 FindBugs Issues in view/EnumChoices.java
 *2 FindBugs Issues in view/ConsoleUi.java
-text:lines: 19-595 
+text:lines: 25-616 
 QbyeBye() invokes System.exit(...), which shuts down the entire virtual machine 
 "Method invokes System.exit(...) 
 fInvoking System.exit shuts down the entire Java virtual machine. This should only been done when it 
 e  is appropriate. Such calls make it hard or impossible for your code to be invoked by other code. 
 1  Consider throwing a RuntimeException instead.
 
-text:lines: 19-595 
-SNullcheck of input at line 592 of value previously dereferenced in check(String) 
+text:lines: 25-616 
+SNullcheck of input at line 598 of value previously dereferenced in check(String) 
 -Nullcheck of value previously dereferenced 
 bA value is checked here to see whether it is null, but this value cannot be null because it was 
 d  previously dereferenced and if it were null a null pointer exception would have occurred at the 
@@ -44,15 +100,15 @@
 )0 FindBugs Issues in view/Language.java
 +0 FindBugs Issues in view/MemberEnum.java
 *2 FindBugs Issues in view/SwedishUi.java
-text:lines: 20-599 
+text:lines: 26-615 
 QbyeBye() invokes System.exit(...), which shuts down the entire virtual machine 
 "Method invokes System.exit(...) 
 fInvoking System.exit shuts down the entire Java virtual machine. This should only been done when it 
 e  is appropriate. Such calls make it hard or impossible for your code to be invoked by other code. 
 1  Consider throwing a RuntimeException instead.
 
-text:lines: 20-599 
-SNullcheck of input at line 574 of value previously dereferenced in check(String) 
+text:lines: 26-615 
+SNullcheck of input at line 580 of value previously dereferenced in check(String) 
 -Nullcheck of value previously dereferenced 
 bA value is checked here to see whether it is null, but this value cannot be null because it was 
 d  previously dereferenced and if it were null a null pointer exception would have occurred at the 
@@ -61,7 +117,16 @@
   erroneous.
 
 70 FindBugs Issues in controller/MemberController.java
-10 FindBugs Issues in model/domain/Registry.java
+11 FindBugs Issues in model/domain/Registry.java
+text:lines: 19-260 
+csetMembers(ArrayList) may expose internal representation by storing an externally mutable object 
+  into Registry.members 
+RMay expose internal representation by incorporating reference to mutable object 
+gThis code stores a reference to an externally mutable object into the internal representation of the 
+e  object. If instances are accessed by untrusted code, and unchecked changes to the mutable object 
+f  would compromise security or other important properties, you will need to do something different. 
+G  Storing a copy of the object is better approach in many situations.
+
 *0 FindBugs Issues in controller/App.java
 10 FindBugs Issues in model/domain/Contract.java
 /0 FindBugs Issues in model/domain/Member.java

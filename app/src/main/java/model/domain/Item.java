@@ -15,7 +15,7 @@ public class Item {
   private int contractPeriod;
   private String owner;
   private String lenededTo;
-  public CategoryEnum category;
+  private CategoryEnum category;
 
   /**
    * Constructor for the item.
