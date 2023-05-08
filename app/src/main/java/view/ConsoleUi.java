@@ -607,7 +607,9 @@ public class ConsoleUi implements Language {
     ArrayList<Member.Mutable> members = registry.getMembers();
     Comparator<Member.Mutable> comparator = new Comparator<Member.Mutable>() {
       public int compare(Member.Mutable person1, Member.Mutable person2) {
-        return person1.getFirstName().compareTo(person2.getFirstName());
+        String comparee1 = person1.getFirstName().toLowerCase();
+        String comparee2 = person2.getFirstName().toLowerCase();
+        return comparee1.compareTo(comparee2);
       }
     };
     Collections.sort(members, comparator);

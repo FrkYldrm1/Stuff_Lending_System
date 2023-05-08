@@ -73,7 +73,7 @@ public class Registry {
     for (Member.Mutable b : members) {
     copy.add(b);
     }
-    return members;
+    return copy;
   }
 
   public void setMembers(ArrayList<Member.Mutable> memberArraylist) {

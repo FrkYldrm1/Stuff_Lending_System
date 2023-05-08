@@ -143,7 +143,7 @@ public class MemberController {
    * @return member.
    */
   public Member.Mutable getMember(int input) {
-    ArrayList<Member.Mutable> arraylist = new ArrayList<>(registry.getMembers());
+    ArrayList<Member.Mutable> arraylist = console.sortMembers(registry);
 
     try {
       return arraylist.get(input - 1);
@@ -275,10 +275,11 @@ public class MemberController {
   public void editMember() {
     String index = console.selectedMember();
     int inputMem = fixInputThing(index);
-    getMember(inputMem).setFirstName(console.getFirstName());
-    getMember(inputMem).setLastName(console.getLastName());
-    getMember(inputMem).setEmail(console.getEmail());
-    getMember(inputMem).setPhoneNumber(console.getPhoneNumber());
+    Member member = getMember(inputMem);
+    member.setFirstName(console.getFirstName());
+    member.setLastName(console.getLastName());
+    member.setEmail(console.getEmail());
+    member.setPhoneNumber(console.getPhoneNumber());
   }
 
 
