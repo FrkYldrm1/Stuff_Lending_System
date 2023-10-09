@@ -284,7 +284,7 @@ public class MemberController {
       if (console.check(phoneNumber)) {
         phoneNumber = console.newPhoneNumber();
       } else if (!registry.isPhoneNumberAvailable(phoneNumber)) {
-          phoneNumber = console.uniquePhoneNumber();
+        phoneNumber = console.uniquePhoneNumber();
       } else {
         phoneNumberAcceptable = true;
       }
