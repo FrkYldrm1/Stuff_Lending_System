@@ -1,27 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="CodeQualityTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-05-08T17:11:47" hostname="DEEB" time="0.109">
+<testsuite name="CodeQualityTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-10-09T18:09:48" hostname="MSI" time="0.083">
   <properties/>
-  <testcase name="codeQuality()" classname="CodeQualityTests" time="0.109"/>
-  <system-out><![CDATA[0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/controller/App.java
-0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/controller/Controller.java
-0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/controller/MemberController.java
-0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/model/domain/Contract.java
-0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/model/domain/Item.java
-0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/model/domain/Member.java
-0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/model/domain/MemberId.java
-0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/model/domain/Registry.java
-0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/model/domain/Time.java
-0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/model/domain/TimeAdvancedObserver.java
-0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/model/persistence/Imapper.java
-0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/model/persistence/Persistence.java
-0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/model/persistence/SqlMapper.java
-0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/view/CategoryEnum.java
-0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/view/ConsoleUi.java
-0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/view/EnumChoices.java
-0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/view/ItemEnum.java
-0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/view/Language.java
-0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/view/MemberEnum.java
-0 CheckStyle Issues in C:/Users/ahmed/OneDrive/Skrivbord/oo/a2/app/src/main/java/view/SwedishUi.java
+  <testcase name="codeQuality()" classname="CodeQualityTests" time="0.083"/>
+  <system-out><![CDATA[0 CheckStyle Issues in C:/Users/popoy/OneDrive/Desktop/pang school/1DV607 ooad/a2/app/src/main/java/controller/App.java
+0 CheckStyle Issues in C:/Users/popoy/OneDrive/Desktop/pang school/1DV607 ooad/a2/app/src/main/java/controller/Controller.java
+1 CheckStyle Issues in C:/Users/popoy/OneDrive/Desktop/pang school/1DV607 ooad/a2/app/src/main/java/controller/MemberController.java
+text:line: 287 column: column:11 
+'if' child has incorrect indentation level 10, expected level should be 8.
+
+0 CheckStyle Issues in C:/Users/popoy/OneDrive/Desktop/pang school/1DV607 ooad/a2/app/src/main/java/model/domain/Contract.java
+0 CheckStyle Issues in C:/Users/popoy/OneDrive/Desktop/pang school/1DV607 ooad/a2/app/src/main/java/model/domain/Item.java
+0 CheckStyle Issues in C:/Users/popoy/OneDrive/Desktop/pang school/1DV607 ooad/a2/app/src/main/java/model/domain/Member.java
+0 CheckStyle Issues in C:/Users/popoy/OneDrive/Desktop/pang school/1DV607 ooad/a2/app/src/main/java/model/domain/MemberId.java
+0 CheckStyle Issues in C:/Users/popoy/OneDrive/Desktop/pang school/1DV607 ooad/a2/app/src/main/java/model/domain/Registry.java
+0 CheckStyle Issues in C:/Users/popoy/OneDrive/Desktop/pang school/1DV607 ooad/a2/app/src/main/java/model/domain/Time.java
+0 CheckStyle Issues in C:/Users/popoy/OneDrive/Desktop/pang school/1DV607 ooad/a2/app/src/main/java/model/domain/TimeAdvancedObserver.java
+0 CheckStyle Issues in C:/Users/popoy/OneDrive/Desktop/pang school/1DV607 ooad/a2/app/src/main/java/model/persistence/Imapper.java
+0 CheckStyle Issues in C:/Users/popoy/OneDrive/Desktop/pang school/1DV607 ooad/a2/app/src/main/java/model/persistence/Persistence.java
+0 CheckStyle Issues in C:/Users/popoy/OneDrive/Desktop/pang school/1DV607 ooad/a2/app/src/main/java/model/persistence/SqlMapper.java
+0 CheckStyle Issues in C:/Users/popoy/OneDrive/Desktop/pang school/1DV607 ooad/a2/app/src/main/java/view/CategoryEnum.java
+0 CheckStyle Issues in C:/Users/popoy/OneDrive/Desktop/pang school/1DV607 ooad/a2/app/src/main/java/view/ConsoleUi.java
+0 CheckStyle Issues in C:/Users/popoy/OneDrive/Desktop/pang school/1DV607 ooad/a2/app/src/main/java/view/EnumChoices.java
+0 CheckStyle Issues in C:/Users/popoy/OneDrive/Desktop/pang school/1DV607 ooad/a2/app/src/main/java/view/ItemEnum.java
+0 CheckStyle Issues in C:/Users/popoy/OneDrive/Desktop/pang school/1DV607 ooad/a2/app/src/main/java/view/Language.java
+0 CheckStyle Issues in C:/Users/popoy/OneDrive/Desktop/pang school/1DV607 ooad/a2/app/src/main/java/view/MemberEnum.java
+0 CheckStyle Issues in C:/Users/popoy/OneDrive/Desktop/pang school/1DV607 ooad/a2/app/src/main/java/view/SwedishUi.java
 0 FindBugs Issues in model/domain/Item.java
 0 FindBugs Issues in model/domain/MemberId.java
 0 FindBugs Issues in view/EnumChoices.java
@@ -66,8 +69,5 @@ This code stores a reference to an externally mutable object into the internal r
 0 FindBugs Issues in view/ItemEnum.java
 0 FindBugs Issues in model/persistence/Persistence.java
 ]]></system-out>
-  <system-err><![CDATA[Findbugs xml file not found: .\build\reports\spotbugs\spotbugs.xml
-Consider making code change to initiate regeneration of the xml (will try backup)
-Restored xml from backup: .\build\reports\spotbugs\spotbugs_bak.xml
-]]></system-err>
+  <system-err><![CDATA[]]></system-err>
 </testsuite>

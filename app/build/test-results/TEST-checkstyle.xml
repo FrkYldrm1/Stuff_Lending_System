@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<testsuite package="org.checkstyle" time="0" tests="20" errors="0" name="checkstyle">
+<testsuite package="org.checkstyle" time="0" tests="20" errors="1" name="checkstyle">
 <testcase time="0" name="controller/App.java" classname="CheckStyle Issues">
 </testcase><testcase time="0" name="controller/Controller.java" classname="CheckStyle Issues">
 </testcase><testcase time="0" name="controller/MemberController.java" classname="CheckStyle Issues">
+<failure message="issues" ><![CDATA[line: 287 column: column:11 
+'if' child has incorrect indentation level 10, expected level should be 8.
+----------------
+]]></failure>
 </testcase><testcase time="0" name="model/domain/Contract.java" classname="CheckStyle Issues">
 </testcase><testcase time="0" name="model/domain/Item.java" classname="CheckStyle Issues">
 </testcase><testcase time="0" name="model/domain/Member.java" classname="CheckStyle Issues">

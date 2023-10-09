@@ -264,8 +264,31 @@ public class MemberController {
     Member member = getMember(inputMem);
     member.setFirstName(console.getFirstName());
     member.setLastName(console.getLastName());
-    member.setEmail(console.getEmail());
-    member.setPhoneNumber(console.getPhoneNumber());
+
+    String email = console.getEmail();
+    boolean emailAcceptable = false;
+    while (!emailAcceptable) {
+      if (console.check(email)) {
+        email = console.newEmail();
+      } else if (!registry.isEmailAvailable(email)) {
+        email = console.uniqueEmail();
+      } else {
+        emailAcceptable = true;
+      }
+    }
+    member.setEmail(email);
+    
+    String phoneNumber = console.getPhoneNumber();
+    boolean phoneNumberAcceptable = false;
+    while (!phoneNumberAcceptable) {
+      if (console.check(phoneNumber)) {
+        phoneNumber = console.newPhoneNumber();
+      } else if (!registry.isPhoneNumberAvailable(phoneNumber)) {
+          phoneNumber = console.uniquePhoneNumber();
+      } else {
+        phoneNumberAcceptable = true;
+      }
+    }
   }
 
 
